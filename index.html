@@ -3257,21 +3257,32 @@ function checkLab(choiceIndex) {
             document.getElementById('encyc-article-view').classList.remove('hidden');
             document.getElementById('back-label').textContent = isHe ? '→ חזרה' : '← Back';
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.pushState(null, '', '#' + a.slug);
         }
 
         function closeArticle() {
             document.getElementById('encyc-article-view').classList.add('hidden');
             document.getElementById('encyc-index').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.pushState('', document.title, window.location.pathname + window.location.search);
         }
         // ───────────────────────────────────────────────────────────────
 
 
         window.onload = () => {
-            updateIntro(); 
-            showPage('intro');
+            updateIntro();
             updateXPDisplay();
             updateBagUI(); // restore persisted bag from localStorage
+
+            // Deep-link: open article directly from URL hash
+            const hash = window.location.hash.slice(1);
+            if (hash) {
+                showPage('encyclopedia');
+                const idx = ENCYC_ARTICLES.findIndex(a => a.slug === hash);
+                if (idx !== -1) openArticle(idx);
+            } else {
+                showPage('intro');
+            }
         };
     </script>
 </body>
