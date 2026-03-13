@@ -2219,7 +2219,12 @@ body.dark-mode .scoreboard-item.current {
     const targetPage = document.getElementById('page-' + p);
     if (targetPage) targetPage.classList.remove('hidden');
 
-    // 3. Scroll to top on every page change
+    // 3. Clear article hash when leaving encyclopedia
+    if (p !== 'encyclopedia' && window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    // 4. Scroll to top on every page change
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // 4. Update Navigation Active State
@@ -3388,14 +3393,22 @@ function checkLab(choiceIndex) {
             updateXPDisplay();
             updateBagUI(); // restore persisted bag from localStorage
 
-            // Deep-link: open article directly from URL hash
+            // Always land on the home page first
+            showPage('intro');
+
+            // Deep-link: if hash matches a valid article, navigate to it
             const hash = window.location.hash.slice(1);
             if (hash) {
-                showPage('encyclopedia');
+                // Load encyclopedia data so we can check article slugs
+                loadEncyclopedia();
                 const idx = ENCYC_ARTICLES.findIndex(a => a.slug === hash);
-                if (idx !== -1) openArticle(idx);
-            } else {
-                showPage('intro');
+                if (idx !== -1) {
+                    showPage('encyclopedia');
+                    openArticle(idx);
+                } else {
+                    // Invalid hash — clear it and stay on home
+                    history.replaceState(null, '', window.location.pathname);
+                }
             }
         };
     </script>
