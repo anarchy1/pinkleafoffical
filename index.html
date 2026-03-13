@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://pinkleaf.co.il/">
     <meta property="og:title" content="Pink Leaf | אנציקלופדיה בוטנית · Rare Aroid Plants Israel">
     <meta property="og:description" content="חנות צמחים נדירים בישראל — Tissue Culture, Monstera, Alocasia. מדריכי גידול מקצועיים. Rare aroid plants and botanical guides in Hebrew and English.">
-    <meta property="og:image" content="https://pinkleaf.co.il/logo-light.png">
+    <meta property="og:image" content="https://pinkleaf.co.il/plants/PV19.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="he_IL">
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pink Leaf | Rare Aroid Plants Israel">
     <meta name="twitter:description" content="Rare TC plants, Monstera, Alocasia — botanical encyclopedia in Hebrew and English. Israel's premium plant studio.">
-    <meta name="twitter:image" content="https://pinkleaf.co.il/logo-light.png">
+    <meta name="twitter:image" content="https://pinkleaf.co.il/plants/PV19.jpg">
 
     <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
@@ -47,14 +47,25 @@
           "alternateName": "פינק ליף",
           "url": "https://pinkleaf.co.il/",
           "logo": "https://pinkleaf.co.il/logo-light.png",
-          "image": "https://pinkleaf.co.il/logo-light.png",
+          "image": "https://pinkleaf.co.il/plants/PV19.jpg",
           "description": "חנות צמחים נדירים בישראל — Tissue Culture, Monstera, Alocasia, צמחים וריאגטים. Rare aroid plant store in Israel.",
+          "telephone": "+972-55-911-6990",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+972-55-911-6990",
+            "contactType": "customer service",
+            "availableLanguage": ["Hebrew", "English"],
+            "contactOption": "TollFree"
+          },
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "IL"
           },
           "inLanguage": ["he", "en"],
-          "sameAs": []
+          "sameAs": [
+            "https://www.instagram.com/pinkleaf.store/",
+            "https://wa.me/972559116990"
+          ]
         },
         {
           "@type": "WebSite",
@@ -70,6 +81,46 @@
           "description": "מדריכי גידול מקצועיים לצמחים נדירים — Tissue Culture, אקלום, מצעים, תאורה ולחות, השקעה בשוק הצמחים. Professional plant care guides in Hebrew and English.",
           "url": "https://pinkleaf.co.il/",
           "inLanguage": ["he", "en"]
+        },
+        {
+          "@type": "Product",
+          "@id": "https://pinkleaf.co.il/#product-alocasia-polly-pink",
+          "name": "Alocasia Polly Pink Variegata",
+          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Available as Starter Plant. Tissue Culture propagated for genetic stability.",
+          "image": "https://pinkleaf.co.il/plants/PV19.jpg",
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "category": "Rare Aroids"
+        },
+        {
+          "@type": "Product",
+          "@id": "https://pinkleaf.co.il/#product-alocasia-heart-balloon",
+          "name": "Alocasia Heart Balloon",
+          "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. Available as Starter Plant. TC-propagated for consistency.",
+          "image": "https://pinkleaf.co.il/plants/PV81.jpg",
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "category": "Rare Aroids"
+        },
+        {
+          "@type": "Product",
+          "@id": "https://pinkleaf.co.il/#product-alocasia-macrorrhiza-var",
+          "name": "Alocasia Macrorrhiza Variegata",
+          "description": "The Giant Taro in its rare variegated form — bold white-and-green sectoral variegation on oversized leaves. Available in Tissue Culture, Starter, and Mature sizes.",
+          "image": "https://pinkleaf.co.il/plants/PV25.jpg",
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "category": "Rare Aroids"
+        },
+        {
+          "@type": "Product",
+          "@id": "https://pinkleaf.co.il/#product-philodendron-jose-buono",
+          "name": "Philodendron Jose Buono",
+          "description": "Collector-grade Philodendron with irregular cream-and-green variegation on elongated, architectural leaves. Available in Tissue Culture, Starter, and Mature sizes.",
+          "image": "https://pinkleaf.co.il/plants/PV48.jpg",
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "category": "Rare Aroids"
         }
       ]
     }
@@ -117,7 +168,7 @@
     function setScoreboardStatus(message) {
         const scoreboardList = document.getElementById('scoreboard-list');
         if (scoreboardList) {
-            scoreboardList.innerHTML = `<div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 8px;">${message}</div>`;
+            scoreboardList.innerHTML = `<div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 12px;">${message}</div>`;
         }
     }
 
@@ -130,7 +181,7 @@
         setScoreboardStatus('Synchronizing...');
 
         scoreboardUnsub = onSnapshot(
-            query(collection(db, 'labRegistry')),
+            query(collection(db, 'labRegistry'), orderBy('xp', 'desc')),
             (snapshot) => {
                 const list = document.getElementById('scoreboard-list');
                 if (!list) return;
@@ -148,7 +199,7 @@
                                 <span class="scoreboard-xp">${data.xp ?? 0}</span>
                              </div>`;
                 });
-                list.innerHTML = html || '<div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 8px;">No users yet...</div>';
+                list.innerHTML = html || '<div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 12px;">No players yet — register to be first!</div>';
             },
             () => {
                 setScoreboardStatus('Disconnected. Resetting connection...');
@@ -227,6 +278,8 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -288,7 +341,7 @@
             background: transparent;
             color: var(--text);
             font-family: 'Cinzel', serif;
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.25s;
@@ -312,7 +365,7 @@
             margin-top: 10px;
         }
         .encyc-keyword {
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 1px;
             padding: 3px 9px;
             border-radius: 50px;
@@ -322,6 +375,7 @@
             opacity: 0.7;
         }
         .encyc-index-card.hidden-card { display: none; }
+        .encyc-back-btn {
             display: flex;
             align-items: center;
             gap: 8px;
@@ -330,7 +384,7 @@
             border-radius: 50px;
             padding: 10px 20px;
             font-family: 'Cinzel', serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 3px;
             color: var(--pink);
             cursor: pointer;
@@ -371,7 +425,7 @@
         }
         .encyc-card-meta { flex: 1; }
         .encyc-card-tag {
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 3px;
             color: var(--pink);
             text-transform: uppercase;
@@ -387,7 +441,7 @@
             line-height: 1.4;
         }
         .encyc-card-subtitle {
-            font-size: 9px;
+            font-size: 12px;
             opacity: 0.5;
             letter-spacing: 1px;
             line-height: 1.6;
@@ -422,7 +476,7 @@
             pointer-events: none;
         }
         .article-tag {
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 5px;
             color: var(--pink);
             text-transform: uppercase;
@@ -462,7 +516,7 @@
         }
         .article-lang-label span {
             font-family: 'Cinzel', serif;
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 4px;
             color: var(--pink);
             opacity: 0.6;
@@ -594,7 +648,7 @@
         }
         .article-sop-title {
             font-family: 'Cinzel', serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 3px;
             color: var(--pink);
             margin-bottom: 16px;
@@ -616,7 +670,7 @@
             padding: 20px;
             margin: 32px 0 0;
             border-top: 1px solid var(--border);
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 3px;
             opacity: 0.3;
             font-family: 'Cinzel', serif;
@@ -654,7 +708,7 @@
             background: var(--bg);
             color: var(--text);
             font-family: 'Cinzel', serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 2px;
             padding: 6px 10px;
             border-radius: 999px;
@@ -816,7 +870,7 @@
             display: flex; 
             justify-content: space-between; 
             width: 100%; 
-            font-size: 9px; 
+            font-size: 12px; 
             letter-spacing: 1px; 
             opacity: 0.7; 
             border-bottom: 1px solid var(--border); 
@@ -827,7 +881,7 @@
             display: inline-block;
             padding: 3px 10px;
             border-radius: 12px;
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 700;
@@ -855,7 +909,7 @@
             border-radius: 25px;
             background: rgba(212, 165, 178, 0.05);
             color: var(--text);
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 1px;
             cursor: pointer;
             transition: 0.3s;
@@ -924,7 +978,7 @@
             box-shadow: 0 8px 30px rgba(212, 165, 178, 0.15);
         }
         .vault-name { 
-            font-size: 8px; 
+            font-size: 11px; 
             letter-spacing: 1px; 
             text-transform: uppercase; 
             margin-top: 12px; 
@@ -1058,7 +1112,7 @@
         
         .registry-header-small { 
             font-family: 'Cinzel', serif; 
-            font-size: 9px; 
+            font-size: 12px; 
             letter-spacing: 2px; 
             text-align: center; 
             color: var(--pink); 
@@ -1076,7 +1130,7 @@
             border-radius: 15px; 
             background: rgba(212, 165, 178, 0.07); 
             color: var(--text); 
-            font-size: 9px;
+            font-size: 12px;
             box-sizing: border-box;
             transition: 0.2s;
         }
@@ -1088,7 +1142,7 @@
         
         .registry-message { 
             text-align: center; 
-            font-size: 8px; 
+            font-size: 11px; 
             margin-top: 8px; 
             opacity: 0.8;
             color: var(--pink);
@@ -1099,7 +1153,7 @@
 
 .scoreboard-header-small { 
     font-family: 'Cinzel', serif; 
-    font-size: 9px; 
+    font-size: 12px; 
     letter-spacing: 2px; 
     text-align: center; 
     color: var(--pink); 
@@ -1133,7 +1187,7 @@
     background: linear-gradient(135deg, rgba(212, 165, 178, 0.12), rgba(212, 165, 178, 0.06));
     border: 1px solid rgba(212, 165, 178, 0.25); 
     border-radius: 12px; 
-    font-size: 8px;
+    font-size: 11px;
     transition: 0.2s;
 }
 .scoreboard-item:hover {
@@ -1159,7 +1213,7 @@ body.dark-mode .scoreboard-item.current {
     color: var(--pink); 
     width: 18px; 
     text-align: center;
-    font-size: 8px;
+    font-size: 11px;
 }
 
 .scoreboard-name { 
@@ -1175,7 +1229,7 @@ body.dark-mode .scoreboard-item.current {
 .scoreboard-xp { 
     font-weight: 700; 
     color: var(--pink);
-    font-size: 8px;
+    font-size: 11px;
 }
         
         /* ── SELECTION BAG — LUXURY CONCIERGE CART ─────────────────── */
@@ -1202,7 +1256,7 @@ body.dark-mode .scoreboard-item.current {
             height: 14px;
             background: var(--pink);
             border-radius: 50%;
-            font-size: 7px;
+            font-size: 11px;
             font-family: 'Cinzel', serif;
             color: #fff;
             display: flex;
@@ -1297,7 +1351,7 @@ body.dark-mode .scoreboard-item.current {
         .bag-header-left {}
         .bag-drawer-eyebrow {
             font-family: 'Cinzel', serif;
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 4px;
             color: var(--pink);
         }
@@ -1311,7 +1365,7 @@ body.dark-mode .scoreboard-item.current {
         }
         body.dark-mode .bag-drawer-headline { color: #ffffff; }
         .bag-item-tally {
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 2px;
             color: var(--pink);
             margin-top: 2px;
@@ -1345,7 +1399,7 @@ body.dark-mode .scoreboard-item.current {
             border-radius: 10px;
             padding: 11px 14px;
             font-family: 'Cinzel', serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 2px;
             color: #1a1a1a;
             outline: none;
@@ -1354,7 +1408,7 @@ body.dark-mode .scoreboard-item.current {
             min-height: 44px;
         }
         body.dark-mode .bag-name-input { color: #e0e0e0; background: rgba(212,165,178,0.05); }
-        .bag-name-input::placeholder { opacity: 0.35; font-size: 8px; }
+        .bag-name-input::placeholder { opacity: 0.35; font-size: 11px; }
         .bag-name-input:focus { border-color: var(--pink); }
 
         /* Scrollable items */
@@ -1390,7 +1444,7 @@ body.dark-mode .scoreboard-item.current {
         }
         body.dark-mode .bag-empty-hed { color: #ffffff; }
         .bag-empty-dek {
-            font-size: 9px;
+            font-size: 12px;
             color: rgba(212,165,178,0.5);
             letter-spacing: 1px;
             line-height: 1.9;
@@ -1421,7 +1475,7 @@ body.dark-mode .scoreboard-item.current {
         /* Item name — dir=auto handles Hebrew/English */
         .bag-item-name {
             font-family: 'Cinzel', serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 0.5px;
             color: #1a1a1a;
             white-space: nowrap;
@@ -1432,7 +1486,7 @@ body.dark-mode .scoreboard-item.current {
         body.dark-mode .bag-item-name { color: #ffffff; }
 
         .bag-item-grade {
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 2px;
             color: var(--pink);
             margin-bottom: 4px;
@@ -1446,7 +1500,7 @@ body.dark-mode .scoreboard-item.current {
         }
         body.dark-mode .bag-item-price { color: #ffffff; }
         .bag-item-tbd {
-            font-size: 7px;
+            font-size: 11px;
             color: rgba(212,165,178,0.55);
             letter-spacing: 2px;
         }
@@ -1519,7 +1573,7 @@ body.dark-mode .scoreboard-item.current {
             margin-bottom: 3px;
         }
         .bag-total-label {
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 3px;
             color: var(--pink);
             text-transform: uppercase;
@@ -1532,7 +1586,7 @@ body.dark-mode .scoreboard-item.current {
         }
         body.dark-mode .bag-total-amount { color: #ffffff; }
         .bag-total-note {
-            font-size: 7px;
+            font-size: 11px;
             color: rgba(212,165,178,0.5);
             letter-spacing: 2px;
             margin-bottom: 14px;
@@ -1546,7 +1600,7 @@ body.dark-mode .scoreboard-item.current {
             border: none;
             border-radius: 14px;
             font-family: 'Cinzel', serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 3px;
             color: #fff;
             cursor: pointer;
@@ -1572,7 +1626,7 @@ body.dark-mode .scoreboard-item.current {
 
         .bag-fine-print {
             text-align: center;
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 1px;
             color: rgba(212,165,178,0.45);
             margin-top: 10px;
@@ -1599,7 +1653,7 @@ body.dark-mode .scoreboard-item.current {
             border: 1px solid rgba(212,165,178,0.4);
             border-radius: 50px;
             font-family: 'Cinzel', serif;
-            font-size: 8px;
+            font-size: 11px;
             letter-spacing: 3px;
             color: var(--pink);
             cursor: pointer;
@@ -1625,10 +1679,10 @@ body.dark-mode .scoreboard-item.current {
         @media (max-width: 600px) {
             .top-ruler .serif { display: none; }
             nav { gap: 2px 8px !important; padding: 10px 6px !important; flex-wrap: wrap !important; }
-            .nav-link { font-size: 9.5px !important; letter-spacing: 1px !important; padding: 8px 2px !important; opacity: 1 !important; }
+            .nav-link { font-size: 11px !important; letter-spacing: 1px !important; padding: 8px 2px !important; opacity: 1 !important; }
         }
         @media (max-width: 380px) {
-            .nav-link { font-size: 8.5px !important; }
+            .nav-link { font-size: 11px !important; }
         }
 
         /* MOBILE LAB: hide fixed floaters entirely — no overlap */
@@ -1655,7 +1709,7 @@ body.dark-mode .scoreboard-item.current {
             box-shadow: 0 8px 28px rgba(0,0,0,0.07), 0 2px 8px rgba(212,165,178,0.18);
             z-index: 10001 !important;       /* ABOVE logo container so it stays clickable */
             overflow: hidden;
-            font-size: 9px;
+            font-size: 12px;
             pointer-events: auto !important;
             display: none;
             flex-direction: column;
@@ -1673,7 +1727,7 @@ body.dark-mode .scoreboard-item.current {
         .lab-scoreboard-float * { pointer-events: auto; }
 
         .scoreboard-header-small { 
-            font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 1px; 
+            font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1px; 
             text-align: center; color: var(--pink); margin-bottom: 8px; 
             text-transform: uppercase; flex-shrink: 0;
         }
@@ -1688,7 +1742,7 @@ body.dark-mode .scoreboard-item.current {
             display: flex; align-items: center; justify-content: space-between;
             padding: 6px 8px; margin-bottom: 4px;
             background: rgba(212,165,178,0.05); border: 1px solid rgba(212,165,178,0.1);
-            border-radius: 10px; font-size: 7px;
+            border-radius: 10px; font-size: 11px;
         }
         .scoreboard-item.current { background: rgba(212,165,178,0.18); border-color: rgba(212,165,178,0.5); }
         .scoreboard-rank { font-family: 'Cinzel', serif; font-weight: 700; color: var(--pink); width: 20px; text-align: center; }
@@ -1696,15 +1750,15 @@ body.dark-mode .scoreboard-item.current {
         .scoreboard-xp { font-weight: 600; opacity: 0.8; }
 
         .registry-header-small { 
-            font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 1px; 
+            font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1px; 
             text-align: center; color: var(--pink); margin-bottom: 8px; text-transform: uppercase; 
         }
         .registry-input { 
             width: 100%; padding: 8px 10px; margin-bottom: 8px; 
             border: 1px solid rgba(212,165,178,0.2); border-radius: 15px; 
-            background: rgba(212,165,178,0.05); color: var(--text); font-size: 8px; 
+            background: rgba(212,165,178,0.05); color: var(--text); font-size: 11px; 
         }
-        .registry-message { text-align: center; font-size: 7px; margin-top: 8px; opacity: 0.7; }
+        .registry-message { text-align: center; font-size: 11px; margin-top: 8px; opacity: 0.7; }
 
 
 
@@ -1716,7 +1770,7 @@ body.dark-mode .scoreboard-item.current {
             color: rgba(44,24,16,0.3) !important;
             cursor: not-allowed !important;
             font-family: 'Cinzel', serif;
-            font-size: 7px;
+            font-size: 11px;
             letter-spacing: 2px;
             border-radius: 50px;
             padding: 6px 10px;
@@ -1740,7 +1794,7 @@ body.dark-mode .scoreboard-item.current {
         <div class="serif">PINK LEAF // COLLECTION</div>
         <div style="display:flex; align-items:center; gap:14px;">
             <button class="lang-toggle-btn" onclick="toggleLang()" aria-label="Hebrew / English">HE/EN</button>
-            <div id="xp-counter" class="font-bold text-[10px] tracking-widest">XP: 0</div>
+            <div id="xp-counter" class="font-bold text-[12px] tracking-widest">XP: 0</div>
             <button class="bag-icon-btn" onclick="toggleBag(true)" aria-label="Shopping Bag" style="position:relative; flex-shrink:0;">
                 <svg class="bag-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke-linejoin="round"/>
@@ -1817,18 +1871,32 @@ body.dark-mode .scoreboard-item.current {
 
     <div class="lab-registry-float lab-only" id="registry-float">
         <h3 class="registry-header-small" id="registry-title">הצטרף לדירוג</h3>
-        <form onsubmit="registerUser(event)">
-            <input type="text" id="reg-name" class="registry-input" placeholder="שמך" required maxlength="30">
-            <input type="email" id="reg-email" class="registry-input" placeholder="אימייל" required>
-            <button type="submit" class="btn" style="font-size: 8px; padding: 8px;">הרשמה</button>
-        </form>
+
+        <!-- Show when NOT logged in -->
+        <div id="reg-form-wrap">
+            <p id="reg-hint" style="font-size:11px; opacity:0.6; margin-bottom:8px; line-height:1.4;">Register once to track your XP and appear on the leaderboard</p>
+            <form onsubmit="registerUser(event)">
+                <input type="text" id="reg-name" class="registry-input" placeholder="שמך / Your Name" required maxlength="30">
+                <input type="email" id="reg-email" class="registry-input" placeholder="אימייל / Email" required>
+                <button type="submit" class="btn" style="font-size: 12px; padding: 9px 12px; width:100%; margin-top:4px;">Join Rankings ✦</button>
+            </form>
+        </div>
+
+        <!-- Show when logged in -->
+        <div id="reg-logged-in" style="display:none; text-align:center; padding:4px 0;">
+            <div style="font-size:20px; margin-bottom:4px;">🌿</div>
+            <div id="reg-logged-name" style="font-family:'Cinzel',serif; font-size:12px; color:var(--pink); letter-spacing:2px; font-weight:700;"></div>
+            <div id="reg-logged-xp" style="font-size:11px; opacity:0.6; margin-top:4px;"></div>
+            <button onclick="logoutUser()" style="margin-top:8px; background:none; border:1px solid var(--border); border-radius:50px; padding:5px 12px; font-size:10px; color:var(--text); opacity:0.5; cursor:pointer; letter-spacing:1px;">change user</button>
+        </div>
+
         <p id="reg-message" class="registry-message"></p>
     </div>
 
     <div class="lab-scoreboard-float lab-only" id="scoreboard-float">
         <h3 class="scoreboard-header-small" id="scoreboard-title">דירוג המעבדה</h3>
         <div class="scoreboard-list" id="scoreboard-list">
-            <div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 7px;">Loading...</div>
+            <div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 11px;">Loading...</div>
         </div>
     </div>
 
@@ -1846,10 +1914,22 @@ body.dark-mode .scoreboard-item.current {
     <main id="page-intro" class="max-w-2xl mx-auto p-6 text-center">
         <div class="p-16 border border-[var(--border)] rounded-[70px] bg-[var(--mellow-pink)] backdrop-blur-md mb-10">
             <div id="intro-content" class="text-[14px] opacity-90 space-y-6 tracking-[1px] leading-relaxed"></div>
-            <div class="flex justify-center gap-6 mt-8">
+            <div class="flex justify-center gap-6 mt-8 flex-wrap">
+                <button class="btn" style="min-width:160px; font-size:13px;" onclick="showPage('store')">View Plants ✦</button>
                 <button class="btn max-w-[180px]" onclick="window.open('https://wa.me/972559116990')">שאל אותנו</button>
                 <button class="btn max-w-[180px]" onclick="window.open('https://www.instagram.com/pinkleaf.studio')">INSTAGRAM</button>
             </div>
+        </div>
+
+        <!-- Game Teaser -->
+        <div onclick="showPage('lab')" style="cursor:pointer; border:1px solid var(--border); border-radius:40px; padding:28px 32px; text-align:center; background:var(--mellow-pink); transition:transform 0.2s, box-shadow 0.2s; backdrop-blur:8px;"
+             onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 32px rgba(var(--pink-rgb,200,100,120),0.18)'"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+            <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:4px; opacity:0.5; margin-bottom:8px;">PINK LEAF LAB</p>
+            <p style="font-size:22px; margin-bottom:8px;">🌿</p>
+            <p style="font-family:'Cinzel',serif; font-size:15px; letter-spacing:2px; color:var(--pink); margin-bottom:6px;">Can you name the plant?</p>
+            <p style="font-size:13px; opacity:0.6; letter-spacing:1px;">Test your botanical knowledge · Earn XP · Climb the leaderboard</p>
+            <p style="font-size:11px; opacity:0.35; margin-top:12px; letter-spacing:2px;">TAP TO PLAY →</p>
         </div>
     </main>
 
@@ -1886,7 +1966,7 @@ body.dark-mode .scoreboard-item.current {
             <div class="text-center mb-8">
                 <h2 class="serif tracking-[5px] text-[11px] opacity-50 mb-2">PINK LEAF</h2>
                 <h1 class="serif tracking-[3px] text-[18px] mb-3">BOTANICAL ENCYCLOPEDIA</h1>
-                <p class="text-[9px] opacity-40 tracking-[3px]">MASTERCLASS SERIES · 5 TECHNICAL GUIDES</p>
+                <p class="text-[12px] opacity-40 tracking-[3px]">MASTERCLASS SERIES · 5 TECHNICAL GUIDES</p>
                 <div class="mt-5" style="height:1px; background: linear-gradient(to right, transparent, var(--pink), transparent);"></div>
             </div>
 
@@ -1929,7 +2009,7 @@ body.dark-mode .scoreboard-item.current {
                     background: linear-gradient(135deg, rgba(212,165,178,0.15), rgba(212,165,178,0.05));
                     border: 1px solid rgba(212,165,178,0.4);
                     border-radius: 50px; padding: 8px 16px;
-                    font-family:'Cinzel',serif; font-size:8px; letter-spacing:2px;
+                    font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px;
                     color:var(--pink); cursor:pointer; transition:0.3s;
                     white-space:nowrap;">
                     ✦ SOCIAL POST
@@ -1952,7 +2032,7 @@ body.dark-mode .scoreboard-item.current {
                     background:none; border:none; font-size:18px;
                     cursor:pointer; opacity:0.5; color:var(--text);">✕</button>
                 <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--pink); margin-bottom:6px;">SOCIAL POST GENERATOR</div>
-                <div style="font-size:9px; opacity:0.5; letter-spacing:1px; margin-bottom:20px;">AI-generated from this article · Edit before posting</div>
+                <div style="font-size:12px; opacity:0.5; letter-spacing:1px; margin-bottom:20px;">AI-generated from this article · Edit before posting</div>
                 
                 <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
                     <button onclick="generatePost('instagram','he')" class="social-gen-btn">📸 Instagram עברית</button>
@@ -1960,7 +2040,7 @@ body.dark-mode .scoreboard-item.current {
                     <button onclick="generatePost('whatsapp','he')" class="social-gen-btn">💬 WhatsApp עברית</button>
                 </div>
 
-                <div id="social-loading" style="display:none; text-align:center; padding:30px 0; font-size:9px; letter-spacing:2px; opacity:0.5; font-family:'Cinzel',serif;">
+                <div id="social-loading" style="display:none; text-align:center; padding:30px 0; font-size:12px; letter-spacing:2px; opacity:0.5; font-family:'Cinzel',serif;">
                     GENERATING POST...
                 </div>
 
@@ -1978,11 +2058,11 @@ body.dark-mode .scoreboard-item.current {
                         width:100%; margin-top:12px; padding:12px;
                         background:var(--pink); color:#fff;
                         border:none; border-radius:50px;
-                        font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px;
+                        font-family:'Cinzel',serif; font-size:12px; letter-spacing:3px;
                         cursor:pointer; transition:0.3s;">
                         COPY TO CLIPBOARD
                     </button>
-                    <div id="copy-confirm" style="text-align:center; font-size:8px; color:var(--pink); margin-top:8px; opacity:0; transition:0.3s;">✓ COPIED</div>
+                    <div id="copy-confirm" style="text-align:center; font-size:11px; color:var(--pink); margin-top:8px; opacity:0; transition:0.3s;">✓ COPIED</div>
                 </div>
             </div>
         </div>
@@ -2103,8 +2183,8 @@ body.dark-mode .scoreboard-item.current {
 
 
         const intros = {
-            en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is a curated botanical studio for plant lovers who refuse the ordinary.</p><p>We specialize in importing, propagating, and preserving rare, highly diverse exotic plants — living pieces carefully selected and delivered after meticulous cultivation and a true love for the botanical world.</p><p>Every plant here is a statement — unique, one of a kind, and chosen for the story it tells.</p></div>`,
-            he: `<div dir="rtl"><p><strong>Pink Leaf</strong> הוא סטודיו בוטני אוצר לחובבי הצמחים שלא מתפשרים על רגיל בכלל.</p><p>אנחנו מתמחים בייבוא, ריבוי ושימור של צמחים אקזוטיים נדירים ומגוונים במיוחד — פריטים חיים שנבחרים בקפידה ומגיעים אליכם אחרי תהליך טיפוח מוקפד ואהבה אמיתית לעולם הבוטני.</p><p>כל צמח אצלנו הוא אמירה — ייחודי, חד-פעמי, ונבחר בשביל הסיפור שהוא מספר.</p></div>`
+            en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is Israel's destination for rare, collector-grade aroids — Tissue Culture, variegated Monstera, Alocasia, and Philodendron that you simply won't find anywhere else.</p><p>Every plant is imported, propagated, and hardened in-house using professional TC protocols. What arrives at your door is stable, healthy, and ready to grow — not a gamble from a random seller.</p><p>Current stock from <strong>₪75</strong>. Free delivery in Tel Aviv. WhatsApp ordering in under 60 seconds. <span style="opacity:0.6;font-size:0.9em;">Limited quantities — serious collectors only.</span></p></div>`,
+            he: `<div dir="rtl"><p><strong>Pink Leaf</strong> היא היעד הבוטני של ישראל לצמחים נדירים ברמת קולקטור — תרבית רקמה, Monstera וריאגטית, Alocasia ו-Philodendron שפשוט לא תמצאו בשום מקום אחר.</p><p>כל צמח מיובא, מורבה ומאוקלם אצלנו בפרוטוקולי TC מקצועיים. מה שמגיע אליכם הוא יציב, בריא ומוכן לצמוח — לא הימור ממוכר אקראי.</p><p>מלאי נוכחי מ-<strong>₪75</strong>. משלוח חינם בתל אביב. הזמנה בוואטסאפ בפחות מ-60 שניות. <span style="opacity:0.6;font-size:0.9em;">כמויות מוגבלות — רק לקולקטורים רציניים.</span></p></div>`
         };
 
         const SUBSTRATE_DB = {
@@ -2136,7 +2216,9 @@ body.dark-mode .scoreboard-item.current {
     // 1. Immediate Screen Update (User sees it instantly)
     const counter = document.getElementById('xp-counter');
     if(counter) counter.innerText = `XP: ${xp}`;
-    
+    const loggedXp = document.getElementById('reg-logged-xp');
+    if (loggedXp && currentUserName) loggedXp.innerText = `XP: ${xp} ✦`;
+
     // 2. Save to local memory
     localStorage.setItem('pl_xp', xp);
 
@@ -2152,6 +2234,34 @@ body.dark-mode .scoreboard-item.current {
 }
 
         
+        function updateRegistryLoginState() {
+            const formWrap = document.getElementById('reg-form-wrap');
+            const loggedInDiv = document.getElementById('reg-logged-in');
+            const loggedName = document.getElementById('reg-logged-name');
+            const loggedXp = document.getElementById('reg-logged-xp');
+            const title = document.getElementById('registry-title');
+            if (!formWrap || !loggedInDiv) return;
+            if (currentUserName) {
+                formWrap.style.display = 'none';
+                loggedInDiv.style.display = 'block';
+                if (loggedName) loggedName.innerText = currentUserName;
+                if (loggedXp) loggedXp.innerText = `XP: ${xp} ✦`;
+                if (title) title.innerText = 'הדירוג שלך';
+            } else {
+                formWrap.style.display = 'block';
+                loggedInDiv.style.display = 'none';
+                if (title) title.innerText = 'הצטרף לדירוג';
+            }
+        }
+
+        function logoutUser() {
+            localStorage.removeItem('pl_user');
+            localStorage.removeItem('pl_user_doc_id');
+            currentUserName = null;
+            currentUserDocId = null;
+            updateRegistryLoginState();
+        }
+
         let isRegistering = false;
         async function registerUser(event) {
             event.preventDefault();
@@ -2197,10 +2307,9 @@ body.dark-mode .scoreboard-item.current {
                     document.getElementById('reg-message').innerText = `Welcome! ✨`;
                 }
                 setTimeout(() => {
-                    document.getElementById('reg-name').value = '';
-                    document.getElementById('reg-email').value = '';
                     document.getElementById('reg-message').innerText = '';
-                }, 2000);
+                    updateRegistryLoginState();
+                }, 1200);
             } catch (error) {
                 console.error('Registration error:', error);
                 document.getElementById('reg-message').innerText = 'Error. Try again.';
@@ -2294,7 +2403,7 @@ body.dark-mode .scoreboard-item.current {
                 h += `
                 <div class="store-card ${i===0?'card-focus':''}" style="transform:rotateY(${i*ang}deg) translateZ(280px)">
                     ${badge}
-                    <div class="portal"><img src="plants/${item.id}.jpg" class="w-full h-full object-cover" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
+                    <div class="portal"><img src="plants/${item.id}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-4">${item.name}</p>
                     ${dropdownHTML}
                     <div class="w-full space-y-2 mb-6">
@@ -2325,7 +2434,7 @@ body.dark-mode .scoreboard-item.current {
     let h = ""; 
     Object.keys(MASTER_DB).forEach(id => {
         if(MASTER_DB[id].family === f){ 
-            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" class="w-full h-full object-cover" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
+            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
         }
     });
     document.getElementById('vault-grid').innerHTML = h;
@@ -2335,6 +2444,8 @@ body.dark-mode .scoreboard-item.current {
         function renderCareProducts() {
             let html = "";
             Object.entries(SUBSTRATE_DB).forEach(([key, item]) => {
+                // Define imgPath BEFORE the price loop so it's available inside the onClick handlers
+                const imgPath = item.img || `plants/care/substrate/${key}.jpg`;
                 let priceRows = "";
                 Object.entries(item.prices).forEach(([size, price]) => {
                     const label = size === 'l10' ? '10 ליטר' : (size === 'l2' ? '2 ליטר' : '1 ליטר');
@@ -2344,8 +2455,8 @@ body.dark-mode .scoreboard-item.current {
                         priceRows += `<div class="flex justify-between items-center border-b border-[var(--border)] py-1">
                             <span>${label}</span>
                             <span class="font-bold text-[var(--pink)]">${price}₪</span>
-                            <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:7px;margin-top:0;min-height:36px;"
-                                onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}')">
+                            <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:11px;margin-top:0;min-height:36px;"
+                                onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}','${imgPath}')">
                                 + BAG
                             </button>
                         </div>`;
@@ -2358,8 +2469,6 @@ body.dark-mode .scoreboard-item.current {
                         </div>`;
                     }
                 });
-                // Fix image path — images are in plants/ folder
-                const imgPath = item.img || `plants/care/substrate/${key}.jpg`;
                 html += `
                 <div class="care-product-card">
                     <div class="portal mx-auto w-32 h-32 mb-4">
@@ -2367,20 +2476,20 @@ body.dark-mode .scoreboard-item.current {
                             onerror="this.src='logo-dark.png'">
                     </div>
                     <h3 class="serif text-[12px] tracking-[2px] text-center mb-3">${item.name}</h3>
-                    <p class="text-[9px] leading-relaxed opacity-70 mb-4 text-right" dir="rtl">${item.desc}</p>
-                    <div class="text-[8px] space-y-1 w-full">${priceRows}</div>
+                    <p class="text-[12px] leading-relaxed opacity-70 mb-4 text-right" dir="rtl">${item.desc}</p>
+                    <div class="text-[11px] space-y-1 w-full">${priceRows}</div>
                 </div>`;
                 // priceRows uses addCareToCart(key, ...) which now passes key as id for thumb lookup
             });
             document.getElementById('care-products-grid').innerHTML = html;
         }
 
-        function addCareToCart(id, name, price, size) {
-            const existing = bag.find(i => i.id === `care_${id}` && i.grade === size);
+        function addCareToCart(id, name, price, size, img) {
+            const existing = bag.find(i => i.id === id && i.isCare && i.grade === size);
             if (existing) {
                 existing.qty += 1;
             } else {
-                bag.push({ id, name, grade: size, price, qty: 1, isCare: true });
+                bag.push({ id, name, grade: size, price, qty: 1, isCare: true, img: img || `plants/${id}.jpg` });
             }
             saveBag();
             updateBagUI();
@@ -2413,10 +2522,15 @@ body.dark-mode .scoreboard-item.current {
     choices.sort(() => Math.random() - 0.5);
     currentQuestion = { id: qId, correctAnswer: plant.name };
     
+    const loginHint = currentUserName
+        ? ''
+        : `<p style="font-size:11px; opacity:0.45; text-align:center; margin-bottom:8px; letter-spacing:1px;">Register on the side to save your XP ✦</p>`;
+
     document.getElementById('lab-box').innerHTML = `
-        <p class="serif text-[10px] tracking-[4px] opacity-40 mb-2">${plant.family.toUpperCase()}</p>
-        <p class="serif text-[10px] tracking-[4px] opacity-40 mb-4">XP: ${xp} | STREAK: ${streak}/5</p>
-        <div class="portal mx-auto mb-10 w-52 h-52"><img src="plants/${qId}.jpg" class="w-full h-full object-cover" onerror="this.src='logo-dark.png'"></div>
+        <p class="serif" style="font-size:12px; letter-spacing:4px; opacity:0.4; margin-bottom:6px;">${plant.family.toUpperCase()}</p>
+        <p class="serif" style="font-size:12px; letter-spacing:3px; opacity:0.4; margin-bottom:16px;">XP: ${xp} &nbsp;|&nbsp; STREAK: ${streak}/5</p>
+        <div class="portal mx-auto mb-10 w-52 h-52"><img src="plants/${qId}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
+        ${loginHint}
         <div class="flex flex-col gap-5">
             ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
         </div>`;
@@ -2632,8 +2746,9 @@ function checkLab(choiceIndex) {
                 const priceStr = item.price !== null
                     ? (isHe ? `${(item.price * item.qty).toLocaleString()}₪` : `₪${(item.price * item.qty).toLocaleString()}`)
                     : null;
-                // isCare items don't have a plant image
-                const imgSrc = item.isCare ? `plants/${item.id.replace('care_','')}.jpg` : `plants/${item.id}.jpg`;
+                const imgSrc = item.isCare
+                    ? (item.img || `plants/${item.id}.jpg`)
+                    : `plants/${item.id}.jpg`;
                 return `
                 <div class="bag-item">
                     <img class="bag-item-thumb"
@@ -2719,480 +2834,56 @@ function checkLab(choiceIndex) {
         // ───────────────────────────────────────────────────────────────
 
 
-        // ─── ENCYCLOPEDIA — loads from data/entries.json ────────────────
+        // ─── ENCYCLOPEDIA — loads from entries.json ────────────────────
         let ENCYC_ARTICLES = [];
+        let _encyclopediaLoading = false;
+        let _pendingSlug = null;
         let activeEncycTag = 'all';
 
-        // Encyclopedia data — embedded directly (no fetch needed)
-        const ENCYCLOPEDIA_DATA = {
-  "meta": {
-    "project": "Pink Leaf Botanical Encyclopedia",
-    "version": "1.0.0",
-    "language_primary": "he",
-    "language_secondary": "en",
-    "tone": "Cynical Luxury — expert, elite, slightly sharp",
-    "generated": "2026-02-28",
-    "seo_master_keywords": [
-      "תרבית רקמה",
-      "צמחים נדירים",
-      "Tissue Culture",
-      "TC hardening protocol",
-      "Monstera Albo care",
-      "Alocasia variegated",
-      "Philodendron rare",
-      "אקלימטיזציה צמחים",
-      "מצע שתילה אארואיד",
-      "VPD plants",
-      "PPFD variegated",
-      "rare aroid collector",
-      "deflask TC plants",
-      "ריקבון שורשים",
-      "וריאגציה יציבה",
-      "meristem inspection",
-      "chimeric variegation",
-      "Fluval Stratum TC",
-      "Orchiata bark aroid",
-      "צמחי אוור נדירים ישראל"
-    ]
-  },
-  "entries": [
-    {
-      "id": 1,
-      "slug": "post-flask-sterilization",
-      "tag_he": "פרוטוקול עיקור",
-      "tag_en": "Sterilization Protocol",
-      "title_he": "חיטוי שורשים לאחר הצנצנת — פרוטוקול ה-TC",
-      "title_en": "Post-Flask Sterilization — The Tissue Culture Protocol",
-      "subtitle_he": "מה שלא מנקים, מרקיב. מה שמרקיב, מת.",
-      "subtitle_en": "What you don't clean will rot. What rots, dies.",
-      "meta_description_he": "מדריך מקצועי לחיטוי שורשי Tissue Culture באמצעות H₂O₂ ביחס 1:4, הסרת Agar ידנית, ומניעת עובש. פרוטוקול Pink Leaf הרשמי לצמחים נדירים.",
-      "meta_description_en": "Professional guide to sterilizing Tissue Culture roots using H₂O₂ at 1:4 ratio, manual Agar removal, and mold prevention. The official Pink Leaf SOP for rare aroids.",
-      "seo_keywords": [
-        "tissue culture sterilization",
-        "deflask TC plants",
-        "H₂O₂ plant care",
-        "hydrogen peroxide plant soak",
-        "agar removal aroid",
-        "post-flask protocol",
-        "תרבית רקמה חיטוי",
-        "הוצאת TC מהצנצנת",
-        "ריקבון שורשים מניעה",
-        "Monstera Albo TC",
-        "rare plant tissue culture Israel",
-        "צמחים נדירים ישראל"
-      ],
-      "content_he": "כשצמח Tissue Culture יוצא מהצנצנת, הוא לא 'צמח'. הוא ניסוי. הוא גדל בסביבה סטרילית מוחלטת — ג'ל Agar עשיר בסוכרים ופיטוהורמונים, ללא חיידקים, ללא פטריות, ללא כל דבר שיש באוויר שלנו. עכשיו אתם חושפים אותו לעולם האמיתי. אם לא תנקו אותו כמו שצריך, תוך שבוע יהיה לכם עיסה שחורה. זה לא מזל רע — זה פרוטוקול שגוי.\n\nהבעיה היא ה-Agar. הסוכר שנשאר מחובר לשורשים הוא ארוחת שלוש קורסים לעובש. מספיק שאריות בגודל של ראש סיכה כדי לספק קולוניה פטרייתית תוך 48–72 שעות בתנאי לחות גבוהה. וגדלנים מתחילים — ולא רק הם — מפספסים שאריות כאלה כי ה-Agar שקוף.\n\nפרוטוקול Pink Leaf הרשמי: הכינו תמיסת עיקור ביחס קפדני של 1:4 — מי חמצן 3% H₂O₂ לתוך מים מזוקקים. 50 מ\"ל H₂O₂ ל-200 מ\"ל מים מזוקקים. לא מי ברז. לא 'בערך'. מזוקקים. השקיעו את הצמח כולו למשך 10 דקות בדיוק. לא 5, לא 15. 10. פחות מזה לא מספיק לעקר, יותר מזה שורף את קצות השורשים הצעירים שהם הנכסים הכי חשובים שיש לצמח כרגע.\n\nלאחר השרייה — ולפני שאתם מניחים אותו על כל מצע — עבדו עם מברשת ציור רכה (fine artist's paintbrush, מספר 2–4) בתנועות עדינות לאורך כל השורשים. המטרה: הסרת כל שאריות Agar ממפשעת השורשים — ה-root crotch, החיבור בין שורש לגבעול. זה המקום שבו Agar נוטה להסתתר. עבדו תחת אור חזק. בלי זכוכית מגדלת? קחו אחת. ה-Agar שקוף-לחלוחית ובגודל של טיפות מים — לא תראו אותו בתאורה רגילה.\n\nשטפו במים מזוקקים נקיים ושתלו מיד. לא להניח גלוי לאוויר. לצמח TC אין מערכת חיסון — כל דקת חשיפה לאוויר פתוח היא הזמנה לבעיות.",
-      "content_en": "When a Tissue Culture plant exits the flask, it is not a 'plant.' It is an experiment. It was raised in a completely sterile environment — an Agar gel rich in sugars and phytohormones, without bacteria, without fungi, without anything present in our air. You are now exposing it to the real world. If you don't clean it correctly, within a week you will have black mush. This is not bad luck — it is a failed protocol.\n\nThe problem is the Agar. The sugar residue remaining attached to the roots is a three-course meal for mold. A single pinhead-sized remnant is sufficient to fuel a fungal colony within 48–72 hours under high humidity. And beginner growers — and not only beginners — miss such remnants because Agar is transparent.\n\nThe official Pink Leaf protocol: prepare a sterilization solution at a precise 1:4 ratio — 3% H₂O₂ Hydrogen Peroxide into distilled water. 50ml H₂O₂ to 200ml distilled water. Not tap water. Not 'approximately.' Distilled. Submerge the entire plant for exactly 10 minutes. Not 5, not 15. Ten. Less than that is insufficient for sterilization; more than that burns the tender root tips — which are the most valuable asset the plant has at this moment.\n\nAfter soaking — and before placing on any substrate — work with a soft fine artist's paintbrush (size 2–4) in gentle strokes along all the roots. The goal: remove every trace of Agar from the root crotch — the junction between root and stem. This is where Agar tends to hide. Work under strong light. No magnifying glass? Get one. Agar is translucent-wet and the size of water droplets — you will not see it under regular lighting.\n\nRinse with clean distilled water and transplant immediately. Do not leave exposed to open air. A TC plant has no immune system — every minute of open-air exposure is an invitation to disaster.",
-      "sop": {
-        "title_he": "SOP רשמי — חיטוי TC שלב אחר שלב",
-        "title_en": "Official SOP — TC Sterilization Step by Step",
-        "steps_he": [
-          "הכן 250 מ\"ל תמיסת עיקור: 50 מ\"ל H₂O₂ 3% + 200 מ\"ל מים מזוקקים (יחס 1:4).",
-          "השקע את הצמח כולו — שורשים ועלים — למשך 10 דקות בדיוק.",
-          "הוצא ועבד עם מברשת ציור רכה על כל השורשים, תוך תשומת לב מרבית ל-root crotch.",
-          "עבד תחת מנורת עבודה חזקה. ה-Agar שקוף — תחפש כל שאריות לחלוחיות.",
-          "שטוף במים מזוקקים נקיים.",
-          "שתל מיד ב-Fluval Stratum או מצע TC מתאים. אטום בכיפת לחות."
-        ],
-        "steps_en": [
-          "Prepare 250ml sterilization solution: 50ml 3% H₂O₂ + 200ml distilled water (1:4 ratio).",
-          "Submerge the entire plant — roots and leaves — for exactly 10 minutes.",
-          "Remove and work a soft artist's paintbrush along all roots, with maximum attention to the root crotch.",
-          "Work under a strong work lamp. Agar is transparent — look for any moist residue.",
-          "Rinse with clean distilled water.",
-          "Transplant immediately into Fluval Stratum or appropriate TC substrate. Seal in humidity dome."
-        ]
-      },
-      "formula": "50ml H₂O₂ (3%) + 200ml H₂O distilled = Sterilization Bath",
-      "warnings_he": [
-        "ריכוז H₂O₂ מעל 3% יגרום נזק בלתי הפיך לשורשים.",
-        "שרייה מעל 10 דקות שורפת את קצות השורשים.",
-        "שאריות Agar = ריקבון מובטח. אל תתפשרו על הניקוי."
-      ],
-      "warnings_en": [
-        "H₂O₂ concentration above 3% causes irreversible root damage.",
-        "Soaking beyond 10 minutes burns the root tips.",
-        "Agar residue = guaranteed rot. Do not compromise on cleaning."
-      ]
-    },
-    {
-      "id": 2,
-      "slug": "21-day-hardening-sop",
-      "tag_he": "SOP הסתגלות",
-      "tag_en": "Acclimation SOP",
-      "title_he": "תהליך האקלימטיזציה — SOP 21 הימים",
-      "title_en": "The Acclimation Process — The 21-Day SOP",
-      "subtitle_he": "הצמח לא נכשל. הגדלן נכשל.",
-      "subtitle_en": "The plant didn't fail. The grower did.",
-      "meta_description_he": "מדריך שבועי מפורט לאקלימטיזציה של צמחי Tissue Culture — לוח burping, ניהול לחות וכיפות, ואבחנה בין שוק השתלה לריקבון שורשים.",
-      "meta_description_en": "Detailed weekly guide to acclimating Tissue Culture plants — burping schedule, humidity dome management, and diagnosing transplant shock vs. root rot.",
-      "seo_keywords": [
-        "TC hardening protocol",
-        "tissue culture acclimation",
-        "humidity dome burping",
-        "deflask aroid step by step",
-        "transplant shock vs root rot",
-        "21 day TC SOP",
-        "אקלימטיזציה תרבית רקמה",
-        "כיפת לחות צמחים",
-        "שוק השתלה אארואיד",
-        "Alocasia TC care",
-        "Philodendron TC hardening",
-        "rare plant acclimation Israel"
-      ],
-      "content_he": "הסטומטות של צמח TC הן בגדר חדשות רעות. הן פתוחות לחלוטין — מעולם לא הוכרחו להתכווץ, מעולם לא חוו לחות מתחת ל-95%. שכבת השעווה המגינה (Cuticular Wax Layer) שאמורה לאטום את פני העלה מפני איבוד מים — כמעט לא קיימת. חשפו צמח כזה לאוויר ביתי רגיל של 40–55% לחות, ובתוך שעות תראו הטמה. זו לא חולשה. זה פיזיולוגיה.\n\nרוב הגדלנים עושים את הטעות הקלאסית: מוציאים את ה-TC מהכיפה מוקדם מדי, רואים הטמה, מבהלים, מוסיפים מים, ומטביעים את השורשים. הבעיה לא הייתה יובש — הבעיה הייתה מהירות המעבר. ה-21 יום קיימים כדי שהצמח יבנה את כל מה שחסר לו: ציפוי שעווה, שורשים חדשים, שריר.\n\nשבוע 1: אטמו את הכיפה. לחלוטין. לא לפתוח — בכלל. הצמח לא זקוק לאוורור עדיין. הוא זקוק ל-95–100% לחות, אור עקיף בלבד, ושקט. בדקו אחרי 7 ימים: שורשים לבנים חדשים = מוכן לשלב הבא. שורשים שחורים = ריקבון, פרוטוקול חיטוי נוסף.\n\nשבוע 2: 'Burping'. פתחו את הכיפה פעמיים ביום — 10 דקות בבוקר, 10 דקות בערב. הגדילו ב-5 דקות כל יומיים. אם הצמח נשמט — אתם מהירים מדי. אטמו, המתינו יומיים, התחילו שוב ממשך קצר יותר. זה תהליך, לא לוח זמנים.\n\nשבוע 3: 30 דקות פתוח בבוקר, 30 בצהריים, 30 בערב. עד סוף השבוע — הסירו את הכיפה לחלוטין, אך שמרו על לחות סביבתית מינימלית של 55% באזור הצמח.\n\nאבחנה קריטית: שוק השתלה (Transplant Shock) נראה כך — עלים צהבהבים, הטמה קלה, שורשים לבנים, הצמח מתאושש תוך 2–4 ימים של לחות מלאה. ריקבון שורשים (Root Rot) נראה כך — ריח של ביצות, שורשים שחורים ורכים, הטמה שמחמירה גם בלחות מלאה. טפלו מיד: הסירו שורשים מתים, חיטוי נוסף ב-H₂O₂, מצע יבש יותר.",
-      "content_en": "The stomata of a TC plant are, in short, bad news. They are fully open — they have never been forced to constrict, never experienced humidity below 95%. The protective Cuticular Wax Layer that is supposed to seal the leaf surface against water loss — barely exists. Expose such a plant to regular indoor air at 40–55% humidity, and within hours you will see wilting. This is not weakness. This is physiology.\n\nMost growers make the classic mistake: they remove the TC from the dome too early, see wilting, panic, add water, and drown the roots. The problem was not dryness — the problem was the speed of transition. The 21 days exist so the plant can build everything it lacks: wax coating, new roots, resilience.\n\nWeek 1: Seal the dome. Completely. Do not open — at all. The plant does not need ventilation yet. It needs 95–100% humidity, indirect light only, and quiet. Check after 7 days: new white roots = ready for the next stage. Black roots = rot, repeat the sterilization protocol.\n\nWeek 2: 'Burping.' Open the dome twice daily — 10 minutes in the morning, 10 minutes in the evening. Increase by 5 minutes every two days. If the plant wilts — you are moving too fast. Reseal, wait two days, restart at a shorter duration. This is a process, not a fixed schedule.\n\nWeek 3: 30 minutes open in the morning, 30 at midday, 30 in the evening. By the end of the week — remove the dome entirely, but maintain a minimum ambient humidity of 55% in the plant's immediate area.\n\nCritical diagnosis: Transplant Shock looks like this — yellowing leaves, mild wilting, white roots, the plant recovers within 2–4 days of full humidity. Root Rot looks like this — swamp-like odor, black and soft roots, wilting that worsens even at full humidity. Act immediately: remove dead roots, repeat H₂O₂ sterilization, use drier substrate.",
-      "sop": {
-        "title_he": "לוח Burping שבועי — SOP רשמי",
-        "title_en": "Weekly Burping Schedule — Official SOP",
-        "steps_he": [
-          "ימים 1–7: כיפה אטומה לחלוטין. לחות 95–100%. אור עקיף בלבד. לא לפתוח.",
-          "ימים 8–9: 2 × 10 דקות פתוח ביום (בוקר + ערב).",
-          "ימים 10–11: 2 × 15 דקות פתוח ביום.",
-          "ימים 12–14: 2 × 20 דקות פתוח ביום. בדיקת שורשים.",
-          "ימים 15–17: 3 × 20 דקות פתוח ביום (בוקר, צהריים, ערב).",
-          "ימים 18–20: 3 × 30 דקות פתוח ביום.",
-          "יום 21: הסרת הכיפה. שמור לחות סביבתית ≥55%."
-        ],
-        "steps_en": [
-          "Days 1–7: Fully sealed dome. Humidity 95–100%. Indirect light only. Do not open.",
-          "Days 8–9: 2 × 10 minutes open per day (morning + evening).",
-          "Days 10–11: 2 × 15 minutes open per day.",
-          "Days 12–14: 2 × 20 minutes open per day. Root inspection.",
-          "Days 15–17: 3 × 20 minutes open per day (morning, midday, evening).",
-          "Days 18–20: 3 × 30 minutes open per day.",
-          "Day 21: Remove dome. Maintain ambient humidity ≥55%."
-        ]
-      },
-      "formula": "Shock → white roots + recovers in humidity | Rot → black roots + worsens regardless",
-      "warnings_he": [
-        "אל תפתחו את הכיפה מתוך 'לבדוק' — כל פתיחה מיותרת היא זעזוע.",
-        "הטמה ≠ ריקבון. אבחנה שגויה הרגה יותר TC מאשר כל טעות אחרת.",
-        "אם הצמח קורס שוב ושוב — הבעיה היא בקצב ה-Burping, לא בצמח."
-      ],
-      "warnings_en": [
-        "Do not open the dome 'just to check' — every unnecessary opening is a shock event.",
-        "Wilting ≠ rot. Misdiagnosis has killed more TC plants than any other mistake.",
-        "If the plant keeps collapsing — the problem is your burping pace, not the plant."
-      ]
-    },
-    {
-      "id": 3,
-      "slug": "engineered-substrates",
-      "tag_he": "הנדסת מצע",
-      "tag_en": "Substrate Engineering",
-      "title_he": "מצע שתילה הנדסי לארוידים נדירים",
-      "title_en": "Engineered Substrate for Rare Aroids",
-      "subtitle_he": "אדמת שתילה היא מוות איטי. זה לא דעה — זה כימיה.",
-      "subtitle_en": "Potting soil is slow death. This is not an opinion — it is chemistry.",
-      "meta_description_he": "פורמולת מצע מקצועית לארוידים נדירים: Orchiata Bark, Perlite, Coconut Coir ביחסים מדויקים. למה Fluval Stratum הוא הסטנדרט ל-TC starts.",
-      "meta_description_en": "Professional substrate formula for rare aroids: Orchiata Bark, Perlite, Coconut Coir in precise ratios. Why Fluval Stratum is the gold standard for TC starts.",
-      "seo_keywords": [
-        "aroid substrate mix",
-        "Orchiata bark aroid",
-        "Fluval Stratum TC plants",
-        "perlite coconut coir aroid",
-        "rare plant soil mix Israel",
-        "chunky aroid mix",
-        "מצע אארואיד",
-        "מצע שתילה צמחים נדירים",
-        "Monstera Albo substrate",
-        "Alocasia soil mix",
-        "TC starter substrate",
-        "well-draining aroid soil"
-      ],
-      "content_he": "אדמת שתילה סטנדרטית עובדת מצוין לעגבניות. לארוידים נדירים, היא קוברת אותם חיים. פיט + קומפוסט + מינימום פרליט = מצע שמחזיק לחות בדיוק איפה שלא צריך — בתוך גוש ישיר מסביב לשורשים, ללא אוורור. שורשי ארוידים הם אפיפיטיים בטבעם: בג'ונגל הם גדלים על עצים, בחלחול עלים, עם זרימת אוויר מסביבם 24/7. כשאתם שמים אותם בתוך עציץ עם אדמת שתילה כבדה, אתם יוצרים סביבה שאין לה שום קשר לאבולוציה שלהם.\n\nהפורמולה שלנו לצמחים בוגרים ו-Starter Plants: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. זהו. שלושה רכיבים. Orchiata Bark הוא קליפות אורן מעובדות — מספק מבנה פיזי, עוגן לשורשים, ואחיזה. Perlite הוא אבן וולקנית מורחבת — ניקוז מיידי, אפס דחיסה. Coconut Coir הוא סיב קוקוס — שומר לחות מאוזנת, pH נייטרלי של 5.8–6.5. שלושתם יחד יוצרים מצע שמתנקז מהר, מאוורר, ולא מחזיק מים עודפים.\n\nתוספות אופציונליות שכדאי להוסיף: 5–10% Activated Carbon (פחם פעיל) — סופח רעלים ומונע ריח ועובש. 5% Zeolite — משפר זמינות יסודות קורט ומאזן pH. שניהם זמינים ב-Pink Leaf.\n\nל-TC Starts — כאן Fluval Stratum הוא הסטנדרט. פותח לאקווריומים, אומץ על ידי גדלני TC מקצועיים עולמיים. יתרונות: חלקיקים אחידים של 2–3 מ\"מ שמאפשרים אוורור מושלם לשורשים עדינים. pH חומצי קל (6.0–6.5) — מדויק לצרכי רוב הארוידים. לא מתדחס עם הזמן. חסרון אחד: קל מדי לצמחים בוגרים — לא מספק עיגון. ל-TC בלבד.\n\nשאלה שנשאלת הרבה: מתי מחליפים מצע? כשהקליפות מתפרקות ומאבדות מבנה — בדרך כלל אחרי 18–24 חודשים. לא לפני.",
-      "content_en": "Standard potting soil works excellently for tomatoes. For rare aroids, it buries them alive. Peat + compost + minimal perlite = a substrate that retains moisture exactly where it should not — in a dense mass directly surrounding the roots, without ventilation. Aroid roots are epiphytic by nature: in the jungle they grow on trees, in leaf litter, with airflow around them 24/7. When you place them in a pot with heavy potting soil, you are creating an environment with no relation to their evolutionary history.\n\nOur formula for mature plants and Starter Plants: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. That is it. Three components. Orchiata Bark is processed pine bark — provides physical structure, root anchoring, and grip. Perlite is expanded volcanic rock — immediate drainage, zero compaction. Coconut Coir is coconut fiber — balanced moisture retention, neutral pH of 5.8–6.5. Together they create a substrate that drains fast, aerates well, and holds no excess water.\n\nOptional additions worth including: 5–10% Activated Carbon — absorbs toxins and prevents odor and mold. 5% Zeolite — improves trace mineral availability and balances pH. Both available from Pink Leaf.\n\nFor TC Starts — here Fluval Stratum is the gold standard. Developed for aquariums, adopted by professional TC growers worldwide. Advantages: uniform particle size of 2–3mm that provides perfect aeration for delicate roots. Slightly acidic pH (6.0–6.5) — precise for the needs of most aroids. Does not compact over time. One disadvantage: too lightweight for mature plants — insufficient anchoring. For TC only.\n\nA frequently asked question: when do you change substrate? When the bark breaks down and loses structure — typically after 18–24 months. Not before.",
-      "sop": {
-        "title_he": "פורמולת מצע Pink Leaf — ביחסים נפחיים",
-        "title_en": "Pink Leaf Substrate Formula — Volumetric Ratios",
-        "steps_he": [
-          "מדוד ביחסים נפחיים (לא משקל): 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir.",
-          "לתוספת: הוסף 5–10% Activated Carbon, 5% Zeolite (לא חובה אך מומלץ).",
-          "ערבב יבש לחלוטין לפני הוספת מים.",
-          "הרטב מעט לפני שתילה — המצע צריך להרגיש לח-עסיסי, לא טפטפי.",
-          "לצמחי TC: השתמש ב-Fluval Stratum בלבד — לא לערבב עם הפורמולה הרגילה.",
-          "בדוק ניקוז: לאחר השקיה, מים צריכים לזרום בחופשיות מחורי הניקוז תוך 30 שניות."
-        ],
-        "steps_en": [
-          "Measure by volume (not weight): 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir.",
-          "Optional additions: 5–10% Activated Carbon, 5% Zeolite (not mandatory but recommended).",
-          "Mix completely dry before adding any water.",
-          "Lightly pre-moisten before planting — the substrate should feel moist-juicy, not dripping.",
-          "For TC plants: use Fluval Stratum only — do not blend with the regular formula.",
-          "Check drainage: after watering, water should flow freely from drainage holes within 30 seconds."
-        ]
-      },
-      "formula": "40% Orchiata Bark + 30% Perlite + 30% Coir (± 5% Carbon + 5% Zeolite)",
-      "warnings_he": [
-        "אדמת שתילה רגילה = ריקבון שורשים לאיטי. לא לפשרות.",
-        "Fluval Stratum לצמחים בוגרים = עציץ שיתהפך בגלל משקל קל מדי.",
-        "מצע שלא מתנקז תוך 30 שניות — בנו אותו מחדש."
-      ],
-      "warnings_en": [
-        "Regular potting soil = slow root rot. No compromises.",
-        "Fluval Stratum for mature plants = a pot that will tip over due to insufficient weight.",
-        "Substrate that does not drain within 30 seconds — rebuild it."
-      ]
-    },
-    {
-      "id": 4,
-      "slug": "atmospheric-data-vpd-ppfd",
-      "tag_he": "נתוני סביבה",
-      "tag_en": "Atmospheric Data",
-      "title_he": "VPD ו-PPFD — מדע הסביבה לצמחים נדירים",
-      "title_en": "VPD & PPFD — The Science of Environment for Rare Plants",
-      "subtitle_he": "אם אתם לא מודדים — אתם מנחשים. וניחושים הורגים צמחים יקרים.",
-      "subtitle_en": "If you're not measuring — you're guessing. And guessing kills expensive plants.",
-      "meta_description_he": "הסבר מעמיק על VPD ו-PPFD לצמחי אוור וארוידים נדירים. יעדי לחות, אור ואוורור למניעת שריפת סקטורים לבנים ועצירת גדילה.",
-      "meta_description_en": "Deep explanation of VPD and PPFD for variegated and rare aroid plants. Humidity, light, and airflow targets to prevent white sector browning and growth stagnation.",
-      "seo_keywords": [
-        "VPD plants indoor",
-        "PPFD variegated monstera",
-        "vapour pressure deficit aroid",
-        "PPFD Alocasia",
-        "white variegation browning prevention",
-        "rare plant environment",
-        "grow light PPFD aroid",
-        "VPD צמחים",
-        "PPFD מונסטרה מוורד",
-        "לחות אופטימלית אארואיד",
-        "Monstera Albo light requirements",
-        "Philodendron VPD"
-      ],
-      "content_he": "רוב הגדלנים מסתכלים על הצמח ומנסים להבין מה הוא צריך. גדלן מקצועי מסתכל על הנתונים ויודע. VPD ו-PPFD הם שני המדדים שיגידו לכם בדיוק מה קורה בסביבת הצמח — ולמה הוא נעצר, מלבין, שורף, או פשוט לא גדל.\n\nVPD — Vapour Pressure Deficit — הוא הפער בין כמות אדי המים שהאוויר מחזיק עכשיו לבין כמות המקסימלית שהוא יכול להחזיק בטמפרטורה נתונה. VPD גבוה = אוויר צמא = הצמח מאבד מים מהר מהשורשים יכולים לספק = סטומטות נסגרות = גדילה מופסקת. VPD נמוך מדי = לחות מופרזת = סטומטות סגורות מסיבה אחרת = פוטוסינתזה פגועה ועובש.\n\nיעד: 0.8–1.2 kPa. זהו הטווח שבו הצמח מפעיל את הסטומטות בצורה אופטימלית — לח מספיק, לא חנוק. כדי לשמור על VPD תקין, אתם צריכים לעקוב אחרי טמפרטורה + לחות בו-זמנית. אין קיצורי דרך.\n\nPPFD — Photosynthetic Photon Flux Density — מודד כמות פוטוני אור פוטוסינתטיים שמגיעים לפני השטח של הצמח בשנייה, ב-μmol/m²/s. כאן העניינים נהיים מעניינים לצמחי אוור.\n\nסקטורים לבנים וקרמיים חסרי כלורופיל לחלוטין. הם לא מבצעים פוטוסינתזה. אבל הם רגישים מאוד לאור — יותר מהסקטורים הירוקים. אור גבוה מדי שורף את הסקטורים הלבנים ראשון: הם מלבינים לצהוב, ואז לחום, ואז מתים. זה לא מחלה — זה פיזיקה.\n\nגדלן שמשתמש ב-400 μmol/m²/s על Monstera Albo ומתפלא למה הלבן שורף — לא הבין את הצמח. 100–250 μmol/m²/s הוא הטווח הנכון לרוב צמחי האוור. Quantum Meter עולה 150–200 ש\"ח. ה-Monstera Albo שלכם עולה 3,000. ההשקעה ברורה.",
-      "content_en": "Most growers look at the plant and try to understand what it needs. A professional grower looks at the data and knows. VPD and PPFD are the two measurements that will tell you exactly what is happening in the plant's environment — and why it has stalled, whitened, burned, or simply is not growing.\n\nVPD — Vapour Pressure Deficit — is the gap between the amount of water vapor currently in the air and the maximum it can hold at a given temperature. High VPD = thirsty air = the plant loses water faster than the roots can supply = stomata close = growth stops. VPD too low = excessive humidity = stomata closed for a different reason = impaired photosynthesis and mold risk.\n\nTarget: 0.8–1.2 kPa. This is the range in which the plant operates its stomata optimally — humid enough, not suffocated. To maintain correct VPD, you need to track temperature + humidity simultaneously. There are no shortcuts.\n\nPPFD — Photosynthetic Photon Flux Density — measures the quantity of photosynthetic light photons reaching the plant surface per second, in μmol/m²/s. This is where things get interesting for variegated plants.\n\nWhite and cream sectors are completely devoid of chlorophyll. They perform no photosynthesis. But they are highly sensitive to light — more so than the green sectors. Excessive light burns the white sectors first: they whiten to yellow, then to brown, then they die. This is not disease — this is physics.\n\nA grower applying 400 μmol/m²/s to a Monstera Albo and wondering why the white is burning — has not understood the plant. 100–250 μmol/m²/s is the correct range for most variegated plants. A Quantum Meter costs 40–60 USD. Your Monstera Albo costs 800. The investment is obvious.",
-      "sop": {
-        "title_he": "יעדי VPD ו-PPFD לפי סוג צמח",
-        "title_en": "VPD and PPFD Targets by Plant Type",
-        "steps_he": [
-          "TC + Starter Plants: PPFD 50–150 μmol/m²/s. VPD 0.6–0.9 kPa. לחות 80–95%.",
-          "צמחים ירוקים בוגרים (Monstera, Philodendron): PPFD 200–400 μmol/m²/s. VPD 0.8–1.2 kPa.",
-          "צמחי אוור (variegated): PPFD 100–250 μmol/m²/s מקסימום. לעולם לא אור ישיר.",
-          "Alocasia: PPFD 100–300 μmol/m²/s. רגישות גבוהה לשרפת שמש.",
-          "טמפרטורה: 22–28°C ביום, לא מתחת ל-18°C בלילה. Alocasia — מינימום 20°C.",
-          "השתמש ב-Quantum Meter (PPFD) + Hygrometer (לחות+טמפ') לניטור מדויק."
-        ],
-        "steps_en": [
-          "TC + Starter Plants: PPFD 50–150 μmol/m²/s. VPD 0.6–0.9 kPa. Humidity 80–95%.",
-          "Mature green plants (Monstera, Philodendron): PPFD 200–400 μmol/m²/s. VPD 0.8–1.2 kPa.",
-          "Variegated plants: PPFD 100–250 μmol/m²/s maximum. Never direct light.",
-          "Alocasia: PPFD 100–300 μmol/m²/s. High sensitivity to light burn.",
-          "Temperature: 22–28°C day, no lower than 18°C night. Alocasia — minimum 20°C.",
-          "Use Quantum Meter (PPFD) + Hygrometer (humidity+temp) for precise monitoring."
-        ]
-      },
-      "formula": "Target VPD: 0.8–1.2 kPa | Variegated PPFD max: 250 μmol/m²/s",
-      "warnings_he": [
-        "אור ישיר על סקטורים לבנים = שריפה בלתי הפיכה. צל, לא חשיכה.",
-        "VPD מעל 1.6 kPa = הצמח סוגר סטומטות ומפסיק לגדול.",
-        "אל תמדדו 'בעין' — השקיעו ב-Quantum Meter."
-      ],
-      "warnings_en": [
-        "Direct light on white sectors = irreversible burn. Shade, not darkness.",
-        "VPD above 1.6 kPa = plant closes stomata and stops growing.",
-        "Do not measure 'by eye' — invest in a Quantum Meter."
-      ]
-    },
-    {
-      "id": 5,
-      "slug": "investment-variegation-stability",
-      "tag_he": "השקעה ויציבות",
-      "tag_en": "Investment & Stability",
-      "title_he": "השקעה ויציבות גנטיקה — כיצד לקנות נכון",
-      "title_en": "Investment & Genetic Stability — How to Buy Correctly",
-      "subtitle_he": "מחיר גבוה לא מבטיח צמח טוב. בדיקה נכונה — כן.",
-      "subtitle_en": "A high price doesn't guarantee a good plant. A correct inspection does.",
-      "meta_description_he": "כיצד לבדוק יציבות וריאגציה לפני רכישת צמח נדיר: בדיקת Meristem, Auxiliary Buds, ויחס ירוק-לבן. מדריך רכישה מקצועי של Pink Leaf.",
-      "meta_description_en": "How to inspect variegation stability before purchasing a rare plant: Meristem check, Auxiliary Buds, green-to-white ratio. Pink Leaf's professional buying guide.",
-      "seo_keywords": [
-        "variegation stability check",
-        "meristem inspection rare plant",
-        "chimeric variegation revert",
-        "buy rare aroid guide",
-        "Monstera Albo stable",
-        "Philodendron Pink Princess revert",
-        "בדיקת מריסטם",
-        "יציבות וריאגציה",
-        "קניית צמח נדיר ישראל",
-        "auxiliary buds variegation",
-        "chimeric mutation plant",
-        "rare plant investment guide"
-      ],
-      "content_he": "הבעיה עם שוק הצמחים הנדירים היא שכולם מוכרים. לא כולם גדלנים. וההבדל בין שניהם עולה לכם כסף רב.\n\nוריאגציה היא מוטציה — ובמקרה של רוב הצמחים הנדירים שאתם קונים, מוטציה כימרית (Chimeric Mutation). המשמעות: היא קיימת ברמת התאים, לא ברמת ה-DNA הגנומי. הצמח יכול לאבד אותה בכל שלב — תהליך הנקרא Reversion. הוא יחזור ירוק מלא. הכסף שלכם — לא יחזור.\n\nהסיבות לריברשן: אור נמוך מדי (הצמח 'מחליט' שהוא צריך יותר כלורופיל), טמפרטורה שגויה, פציעה פיזית, חיתוך קרוב מדי למריסטם, ולפעמים פשוט מזל רע — כי המוטציה הייתה שולית מלכתחילה. לכן, הבדיקה לפני הרכישה היא לא בונוס — היא חובה.\n\nבדיקה 1 — המריסטם: נקודת הגדילה הפעילה, הלב הצעיר ביותר של הצמח. בדקו אותו ישירות. האם יש בו צבע? ורוד, לבן, קרם — מצוין. ירוק מוחלט? דגל אדום. מריסטם ירוק = הצמח כבר 'מחשב' לחזור.\n\nבדיקה 2 — Auxiliary Buds: הניצנים הקטנים בציר בין הגבעול לעלה. נגעו בהם, הסתכלו בהם מקרוב. צבע בניצן = הוריאגציה נמצאת ברמה גנטית עמוקה יותר. ניצן ירוק לחלוטין = ספק.\n\nבדיקה 3 — יחס ירוק:לבן: 50:50 הוא האידיאל המוכח. מעל 70% לבן — הצמח חלש מדי לתמוך בעצמו; הסקטורים ייסגרו. מתחת ל-20% לבן — הצמח בדרך לריברשן.\n\nלא לקנות: צמח שמוכרו מסרב לצלם את המריסטם. צמח עם 100% לבן בעלים. TC שהוריאגציה לא נראית בבקבוק. מחיר שהוכפל בשבוע — סיגנל מניפולציה של שוק, לא ביקוש אמיתי.",
-      "content_en": "The problem with the rare plant market is that everyone is selling. Not everyone is a grower. And the difference between the two costs you a great deal of money.\n\nVariegation is a mutation — and in the case of most rare plants you buy, it is a Chimeric Mutation. This means: it exists at the cellular level, not at the level of the genomic DNA. The plant can lose it at any stage — a process called Reversion. It will return to full green. Your money — will not return.\n\nCauses of reversion: insufficient light (the plant 'decides' it needs more chlorophyll), wrong temperature, physical injury, a cut too close to the meristem, and sometimes simply bad luck — because the mutation was marginal from the start. Therefore, the pre-purchase inspection is not a bonus — it is mandatory.\n\nInspection 1 — The Meristem: the active growth point, the youngest heart of the plant. Inspect it directly. Is there color in it? Pink, white, cream — excellent. Completely green? Red flag. A green meristem = the plant is already 'calculating' a return to green.\n\nInspection 2 — Auxiliary Buds: the small buds at the junction between stem and leaf. Touch them, look at them closely. Color in the bud = variegation exists at a deeper genetic level. Completely green bud = uncertainty.\n\nInspection 3 — Green:White ratio: 50:50 is the proven ideal. More than 70% white — the plant is too weak to support itself; sectors will die off. Less than 20% white — the plant is on its way to reversion.\n\nDo not buy: a plant whose seller refuses to photograph the meristem. A plant with 100% white leaves. TC where variegation is not visible in the flask. A price that doubled in one week — a signal of market manipulation, not genuine demand.",
-      "sop": {
-        "title_he": "SOP בדיקת יציבות לפני רכישה",
-        "title_en": "Pre-Purchase Stability Inspection SOP",
-        "steps_he": [
-          "בקש תמונות/וידאו של המריסטם — מרחק קרוב, תאורה טובה. סרב לקנות בלעדיהן.",
-          "בדוק את הניצנים העזר (Auxiliary Buds): צבע = יציב. ירוק מלא = ספק.",
-          "חשב יחס ירוק:לבן — מטרה 40:60 עד 60:40. מחוץ לטווח = סיכון.",
-          "לצמחי TC: בדוק שהוריאגציה נראית בבקבוק. לא 'תגיע אחרי'.",
-          "בקש לראות את האם (Mother Plant) אם אפשרי — היסטוריה = נתונים.",
-          "בדוק את הצומת האחרון (most recent leaf): האם הוריאגציה נשמרת? שיפור? ירידה?"
-        ],
-        "steps_en": [
-          "Request photos/video of the meristem — close range, good lighting. Refuse to buy without them.",
-          "Inspect the Auxiliary Buds: color present = stable. Fully green = uncertain.",
-          "Calculate green:white ratio — target 40:60 to 60:40. Outside this range = risk.",
-          "For TC plants: confirm variegation is visible in the flask. It will not 'arrive later.'",
-          "Request to see the Mother Plant if possible — history is data.",
-          "Check the most recent leaf: is variegation maintained? Improving? Declining?"
-        ]
-      },
-      "formula": "Green:White target = 40:60 to 60:40 | Meristem must show color | Aux buds must show color",
-      "warnings_he": [
-        "מוכר שמסרב לצלם את המריסטם — לא קונים. ללא יוצא מן הכלל.",
-        "100% לבן = יפה למשך 3 שבועות, מת אחרי. אל תתפתו.",
-        "מחיר שמשתנה פי 2–3 בשבוע = מניפולציה. לא ביקוש אמיתי."
-      ],
-      "warnings_en": [
-        "A seller who refuses to photograph the meristem — do not buy. No exceptions.",
-        "100% white = beautiful for 3 weeks, dead after. Do not be tempted.",
-        "A price that changes 2–3x in one week = manipulation. Not genuine demand."
-      ]
-    }    ,
-    {
-      "id": 6,
-      "slug": "plant-health-indicators",
-      "tag_he": "בריאות הצמח",
-      "tag_en": "Plant Health",
-      "title_he": "5 סימנים שהצמח שלכם משגשג — לא רק חי",
-      "title_en": "5 Signs Your Plant Is Thriving — Not Just Surviving",
-      "subtitle_he": "צמח שחי ≠ צמח שבריא. הנה ההבדל.",
-      "subtitle_en": "A plant that lives ≠ a plant that thrives. Here is the difference.",
-      "meta_description_he": "5 אינדיקטורים מקצועיים לצמח ארואיד בריא: קצב עלים, צבע שורשים, תנוחה, ורייגציה ועוד. מדריך אבחון Pink Leaf.",
-      "meta_description_en": "5 professional health indicators for rare aroids: leaf rhythm, root color, posture, variegation and more. The Pink Leaf diagnostic guide.",
-      "seo_keywords": [
-        "plant health signs",
-        "aroid thriving indicators",
-        "healthy rare plant",
-        "root health check",
-        "variegation color health",
-        "substrate drying time",
-        "צמח בריא ארואיד",
-        "סימני בריאות צמח",
-        "שורשים לבנים צמח",
-        "קצב עלים צמחים נדירים",
-        "אבחון צמח ביתי",
-        "rare plant care Israel"
-      ],
-      "content_he": "הצמח שלכם לא יגיד לכם שהוא בסדר. הוא לא יבקש תשומת לב. הוא פשוט ייתן לכם סימנים — ועל גדלן טוב לקרוא אותם בצורה נכונה.\n\nיש הבדל בסיסי בין צמח שחי לצמח שמשגשג. צמח שחי יכול להתקיים חודשים בתנאים לא מיטביים — מתכווץ, פסיבי, לא מוציא עלים חדשים. גדלנים מתחילים לעיתים טועים לחשוב שהוא בסדר 'כי הוא לא מת'. צמח שמשגשג נראה שונה לחלוטין — ולצד הבדל ויזואלי, יש לו גם שגרת גדילה פעילה ומדידה.\n\nסימן 1 — קצב עלים חדשים: צמח בריא בתנאים מיטביים יוציא עלה חדש כל 3–6 שבועות, תלוי במין. אלוקאסיה — כל 4–5 שבועות. פילודנדרון — כל 3–4 שבועות. מונסטרה — כל 4–6 שבועות. אם לא ראיתם עלה חדש יותר מ-8 שבועות ברצף, הצמח עצר — זה סיגנל לבדיקת שורשים, לחות, ואור. לא 'הוא בדיוק לא מוציא עכשיו'.\n\nסימן 2 — שורשים לבנים-קרמיים: שורשים בריאים הם לבנים, טורגידיים ומוצקים. הם יוצאים מנקבי הניקוז בצורה פעילה — זה לא בעיה, זה סימן מצוין. שורשים חומים-רפים = התייבשות כרונית. שורשים שחורים-רכים = ריקבון פעיל. בדקו את נקבי הניקוז פעם בחודש.\n\nסימן 3 — עמוק וחיה בצבע: עלה בריא על אלוקאסיה ורייגייטדת הוא ירוק עמוק עם ורייגציה חדה ומוגדרת. חיוורון ורייגציה, ירקרק-צהוב בסקטורים הירוקים, או אפרוריות כללית — אלה אינדיקטורים לחוסר אור, pH שגוי, או מחסור תזונתי. לא נזק בלתי הפיך — אם מזהים מוקדם.\n\nסימן 4 — יציבות פיזית: צמח שעומד זקוף, גבעולים מוצקים, עלים מורמים — הוא צמח שמחוזק. צמח שרוכן, גבעולים מתכופפים, עלים שמונחים על האדמה — שורשים שלא מחזיקים. עלו ל-root ball, בדקו ומה תמצאו שם.\n\nסימן 5 — קצב ייבוש הסובסטרט: אדמה שמתייבשת תוך 7–10 ימים בתנאי בית סטנדרטיים = ניקוז תקין. פחות מ-5 ימים = בעיית אחזקת לחות, ייתכן שהעציץ קטן מדי. יותר מ-14 ימים = הסובסטרט כבד מדי, ורטיבות יתר בדרך. הסובסטרט הוא לא 'אחת לשנה' — הוא אינדיקטור פעיל.",
-      "content_en": "Your plant will not tell you it is fine. It will not ask for attention. It will simply give you signals — and it is the grower's job to read them correctly.\n\nThere is a fundamental difference between a plant that lives and a plant that thrives. A plant that merely lives can persist for months in suboptimal conditions — contracted, passive, producing no new growth. Beginner growers often mistake this for 'doing fine because it's not dead.' A plant that thrives looks entirely different — and beyond a visual difference, it has an active, measurable growth rhythm.\n\nSign 1 — New leaf rhythm: A healthy plant under optimal conditions will produce a new leaf every 3–6 weeks, depending on species. Alocasia — every 4–5 weeks. Philodendron — every 3–4 weeks. Monstera — every 4–6 weeks. If you have seen no new leaf in more than 8 consecutive weeks, the plant has stalled — this signals a need to inspect roots, humidity, and light. Not 'it is just not pushing right now.'\n\nSign 2 — White-cream roots: Healthy roots are white, turgid, and firm. They emerge actively from drainage holes — this is not a problem, it is an excellent sign. Brown-limp roots = chronic dehydration. Black-soft roots = active rot. Check the drainage holes once a month.\n\nSign 3 — Deep, vivid color: A healthy leaf on a variegated aroid is deep green with sharp, well-defined variegation. Variegation pallor, yellow-green in the green sectors, or general greyness — these indicate insufficient light, incorrect pH, or nutritional deficiency. Not irreversible damage — if caught early.\n\nSign 4 — Physical stability: A plant standing upright, firm stems, lifted leaves — is a fortified plant. A plant drooping, bending stems, leaves resting on the soil — has roots that are not holding. Lift the root ball and inspect what you find.\n\nSign 5 — Substrate drying rate: Soil drying within 7–10 days under standard home conditions = correct drainage. Less than 5 days = moisture-retention issue, possibly a pot that is too small. More than 14 days = substrate is too heavy, overwatering is imminent. The substrate is not a 'once a year' concern — it is an active indicator.",
-      "sop": {
-        "title_he": "SOP בדיקת בריאות חודשית",
-        "title_en": "Monthly Health Inspection SOP",
-        "steps_he": [
-          "בדוק קצב עלים חדשים: מתי הוצא העלה האחרון? מעל 8 שבועות — חקירה מיידית.",
-          "בדוק שורשים בנקבי הניקוז: לבנים-קרמיים = בריאים. חומים-שחורים = טיפול נדרש.",
-          "בדוק צבע עלים: ירוק עמוק + ורייגציה מוגדרת = בריא. חיוורון = בדוק אור ו-pH.",
-          "בדוק גבעולים: מוצקים = חזקים. רכים/מתכופפים = root ball לבדיקה.",
-          "בדוק קצב ייבוש: ירטב אחרי 14 יום? = שינוי סובסטרט נדרש. מתייבש תוך 4 ימים? = בדוק עציץ."
-        ],
-        "steps_en": [
-          "Check new leaf rhythm: when was the last leaf produced? Over 8 weeks — immediate investigation.",
-          "Check roots at drainage holes: white-cream = healthy. Brown-black = treatment required.",
-          "Check leaf color: deep green + defined variegation = healthy. Pallor = check light and pH.",
-          "Check stems: firm = strong. Soft/bending = root ball inspection needed.",
-          "Check drying rate: still wet after 14 days? = substrate change needed. Drying in 4 days? = check pot size."
-        ]
-      },
-      "formula": "New leaf every 3–6 weeks | Roots: white = healthy, black = rot | Soil dry in 7–10 days = correct",
-      "warnings_he": [
-        "צמח שלא הוציא עלה ב-3 חודשים אינו 'במנוחה'. הוא עוצר. תחקרו.",
-        "שורשים שיוצאים מנקבי הניקוז אינם בעיה — זה סימן שהצמח מלא ורוצה עציץ גדול יותר.",
-        "ורייגציה שנהיית חיוורת לאורך זמן — בדקו אור ו-pH לפני שמאשימים הכל אחר."
-      ],
-      "warnings_en": [
-        "A plant that has produced no leaf in 3 months is not 'resting.' It has stalled. Investigate.",
-        "Roots emerging from drainage holes are not a problem — they signal the plant is full and wants a larger pot.",
-        "Variegation gradually turning pale — check light and pH before blaming anything else."
-      ]
-    }    ,
-    {
-      "id": 7,
-      "slug": "leaf-symptom-diagnosis",
-      "tag_he": "אבחון תסמינים",
-      "tag_en": "Symptom Diagnosis",
-      "title_he": "קריאת תסמינים מהעלים — מה הצמח מנסה להגיד לכם",
-      "title_en": "Reading Leaf Symptoms — What Your Plant Is Trying to Tell You",
-      "subtitle_he": "הצמח תמיד מדבר. הבעיה שרובנו לא מקשיבים נכון.",
-      "subtitle_en": "The plant always speaks. The problem is that most of us don't listen correctly.",
-      "meta_description_he": "מדריך אבחון תסמינים בעלים: קצוות חומים, עלים צהובים, כתמי שחור, עלה לא נפתח. פרוטוקול קריאת תסמינים של Pink Leaf.",
-      "meta_description_en": "Leaf symptom diagnosis guide: brown tips, yellow leaves, black spots, unopened leaf. Pink Leaf's official symptom-reading protocol.",
-      "seo_keywords": [
-        "brown leaf tips aroid",
-        "yellow leaves overwatering",
-        "black spots plant diagnosis",
-        "leaf symptom diagnosis",
-        "plant not growing new leaves",
-        "white crust on soil",
-        "קצוות חומים צמח",
-        "עלים צהובים ריקבון",
-        "כתמי שחור צמח",
-        "אבחון בעיות צמח",
-        "עלה לא נפתח צמח",
-        "rare plant troubleshooting Israel"
-      ],
-      "content_he": "הגדלן הממוצע רואה עלה צהוב ושופך מים. מחר הצמח מת. הסיבה? לא חוסר מים — הצפה. הצמח דיבר; הגדלן לא הקשיב נכון.\n\nקצוות עלים חומים: הסיבה הנפוצה ביותר שאנשים מייחסים לה להשקיה שגויה — ורוב הפעמים היא אינה. קצוות חומים הם כמעט תמיד סימן ללחות נמוכה (VPD גבוה) או לChlor ו-Fluoride במי הברז. חורף עם חימום מרכזי? קצוות חומים. מים מהברז ישר לצמח? קצוות חומים. הפתרון: מד לחות, מגש עם חצץ ומים, ומעבר למים מסוננים, מזוקקים, או שנאספו בלילה. לא 'יותר השקיות'.\n\nעלים צהובים: הבעיה שכולם מאבחנים לא נכון — ולמה? כי יש שלוש סיבות שונות לגמרי. עלים צהובים בסיסיים (הנמוכים ביותר, הישנים ביותר) = תהליך טבעי, הצמח מוציא עלים ישנים. עלים צהובים בגובה ביניים עם ריח לח-עפרורי = ריקבון שורשים. עלים צהובים כלליים ועדינים ללא ריח = חסר חנקן. לפני שמוסיפים מים — הרימו את העציץ. קל מהצפוי? יתכן שצריך השקיה. כבד? האדמה עדיין לחה.\n\nכתמי שחור על עלים: שתי גרסאות שאסור לבלבל. 1. כתמים שחורים-חומים רטובים שמתפשטים ולחים למגע = Pythium או Botrytis פעיל. הוציאו מיד מכל צמח אחר באזור, הסירו עלים פגועים עם מספריים חיטויים, ורססו Copper Fungicide. 2. כתמי שחור-חום יבשים עם גבול ברור = שריפת שמש ישירה. הצמח לא זקוק לטיפול — זקוק להזזה מאור ישיר.\n\nעלה חדש שנשאר מגולגל ולא נפתח: מנגנון הגנה מפני יובש. מתחת ל-50% לחות, הצמח מאט פתיחת עלים חדשים כדי לא לאבד מים. הוסיפו לחות סביבתית — לא מים לאדמה. מגש עם חצץ, מפוח לחות, או ריסוס עדין בבוקר בלבד.\n\nקרום לבן-אפור על פני האדמה: מינרלים ממי ברז שמצטברים. נזק ישיר לצמח — אפסי. אבל סימן ש-pH האדמה מטפס ועלול להשפיע על ספיגת תזונה לאורך זמן. פתרון: שטיפה עם 1–2 ליטר מים מזוקקים עד שיוצא מנקבי הניקוז, ולשקול מעבר קבוע למים מסוננים.",
-      "content_en": "The average grower sees a yellow leaf and pours water. The next day the plant is dead. The reason? Not water deficiency — flooding. The plant spoke; the grower did not listen correctly.\n\nBrown leaf tips: the symptom most commonly misattributed to incorrect watering — and most of the time, it is not. Brown tips are almost always a sign of low humidity (high VPD) or Chlorine and Fluoride in tap water. Winter with central heating? Brown tips. Tap water directly on the plant? Brown tips. The solution: a hygrometer, a pebble tray with water, and a switch to filtered, distilled, or overnight-settled water. Not 'more waterings.'\n\nYellow leaves: the most misdiagnosed problem — because there are three completely different causes. Yellow leaves at the base (lowest, oldest) = natural process, the plant is shedding old leaves. Yellow leaves at mid-height with a damp-earthy odor = root rot. General light yellowing throughout without odor = nitrogen deficiency. Before adding water — lift the pot. Lighter than expected? Possibly needs watering. Heavy? The soil is still wet.\n\nBlack spots on leaves: two versions that must not be confused. 1. Wet, spreading black-brown spots, moist to the touch = active Pythium or Botrytis. Remove immediately from any nearby plants, trim damaged leaves with sterilized scissors, and spray Copper Fungicide. 2. Dry black-brown spots with a clear border = direct sun scorch. The plant does not need treatment — it needs to be moved away from direct light.\n\nNew leaf that stays furled and does not open: a drought-protection mechanism. Below 50% humidity, the plant slows the opening of new leaves to avoid water loss. Add ambient humidity — not soil water. A pebble tray, humidifier, or light morning misting only.\n\nWhite-grey crust on the soil surface: mineral buildup from tap water. Direct harm to the plant — negligible. But a signal that soil pH is rising and may affect nutrient absorption over time. Solution: flush with 1–2 liters of distilled water through the drainage holes, and consider switching permanently to filtered water.",
-      "sop": {
-        "title_he": "פרוטוקול אבחון תסמין — שלב אחר שלב",
-        "title_en": "Symptom Diagnosis Protocol — Step by Step",
-        "steps_he": [
-          "קצוות חומים: מדדו לחות (מד). בדקו סוג מים. הוסיפו לחות לפני שמשנים משהו אחר.",
-          "עלים צהובים: הרימו עציץ ובדקו משקל. הריחו את האדמה. עלים נמוכים = טבעי. ריח/עלים אמצעיים = ריקבון.",
-          "כתמים שחורים רטובים: בידוד מיידי מצמחים שכנים. הסרת עלים פגועים. Copper Fungicide.",
-          "עלה חדש לא נפתח: מדדו לחות. מטרה — 60% לפחות. הוסיפו לחות סביבתית.",
-          "קרום לבן על אדמה: שטיפה עם מים מזוקקים. שקלו מעבר קבוע למים מסוננים."
-        ],
-        "steps_en": [
-          "Brown tips: measure humidity (hygrometer). Check water type. Add humidity before changing anything else.",
-          "Yellow leaves: lift pot and check weight. Smell the soil. Low leaves = natural. Odor/mid leaves = rot.",
-          "Wet black spots: immediate isolation from neighboring plants. Remove damaged leaves. Copper Fungicide.",
-          "New leaf not opening: measure humidity. Target — 60% minimum. Add ambient humidity.",
-          "White crust on soil: flush with distilled water. Consider permanent switch to filtered water."
-        ]
-      },
-      "formula": "Brown tips = low humidity first | Yellow leaves = lift pot before watering | Black wet spots = fungal, isolate immediately",
-      "warnings_he": [
-        "אסור לשפוך מים על צמח עם כתמי שחור לחים — זה מפיץ את הפטרייה לאדמה ולצמחים שכנים.",
-        "עלים צהובים עם ריח עפרורי-לח = ריקבון שורשים. כל יום עיכוב = הצמח קרוב יותר לאובדן.",
-        "כתמי שמש יבשים אינם הפיכים — הם נשארים על העלה. אבל צמח חדש יצא בריא אם תתקנו את האור."
-      ],
-      "warnings_en": [
-        "Never pour water on a plant with wet black spots — it spreads the fungus to the soil and neighboring plants.",
-        "Yellow leaves with a damp-earthy odor = root rot. Every day of delay = the plant is closer to loss.",
-        "Dry sun-scorch spots are not reversible — they remain on the leaf. But new growth will emerge healthy if you correct the light."
-      ]
-    }
-  ]
-};
 
         function loadEncyclopedia() {
-            if (ENCYC_ARTICLES.length > 0) return;
-            try {
-                ENCYC_ARTICLES = ENCYCLOPEDIA_DATA.entries.map(e => ({
-                    id:          e.id,
-                    slug:        e.slug,
-                    tag:         { he: e.tag_he,      en: e.tag_en },
-                    title:       { he: e.title_he,    en: e.title_en },
-                    subtitle:    { he: e.subtitle_he, en: e.subtitle_en },
-                    tags:        (e.seo_keywords || []).map(k => k.toLowerCase()).concat([e.slug.split('-')[0]]),
-                    keywords:    e.seo_keywords || [],
-                    content_he:  e.content_he  || '',
-                    content_en:  e.content_en  || '',
-                    sop_he:      e.sop || null,
-                    sop_en:      e.sop || null,
-                    formula:     e.formula || null,
-                    warnings_he: e.warnings_he || [],
-                    warnings_en: e.warnings_en || [],
-                }));
+            if (ENCYC_ARTICLES.length > 0) {
                 renderEncyclopedia();
-            } catch(err) {
-                console.error('Encyclopedia error:', err);
+                if (_pendingSlug) {
+                    const idx = ENCYC_ARTICLES.findIndex(a => a.slug === _pendingSlug);
+                    if (idx !== -1) openArticle(idx);
+                    _pendingSlug = null;
+                }
+                return;
             }
+            if (_encyclopediaLoading) return;
+            _encyclopediaLoading = true;
+            fetch('entries.json')
+                .then(r => r.json())
+                .then(data => {
+                    _encyclopediaLoading = false;
+                    ENCYC_ARTICLES = data.entries.map(e => ({
+                        id:          e.id,
+                        slug:        e.slug,
+                        tag:         { he: e.tag_he,      en: e.tag_en },
+                        title:       { he: e.title_he,    en: e.title_en },
+                        subtitle:    { he: e.subtitle_he, en: e.subtitle_en },
+                        tags:        (e.seo_keywords || []).map(k => k.toLowerCase()).concat([e.slug.split('-')[0]]),
+                        keywords:    e.seo_keywords || [],
+                        content_he:  e.content_he  || '',
+                        content_en:  e.content_en  || '',
+                        sop_he:      e.sop || null,
+                        sop_en:      e.sop || null,
+                        formula:     e.formula || null,
+                        warnings_he: e.warnings_he || [],
+                        warnings_en: e.warnings_en || [],
+                    }));
+                    renderEncyclopedia();
+                    if (_pendingSlug) {
+                        const idx = ENCYC_ARTICLES.findIndex(a => a.slug === _pendingSlug);
+                        if (idx !== -1) openArticle(idx);
+                        _pendingSlug = null;
+                    }
+                })
+                .catch(err => {
+                    _encyclopediaLoading = false;
+                    console.error('Encyclopedia fetch error:', err);
+                });
         }
 
         // Tag chip → slug prefix mapping
@@ -3245,7 +2936,7 @@ function checkLab(choiceIndex) {
             const isHe = lang === 'he';
 
             if (ENCYC_ARTICLES.length === 0) {
-                list.innerHTML = '<p style="text-align:center;opacity:0.3;padding:30px;font-family:Cinzel,serif;font-size:9px;letter-spacing:3px;">LOADING...</p>';
+                list.innerHTML = '<p style="text-align:center;opacity:0.3;padding:30px;font-family:Cinzel,serif;font-size:12px;letter-spacing:3px;">LOADING...</p>';
                 loadEncyclopedia();
                 return;
             }
@@ -3386,18 +3077,32 @@ function checkLab(choiceIndex) {
         window.onload = () => {
             updateIntro();
             updateXPDisplay();
+            updateRegistryLoginState();
             updateBagUI(); // restore persisted bag from localStorage
 
             // Deep-link: open article directly from URL hash
             const hash = window.location.hash.slice(1);
             if (hash) {
+                _pendingSlug = hash;
                 showPage('encyclopedia');
-                const idx = ENCYC_ARTICLES.findIndex(a => a.slug === hash);
-                if (idx !== -1) openArticle(idx);
             } else {
                 showPage('intro');
             }
         };
     </script>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/972559116990" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+       style="position:fixed; bottom:24px; right:24px; z-index:9999;
+              width:54px; height:54px; border-radius:50%;
+              background:#25D366; display:flex; align-items:center; justify-content:center;
+              box-shadow:0 4px 16px rgba(37,211,102,0.45); transition:transform 0.2s, box-shadow 0.2s;
+              text-decoration:none;"
+       onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 24px rgba(37,211,102,0.6)'"
+       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,0.45)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
 </body>
 </html>

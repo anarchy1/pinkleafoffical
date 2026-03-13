@@ -58,7 +58,7 @@ const gSheetSyncTemplate = `
     "Price:", price, CHAR(10),
     "Stock:", stock_total, CHAR(10),
     "360 Barcode:", barcode_360,
-    "WhatsApp Link:", CONCATENATE("https://wa.me/972XXXXXXXX?text=למוצר", plant)
+    "WhatsApp Link:", CONCATENATE("https://wa.me/972559116990?text=למוצר", plant)
 )
 `.trim();
 
@@ -106,7 +106,7 @@ const integrationSnippets = {
 window.exportSEOData = (plants) => {
     return plants.map(plant => ({
         plant: plant.en.name,
-        url: `https://pinkleaf.netlify.app/encyclopedia.html#${plant.id}`,
+        url: `https://pinkleaf.co.il/encyclopedia.html#${plant.id}`,
         seo_title: `${plant.en.name} Care Guide | מדריך טיפוח ${plant.he.name}`,
         meta_description: `Complete care guide for ${plant.en.name} - lighting, water, humidity requirements. בית צמח מושלם במחיר ₪${plant.price}`,
         og_image: plant.images.main,
@@ -122,10 +122,10 @@ window.addInstagramIntegration = () => {
     footer.innerHTML += `
         <div class="social-links">
             <a href="https://www.instagram.com/pinkleaf.store/" target="_blank">📸 @pinkleaf.store</a>
-            <a href="https://wa.me/972XXXXXXXX" target="_blank">📱 WhatsApp Orders</a>
+            <a href="https://wa.me/972559116990" target="_blank">📱 WhatsApp Orders</a>
         </div>
     `;
     document.body.appendChild(footer);
 };
 
-console.log("🚀 Social media system ready! Use window.exportSEOData(plants) for instant integration.");
+// Social media system ready. Use window.exportSEOData(plants) for instant integration.
