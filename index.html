@@ -87,12 +87,26 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-polly-pink",
           "name": "Alocasia Polly Pink Variegata",
-          "description": "Rare pink-variegated Alocasia. High Variegation ₪350 / Regular Variegation ₪199. TC propagated.",
+          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Available in High Variegation (₪350) and Regular Variegation (₪199). Tissue Culture propagated for genetic stability.",
           "image": "https://pinkleaf.co.il/plants/PV19.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
           "offers": [
-            { "@type": "Offer", "name": "High Variegation", "price": "350", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
-            { "@type": "Offer", "name": "Regular Variegation", "price": "199", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+            {
+              "@type": "Offer",
+              "name": "High Variegation",
+              "price": "350",
+              "priceCurrency": "ILS",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@id": "https://pinkleaf.co.il/#store" }
+            },
+            {
+              "@type": "Offer",
+              "name": "Regular Variegation",
+              "price": "199",
+              "priceCurrency": "ILS",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@id": "https://pinkleaf.co.il/#store" }
+            }
           ],
           "category": "Rare Aroids"
         },
@@ -100,10 +114,17 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-heart-balloon",
           "name": "Alocasia Heart Balloon",
-          "description": "Heart-shaped Alocasia with balloon-like leaves. Opening Sale ₪500. TC-propagated.",
+          "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. Opening Sale — ₪500. TC-propagated for consistency.",
           "image": "https://pinkleaf.co.il/plants/PV81.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": { "@type": "Offer", "price": "500", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "offers": {
+            "@type": "Offer",
+            "price": "500",
+            "priceCurrency": "ILS",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "seller": { "@id": "https://pinkleaf.co.il/#store" }
+          },
           "category": "Rare Aroids"
         },
         {
@@ -2406,6 +2427,7 @@ body.dark-mode .scoreboard-item.current {
                     const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
 
                     if (hasCustomOptions) {
+                        // Custom variants (e.g., variegation tiers)
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Variant</option>';
                         item.availability.forEach(opt => {
                             const price = ITEM_PRICES[`${item.id}_${opt}`];
@@ -2416,6 +2438,7 @@ body.dark-mode .scoreboard-item.current {
                     } else {
                         const allOptions = ["Tissue Culture", "Starter Plant", "Mature Plant"];
                         if (isAlocasia(item.name)) allOptions.push("Corm");
+
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Availability</option>';
                         allOptions.forEach(opt => {
                             const isOptAvailable = item.availability.includes(opt);
