@@ -11,6 +11,7 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Pink Leaf Botanical Studios">
     <link rel="canonical" href="https://pinkleaf.co.il/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
     <!-- Hreflang for bilingual -->
     <link rel="alternate" hreflang="he" href="https://pinkleaf.co.il/">
@@ -86,20 +87,23 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-polly-pink",
           "name": "Alocasia Polly Pink Variegata",
-          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Available as Starter Plant. Tissue Culture propagated for genetic stability.",
+          "description": "Rare pink-variegated Alocasia. High Variegation ₪350 / Regular Variegation ₪199. TC propagated.",
           "image": "https://pinkleaf.co.il/plants/PV19.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "offers": [
+            { "@type": "Offer", "name": "High Variegation", "price": "350", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+            { "@type": "Offer", "name": "Regular Variegation", "price": "199", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+          ],
           "category": "Rare Aroids"
         },
         {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-heart-balloon",
           "name": "Alocasia Heart Balloon",
-          "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. Available as Starter Plant. TC-propagated for consistency.",
+          "description": "Heart-shaped Alocasia with balloon-like leaves. Opening Sale ₪500. TC-propagated.",
           "image": "https://pinkleaf.co.il/plants/PV81.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "offers": { "@type": "Offer", "price": "500", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
           "category": "Rare Aroids"
         },
         {
@@ -897,6 +901,14 @@
             border: 1px solid var(--border);
             color: var(--pink);
         }
+        .badge-opening-sale {
+            background: rgba(255, 180, 50, 0.18);
+            border: 1px solid rgba(255, 180, 50, 0.55);
+            color: #c8860a;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        body.dark-mode .badge-opening-sale { color: #ffcc55; }
         
         .availability-dropdown { 
             width: 100%; 
@@ -1102,12 +1114,14 @@
         
         
         body.dark-mode .lab-registry-float {
-            background: rgba(25, 18, 22, 0.97);
-            border-color: rgba(212, 165, 178, 0.45);
-            box-shadow: 
-                0 15px 50px rgba(0, 0, 0, 0.5), 
-                0 4px 15px rgba(212, 165, 178, 0.15),
-                inset 0 1px 0 rgba(212, 165, 178, 0.1);
+            background: rgba(25, 18, 22, 0.62);
+            border-color: rgba(212, 165, 178, 0.28);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.3),
+                0 4px 15px rgba(212, 165, 178, 0.10),
+                inset 0 1px 0 rgba(212, 165, 178, 0.07);
         }
         
         .registry-header-small { 
@@ -1701,12 +1715,13 @@ body.dark-mode .scoreboard-item.current {
             position: fixed !important;
             top: 95px !important;           /* below sticky nav bar */
             width: 148px !important;
-            background: rgba(253,253,253,0.96);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212,165,178,0.38);
+            background: rgba(253,250,248,0.62);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212,165,178,0.30);
             border-radius: 20px;
             padding: 12px 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,0.07), 0 2px 8px rgba(212,165,178,0.18);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.05), 0 2px 8px rgba(212,165,178,0.12);
             z-index: 10001 !important;       /* ABOVE logo container so it stays clickable */
             overflow: hidden;
             font-size: 12px;
@@ -1721,7 +1736,7 @@ body.dark-mode .scoreboard-item.current {
         body.on-lab-page .lab-scoreboard-float { display: flex !important; flex-direction: column !important; }
 
         body.dark-mode .lab-registry-float,
-        body.dark-mode .lab-scoreboard-float  { background: rgba(10,10,10,0.88); border-color: rgba(212,165,178,0.22); }
+        body.dark-mode .lab-scoreboard-float  { background: rgba(15,10,14,0.65); border-color: rgba(212,165,178,0.20); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
 
         .lab-registry-float  * { pointer-events: auto; }
         .lab-scoreboard-float * { pointer-events: auto; }
@@ -2196,8 +2211,8 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available", openingSale: true },
             { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Tissue Culture", "Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "available" },
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Tissue Culture", "Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
             { id: "PV8", name: "Monstera 'Yellow Marilyn'", light: "60%", humidity: "75%", status: "coming" },
@@ -2377,23 +2392,41 @@ body.dark-mode .scoreboard-item.current {
             
             filteredItems.forEach((item, i)=>{ 
                 const isAvailable = item.status === "available";
-                const badge = isAvailable ? 
-                    '<span class="availability-badge badge-available">Available</span>' : 
-                    '<span class="availability-badge badge-coming-soon">Coming Soon</span>';
-                
+                let badgeLabel = isAvailable ? 'Available' : 'Coming Soon';
+                let badgeClass = isAvailable ? 'badge-available' : 'badge-coming-soon';
+                if (isAvailable && item.openingSale) {
+                    badgeLabel = '🌿 Opening Sale';
+                    badgeClass = 'badge-opening-sale';
+                }
+                const badge = `<span class="availability-badge ${badgeClass}">${badgeLabel}</span>`;
+
                 let dropdownHTML = '';
                 if (isAvailable && item.availability) {
-                    const allOptions = ["Tissue Culture", "Starter Plant", "Mature Plant"];
-                    if (isAlocasia(item.name)) allOptions.push("Corm");
-                    
-                    dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Availability</option>';
-                    allOptions.forEach(opt => {
-                        const isOptAvailable = item.availability.includes(opt);
-                        dropdownHTML += isOptAvailable ? 
-                            `<option value="${opt}">${opt}</option>` : 
-                            `<option disabled>${opt} (Unavailable)</option>`;
-                    });
-                    dropdownHTML += '</select></div>';
+                    const standardGrades = ["Tissue Culture", "Starter Plant", "Mature Plant", "Corm"];
+                    const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
+
+                    if (hasCustomOptions) {
+                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Variant</option>';
+                        item.availability.forEach(opt => {
+                            const price = ITEM_PRICES[`${item.id}_${opt}`];
+                            const priceLabel = price ? ` — ₪${price}` : '';
+                            dropdownHTML += `<option value="${opt}">${opt}${priceLabel}</option>`;
+                        });
+                        dropdownHTML += '</select></div>';
+                    } else {
+                        const allOptions = ["Tissue Culture", "Starter Plant", "Mature Plant"];
+                        if (isAlocasia(item.name)) allOptions.push("Corm");
+                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Availability</option>';
+                        allOptions.forEach(opt => {
+                            const isOptAvailable = item.availability.includes(opt);
+                            const price = ITEM_PRICES[`${item.id}_${opt}`];
+                            const priceLabel = price ? ` — ₪${price}` : '';
+                            dropdownHTML += isOptAvailable ?
+                                `<option value="${opt}">${opt}${priceLabel}</option>` :
+                                `<option disabled>${opt} (Unavailable)</option>`;
+                        });
+                        dropdownHTML += '</select></div>';
+                    }
                 }
                 
                 const btnHTML = isAvailable ? 
@@ -2642,8 +2675,9 @@ function checkLab(choiceIndex) {
         };
         // Per-item price overrides — populate as you add prices
         const ITEM_PRICES = {
-            // "PV19_Tissue Culture": 180,
-            // "PV19_Mature Plant": 650,
+            "PV19_High Variegation": 350,
+            "PV19_Regular Variegation": 199,
+            "PV81_Starter Plant": 500,
         };
 
         // Load from localStorage
