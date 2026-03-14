@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<Load from localStorage!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <title>Pink Leaf | אנציקלופדיה בוטנית · Rare Aroid Plants Israel</title>
     <meta name="description" content="Pink Leaf Botanical Studios — חנות צמחים נדירים בישראל. Tissue Culture, Monstera, Alocasia. מדריכי גידול מקצועיים בעברית ואנגלית. Rare aroid plants, TC plants, botanical encyclopedia Israel.">
     <meta name="keywords" content="צמחים נדירים, Tissue Culture, מעבדה בוטנית, Monstera, Alocasia, Pink Leaf, גידול צמחים, TC plants Israel, rare plants Israel, אנציקלופדיה בוטנית, botanical encyclopedia, ורידציה, variegated plants">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow"
     <meta name="author" content="Pink Leaf Botanical Studios">
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -2427,7 +2427,6 @@ body.dark-mode .scoreboard-item.current {
                     const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
 
                     if (hasCustomOptions) {
-                        // Custom variants (e.g., variegation tiers)
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Variant</option>';
                         item.availability.forEach(opt => {
                             const price = ITEM_PRICES[`${item.id}_${opt}`];
@@ -2438,7 +2437,6 @@ body.dark-mode .scoreboard-item.current {
                     } else {
                         const allOptions = ["Tissue Culture", "Starter Plant", "Mature Plant"];
                         if (isAlocasia(item.name)) allOptions.push("Corm");
-
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Availability</option>';
                         allOptions.forEach(opt => {
                             const isOptAvailable = item.availability.includes(opt);
@@ -2451,8 +2449,8 @@ body.dark-mode .scoreboard-item.current {
                         dropdownHTML += '</select></div>';
                     }
                 }
-                
-                const btnHTML = isAvailable ? 
+
+                                const btnHTML = isAvailable ? 
                     `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>` : 
                     '<button class="btn" style="opacity: 0.5; cursor: not-allowed;" disabled>COMING SOON</button>';
                 
@@ -2702,6 +2700,27 @@ function checkLab(choiceIndex) {
             "PV19_Regular Variegation": 199,
             "PV81_Starter Plant": 500,
         };
+
+        // Price matrix per grade (₪). null = price on inquiry
+        const GRADE_PRICES = {
+            "Tissue Culture":  null,
+            "Starter Plant":   null,
+            "Mature Plant":    null,
+            "Corm":            null,
+        };
+        // Per-item price overrides
+        const ITEM_PRICES = {
+            "PV19_High Variegation": 350,
+            "PV19_Regular Variegation": 199,
+            "PV81_Starter Plant": 500,
+        };
+
+        function getItemPrice(id, grade) {
+            const key = `${id}_${grade}`;
+            if (ITEM_PRICES[key] !== undefined) return ITEM_PRICES[key];
+            if (GRADE_PRICES[grade] !== undefined) return GRADE_PRICES[grade];
+            return null;
+        }
 
         // Load from localStorage
         let bag = JSON.parse(localStorage.getItem('pl_bag') || '[]');
