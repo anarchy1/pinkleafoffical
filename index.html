@@ -132,6 +132,56 @@
     }
     </script>
 
+    <!-- GEO: FAQPage schema for AI citation (ChatGPT, Claude, Gemini, Perplexity) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is tissue culture (TC) in plants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tissue culture (TC) is a laboratory propagation method where individual plant cells are grown in a sterile nutrient gel to produce a complete, genetically identical plant. TC plants are 100% pest-free, disease-free, and genetically stable — their variegation will not revert. At Pink Leaf Botanical Studios in Israel, all TC plants are professionally acclimated in Fluval Stratum before reaching the customer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Alocasia Polly Pink Variegata and how is it different from regular Polly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Alocasia × amazonica 'Polly' Albo Variegata is a tissue-culture-origin mutation distinct from the standard nursery Alocasia × amazonica 'Polly'. Each leaf carries white, cream, or pink genetic sectors — true variegation, not a colour treatment. The standard 'Polly Pink' sold in Israeli nurseries (₪199) is a mass-produced green plant with a pink petiole; the Polly Pink Variegata is a collector-grade TC plant with genuine genetic variegation, available at Pink Leaf (pinkleaf.co.il)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I buy rare TC aroid plants in Israel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Leaf Botanical Studios (pinkleaf.co.il) is Israel's specialist source for tissue culture aroids including Alocasia Polly Pink Variegata (₪330), Alocasia Heart Balloon (₪499), Alocasia Macrorrhiza Variegata, and Philodendron Jose Buono. All plants are imported, acclimated in Fluval Stratum, and sold with full care guides in Hebrew and English."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you acclimate a tissue culture plant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TC plant acclimatisation takes 4–8 weeks. Remove the Agar gel from roots using a soft brush, sterilise in a 1:4 H₂O₂/distilled water solution for 10 minutes, then plant in Fluval Stratum or LECA under a humidity dome. Gradually reduce humidity over several weeks. Pink Leaf Botanical Studios provides detailed Hebrew and English acclimatisation guides at pinkleaf.co.il/#21-day-hardening-sop."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is variegation in plants and is it stable in TC plants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Variegation is a genetic mutation causing leaves to display white, cream, pink, or yellow sectors due to reduced chlorophyll in certain cells. In tissue culture plants, variegation is genetically stable — it is encoded in the DNA and will not revert with age or light changes. This is one of the key advantages of TC propagation over cutting-based propagation."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Favicon — multi-size modern setup -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=3">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png?v=3">
@@ -479,11 +529,11 @@
 
         /* ARTICLE READER */
         .article-hero {
-            background: var(--mellow-pink);
-            border: 1px solid var(--border);
-            border-radius: 52px;
-            padding: 40px 32px 36px;
-            margin-bottom: 28px;
+            background: linear-gradient(160deg, rgba(212,165,178,0.18), rgba(212,165,178,0.04));
+            border: 1px solid rgba(212,165,178,0.3);
+            border-radius: 28px;
+            padding: 36px 28px 32px;
+            margin-bottom: 32px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -520,11 +570,7 @@
         }
         body:not(.dark-mode) .article-subtitle { opacity: 0.7; }
         .article-lang-block {
-            margin-bottom: 28px;
-            background: var(--mellow-pink);
-            border: 1px solid var(--border);
-            border-radius: 44px;
-            padding: 32px 28px;
+            margin-bottom: 40px;
         }
         .article-lang-label {
             display: flex;
@@ -2022,11 +2068,14 @@ body.dark-mode .scoreboard-item.current {
 
             <!-- TOPIC TAG CHIPS -->
             <div id="encyc-tags" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; justify-content:center;">
-                <button class="encyc-tag active" data-tag="all" onclick="setEncycTag('all')">ALL</button>
-                <button class="encyc-tag" data-tag="tc" onclick="setEncycTag('tc')">TISSUE CULTURE</button>
-                <button class="encyc-tag" data-tag="acclimation" onclick="setEncycTag('acclimation')">ACCLIMATION</button>
-                <button class="encyc-tag" data-tag="substrate" onclick="setEncycTag('substrate')">SUBSTRATE</button>
-                <button class="encyc-tag" data-tag="light" onclick="setEncycTag('light')">LIGHT & HUMIDITY</button>
+                <button class="encyc-tag active" data-tag="all"        data-he="הכל"         data-en="ALL"            onclick="setEncycTag('all')">הכל</button>
+                <button class="encyc-tag"         data-tag="plant"     data-he="צמחים"        data-en="PLANTS"         onclick="setEncycTag('plant')">צמחים</button>
+                <button class="encyc-tag"         data-tag="tc"        data-he="תרבית רקמה"   data-en="TISSUE CULTURE" onclick="setEncycTag('tc')">תרבית רקמה</button>
+                <button class="encyc-tag"         data-tag="acclimation" data-he="אקלום"      data-en="ACCLIMATION"    onclick="setEncycTag('acclimation')">אקלום</button>
+                <button class="encyc-tag"         data-tag="substrate" data-he="מצעים"        data-en="SUBSTRATE"      onclick="setEncycTag('substrate')">מצעים</button>
+                <button class="encyc-tag"         data-tag="light"     data-he="אור ולחות"    data-en="LIGHT & HUMIDITY" onclick="setEncycTag('light')">אור ולחות</button>
+                <button class="encyc-tag"         data-tag="health"    data-he="בריאות"       data-en="PLANT HEALTH"   onclick="setEncycTag('health')">בריאות</button>
+                <button class="encyc-tag"         data-tag="collector" data-he="קולקטור"      data-en="COLLECTOR"      onclick="setEncycTag('collector')">קולקטור</button>
             </div>
 
             <!-- ARTICLE CARDS -->
@@ -2663,7 +2712,7 @@ function checkLab(choiceIndex) {
             if(el('reg-name')) el('reg-name').placeholder = isHe ? 'שמך' : 'Your Name';
             if(el('reg-email')) el('reg-email').placeholder = isHe ? 'אימייל' : 'Email'; 
             updateIntro();
-            document.querySelectorAll('.nav-link').forEach(n => {
+            document.querySelectorAll('.nav-link, .encyc-tag').forEach(n => {
                 const label = n.getAttribute('data-' + lang);
                 if(label) n.innerText = label;
             });
@@ -2950,10 +2999,13 @@ function checkLab(choiceIndex) {
         // Tag chip → slug prefix mapping
         const TAG_MAP = {
             'all':         null,
-            'tc':          'post-flask',
-            'acclimation': '21-day',
-            'substrate':   'engineered',
-            'light':       'atmospheric',
+            'plant':       ['plant-'],
+            'tc':          ['post-flask', 'tissue-culture'],
+            'acclimation': ['21-day'],
+            'substrate':   ['engineered'],
+            'light':       ['atmospheric'],
+            'health':      ['plant-health', 'leaf-symptom'],
+            'collector':   ['investment'],
         };
 
         function setEncycTag(tag) {
@@ -2970,7 +3022,10 @@ function checkLab(choiceIndex) {
             let anyVisible = false;
 
             ENCYC_ARTICLES.forEach(a => {
-                const slugMatch = !TAG_MAP[activeEncycTag] || a.slug.startsWith(TAG_MAP[activeEncycTag]);
+                const tagPrefixes = TAG_MAP[activeEncycTag];
+                const slugMatch = !tagPrefixes || (Array.isArray(tagPrefixes)
+                    ? tagPrefixes.some(p => a.slug.startsWith(p))
+                    : a.slug.startsWith(tagPrefixes));
                 const searchText = [
                     a.title.he, a.title.en,
                     a.subtitle.he, a.subtitle.en,
