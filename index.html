@@ -2459,6 +2459,13 @@ body.dark-mode .scoreboard-item.current {
     if (p === 'lab') startLab();
     if (p === 'encyclopedia') { loadEncyclopedia(); }
     if (p === 'tc') updateTC();
+
+    // 5. Update URL hash so every page is directly shareable
+    if (p === 'intro') {
+        history.replaceState(null, '', window.location.pathname);
+    } else {
+        history.replaceState(null, '', '#' + p);
+    }
 }
 
 
@@ -3209,9 +3216,13 @@ function checkLab(choiceIndex) {
             updateRegistryLoginState();
             updateBagUI(); // restore persisted bag from localStorage
 
-            // Deep-link: open article directly from URL hash
+            // Deep-link routing: page-level or encyclopedia article
             const hash = window.location.hash.slice(1);
-            if (hash) {
+            const KNOWN_PAGES = ['store','care','vault','encyclopedia','lab','tc'];
+            if (hash && KNOWN_PAGES.includes(hash)) {
+                showPage(hash);
+            } else if (hash) {
+                // Treat as encyclopedia article slug
                 _pendingSlug = hash;
                 showPage('encyclopedia');
             } else {
