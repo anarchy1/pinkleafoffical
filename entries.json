@@ -604,6 +604,267 @@
         "After removing from gel — do not expose directly to open air. Begin gradual acclimatisation in Stratum.",
         "Agar gel residue on roots feeds mould — clean before transplanting (see TC Sterilization article)."
       ]
+    },
+    {
+      "id": 13,
+      "slug": "variegation-types",
+      "tag_he": "גנטיקה וריאגציה",
+      "tag_en": "Variegation Genetics",
+      "title_he": "סוגי וריאגציה — הבחנות גנטיות לגדלנים",
+      "title_en": "Types of Variegation — Genetic Distinctions for Growers",
+      "subtitle_he": "לא כל וריאגציה שווה. חלקן יציבות לנצח, חלקן ייעלמו בעלה הבא.",
+      "subtitle_en": "Not all variegation is created equal. Some are stable forever, others will disappear on the next leaf.",
+      "meta_description_he": "הסבר מלא על סוגי וריאגציה בצמחים: כימרית, סקטוריאלית, ספורט, TC-יציבה, וריאגציה ורודה. יציבות, תורשה, ומשמעות לגדלנים צמחים נדירים.",
+      "meta_description_en": "Complete guide to variegation types in plants: chimeral, sectoral, sport, TC-stable, and pink variegation. Stability, inheritance, and implications for rare plant growers.",
+      "seo_keywords": [
+        "chimeric variegation plant",
+        "sectoral variegation",
+        "variegation sport mutation",
+        "TC-stable variegation",
+        "pink variegation aroid",
+        "variegation genetics",
+        "וריאגציה כימרית",
+        "וריאגציה יציבה TC",
+        "ספורט וריאגציה צמח",
+        "Monstera Albo chimeric",
+        "variegation reversion causes",
+        "אארואיד מוורד"
+      ],
+      "content_he": "וריאגציה היא כל דבר לעולם הצמחים הנדירים — היא גם המדוכא ביותר אם אתם לא יודעים מה אתם קונים. הבעיה: 'וריאגציה' היא מילה כללית מדי. לצמחים יש סוגים שונים לחלוטין של וריאגציה, וההבדלים קובעים אם הצמח שלכם יישאר יפה או יחזור לירוק בלי הודעה.\n\nוריאגציה כימרית (Chimeric Variegation) היא המקרה הנפוץ ביותר — וגם הבעיות ביותר. פירוש: התאים שמייצרים את הלבן הם שכבה דקה בלבד בעלה, בדרך כלל בחלק העליון (epidermis) או בחלק המנוף (parenchyma). היא תורשה דרך הנבטים (Buds), אבל היא לא יציבה ברמה של ה-DNA הגנומי. אם הצמח חווה מתח — אור נמוך, טמפרטורה שגויה, בחירת leaf node שגויה — הוא יכול להסתובב בעוד עלה וזהו: חזרה לירוק מלא. זה לא נדיר. זה קרה גם בטירה. Monstera Albo הוא דוגמה קלאסית — יפה ביום, ירוק בחודש אם לא תפקחו עין.\n\nוריאגציה סקטוריאלית (Sectoral Variegation) היא שונה לחלוטין. כאן, קטעים שלמים של הצמח — לפעמים כל השורק — הם לבנים. הם תורשה דרך cutings ובקלות. אם אתם חוותכים ענף לבן מסקטור לבן, הצמח הצעיר שגדל ממנו יהיה שומר וריאגציה. יציבה יותר מכימרית, אבל עדיין ניתנת להפסד אם אתם לא זהירים.\n\nספורט (Sport) היא וריאגציה שקרתה בגמיטור יחיד — מוטציה במסתם אחד בלבד שמייצר עלה שונה. אם זה נעשה עם בחירת צומת נכונה, זה יכול להיות יציב לעתיים. אבל זה תמיד סיכון.\n\nTC-Stable היא המלט של וריאגציה. צמח שנוצר דרך Tissue Culture מצמח עם וריאגציה כימרית קיימת יורש את המוטציה ברמה סטיבילית יותר. לא אי פעם 100% בטוח מפני ריברשן, אבל הקשה בהרבה מחיתוך רגיל. זו הסיבה שצמחי Pink Leaf Lab TC יקרים יותר — אתם משלמים על הביטחון.\n\nוריאגציה ורודה (Pink Variegation) היא מקרה קצת אחר. צבע ורוד בעלים בא בדרך כלל מ-anthocyanins — פיגמנט שגדל בתנאי אור גבוה וטמפרטורה נמוכה. זה לא תמיד גנטי. לפעמים זו תגובה סביבתית. אם אתם מעלים את הטמפרטורה ב-5 מעלות, הוורוד בעלים שלכם יעלם. אבל כשגדלים בתנאים נכונים — קור עדיף, PPFD גבוה אבל לא שמש ישירה — הורודי יציב ויפה.",
+      "content_en": "Variegation is everything to the rare plant world — and also the most frustrating thing if you do not know what you are buying. The problem: 'variegation' is too general a term. Plants have completely different types of variegation, and the differences determine whether your plant stays beautiful or reverts to green without notice.\n\nChimeric Variegation is the most common case — and also the most problematic. This means: the cells producing the white color are only a thin layer in the leaf, usually in the upper epidermis or parenchyma. It is inherited through buds, but it is not stable at the level of genomic DNA. If the plant experiences stress — low light, wrong temperature, wrong node selection — it can turn around on the next leaf and that is it: back to full green. This is not rare. This happens in nurseries too. Monstera Albo is the classic example — beautiful today, full green within a month if you are not careful.\n\nSectoral Variegation is completely different. Here, entire sections of the plant — sometimes the whole branch — are white. It is inherited through cuttings and easily. If you cut a white branch from a white sector, the young plant growing from it will maintain variegation. More stable than chimeric, but still subject to loss if you are careless.\n\nA Sport is a variegation that occurred in a single bud — a mutation in just one meristem that produced a different leaf. If done with correct node selection, it can remain stable for some time. But it is always a risk.\n\nTC-Stable is the gold standard of variegation. A plant created through Tissue Culture from an existing chimeric-variegated plant inherits the mutation at a more stabilized level. Never 100% protected from reversion, but far safer than a regular cutting. This is why Pink Leaf Lab TC plants cost more — you are paying for the stability.\n\nPink Variegation is a slightly different case. Pink color in leaves usually comes from anthocyanins — a pigment that develops under high light and low temperature. This is not always genetic. Sometimes it is an environmental response. If you raise the temperature by 5 degrees, the pink in your leaves disappears. But when grown under correct conditions — preferring cool, high PPFD but no direct sun — the pink remains stable and beautiful.",
+      "warnings_he": [
+        "כימרית = לא יציבה. תוקח אותה בידיים בשקיקות. זה לא וריאגציה — זה אונקולוגיה צמחית.",
+        "וריאגציה ורודה = תלויה בטמפרטורה וPPFD. ללא התנאים הנכונים, היא נעלמת.",
+        "קנייה ללא בדיקת Meristem = הימור. תמיד בדקו צבע בנקודת הגדילה הפעילה."
+      ],
+      "warnings_en": [
+        "Chimeric = unstable. Handle it carefully. This is not variegation — it is plant oncology.",
+        "Pink variegation = dependent on temperature and PPFD. Without correct conditions, it disappears.",
+        "Buying without Meristem inspection = gambling. Always check the color at the active growth point."
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "semi-hydro-leca-guide",
+      "tag_he": "שיטות גדילה",
+      "tag_en": "Growing Methods",
+      "title_he": "מדריך Semi-Hydro LECA לארוידים — ניקוז מושלם",
+      "title_en": "Semi-Hydro LECA Guide for Aroids — Perfect Drainage",
+      "subtitle_he": "מים וגזים במקביל. זהו הסוד.",
+      "subtitle_en": "Water and gas simultaneously. That is the secret.",
+      "meta_description_he": "מדריך מלא ל-LECA ו-Semi-Hydroponics לארוידים נדירים: מצע, מלאים, תזוזוזה, ו-pH. מדוע גדלנים מקצועיים בחרו בשיטה זו.",
+      "meta_description_en": "Complete LECA and semi-hydroponic growing guide for rare aroids: substrate, fillings, reservoir methods, and pH. Why professional growers choose this technique.",
+      "seo_keywords": [
+        "LECA growing aroid",
+        "semi-hydroponics plants",
+        "LECA balls clay",
+        "hydroton aroid care",
+        "semi-hydro reservoir method",
+        "LECA pH nutrient solution",
+        "צמחים ב-LECA",
+        "גידול למחצה הידרופוני",
+        "כדורי LECA",
+        "מים טהורים צמח",
+        "Monstera LECA growing",
+        "LECA vs soil aroid"
+      ],
+      "content_he": "גדלנים רבים חוששים מ-LECA כי זה נראה זר. אך זה לא זר — זו פיזיקה. LECA (Lightweight Expanded Clay Aggregate) הוא גלגל חימר מורחב, נקבוביות, קל. כל כדור יש שכבה חיצונית חמה אבל שבר פנימי שמחזיק מים. עכשיו בקח שתי עצוב: צמח צריך מים + צמח צריך חמצן. בעציץ עם מצע, אתה מקבל או אחד או השני — או שצפו בעודף מים ואתה מביא חמצן מעט בלבד, או שטפחת כדי להביא חמצן אבל שורשים יבשים.\n\nב-LECA, אתה מקבל שניהם בו זמנית. הכדורים נושאים מים כל הדרך עד לקו המים (Water Line). מעל קו המים? אוויר טהור — חמצן זורם דרך החלל בין הכדורים. הצמח שורף את המים, קו המים יורד, בקבוקי חמצן נחשפים לשורשים. זה מנגנון טבעי של self-regulation.\n\nהמנדל: ערבב LECA טוב (לא מלוכלך), שטוף בפי מים מזוקקים עד שהמים ישקפים. הנח בעציץ עם חורי ניקוז בתחתית. ערבב קצת, שתול את הצמח, ערבב עד שיציב. עכשיו — הנקודה חזקה — הוסף מים מזוקקים עד שהמים מכסים קו הניקוז (בדרך כלל 1/3 של הקטעון).\n\nתזוזה: כאן הגדלנים קטנים מפנים. אתה בוחר: או שתמלא אותה מחדש בהזזוז מעדן (Top-Up Method) — מוסיף מים מזוקקים הפשוטים כשרמת המים יורדה — או באמצעות Reservoir Method (משמרות תחתית) שבו אתה מזגזג סביב הקטעון, ומניח את ה-Wick להשקיה עצמית מלמטה. שיטה Reservoir עשויה להיות עדכונית יותר אך שתיהן עובדות.\n\nהזנה: במים מזוקקים אין חומרים מזינים. עכשיו תוסיף ות פורמולה מזוקקה. תמיד השתמש בפורמולה Low-EC (EC 0.6–0.8) — הרבה יותר חלש מאשר שרבט לגדילה בעציץ עם מצע. כל ביקור שתילה יוסיף מזינים דרך מי הברז רגיל; בעציץ מזוקקות, אתה צריך לעקוב אחרי הוספה ידנית.\n\npH: בדוק ב-digital pH meter לפני ופעם בשבוע. יעד: 6.0–6.5. אם pH מעל 7.0, הוסף כמה טיפות של pH Down (חומצה אורתופוספוריק). אל תחומצן יותר מדי — זה יכול לעשות בעיות עם זמינות דקדוקים.",
+      "content_en": "Many growers fear LECA because it looks foreign. But it is not foreign — it is physics. LECA (Lightweight Expanded Clay Aggregate) is expanded clay pellets, porous, lightweight. Each ball has a hot outer layer but a hollow interior that holds water. Now take two demands: a plant needs water + a plant needs oxygen. In a pot with soil, you get either one or the other — either you flood with excess water and you bring in little oxygen, or you let it dry to bring in oxygen but the roots are dry.\n\nIn LECA, you get both simultaneously. The pellets hold water all the way to the Water Line. Above the Water Line? Pure air — oxygen flows through the gaps between the pellets. The plant uses up the water, the water line drops, pockets of oxygen are exposed to the roots. It is a natural self-regulating mechanism.\n\nThe setup: blend good LECA (not dirty), rinse with distilled water until the water runs clear. Place in a pot with drainage holes at the bottom. Mix a little, transplant your plant, mix until stable. Now — the critical point — add distilled water until it covers the drainage line (typically 1/3 of the pot).\n\nWatering: this is where small growers diverge. You choose: either refill using the Top-Up Method — adding simple distilled water when the water level drops — or via the Reservoir Method (bottom watering) where you circulate around the pot and let a Wick draw water up from below. Reservoir Method may be more elegant but both work.\n\nNutrition: distilled water contains no nutrients. Now you add a dilute formula. Always use Low-EC (EC 0.6–0.8) — much weaker than soil-based growing. Every repot will add nutrients through regular tap water; in distilled setups, you need to track manual additions.\n\npH: check with a digital pH meter before and weekly. Target: 6.0–6.5. If pH above 7.0, add a few drops of pH Down (orthophosphoric acid). Do not over-acidify — it can create issues with nutrient availability.",
+      "sop": {
+        "title_he": "SOP LECA Semi-Hydro — שלב אחר שלב",
+        "title_en": "LECA Semi-Hydro SOP — Step by Step",
+        "steps_he": [
+          "הזמן LECA טוב (קוטר ~6–8mm). שטוף בעדינות כדי להסיר אבק קרמי.",
+          "מלא עציץ עם חורי ניקוז בתחתית. LECA פלוס הצמח הזוקן ב-Stratum.",
+          "הוסף מים מזוקקים בלבד עד לקו הניקוז (בדרך כלל 1/3 של הקטעון).",
+          "בדוק אחרי 3–5 ימים: אם קו המים ירד ב-2–3 ס\"מ, זהו קצב שימוש בריא.",
+          "בכל הוספה של מים, הוסף מזינים: EC 0.6–0.8, pH 6.0–6.5.",
+          "בדוק pH כל שבוע. אם מעל 7.0, הוסף pH Down בזהירות.",
+          "בדוק שורשים כל 2–3 שבועות: צריכים להיות לבנים עם קצת וורוד-אדום בקצוות. אם שחורים = בעיה אוויר."
+        ],
+        "steps_en": [
+          "Source good LECA (diameter ~6–8mm). Rinse gently to remove ceramic dust.",
+          "Fill a pot with drainage holes at the bottom. LECA plus your plant acclimated from Stratum.",
+          "Add distilled water only up to the drainage line (typically 1/3 of the pot).",
+          "Check after 3–5 days: if the water line has dropped 2–3cm, that is a healthy consumption rate.",
+          "With each water addition, add nutrients: EC 0.6–0.8, pH 6.0–6.5.",
+          "Check pH every week. If above 7.0, add pH Down carefully.",
+          "Inspect roots every 2–3 weeks: they should be white with some pink-red at the tips. If black = air issue."
+        ]
+      },
+      "formula": "EC 0.6–0.8 + pH 6.0–6.5 | Water Line at drainage holes | Check roots bi-weekly",
+      "warnings_he": [
+        "מים מעלייה נורמליים = מינרלים. בעציץ LECA, משתמשו במים מזוקקים בלבד.",
+        "קו מים מעל הגובה = שורשים חונקים. תמיד שמור אוויר מעל קו המים.",
+        "שורשים שחורים ברכים = בעיית אוויר. בדוק את קור הקטעון; חורים חסומים?"
+      ],
+      "warnings_en": [
+        "Regular tap water = minerals. In LECA, use only distilled water.",
+        "Water line above drainage = choking roots. Always keep air above the water line.",
+        "Black soft roots = air issue. Check pot bottom; are holes clogged?"
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "repotting-tc-plant",
+      "tag_he": "SOP הגדילה",
+      "tag_en": "Growing SOP",
+      "title_he": "הטפט צמח TC מהצנצנת לעציץ — המדריך המדויק",
+      "title_en": "Repotting a TC Plant from Flask to Pot — The Precise Guide",
+      "subtitle_he": "שפיכה לתוך עציץ היא אמנות. זהו חשמל.",
+      "subtitle_en": "Moving a plant to a pot is not dumping. It is precision work.",
+      "meta_description_he": "כיצד להטפט צמח Tissue Culture בעדינות: סימנים לכשיוץ, בחירת גודל עציץ, מצע וטמפרטורה. תסרוקת גדילה מתוך האקלום השלמה.",
+      "meta_description_en": "How to carefully repot a TC plant: readiness signs, pot size selection, substrate choice, and technique. Complete growing guide from full acclimation.",
+      "seo_keywords": [
+        "repot TC plant guide",
+        "when to repot tissue culture",
+        "TC plant pot size",
+        "Fluval Stratum to chunky soil",
+        "transplant TC aroid",
+        "root bound TC plant",
+        "הטפטת צמח TC",
+        "מתי להטפט צמח רקמה",
+        "גודל עציץ צמח נדיר",
+        "סימני ההטפטה צמח",
+        "מצע הטפטה aroid",
+        "שורשים קשורים עציץ"
+      ],
+      "content_he": "עציץ בגודל 4 ס\"מ עם Fluval Stratum הוא מצב זמני. בסופו של דבר הצמח יתחיל לחפש שטח יותר. לא בגלל שהוא 'סירח' — צמחים לא סירחים. בגלל שגדל, והשורשים זקוקים למרחב לאוורור חדש. כשהם כשורים, הם מאטים לגדול. עלים נעצרים להתפתח. הוא הזמן להטפט.\n\nסימנים לכשיוציא: שורשים לבנים חדשים שנראים על משטח הטופ (Top Dressing) של LECA — זה סימן ברור שהצמח זקוק למרחק. גובה עלה נעצר מפני 2–3 שבועות עם תנאים זהים. כאשר אתה מושך בעדינות את הצמח מהעציץ, הוא אמור להצא בחזקת בול בודד של חומר עם שורשים הצפופים סביבו — סימן שהוא היה קרוב לשורש.\n\nבחירת העציץ: קפוץ על יד אחת בלבד. אם הצמח בעציץ 4 ס\"מ היום, בחר 6 ס\"מ (2.5 אינץ' במערכת האנגלית). רוב הגדלנים קופצים על שתי ידיים בו-זמנית ומסיימים בעציץ ענקי עם בצע קרקע שונאת חמצן. עציץ גדול מדי = מצע רטוב גם רטוב חמור יחזיק ולא ייבש מהר.\n\nבחירת המצע: זה לא Fluval Stratum יותר. כן הצמח בוגר, זה צריך מבנה חזק יותר. נעבור לפורמולה מלאה: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. הצמח יוכל לעגן עצמו ביתר טוב, הניקוז יהיה עדיין מושלם.\n\nהטכניקה: הטפט בעדינות את הצמח מהעציץ הישן. עבדו על שורשים קשורים בעדינות עם אצבעות או מברשת רכה — מטרה: לשחרר מעט מן המצע הישן ללא קריעת השורשים. מלא את העציץ החדש בחצי מצע. הנח את הצמח במרכז. ערבב מצע סביב השורשים בעדינות, דחוס קל כדי להסיר כיסי אוויר, אך לא דחוס חזק. לעולם לא סחטו מצע.\n\nהשקיה לאחר הטפט: התן מים זו פעם בלבד בחלל השלוש שעות לאחר הטפטה. לא יותר מדי — קרקע זו צריכה להיות לח, לא רטוב. לאחר מכן, שמור לחות בסביבתית גבוה (70%) למשך שבוע — זהו סימנון עלים, גם אם לא כתוב כאן.",
+      "content_en": "A 4cm pot with Fluval Stratum is temporary. Eventually the plant will outgrow it. Not because it is 'tired' — plants do not get tired. Because it is growing, and the roots need fresh space to aerate. When they are cramped, growth slows. New leaves stop developing. It is time to repot.\n\nSigns of readiness: white new roots visible on the surface of the LECA (Top Dressing) — this is a clear signal the plant needs space. Leaf height has stalled for 2–3 weeks despite identical conditions. When you gently pull the plant from the pot, it comes out as a tight root ball of material with dense roots around it — a clear sign it was root-bound.\n\nPot selection: jump by one size only. If the plant is in a 4cm pot today, choose 6cm (2.5 inches). Most growers jump two sizes at once and end up with a huge pot full of anaerobic, oxygen-hating soil. Pot too large = substrate stays wet too long.\n\nSubstrate choice: this is no longer Fluval Stratum. The plant is now mature; it needs stronger structure. Move to the full formula: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. The plant will anchor itself better; drainage will still be perfect.\n\nTechnique: gently remove the plant from the old pot. Work the root-bound material gently with your fingers or a soft brush — the goal: loosen some of the old substrate without tearing the roots. Fill the new pot halfway with substrate. Place the plant in the center. Mix substrate around the roots gently, press lightly to remove air pockets, but never compress hard. Never squeeze the soil.\n\nWatering after repotting: water once fully within the first three hours after repotting. Not excessively — the soil should be moist, not wet. After that, maintain high ambient humidity (70%) for one week — this is a transition period even if not explicitly stated here.",
+      "sop": {
+        "title_he": "SOP הטפטה שלב אחר שלב",
+        "title_en": "Repotting SOP Step by Step",
+        "steps_he": [
+          "בדוק סימנים: שורשים לבנים בחלק העליון, גובה נעצר, או צפיפות שורשים.",
+          "בחר עציץ בגודל הגדול ב-1.5–2 ס\"מ בקוטר בלבד. לעולם לא קפצי על 2 ס\"מ ויותר.",
+          "תעט את הצמח בעדינות מהעציץ הישן.",
+          "לחץ בעדינות על שורשים בעדינות כדי להרחיק מעט מן המצע. אל תשברו שורשים.",
+          "מלא את העציץ החדש ב-מחצית מצע: 40% Orchiata, 30% Perlite, 30% Coir.",
+          "הנח את הצמח במרכז. ערבב מצע סביב השורשים. דחוס קל בלבד.",
+          "תן מים זו פעם בלבד (לחות מלאה אך לא ביצות). שמור לחות סביבתית ≥70% למשך שבוע.",
+          "בדוק שוורשים אחרי 3–4 שבועות עם צריצות קטנות למראה וורוד חדש."
+        ],
+        "steps_en": [
+          "Check readiness: white roots on top, growth stalled, or obvious root density.",
+          "Choose a pot only 1.5–2cm larger in diameter. Never jump 2cm or more.",
+          "Gently remove the plant from the old pot.",
+          "Loosen the roots gently to separate some of the old substrate. Do not break roots.",
+          "Fill the new pot halfway with substrate: 40% Orchiata, 30% Perlite, 30% Coir.",
+          "Center the plant. Mix substrate around roots. Compress lightly only.",
+          "Water once fully (humid but not swampy). Maintain ≥70% ambient humidity for one week.",
+          "Check roots after 3–4 weeks with small peeks for new pink growth."
+        ]
+      },
+      "formula": "Jump 1 size only | 40:30:30 formula | Water once, maintain humidity 70% for 7 days",
+      "warnings_he": [
+        "קפיצה על 2 ס\"מ או יותר = מצע רטוב תמידי = ריקבון שורשים מובטח.",
+        "דחיסה חזקה של קרקע = חנק שורשים. דחוס קל בלבד כדי להסיר אוויר בודד.",
+        "השקיה יתר זו לאחר הטפטה = ההטפטה עצמה הגיעה. שחזור 3–4 שבועות במרחב קר."
+      ],
+      "warnings_en": [
+        "Jumping 2cm or more = perpetually wet substrate = guaranteed root rot.",
+        "Heavy soil compression = choking roots. Compress lightly only to remove air pockets.",
+        "Over-watering after repotting = the repot itself failed. Recovery takes 3–4 weeks in cool space."
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "plant-monstera-albo-variegata",
+      "tag_he": "מדריכי צמח",
+      "tag_en": "Plant Guides",
+      "title_he": "Monstera Deliciosa 'Albo Variegata' — מדריך קולקציונרים",
+      "title_en": "Monstera Deliciosa 'Albo Variegata' — The Collector's Guide",
+      "subtitle_he": "הצמח הכי צפוי, הכי יפה, והכי קל לנזוק לזבל.",
+      "subtitle_en": "The most coveted, most beautiful, and easiest to ruin.",
+      "meta_description_he": "מדריך מלא לPink Leaf: Monstera Albo Variegata, וריאגציה כימרית, תנאי גדילה, סימני ריברשן, מניעה. מדוע Monstera Albo מתאשק בקלות.",
+      "meta_description_en": "Complete Pink Leaf guide: Monstera Albo Variegata, chimeric variegation, growing conditions, reversion signs, prevention. Why Monstera Albo reverts so easily.",
+      "seo_keywords": [
+        "Monstera Albo Variegata care",
+        "Monstera Albo revert prevention",
+        "Monstera Albo light requirements",
+        "how to grow Monstera Albo",
+        "Monstera Albo white variegation",
+        "Monstera deliciosa Albo",
+        "מונסטרה אלבו",
+        "Monstera Albo וריאגציה",
+        "טיפול Monstera Albo",
+        "מניעת ריברשן Albo",
+        "Monstera Albo Israel care",
+        "rare variegated Monstera"
+      ],
+      "content_he": "Monstera Albo היא סוג של יפה שמכניס לאנשים להציע כסף רב. אנשים מרובים לא יכולים שלם את הטיפול המתגבש שהיא דורשת.\n\nבואו נהיה ברורים: Monstera Albo היא כימרית. אור נמוך מדי בשבועות ספורות, היא תחזור ירוק. לא 100% ודאות, אבל בתוך 4–6 שבועות של תנאים לא אופטימליים, עלים חדשים ישלחו ללא וריאגציה. אתה תשתמש כסף טוב כדי לקנות צמח יפה, וזה הפך להיות צמח ירוק זול בחודש.\n\nהתנאים הנכונים הם: אור עקיף בהיר בתמיד, אך לא שמש ישירה. PPFD 150–250 μmol/m²/s הוא טווח מושלם. אם אתה משתמש בלד מעל, מוודא שהוא לא פחות מ-1 מטר מהדף. מיקום צוהר דרומי עם וילון דק הוא הגדול.\n\nטמפרטורה: 22–28°C ביום, מינימום 18°C בלילה. Monstera Albo מחוץ לטווח הזה = מתח פיזיולוגי = ריברשן מהחזוי לפחות בשבועות.\n\nלחות: מינימום 50%, אך 60–75% הוא אפילו יותר טוב. VPD בטווח של 0.8–1.2 kPa. מי הברז רגיל בסדר לכל יום אבל אם אתה גדל בעזרת צל חלוקי, מעשים אל הטפל מכל חודש עם LECA.\n\nשטופוס הגדול היחיד עבור Monstera Albo הוא הבחירה בלא נכונה של צומת. כאשר אתה חותך שורוכים (Cuttings), או כאשר הצמח מגיע כרביים מנצפיות מעל שום צומת, וריאגציה יכול להיות בחודים חצי באותה צומת. בחרו תמיד בצומת עם וריאגציה ברור — ורוד לבן וורוד בניצן כדי למקסימום את כמויות מיטות.\n\nריברשן כבר מתחיל? הסימנים: עלים חדשים שנראים בעלי אחוז לבן נמוך יותר כל עלה. ניצנים עם צבע פחות. מריסטם ירוק לחלוטין ללא צבע. זו הזמן לגמול את כל התנאים: אור יותר, טמפרטורה קצת יותר קרה, וודא לחות ו-EC נוזל אם בעציץ LECA.\n\nהמסקנה: Monstera Albo היא לא לצמחים קליל לשמור על. לא אבל היא קצת דרש. אם אתה לא יכול לשמור על VPD בעיניים וחישה אור וטמפרטורה, קנו צמח ירוק ולא יקר, ותחכו עד שהמרחב שלך בטוח יותר.",
+      "content_en": "*Monstera deliciosa* 'Albo Variegata' is a kind of beauty that tempts people to offer large sums of money. Many people who buy one cannot manage the exacting care it demands.\n\nLet us be clear: Monstera Albo is chimeric. Too-low light for just a few weeks, and it will revert to green. Not 100% certain, but within 4–6 weeks of suboptimal conditions, new leaves will emerge without variegation. You spent serious money to buy a beautiful plant, and within a month it has become a cheap green plant.\n\nThe correct conditions are: bright indirect light at all times, but never direct sun. PPFD 150–250 μmol/m²/s is the perfect range. If you use a grow light above, ensure it is no closer than 1 meter from the leaf. A south-facing window with a sheer curtain is ideal.\n\nTemperature: 22–28°C during day, minimum 18°C at night. Monstera Albo outside this range = physiological stress = reversion predicted within weeks.\n\nHumidity: minimum 50%, but 60–75% is far better. VPD in the range 0.8–1.2 kPa. Regular tap water is fine for daily watering but if you grow in dividing shade, water every month with LECA water instead.\n\nThe single biggest pitfall for Monstera Albo is incorrect node selection. When you take cuttings, or when the plant arrives rooted with no variegation above the node, variegation may be hidden halfway down that node. Always select a node with clear variegation — pink, white, and pink in the bud to maximize white output.\n\nReversion already beginning? The signs: new leaves showing lower white percentage each leaf. Buds with less color. A completely green meristem with no coloring. This is the time to maximize all conditions: more light, slightly cooler temperature, ensure humidity and EC if in LECA water.\n\nThe bottom line: Monstera Albo is not a 'set and forget' plant. Not impossible, but it demands attention. If you cannot maintain VPD by eye and feel for light and temperature, buy a cheap green plant and wait until your space is more stable.",
+      "warnings_he": [
+        "בחירת צומת שגויה = וריאגציה מוסתרת = עלים חדשים ירוקים. לא פיתרון. לא להכניס כל עלה. לחפש צומת עם וריאגציה ברור.",
+        "אור נמוך = ריברשן מובטח. זה לא סיכון — זו עובדה. אם אתה אין יכול לעמוד באור טוב, אל תקנו Albo.",
+        "טמפרטורה מתחת ל-18°C בלילה = הצמח סטופ וריאגציה מפעילה. שמור חום."
+      ],
+      "warnings_en": [
+        "Wrong node selection = variegation hidden = new green leaves. No solution. Every leaf matters. Always choose a node with obvious variegation visible.",
+        "Low light = reversion guaranteed. This is not a risk — it is a fact. If you cannot provide bright light, do not buy Albo.",
+        "Temperature below 18°C at night = plant deactivates variegation production. Keep it warm."
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "water-quality-ph-aroids",
+      "tag_he": "מים וגידול",
+      "tag_en": "Water & Growing",
+      "title_he": "איכות מים ו-pH לארוידים נדירים — מדוע מי ברז הוא בעיה",
+      "title_en": "Water Quality & pH for Rare Aroids — Why Tap Water Is a Problem",
+      "subtitle_he": "המים שלכם לא דומים למים שלי. בדוק אחרי.",
+      "subtitle_en": "Your water is not my water. Test it yourself.",
+      "meta_description_he": "מדוע מי ברז מזיקים לארוידים, תחום pH אידיאלי (6.0–6.5), EC/TDS תקני, וההבדלים בין מים מזוקקים לטהורים ל-RO. הדריך Pink Leaf הסטנדרטי.",
+      "meta_description_en": "Why tap water damages aroids, ideal pH range (6.0–6.5), EC/TDS standards, and differences between distilled, filtered, and RO water. The Pink Leaf standard guide.",
+      "seo_keywords": [
+        "tap water aroids harm",
+        "pH range aroids plants",
+        "distilled water vs RO water",
+        "EC TDS plant water",
+        "water quality rare plants",
+        "mineral content tap water",
+        "מים ברז צמח",
+        "pH אופטימלי אארואיד",
+        "מים מזוקקים צמח",
+        "איכות מים צמחים נדירים",
+        "TDS מד צמח",
+        "כלור וכל בריאות הצמח"
+      ],
+      "content_he": "מי ברז הישראלי הוא 'בטוח' לשתיה — עבור בני אדם. לצמחים, זה הטבח דוקטור וולט הוא מה המערערים קליל היו. אתה רואה את ה-pH של מי הברז? זה בדרך כלל בין 7.0–8.5 בישראל — ניטרלי לחומצי. צמחים אפיפיטיים כמו Monstera, Philodendron, ו-Alocasia התפתחו בתוך סביבה חומצית: פסולת עלים, אדמה טבעית — כל מה שעוזר ל-pH ירד ל-5.5–6.5. בחומציות זו, הם יכולים לספוג יסודות (Ca, Mg, K, N) כשמחיר טוב. ב-pH של 7.5+, צמחים אלה מתחילים לסבול מ-deficiencies — לא כי אין מינרלים, אלא כי צמח לא יכול לקלוט אותם כשהmedia יותר משניים לא חומצי.",
+      "content_en": "Israeli tap water is 'safe' for drinking — for humans. For plants, it is the slow poison. Look at the pH of your tap water. It is typically between 7.0–8.5 in Israel — neutral to alkaline. Epiphytic plants like *Monstera*, *Philodendron*, and *Alocasia* evolved in acidic environments: leaf litter, natural soil — everything that keeps pH down to 5.5–6.5. At this acidity, they can absorb minerals (Ca, Mg, K, N) at good rates. At pH 7.5+, these plants start to suffer from deficiencies — not because minerals are absent, but because the plant cannot absorb them when the media is too alkaline.\n\nSolute content (TDS/EC) is the second issue. Tap water in Israel often carries 300–600 ppm (Total Dissolved Solids). For a TC plant fresh from the flask, 300ppm is already stressful. The higher the TDS, the greater the osmotic gradient — water is pulled out of plant cells to balance the external salt concentration. The result: leaves lose turgor, edges yellow and brown, roots weaken. If you are using tap water for months, salts accumulate in the substrate and never wash out.\n\nRO water (Reverse Osmosis) is near-perfect: TDS close to zero, pH 6.8–7.0 (neutral, but low enough to work with). However, it is not common in Israel and usually requires home investment.\n\nDistilled water is similar to RO: very low TDS (nearly zero), pH slightly acidic (5.5–6.0 due to dissolved CO₂ from air). Better than tap, much cheaper than RO (can buy at any supermarket).\n\nFiltered water (Brita, etc.) reduces chlorine and some minerals, but TDS may still be 150–250ppm — not ideal, but far better than tap.\n\nThe ideal is: TDS 50–150ppm, pH 6.0–6.5. How to achieve this: start with RO or distilled (TDS near zero), add a micro-dose of balanced fertilizer to reach EC 0.4–0.6, adjust pH to 6.0–6.5 with pH Down (phosphoric acid) if needed. This mimics rainwater — which is what aroids 'expect' in nature.\n\nFor daily watering: use distilled or RO. For monthly nutrient watering (in LECA setups), add EC 0.6–0.8 solution. For regular pot-soil plants: alternate distilled weeks with low-dose nutrient weeks.\n\nDo not skip pH measurement. A digital pH meter costs 20–30 sheqel. Your rare Monstera costs 2,000. The investment is obvious.",
+      "sop": {
+        "title_he": "SOP איכות מים — בדיקה והתאמה",
+        "title_en": "Water Quality SOP — Testing & Adjustment",
+        "steps_he": [
+          "קנה TDS meter (EC meter) ו-pH meter. זה שני מטרים זעומים בהתחלה.",
+          "בדוק את מי הברז שלך: TDS, pH. רשום את הנתונים.",
+          "אם TDS מעל 200ppm או pH מעל 7.0, עבור ל-Distilled או RO water.",
+          "בתחום Distilled: בדוק pH כל שבוע. אם מעל 7.0, הוסף כמה טיפות pH Down (חומצה אורתופוספוריק) עד 6.0–6.5.",
+          "עבור צמחי LECA: תן מים Distilled בלבד. בכל 3–4 שבועות הוסף תמיסת מזינים: EC 0.6–0.8, pH 6.0–6.5.",
+          "לצמחי קרקע רגילים: שבוע 1–2: Distilled. שבוע 3–4: תוסף הדלק (Half-strength nutrients).",
+          "בדוק שורשים כל חודש: לבנים ורודים = מי טובים. חומים או שחורים = בעיית מים או מלחים."
+        ],
+        "steps_en": [
+          "Buy a TDS meter (EC meter) and pH meter. Two simple meters to start with.",
+          "Test your tap water: TDS, pH. Record the data.",
+          "If TDS above 200ppm or pH above 7.0, switch to Distilled or RO water.",
+          "With Distilled: check pH weekly. If above 7.0, add a few drops of pH Down (orthophosphoric acid) until 6.0–6.5.",
+          "For LECA plants: give Distilled water only. Every 3–4 weeks add nutrient solution: EC 0.6–0.8, pH 6.0–6.5.",
+          "For regular soil plants: Week 1–2: Distilled. Week 3–4: half-strength nutrients.",
+          "Check roots monthly: white and pink = good water. Brown or black = water or salt issue."
+        ]
+      },
+      "formula": "Ideal: TDS 50–150ppm + pH 6.0–6.5 | Distilled as base, add micro-nutrients to EC 0.6–0.8",
+      "warnings_he": [
+        "מי ברז רגילים = הצטברות מלחים בקרקע. לא משנה כמה טוב את הגדלנים, מלחים נצברים, וצמחים סובלים מישע.",
+        "pH מעל 7.5 = deficiencies מינרלים מובטחים. צמח ירוק אך חלש.",
+        "TDS מעל 400ppm = נזק אוסמוטי לשורשים. אל תנחסו בעלו כי צמח 'נראה בסדר'."
+      ],
+      "warnings_en": [
+        "Regular tap water = salt accumulation in soil. No matter how good a grower, salts accumulate and plants suffer from slow decline.",
+        "pH above 7.5 = nutrient deficiencies guaranteed. Plant stays green but weak.",
+        "TDS above 400ppm = osmotic damage to roots. Do not ignore it because the plant 'looks okay.'"
+      ]
     }
   ]
 }

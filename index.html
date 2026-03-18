@@ -3000,12 +3000,12 @@ function checkLab(choiceIndex) {
         const TAG_MAP = {
             'all':         null,
             'plant':       ['plant-'],
-            'tc':          ['post-flask', 'tissue-culture'],
-            'acclimation': ['21-day'],
-            'substrate':   ['engineered'],
+            'tc':          ['post-flask', 'tissue-culture', 'variegation-types', 'repotting-tc'],
+            'acclimation': ['21-day', 'repotting-tc', 'semi-hydro'],
+            'substrate':   ['engineered', 'semi-hydro', 'water-quality'],
             'light':       ['atmospheric'],
-            'health':      ['plant-health', 'leaf-symptom'],
-            'collector':   ['investment'],
+            'health':      ['plant-health', 'leaf-symptom', 'water-quality'],
+            'collector':   ['investment', 'variegation-types'],
         };
 
         function setEncycTag(tag) {
