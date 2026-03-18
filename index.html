@@ -24,8 +24,10 @@
     <meta property="og:title" content="Pink Leaf | אנציקלופדיה בוטנית · Rare Aroid Plants Israel">
     <meta property="og:description" content="חנות צמחים נדירים בישראל — Tissue Culture, Monstera, Alocasia. מדריכי גידול מקצועיים. Rare aroid plants and botanical guides in Hebrew and English.">
     <meta property="og:image" content="https://pinkleaf.co.il/plants/PV19.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Alocasia Polly Pink Variegata — Pink Leaf Botanical Studios">
     <meta property="og:locale" content="he_IL">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="Pink Leaf Botanical Studios">
@@ -1939,6 +1941,7 @@ body.dark-mode .scoreboard-item.current {
         <button class="nav-link" onclick="showPage('vault', this)" data-he="ארכיון" data-en="ARCHIVE">ארכיון</button>
         <button class="nav-link" onclick="showPage('encyclopedia', this)" data-he="אנציקלופדיה" data-en="ENCYCLOPEDIA">אנציקלופדיה</button>
         <button class="nav-link" onclick="showPage('lab', this)" data-he="מעבדה" data-en="LAB">מעבדה</button>
+        <button class="nav-link" onclick="showPage('tc', this)" data-he="תרבית רקמה" data-en="TISSUE CULTURE">תרבית רקמה</button>
     </nav>
 
     <main id="page-intro" class="max-w-2xl mx-auto p-6 text-center">
@@ -2118,6 +2121,18 @@ body.dark-mode .scoreboard-item.current {
         </div>
     </main>
 
+    <!-- TISSUE CULTURE PAGE -->
+    <main id="page-tc" class="hidden max-w-2xl mx-auto p-6 text-center pb-24">
+        <div class="logo-container" style="padding-top: 20px;">
+            <h2 class="serif mb-2 tracking-[3px] opacity-60 text-[14px]">PINK LEAF LAB</h2>
+        </div>
+        <div id="tc-content"></div>
+        <div class="flex justify-center gap-4 mt-10 flex-wrap">
+            <button class="btn" onclick="showPage('store')">לצמחי TC שלנו ✦</button>
+            <button class="btn" onclick="window.open('https://wa.me/972559116990')">שאלות? WhatsApp</button>
+        </div>
+    </main>
+
     <script>
         const MASTER_DB = {
     "PV1":{"name":"Epipremnum Giganteum aurea","family":"Others"},
@@ -2215,6 +2230,69 @@ body.dark-mode .scoreboard-item.current {
         const intros = {
             en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is Israel's destination for rare, collector-grade aroids — Tissue Culture, variegated Monstera, Alocasia, and Philodendron that you simply won't find anywhere else.</p><p>Every plant is imported, propagated, and hardened in-house using professional TC protocols. What arrives at your door is stable, healthy, and ready to grow — not a gamble from a random seller.</p><p>Explore the botanical encyclopedia, test your knowledge in the Lab, or reach us directly on WhatsApp and Instagram.</p></div>`,
             he: `<div dir="rtl"><p><strong>Pink Leaf</strong> היא היעד הבוטני של ישראל לצמחים נדירים ברמת קולקטור — תרבית רקמה, Monstera וריאגטית, Alocasia ו-Philodendron שפשוט לא תמצאו בשום מקום אחר.</p><p>כל צמח מיובא, מורבה ומאוקלם אצלנו בפרוטוקולי TC מקצועיים. מה שמגיע אליכם הוא יציב, בריא ומוכן לצמוח — לא הימור ממוכר אקראי.</p><p>גלו את האנציקלופדיה הבוטנית, בחנו את הידע שלכם במעבדה, או פנו אלינו ישירות בוואטסאפ ובאינסטגרם.</p></div>`
+        };
+
+        const tcContent = {
+            he: `<div dir="rtl" class="text-right space-y-6" style="font-size:14px; line-height:1.8; tracking-wide;">
+<div class="p-10 border border-[var(--border)] rounded-[60px] bg-[var(--mellow-pink)] mb-6">
+<h1 class="serif mb-6" style="font-size:22px; letter-spacing:3px; background: linear-gradient(135deg, var(--text) 60%, var(--pink) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">תרבית רקמה (Tissue Culture)</h1>
+<p><strong>מה זה בכלל?</strong></p>
+<p>תרבית רקמה היא שיטת ריבוי צמחים שמתבצעת <strong>במעבדה סטרילית</strong>, בתנאים מבוקרים לחלוטין. במקום לחתוך ענף ולקוות לטוב — לוקחים תאי צמח בודדים, מניחים אותם על ג'ל מיוחד עם הורמונים וחומרי הזנה, ומגדלים מהם צמח שלם חדש.</p>
+<p>התוצאה: צמח <strong>נקי ממחלות, נקי מחרקים</strong>, ומדויק גנטית — עותק מושלם של הצמח המקורי.</p>
+</div>
+
+<div class="p-8 border border-[var(--border)] rounded-[50px] bg-[var(--mellow-pink)] mb-6">
+<p><strong>🧪 למה צמחי TC שונים?</strong></p>
+<p>צמח TC מגיע לבית שלכם בתוך <strong>צינורית אטומה</strong> עם ג'ל — כי הוא גדל כל חייו בסביבה סטרילית. הוא לא ראה חרקים, פטריות, בקטריות או עפר רגיל.</p>
+<p>לכן כשמוציאים אותו, הוא צריך <strong>תהליך הסתגלות (אקלום)</strong>: מורידים את הג'ל, שותלים ב-LECA או בסביבה לחה, ומעלים בהדרגה את רמת החשיפה לאוויר רגיל. התהליך לוקח כ-4–8 שבועות.</p>
+<p><em>ב-Pink Leaf אנחנו מתמחים בדיוק בזה — כל הצמחים שלנו כבר עברו אקלום מקצועי.</em></p>
+</div>
+
+<div class="p-8 border border-[var(--border)] rounded-[50px] bg-[var(--mellow-pink)] mb-6">
+<p><strong>✦ היתרונות של TC</strong></p>
+<p>• <strong>נקי 100%</strong> — ללא מזיקים נסתרים שיגיעו איתו הביתה<br>
+• <strong>יציב גנטית</strong> — הווריאגציה (הפסים הלבנים/ורודים) לא תיעלם<br>
+• <strong>זמינות של זנים נדירים</strong> — גנטיקה שאי אפשר למצוא בשוק הרגיל<br>
+• <strong>בריאות גבוהה</strong> — שורשים חזקים ועמידות טובה יותר לטווח ארוך</p>
+</div>
+
+<div class="p-8 border border-[var(--border)] rounded-[50px] bg-[var(--mellow-pink)]">
+<p><strong>❓ שאלות נפוצות</strong></p>
+<p><strong>האם צמח TC קשה לגידול?</strong><br>לא — אחרי האקלום הוא גדל בדיוק כמו כל צמח רגיל. השלב הראשון דורש קצת סבלנות, אבל אנחנו כאן כדי להדריך.</p>
+<p><strong>מה זה אומר "וריאגציה" (Variegation)?</strong><br>וריאגציה היא מוטציה גנטית שגורמת לעלים להראות עם כתמים, פסים או מגזרות בצבעים לבן, קרם, ורוד או צהוב. בצמחי TC הווריאגציה יציבה ועקבית.</p>
+<p><strong>מה ההבדל בין TC לצמח רגיל?</strong><br>צמח TC ריבה במעבדה, צמח רגיל ריבה על ידי גנן עם קרקע ומים. TC = בטוח יותר, נדיר יותר, ויקר יותר — אבל שווה כל שקל.</p>
+</div>
+</div>`,
+            en: `<div dir="ltr" class="text-left space-y-6" style="font-size:14px; line-height:1.8;">
+<div class="p-10 border border-[var(--border)] rounded-[60px] bg-[var(--mellow-pink)] mb-6">
+<h1 class="serif mb-6" style="font-size:22px; letter-spacing:3px; background: linear-gradient(135deg, var(--text) 60%, var(--pink) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Tissue Culture (TC) — Explained</h1>
+<p><strong>What is it?</strong></p>
+<p>Tissue culture is a laboratory propagation method where individual plant cells are placed on a sterile nutrient gel and grown into a complete plant — entirely in a controlled, pathogen-free environment. No cuttings, no soil, no guesswork.</p>
+<p>The result: a plant that is <strong>100% pest-free, disease-free</strong>, and genetically identical to the original — stable variegation guaranteed.</p>
+</div>
+
+<div class="p-8 border border-[var(--border)] rounded-[50px] bg-[var(--mellow-pink)] mb-6">
+<p><strong>🧪 Why are TC plants different?</strong></p>
+<p>TC plants arrive sealed in a small tube or jar filled with nutrient gel — because they've lived their entire life in a sterile environment. They've never encountered soil, insects, fungi, or bacteria.</p>
+<p>That's why they need an <strong>acclimatisation period</strong> when they leave the lab: the gel is removed, the plant is transferred to LECA or a humid chamber, and slowly introduced to normal air and humidity. This takes around 4–8 weeks.</p>
+<p><em>At Pink Leaf, every TC plant has already been professionally acclimated before it reaches you.</em></p>
+</div>
+
+<div class="p-8 border border-[var(--border)] rounded-[50px] bg-[var(--mellow-pink)] mb-6">
+<p><strong>✦ The advantages of TC</strong></p>
+<p>• <strong>100% clean</strong> — no hidden pests arriving at your home<br>
+• <strong>Genetically stable</strong> — the variegation (white/pink sectors) won't revert<br>
+• <strong>Access to rare genetics</strong> — cultivars unavailable on the regular market<br>
+• <strong>Strong foundation</strong> — healthy roots and better long-term resilience</p>
+</div>
+
+<div class="p-8 border border-[var(--border)] rounded-[50px] bg-[var(--mellow-pink)]">
+<p><strong>❓ FAQ</strong></p>
+<p><strong>Are TC plants hard to grow?</strong><br>No — after acclimatisation they grow just like any other plant. The first phase requires some patience, but we're here to guide you every step.</p>
+<p><strong>What is variegation?</strong><br>Variegation is a genetic mutation that causes leaves to display patches, sectors, or streaks in white, cream, pink, or yellow. In TC plants, this trait is stable and consistent.</p>
+<p><strong>TC vs regular plant — what's the difference?</strong><br>A TC plant was propagated in a lab; a regular plant was propagated by a grower using soil and water. TC = safer, rarer, and more expensive — but worth every penny.</p>
+</div>
+</div>`
         };
 
         const SUBSTRATE_DB = {
@@ -2380,10 +2458,12 @@ body.dark-mode .scoreboard-item.current {
     if (p === 'care') renderCareProducts();
     if (p === 'lab') startLab();
     if (p === 'encyclopedia') { loadEncyclopedia(); }
+    if (p === 'tc') updateTC();
 }
 
 
         function updateIntro(){ document.getElementById('intro-content').innerHTML = intros[lang]; }
+        function updateTC(){ const el = document.getElementById('tc-content'); if(el) el.innerHTML = tcContent[lang]; }
 
         function filterStore() {
             currentFilter = document.getElementById('store-filter-select').value;
@@ -2650,7 +2730,8 @@ function checkLab(choiceIndex) {
             // lab-retry-btn is now symbol-only — no text to toggle
             if(el('reg-name')) el('reg-name').placeholder = isHe ? 'שמך' : 'Your Name';
             if(el('reg-email')) el('reg-email').placeholder = isHe ? 'אימייל' : 'Email'; 
-            updateIntro(); 
+            updateIntro();
+            if(!document.getElementById('page-tc').classList.contains('hidden')) updateTC();
             document.querySelectorAll('.nav-link').forEach(n => {
                 const label = n.getAttribute('data-' + lang);
                 if(label) n.innerText = label;
