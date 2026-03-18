@@ -552,6 +552,58 @@
         "Agar on TC roots + high humidity = Pythium mold. Always sterilize.",
         "Cream variegation at 50%+ = partial chlorophyll deficiency. Adequate light is essential."
       ]
+    },
+    {
+      "id": 12,
+      "slug": "tissue-culture",
+      "tag_he": "יסודות הגידול",
+      "tag_en": "Growing Fundamentals",
+      "title_he": "תרבית רקמה — המדע מאחורי הצמח",
+      "title_en": "Tissue Culture — The Science Behind the Plant",
+      "subtitle_he": "לא כל צמח הוא צמח. TC הוא מדע.",
+      "subtitle_en": "Not every plant is a plant. TC is science.",
+      "meta_description_he": "מה זה תרבית רקמה, למה צמחי TC שונים, ואיך מאקלמים אותם נכון. המדריך המלא של Pink Leaf לצמחים נדירים ישראל.",
+      "meta_description_en": "What is tissue culture, why TC plants are different, and how to acclimatise them correctly. The complete Pink Leaf guide to rare plants Israel.",
+      "seo_keywords": [
+        "tissue culture plants",
+        "TC plants Israel",
+        "תרבית רקמה",
+        "צמחים נדירים ישראל",
+        "אקלום TC",
+        "TC acclimatisation",
+        "variegation genetics",
+        "וריאגציה גנטיקה",
+        "Fluval Stratum TC",
+        "rare aroids Israel",
+        "deflask TC"
+      ],
+      "content_he": "תרבית רקמה היא שיטת ריבוי צמחים שמתבצעת במעבדה סטרילית מוחלטת. במקום לחתוך ענף ולקוות לטוב — לוקחים תאי צמח בודדים, מניחים אותם על ג'ל מיוחד עם הורמונים וחומרי הזנה, ומגדלים מהם צמח שלם חדש. התוצאה: צמח נקי ממחלות, נקי מחרקים, ומדויק גנטית — עותק מושלם של הצמח המקורי.\n\nצמח TC מגיע לבית שלכם בתוך צינורית אטומה עם ג'ל — כי הוא גדל כל חייו בסביבה סטרילית. הוא לא ראה חרקים, פטריות, בקטריות או עפר רגיל. לכן כשמוציאים אותו, הוא צריך תהליך הסתגלות — אקלום: מסירים את הג'ל, שותלים ב-Fluval Stratum, ומעלים בהדרגה את החשיפה לאוויר רגיל. התהליך לוקח 4–8 שבועות. ב-Pink Leaf כל הצמחים שלנו כבר עברו אקלום מקצועי.\n\nהיתרונות של TC: הצמח נקי 100% — ללא מזיקים נסתרים שיגיעו איתו הביתה. הווריאגציה יציבה גנטית ולא תיעלם. זמינות גנטיקה נדירה שאי אפשר למצוא בשוק הרגיל. שורשים חזקים ועמידות גבוהה יותר לטווח ארוך.\n\nוריאגציה היא מוטציה גנטית שגורמת לעלים להראות עם כתמים, פסים או מגזרות בצבעים לבן, קרם, ורוד או צהוב. זו לא צביעה — זו גנטיקה. בצמחי TC הווריאגציה יציבה ועקבית, ועוברת לעלים הבאים. ההבדל בין TC לצמח רגיל: TC ריבה במעבדה בתנאים מדויקים; צמח רגיל ריבה על ידי גנן עם קרקע ומים. TC = בטוח יותר, נדיר יותר, ויציב יותר.",
+      "content_en": "Tissue culture is a propagation method carried out in a completely sterile laboratory. Instead of taking a cutting and hoping for the best — individual plant cells are placed on a specialised gel enriched with hormones and nutrients, and grown into a complete new plant. The result: a plant free of disease, free of pests, and genetically exact — a perfect copy of the original.\n\nA TC plant arrives in a sealed tube with gel — because it has spent its entire life in a sterile environment. It has never encountered insects, fungi, bacteria, or regular soil. When it leaves the lab, it needs an acclimatisation period: the gel is removed, the plant is transferred to Fluval Stratum, and gradually introduced to normal air and humidity. This takes 4–8 weeks. At Pink Leaf, every plant has already been professionally acclimated before it reaches you.\n\nThe advantages of TC: the plant is 100% clean — no hidden pests arriving at your home. Variegation is genetically stable and will not revert. Access to rare genetics unavailable on the regular market. Strong root systems and better long-term resilience.\n\nVariegation is a genetic mutation that causes leaves to display patches, sectors, or streaks in white, cream, pink, or yellow. It is not dye — it is genetics. In TC plants, variegation is stable and consistent, carried forward into new leaves. The difference between TC and a regular plant: TC was propagated in a laboratory under precise conditions; a regular plant was propagated by a grower using soil and water. TC = safer, rarer, and more stable.",
+      "sop": {
+        "title_he": "שאלות נפוצות",
+        "title_en": "Frequently Asked Questions",
+        "steps_he": [
+          "האם צמח TC קשה לגידול? לא — אחרי האקלום הוא גדל בדיוק כמו כל צמח. שלב האקלום דורש סבלנות, אנחנו כאן כדי להדריך.",
+          "למה צמח TC יקר יותר? כי הריבוי במעבדה יקר, והצמח מגיע נקי, יציב, ומאומת גנטית — לא הימור.",
+          "מה ההבדל בין TC לחיתוך רגיל? חיתוך לוקח שבועות ולא תמיד מצליח. TC יוצא כבר עם שורשים ומערכת גנטית מלאה.",
+          "האם הווריאגציה תיעלם? לא. בצמח TC הווריאגציה גנטית ויציבה — היא לא תיגמל."
+        ],
+        "steps_en": [
+          "Is a TC plant hard to grow? No — after acclimatisation it grows exactly like any other plant. The acclimatisation phase requires patience; we are here to guide you.",
+          "Why is a TC plant more expensive? Because laboratory propagation is costly, and the plant arrives clean, stable, and genetically verified — not a gamble.",
+          "What is the difference between TC and a regular cutting? A cutting takes weeks and doesn't always succeed. TC already has roots and a complete genetic system from day one.",
+          "Will the variegation disappear? No. In a TC plant variegation is genetic and stable — it will not revert."
+        ]
+      },
+      "formula": "TC = נקי • יציב גנטית • נדיר | Acclimation: 4–8 weeks · Fluval Stratum",
+      "warnings_he": [
+        "אחרי הוצאה מהג'ל — אל תחשפו לאוויר ישירות. עברו לאקלום הדרגתי ב-Stratum.",
+        "שאריות ג'ל Agar על השורשים מזינות עובש — נקו לפני השתילה (ראו מאמר חיטוי TC)."
+      ],
+      "warnings_en": [
+        "After removing from gel — do not expose directly to open air. Begin gradual acclimatisation in Stratum.",
+        "Agar gel residue on roots feeds mould — clean before transplanting (see TC Sterilization article)."
+      ]
     }
   ]
 }
