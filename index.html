@@ -2281,7 +2281,8 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV19", name: "Alocasia Polly Pink Variegated", availability: ["Tissue Culture", "High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV14", name: "Alocasia × amazonica 'Polly' Albo Variegata", availability: ["Tissue Culture"], light: "70%", humidity: "85%", status: "available" },
             { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available", openingSale: true },
             { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Tissue Culture", "Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "available" },
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Tissue Culture", "Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
@@ -2416,8 +2417,13 @@ body.dark-mode .scoreboard-item.current {
     // 3. Scroll to top on every page change
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // 4. Update Navigation Active State
-    document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('nav-active'));
+    // 4. Update Navigation Active State + re-apply correct language labels
+    document.querySelectorAll('.nav-link').forEach(n => {
+        n.classList.remove('nav-active');
+        // Always re-apply the correct language label to prevent text glitch
+        const label = n.getAttribute('data-' + lang);
+        if (label) n.innerText = label;
+    });
     
     if (el) {
         // If we clicked a nav button directly
@@ -2751,8 +2757,10 @@ function checkLab(choiceIndex) {
         };
         // Per-item price overrides — populate as you add prices
         const ITEM_PRICES = {
+            "PV19_Tissue Culture": 499,
             "PV19_High Variegation": 350,
             "PV19_Regular Variegation": 199,
+            "PV14_Tissue Culture": 330,
             "PV81_Starter Plant": 500,
         };
 
