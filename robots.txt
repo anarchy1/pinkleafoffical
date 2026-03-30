@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /?s=
+Disallow: /?sort=
+Disallow: /?filter=
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*?sid=
+Disallow: /assets/
+Disallow: /images/
+Disallow: /static/
+Disallow: /cdn-cgi/
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+Sitemap: https://pinkleaf.co.il/sitemap.xml

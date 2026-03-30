@@ -1,0 +1,44 @@
+{
+  "plants": [
+    {
+      "id": "monstera-deliciosa",
+      "en": {
+        "name": "Monstera Swiss Cheese",
+        "scientific": "Monstera deliciosa",
+        "description": "Iconic rainforest plant with large, fenestrated leaves. Air-purifying and easy to care for.",
+        "care": {
+          "light": "Bright indirect light",
+          "water": "Allow top inch to dry between waterings",
+          "humidity": "60-80% preferred",
+          "temperature": "18-27°C"
+        },
+        "benefits": ["Air purification", "Statement piece", "Fast-growing"],
+        "difficulty": "Easy"
+      },
+      "he": {
+        "name": "מונסטרה גבינה שווייצרית",
+        "scientific": "Monstera deliciosa",
+        "description": "צמל גטפ בעל עלים גדולים עם חורים אופייניים. מטהר אוויר וקל לטיפוח.",
+        "care": {
+          "light": "אור בהיר ולא ישיר",
+          "water": "לתת להתייבש בסנטימטר העליון",
+          "humidity": "מועדף 60-80%",
+          "temperature": "18-27°C"
+        },
+        "benefits": ["טיהור אוויר", "פריט נוי בולט", "גידול מהיר"],
+        "difficulty": "קל"
+      },
+      "price": 75,
+      "stock": {
+        "seed": 15,
+        "small": 8,
+        "medium": 3,
+        "large": 0
+      },
+      "images": {
+        "main": "plants/monstera-main.jpg",
+        "gallery": ["plants/monstera-1.jpg", "plants/monstera-2.jpg"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,870 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "slug": "post-flask-sterilization",
+      "tag_he": "פרוטוקול עיקור",
+      "tag_en": "Sterilization Protocol",
+      "title_he": "חיטוי שורשים לאחר הצנצנת — פרוטוקול ה-TC",
+      "title_en": "Post-Flask Sterilization — The Tissue Culture Protocol",
+      "subtitle_he": "מה שלא מנקים, מרקיב. מה שמרקיב, מת.",
+      "subtitle_en": "What you don't clean will rot. What rots, dies.",
+      "meta_description_he": "מדריך מקצועי לחיטוי שורשי Tissue Culture באמצעות H₂O₂ ביחס 1:4, הסרת Agar ידנית, ומניעת עובש. פרוטוקול Pink Leaf הרשמי לצמחים נדירים.",
+      "meta_description_en": "Professional guide to sterilizing Tissue Culture roots using H₂O₂ at 1:4 ratio, manual Agar removal, and mold prevention. The official Pink Leaf SOP for rare aroids.",
+      "seo_keywords": [
+        "tissue culture sterilization",
+        "deflask TC plants",
+        "H₂O₂ plant care",
+        "hydrogen peroxide plant soak",
+        "agar removal aroid",
+        "post-flask protocol",
+        "תרבית רקמה חיטוי",
+        "הוצאת TC מהצנצנת",
+        "ריקבון שורשים מניעה",
+        "Monstera Albo TC",
+        "rare plant tissue culture Israel",
+        "צמחים נדירים ישראל"
+      ],
+      "content_he": "כשצמח Tissue Culture יוצא מהצנצנת, הוא לא 'צמח'. הוא ניסוי. הוא גדל בסביבה סטרילית מוחלטת — ג'ל Agar עשיר בסוכרים ופיטוהורמונים, ללא חיידקים, ללא פטריות, ללא כל דבר שיש באוויר שלנו. עכשיו אתם חושפים אותו לעולם האמיתי. אם לא תנקו אותו כמו שצריך, תוך שבוע יהיה לכם עיסה שחורה. זה לא מזל רע — זה פרוטוקול שגוי.\n\nהבעיה היא ה-Agar. הסוכר שנשאר מחובר לשורשים הוא ארוחת שלוש קורסים לעובש. מספיק שאריות בגודל של ראש סיכה כדי לספק קולוניה פטרייתית תוך 48–72 שעות בתנאי לחות גבוהה. וגדלנים מתחילים — ולא רק הם — מפספסים שאריות כאלה כי ה-Agar שקוף.\n\nפרוטוקול Pink Leaf הרשמי: הכינו תמיסת עיקור ביחס קפדני של 1:4 — מי חמצן 3% H₂O₂ לתוך מים מזוקקים. 50 מ\"ל H₂O₂ ל-200 מ\"ל מים מזוקקים. לא מי ברז. לא 'בערך'. מזוקקים. השקיעו את הצמח כולו למשך 10 דקות בדיוק. לא 5, לא 15. 10. פחות מזה לא מספיק לעקר, יותר מזה שורף את קצות השורשים הצעירים שהם הנכסים הכי חשובים שיש לצמח כרגע.\n\nלאחר השרייה — ולפני שאתם מניחים אותו על כל מצע — עבדו עם מברשת ציור רכה (fine artist's paintbrush, מספר 2–4) בתנועות עדינות לאורך כל השורשים. המטרה: הסרת כל שאריות Agar ממפשעת השורשים — ה-root crotch, החיבור בין שורש לגבעול. זה המקום שבו Agar נוטה להסתתר. עבדו תחת אור חזק. בלי זכוכית מגדלת? קחו אחת. ה-Agar שקוף-לחלוחית ובגודל של טיפות מים — לא תראו אותו בתאורה רגילה.\n\nשטפו במים מזוקקים נקיים ושתלו מיד. לא להניח גלוי לאוויר. לצמח TC אין מערכת חיסון — כל דקת חשיפה לאוויר פתוח היא הזמנה לבעיות.",
+      "content_en": "When a Tissue Culture plant exits the flask, it is not a 'plant.' It is an experiment. It was raised in a completely sterile environment — an Agar gel rich in sugars and phytohormones, without bacteria, without fungi, without anything present in our air. You are now exposing it to the real world. If you don't clean it correctly, within a week you will have black mush. This is not bad luck — it is a failed protocol.\n\nThe problem is the Agar. The sugar residue remaining attached to the roots is a three-course meal for mold. A single pinhead-sized remnant is sufficient to fuel a fungal colony within 48–72 hours under high humidity. And beginner growers — and not only beginners — miss such remnants because Agar is transparent.\n\nThe official Pink Leaf protocol: prepare a sterilization solution at a precise 1:4 ratio — 3% H₂O₂ Hydrogen Peroxide into distilled water. 50ml H₂O₂ to 200ml distilled water. Not tap water. Not 'approximately.' Distilled. Submerge the entire plant for exactly 10 minutes. Not 5, not 15. Ten. Less than that is insufficient for sterilization; more than that burns the tender root tips — which are the most valuable asset the plant has at this moment.\n\nAfter soaking — and before placing on any substrate — work with a soft fine artist's paintbrush (size 2–4) in gentle strokes along all the roots. The goal: remove every trace of Agar from the root crotch — the junction between root and stem. This is where Agar tends to hide. Work under strong light. No magnifying glass? Get one. Agar is translucent-wet and the size of water droplets — you will not see it under regular lighting.\n\nRinse with clean distilled water and transplant immediately. Do not leave exposed to open air. A TC plant has no immune system — every minute of open-air exposure is an invitation to disaster.",
+      "sop": {
+        "title_he": "SOP רשמי — חיטוי TC שלב אחר שלב",
+        "title_en": "Official SOP — TC Sterilization Step by Step",
+        "steps_he": [
+          "הכן 250 מ\"ל תמיסת עיקור: 50 מ\"ל H₂O₂ 3% + 200 מ\"ל מים מזוקקים (יחס 1:4).",
+          "השקע את הצמח כולו — שורשים ועלים — למשך 10 דקות בדיוק.",
+          "הוצא ועבד עם מברשת ציור רכה על כל השורשים, תוך תשומת לב מרבית ל-root crotch.",
+          "עבד תחת מנורת עבודה חזקה. ה-Agar שקוף — תחפש כל שאריות לחלוחיות.",
+          "שטוף במים מזוקקים נקיים.",
+          "שתל מיד ב-Fluval Stratum או מצע TC מתאים. אטום בכיפת לחות."
+        ],
+        "steps_en": [
+          "Prepare 250ml sterilization solution: 50ml 3% H₂O₂ + 200ml distilled water (1:4 ratio).",
+          "Submerge the entire plant — roots and leaves — for exactly 10 minutes.",
+          "Remove and work a soft artist's paintbrush along all roots, with maximum attention to the root crotch.",
+          "Work under a strong work lamp. Agar is transparent — look for any moist residue.",
+          "Rinse with clean distilled water.",
+          "Transplant immediately into Fluval Stratum or appropriate TC substrate. Seal in humidity dome."
+        ]
+      },
+      "formula": "50ml H₂O₂ (3%) + 200ml H₂O distilled = Sterilization Bath",
+      "warnings_he": [
+        "ריכוז H₂O₂ מעל 3% יגרום נזק בלתי הפיך לשורשים.",
+        "שרייה מעל 10 דקות שורפת את קצות השורשים.",
+        "שאריות Agar = ריקבון מובטח. אל תתפשרו על הניקוי."
+      ],
+      "warnings_en": [
+        "H₂O₂ concentration above 3% causes irreversible root damage.",
+        "Soaking beyond 10 minutes burns the root tips.",
+        "Agar residue = guaranteed rot. Do not compromise on cleaning."
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "21-day-hardening-sop",
+      "tag_he": "SOP הסתגלות",
+      "tag_en": "Acclimation SOP",
+      "title_he": "תהליך האקלימטיזציה — SOP 21 הימים",
+      "title_en": "The Acclimation Process — The 21-Day SOP",
+      "subtitle_he": "הצמח לא נכשל. הגדלן נכשל.",
+      "subtitle_en": "The plant didn't fail. The grower did.",
+      "meta_description_he": "מדריך שבועי מפורט לאקלימטיזציה של צמחי Tissue Culture — לוח burping, ניהול לחות וכיפות, ואבחנה בין שוק השתלה לריקבון שורשים.",
+      "meta_description_en": "Detailed weekly guide to acclimating Tissue Culture plants — burping schedule, humidity dome management, and diagnosing transplant shock vs. root rot.",
+      "seo_keywords": [
+        "TC hardening protocol",
+        "tissue culture acclimation",
+        "humidity dome burping",
+        "deflask aroid step by step",
+        "transplant shock vs root rot",
+        "21 day TC SOP",
+        "אקלימטיזציה תרבית רקמה",
+        "כיפת לחות צמחים",
+        "שוק השתלה אארואיד",
+        "Alocasia TC care",
+        "Philodendron TC hardening",
+        "rare plant acclimation Israel"
+      ],
+      "content_he": "הסטומטות של צמח TC הן בגדר חדשות רעות. הן פתוחות לחלוטין — מעולם לא הוכרחו להתכווץ, מעולם לא חוו לחות מתחת ל-95%. שכבת השעווה המגינה (Cuticular Wax Layer) שאמורה לאטום את פני העלה מפני איבוד מים — כמעט לא קיימת. חשפו צמח כזה לאוויר ביתי רגיל של 40–55% לחות, ובתוך שעות תראו הטמה. זו לא חולשה. זה פיזיולוגיה.\n\nרוב הגדלנים עושים את הטעות הקלאסית: מוציאים את ה-TC מהכיפה מוקדם מדי, רואים הטמה, מבהלים, מוסיפים מים, ומטביעים את השורשים. הבעיה לא הייתה יובש — הבעיה הייתה מהירות המעבר. ה-21 יום קיימים כדי שהצמח יבנה את כל מה שחסר לו: ציפוי שעווה, שורשים חדשים, שריר.\n\nשבוע 1: אטמו את הכיפה. לחלוטין. לא לפתוח — בכלל. הצמח לא זקוק לאוורור עדיין. הוא זקוק ל-95–100% לחות, אור עקיף בלבד, ושקט. בדקו אחרי 7 ימים: שורשים לבנים חדשים = מוכן לשלב הבא. שורשים שחורים = ריקבון, פרוטוקול חיטוי נוסף.\n\nשבוע 2: 'Burping'. פתחו את הכיפה פעמיים ביום — 10 דקות בבוקר, 10 דקות בערב. הגדילו ב-5 דקות כל יומיים. אם הצמח נשמט — אתם מהירים מדי. אטמו, המתינו יומיים, התחילו שוב ממשך קצר יותר. זה תהליך, לא לוח זמנים.\n\nשבוע 3: 30 דקות פתוח בבוקר, 30 בצהריים, 30 בערב. עד סוף השבוע — הסירו את הכיפה לחלוטין, אך שמרו על לחות סביבתית מינימלית של 55% באזור הצמח.\n\nאבחנה קריטית: שוק השתלה (Transplant Shock) נראה כך — עלים צהבהבים, הטמה קלה, שורשים לבנים, הצמח מתאושש תוך 2–4 ימים של לחות מלאה. ריקבון שורשים (Root Rot) נראה כך — ריח של ביצות, שורשים שחורים ורכים, הטמה שמחמירה גם בלחות מלאה. טפלו מיד: הסירו שורשים מתים, חיטוי נוסף ב-H₂O₂, מצע יבש יותר.",
+      "content_en": "The stomata of a TC plant are, in short, bad news. They are fully open — they have never been forced to constrict, never experienced humidity below 95%. The protective Cuticular Wax Layer that is supposed to seal the leaf surface against water loss — barely exists. Expose such a plant to regular indoor air at 40–55% humidity, and within hours you will see wilting. This is not weakness. This is physiology.\n\nMost growers make the classic mistake: they remove the TC from the dome too early, see wilting, panic, add water, and drown the roots. The problem was not dryness — the problem was the speed of transition. The 21 days exist so the plant can build everything it lacks: wax coating, new roots, resilience.\n\nWeek 1: Seal the dome. Completely. Do not open — at all. The plant does not need ventilation yet. It needs 95–100% humidity, indirect light only, and quiet. Check after 7 days: new white roots = ready for the next stage. Black roots = rot, repeat the sterilization protocol.\n\nWeek 2: 'Burping.' Open the dome twice daily — 10 minutes in the morning, 10 minutes in the evening. Increase by 5 minutes every two days. If the plant wilts — you are moving too fast. Reseal, wait two days, restart at a shorter duration. This is a process, not a fixed schedule.\n\nWeek 3: 30 minutes open in the morning, 30 at midday, 30 in the evening. By the end of the week — remove the dome entirely, but maintain a minimum ambient humidity of 55% in the plant's immediate area.\n\nCritical diagnosis: Transplant Shock looks like this — yellowing leaves, mild wilting, white roots, the plant recovers within 2–4 days of full humidity. Root Rot looks like this — swamp-like odor, black and soft roots, wilting that worsens even at full humidity. Act immediately: remove dead roots, repeat H₂O₂ sterilization, use drier substrate.",
+      "sop": {
+        "title_he": "לוח Burping שבועי — SOP רשמי",
+        "title_en": "Weekly Burping Schedule — Official SOP",
+        "steps_he": [
+          "ימים 1–7: כיפה אטומה לחלוטין. לחות 95–100%. אור עקיף בלבד. לא לפתוח.",
+          "ימים 8–9: 2 × 10 דקות פתוח ביום (בוקר + ערב).",
+          "ימים 10–11: 2 × 15 דקות פתוח ביום.",
+          "ימים 12–14: 2 × 20 דקות פתוח ביום. בדיקת שורשים.",
+          "ימים 15–17: 3 × 20 דקות פתוח ביום (בוקר, צהריים, ערב).",
+          "ימים 18–20: 3 × 30 דקות פתוח ביום.",
+          "יום 21: הסרת הכיפה. שמור לחות סביבתית ≥55%."
+        ],
+        "steps_en": [
+          "Days 1–7: Fully sealed dome. Humidity 95–100%. Indirect light only. Do not open.",
+          "Days 8–9: 2 × 10 minutes open per day (morning + evening).",
+          "Days 10–11: 2 × 15 minutes open per day.",
+          "Days 12–14: 2 × 20 minutes open per day. Root inspection.",
+          "Days 15–17: 3 × 20 minutes open per day (morning, midday, evening).",
+          "Days 18–20: 3 × 30 minutes open per day.",
+          "Day 21: Remove dome. Maintain ambient humidity ≥55%."
+        ]
+      },
+      "formula": "Shock → white roots + recovers in humidity | Rot → black roots + worsens regardless",
+      "warnings_he": [
+        "אל תפתחו את הכיפה מתוך 'לבדוק' — כל פתיחה מיותרת היא זעזוע.",
+        "הטמה ≠ ריקבון. אבחנה שגויה הרגה יותר TC מאשר כל טעות אחרת.",
+        "אם הצמח קורס שוב ושוב — הבעיה היא בקצב ה-Burping, לא בצמח."
+      ],
+      "warnings_en": [
+        "Do not open the dome 'just to check' — every unnecessary opening is a shock event.",
+        "Wilting ≠ rot. Misdiagnosis has killed more TC plants than any other mistake.",
+        "If the plant keeps collapsing — the problem is your burping pace, not the plant."
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "engineered-substrates",
+      "tag_he": "הנדסת מצע",
+      "tag_en": "Substrate Engineering",
+      "title_he": "מצע שתילה הנדסי לארוידים נדירים",
+      "title_en": "Engineered Substrate for Rare Aroids",
+      "subtitle_he": "אדמת שתילה היא מוות איטי. זה לא דעה — זה כימיה.",
+      "subtitle_en": "Potting soil is slow death. This is not an opinion — it is chemistry.",
+      "meta_description_he": "פורמולת מצע מקצועית לארוידים נדירים: Orchiata Bark, Perlite, Coconut Coir ביחסים מדויקים. למה Fluval Stratum הוא הסטנדרט ל-TC starts.",
+      "meta_description_en": "Professional substrate formula for rare aroids: Orchiata Bark, Perlite, Coconut Coir in precise ratios. Why Fluval Stratum is the gold standard for TC starts.",
+      "seo_keywords": [
+        "aroid substrate mix",
+        "Orchiata bark aroid",
+        "Fluval Stratum TC plants",
+        "perlite coconut coir aroid",
+        "rare plant soil mix Israel",
+        "chunky aroid mix",
+        "מצע אארואיד",
+        "מצע שתילה צמחים נדירים",
+        "Monstera Albo substrate",
+        "Alocasia soil mix",
+        "TC starter substrate",
+        "well-draining aroid soil"
+      ],
+      "content_he": "אדמת שתילה סטנדרטית עובדת מצוין לעגבניות. לארוידים נדירים, היא קוברת אותם חיים. פיט + קומפוסט + מינימום פרליט = מצע שמחזיק לחות בדיוק איפה שלא צריך — בתוך גוש ישיר מסביב לשורשים, ללא אוורור. שורשי ארוידים הם אפיפיטיים בטבעם: בג'ונגל הם גדלים על עצים, בחלחול עלים, עם זרימת אוויר מסביבם 24/7. כשאתם שמים אותם בתוך עציץ עם אדמת שתילה כבדה, אתם יוצרים סביבה שאין לה שום קשר לאבולוציה שלהם.\n\nהפורמולה שלנו לצמחים בוגרים ו-Starter Plants: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. זהו. שלושה רכיבים. Orchiata Bark הוא קליפות אורן מעובדות — מספק מבנה פיזי, עוגן לשורשים, ואחיזה. Perlite הוא אבן וולקנית מורחבת — ניקוז מיידי, אפס דחיסה. Coconut Coir הוא סיב קוקוס — שומר לחות מאוזנת, pH נייטרלי של 5.8–6.5. שלושתם יחד יוצרים מצע שמתנקז מהר, מאוורר, ולא מחזיק מים עודפים.\n\nתוספות אופציונליות שכדאי להוסיף: 5–10% Activated Carbon (פחם פעיל) — סופח רעלים ומונע ריח ועובש. 5% Zeolite — משפר זמינות יסודות קורט ומאזן pH. שניהם זמינים ב-Pink Leaf.\n\nל-TC Starts — כאן Fluval Stratum הוא הסטנדרט. פותח לאקווריומים, אומץ על ידי גדלני TC מקצועיים עולמיים. יתרונות: חלקיקים אחידים של 2–3 מ\"מ שמאפשרים אוורור מושלם לשורשים עדינים. pH חומצי קל (6.0–6.5) — מדויק לצרכי רוב הארוידים. לא מתדחס עם הזמן. חסרון אחד: קל מדי לצמחים בוגרים — לא מספק עיגון. ל-TC בלבד.\n\nשאלה שנשאלת הרבה: מתי מחליפים מצע? כשהקליפות מתפרקות ומאבדות מבנה — בדרך כלל אחרי 18–24 חודשים. לא לפני.",
+      "content_en": "Standard potting soil works excellently for tomatoes. For rare aroids, it buries them alive. Peat + compost + minimal perlite = a substrate that retains moisture exactly where it should not — in a dense mass directly surrounding the roots, without ventilation. Aroid roots are epiphytic by nature: in the jungle they grow on trees, in leaf litter, with airflow around them 24/7. When you place them in a pot with heavy potting soil, you are creating an environment with no relation to their evolutionary history.\n\nOur formula for mature plants and Starter Plants: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. That is it. Three components. Orchiata Bark is processed pine bark — provides physical structure, root anchoring, and grip. Perlite is expanded volcanic rock — immediate drainage, zero compaction. Coconut Coir is coconut fiber — balanced moisture retention, neutral pH of 5.8–6.5. Together they create a substrate that drains fast, aerates well, and holds no excess water.\n\nOptional additions worth including: 5–10% Activated Carbon — absorbs toxins and prevents odor and mold. 5% Zeolite — improves trace mineral availability and balances pH. Both available from Pink Leaf.\n\nFor TC Starts — here Fluval Stratum is the gold standard. Developed for aquariums, adopted by professional TC growers worldwide. Advantages: uniform particle size of 2–3mm that provides perfect aeration for delicate roots. Slightly acidic pH (6.0–6.5) — precise for the needs of most aroids. Does not compact over time. One disadvantage: too lightweight for mature plants — insufficient anchoring. For TC only.\n\nA frequently asked question: when do you change substrate? When the bark breaks down and loses structure — typically after 18–24 months. Not before.",
+      "sop": {
+        "title_he": "פורמולת מצע Pink Leaf — ביחסים נפחיים",
+        "title_en": "Pink Leaf Substrate Formula — Volumetric Ratios",
+        "steps_he": [
+          "מדוד ביחסים נפחיים (לא משקל): 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir.",
+          "לתוספת: הוסף 5–10% Activated Carbon, 5% Zeolite (לא חובה אך מומלץ).",
+          "ערבב יבש לחלוטין לפני הוספת מים.",
+          "הרטב מעט לפני שתילה — המצע צריך להרגיש לח-עסיסי, לא טפטפי.",
+          "לצמחי TC: השתמש ב-Fluval Stratum בלבד — לא לערבב עם הפורמולה הרגילה.",
+          "בדוק ניקוז: לאחר השקיה, מים צריכים לזרום בחופשיות מחורי הניקוז תוך 30 שניות."
+        ],
+        "steps_en": [
+          "Measure by volume (not weight): 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir.",
+          "Optional additions: 5–10% Activated Carbon, 5% Zeolite (not mandatory but recommended).",
+          "Mix completely dry before adding any water.",
+          "Lightly pre-moisten before planting — the substrate should feel moist-juicy, not dripping.",
+          "For TC plants: use Fluval Stratum only — do not blend with the regular formula.",
+          "Check drainage: after watering, water should flow freely from drainage holes within 30 seconds."
+        ]
+      },
+      "formula": "40% Orchiata Bark + 30% Perlite + 30% Coir (± 5% Carbon + 5% Zeolite)",
+      "warnings_he": [
+        "אדמת שתילה רגילה = ריקבון שורשים לאיטי. לא לפשרות.",
+        "Fluval Stratum לצמחים בוגרים = עציץ שיתהפך בגלל משקל קל מדי.",
+        "מצע שלא מתנקז תוך 30 שניות — בנו אותו מחדש."
+      ],
+      "warnings_en": [
+        "Regular potting soil = slow root rot. No compromises.",
+        "Fluval Stratum for mature plants = a pot that will tip over due to insufficient weight.",
+        "Substrate that does not drain within 30 seconds — rebuild it."
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "atmospheric-data-vpd-ppfd",
+      "tag_he": "נתוני סביבה",
+      "tag_en": "Atmospheric Data",
+      "title_he": "VPD ו-PPFD — מדע הסביבה לצמחים נדירים",
+      "title_en": "VPD & PPFD — The Science of Environment for Rare Plants",
+      "subtitle_he": "אם אתם לא מודדים — אתם מנחשים. וניחושים הורגים צמחים יקרים.",
+      "subtitle_en": "If you're not measuring — you're guessing. And guessing kills expensive plants.",
+      "meta_description_he": "הסבר מעמיק על VPD ו-PPFD לצמחי אוור וארוידים נדירים. יעדי לחות, אור ואוורור למניעת שריפת סקטורים לבנים ועצירת גדילה.",
+      "meta_description_en": "Deep explanation of VPD and PPFD for variegated and rare aroid plants. Humidity, light, and airflow targets to prevent white sector browning and growth stagnation.",
+      "seo_keywords": [
+        "VPD plants indoor",
+        "PPFD variegated monstera",
+        "vapour pressure deficit aroid",
+        "PPFD Alocasia",
+        "white variegation browning prevention",
+        "rare plant environment",
+        "grow light PPFD aroid",
+        "VPD צמחים",
+        "PPFD מונסטרה מוורד",
+        "לחות אופטימלית אארואיד",
+        "Monstera Albo light requirements",
+        "Philodendron VPD"
+      ],
+      "content_he": "רוב הגדלנים מסתכלים על הצמח ומנסים להבין מה הוא צריך. גדלן מקצועי מסתכל על הנתונים ויודע. VPD ו-PPFD הם שני המדדים שיגידו לכם בדיוק מה קורה בסביבת הצמח — ולמה הוא נעצר, מלבין, שורף, או פשוט לא גדל.\n\nVPD — Vapour Pressure Deficit — הוא הפער בין כמות אדי המים שהאוויר מחזיק עכשיו לבין כמות המקסימלית שהוא יכול להחזיק בטמפרטורה נתונה. VPD גבוה = אוויר צמא = הצמח מאבד מים מהר מהשורשים יכולים לספק = סטומטות נסגרות = גדילה מופסקת. VPD נמוך מדי = לחות מופרזת = סטומטות סגורות מסיבה אחרת = פוטוסינתזה פגועה ועובש.\n\nיעד: 0.8–1.2 kPa. זהו הטווח שבו הצמח מפעיל את הסטומטות בצורה אופטימלית — לח מספיק, לא חנוק. כדי לשמור על VPD תקין, אתם צריכים לעקוב אחרי טמפרטורה + לחות בו-זמנית. אין קיצורי דרך.\n\nPPFD — Photosynthetic Photon Flux Density — מודד כמות פוטוני אור פוטוסינתטיים שמגיעים לפני השטח של הצמח בשנייה, ב-μmol/m²/s. כאן העניינים נהיים מעניינים לצמחי אוור.\n\nסקטורים לבנים וקרמיים חסרי כלורופיל לחלוטין. הם לא מבצעים פוטוסינתזה. אבל הם רגישים מאוד לאור — יותר מהסקטורים הירוקים. אור גבוה מדי שורף את הסקטורים הלבנים ראשון: הם מלבינים לצהוב, ואז לחום, ואז מתים. זה לא מחלה — זה פיזיקה.\n\nגדלן שמשתמש ב-400 μmol/m²/s על Monstera Albo ומתפלא למה הלבן שורף — לא הבין את הצמח. 100–250 μmol/m²/s הוא הטווח הנכון לרוב צמחי האוור. Quantum Meter עולה 150–200 ש\"ח. ה-Monstera Albo שלכם עולה 3,000. ההשקעה ברורה.",
+      "content_en": "Most growers look at the plant and try to understand what it needs. A professional grower looks at the data and knows. VPD and PPFD are the two measurements that will tell you exactly what is happening in the plant's environment — and why it has stalled, whitened, burned, or simply is not growing.\n\nVPD — Vapour Pressure Deficit — is the gap between the amount of water vapor currently in the air and the maximum it can hold at a given temperature. High VPD = thirsty air = the plant loses water faster than the roots can supply = stomata close = growth stops. VPD too low = excessive humidity = stomata closed for a different reason = impaired photosynthesis and mold risk.\n\nTarget: 0.8–1.2 kPa. This is the range in which the plant operates its stomata optimally — humid enough, not suffocated. To maintain correct VPD, you need to track temperature + humidity simultaneously. There are no shortcuts.\n\nPPFD — Photosynthetic Photon Flux Density — measures the quantity of photosynthetic light photons reaching the plant surface per second, in μmol/m²/s. This is where things get interesting for variegated plants.\n\nWhite and cream sectors are completely devoid of chlorophyll. They perform no photosynthesis. But they are highly sensitive to light — more so than the green sectors. Excessive light burns the white sectors first: they whiten to yellow, then to brown, then they die. This is not disease — this is physics.\n\nA grower applying 400 μmol/m²/s to a Monstera Albo and wondering why the white is burning — has not understood the plant. 100–250 μmol/m²/s is the correct range for most variegated plants. A Quantum Meter costs 40–60 USD. Your Monstera Albo costs 800. The investment is obvious.",
+      "sop": {
+        "title_he": "יעדי VPD ו-PPFD לפי סוג צמח",
+        "title_en": "VPD and PPFD Targets by Plant Type",
+        "steps_he": [
+          "TC + Starter Plants: PPFD 50–150 μmol/m²/s. VPD 0.6–0.9 kPa. לחות 80–95%.",
+          "צמחים ירוקים בוגרים (Monstera, Philodendron): PPFD 200–400 μmol/m²/s. VPD 0.8–1.2 kPa.",
+          "צמחי אוור (variegated): PPFD 100–250 μmol/m²/s מקסימום. לעולם לא אור ישיר.",
+          "Alocasia: PPFD 100–300 μmol/m²/s. רגישות גבוהה לשרפת שמש.",
+          "טמפרטורה: 22–28°C ביום, לא מתחת ל-18°C בלילה. Alocasia — מינימום 20°C.",
+          "השתמש ב-Quantum Meter (PPFD) + Hygrometer (לחות+טמפ') לניטור מדויק."
+        ],
+        "steps_en": [
+          "TC + Starter Plants: PPFD 50–150 μmol/m²/s. VPD 0.6–0.9 kPa. Humidity 80–95%.",
+          "Mature green plants (Monstera, Philodendron): PPFD 200–400 μmol/m²/s. VPD 0.8–1.2 kPa.",
+          "Variegated plants: PPFD 100–250 μmol/m²/s maximum. Never direct light.",
+          "Alocasia: PPFD 100–300 μmol/m²/s. High sensitivity to light burn.",
+          "Temperature: 22–28°C day, no lower than 18°C night. Alocasia — minimum 20°C.",
+          "Use Quantum Meter (PPFD) + Hygrometer (humidity+temp) for precise monitoring."
+        ]
+      },
+      "formula": "Target VPD: 0.8–1.2 kPa | Variegated PPFD max: 250 μmol/m²/s",
+      "warnings_he": [
+        "אור ישיר על סקטורים לבנים = שריפה בלתי הפיכה. צל, לא חשיכה.",
+        "VPD מעל 1.6 kPa = הצמח סוגר סטומטות ומפסיק לגדול.",
+        "אל תמדדו 'בעין' — השקיעו ב-Quantum Meter."
+      ],
+      "warnings_en": [
+        "Direct light on white sectors = irreversible burn. Shade, not darkness.",
+        "VPD above 1.6 kPa = plant closes stomata and stops growing.",
+        "Do not measure 'by eye' — invest in a Quantum Meter."
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "investment-variegation-stability",
+      "tag_he": "השקעה ויציבות",
+      "tag_en": "Investment & Stability",
+      "title_he": "השקעה ויציבות גנטיקה — כיצד לקנות נכון",
+      "title_en": "Investment & Genetic Stability — How to Buy Correctly",
+      "subtitle_he": "מחיר גבוה לא מבטיח צמח טוב. בדיקה נכונה — כן.",
+      "subtitle_en": "A high price doesn't guarantee a good plant. A correct inspection does.",
+      "meta_description_he": "כיצד לבדוק יציבות וריאגציה לפני רכישת צמח נדיר: בדיקת Meristem, Auxiliary Buds, ויחס ירוק-לבן. מדריך רכישה מקצועי של Pink Leaf.",
+      "meta_description_en": "How to inspect variegation stability before purchasing a rare plant: Meristem check, Auxiliary Buds, green-to-white ratio. Pink Leaf's professional buying guide.",
+      "seo_keywords": [
+        "variegation stability check",
+        "meristem inspection rare plant",
+        "chimeric variegation revert",
+        "buy rare aroid guide",
+        "Monstera Albo stable",
+        "Philodendron Pink Princess revert",
+        "בדיקת מריסטם",
+        "יציבות וריאגציה",
+        "קניית צמח נדיר ישראל",
+        "auxiliary buds variegation",
+        "chimeric mutation plant",
+        "rare plant investment guide"
+      ],
+      "content_he": "הבעיה עם שוק הצמחים הנדירים היא שכולם מוכרים. לא כולם גדלנים. וההבדל בין שניהם עולה לכם כסף רב.\n\nוריאגציה היא מוטציה — ובמקרה של רוב הצמחים הנדירים שאתם קונים, מוטציה כימרית (Chimeric Mutation). המשמעות: היא קיימת ברמת התאים, לא ברמת ה-DNA הגנומי. הצמח יכול לאבד אותה בכל שלב — תהליך הנקרא Reversion. הוא יחזור ירוק מלא. הכסף שלכם — לא יחזור.\n\nהסיבות לריברשן: אור נמוך מדי (הצמח 'מחליט' שהוא צריך יותר כלורופיל), טמפרטורה שגויה, פציעה פיזית, חיתוך קרוב מדי למריסטם, ולפעמים פשוט מזל רע — כי המוטציה הייתה שולית מלכתחילה. לכן, הבדיקה לפני הרכישה היא לא בונוס — היא חובה.\n\nבדיקה 1 — המריסטם: נקודת הגדילה הפעילה, הלב הצעיר ביותר של הצמח. בדקו אותו ישירות. האם יש בו צבע? ורוד, לבן, קרם — מצוין. ירוק מוחלט? דגל אדום. מריסטם ירוק = הצמח כבר 'מחשב' לחזור.\n\nבדיקה 2 — Auxiliary Buds: הניצנים הקטנים בציר בין הגבעול לעלה. נגעו בהם, הסתכלו בהם מקרוב. צבע בניצן = הוריאגציה נמצאת ברמה גנטית עמוקה יותר. ניצן ירוק לחלוטין = ספק.\n\nבדיקה 3 — יחס ירוק:לבן: 50:50 הוא האידיאל המוכח. מעל 70% לבן — הצמח חלש מדי לתמוך בעצמו; הסקטורים ייסגרו. מתחת ל-20% לבן — הצמח בדרך לריברשן.\n\nלא לקנות: צמח שמוכרו מסרב לצלם את המריסטם. צמח עם 100% לבן בעלים. TC שהוריאגציה לא נראית בבקבוק. מחיר שהוכפל בשבוע — סיגנל מניפולציה של שוק, לא ביקוש אמיתי.",
+      "content_en": "The problem with the rare plant market is that everyone is selling. Not everyone is a grower. And the difference between the two costs you a great deal of money.\n\nVariegation is a mutation — and in the case of most rare plants you buy, it is a Chimeric Mutation. This means: it exists at the cellular level, not at the level of the genomic DNA. The plant can lose it at any stage — a process called Reversion. It will return to full green. Your money — will not return.\n\nCauses of reversion: insufficient light (the plant 'decides' it needs more chlorophyll), wrong temperature, physical injury, a cut too close to the meristem, and sometimes simply bad luck — because the mutation was marginal from the start. Therefore, the pre-purchase inspection is not a bonus — it is mandatory.\n\nInspection 1 — The Meristem: the active growth point, the youngest heart of the plant. Inspect it directly. Is there color in it? Pink, white, cream — excellent. Completely green? Red flag. A green meristem = the plant is already 'calculating' a return to green.\n\nInspection 2 — Auxiliary Buds: the small buds at the junction between stem and leaf. Touch them, look at them closely. Color in the bud = variegation exists at a deeper genetic level. Completely green bud = uncertainty.\n\nInspection 3 — Green:White ratio: 50:50 is the proven ideal. More than 70% white — the plant is too weak to support itself; sectors will die off. Less than 20% white — the plant is on its way to reversion.\n\nDo not buy: a plant whose seller refuses to photograph the meristem. A plant with 100% white leaves. TC where variegation is not visible in the flask. A price that doubled in one week — a signal of market manipulation, not genuine demand.",
+      "sop": {
+        "title_he": "SOP בדיקת יציבות לפני רכישה",
+        "title_en": "Pre-Purchase Stability Inspection SOP",
+        "steps_he": [
+          "בקש תמונות/וידאו של המריסטם — מרחק קרוב, תאורה טובה. סרב לקנות בלעדיהן.",
+          "בדוק את הניצנים העזר (Auxiliary Buds): צבע = יציב. ירוק מלא = ספק.",
+          "חשב יחס ירוק:לבן — מטרה 40:60 עד 60:40. מחוץ לטווח = סיכון.",
+          "לצמחי TC: בדוק שהוריאגציה נראית בבקבוק. לא 'תגיע אחרי'.",
+          "בקש לראות את האם (Mother Plant) אם אפשרי — היסטוריה = נתונים.",
+          "בדוק את הצומת האחרון (most recent leaf): האם הוריאגציה נשמרת? שיפור? ירידה?"
+        ],
+        "steps_en": [
+          "Request photos/video of the meristem — close range, good lighting. Refuse to buy without them.",
+          "Inspect the Auxiliary Buds: color present = stable. Fully green = uncertain.",
+          "Calculate green:white ratio — target 40:60 to 60:40. Outside this range = risk.",
+          "For TC plants: confirm variegation is visible in the flask. It will not 'arrive later.'",
+          "Request to see the Mother Plant if possible — history is data.",
+          "Check the most recent leaf: is variegation maintained? Improving? Declining?"
+        ]
+      },
+      "formula": "Green:White target = 40:60 to 60:40 | Meristem must show color | Aux buds must show color",
+      "warnings_he": [
+        "מוכר שמסרב לצלם את המריסטם — לא קונים. ללא יוצא מן הכלל.",
+        "100% לבן = יפה למשך 3 שבועות, מת אחרי. אל תתפתו.",
+        "מחיר שמשתנה פי 2–3 בשבוע = מניפולציה. לא ביקוש אמיתי."
+      ],
+      "warnings_en": [
+        "A seller who refuses to photograph the meristem — do not buy. No exceptions.",
+        "100% white = beautiful for 3 weeks, dead after. Do not be tempted.",
+        "A price that changes 2–3x in one week = manipulation. Not genuine demand."
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "plant-health-indicators",
+      "tag_he": "בריאות הצמח",
+      "tag_en": "Plant Health",
+      "title_he": "5 סימנים שהצמח שלכם משגשג — לא רק חי",
+      "title_en": "5 Signs Your Plant Is Thriving — Not Just Surviving",
+      "subtitle_he": "צמח שחי ≠ צמח שבריא. הנה ההבדל.",
+      "subtitle_en": "A plant that lives ≠ a plant that thrives. Here is the difference.",
+      "meta_description_he": "5 אינדיקטורים מקצועיים לצמח ארואיד בריא: קצב עלים, צבע שורשים, תנוחה, ורייגציה ועוד. מדריך אבחון Pink Leaf.",
+      "meta_description_en": "5 professional health indicators for rare aroids: leaf rhythm, root color, posture, variegation and more. The Pink Leaf diagnostic guide.",
+      "seo_keywords": [
+        "plant health signs",
+        "aroid thriving indicators",
+        "healthy rare plant",
+        "root health check",
+        "variegation color health",
+        "substrate drying time",
+        "צמח בריא ארואיד",
+        "סימני בריאות צמח",
+        "שורשים לבנים צמח",
+        "קצב עלים צמחים נדירים",
+        "אבחון צמח ביתי",
+        "rare plant care Israel"
+      ],
+      "content_he": "הצמח שלכם לא יגיד לכם שהוא בסדר. הוא לא יבקש תשומת לב. הוא פשוט ייתן לכם סימנים — ועל גדלן טוב לקרוא אותם בצורה נכונה.\n\nיש הבדל בסיסי בין צמח שחי לצמח שמשגשג. צמח שחי יכול להתקיים חודשים בתנאים לא מיטביים — מתכווץ, פסיבי, לא מוציא עלים חדשים. גדלנים מתחילים לעיתים טועים לחשוב שהוא בסדר 'כי הוא לא מת'. צמח שמשגשג נראה שונה לחלוטין — ולצד הבדל ויזואלי, יש לו גם שגרת גדילה פעילה ומדידה.\n\nסימן 1 — קצב עלים חדשים: צמח בריא בתנאים מיטביים יוציא עלה חדש כל 3–6 שבועות, תלוי במין. אלוקאסיה — כל 4–5 שבועות. פילודנדרון — כל 3–4 שבועות. מונסטרה — כל 4–6 שבועות. אם לא ראיתם עלה חדש יותר מ-8 שבועות ברצף, הצמח עצר — זה סיגנל לבדיקת שורשים, לחות, ואור. לא 'הוא בדיוק לא מוציא עכשיו'.\n\nסימן 2 — שורשים לבנים-קרמיים: שורשים בריאים הם לבנים, טורגידיים ומוצקים. הם יוצאים מנקבי הניקוז בצורה פעילה — זה לא בעיה, זה סימן מצוין. שורשים חומים-רפים = התייבשות כרונית. שורשים שחורים-רכים = ריקבון פעיל. בדקו את נקבי הניקוז פעם בחודש.\n\nסימן 3 — עמוק וחיה בצבע: עלה בריא על אלוקאסיה ורייגייטדת הוא ירוק עמוק עם ורייגציה חדה ומוגדרת. חיוורון ורייגציה, ירקרק-צהוב בסקטורים הירוקים, או אפרוריות כללית — אלה אינדיקטורים לחוסר אור, pH שגוי, או מחסור תזונתי. לא נזק בלתי הפיך — אם מזהים מוקדם.\n\nסימן 4 — יציבות פיזית: צמח שעומד זקוף, גבעולים מוצקים, עלים מורמים — הוא צמח שמחוזק. צמח שרוכן, גבעולים מתכופפים, עלים שמונחים על האדמה — שורשים שלא מחזיקים. עלו ל-root ball, בדקו ומה תמצאו שם.\n\nסימן 5 — קצב ייבוש הסובסטרט: אדמה שמתייבשת תוך 7–10 ימים בתנאי בית סטנדרטיים = ניקוז תקין. פחות מ-5 ימים = בעיית אחזקת לחות, ייתכן שהעציץ קטן מדי. יותר מ-14 ימים = הסובסטרט כבד מדי, ורטיבות יתר בדרך. הסובסטרט הוא לא 'אחת לשנה' — הוא אינדיקטור פעיל.",
+      "content_en": "Your plant will not tell you it is fine. It will not ask for attention. It will simply give you signals — and it is the grower's job to read them correctly.\n\nThere is a fundamental difference between a plant that lives and a plant that thrives. A plant that merely lives can persist for months in suboptimal conditions — contracted, passive, producing no new growth. Beginner growers often mistake this for 'doing fine because it's not dead.' A plant that thrives looks entirely different — and beyond a visual difference, it has an active, measurable growth rhythm.\n\nSign 1 — New leaf rhythm: A healthy plant under optimal conditions will produce a new leaf every 3–6 weeks, depending on species. Alocasia — every 4–5 weeks. Philodendron — every 3–4 weeks. Monstera — every 4–6 weeks. If you have seen no new leaf in more than 8 consecutive weeks, the plant has stalled — this signals a need to inspect roots, humidity, and light. Not 'it is just not pushing right now.'\n\nSign 2 — White-cream roots: Healthy roots are white, turgid, and firm. They emerge actively from drainage holes — this is not a problem, it is an excellent sign. Brown-limp roots = chronic dehydration. Black-soft roots = active rot. Check the drainage holes once a month.\n\nSign 3 — Deep, vivid color: A healthy leaf on a variegated aroid is deep green with sharp, well-defined variegation. Variegation pallor, yellow-green in the green sectors, or general greyness — these indicate insufficient light, incorrect pH, or nutritional deficiency. Not irreversible damage — if caught early.\n\nSign 4 — Physical stability: A plant standing upright, firm stems, lifted leaves — is a fortified plant. A plant drooping, bending stems, leaves resting on the soil — has roots that are not holding. Lift the root ball and inspect what you find.\n\nSign 5 — Substrate drying rate: Soil drying within 7–10 days under standard home conditions = correct drainage. Less than 5 days = moisture-retention issue, possibly a pot that is too small. More than 14 days = substrate is too heavy, overwatering is imminent. The substrate is not a 'once a year' concern — it is an active indicator.",
+      "sop": {
+        "title_he": "SOP בדיקת בריאות חודשית",
+        "title_en": "Monthly Health Inspection SOP",
+        "steps_he": [
+          "בדוק קצב עלים חדשים: מתי הוצא העלה האחרון? מעל 8 שבועות — חקירה מיידית.",
+          "בדוק שורשים בנקבי הניקוז: לבנים-קרמיים = בריאים. חומים-שחורים = טיפול נדרש.",
+          "בדוק צבע עלים: ירוק עמוק + ורייגציה מוגדרת = בריא. חיוורון = בדוק אור ו-pH.",
+          "בדוק גבעולים: מוצקים = חזקים. רכים/מתכופפים = root ball לבדיקה.",
+          "בדוק קצב ייבוש: ירטב אחרי 14 יום? = שינוי סובסטרט נדרש. מתייבש תוך 4 ימים? = בדוק עציץ."
+        ],
+        "steps_en": [
+          "Check new leaf rhythm: when was the last leaf produced? Over 8 weeks — immediate investigation.",
+          "Check roots at drainage holes: white-cream = healthy. Brown-black = treatment required.",
+          "Check leaf color: deep green + defined variegation = healthy. Pallor = check light and pH.",
+          "Check stems: firm = strong. Soft/bending = root ball inspection needed.",
+          "Check drying rate: still wet after 14 days? = substrate change needed. Drying in 4 days? = check pot size."
+        ]
+      },
+      "formula": "New leaf every 3–6 weeks | Roots: white = healthy, black = rot | Soil dry in 7–10 days = correct",
+      "warnings_he": [
+        "צמח שלא הוציא עלה ב-3 חודשים אינו 'במנוחה'. הוא עוצר. תחקרו.",
+        "שורשים שיוצאים מנקבי הניקוז אינם בעיה — זה סימן שהצמח מלא ורוצה עציץ גדול יותר.",
+        "ורייגציה שנהיית חיוורת לאורך זמן — בדקו אור ו-pH לפני שמאשימים הכל אחר."
+      ],
+      "warnings_en": [
+        "A plant that has produced no leaf in 3 months is not 'resting.' It has stalled. Investigate.",
+        "Roots emerging from drainage holes are not a problem — they signal the plant is full and wants a larger pot.",
+        "Variegation gradually turning pale — check light and pH before blaming anything else."
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "leaf-symptom-diagnosis",
+      "tag_he": "אבחון תסמינים",
+      "tag_en": "Symptom Diagnosis",
+      "title_he": "קריאת תסמינים מהעלים — מה הצמח מנסה להגיד לכם",
+      "title_en": "Reading Leaf Symptoms — What Your Plant Is Trying to Tell You",
+      "subtitle_he": "הצמח תמיד מדבר. הבעיה שרובנו לא מקשיבים נכון.",
+      "subtitle_en": "The plant always speaks. The problem is that most of us don't listen correctly.",
+      "meta_description_he": "מדריך אבחון תסמינים בעלים: קצוות חומים, עלים צהובים, כתמי שחור, עלה לא נפתח. פרוטוקול קריאת תסמינים של Pink Leaf.",
+      "meta_description_en": "Leaf symptom diagnosis guide: brown tips, yellow leaves, black spots, unopened leaf. Pink Leaf's official symptom-reading protocol.",
+      "seo_keywords": [
+        "brown leaf tips aroid",
+        "yellow leaves overwatering",
+        "black spots plant diagnosis",
+        "leaf symptom diagnosis",
+        "plant not growing new leaves",
+        "white crust on soil",
+        "קצוות חומים צמח",
+        "עלים צהובים ריקבון",
+        "כתמי שחור צמח",
+        "אבחון בעיות צמח",
+        "עלה לא נפתח צמח",
+        "rare plant troubleshooting Israel"
+      ],
+      "content_he": "הגדלן הממוצע רואה עלה צהוב ושופך מים. מחר הצמח מת. הסיבה? לא חוסר מים — הצפה. הצמח דיבר; הגדלן לא הקשיב נכון.\n\nקצוות עלים חומים: הסיבה הנפוצה ביותר שאנשים מייחסים לה להשקיה שגויה — ורוב הפעמים היא אינה. קצוות חומים הם כמעט תמיד סימן ללחות נמוכה (VPD גבוה) או לChlor ו-Fluoride במי הברז. חורף עם חימום מרכזי? קצוות חומים. מים מהברז ישר לצמח? קצוות חומים. הפתרון: מד לחות, מגש עם חצץ ומים, ומעבר למים מסוננים, מזוקקים, או שנאספו בלילה. לא 'יותר השקיות'.\n\nעלים צהובים: הבעיה שכולם מאבחנים לא נכון — ולמה? כי יש שלוש סיבות שונות לגמרי. עלים צהובים בסיסיים (הנמוכים ביותר, הישנים ביותר) = תהליך טבעי, הצמח מוציא עלים ישנים. עלים צהובים בגובה ביניים עם ריח לח-עפרורי = ריקבון שורשים. עלים צהובים כלליים ועדינים ללא ריח = חסר חנקן. לפני שמוסיפים מים — הרימו את העציץ. קל מהצפוי? יתכן שצריך השקיה. כבד? האדמה עדיין לחה.\n\nכתמי שחור על עלים: שתי גרסאות שאסור לבלבל. 1. כתמים שחורים-חומים רטובים שמתפשטים ולחים למגע = Pythium או Botrytis פעיל. הוציאו מיד מכל צמח אחר באזור, הסירו עלים פגועים עם מספריים חיטויים, ורססו Copper Fungicide. 2. כתמי שחור-חום יבשים עם גבול ברור = שריפת שמש ישירה. הצמח לא זקוק לטיפול — זקוק להזזה מאור ישיר.\n\nעלה חדש שנשאר מגולגל ולא נפתח: מנגנון הגנה מפני יובש. מתחת ל-50% לחות, הצמח מאט פתיחת עלים חדשים כדי לא לאבד מים. הוסיפו לחות סביבתית — לא מים לאדמה. מגש עם חצץ, מפוח לחות, או ריסוס עדין בבוקר בלבד.\n\nקרום לבן-אפור על פני האדמה: מינרלים ממי ברז שמצטברים. נזק ישיר לצמח — אפסי. אבל סימן ש-pH האדמה מטפס ועלול להשפיע על ספיגת תזונה לאורך זמן. פתרון: שטיפה עם 1–2 ליטר מים מזוקקים עד שיוצא מנקבי הניקוז, ולשקול מעבר קבוע למים מסוננים.",
+      "content_en": "The average grower sees a yellow leaf and pours water. The next day the plant is dead. The reason? Not water deficiency — flooding. The plant spoke; the grower did not listen correctly.\n\nBrown leaf tips: the symptom most commonly misattributed to incorrect watering — and most of the time, it is not. Brown tips are almost always a sign of low humidity (high VPD) or Chlorine and Fluoride in tap water. Winter with central heating? Brown tips. Tap water directly on the plant? Brown tips. The solution: a hygrometer, a pebble tray with water, and a switch to filtered, distilled, or overnight-settled water. Not 'more waterings.'\n\nYellow leaves: the most misdiagnosed problem — because there are three completely different causes. Yellow leaves at the base (lowest, oldest) = natural process, the plant is shedding old leaves. Yellow leaves at mid-height with a damp-earthy odor = root rot. General light yellowing throughout without odor = nitrogen deficiency. Before adding water — lift the pot. Lighter than expected? Possibly needs watering. Heavy? The soil is still wet.\n\nBlack spots on leaves: two versions that must not be confused. 1. Wet, spreading black-brown spots, moist to the touch = active Pythium or Botrytis. Remove immediately from any nearby plants, trim damaged leaves with sterilized scissors, and spray Copper Fungicide. 2. Dry black-brown spots with a clear border = direct sun scorch. The plant does not need treatment — it needs to be moved away from direct light.\n\nNew leaf that stays furled and does not open: a drought-protection mechanism. Below 50% humidity, the plant slows the opening of new leaves to avoid water loss. Add ambient humidity — not soil water. A pebble tray, humidifier, or light morning misting only.\n\nWhite-grey crust on the soil surface: mineral buildup from tap water. Direct harm to the plant — negligible. But a signal that soil pH is rising and may affect nutrient absorption over time. Solution: flush with 1–2 liters of distilled water through the drainage holes, and consider switching permanently to filtered water.",
+      "sop": {
+        "title_he": "פרוטוקול אבחון תסמין — שלב אחר שלב",
+        "title_en": "Symptom Diagnosis Protocol — Step by Step",
+        "steps_he": [
+          "קצוות חומים: מדדו לחות (מד). בדקו סוג מים. הוסיפו לחות לפני שמשנים משהו אחר.",
+          "עלים צהובים: הרימו עציץ ובדקו משקל. הריחו את האדמה. עלים נמוכים = טבעי. ריח/עלים אמצעיים = ריקבון.",
+          "כתמים שחורים רטובים: בידוד מיידי מצמחים שכנים. הסרת עלים פגועים. Copper Fungicide.",
+          "עלה חדש לא נפתח: מדדו לחות. מטרה — 60% לפחות. הוסיפו לחות סביבתית.",
+          "קרום לבן על אדמה: שטיפה עם מים מזוקקים. שקלו מעבר קבוע למים מסוננים."
+        ],
+        "steps_en": [
+          "Brown tips: measure humidity (hygrometer). Check water type. Add humidity before changing anything else.",
+          "Yellow leaves: lift pot and check weight. Smell the soil. Low leaves = natural. Odor/mid leaves = rot.",
+          "Wet black spots: immediate isolation from neighboring plants. Remove damaged leaves. Copper Fungicide.",
+          "New leaf not opening: measure humidity. Target — 60% minimum. Add ambient humidity.",
+          "White crust on soil: flush with distilled water. Consider permanent switch to filtered water."
+        ]
+      },
+      "formula": "Brown tips = low humidity first | Yellow leaves = lift pot before watering | Black wet spots = fungal, isolate immediately",
+      "warnings_he": [
+        "אסור לשפוך מים על צמח עם כתמי שחור לחים — זה מפיץ את הפטרייה לאדמה ולצמחים שכנים.",
+        "עלים צהובים עם ריח עפרורי-לח = ריקבון שורשים. כל יום עיכוב = הצמח קרוב יותר לאובדן.",
+        "כתמי שמש יבשים אינם הפיכים — הם נשארים על העלה. אבל צמח חדש יצא בריא אם תתקנו את האור."
+      ],
+      "warnings_en": [
+        "Never pour water on a plant with wet black spots — it spreads the fungus to the soil and neighboring plants.",
+        "Yellow leaves with a damp-earthy odor = root rot. Every day of delay = the plant is closer to loss.",
+        "Dry sun-scorch spots are not reversible — they remain on the leaf. But new growth will emerge healthy if you correct the light."
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "plant-alocasia-polly-pink-variegata",
+      "tag_he": "מדריך טיפוח",
+      "tag_en": "Care Guide",
+      "title_he": "Alocasia Polly Pink Variegata — המדריך המלא",
+      "title_en": "Alocasia Polly Pink Variegata — Complete Care Guide",
+      "subtitle_he": "וריאגציה ורודה, שבירות גבוהה, תגמול עצום. רק אם יודעים.",
+      "subtitle_en": "Pink variegation, high sensitivity, enormous reward. If you know what you're doing.",
+      "meta_description_he": "מדריך טיפוח מלא ל-Alocasia Polly Pink Variegata — תאורה, לחות, מצע, חישול ושימור וריאגציה ורודה נדירה.",
+      "meta_description_en": "Complete care guide for Alocasia Polly Pink Variegata — light, humidity, substrate, hardening and preservation of rare pink variegation.",
+      "seo_keywords": [
+        "Alocasia Polly Pink care",
+        "Alocasia Polly Pink Variegata",
+        "pink variegated Alocasia",
+        "Alocasia care Israel",
+        "rare pink plant Israel",
+        "אלוקאסיה פולי פינק",
+        "אלוקאסיה ורידציה ורודה",
+        "צמחים ורודים נדירים ישראל"
+      ],
+      "content_he": "Alocasia Polly Pink Variegata היא לא עוד צמח אלוקאסיה. היא מוטציה כרומטית — וריאגציה ורודה שנדירה עד כדי כך שרוב אנשי הצמחים בישראל לא ראו אותה מחוץ לתמונה. הגוון הוורוד נובע מהיעדר חלקי של כלורופיל לצד נוכחות של אנתוציאנינים, ותנאי גידול לקויים יגרמו לצמח להאפיר לגוון ירוק-צהבהב בפחות ממחזור עלים אחד. לא תחזירו אותה.\n\nתאורה: 70% אור עקיף ומפוזר. המשמעות היא ריחוק של לפחות 1–1.5 מטר מחלון מזרח/מערב, ולא פחות מ-2 מטר מחלון דרום ישיר בקיץ. אור ישיר ישרוף קצוות עלים תוך שעות ויגרום לצמח לייצר עלים עם פחות וריאגציה כמנגנון הגנה. כן, הצמח יודע לכוון את עצמו לירוק כשהוא מאוים. תמנעו ממנו את הסיבה לעשות זאת.\n\nלחות: 85% יחסית היא המינימום. לא 'קרוב ל-80%'. 85 ומעלה. בסביבות ביתיות רגילות, לחות אווירית נמצאת ב-40–55% — זה קטל עדין ואטי עבור הצמח הזה. כיפת לחות, מגש אדים, או מגדל לחות ייעודי בחדר. השקיעו בזה לפני שתשקיעו בצמח.\n\nמצע: חצי פומיס, רבע פחם פעיל, רבע זאוליט. ללא כבול. אלוקאסיה שונאת מצע שמחזיק לחות יתר כנגד שורשים — היא רוצה לחות אווירית גבוהה אבל ניקוז שורשי מצוין. זהו ההבדל שרוב הגידולים מפספסים: לחות לא שווה מצע רטוב.\n\nהשקיה: כשהשכבה העליונה (2 ס\"מ) של המצע מתייבשת. מים מזוקקים בטמפרטורת חדר — לא קרים ישר מהברז. מים קרים מייצרים מתח קור שמתורגם לנקודות חומות על העלים.\n\nחישול: 10–14 ימים בכיפת לחות לפני חשיפה לתנאי הסביבה הקבועים. אל תדשנו ב-30 יום הראשונים.",
+      "content_en": "Alocasia Polly Pink Variegata is not just another Alocasia. It is a chromatic mutation — pink variegation so rare that most plant people in Israel have never seen it outside a photograph. The pink tone arises from partial absence of chlorophyll alongside the presence of anthocyanins, and poor growing conditions will cause the plant to fade to yellow-green within fewer than one leaf cycle. You will not reverse it.\n\nLight: 70% indirect, diffused light. This means at least 1–1.5 meters from an east/west window, and no less than 2 meters from a direct south-facing window in summer. Direct light will burn leaf edges within hours and cause the plant to produce leaves with less variegation as a self-defense mechanism.\n\nHumidity: 85% relative humidity is the minimum. Not 'close to 80%'. 85 and above. In typical home environments, ambient humidity sits at 40–55% — this is slow, gentle death for this plant. A humidity dome, evaporation tray, or dedicated room humidifier. Invest in this before you invest in the plant.\n\nSubstrate: half pumice, quarter activated carbon, quarter zeolite. No peat. Alocasia despises a substrate that holds moisture against its roots — it wants high aerial humidity but excellent root drainage. Humidity does not equal wet substrate.\n\nWatering: when the top layer (2cm) of substrate dries out. Room-temperature distilled water only — cold tap water creates cold stress that translates to brown spots on the leaves.\n\nHardening: 10–14 days in a humidity dome before exposure to permanent ambient conditions. Do not fertilize within the first 30 days.",
+      "sop": null,
+      "formula": "Light: 70% indirect | Humidity: 85%+ | Substrate: pumice/carbon/zeolite | Water: distilled room-temp",
+      "warnings_he": [
+        "אור ישיר — אפילו בוקר עדין — יכול לשנות את גוון הוריאגציה לצמיתות.",
+        "לחות מתחת ל-75% תגרום להתמוטטות עלים ולהאפרת הגוון הוורוד.",
+        "מים מהברז עם כלור גבוה יוצרים כתמי שריפה על שפת העלים."
+      ],
+      "warnings_en": [
+        "Direct light — even gentle morning light — can permanently alter variegation tone.",
+        "Humidity below 75% will cause leaf collapse and fading of the pink tone.",
+        "High-chlorine tap water creates burn marks on leaf edges."
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "plant-alocasia-heart-balloon",
+      "tag_he": "מדריך טיפוח",
+      "tag_en": "Care Guide",
+      "title_he": "Alocasia Heart Balloon — המדריך המלא",
+      "title_en": "Alocasia Heart Balloon — Complete Care Guide",
+      "subtitle_he": "הצמח שנראה כמו בלון לב, מתנהג כמו יצור עדין.",
+      "subtitle_en": "Looks like a heart balloon, behaves like a delicate creature.",
+      "meta_description_he": "מדריך טיפוח מלא ל-Alocasia Heart Balloon — מבנה העלה הייחודי, דרישות לחות, מצע אידיאלי ומניעת נפילת עלים.",
+      "meta_description_en": "Complete care guide for Alocasia Heart Balloon — unique leaf structure, humidity requirements, ideal substrate, and preventing leaf drop.",
+      "seo_keywords": [
+        "Alocasia Heart Balloon care",
+        "Alocasia heart shaped",
+        "balloon Alocasia",
+        "Alocasia care guide Israel",
+        "rare Alocasia Israel",
+        "אלוקאסיה לב בלון",
+        "אלוקאסיה עלה לב",
+        "צמחים טרופיים נדירים ישראל"
+      ],
+      "content_he": "Alocasia Heart Balloon מייצגת את הצד הארכיטקטוני ביותר של סוג האלוקאסיה — עלה מנופח, קמור, בצורת לב מוגזמת שנראה כאילו הוא עומד להמריא. הצורה הייחודית נוצרת מגדילה דיפרנציאלית מהירה של תאי האפידרמיס העליון לעומת התחתון. זה יפה בדיוק כי זה לא טבעי לחלוטין — ותנאי גידול לא מתאימים ישטחו את הצמח תוך חודשים.\n\nהבעיה המרכזית: מצב שמגדלים מכנים 'בלון שהתפוצץ' — העלים מתשטחים ומאבדים את העיקמומיות שלהם. הסיבה ב-90% מהמקרים: עקת יובש. אם הלחות האווירית יורדת מתחת ל-75%, קצב גדילת תאי העפר מתאזן ומבנה הבלון נעלם. לא הפיך לחלוטין.\n\nתאורה: 70% עקיף. הצמח הזה פחות רגיש לאור מ-Polly Pink, אבל עדיין לא מגיב טוב לשמש ישירה. מקסימום חצי שעת שמש בוקר עדין.\n\nלחות: 85% יחסית. זה המספר הקריטי. הצורה הארכיטקטונית של הצמח תלויה בלחות. מגש אדים, מגדל אדים, כיפת לחות.\n\nמצע: ניקוז קיצוני. פומיס (60%) + פחם פעיל (20%) + זאוליט (20%). Alocasia Heart Balloon מאוד רגישה לריקבון שורשים — זה המוות הנפוץ ביותר שלה בישראל.\n\nהשקיה: אצבע לעומק 2 ס\"מ — אם לח, אל תשקה. אם יבש — שקה לרוויה מלאה ותן לנוזל לנגור.\n\nחורף: הצמח עובר דורמנציה חלקית ועלול להשיל עלים ולהישאר בפקעת. זה תקין. שומרים לחות גבוהה ומצע יבש יחסית.",
+      "content_en": "Alocasia Heart Balloon represents the most architectural side of the Alocasia genus — an inflated, convex, exaggerated heart-shaped leaf that looks like it is about to take flight. The unique form is created by rapid differential growth of upper versus lower epidermal cells. It is beautiful precisely because it is entirely unnatural — and unsuitable growing conditions will flatten the plant within months.\n\nThe central problem: a condition growers call 'deflated balloon' — leaves flatten and lose their curvature. The cause in 90% of cases: drought stress. If ambient humidity drops below 75%, the differential cell growth rate equalizes and the balloon structure disappears. Not entirely reversible.\n\nLight: 70% indirect. Less light-sensitive than Polly Pink, but does not respond well to direct sun. Maximum half an hour of gentle morning sun.\n\nHumidity: 85% relative. The critical number. The plant's architectural form depends on humidity. Evaporation tray, steam humidifier, or humidity dome.\n\nSubstrate: extreme drainage. Pumice (60%) + activated carbon (20%) + zeolite (20%). Alocasia Heart Balloon is highly sensitive to root rot — the most common cause of death in Israel.\n\nWatering: finger to 2cm depth — if moist, don't water. If dry — water to full saturation and allow to drain completely.\n\nWinter: enters partial dormancy, may drop leaves and remain as bulb only. Normal. Maintain high humidity and relatively dry substrate.",
+      "sop": null,
+      "formula": "Light: 70% indirect | Humidity: 85%+ | Substrate: pumice 60% / carbon 20% / zeolite 20%",
+      "warnings_he": [
+        "יובש אווירי מתחת ל-75% — הצמח יאבד את צורת הבלון לצמיתות.",
+        "עודף מים בשורשים = ריקבון. הצמח הזה מעדיף יבש מדי על לח מדי.",
+        "בחורף — נורמלי שהצמח ישיל עלים. אל תזרקו את הפקעת."
+      ],
+      "warnings_en": [
+        "Aerial dryness below 75% — the plant will permanently lose its balloon shape.",
+        "Excess water at roots = rot. This plant prefers too dry over too wet.",
+        "In winter — it is normal for the plant to drop leaves. Do not discard the bulb."
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "plant-alocasia-macrorrhiza-variegata",
+      "tag_he": "מדריך טיפוח",
+      "tag_en": "Care Guide",
+      "title_he": "Alocasia Macrorrhiza Variegata — המדריך המלא",
+      "title_en": "Alocasia Macrorrhiza Variegata — Complete Care Guide",
+      "subtitle_he": "הענקית. וריאגציה קטעים לבנים בעלים גדולים כמו מפות.",
+      "subtitle_en": "The Giant. Sectoral white variegation on leaves the size of maps.",
+      "meta_description_he": "מדריך טיפוח מלא ל-Alocasia Macrorrhiza Variegata — תאורה, מצע, לחות, שימור וריאגציה לבנה יציבה.",
+      "meta_description_en": "Complete care guide for Alocasia Macrorrhiza Variegata — light, substrate, humidity, and preservation of stable white sectoral variegation.",
+      "seo_keywords": [
+        "Alocasia Macrorrhiza Variegata care",
+        "Alocasia Macrorrhiza white variegated",
+        "giant Alocasia variegated",
+        "rare Alocasia Israel",
+        "אלוקאסיה מקרוריזה וריאגטה",
+        "אלוקאסיה ענקית לבנה",
+        "צמחים נדירים ישראל"
+      ],
+      "content_he": "Alocasia Macrorrhiza Variegata היא ה-statement plant האולטימטיבי. הצמח הבוגר מייצר עלים שיכולים להגיע ל-120 ס\"מ אורך עם אחוזי לבן שנעים בין קטעי מגזר לפסים שלמים — כל עלה שונה, כל גדילה היא אירוע.\n\nהוריאגציה של Macrorrhiza היא כימרית קטעית (Sectoral Chimera) — פסי לבן שלמים לאורך ה-midrib. סוג הוריאגציה הפחות יציב — עלים עוקבים יכולים להשתנות משמעותית. מה שמייצב: קצב גדילה עקבי. לא מהיר מדי, לא איטי מדי.\n\nתאורה: 65% עקיף. Macrorrhiza סובלת קצת יותר אור, אבל חשיפה ישירה ממשיכה להיות מזיקה. תאורת צמחים ייעודית (LED 5000K, 40–60 PPFD בגובה הצמח) היא האפשרות הנשלטת ביותר לאקלים ישראלי.\n\nלחות: 80%+. מתחת ל-70% תתחילו לראות קצוות חומים על מגזרי הלבן. האזורים הלבנים חסרי כלורופיל ורגישים פי 2 לעקת לחות.\n\nמצע: פומיס (40%) + פחם פעיל (20%) + זאוליט (20%) + קליפות אורכיאטה (20%). קליפות אורכיאטה מוסיפות מבנה ואוורור לצמח הגדול. ללא כבול.\n\nדישון: NPK מאוזן חצי מינון כל שבועיים באפריל–ספטמבר. תוספת אשלגן גבוה (10-10-20) כל 3–4 שבועות מחזקת ביטוי וריאגציה. מאוקטובר עד מרץ — עצרו לחלוטין.",
+      "content_en": "Alocasia Macrorrhiza Variegata is the ultimate statement plant. The mature specimen produces leaves that can reach 120cm in length with white percentages ranging from sector patches to full stripes — every leaf is different, every new growth is an event.\n\nMacrorrhiza's variegation is a Sectoral Chimera — full white stripes along the midrib. The less stable type of variegation — consecutive leaves can change significantly. What stabilizes it: consistent growth rate. Not too fast, not too slow.\n\nLight: 65% indirect. Tolerates slightly more light but direct exposure continues to be damaging. Dedicated plant LED lighting (5000K, 40–60 PPFD at plant height) is the most controlled option for Israeli climate.\n\nHumidity: 80%+. Below 70% you will begin to see brown edges on white sectors. White zones lack chlorophyll and are 2x more sensitive to humidity stress.\n\nSubstrate: pumice (40%) + activated carbon (20%) + zeolite (20%) + Orchiata bark (20%). Bark adds structure and aeration for this large plant. No peat.\n\nFertilization: balanced NPK at half dose every two weeks, April–September. High-K supplement (10-10-20) every 3–4 weeks strengthens variegation expression. October through March — stop entirely.",
+      "sop": null,
+      "formula": "Light: 65% indirect | Humidity: 80%+ | Substrate: pumice/carbon/zeolite/Orchiata | NPK balanced + high-K April-Sept",
+      "warnings_he": [
+        "וריאגציה כימרית — כל עלה שונה. ירידה בלבן בעלה אחד לא אומרת שהצמח 'נעלם'.",
+        "מגזרים לבנים רגישים פי 2 לאור ישיר — לא ניתן לתקן כוויית שמש בחלק הלבן.",
+        "TC — חובה פרוטוקול חיטוי לפני שתילה. ללא זה 70% סיכוי לריקבון תוך שבוע."
+      ],
+      "warnings_en": [
+        "Chimeric variegation — every leaf is different. Decline in white on one leaf does not mean variegation is gone.",
+        "White sectors are 2x more sensitive to direct light — sunburn on the white portion cannot be corrected.",
+        "TC — sterilization protocol mandatory before planting. Without it, 70% chance of rot within a week."
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "plant-philodendron-jose-buono",
+      "tag_he": "מדריך טיפוח",
+      "tag_en": "Care Guide",
+      "title_he": "Philodendron Jose Buono — המדריך המלא",
+      "title_en": "Philodendron Jose Buono — Complete Care Guide",
+      "subtitle_he": "קרם, ירוק, ארכיטקטורה. הקולקטיבל הכי פחות מסוכן לגדל.",
+      "subtitle_en": "Cream, green, architecture. The most forgiving collectible to grow.",
+      "meta_description_he": "מדריך טיפוח מלא ל-Philodendron Jose Buono — תאורה, מצע, לחות, שימור וריאגציה קרם.",
+      "meta_description_en": "Complete care guide for Philodendron Jose Buono — light, substrate, humidity and cream variegation preservation.",
+      "seo_keywords": [
+        "Philodendron Jose Buono care",
+        "Jose Buono variegated Philodendron",
+        "cream variegated Philodendron",
+        "rare Philodendron Israel",
+        "פילודנדרון חוזה בואנו",
+        "פילודנדרון קרם וריאגטי",
+        "צמחים נדירים ישראל"
+      ],
+      "content_he": "Philodendron Jose Buono הוא הקולקטיבל היחסית 'קל' של עולם הנדירים — ביחס ל-Alocasia הוא פחות דרמטי בדרישותיו, אבל ביחס לפילודנדרון 'רגיל' הוא עדיין דורש הבנה. הוריאגציה שלו היא שילוב של קרם, שמנת-לבן ואיזורי ירוק כהה — לא אחיד, לא צפוי, ולכן מרתק. כל עלה חדש הוא הפתעה.\n\nJose Buono הוא מטפס. מוט טחב (Moss Pole) הוא ההשקעה הטובה ביותר שתעשו לצמח הזה. ברמות לחות של 75%+, הפרבנים האוריים יגדלו ויצרו קשר עם המוט — והצמח יתפוצץ בגדילה. בלי מוט: צמיחה ממוצעת. עם מוט: מהירות גדילה מוכפלת, גודל עלים כפול.\n\nתאורה: 55% עקיף. Jose Buono הוא הסלחן מבחינת תאורה — בטבע הוא גדל בתת-צמחייה. בתנאי אור נמוכים מדי הצמח ייצר יותר ירוק. חצי שעת שמש בוקר עדינה מוזמנת.\n\nלחות: 75% יחסית — הנמוכה ביותר בין ארבעת הצמחים שלנו. יכול לשרוד ב-60% בטווח קצר, אבל ב-75%+ יש הבדל ברור בגודל העלים.\n\nמצע: 50% קליפות אורכיאטה + 30% פומיס + 20% זאוליט. Philodendron מכיר עולם אורגני קצת יותר מ-Alocasia.\n\nהשקיה: כשהשכבה העליונה (3 ס\"מ) יבשה. יותר סלחן מ-Alocasia — אבל ריקבון שורשים אפשרי בהזנחה.\n\nדישון: NPK מאוזן (20-20-20) כל שבועיים באפריל–ספטמבר. תוספת זאוליט ובזלת לשכבה התחתונה של האדנית — שחרור יסודות קורט לכל אורך חיי הצמח.",
+      "content_en": "Philodendron Jose Buono is the relatively 'easier' collectible in the rare plant world — less dramatic in its requirements than Alocasia, but still demands understanding compared to a regular houseplant. Its variegation is a combination of cream, off-white and zones of deep green — not uniform, not predictable, and therefore fascinating. Every new leaf is a surprise.\n\nJose Buono is a climber. A moss pole is the best investment you can make for this plant. At humidity levels of 75%+, aerial roots will grip the pole and growth rate doubles. Without a pole: average growth. With a pole: doubled speed, doubled leaf size.\n\nLight: 55% indirect. The most forgiving of our four plants on lighting — in nature it grows in sub-canopy. In too-low light conditions it will produce more green. Half an hour of gentle morning sun is welcome.\n\nHumidity: 75% relative — the lowest of our four plants. Can survive at 60% short-term, but at 75%+ there is a clear difference in leaf size and variegation intensity.\n\nSubstrate: 50% Orchiata bark + 30% pumice + 20% zeolite. Philodendron is comfortable with slightly more organic substrate than Alocasia.\n\nWatering: when the top layer (3cm) is dry. More forgiving than Alocasia on the wet side — but root rot is possible if left wet over time.\n\nFertilization: balanced NPK (20-20-20) every two weeks April–September. Adding zeolite and basalt to the bottom layer of the pot provides consistent trace element release over the plant's lifetime.",
+      "sop": null,
+      "formula": "Light: 55% indirect | Humidity: 75%+ | Substrate: Orchiata/pumice/zeolite | Moss pole recommended | NPK balanced April-Sept",
+      "warnings_he": [
+        "ללא מוט תמיכה — הצמח יגדל לאיטו. עם מוט — מהירות הגדילה מוכפלת.",
+        "Agar על שורשי TC + לחות גבוהה = עובש Pythium. לחטא תמיד.",
+        "וריאגציה קרם ב-50%+ = חוסר כלורופיל חלקי. תאורה מספקת היא חיונית."
+      ],
+      "warnings_en": [
+        "Without a support pole — the plant grows slowly. With a pole — growth rate doubles.",
+        "Agar on TC roots + high humidity = Pythium mold. Always sterilize.",
+        "Cream variegation at 50%+ = partial chlorophyll deficiency. Adequate light is essential."
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "tissue-culture",
+      "tag_he": "יסודות הגידול",
+      "tag_en": "Growing Fundamentals",
+      "title_he": "תרבית רקמה — המדע מאחורי הצמח",
+      "title_en": "Tissue Culture — The Science Behind the Plant",
+      "subtitle_he": "לא כל צמח הוא צמח. TC הוא מדע.",
+      "subtitle_en": "Not every plant is a plant. TC is science.",
+      "meta_description_he": "מה זה תרבית רקמה, למה צמחי TC שונים, ואיך מאקלמים אותם נכון. המדריך המלא של Pink Leaf לצמחים נדירים ישראל.",
+      "meta_description_en": "What is tissue culture, why TC plants are different, and how to acclimatise them correctly. The complete Pink Leaf guide to rare plants Israel.",
+      "seo_keywords": [
+        "tissue culture plants",
+        "TC plants Israel",
+        "תרבית רקמה",
+        "צמחים נדירים ישראל",
+        "אקלום TC",
+        "TC acclimatisation",
+        "variegation genetics",
+        "וריאגציה גנטיקה",
+        "Fluval Stratum TC",
+        "rare aroids Israel",
+        "deflask TC"
+      ],
+      "content_he": "תרבית רקמה היא שיטת ריבוי צמחים שמתבצעת במעבדה סטרילית מוחלטת. במקום לחתוך ענף ולקוות לטוב — לוקחים תאי צמח בודדים, מניחים אותם על ג'ל מיוחד עם הורמונים וחומרי הזנה, ומגדלים מהם צמח שלם חדש. התוצאה: צמח נקי ממחלות, נקי מחרקים, ומדויק גנטית — עותק מושלם של הצמח המקורי.\n\nצמח TC מגיע לבית שלכם בתוך צינורית אטומה עם ג'ל — כי הוא גדל כל חייו בסביבה סטרילית. הוא לא ראה חרקים, פטריות, בקטריות או עפר רגיל. לכן כשמוציאים אותו, הוא צריך תהליך הסתגלות — אקלום: מסירים את הג'ל, שותלים ב-Fluval Stratum, ומעלים בהדרגה את החשיפה לאוויר רגיל. התהליך לוקח 4–8 שבועות. ב-Pink Leaf כל הצמחים שלנו כבר עברו אקלום מקצועי.\n\nהיתרונות של TC: הצמח נקי 100% — ללא מזיקים נסתרים שיגיעו איתו הביתה. הווריאגציה יציבה גנטית ולא תיעלם. זמינות גנטיקה נדירה שאי אפשר למצוא בשוק הרגיל. שורשים חזקים ועמידות גבוהה יותר לטווח ארוך.\n\nוריאגציה היא מוטציה גנטית שגורמת לעלים להראות עם כתמים, פסים או מגזרות בצבעים לבן, קרם, ורוד או צהוב. זו לא צביעה — זו גנטיקה. בצמחי TC הווריאגציה יציבה ועקבית, ועוברת לעלים הבאים. ההבדל בין TC לצמח רגיל: TC ריבה במעבדה בתנאים מדויקים; צמח רגיל ריבה על ידי גנן עם קרקע ומים. TC = בטוח יותר, נדיר יותר, ויציב יותר.",
+      "content_en": "Tissue culture is a propagation method carried out in a completely sterile laboratory. Instead of taking a cutting and hoping for the best — individual plant cells are placed on a specialised gel enriched with hormones and nutrients, and grown into a complete new plant. The result: a plant free of disease, free of pests, and genetically exact — a perfect copy of the original.\n\nA TC plant arrives in a sealed tube with gel — because it has spent its entire life in a sterile environment. It has never encountered insects, fungi, bacteria, or regular soil. When it leaves the lab, it needs an acclimatisation period: the gel is removed, the plant is transferred to Fluval Stratum, and gradually introduced to normal air and humidity. This takes 4–8 weeks. At Pink Leaf, every plant has already been professionally acclimated before it reaches you.\n\nThe advantages of TC: the plant is 100% clean — no hidden pests arriving at your home. Variegation is genetically stable and will not revert. Access to rare genetics unavailable on the regular market. Strong root systems and better long-term resilience.\n\nVariegation is a genetic mutation that causes leaves to display patches, sectors, or streaks in white, cream, pink, or yellow. It is not dye — it is genetics. In TC plants, variegation is stable and consistent, carried forward into new leaves. The difference between TC and a regular plant: TC was propagated in a laboratory under precise conditions; a regular plant was propagated by a grower using soil and water. TC = safer, rarer, and more stable.",
+      "sop": {
+        "title_he": "שאלות נפוצות",
+        "title_en": "Frequently Asked Questions",
+        "steps_he": [
+          "האם צמח TC קשה לגידול? לא — אחרי האקלום הוא גדל בדיוק כמו כל צמח. שלב האקלום דורש סבלנות, אנחנו כאן כדי להדריך.",
+          "למה צמח TC יקר יותר? כי הריבוי במעבדה יקר, והצמח מגיע נקי, יציב, ומאומת גנטית — לא הימור.",
+          "מה ההבדל בין TC לחיתוך רגיל? חיתוך לוקח שבועות ולא תמיד מצליח. TC יוצא כבר עם שורשים ומערכת גנטית מלאה.",
+          "האם הווריאגציה תיעלם? לא. בצמח TC הווריאגציה גנטית ויציבה — היא לא תיגמל."
+        ],
+        "steps_en": [
+          "Is a TC plant hard to grow? No — after acclimatisation it grows exactly like any other plant. The acclimatisation phase requires patience; we are here to guide you.",
+          "Why is a TC plant more expensive? Because laboratory propagation is costly, and the plant arrives clean, stable, and genetically verified — not a gamble.",
+          "What is the difference between TC and a regular cutting? A cutting takes weeks and doesn't always succeed. TC already has roots and a complete genetic system from day one.",
+          "Will the variegation disappear? No. In a TC plant variegation is genetic and stable — it will not revert."
+        ]
+      },
+      "formula": "TC = נקי • יציב גנטית • נדיר | Acclimation: 4–8 weeks · Fluval Stratum",
+      "warnings_he": [
+        "אחרי הוצאה מהג'ל — אל תחשפו לאוויר ישירות. עברו לאקלום הדרגתי ב-Stratum.",
+        "שאריות ג'ל Agar על השורשים מזינות עובש — נקו לפני השתילה (ראו מאמר חיטוי TC)."
+      ],
+      "warnings_en": [
+        "After removing from gel — do not expose directly to open air. Begin gradual acclimatisation in Stratum.",
+        "Agar gel residue on roots feeds mould — clean before transplanting (see TC Sterilization article)."
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "variegation-types",
+      "tag_he": "גנטיקה וריאגציה",
+      "tag_en": "Variegation Genetics",
+      "title_he": "סוגי וריאגציה — הבחנות גנטיות לגדלנים",
+      "title_en": "Types of Variegation — Genetic Distinctions for Growers",
+      "subtitle_he": "לא כל וריאגציה שווה. חלקן יציבות לנצח, חלקן ייעלמו בעלה הבא.",
+      "subtitle_en": "Not all variegation is created equal. Some are stable forever, others will disappear on the next leaf.",
+      "meta_description_he": "הסבר מלא על סוגי וריאגציה בצמחים: כימרית, סקטוריאלית, ספורט, TC-יציבה, וריאגציה ורודה. יציבות, תורשה, ומשמעות לגדלנים צמחים נדירים.",
+      "meta_description_en": "Complete guide to variegation types in plants: chimeral, sectoral, sport, TC-stable, and pink variegation. Stability, inheritance, and implications for rare plant growers.",
+      "seo_keywords": [
+        "chimeric variegation plant",
+        "sectoral variegation",
+        "variegation sport mutation",
+        "TC-stable variegation",
+        "pink variegation aroid",
+        "variegation genetics",
+        "וריאגציה כימרית",
+        "וריאגציה יציבה TC",
+        "ספורט וריאגציה צמח",
+        "Monstera Albo chimeric",
+        "variegation reversion causes",
+        "אארואיד מוורד"
+      ],
+      "content_he": "וריאגציה היא כל דבר לעולם הצמחים הנדירים — היא גם המדוכא ביותר אם אתם לא יודעים מה אתם קונים. הבעיה: 'וריאגציה' היא מילה כללית מדי. לצמחים יש סוגים שונים לחלוטין של וריאגציה, וההבדלים קובעים אם הצמח שלכם יישאר יפה או יחזור לירוק בלי הודעה.\n\nוריאגציה כימרית (Chimeric Variegation) היא המקרה הנפוץ ביותר — וגם הבעיות ביותר. פירוש: התאים שמייצרים את הלבן הם שכבה דקה בלבד בעלה, בדרך כלל בחלק העליון (epidermis) או בחלק המנוף (parenchyma). היא תורשה דרך הנבטים (Buds), אבל היא לא יציבה ברמה של ה-DNA הגנומי. אם הצמח חווה מתח — אור נמוך, טמפרטורה שגויה, בחירת leaf node שגויה — הוא יכול להסתובב בעוד עלה וזהו: חזרה לירוק מלא. זה לא נדיר. זה קרה גם בטירה. Monstera Albo הוא דוגמה קלאסית — יפה ביום, ירוק בחודש אם לא תפקחו עין.\n\nוריאגציה סקטוריאלית (Sectoral Variegation) היא שונה לחלוטין. כאן, קטעים שלמים של הצמח — לפעמים כל השורק — הם לבנים. הם תורשה דרך cutings ובקלות. אם אתם חוותכים ענף לבן מסקטור לבן, הצמח הצעיר שגדל ממנו יהיה שומר וריאגציה. יציבה יותר מכימרית, אבל עדיין ניתנת להפסד אם אתם לא זהירים.\n\nספורט (Sport) היא וריאגציה שקרתה בגמיטור יחיד — מוטציה במסתם אחד בלבד שמייצר עלה שונה. אם זה נעשה עם בחירת צומת נכונה, זה יכול להיות יציב לעתיים. אבל זה תמיד סיכון.\n\nTC-Stable היא המלט של וריאגציה. צמח שנוצר דרך Tissue Culture מצמח עם וריאגציה כימרית קיימת יורש את המוטציה ברמה סטיבילית יותר. לא אי פעם 100% בטוח מפני ריברשן, אבל הקשה בהרבה מחיתוך רגיל. זו הסיבה שצמחי Pink Leaf Lab TC יקרים יותר — אתם משלמים על הביטחון.\n\nוריאגציה ורודה (Pink Variegation) היא מקרה קצת אחר. צבע ורוד בעלים בא בדרך כלל מ-anthocyanins — פיגמנט שגדל בתנאי אור גבוה וטמפרטורה נמוכה. זה לא תמיד גנטי. לפעמים זו תגובה סביבתית. אם אתם מעלים את הטמפרטורה ב-5 מעלות, הוורוד בעלים שלכם יעלם. אבל כשגדלים בתנאים נכונים — קור עדיף, PPFD גבוה אבל לא שמש ישירה — הורודי יציב ויפה.",
+      "content_en": "Variegation is everything to the rare plant world — and also the most frustrating thing if you do not know what you are buying. The problem: 'variegation' is too general a term. Plants have completely different types of variegation, and the differences determine whether your plant stays beautiful or reverts to green without notice.\n\nChimeric Variegation is the most common case — and also the most problematic. This means: the cells producing the white color are only a thin layer in the leaf, usually in the upper epidermis or parenchyma. It is inherited through buds, but it is not stable at the level of genomic DNA. If the plant experiences stress — low light, wrong temperature, wrong node selection — it can turn around on the next leaf and that is it: back to full green. This is not rare. This happens in nurseries too. Monstera Albo is the classic example — beautiful today, full green within a month if you are not careful.\n\nSectoral Variegation is completely different. Here, entire sections of the plant — sometimes the whole branch — are white. It is inherited through cuttings and easily. If you cut a white branch from a white sector, the young plant growing from it will maintain variegation. More stable than chimeric, but still subject to loss if you are careless.\n\nA Sport is a variegation that occurred in a single bud — a mutation in just one meristem that produced a different leaf. If done with correct node selection, it can remain stable for some time. But it is always a risk.\n\nTC-Stable is the gold standard of variegation. A plant created through Tissue Culture from an existing chimeric-variegated plant inherits the mutation at a more stabilized level. Never 100% protected from reversion, but far safer than a regular cutting. This is why Pink Leaf Lab TC plants cost more — you are paying for the stability.\n\nPink Variegation is a slightly different case. Pink color in leaves usually comes from anthocyanins — a pigment that develops under high light and low temperature. This is not always genetic. Sometimes it is an environmental response. If you raise the temperature by 5 degrees, the pink in your leaves disappears. But when grown under correct conditions — preferring cool, high PPFD but no direct sun — the pink remains stable and beautiful.",
+      "warnings_he": [
+        "כימרית = לא יציבה. תוקח אותה בידיים בשקיקות. זה לא וריאגציה — זה אונקולוגיה צמחית.",
+        "וריאגציה ורודה = תלויה בטמפרטורה וPPFD. ללא התנאים הנכונים, היא נעלמת.",
+        "קנייה ללא בדיקת Meristem = הימור. תמיד בדקו צבע בנקודת הגדילה הפעילה."
+      ],
+      "warnings_en": [
+        "Chimeric = unstable. Handle it carefully. This is not variegation — it is plant oncology.",
+        "Pink variegation = dependent on temperature and PPFD. Without correct conditions, it disappears.",
+        "Buying without Meristem inspection = gambling. Always check the color at the active growth point."
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "semi-hydro-leca-guide",
+      "tag_he": "שיטות גדילה",
+      "tag_en": "Growing Methods",
+      "title_he": "מדריך Semi-Hydro LECA לארוידים — ניקוז מושלם",
+      "title_en": "Semi-Hydro LECA Guide for Aroids — Perfect Drainage",
+      "subtitle_he": "מים וגזים במקביל. זהו הסוד.",
+      "subtitle_en": "Water and gas simultaneously. That is the secret.",
+      "meta_description_he": "מדריך מלא ל-LECA ו-Semi-Hydroponics לארוידים נדירים: מצע, מלאים, תזוזוזה, ו-pH. מדוע גדלנים מקצועיים בחרו בשיטה זו.",
+      "meta_description_en": "Complete LECA and semi-hydroponic growing guide for rare aroids: substrate, fillings, reservoir methods, and pH. Why professional growers choose this technique.",
+      "seo_keywords": [
+        "LECA growing aroid",
+        "semi-hydroponics plants",
+        "LECA balls clay",
+        "hydroton aroid care",
+        "semi-hydro reservoir method",
+        "LECA pH nutrient solution",
+        "צמחים ב-LECA",
+        "גידול למחצה הידרופוני",
+        "כדורי LECA",
+        "מים טהורים צמח",
+        "Monstera LECA growing",
+        "LECA vs soil aroid"
+      ],
+      "content_he": "גדלנים רבים חוששים מ-LECA כי זה נראה זר. אך זה לא זר — זו פיזיקה. LECA (Lightweight Expanded Clay Aggregate) הוא גלגל חימר מורחב, נקבוביות, קל. כל כדור יש שכבה חיצונית חמה אבל שבר פנימי שמחזיק מים. עכשיו בקח שתי עצוב: צמח צריך מים + צמח צריך חמצן. בעציץ עם מצע, אתה מקבל או אחד או השני — או שצפו בעודף מים ואתה מביא חמצן מעט בלבד, או שטפחת כדי להביא חמצן אבל שורשים יבשים.\n\nב-LECA, אתה מקבל שניהם בו זמנית. הכדורים נושאים מים כל הדרך עד לקו המים (Water Line). מעל קו המים? אוויר טהור — חמצן זורם דרך החלל בין הכדורים. הצמח שורף את המים, קו המים יורד, בקבוקי חמצן נחשפים לשורשים. זה מנגנון טבעי של self-regulation.\n\nהמנדל: ערבב LECA טוב (לא מלוכלך), שטוף בפי מים מזוקקים עד שהמים ישקפים. הנח בעציץ עם חורי ניקוז בתחתית. ערבב קצת, שתול את הצמח, ערבב עד שיציב. עכשיו — הנקודה חזקה — הוסף מים מזוקקים עד שהמים מכסים קו הניקוז (בדרך כלל 1/3 של הקטעון).\n\nתזוזה: כאן הגדלנים קטנים מפנים. אתה בוחר: או שתמלא אותה מחדש בהזזוז מעדן (Top-Up Method) — מוסיף מים מזוקקים הפשוטים כשרמת המים יורדה — או באמצעות Reservoir Method (משמרות תחתית) שבו אתה מזגזג סביב הקטעון, ומניח את ה-Wick להשקיה עצמית מלמטה. שיטה Reservoir עשויה להיות עדכונית יותר אך שתיהן עובדות.\n\nהזנה: במים מזוקקים אין חומרים מזינים. עכשיו תוסיף ות פורמולה מזוקקה. תמיד השתמש בפורמולה Low-EC (EC 0.6–0.8) — הרבה יותר חלש מאשר שרבט לגדילה בעציץ עם מצע. כל ביקור שתילה יוסיף מזינים דרך מי הברז רגיל; בעציץ מזוקקות, אתה צריך לעקוב אחרי הוספה ידנית.\n\npH: בדוק ב-digital pH meter לפני ופעם בשבוע. יעד: 6.0–6.5. אם pH מעל 7.0, הוסף כמה טיפות של pH Down (חומצה אורתופוספוריק). אל תחומצן יותר מדי — זה יכול לעשות בעיות עם זמינות דקדוקים.",
+      "content_en": "Many growers fear LECA because it looks foreign. But it is not foreign — it is physics. LECA (Lightweight Expanded Clay Aggregate) is expanded clay pellets, porous, lightweight. Each ball has a hot outer layer but a hollow interior that holds water. Now take two demands: a plant needs water + a plant needs oxygen. In a pot with soil, you get either one or the other — either you flood with excess water and you bring in little oxygen, or you let it dry to bring in oxygen but the roots are dry.\n\nIn LECA, you get both simultaneously. The pellets hold water all the way to the Water Line. Above the Water Line? Pure air — oxygen flows through the gaps between the pellets. The plant uses up the water, the water line drops, pockets of oxygen are exposed to the roots. It is a natural self-regulating mechanism.\n\nThe setup: blend good LECA (not dirty), rinse with distilled water until the water runs clear. Place in a pot with drainage holes at the bottom. Mix a little, transplant your plant, mix until stable. Now — the critical point — add distilled water until it covers the drainage line (typically 1/3 of the pot).\n\nWatering: this is where small growers diverge. You choose: either refill using the Top-Up Method — adding simple distilled water when the water level drops — or via the Reservoir Method (bottom watering) where you circulate around the pot and let a Wick draw water up from below. Reservoir Method may be more elegant but both work.\n\nNutrition: distilled water contains no nutrients. Now you add a dilute formula. Always use Low-EC (EC 0.6–0.8) — much weaker than soil-based growing. Every repot will add nutrients through regular tap water; in distilled setups, you need to track manual additions.\n\npH: check with a digital pH meter before and weekly. Target: 6.0–6.5. If pH above 7.0, add a few drops of pH Down (orthophosphoric acid). Do not over-acidify — it can create issues with nutrient availability.",
+      "sop": {
+        "title_he": "SOP LECA Semi-Hydro — שלב אחר שלב",
+        "title_en": "LECA Semi-Hydro SOP — Step by Step",
+        "steps_he": [
+          "הזמן LECA טוב (קוטר ~6–8mm). שטוף בעדינות כדי להסיר אבק קרמי.",
+          "מלא עציץ עם חורי ניקוז בתחתית. LECA פלוס הצמח הזוקן ב-Stratum.",
+          "הוסף מים מזוקקים בלבד עד לקו הניקוז (בדרך כלל 1/3 של הקטעון).",
+          "בדוק אחרי 3–5 ימים: אם קו המים ירד ב-2–3 ס\"מ, זהו קצב שימוש בריא.",
+          "בכל הוספה של מים, הוסף מזינים: EC 0.6–0.8, pH 6.0–6.5.",
+          "בדוק pH כל שבוע. אם מעל 7.0, הוסף pH Down בזהירות.",
+          "בדוק שורשים כל 2–3 שבועות: צריכים להיות לבנים עם קצת וורוד-אדום בקצוות. אם שחורים = בעיה אוויר."
+        ],
+        "steps_en": [
+          "Source good LECA (diameter ~6–8mm). Rinse gently to remove ceramic dust.",
+          "Fill a pot with drainage holes at the bottom. LECA plus your plant acclimated from Stratum.",
+          "Add distilled water only up to the drainage line (typically 1/3 of the pot).",
+          "Check after 3–5 days: if the water line has dropped 2–3cm, that is a healthy consumption rate.",
+          "With each water addition, add nutrients: EC 0.6–0.8, pH 6.0–6.5.",
+          "Check pH every week. If above 7.0, add pH Down carefully.",
+          "Inspect roots every 2–3 weeks: they should be white with some pink-red at the tips. If black = air issue."
+        ]
+      },
+      "formula": "EC 0.6–0.8 + pH 6.0–6.5 | Water Line at drainage holes | Check roots bi-weekly",
+      "warnings_he": [
+        "מים מעלייה נורמליים = מינרלים. בעציץ LECA, משתמשו במים מזוקקים בלבד.",
+        "קו מים מעל הגובה = שורשים חונקים. תמיד שמור אוויר מעל קו המים.",
+        "שורשים שחורים ברכים = בעיית אוויר. בדוק את קור הקטעון; חורים חסומים?"
+      ],
+      "warnings_en": [
+        "Regular tap water = minerals. In LECA, use only distilled water.",
+        "Water line above drainage = choking roots. Always keep air above the water line.",
+        "Black soft roots = air issue. Check pot bottom; are holes clogged?"
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "repotting-tc-plant",
+      "tag_he": "SOP הגדילה",
+      "tag_en": "Growing SOP",
+      "title_he": "הטפט צמח TC מהצנצנת לעציץ — המדריך המדויק",
+      "title_en": "Repotting a TC Plant from Flask to Pot — The Precise Guide",
+      "subtitle_he": "שפיכה לתוך עציץ היא אמנות. זהו חשמל.",
+      "subtitle_en": "Moving a plant to a pot is not dumping. It is precision work.",
+      "meta_description_he": "כיצד להטפט צמח Tissue Culture בעדינות: סימנים לכשיוץ, בחירת גודל עציץ, מצע וטמפרטורה. תסרוקת גדילה מתוך האקלום השלמה.",
+      "meta_description_en": "How to carefully repot a TC plant: readiness signs, pot size selection, substrate choice, and technique. Complete growing guide from full acclimation.",
+      "seo_keywords": [
+        "repot TC plant guide",
+        "when to repot tissue culture",
+        "TC plant pot size",
+        "Fluval Stratum to chunky soil",
+        "transplant TC aroid",
+        "root bound TC plant",
+        "הטפטת צמח TC",
+        "מתי להטפט צמח רקמה",
+        "גודל עציץ צמח נדיר",
+        "סימני ההטפטה צמח",
+        "מצע הטפטה aroid",
+        "שורשים קשורים עציץ"
+      ],
+      "content_he": "עציץ בגודל 4 ס\"מ עם Fluval Stratum הוא מצב זמני. בסופו של דבר הצמח יתחיל לחפש שטח יותר. לא בגלל שהוא 'סירח' — צמחים לא סירחים. בגלל שגדל, והשורשים זקוקים למרחב לאוורור חדש. כשהם כשורים, הם מאטים לגדול. עלים נעצרים להתפתח. הוא הזמן להטפט.\n\nסימנים לכשיוציא: שורשים לבנים חדשים שנראים על משטח הטופ (Top Dressing) של LECA — זה סימן ברור שהצמח זקוק למרחק. גובה עלה נעצר מפני 2–3 שבועות עם תנאים זהים. כאשר אתה מושך בעדינות את הצמח מהעציץ, הוא אמור להצא בחזקת בול בודד של חומר עם שורשים הצפופים סביבו — סימן שהוא היה קרוב לשורש.\n\nבחירת העציץ: קפוץ על יד אחת בלבד. אם הצמח בעציץ 4 ס\"מ היום, בחר 6 ס\"מ (2.5 אינץ' במערכת האנגלית). רוב הגדלנים קופצים על שתי ידיים בו-זמנית ומסיימים בעציץ ענקי עם בצע קרקע שונאת חמצן. עציץ גדול מדי = מצע רטוב גם רטוב חמור יחזיק ולא ייבש מהר.\n\nבחירת המצע: זה לא Fluval Stratum יותר. כן הצמח בוגר, זה צריך מבנה חזק יותר. נעבור לפורמולה מלאה: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. הצמח יוכל לעגן עצמו ביתר טוב, הניקוז יהיה עדיין מושלם.\n\nהטכניקה: הטפט בעדינות את הצמח מהעציץ הישן. עבדו על שורשים קשורים בעדינות עם אצבעות או מברשת רכה — מטרה: לשחרר מעט מן המצע הישן ללא קריעת השורשים. מלא את העציץ החדש בחצי מצע. הנח את הצמח במרכז. ערבב מצע סביב השורשים בעדינות, דחוס קל כדי להסיר כיסי אוויר, אך לא דחוס חזק. לעולם לא סחטו מצע.\n\nהשקיה לאחר הטפט: התן מים זו פעם בלבד בחלל השלוש שעות לאחר הטפטה. לא יותר מדי — קרקע זו צריכה להיות לח, לא רטוב. לאחר מכן, שמור לחות בסביבתית גבוה (70%) למשך שבוע — זהו סימנון עלים, גם אם לא כתוב כאן.",
+      "content_en": "A 4cm pot with Fluval Stratum is temporary. Eventually the plant will outgrow it. Not because it is 'tired' — plants do not get tired. Because it is growing, and the roots need fresh space to aerate. When they are cramped, growth slows. New leaves stop developing. It is time to repot.\n\nSigns of readiness: white new roots visible on the surface of the LECA (Top Dressing) — this is a clear signal the plant needs space. Leaf height has stalled for 2–3 weeks despite identical conditions. When you gently pull the plant from the pot, it comes out as a tight root ball of material with dense roots around it — a clear sign it was root-bound.\n\nPot selection: jump by one size only. If the plant is in a 4cm pot today, choose 6cm (2.5 inches). Most growers jump two sizes at once and end up with a huge pot full of anaerobic, oxygen-hating soil. Pot too large = substrate stays wet too long.\n\nSubstrate choice: this is no longer Fluval Stratum. The plant is now mature; it needs stronger structure. Move to the full formula: 40% Orchiata Bark, 30% Perlite, 30% Coconut Coir. The plant will anchor itself better; drainage will still be perfect.\n\nTechnique: gently remove the plant from the old pot. Work the root-bound material gently with your fingers or a soft brush — the goal: loosen some of the old substrate without tearing the roots. Fill the new pot halfway with substrate. Place the plant in the center. Mix substrate around the roots gently, press lightly to remove air pockets, but never compress hard. Never squeeze the soil.\n\nWatering after repotting: water once fully within the first three hours after repotting. Not excessively — the soil should be moist, not wet. After that, maintain high ambient humidity (70%) for one week — this is a transition period even if not explicitly stated here.",
+      "sop": {
+        "title_he": "SOP הטפטה שלב אחר שלב",
+        "title_en": "Repotting SOP Step by Step",
+        "steps_he": [
+          "בדוק סימנים: שורשים לבנים בחלק העליון, גובה נעצר, או צפיפות שורשים.",
+          "בחר עציץ בגודל הגדול ב-1.5–2 ס\"מ בקוטר בלבד. לעולם לא קפצי על 2 ס\"מ ויותר.",
+          "תעט את הצמח בעדינות מהעציץ הישן.",
+          "לחץ בעדינות על שורשים בעדינות כדי להרחיק מעט מן המצע. אל תשברו שורשים.",
+          "מלא את העציץ החדש ב-מחצית מצע: 40% Orchiata, 30% Perlite, 30% Coir.",
+          "הנח את הצמח במרכז. ערבב מצע סביב השורשים. דחוס קל בלבד.",
+          "תן מים זו פעם בלבד (לחות מלאה אך לא ביצות). שמור לחות סביבתית ≥70% למשך שבוע.",
+          "בדוק שוורשים אחרי 3–4 שבועות עם צריצות קטנות למראה וורוד חדש."
+        ],
+        "steps_en": [
+          "Check readiness: white roots on top, growth stalled, or obvious root density.",
+          "Choose a pot only 1.5–2cm larger in diameter. Never jump 2cm or more.",
+          "Gently remove the plant from the old pot.",
+          "Loosen the roots gently to separate some of the old substrate. Do not break roots.",
+          "Fill the new pot halfway with substrate: 40% Orchiata, 30% Perlite, 30% Coir.",
+          "Center the plant. Mix substrate around roots. Compress lightly only.",
+          "Water once fully (humid but not swampy). Maintain ≥70% ambient humidity for one week.",
+          "Check roots after 3–4 weeks with small peeks for new pink growth."
+        ]
+      },
+      "formula": "Jump 1 size only | 40:30:30 formula | Water once, maintain humidity 70% for 7 days",
+      "warnings_he": [
+        "קפיצה על 2 ס\"מ או יותר = מצע רטוב תמידי = ריקבון שורשים מובטח.",
+        "דחיסה חזקה של קרקע = חנק שורשים. דחוס קל בלבד כדי להסיר אוויר בודד.",
+        "השקיה יתר זו לאחר הטפטה = ההטפטה עצמה הגיעה. שחזור 3–4 שבועות במרחב קר."
+      ],
+      "warnings_en": [
+        "Jumping 2cm or more = perpetually wet substrate = guaranteed root rot.",
+        "Heavy soil compression = choking roots. Compress lightly only to remove air pockets.",
+        "Over-watering after repotting = the repot itself failed. Recovery takes 3–4 weeks in cool space."
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "plant-monstera-albo-variegata",
+      "tag_he": "מדריכי צמח",
+      "tag_en": "Plant Guides",
+      "title_he": "Monstera Deliciosa 'Albo Variegata' — מדריך קולקציונרים",
+      "title_en": "Monstera Deliciosa 'Albo Variegata' — The Collector's Guide",
+      "subtitle_he": "הצמח הכי צפוי, הכי יפה, והכי קל לנזוק לזבל.",
+      "subtitle_en": "The most coveted, most beautiful, and easiest to ruin.",
+      "meta_description_he": "מדריך מלא לPink Leaf: Monstera Albo Variegata, וריאגציה כימרית, תנאי גדילה, סימני ריברשן, מניעה. מדוע Monstera Albo מתאשק בקלות.",
+      "meta_description_en": "Complete Pink Leaf guide: Monstera Albo Variegata, chimeric variegation, growing conditions, reversion signs, prevention. Why Monstera Albo reverts so easily.",
+      "seo_keywords": [
+        "Monstera Albo Variegata care",
+        "Monstera Albo revert prevention",
+        "Monstera Albo light requirements",
+        "how to grow Monstera Albo",
+        "Monstera Albo white variegation",
+        "Monstera deliciosa Albo",
+        "מונסטרה אלבו",
+        "Monstera Albo וריאגציה",
+        "טיפול Monstera Albo",
+        "מניעת ריברשן Albo",
+        "Monstera Albo Israel care",
+        "rare variegated Monstera"
+      ],
+      "content_he": "Monstera Albo היא סוג של יפה שמכניס לאנשים להציע כסף רב. אנשים מרובים לא יכולים שלם את הטיפול המתגבש שהיא דורשת.\n\nבואו נהיה ברורים: Monstera Albo היא כימרית. אור נמוך מדי בשבועות ספורות, היא תחזור ירוק. לא 100% ודאות, אבל בתוך 4–6 שבועות של תנאים לא אופטימליים, עלים חדשים ישלחו ללא וריאגציה. אתה תשתמש כסף טוב כדי לקנות צמח יפה, וזה הפך להיות צמח ירוק זול בחודש.\n\nהתנאים הנכונים הם: אור עקיף בהיר בתמיד, אך לא שמש ישירה. PPFD 150–250 μmol/m²/s הוא טווח מושלם. אם אתה משתמש בלד מעל, מוודא שהוא לא פחות מ-1 מטר מהדף. מיקום צוהר דרומי עם וילון דק הוא הגדול.\n\nטמפרטורה: 22–28°C ביום, מינימום 18°C בלילה. Monstera Albo מחוץ לטווח הזה = מתח פיזיולוגי = ריברשן מהחזוי לפחות בשבועות.\n\nלחות: מינימום 50%, אך 60–75% הוא אפילו יותר טוב. VPD בטווח של 0.8–1.2 kPa. מי הברז רגיל בסדר לכל יום אבל אם אתה גדל בעזרת צל חלוקי, מעשים אל הטפל מכל חודש עם LECA.\n\nשטופוס הגדול היחיד עבור Monstera Albo הוא הבחירה בלא נכונה של צומת. כאשר אתה חותך שורוכים (Cuttings), או כאשר הצמח מגיע כרביים מנצפיות מעל שום צומת, וריאגציה יכול להיות בחודים חצי באותה צומת. בחרו תמיד בצומת עם וריאגציה ברור — ורוד לבן וורוד בניצן כדי למקסימום את כמויות מיטות.\n\nריברשן כבר מתחיל? הסימנים: עלים חדשים שנראים בעלי אחוז לבן נמוך יותר כל עלה. ניצנים עם צבע פחות. מריסטם ירוק לחלוטין ללא צבע. זו הזמן לגמול את כל התנאים: אור יותר, טמפרטורה קצת יותר קרה, וודא לחות ו-EC נוזל אם בעציץ LECA.\n\nהמסקנה: Monstera Albo היא לא לצמחים קליל לשמור על. לא אבל היא קצת דרש. אם אתה לא יכול לשמור על VPD בעיניים וחישה אור וטמפרטורה, קנו צמח ירוק ולא יקר, ותחכו עד שהמרחב שלך בטוח יותר.",
+      "content_en": "*Monstera deliciosa* 'Albo Variegata' is a kind of beauty that tempts people to offer large sums of money. Many people who buy one cannot manage the exacting care it demands.\n\nLet us be clear: Monstera Albo is chimeric. Too-low light for just a few weeks, and it will revert to green. Not 100% certain, but within 4–6 weeks of suboptimal conditions, new leaves will emerge without variegation. You spent serious money to buy a beautiful plant, and within a month it has become a cheap green plant.\n\nThe correct conditions are: bright indirect light at all times, but never direct sun. PPFD 150–250 μmol/m²/s is the perfect range. If you use a grow light above, ensure it is no closer than 1 meter from the leaf. A south-facing window with a sheer curtain is ideal.\n\nTemperature: 22–28°C during day, minimum 18°C at night. Monstera Albo outside this range = physiological stress = reversion predicted within weeks.\n\nHumidity: minimum 50%, but 60–75% is far better. VPD in the range 0.8–1.2 kPa. Regular tap water is fine for daily watering but if you grow in dividing shade, water every month with LECA water instead.\n\nThe single biggest pitfall for Monstera Albo is incorrect node selection. When you take cuttings, or when the plant arrives rooted with no variegation above the node, variegation may be hidden halfway down that node. Always select a node with clear variegation — pink, white, and pink in the bud to maximize white output.\n\nReversion already beginning? The signs: new leaves showing lower white percentage each leaf. Buds with less color. A completely green meristem with no coloring. This is the time to maximize all conditions: more light, slightly cooler temperature, ensure humidity and EC if in LECA water.\n\nThe bottom line: Monstera Albo is not a 'set and forget' plant. Not impossible, but it demands attention. If you cannot maintain VPD by eye and feel for light and temperature, buy a cheap green plant and wait until your space is more stable.",
+      "warnings_he": [
+        "בחירת צומת שגויה = וריאגציה מוסתרת = עלים חדשים ירוקים. לא פיתרון. לא להכניס כל עלה. לחפש צומת עם וריאגציה ברור.",
+        "אור נמוך = ריברשן מובטח. זה לא סיכון — זו עובדה. אם אתה אין יכול לעמוד באור טוב, אל תקנו Albo.",
+        "טמפרטורה מתחת ל-18°C בלילה = הצמח סטופ וריאגציה מפעילה. שמור חום."
+      ],
+      "warnings_en": [
+        "Wrong node selection = variegation hidden = new green leaves. No solution. Every leaf matters. Always choose a node with obvious variegation visible.",
+        "Low light = reversion guaranteed. This is not a risk — it is a fact. If you cannot provide bright light, do not buy Albo.",
+        "Temperature below 18°C at night = plant deactivates variegation production. Keep it warm."
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "water-quality-ph-aroids",
+      "tag_he": "מים וגידול",
+      "tag_en": "Water & Growing",
+      "title_he": "איכות מים ו-pH לארוידים נדירים — מדוע מי ברז הוא בעיה",
+      "title_en": "Water Quality & pH for Rare Aroids — Why Tap Water Is a Problem",
+      "subtitle_he": "המים שלכם לא דומים למים שלי. בדוק אחרי.",
+      "subtitle_en": "Your water is not my water. Test it yourself.",
+      "meta_description_he": "מדוע מי ברז מזיקים לארוידים, תחום pH אידיאלי (6.0–6.5), EC/TDS תקני, וההבדלים בין מים מזוקקים לטהורים ל-RO. הדריך Pink Leaf הסטנדרטי.",
+      "meta_description_en": "Why tap water damages aroids, ideal pH range (6.0–6.5), EC/TDS standards, and differences between distilled, filtered, and RO water. The Pink Leaf standard guide.",
+      "seo_keywords": [
+        "tap water aroids harm",
+        "pH range aroids plants",
+        "distilled water vs RO water",
+        "EC TDS plant water",
+        "water quality rare plants",
+        "mineral content tap water",
+        "מים ברז צמח",
+        "pH אופטימלי אארואיד",
+        "מים מזוקקים צמח",
+        "איכות מים צמחים נדירים",
+        "TDS מד צמח",
+        "כלור וכל בריאות הצמח"
+      ],
+      "content_he": "מי ברז הישראלי הוא 'בטוח' לשתיה — עבור בני אדם. לצמחים, זה הטבח דוקטור וולט הוא מה המערערים קליל היו. אתה רואה את ה-pH של מי הברז? זה בדרך כלל בין 7.0–8.5 בישראל — ניטרלי לחומצי. צמחים אפיפיטיים כמו Monstera, Philodendron, ו-Alocasia התפתחו בתוך סביבה חומצית: פסולת עלים, אדמה טבעית — כל מה שעוזר ל-pH ירד ל-5.5–6.5. בחומציות זו, הם יכולים לספוג יסודות (Ca, Mg, K, N) כשמחיר טוב. ב-pH של 7.5+, צמחים אלה מתחילים לסבול מ-deficiencies — לא כי אין מינרלים, אלא כי צמח לא יכול לקלוט אותם כשהmedia יותר משניים לא חומצי.",
+      "content_en": "Israeli tap water is 'safe' for drinking — for humans. For plants, it is the slow poison. Look at the pH of your tap water. It is typically between 7.0–8.5 in Israel — neutral to alkaline. Epiphytic plants like *Monstera*, *Philodendron*, and *Alocasia* evolved in acidic environments: leaf litter, natural soil — everything that keeps pH down to 5.5–6.5. At this acidity, they can absorb minerals (Ca, Mg, K, N) at good rates. At pH 7.5+, these plants start to suffer from deficiencies — not because minerals are absent, but because the plant cannot absorb them when the media is too alkaline.\n\nSolute content (TDS/EC) is the second issue. Tap water in Israel often carries 300–600 ppm (Total Dissolved Solids). For a TC plant fresh from the flask, 300ppm is already stressful. The higher the TDS, the greater the osmotic gradient — water is pulled out of plant cells to balance the external salt concentration. The result: leaves lose turgor, edges yellow and brown, roots weaken. If you are using tap water for months, salts accumulate in the substrate and never wash out.\n\nRO water (Reverse Osmosis) is near-perfect: TDS close to zero, pH 6.8–7.0 (neutral, but low enough to work with). However, it is not common in Israel and usually requires home investment.\n\nDistilled water is similar to RO: very low TDS (nearly zero), pH slightly acidic (5.5–6.0 due to dissolved CO₂ from air). Better than tap, much cheaper than RO (can buy at any supermarket).\n\nFiltered water (Brita, etc.) reduces chlorine and some minerals, but TDS may still be 150–250ppm — not ideal, but far better than tap.\n\nThe ideal is: TDS 50–150ppm, pH 6.0–6.5. How to achieve this: start with RO or distilled (TDS near zero), add a micro-dose of balanced fertilizer to reach EC 0.4–0.6, adjust pH to 6.0–6.5 with pH Down (phosphoric acid) if needed. This mimics rainwater — which is what aroids 'expect' in nature.\n\nFor daily watering: use distilled or RO. For monthly nutrient watering (in LECA setups), add EC 0.6–0.8 solution. For regular pot-soil plants: alternate distilled weeks with low-dose nutrient weeks.\n\nDo not skip pH measurement. A digital pH meter costs 20–30 sheqel. Your rare Monstera costs 2,000. The investment is obvious.",
+      "sop": {
+        "title_he": "SOP איכות מים — בדיקה והתאמה",
+        "title_en": "Water Quality SOP — Testing & Adjustment",
+        "steps_he": [
+          "קנה TDS meter (EC meter) ו-pH meter. זה שני מטרים זעומים בהתחלה.",
+          "בדוק את מי הברז שלך: TDS, pH. רשום את הנתונים.",
+          "אם TDS מעל 200ppm או pH מעל 7.0, עבור ל-Distilled או RO water.",
+          "בתחום Distilled: בדוק pH כל שבוע. אם מעל 7.0, הוסף כמה טיפות pH Down (חומצה אורתופוספוריק) עד 6.0–6.5.",
+          "עבור צמחי LECA: תן מים Distilled בלבד. בכל 3–4 שבועות הוסף תמיסת מזינים: EC 0.6–0.8, pH 6.0–6.5.",
+          "לצמחי קרקע רגילים: שבוע 1–2: Distilled. שבוע 3–4: תוסף הדלק (Half-strength nutrients).",
+          "בדוק שורשים כל חודש: לבנים ורודים = מי טובים. חומים או שחורים = בעיית מים או מלחים."
+        ],
+        "steps_en": [
+          "Buy a TDS meter (EC meter) and pH meter. Two simple meters to start with.",
+          "Test your tap water: TDS, pH. Record the data.",
+          "If TDS above 200ppm or pH above 7.0, switch to Distilled or RO water.",
+          "With Distilled: check pH weekly. If above 7.0, add a few drops of pH Down (orthophosphoric acid) until 6.0–6.5.",
+          "For LECA plants: give Distilled water only. Every 3–4 weeks add nutrient solution: EC 0.6–0.8, pH 6.0–6.5.",
+          "For regular soil plants: Week 1–2: Distilled. Week 3–4: half-strength nutrients.",
+          "Check roots monthly: white and pink = good water. Brown or black = water or salt issue."
+        ]
+      },
+      "formula": "Ideal: TDS 50–150ppm + pH 6.0–6.5 | Distilled as base, add micro-nutrients to EC 0.6–0.8",
+      "warnings_he": [
+        "מי ברז רגילים = הצטברות מלחים בקרקע. לא משנה כמה טוב את הגדלנים, מלחים נצברים, וצמחים סובלים מישע.",
+        "pH מעל 7.5 = deficiencies מינרלים מובטחים. צמח ירוק אך חלש.",
+        "TDS מעל 400ppm = נזק אוסמוטי לשורשים. אל תנחסו בעלו כי צמח 'נראה בסדר'."
+      ],
+      "warnings_en": [
+        "Regular tap water = salt accumulation in soil. No matter how good a grower, salts accumulate and plants suffer from slow decline.",
+        "pH above 7.5 = nutrient deficiencies guaranteed. Plant stays green but weak.",
+        "TDS above 400ppm = osmotic damage to roots. Do not ignore it because the plant 'looks okay.'"
+      ]
+    }
+  ]
+}
