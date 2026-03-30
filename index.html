@@ -132,20 +132,26 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-macrorrhiza-var",
           "name": "Alocasia Macrorrhiza Variegata",
-          "description": "The Giant Taro in its rare variegated form — bold white-and-green sectoral variegation on oversized leaves. Available in Tissue Culture, Starter, and Mature sizes.",
+          "description": "The Giant Taro in its rare variegated form — bold white-and-green sectoral variegation on oversized leaves. Starter ₪50, Mature from ₪150 (varies by size and pot).",
           "image": "https://pinkleaf.co.il/plants/PV25.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "offers": [
+            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+          ],
           "category": "Rare Aroids"
         },
         {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-philodendron-jose-buono",
           "name": "Philodendron Jose Buono",
-          "description": "Collector-grade Philodendron with irregular cream-and-green variegation on elongated, architectural leaves. Available in Tissue Culture, Starter, and Mature sizes.",
+          "description": "Collector-grade Philodendron with irregular cream-and-green variegation on elongated, architectural leaves. Starter ₪50, Mature from ₪150 (varies by size and pot).",
           "image": "https://pinkleaf.co.il/plants/PV48.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "ILS", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+          "offers": [
+            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+          ],
           "category": "Rare Aroids"
         }
       ]
@@ -2044,13 +2050,7 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-store" class="hidden max-w-4xl mx-auto relative px-4 pb-20">
-        <div class="store-filter">
-            <select id="store-filter-select" onchange="filterStore()">
-                <option value="all">All Plants</option>
-                <option value="available">Available</option>
-                <option value="coming">Coming Soon</option>
-            </select>
-        </div>
+        <!-- filter hidden — all items available -->
         
         <button class="side-arrow left-10" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
         <div id="store-grid"></div>
@@ -2308,12 +2308,8 @@ body.dark-mode .scoreboard-item.current {
         const ALL_STORE_ITEMS = [
             { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "available" },
             { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available", openingSale: true },
-            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Tissue Culture", "Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "available" },
-            { id: "PV48", name: "Philodendron Jose Buono", availability: ["Tissue Culture", "Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
-            { id: "PV8", name: "Monstera 'Yellow Marilyn'", light: "60%", humidity: "75%", status: "coming" },
-            { id: "PV11", name: "Monstera 'White Monster'", light: "60%", humidity: "75%", status: "coming" },
-            { id: "PV72", name: "Musa Nono Pink Var", light: "80%", humidity: "85%", status: "coming" },
-            { id: "PV60", name: "Philodendron Caramel Marble", light: "55%", humidity: "70%", status: "coming" },
+            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "available" },
+            { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
         ];
 
         let lang='he', rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
@@ -2583,14 +2579,14 @@ body.dark-mode .scoreboard-item.current {
                         });
                         dropdownHTML += '</select></div>';
                     } else {
-                        const allOptions = ["Tissue Culture", "Starter Plant", "Mature Plant"];
-                        if (isAlocasia(item.name)) allOptions.push("Corm");
+                        const allOptions = ["Starter Plant", "Mature Plant"];
 
-                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Availability</option>';
+                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Size</option>';
                         allOptions.forEach(opt => {
                             const isOptAvailable = item.availability.includes(opt);
                             const price = ITEM_PRICES[`${item.id}_${opt}`];
-                            const priceLabel = price ? ` — ₪${price}` : '';
+                            const isMature = opt === 'Mature Plant';
+                            const priceLabel = price ? (isMature ? ` — from ₪${price}` : ` — ₪${price}`) : '';
                             dropdownHTML += isOptAvailable ?
                                 `<option value="${opt}">${opt}${priceLabel}</option>` :
                                 `<option disabled>${opt} (Unavailable)</option>`;
@@ -2904,6 +2900,10 @@ function checkLab(choiceIndex) {
             "PV19_High Variegation": 350,
             "PV19_Regular Variegation": 199,
             "PV81_Starter Plant": 500,
+            "PV25_Starter Plant": 50,
+            "PV25_Mature Plant": 150,   // 150–350 depending on size/pot
+            "PV48_Starter Plant": 50,
+            "PV48_Mature Plant": 150,   // 150–350 depending on size/pot
         };
 
         // Load from localStorage
@@ -3065,8 +3065,9 @@ function checkLab(choiceIndex) {
             lines.push('*🌿 Pink Leaf | בקשת זמינות*');
             lines.push(div);
             bag.forEach(item => {
+                const isMature = item.grade === 'Mature Plant';
                 const priceStr = item.price !== null
-                    ? `${(item.price * item.qty).toLocaleString()}₪`
+                    ? (isMature ? `החל מ-${(item.price * item.qty).toLocaleString()}₪ (לפי גודל)` : `${(item.price * item.qty).toLocaleString()}₪`)
                     : 'מחיר לפי בקשה';
                 lines.push(`• ${item.qty}x ${item.name}`);
                 lines.push(`  ↳ ${item.grade || 'Inquiry'} · ${priceStr}`);
@@ -3375,10 +3376,9 @@ function checkLab(choiceIndex) {
         <ul>
             <li><strong>Alocasia Polly Pink Variegata</strong> — High Variegation ₪350 · Regular Variegation ₪199. Rare pink-variegated Alocasia. <a href="https://wa.me/972559116990?text=Hi%2C%20interested%20in%20Alocasia%20Polly%20Pink">Order via WhatsApp</a></li>
             <li><strong>Alocasia Heart Balloon</strong> — Starter Plant ₪500. Opening Sale! <a href="https://wa.me/972559116990?text=Hi%2C%20interested%20in%20Alocasia%20Heart%20Balloon">Order via WhatsApp</a></li>
-            <li><strong>Alocasia Macrorrhiza Variegata</strong> — Available in TC, Starter, Mature. <a href="https://wa.me/972559116990?text=Hi%2C%20interested%20in%20Alocasia%20Macrorrhiza%20Var">Order via WhatsApp</a></li>
-            <li><strong>Philodendron Jose Buono</strong> — Available in TC, Starter, Mature. <a href="https://wa.me/972559116990?text=Hi%2C%20interested%20in%20Philodendron%20Jose%20Buono">Order via WhatsApp</a></li>
+            <li><strong>Alocasia Macrorrhiza Variegata</strong> — Starter ₪50 · Mature from ₪150 (varies by size/pot). <a href="https://wa.me/972559116990?text=Hi%2C%20interested%20in%20Alocasia%20Macrorrhiza%20Var">Order via WhatsApp</a></li>
+            <li><strong>Philodendron Jose Buono</strong> — Starter ₪50 · Mature from ₪150 (varies by size/pot). <a href="https://wa.me/972559116990?text=Hi%2C%20interested%20in%20Philodendron%20Jose%20Buono">Order via WhatsApp</a></li>
         </ul>
-        <p>Coming Soon: Monstera Yellow Marilyn, Monstera White Monster, Musa Nono Pink Var, Philodendron Caramel Marble</p>
 
         <h2>📚 Botanical Encyclopedia — Professional Guides</h2>
         <ul>
