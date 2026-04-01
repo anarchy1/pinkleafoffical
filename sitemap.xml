@@ -38,7 +38,39 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Encyclopedia articles -->
+  <!-- Static article pages (SEO crawlable) -->
+  <url>
+    <loc>https://pinkleaf.co.il/articles/variegated-alocasia-care-guide.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pinkleaf.co.il/articles/watering-rare-plants-israel.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pinkleaf.co.il/articles/humidity-guide-israel.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pinkleaf.co.il/articles/common-pests-detection-treatment.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pinkleaf.co.il/articles/reading-plant-roots.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Encyclopedia articles (hash-based, kept for existing links) -->
   <url>
     <loc>https://pinkleaf.co.il/#post-flask-sterilization</loc>
     <lastmod>2026-03-30</lastmod>
