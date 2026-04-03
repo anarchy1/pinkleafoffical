@@ -130,6 +130,25 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Encyclopedia standalone pages (SEO crawlable) -->
+  <url><loc>https://pinkleaf.co.il/encyclopedia/post-flask-sterilization.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/21-day-hardening-sop.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/engineered-substrates.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/atmospheric-data-vpd-ppfd.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/investment-variegation-stability.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/plant-health-indicators.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/leaf-symptom-diagnosis.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/tissue-culture.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/variegation-types.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/semi-hydro-leca-guide.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/repotting-tc-plant.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/plant-monstera-albo-variegata.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/water-quality-ph-aroids.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/plant-alocasia-polly-pink-variegata.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/plant-alocasia-heart-balloon.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/plant-alocasia-macrorrhiza-variegata.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinkleaf.co.il/encyclopedia/plant-philodendron-jose-buono.html</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
   <!-- Encyclopedia articles (hash-based, kept for existing links) -->
   <url>
     <loc>https://pinkleaf.co.il/#post-flask-sterilization</loc>
