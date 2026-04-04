@@ -2807,8 +2807,8 @@ function checkLab(choiceIndex) {
     isProcessing = true;
 
     const buttons = document.querySelectorAll('#lab-box .btn');
-    const selectedAnswer = buttons[choiceIndex].textContent;
-    const correctAnswer = currentQuestion.correctAnswer;
+    const selectedAnswer = buttons[choiceIndex].textContent.trim();
+    const correctAnswer = currentQuestion.correctAnswer.trim();
     const correctId = currentQuestion.id;
     const labBox = document.getElementById('lab-box');
     const fb = document.getElementById('lab-feedback');
