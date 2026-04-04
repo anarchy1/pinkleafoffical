@@ -1984,8 +1984,14 @@ body.dark-mode .scoreboard-item.current {
 
     </div>
 
-    <div class="lab-registry-float lab-only" id="registry-float">
-        <h3 class="registry-header-small" id="registry-title">הצטרף לדירוג</h3>
+    <!-- Backdrop to dismiss lab floaters on tap-outside (desktop/tablet) -->
+    <div id="lab-floater-backdrop" onclick="dismissLabFloaters()" style="display:none; position:fixed; inset:0; z-index:10000; background:transparent;"></div>
+
+    <div class="lab-registry-float lab-only" id="registry-float" style="z-index:10002 !important;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+            <h3 class="registry-header-small" id="registry-title" style="margin-bottom:0;">הצטרף לדירוג</h3>
+            <button onclick="dismissLabFloaters()" aria-label="Close" style="background:none;border:none;cursor:pointer;font-size:14px;opacity:0.45;color:var(--text);padding:0 2px;line-height:1;" title="Close">✕</button>
+        </div>
 
         <!-- Show when NOT logged in -->
         <div id="reg-form-wrap">
@@ -2008,8 +2014,11 @@ body.dark-mode .scoreboard-item.current {
         <p id="reg-message" class="registry-message"></p>
     </div>
 
-    <div class="lab-scoreboard-float lab-only" id="scoreboard-float">
-        <h3 class="scoreboard-header-small" id="scoreboard-title">דירוג המעבדה</h3>
+    <div class="lab-scoreboard-float lab-only" id="scoreboard-float" style="z-index:10002 !important;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+            <h3 class="scoreboard-header-small" id="scoreboard-title" style="margin-bottom:0;">דירוג המעבדה</h3>
+            <button onclick="dismissLabFloaters()" aria-label="Close" style="background:none;border:none;cursor:pointer;font-size:14px;opacity:0.45;color:var(--text);padding:0 2px;line-height:1;" title="Close">✕</button>
+        </div>
         <div class="scoreboard-list" id="scoreboard-list">
             <div style="text-align: center; opacity: 0.5; padding: 10px; font-size: 11px;">Loading...</div>
         </div>
@@ -2193,7 +2202,7 @@ body.dark-mode .scoreboard-item.current {
             <div id="lab-incorrect-label" style="font-size:52px;line-height:1;margin-bottom:12px;min-height:56px;display:flex;align-items:center;justify-content:center;">❌</div>
             <div class="portal mx-auto w-48 h-48"><img id="correct-img" class="w-full h-full object-cover"></div>
             <p id="correct-name" class="serif text-lg my-6 uppercase tracking-widest"></p>
-            <button class="btn w-48" onclick="closeCorrection()" id="lab-retry-btn" aria-label="נסה שוב" title="נסה שוב" style="font-size:18px;letter-spacing:0;">↩</button>
+            <button class="btn w-48" onclick="closeCorrection()" id="lab-retry-btn" aria-label="Try Again" title="Try Again" style="font-size:14px;letter-spacing:2px;background:var(--pink);color:#fff;border-color:var(--pink);padding:16px 32px;min-width:180px;">TRY AGAIN ↩</button>
         </div>
     </main>
 
@@ -2311,6 +2320,7 @@ body.dark-mode .scoreboard-item.current {
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
         ];
 
+        let labFloatersHidden = false;
         let lang='he', rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
         let bestStreak = parseInt(localStorage.getItem('pl_best_streak')) || 0;
         let totalCorrect = parseInt(localStorage.getItem('pl_total_correct')) || 0;
@@ -2526,13 +2536,56 @@ body.dark-mode .scoreboard-item.current {
     if (p === 'store') renderStore();
     if (p === 'vault') renderVault('Alocasia');
     if (p === 'care') renderCareProducts();
-    if (p === 'lab') startLab();
+    if (p === 'lab') {
+        // Reset floater visibility when entering lab page
+        if (typeof labFloatersHidden !== 'undefined' && labFloatersHidden) {
+            showLabFloaters();
+        }
+        const restoreBtn = document.getElementById('lab-floaters-restore');
+        if (restoreBtn) restoreBtn.style.display = 'none';
+        startLab();
+    }
     if (p === 'encyclopedia') { loadEncyclopedia(); }
 }
 
 
         function updateIntro(){ document.getElementById('intro-content').innerHTML = intros[lang]; }
 
+        // ── LAB FLOATER DISMISS (click-outside / ✕ button) ──
+        function dismissLabFloaters() {
+            const reg = document.getElementById('registry-float');
+            const score = document.getElementById('scoreboard-float');
+            const backdrop = document.getElementById('lab-floater-backdrop');
+            if (reg)     { reg.style.setProperty('display', 'none', 'important'); }
+            if (score)   { score.style.setProperty('display', 'none', 'important'); }
+            if (backdrop){ backdrop.style.display = 'none'; }
+            labFloatersHidden = true;
+            // Show a small restore button so user can bring panels back
+            let restoreBtn = document.getElementById('lab-floaters-restore');
+            if (!restoreBtn) {
+                restoreBtn = document.createElement('button');
+                restoreBtn.id = 'lab-floaters-restore';
+                restoreBtn.innerHTML = '📊 Rankings';
+                restoreBtn.title = 'Show rankings panels';
+                restoreBtn.setAttribute('aria-label', 'Show rankings panels');
+                restoreBtn.style.cssText = 'position:fixed;top:95px;left:50%;transform:translateX(-50%);z-index:10003;background:var(--bg);border:1px solid var(--border);border-radius:50px;padding:6px 16px;font-size:11px;cursor:pointer;letter-spacing:1px;color:var(--pink);font-family:Cinzel,serif;white-space:nowrap;';
+                document.body.appendChild(restoreBtn);
+                restoreBtn.onclick = showLabFloaters;
+            }
+            restoreBtn.style.display = 'block';
+        }
+        function showLabFloaters() {
+            const reg = document.getElementById('registry-float');
+            const score = document.getElementById('scoreboard-float');
+            const restoreBtn = document.getElementById('lab-floaters-restore');
+            // Only show if on lab page and on wide screens
+            if (document.body.classList.contains('on-lab-page') && window.innerWidth > 767) {
+                if (reg)   { reg.style.removeProperty('display'); reg.style.setProperty('display', 'flex', 'important'); }
+                if (score) { score.style.removeProperty('display'); score.style.setProperty('display', 'flex', 'important'); }
+            }
+            if (restoreBtn) restoreBtn.style.display = 'none';
+            labFloatersHidden = false;
+        }
         function filterStore() {
             currentFilter = document.getElementById('store-filter-select').value;
             renderStore();
@@ -2853,7 +2906,7 @@ function checkLab(choiceIndex) {
             if(el('scoreboard-title')) el('scoreboard-title').textContent = isHe ? 'דירוג המעבדה' : 'Lab Rankings';
             if(el('registry-title')) el('registry-title').textContent = isHe ? 'הצטרף לדירוג' : 'Join Rankings';
             // lab-incorrect-label is now symbol-only — no text to toggle
-            // lab-retry-btn is now symbol-only — no text to toggle
+            if(el('lab-retry-btn')) el('lab-retry-btn').innerHTML = isHe ? 'נסה שוב ↩' : 'TRY AGAIN ↩';
             if(el('reg-name')) el('reg-name').placeholder = isHe ? 'שמך' : 'Your Name';
             if(el('reg-email')) el('reg-email').placeholder = isHe ? 'אימייל' : 'Email'; 
             updateIntro(); 
