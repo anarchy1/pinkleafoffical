@@ -2202,7 +2202,7 @@ body.dark-mode .scoreboard-item.current {
             <div id="lab-incorrect-label" style="font-size:52px;line-height:1;margin-bottom:12px;min-height:56px;display:flex;align-items:center;justify-content:center;">❌</div>
             <div class="portal mx-auto w-48 h-48"><img id="correct-img" class="w-full h-full object-cover"></div>
             <p id="correct-name" class="serif text-lg my-6 uppercase tracking-widest"></p>
-            <button class="btn w-48" onclick="closeCorrection()" id="lab-retry-btn" aria-label="Try Again" title="Try Again" style="font-size:14px;letter-spacing:2px;background:var(--pink);color:#fff;border-color:var(--pink);padding:16px 32px;min-width:180px;">TRY AGAIN ↩</button>
+            <button onclick="closeCorrection()" id="lab-retry-btn" aria-label="Try Again" title="Try Again" style="font-size:40px;background:none;border:none;cursor:pointer;padding:12px;line-height:1;">❌</button>
         </div>
     </main>
 
@@ -2905,8 +2905,7 @@ function checkLab(choiceIndex) {
             const el = (id) => document.getElementById(id);
             if(el('scoreboard-title')) el('scoreboard-title').textContent = isHe ? 'דירוג המעבדה' : 'Lab Rankings';
             if(el('registry-title')) el('registry-title').textContent = isHe ? 'הצטרף לדירוג' : 'Join Rankings';
-            // lab-incorrect-label is now symbol-only — no text to toggle
-            if(el('lab-retry-btn')) el('lab-retry-btn').innerHTML = isHe ? 'נסה שוב ↩' : 'TRY AGAIN ↩';
+            // lab-retry-btn is emoji-only — no text to toggle
             if(el('reg-name')) el('reg-name').placeholder = isHe ? 'שמך' : 'Your Name';
             if(el('reg-email')) el('reg-email').placeholder = isHe ? 'אימייל' : 'Email'; 
             updateIntro(); 
