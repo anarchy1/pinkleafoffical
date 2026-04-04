@@ -1799,12 +1799,35 @@ body.dark-mode .scoreboard-item.current {
             .nav-link { font-size: 11px !important; }
         }
 
-        /* MOBILE LAB: hide fixed floaters entirely — no overlap */
+        /* MOBILE LAB: compact transparent floaters, tucked up beside the logo */
         @media (max-width: 767px) {
-            .lab-registry-float,
-            .lab-scoreboard-float,
+            /* shared base styles */
             body.on-lab-page .lab-registry-float,
-            body.on-lab-page .lab-scoreboard-float { display: none !important; }
+            body.on-lab-page .lab-scoreboard-float {
+                display: flex !important;
+                flex-direction: column !important;
+                top: 44px !important;
+                padding: 7px 7px !important;
+                background: rgba(253,250,248,0.12) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                border-color: rgba(212,165,178,0.15) !important;
+                box-shadow: none !important;
+            }
+            body.dark-mode.on-lab-page .lab-registry-float,
+            body.dark-mode.on-lab-page .lab-scoreboard-float {
+                background: rgba(15,10,14,0.12) !important;
+            }
+            /* SWAP sides on mobile: scoreboard → left (bigger), registry → right (compact) */
+            body.on-lab-page .lab-registry-float  { left: auto !important; right: 8px !important; width: 100px !important; }
+            body.on-lab-page .lab-scoreboard-float { right: auto !important; left: 8px !important; width: 130px !important; height: 220px !important; top: 0 !important; }
+            /* keep text readable */
+            body.on-lab-page .lab-registry-float .registry-header-small,
+            body.on-lab-page .lab-scoreboard-float .scoreboard-header-small { font-size: 9px !important; }
+            body.on-lab-page .lab-registry-float #reg-hint { display: none; }
+            body.on-lab-page .lab-registry-float .registry-input { font-size: 10px !important; padding: 6px 7px !important; margin-bottom: 5px !important; }
+            body.on-lab-page .lab-registry-float .btn { font-size: 10px !important; padding: 6px 7px !important; letter-spacing: 0.5px !important; }
+            body.on-lab-page .scoreboard-item { padding: 4px 5px !important; font-size: 10px !important; }
         }
         .lab-only { display: none; }
         body.on-lab-page .lab-only { display: flex; }
@@ -3392,14 +3415,9 @@ function checkLab(choiceIndex) {
             updateRegistryLoginState();
             updateBagUI(); // restore persisted bag from localStorage
 
-            // Deep-link: open article directly from URL hash
-            const hash = window.location.hash.slice(1);
-            if (hash) {
-                _pendingSlug = hash;
-                showPage('encyclopedia');
-            } else {
-                showPage('intro');
-            }
+            // Always start at home; clear any leftover URL hash
+            history.replaceState('', document.title, window.location.pathname + window.location.search);
+            showPage('intro');
         };
     </script>
 
