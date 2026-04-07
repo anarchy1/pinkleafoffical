@@ -1255,6 +1255,33 @@
             position: absolute; top: 12px; left: 12px;
             background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text);
         }
+        /* Skip to content (WCAG 2.4.1 — required) */
+        .skip-to-content {
+            position: absolute;
+            top: -100px;
+            right: 10px;
+            background: var(--pink);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 0 0 8px 8px;
+            font-size: 14px;
+            z-index: 99999;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-to-content:focus { top: 0; }
+        /* Dyslexia font */
+        @font-face {
+            font-family: 'OpenDyslexic';
+            src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/ttf/OpenDyslexic-Regular.ttf') format('truetype');
+            font-display: swap;
+        }
+        body.acc-dyslexia-font, body.acc-dyslexia-font * {
+            font-family: 'OpenDyslexic', Arial, sans-serif !important;
+            letter-spacing: 0.05em;
+            word-spacing: 0.15em;
+            line-height: 1.7;
+        }
         .hidden { display: none !important; }
         #lab-feedback {
             position: absolute;
@@ -2071,6 +2098,9 @@ body.dark-mode .scoreboard-item.current {
     </style>
 </head>
 <body>
+    <!-- Skip to main content (WCAG 2.4.1 / IS 5568 required) -->
+    <a class="skip-to-content" href="#page-intro">דלג לתוכן הראשי / Skip to main content</a>
+
     <div class="top-ruler">
         <div class="serif">PINK LEAF // COLLECTION</div>
         <div style="display:flex; align-items:center; gap:14px;">
@@ -2130,6 +2160,11 @@ body.dark-mode .scoreboard-item.current {
         <div class="acc-row">
             <div><div class="acc-label">גופן קריא</div><div class="acc-label-en">Readable Font</div></div>
             <button class="acc-toggle-btn" id="btn-font" onclick="accToggleMode('acc-readable-font','btn-font')" aria-pressed="false"></button>
+        </div>
+        <!-- Dyslexia Font -->
+        <div class="acc-row">
+            <div><div class="acc-label">גופן דיסלקציה</div><div class="acc-label-en">Dyslexia Font</div></div>
+            <button class="acc-toggle-btn" id="btn-dyslexia" onclick="accToggleMode('acc-dyslexia-font','btn-dyslexia')" aria-pressed="false"></button>
         </div>
         <!-- Pause Animations -->
         <div class="acc-row">
@@ -3191,7 +3226,7 @@ function checkLab(choiceIndex) {
         function accToggleDark() { toggleTheme(); }
 
         function accReset() {
-            ['acc-high-contrast','acc-negative-contrast','acc-grayscale','acc-underline-links','acc-readable-font','acc-no-motion'].forEach(cls => document.body.classList.remove(cls));
+            ['acc-high-contrast','acc-negative-contrast','acc-grayscale','acc-underline-links','acc-readable-font','acc-dyslexia-font','acc-no-motion'].forEach(cls => document.body.classList.remove(cls));
             document.body.style.fontSize = '';
             accFontLevel = 0;
             document.querySelectorAll('.acc-toggle-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
@@ -3204,7 +3239,7 @@ function checkLab(choiceIndex) {
             localStorage.setItem('pl_acc', JSON.stringify({
                 fontSize: accFontLevel,
                 dark: document.body.classList.contains('dark-mode'),
-                classes: ['acc-high-contrast','acc-negative-contrast','acc-grayscale','acc-underline-links','acc-readable-font','acc-no-motion'].filter(c => document.body.classList.contains(c))
+                classes: ['acc-high-contrast','acc-negative-contrast','acc-grayscale','acc-underline-links','acc-readable-font','acc-dyslexia-font','acc-no-motion'].filter(c => document.body.classList.contains(c))
             }));
         }
 
@@ -3213,7 +3248,7 @@ function checkLab(choiceIndex) {
                 const p = JSON.parse(localStorage.getItem('pl_acc') || '{}');
                 if (p.fontSize) { accFontLevel = p.fontSize; document.body.style.fontSize = (16 + p.fontSize) + 'px'; }
                 if (p.dark) { document.body.classList.add('dark-mode'); document.getElementById('main-logo').src = 'logo-dark.png'; const b = document.getElementById('btn-dark'); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} }
-                const map = {'acc-high-contrast':'btn-contrast','acc-negative-contrast':'btn-negative','acc-grayscale':'btn-grayscale','acc-underline-links':'btn-links','acc-readable-font':'btn-font','acc-no-motion':'btn-motion'};
+                const map = {'acc-high-contrast':'btn-contrast','acc-negative-contrast':'btn-negative','acc-grayscale':'btn-grayscale','acc-underline-links':'btn-links','acc-readable-font':'btn-font','acc-dyslexia-font':'btn-dyslexia','acc-no-motion':'btn-motion'};
                 (p.classes||[]).forEach(cls => { document.body.classList.add(cls); const b = document.getElementById(map[cls]); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} });
             } catch(e){}
         })();
@@ -3847,6 +3882,7 @@ function checkLab(choiceIndex) {
                 <li>גווני אפור</li>
                 <li>קישורים מודגשים</li>
                 <li>גופן קריא (Arial)</li>
+                <li>גופן דיסלקציה (OpenDyslexic)</li>
                 <li>עצירת אנימציות</li>
                 <li>מצב לילה</li>
             </ul>
