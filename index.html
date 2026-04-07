@@ -1071,46 +1071,189 @@
             color: white; 
         }
         
-        /* ACCESSIBILITY PANEL - HIGHEST Z-INDEX, LOWER POSITION */
-        .acc-panel { 
-            position: fixed; 
-            right: 10px; 
-            top: 400px !important;
-            background: rgba(212, 165, 178, 0.15); 
-            backdrop-filter: blur(15px); 
-            border: 1px solid var(--border); 
-            border-radius: 25px; 
-            padding: 10px 5px; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 10px; 
-            z-index: 10000 !important;
+        /* ── ACCESSIBILITY DRAWER (Israeli IS 5568 / WCAG 2.0 AA) ───── */
+        .acc-trigger {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10001;
+            width: 44px;
+            height: 52px;
+            border-radius: 8px 0 0 8px;
+            border: 1px solid var(--border);
+            border-right: none;
+            background: var(--pink);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.2s;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
         }
-        .acc-panel .acc-actions {
+        .acc-trigger:hover { width: 50px; }
+        .acc-drawer {
+            position: fixed;
+            right: -290px;
+            top: 0;
+            width: 270px;
+            height: 100vh;
+            background: var(--bg);
+            border-left: 1px solid var(--border);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 20px 16px 40px;
+            transition: right 0.3s ease;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.15);
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            max-height: 0;
-            opacity: 0;
-            pointer-events: none;
-            transition: max-height 0.25s ease, opacity 0.2s ease;
+            gap: 14px;
         }
-        .acc-panel.open .acc-actions {
-            max-height: 260px;
-            opacity: 1;
-            pointer-events: auto;
+        .acc-drawer.open { right: 0; }
+        .acc-drawer-header {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--pink);
+            text-align: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.5;
         }
-        .acc-btn { 
-            width: 36px; 
-            height: 36px; 
-            border-radius: 50%; 
-            border: 1px solid var(--border); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            cursor: pointer; 
-            background: var(--bg); 
-            font-size: 16px; 
+        .acc-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .acc-label { font-size: 13px; color: var(--text); line-height: 1.3; }
+        .acc-label-en { font-size: 11px; color: #999; }
+        .acc-toggle-btn {
+            width: 46px;
+            height: 26px;
+            border-radius: 13px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .acc-toggle-btn::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: #ccc;
+            top: 2px; left: 2px;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .acc-toggle-btn.on { background: var(--pink); border-color: var(--pink); }
+        .acc-toggle-btn.on::after { transform: translateX(20px); background: white; }
+        .acc-font-row { display: flex; gap: 6px; }
+        .acc-font-btn {
+            flex: 1;
+            padding: 7px 4px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text);
+            cursor: pointer;
+            font-size: 13px;
+            text-align: center;
+        }
+        .acc-font-btn:hover { background: var(--pink); color: white; border-color: var(--pink); }
+        .acc-divider { border: none; border-top: 1px solid var(--border); margin: 2px 0; }
+        .acc-reset-btn {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid var(--pink);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--pink);
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .acc-reset-btn:hover { background: var(--pink); color: white; }
+        .acc-statement-link {
+            font-size: 12px;
+            color: var(--pink);
+            text-align: center;
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            line-height: 1.6;
+        }
+        .acc-statement-link:hover { text-decoration: underline; }
+        /* Accessibility body modes */
+        body.acc-high-contrast { filter: contrast(1.85); }
+        body.acc-negative-contrast { filter: invert(1) hue-rotate(180deg); }
+        body.acc-grayscale { filter: grayscale(1); }
+        body.acc-underline-links a { text-decoration: underline !important; }
+        body.acc-readable-font, body.acc-readable-font * { font-family: Arial, Helvetica, sans-serif !important; letter-spacing: 0.02em; }
+        body.acc-no-motion *, body.acc-no-motion *::before, body.acc-no-motion *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+        }
+        /* Cookie consent banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 14px 20px;
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+        .cookie-banner.hidden { display: none !important; }
+        .cookie-text { font-size: 13px; color: var(--text); line-height: 1.7; text-align: right; }
+        .cookie-text a { color: var(--pink); }
+        .cookie-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .cookie-accept {
+            padding: 8px 22px; background: var(--pink); color: white;
+            border: none; border-radius: 20px; cursor: pointer; font-size: 14px;
+        }
+        .cookie-decline {
+            padding: 8px 22px; background: transparent; color: var(--text);
+            border: 1px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 14px;
+        }
+        @media (min-width: 600px) {
+            .cookie-banner { flex-direction: row; align-items: center; }
+            .cookie-text { flex: 1; }
+            .cookie-actions { flex-shrink: 0; }
+        }
+        /* Statement / Privacy modals */
+        .acc-modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 10002;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+        }
+        .acc-modal-overlay.hidden { display: none !important; }
+        .acc-modal {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 540px; width: 100%;
+            max-height: 80vh; overflow-y: auto;
+            direction: rtl; text-align: right;
+            position: relative;
+        }
+        .acc-modal h2 { color: var(--pink); margin-bottom: 14px; font-size: 17px; }
+        .acc-modal p { font-size: 13px; line-height: 1.8; margin-bottom: 10px; color: var(--text); }
+        .acc-modal ul { font-size: 13px; line-height: 2; padding-right: 18px; color: var(--text); }
+        .acc-modal-close {
+            position: absolute; top: 12px; left: 12px;
+            background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text);
         }
         .hidden { display: none !important; }
         #lab-feedback {
@@ -1944,13 +2087,68 @@ body.dark-mode .scoreboard-item.current {
         </div>
     </div>
 
-    <div class="acc-panel" id="acc-panel">
-        <button class="acc-btn acc-toggle" type="button" id="acc-toggle" aria-expanded="false" aria-controls="acc-actions" title="נגישות / Accessibility">♿</button>
-        <div class="acc-actions" id="acc-actions">
-            <button class="acc-btn" onclick="toggleTheme()" id="theme-btn">☀️</button>
-            <button class="acc-btn" onclick="adjFont(1)">A+</button>
-            <button class="acc-btn" onclick="adjFont(-1)">A-</button>
+    <!-- ACCESSIBILITY TRIGGER (Israeli IS 5568 / תקנות נגישות) -->
+    <button class="acc-trigger" id="acc-trigger" aria-label="פתיחת תפריט נגישות / Open Accessibility Menu" aria-expanded="false" aria-controls="acc-drawer">♿</button>
+
+    <!-- ACCESSIBILITY DRAWER -->
+    <div class="acc-drawer" id="acc-drawer" role="dialog" aria-label="תפריט נגישות / Accessibility Menu">
+        <div class="acc-drawer-header">♿ נגישות<br><small style="font-weight:400;font-size:12px;color:#999;">Accessibility</small></div>
+
+        <!-- Font Size -->
+        <div>
+            <div class="acc-label" style="margin-bottom:7px;text-align:right;">גודל טקסט / Font Size</div>
+            <div class="acc-font-row">
+                <button class="acc-font-btn" onclick="accFontAdj(-2)" aria-label="הקטנת טקסט">A−</button>
+                <button class="acc-font-btn" onclick="accFontAdj(0)" aria-label="גודל ברירת מחדל">↺</button>
+                <button class="acc-font-btn" onclick="accFontAdj(2)" aria-label="הגדלת טקסט" style="font-size:16px;">A+</button>
+            </div>
         </div>
+
+        <hr class="acc-divider">
+
+        <!-- High Contrast -->
+        <div class="acc-row">
+            <div><div class="acc-label">ניגודיות גבוהה</div><div class="acc-label-en">High Contrast</div></div>
+            <button class="acc-toggle-btn" id="btn-contrast" onclick="accToggleMode('acc-high-contrast','btn-contrast')" aria-pressed="false"></button>
+        </div>
+        <!-- Negative Contrast -->
+        <div class="acc-row">
+            <div><div class="acc-label">ניגודיות הפוכה</div><div class="acc-label-en">Negative Contrast</div></div>
+            <button class="acc-toggle-btn" id="btn-negative" onclick="accToggleMode('acc-negative-contrast','btn-negative')" aria-pressed="false"></button>
+        </div>
+        <!-- Grayscale -->
+        <div class="acc-row">
+            <div><div class="acc-label">גווני אפור</div><div class="acc-label-en">Grayscale</div></div>
+            <button class="acc-toggle-btn" id="btn-grayscale" onclick="accToggleMode('acc-grayscale','btn-grayscale')" aria-pressed="false"></button>
+        </div>
+        <!-- Underline Links -->
+        <div class="acc-row">
+            <div><div class="acc-label">קישורים מודגשים</div><div class="acc-label-en">Underline Links</div></div>
+            <button class="acc-toggle-btn" id="btn-links" onclick="accToggleMode('acc-underline-links','btn-links')" aria-pressed="false"></button>
+        </div>
+        <!-- Readable Font -->
+        <div class="acc-row">
+            <div><div class="acc-label">גופן קריא</div><div class="acc-label-en">Readable Font</div></div>
+            <button class="acc-toggle-btn" id="btn-font" onclick="accToggleMode('acc-readable-font','btn-font')" aria-pressed="false"></button>
+        </div>
+        <!-- Pause Animations -->
+        <div class="acc-row">
+            <div><div class="acc-label">עצירת אנימציות</div><div class="acc-label-en">Pause Animations</div></div>
+            <button class="acc-toggle-btn" id="btn-motion" onclick="accToggleMode('acc-no-motion','btn-motion')" aria-pressed="false"></button>
+        </div>
+        <!-- Dark Mode -->
+        <div class="acc-row">
+            <div><div class="acc-label">מצב לילה</div><div class="acc-label-en">Dark Mode</div></div>
+            <button class="acc-toggle-btn" id="btn-dark" onclick="accToggleDark()" aria-pressed="false"></button>
+        </div>
+
+        <hr class="acc-divider">
+        <button class="acc-reset-btn" onclick="accReset()">↺ איפוס הכל / Reset All</button>
+        <hr class="acc-divider">
+        <button class="acc-statement-link" onclick="showAccStatement()">
+            הצהרת נגישות ←<br>
+            <span style="font-size:11px;color:#999;">Accessibility Statement</span>
+        </button>
     </div>
 
     <!-- BAG ICON — inside top-ruler, not floating separately -->
@@ -2914,10 +3112,12 @@ function checkLab(choiceIndex) {
 
         function closeCorrection(){ document.getElementById('lab-correction').style.display='none'; startLab(); }
 
-        function toggleTheme(){ 
-            const d = document.body.classList.toggle('dark-mode'); 
-            document.getElementById('theme-btn').innerText = d ? "🌙" : "☀️"; 
-            document.getElementById('main-logo').src = d ? "logo-dark.png" : "logo-light.png"; 
+        function toggleTheme(){
+            const d = document.body.classList.toggle('dark-mode');
+            if(document.getElementById('main-logo')) document.getElementById('main-logo').src = d ? 'logo-dark.png' : 'logo-light.png';
+            const btn = document.getElementById('btn-dark');
+            if(btn){ btn.classList.toggle('on', d); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); }
+            saveAccPrefs();
         }
 
         function toggleLang(){ 
@@ -2946,18 +3146,93 @@ function checkLab(choiceIndex) {
             }
         }
 
-        function adjFont(v){ 
-            const curr = parseFloat(getComputedStyle(document.body).fontSize);
-            document.body.style.fontSize = (curr + v) + "px";
+        // ─── ACCESSIBILITY DRAWER (Israeli IS 5568 / WCAG 2.0 AA) ──────────
+
+        const accDrawer = document.getElementById('acc-drawer');
+        const accTrigger = document.getElementById('acc-trigger');
+        if (accDrawer && accTrigger) {
+            accTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = accDrawer.classList.toggle('open');
+                accTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            document.addEventListener('click', (e) => {
+                if (!accDrawer.contains(e.target) && e.target !== accTrigger) {
+                    accDrawer.classList.remove('open');
+                    accTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+            // Keyboard close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    accDrawer.classList.remove('open');
+                    accTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
         }
 
-        const accPanel = document.getElementById('acc-panel');
-        const accToggle = document.getElementById('acc-toggle');
-        if (accPanel && accToggle) {
-            accToggle.addEventListener('click', () => {
-                const isOpen = accPanel.classList.toggle('open');
-                accToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
+        let accFontLevel = 0;
+        function accFontAdj(v) {
+            if (v === 0) { document.body.style.fontSize = ''; accFontLevel = 0; saveAccPrefs(); return; }
+            accFontLevel = Math.max(-4, Math.min(8, accFontLevel + v));
+            document.body.style.fontSize = (16 + accFontLevel) + 'px';
+            saveAccPrefs();
+        }
+        // Keep legacy adjFont for any existing calls
+        function adjFont(v) { accFontAdj(v); }
+
+        function accToggleMode(cls, btnId) {
+            const isOn = document.body.classList.toggle(cls);
+            const btn = document.getElementById(btnId);
+            if (btn) { btn.classList.toggle('on', isOn); btn.setAttribute('aria-pressed', isOn ? 'true' : 'false'); }
+            saveAccPrefs();
+        }
+
+        function accToggleDark() { toggleTheme(); }
+
+        function accReset() {
+            ['acc-high-contrast','acc-negative-contrast','acc-grayscale','acc-underline-links','acc-readable-font','acc-no-motion'].forEach(cls => document.body.classList.remove(cls));
+            document.body.style.fontSize = '';
+            accFontLevel = 0;
+            document.querySelectorAll('.acc-toggle-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+            document.body.classList.remove('dark-mode');
+            document.getElementById('main-logo').src = 'logo-light.png';
+            localStorage.removeItem('pl_acc');
+        }
+
+        function saveAccPrefs() {
+            localStorage.setItem('pl_acc', JSON.stringify({
+                fontSize: accFontLevel,
+                dark: document.body.classList.contains('dark-mode'),
+                classes: ['acc-high-contrast','acc-negative-contrast','acc-grayscale','acc-underline-links','acc-readable-font','acc-no-motion'].filter(c => document.body.classList.contains(c))
+            }));
+        }
+
+        (function loadAccPrefs() {
+            try {
+                const p = JSON.parse(localStorage.getItem('pl_acc') || '{}');
+                if (p.fontSize) { accFontLevel = p.fontSize; document.body.style.fontSize = (16 + p.fontSize) + 'px'; }
+                if (p.dark) { document.body.classList.add('dark-mode'); document.getElementById('main-logo').src = 'logo-dark.png'; const b = document.getElementById('btn-dark'); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} }
+                const map = {'acc-high-contrast':'btn-contrast','acc-negative-contrast':'btn-negative','acc-grayscale':'btn-grayscale','acc-underline-links':'btn-links','acc-readable-font':'btn-font','acc-no-motion':'btn-motion'};
+                (p.classes||[]).forEach(cls => { document.body.classList.add(cls); const b = document.getElementById(map[cls]); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} });
+            } catch(e){}
+        })();
+
+        // Accessibility statement & privacy modals
+        function showAccStatement() { document.getElementById('acc-modal-overlay').classList.remove('hidden'); }
+        function hideAccStatement() { document.getElementById('acc-modal-overlay').classList.add('hidden'); }
+        function showPrivacyPolicy() { document.getElementById('privacy-modal-overlay').classList.remove('hidden'); }
+        function hidePrivacyPolicy() { document.getElementById('privacy-modal-overlay').classList.add('hidden'); }
+
+        // Cookie consent (Israeli Privacy Protection Law / חוק הגנת הפרטיות)
+        (function() {
+            if (localStorage.getItem('pl_cookie_consent')) {
+                document.getElementById('cookie-banner').classList.add('hidden');
+            }
+        })();
+        function cookieConsent(choice) {
+            localStorage.setItem('pl_cookie_consent', choice);
+            document.getElementById('cookie-banner').classList.add('hidden');
         }
 
         // ─── SELECTION BAG — CONCIERGE CART ───────────────────────────
@@ -3545,5 +3820,64 @@ function checkLab(choiceIndex) {
             <div style="margin-top:20px; opacity:0.4;">© Pink Leaf Botanical Studios · pinkleaf.co.il · Israel's rare aroid plant studio</div>
         </div>
     </footer>
+
+    <!-- COOKIE / PRIVACY CONSENT BANNER (חוק הגנת הפרטיות התשמ"א-1981) -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-text">
+            <strong>🍪 פרטיות ועוגיות:</strong> אתר זה משתמש בעוגיות לצורך שיפור חוויית המשתמש וניתוח גלישה אנונימי. לא מועברים פרטים אישיים לצדדים שלישיים.
+            <button onclick="showPrivacyPolicy()" style="background:none;border:none;color:var(--pink);cursor:pointer;font-size:13px;padding:0;margin-right:4px;">מדיניות פרטיות מלאה ←</button>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-accept" onclick="cookieConsent('accept')">אישור ✓</button>
+            <button class="cookie-decline" onclick="cookieConsent('decline')">דחייה</button>
+        </div>
+    </div>
+
+    <!-- ACCESSIBILITY STATEMENT MODAL (הצהרת נגישות) -->
+    <div class="acc-modal-overlay hidden" id="acc-modal-overlay" onclick="if(event.target===this)hideAccStatement()">
+        <div class="acc-modal" role="dialog" aria-modal="true" aria-label="הצהרת נגישות">
+            <button class="acc-modal-close" onclick="hideAccStatement()" aria-label="סגור">×</button>
+            <h2>♿ הצהרת נגישות</h2>
+            <p><strong>Pink Leaf Botanical Studios</strong> מחויבת לנגישות דיגיטלית לכלל המשתמשים, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998, ותקנות הנגישות לשירות (תשע"ג-2013).</p>
+            <p>האתר מיועד לעמוד בדרישות <strong>תקן ישראלי 5568</strong> (WCAG 2.0 AA) ומציע את אפשרויות הנגישות הבאות:</p>
+            <ul>
+                <li>התאמת גודל טקסט</li>
+                <li>מצב ניגודיות גבוהה</li>
+                <li>ניגודיות הפוכה</li>
+                <li>גווני אפור</li>
+                <li>קישורים מודגשים</li>
+                <li>גופן קריא (Arial)</li>
+                <li>עצירת אנימציות</li>
+                <li>מצב לילה</li>
+            </ul>
+            <p>האתר תומך בניווט מקלדת מלא ובשימוש בקורא מסך.</p>
+            <p><strong>רמת נגישות:</strong> WCAG 2.0 AA חלקי (בתהליך שיפור מתמיד)</p>
+            <p><strong>פניות נגישות:</strong> נתקלת בבעיית נגישות? נשמח לשמוע ולתקן.<br>
+            WhatsApp: <a href="https://wa.me/972559116990" style="color:var(--pink);">+972-55-911-6990</a></p>
+            <p style="font-size:11px;color:#999;">עדכון אחרון: אפריל 2026</p>
+        </div>
+    </div>
+
+    <!-- PRIVACY POLICY MODAL (מדיניות פרטיות) -->
+    <div class="acc-modal-overlay hidden" id="privacy-modal-overlay" onclick="if(event.target===this)hidePrivacyPolicy()">
+        <div class="acc-modal" role="dialog" aria-modal="true" aria-label="מדיניות פרטיות">
+            <button class="acc-modal-close" onclick="hidePrivacyPolicy()" aria-label="סגור">×</button>
+            <h2>🔒 מדיניות פרטיות</h2>
+            <p><strong>Pink Leaf Botanical Studios</strong> — עדכון אחרון: אפריל 2026</p>
+            <p><strong>אילו מידע נאסף?</strong><br>
+            (1) נתוני גלישה אנונימיים לניתוח סטטיסטי (Google Analytics) — ללא זיהוי אישי.<br>
+            (2) העדפות תצוגה ועגלת קניות נשמרות מקומית בדפדפן (localStorage) בלבד, ואינן מועברות לשרתים.<br>
+            (3) פרטי יצירת קשר שתמסור מרצונך דרך WhatsApp.</p>
+            <p><strong>לאיזה מטרה?</strong><br>
+            שיפור חוויית המשתמש, הבנת תנועת הגולשים, ומתן מענה לפניות בלבד. המידע לא ישמש לפרסום ממוקד.</p>
+            <p><strong>העברה לצדדים שלישיים:</strong><br>
+            לא. אין מכירה, שיתוף, או העברה של פרטים אישיים לכל גורם חיצוני.</p>
+            <p><strong>עוגיות (Cookies):</strong><br>
+            משתמשים בעוגיות אנליטיקס של Google בלבד. ניתן לבטל עוגיות בהגדרות הדפדפן או ללחוץ "דחייה" בבאנר.</p>
+            <p><strong>זכויותיך לפי חוק הגנת הפרטיות (התשמ"א-1981):</strong><br>
+            זכות לעיון, תיקון, ומחיקה של כל מידע שנשמר עלייך. לפניות: <a href="https://wa.me/972559116990" style="color:var(--pink);">+972-55-911-6990</a></p>
+        </div>
+    </div>
+
 </body>
 </html>
