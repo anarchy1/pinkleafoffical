@@ -68,8 +68,8 @@ const integrationSnippets = {
     // Instagram embed on any page
     instagram_embed: `
         <div class="instagram-feed">
-            <a href="https://www.instagram.com/pinkleaf.store/" target="_blank">
-                📸 Follow us @pinkleaf.store
+            <a href="https://www.instagram.com/pinkleaf.studio/" target="_blank">
+                📸 Follow us @pinkleaf.studio
             </a>
             <!-- Embed actual feed via later embedding -->
         </div>
@@ -121,7 +121,7 @@ window.addInstagramIntegration = () => {
     const footer = document.getElementById('footer') || document.createElement('footer');
     footer.innerHTML += `
         <div class="social-links">
-            <a href="https://www.instagram.com/pinkleaf.store/" target="_blank">📸 @pinkleaf.store</a>
+            <a href="https://www.instagram.com/pinkleaf.studio/" target="_blank">📸 @pinkleaf.studio</a>
             <a href="https://wa.me/972559116990" target="_blank">📱 WhatsApp Orders</a>
         </div>
     `;

@@ -13,9 +13,7 @@
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-    <!-- Hreflang for bilingual -->
-    <link rel="alternate" hreflang="he" href="https://pinkleaf.co.il/">
-    <link rel="alternate" hreflang="en" href="https://pinkleaf.co.il/">
+    <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
 
     <!-- Open Graph -->
@@ -64,7 +62,7 @@
           },
           "inLanguage": ["he", "en"],
           "sameAs": [
-            "https://www.instagram.com/pinkleaf.store/",
+            "https://www.instagram.com/pinkleaf.studio/",
             "https://wa.me/972559116990"
           ]
         },
@@ -2028,6 +2026,7 @@ body.dark-mode .scoreboard-item.current {
 
     <main id="page-intro" class="max-w-2xl mx-auto p-6 text-center">
         <div class="p-16 border border-[var(--border)] rounded-[70px] bg-[var(--mellow-pink)] backdrop-blur-md mb-10">
+            <h1 style="font-family:'Cinzel',serif; font-size:22px; letter-spacing:3px; margin-bottom:18px; color:var(--pink); text-transform:uppercase;">Pink Leaf Botanical Studios</h1>
             <div id="intro-content" class="text-[14px] opacity-90 space-y-6 tracking-[1px] leading-relaxed"></div>
             <div class="flex justify-center gap-6 mt-8 flex-wrap">
                 <button class="btn" style="min-width:160px; font-size:13px;" onclick="showPage('store')">View Plants ✦</button>
@@ -2292,7 +2291,7 @@ body.dark-mode .scoreboard-item.current {
 
 
         const intros = {
-            en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is Israel's destination for rare, collector-grade aroids — Tissue Culture, variegated Monstera, Alocasia, and Philodendron that you simply won't find anywhere else.</p><p>Every plant is imported, propagated, and hardened in-house using professional TC protocols. What arrives at your door is stable, healthy, and ready to grow — not a gamble from a random seller.</p><p>Current stock from <strong>₪75</strong>. Free delivery in Tel Aviv. WhatsApp ordering in under 60 seconds. <span style="opacity:0.6;font-size:0.9em;">Limited quantities — serious collectors only.</span></p></div>`,
+            en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is a small rare-plant studio in Israel — collector-grade aroids, variegated Monstera, Alocasia, Philodendron, and Tissue Culture propagation work you won't find at a regular nursery.</p><p>Every plant is imported, propagated, and hardened in-house. What arrives at your door is stable, healthy, and ready to grow — not a gamble.</p><p>Stock from <strong>₪75</strong> (~$20 USD). Free delivery in Tel Aviv, paid shipping across Israel. Order in under 60 seconds on WhatsApp.</p><p style="font-size:0.85em;opacity:0.75;border-top:1px dashed rgba(180,120,140,0.3);padding-top:14px;margin-top:14px;"><strong>Visiting from outside Israel?</strong> We don't ship internationally yet — but our <a href="#encyclopedia" onclick="showPage('encyclopedia');return false;" style="color:var(--pink);text-decoration:underline;">free botanical encyclopedia</a> and <a href="https://www.instagram.com/pinkleaf.studio" target="_blank" rel="noopener" style="color:var(--pink);text-decoration:underline;">Instagram</a> are open to plant lovers worldwide. Learn TC propagation, variegation care, and the science behind rare aroids.</p></div>`,
             he: `<div dir="rtl"><p><strong>Pink Leaf</strong> היא היעד הבוטני של ישראל לצמחים נדירים ברמת קולקטור — תרבית רקמה, Monstera וריאגטית, Alocasia ו-Philodendron שפשוט לא תמצאו בשום מקום אחר.</p><p>כל צמח מיובא, מורבה ומאוקלם אצלנו בפרוטוקולי TC מקצועיים. מה שמגיע אליכם הוא יציב, בריא ומוכן לצמוח — לא הימור ממוכר אקראי.</p><p>מלאי נוכחי מ-<strong>₪75</strong>. משלוח חינם בתל אביב. הזמנה בוואטסאפ בפחות מ-60 שניות. <span style="opacity:0.6;font-size:0.9em;">כמויות מוגבלות — רק לקולקטורים רציניים.</span></p></div>`
         };
 
@@ -2311,7 +2310,15 @@ body.dark-mode .scoreboard-item.current {
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
         ];
 
-        let lang='he', rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
+        // Auto-detect language: stored preference > browser language > default 'he'
+        // Hebrew browsers (or visitors who explicitly chose 'he') see Hebrew. Everyone else gets English.
+        let lang = (function(){
+            const stored = localStorage.getItem('pl_lang');
+            if (stored === 'he' || stored === 'en') return stored;
+            const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            return nav.startsWith('he') ? 'he' : 'en';
+        })();
+        let rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
         let bestStreak = parseInt(localStorage.getItem('pl_best_streak')) || 0;
         let totalCorrect = parseInt(localStorage.getItem('pl_total_correct')) || 0;
         let currentQuestion = null;
@@ -2844,9 +2851,11 @@ function checkLab(choiceIndex) {
             document.getElementById('main-logo').src = d ? "logo-dark.png" : "logo-light.png"; 
         }
 
-        function toggleLang(){ 
-            lang = lang === 'he' ? 'en' : 'he'; 
+        function toggleLang(){
+            lang = lang === 'he' ? 'en' : 'he';
+            localStorage.setItem('pl_lang', lang);
             document.dir = lang === 'he' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
             // Update all language-sensitive UI elements
             const isHe = lang === 'he';
             const el = (id) => document.getElementById(id);
@@ -3335,6 +3344,14 @@ function checkLab(choiceIndex) {
 
 
         window.onload = () => {
+            // Apply detected language to document direction + lang attribute
+            document.dir = lang === 'he' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            // Sync nav labels to detected language
+            document.querySelectorAll('.nav-link').forEach(n => {
+                const label = n.getAttribute('data-' + lang);
+                if(label) n.innerText = label;
+            });
             updateIntro();
             updateXPDisplay();
             updateRegistryLoginState();
