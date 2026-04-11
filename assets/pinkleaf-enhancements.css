@@ -1,0 +1,173 @@
+/* ─────────────────────────────────────────────────────────
+   Pink Leaf — Frontend enhancements
+   Loaded after the inline <style> in index.html.
+   Aesthetic: minimal, botanical-lab, RTL-aware.
+   ───────────────────────────────────────────────────────── */
+
+/* ─── 1. POP-UP COLLISION FIX (mobile <768px) ───────────── */
+/* Problem: lab-registry-float ("Join Rankings") + xp-counter
+   overlap the WhatsApp FAB on mobile.
+   Solution: hide the lab/registry pop-ups on mobile entirely,
+   they're a desktop-only engagement element. The WhatsApp FAB
+   stays as the single primary action. */
+@media (max-width: 768px) {
+    .lab-registry-float,
+    #registry-float,
+    #xp-counter,
+    .badge-toast {
+        display: none !important;
+    }
+    /* Make the WhatsApp FAB unmistakable on mobile */
+    a[aria-label="Chat on WhatsApp"] {
+        bottom: 20px !important;
+        right: 16px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* If on desktop and the registry IS visible, make sure it
+   never sits on top of the WhatsApp FAB — push it left/up. */
+@media (min-width: 769px) {
+    .lab-registry-float,
+    #registry-float {
+        right: auto !important;
+        left: 16px !important;
+        bottom: 16px !important;
+    }
+}
+
+/* ─── 2. PRICE-ON-INQUIRY · CONCIERGE TREATMENT ─────────── */
+/* Replaces vulgar price tags with a wabi-sabi concierge card.
+   Use class .price-concierge on a wrapper that contains
+   .price-concierge__label and .price-concierge__cta. */
+.price-concierge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, rgba(252, 228, 236, 0.4), rgba(250, 240, 245, 0.6));
+    border: 1px solid rgba(212, 165, 178, 0.35);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.6) inset,
+        0 6px 24px rgba(212, 165, 178, 0.10);
+    font-family: 'Heebo', 'Inter', -apple-system, sans-serif;
+    max-width: 320px;
+}
+[dir="rtl"] .price-concierge { align-items: flex-start; }
+
+.price-concierge__label {
+    font-family: 'Cinzel', 'Heebo', serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #880e4f;
+    opacity: 0.75;
+    margin: 0;
+}
+
+.price-concierge__range {
+    font-size: 22px;
+    font-weight: 300;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.price-concierge__range strong {
+    font-weight: 600;
+    color: #c2185b;
+}
+
+.price-concierge__hint {
+    font-size: 12px;
+    color: #666;
+    margin: 4px 0 6px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.price-concierge__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background: #25D366;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+.price-concierge__cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45);
+}
+.price-concierge__cta::before {
+    content: "💬";
+    font-size: 14px;
+}
+
+/* ─── 3. BLUR-UP IMAGE LOADING ──────────────────────────── */
+/* Used by the lazy-loader JS. */
+img.pl-lazy {
+    filter: blur(14px);
+    transform: scale(1.02);
+    transition: filter 0.6s ease, transform 0.6s ease;
+    background-color: #f3eef0;
+}
+img.pl-lazy.pl-loaded {
+    filter: blur(0);
+    transform: scale(1);
+}
+
+/* picture wrapper ratio reservation prevents CLS */
+picture.pl-picture {
+    display: block;
+    overflow: hidden;
+    background: #f3eef0;
+}
+
+/* ─── 4. LANGUAGE TOGGLE BUTTON ─────────────────────────── */
+.pl-lang-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 9990;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 165, 178, 0.4);
+    border-radius: 50px;
+    font-family: 'Cinzel', 'Heebo', serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #880e4f;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+}
+.pl-lang-toggle:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+}
+[dir="rtl"] .pl-lang-toggle { left: auto; right: 16px; }
+
+@media (max-width: 768px) {
+    .pl-lang-toggle {
+        top: 10px;
+        font-size: 10px;
+        padding: 6px 11px;
+    }
+}

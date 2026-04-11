@@ -13,6 +13,10 @@
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
+    <!-- Pink Leaf enhancements: collision fix, lazy images, lang toggle, price concierge -->
+    <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css">
+    <script defer src="/assets/pinkleaf-enhancements.js"></script>
+
     <!-- Hreflang for bilingual -->
     <link rel="alternate" hreflang="he" href="https://pinkleaf.co.il/">
     <link rel="alternate" hreflang="en" href="https://pinkleaf.co.il/">
@@ -42,29 +46,61 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Store",
+          "@type": ["Store", "LocalBusiness"],
           "@id": "https://pinkleaf.co.il/#store",
           "name": "Pink Leaf Botanical Studios",
           "alternateName": "פינק ליף",
           "url": "https://pinkleaf.co.il/",
           "logo": "https://pinkleaf.co.il/logo-light.png",
           "image": "https://pinkleaf.co.il/plants/PV19.jpg",
-          "description": "חנות צמחים נדירים בישראל — Tissue Culture, Monstera, Alocasia, צמחים וריאגטים. Rare aroid plant store in Israel.",
+          "description": "חנות צמחים נדירים ברמת גן, ישראל — Tissue Culture, Monstera, Alocasia, צמחים וריאגטים. Rare aroid plant studio based in Ramat Gan, Israel. By-appointment visits, nationwide shipping.",
           "telephone": "+972-55-911-6990",
+          "email": "contact@pinkleaf.co.il",
+          "priceRange": "₪₪-₪₪₪",
+          "currenciesAccepted": "ILS",
+          "paymentAccepted": "Bank Transfer, WhatsApp Pay, PayPlus",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+972-55-911-6990",
             "contactType": "customer service",
             "availableLanguage": ["Hebrew", "English"],
-            "contactOption": "TollFree"
+            "areaServed": "IL"
           },
           "address": {
             "@type": "PostalAddress",
+            "addressLocality": "Ramat Gan",
+            "addressRegion": "Tel Aviv District",
+            "postalCode": "5229581",
             "addressCountry": "IL"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.0719,
+            "longitude": 34.8225
+          },
+          "areaServed": [
+            {"@type": "Country", "name": "Israel"},
+            {"@type": "AdministrativeArea", "name": "Tel Aviv District"},
+            {"@type": "AdministrativeArea", "name": "Central District"}
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+              "opens": "10:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Friday",
+              "opens": "10:00",
+              "closes": "14:00"
+            }
+          ],
+          "knowsLanguage": ["he", "en"],
           "inLanguage": ["he", "en"],
           "sameAs": [
-            "https://www.instagram.com/pinkleaf.store/",
+            "https://www.instagram.com/pinkleaf.studio/",
             "https://wa.me/972559116990"
           ]
         },
@@ -87,28 +123,62 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-polly-pink",
           "name": "Alocasia Polly Pink Variegata",
-          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Available in High Variegation (₪350) and Regular Variegation (₪199). Tissue Culture propagated for genetic stability.",
-          "image": "https://pinkleaf.co.il/plants/PV19.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": [
-            {
-              "@type": "Offer",
-              "name": "High Variegation",
-              "price": "350",
-              "priceCurrency": "ILS",
-              "availability": "https://schema.org/InStock",
-              "seller": { "@id": "https://pinkleaf.co.il/#store" }
-            },
-            {
-              "@type": "Offer",
-              "name": "Regular Variegation",
-              "price": "199",
-              "priceCurrency": "ILS",
-              "availability": "https://schema.org/InStock",
-              "seller": { "@id": "https://pinkleaf.co.il/#store" }
-            }
+          "alternateName": "אלוקזיה פולי פינק וריאגטה",
+          "sku": "PL-APP-001",
+          "mpn": "PINKLEAF-APP-2026",
+          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Tissue Culture propagated for genetic stability and stable variegation. Each leaf displays a unique pattern. Two tiers available: Regular Variegation (₪199) and High Variegation (₪350). Acclimated 21 days before shipping.",
+          "image": [
+            "https://pinkleaf.co.il/plants/PV19.jpg"
           ],
-          "category": "Rare Aroids"
+          "brand": {
+            "@type": "Brand",
+            "name": "Pink Leaf",
+            "logo": "https://pinkleaf.co.il/logo-light.png"
+          },
+          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
+          "additionalProperty": [
+            { "@type": "PropertyValue", "name": "Propagation", "value": "Tissue Culture" },
+            { "@type": "PropertyValue", "name": "Acclimation", "value": "21-day protocol completed before shipment" },
+            { "@type": "PropertyValue", "name": "Origin", "value": "Pink Leaf in-house TC lab, Israel" }
+          ],
+          "offers": {
+            "@type": "AggregateOffer",
+            "@id": "https://pinkleaf.co.il/#offer-polly-pink",
+            "priceCurrency": "ILS",
+            "lowPrice": "199",
+            "highPrice": "350",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "seller": { "@id": "https://pinkleaf.co.il/#store" },
+            "areaServed": "IL",
+            "offers": [
+              {
+                "@type": "Offer",
+                "@id": "https://pinkleaf.co.il/#offer-polly-pink-regular",
+                "name": "Regular Variegation",
+                "description": "Pink variegation covering ~10–30% of each leaf. Younger acclimated plant. Recommended for first-time collectors.",
+                "price": "199",
+                "priceCurrency": "ILS",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2026-12-31",
+                "seller": { "@id": "https://pinkleaf.co.il/#store" },
+                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20Regular%20Variegation"
+              },
+              {
+                "@type": "Offer",
+                "@id": "https://pinkleaf.co.il/#offer-polly-pink-high",
+                "name": "High Variegation",
+                "description": "Pink variegation covering ~40–70% of each leaf. Mature plant with proven stable variegation. Statement piece.",
+                "price": "350",
+                "priceCurrency": "ILS",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2026-12-31",
+                "seller": { "@id": "https://pinkleaf.co.il/#store" },
+                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20High%20Variegation"
+              }
+            ]
+          }
         },
         {
           "@type": "Product",
