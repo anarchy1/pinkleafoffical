@@ -1890,6 +1890,51 @@ body.dark-mode .scoreboard-item.current {
             background: none;
         }
         body.dark-mode .care-soldout-btn { color: rgba(255,255,255,0.2) !important; }
+
+        /* ── COMING SOON BANNER (store) ── */
+        .coming-soon-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            margin: 14px auto 34px;
+            padding: 18px 24px;
+            max-width: 640px;
+        }
+        .coming-soon-banner .csb-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--pink), transparent);
+            opacity: 0.6;
+        }
+        .coming-soon-banner .csb-text {
+            text-align: center;
+            white-space: nowrap;
+        }
+        .coming-soon-banner .csb-label {
+            font-family: 'Cinzel', serif;
+            font-size: 9px;
+            letter-spacing: 4px;
+            opacity: 0.4;
+            margin-bottom: 6px;
+        }
+        .coming-soon-banner .csb-title {
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            letter-spacing: 6px;
+            color: var(--pink);
+            margin-bottom: 6px;
+        }
+        .coming-soon-banner .csb-sub {
+            font-size: 10px;
+            letter-spacing: 2px;
+            opacity: 0.45;
+        }
+        @media (max-width: 520px) {
+            .coming-soon-banner { gap: 10px; padding: 14px 8px; margin-bottom: 24px; }
+            .coming-soon-banner .csb-title { font-size: 13px; letter-spacing: 4px; }
+            .coming-soon-banner .csb-sub { font-size: 9px; letter-spacing: 1px; white-space: normal; }
+        }
         /* ── DARK MODE PATCHES ── */
         body.dark-mode nav { background: var(--bg); }
         body.dark-mode .care-product-card { background: rgba(20,10,14,0.85); border-color: rgba(212,165,178,0.15); }
@@ -2048,8 +2093,18 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-store" class="hidden max-w-4xl mx-auto relative px-4 pb-20">
+        <!-- COMING SOON BANNER -->
+        <div class="coming-soon-banner">
+            <div class="csb-line"></div>
+            <div class="csb-text">
+                <p class="csb-label">PINK LEAF STUDIO</p>
+                <p class="csb-title">COMING SOON</p>
+                <p class="csb-sub">New collection dropping shortly · בקרוב</p>
+            </div>
+            <div class="csb-line"></div>
+        </div>
         <!-- filter hidden — all items available -->
-        
+
         <button class="side-arrow left-10" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
         <div id="store-grid"></div>
         <button class="side-arrow right-10" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
@@ -2654,25 +2709,12 @@ body.dark-mode .scoreboard-item.current {
                 let priceRows = "";
                 Object.entries(item.prices).forEach(([size, price]) => {
                     const label = size === 'l10' ? '10 ליטר' : (size === 'l2' ? '2 ליטר' : '1 ליטר');
-                    const is1L = size === 'l1';
-                    if (is1L) {
-                        // 1L — fully purchasable
-                        priceRows += `<div class="flex justify-between items-center border-b border-[var(--border)] py-1">
-                            <span>${label}</span>
-                            <span class="font-bold text-[var(--pink)]">${price}₪</span>
-                            <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:11px;margin-top:0;min-height:36px;"
-                                onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}','${imgPath}')">
-                                + BAG
-                            </button>
-                        </div>`;
-                    } else {
-                        // 2L / 10L — sold out, disabled
-                        priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
-                            <span class="care-size-price">${label}</span>
-                            <span class="care-size-price">${price}₪</span>
-                            <button disabled class="care-soldout-btn" aria-disabled="true">אזל</button>
-                        </div>`;
-                    }
+                    // ALL sizes — not available (coming soon)
+                    priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
+                        <span class="care-size-price">${label}</span>
+                        <span class="care-size-price">${price}₪</span>
+                        <button disabled class="care-soldout-btn" aria-disabled="true">לא זמין</button>
+                    </div>`;
                 });
                 html += `
                 <div class="care-product-card">
