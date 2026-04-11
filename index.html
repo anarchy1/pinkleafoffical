@@ -19,6 +19,8 @@
 
     <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
+    <link rel="alternate" hreflang="he-IL" href="https://pinkleaf.co.il/">
+    <link rel="alternate" hreflang="en" href="https://pinkleaf.co.il/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -118,6 +120,50 @@
           "inLanguage": ["he", "en"]
         },
         {
+          "@type": "Brand",
+          "@id": "https://pinkleaf.co.il/#brand",
+          "name": "Pink Leaf",
+          "logo": "https://pinkleaf.co.il/logo-light.png",
+          "url": "https://pinkleaf.co.il/"
+        },
+        {
+          "@type": "MerchantReturnPolicy",
+          "@id": "https://pinkleaf.co.il/#return-policy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 7,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnShippingFees"
+        },
+        {
+          "@type": "OfferShippingDetails",
+          "@id": "https://pinkleaf.co.il/#shipping-policy",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "35",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 4,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-polly-pink",
           "name": "Alocasia Polly Pink Variegata",
@@ -128,11 +174,7 @@
           "image": [
             "https://pinkleaf.co.il/plants/PV19.jpg"
           ],
-          "brand": {
-            "@type": "Brand",
-            "name": "Pink Leaf",
-            "logo": "https://pinkleaf.co.il/logo-light.png"
-          },
+          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
           "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
           "additionalProperty": [
             { "@type": "PropertyValue", "name": "Propagation", "value": "Tissue Culture" },
@@ -150,6 +192,8 @@
             "priceValidUntil": "2026-12-31",
             "seller": { "@id": "https://pinkleaf.co.il/#store" },
             "areaServed": "IL",
+            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
+            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
             "offers": [
               {
                 "@type": "Offer",
@@ -159,8 +203,11 @@
                 "price": "199",
                 "priceCurrency": "ILS",
                 "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition",
                 "priceValidUntil": "2026-12-31",
                 "seller": { "@id": "https://pinkleaf.co.il/#store" },
+                "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
+                "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
                 "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20Regular%20Variegation"
               },
               {
@@ -171,9 +218,12 @@
                 "price": "350",
                 "priceCurrency": "ILS",
                 "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition",
                 "priceValidUntil": "2026-12-31",
                 "seller": { "@id": "https://pinkleaf.co.il/#store" },
-                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20High%20Variegation"
+                "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
+                "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
+                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20Regular%20Variegation"
               }
             ]
           }
@@ -182,44 +232,76 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-heart-balloon",
           "name": "Alocasia Heart Balloon",
+          "sku": "PL-AHB-001",
           "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. Opening Sale — ₪500. TC-propagated for consistency.",
           "image": "https://pinkleaf.co.il/plants/PV81.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
+          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
           "offers": {
             "@type": "Offer",
+            "@id": "https://pinkleaf.co.il/#offer-heart-balloon",
             "price": "500",
             "priceCurrency": "ILS",
             "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
             "priceValidUntil": "2026-12-31",
-            "seller": { "@id": "https://pinkleaf.co.il/#store" }
-          },
-          "category": "Rare Aroids"
+            "seller": { "@id": "https://pinkleaf.co.il/#store" },
+            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
+            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
+            "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Heart%20Balloon"
+          }
         },
         {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-macrorrhiza-var",
           "name": "Alocasia Macrorrhiza Variegata",
+          "sku": "PL-AMV-001",
           "description": "The Giant Taro in its rare variegated form — bold white-and-green sectoral variegation on oversized leaves. Starter ₪50, Mature from ₪150 (varies by size and pot).",
           "image": "https://pinkleaf.co.il/plants/PV25.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": [
-            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
-            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
-          ],
-          "category": "Rare Aroids"
+          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
+          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "ILS",
+            "lowPrice": "50",
+            "highPrice": "150",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "seller": { "@id": "https://pinkleaf.co.il/#store" },
+            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
+            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
+            "offers": [
+              { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Macrorrhiza%20Variegata%20-%20Starter" },
+              { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Macrorrhiza%20Variegata%20-%20Mature" }
+            ]
+          }
         },
         {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-philodendron-jose-buono",
           "name": "Philodendron Jose Buono",
+          "sku": "PL-PJB-001",
           "description": "Collector-grade Philodendron with irregular cream-and-green variegation on elongated, architectural leaves. Starter ₪50, Mature from ₪150 (varies by size and pot).",
           "image": "https://pinkleaf.co.il/plants/PV48.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#store" },
-          "offers": [
-            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
-            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
-          ],
-          "category": "Rare Aroids"
+          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
+          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "ILS",
+            "lowPrice": "50",
+            "highPrice": "150",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "seller": { "@id": "https://pinkleaf.co.il/#store" },
+            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
+            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
+            "offers": [
+              { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Philodendron%20Jose%20Buono%20-%20Starter" },
+              { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Philodendron%20Jose%20Buono%20-%20Mature" }
+            ]
+          }
         }
       ]
     }
@@ -2453,8 +2535,6 @@ body.dark-mode .scoreboard-item.current {
             <button onclick="renderVault('Others')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">OTHERS</button>
         </div>
         <div id="vault-grid" class="vault-grid"></div>
-    </main>
-
     </main>
 
     <main id="page-encyclopedia" class="hidden pb-24">

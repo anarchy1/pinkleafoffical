@@ -5,10 +5,18 @@ Disallow: /?filter=
 Disallow: /*?utm_
 Disallow: /*?ref=
 Disallow: /*?sid=
-Disallow: /assets/
-Disallow: /images/
-Disallow: /static/
 Disallow: /cdn-cgi/
+# CSS/JS/images must remain crawlable so Google can render the page
+Allow: /assets/
+Allow: /plants/
+Allow: /*.css$
+Allow: /*.js$
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
 
 User-agent: SemrushBot
 Disallow: /
