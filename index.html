@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css">
     <script defer src="/assets/pinkleaf-enhancements.js"></script>
 
-    <!-- Hreflang for bilingual -->
-    <link rel="alternate" hreflang="he" href="https://pinkleaf.co.il/">
-    <link rel="alternate" hreflang="en" href="https://pinkleaf.co.il/">
+    <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
 
     <!-- Open Graph -->
@@ -2363,6 +2361,7 @@ body.dark-mode .scoreboard-item.current {
 
     <main id="page-intro" class="max-w-2xl mx-auto p-6 text-center">
         <div class="p-16 border border-[var(--border)] rounded-[70px] bg-[var(--mellow-pink)] backdrop-blur-md mb-10">
+            <h1 style="font-family:'Cinzel',serif; font-size:22px; letter-spacing:3px; margin-bottom:18px; color:var(--pink); text-transform:uppercase;">Pink Leaf Botanical Studios</h1>
             <div id="intro-content" class="text-[14px] opacity-90 space-y-6 tracking-[1px] leading-relaxed"></div>
             <div class="flex justify-center gap-6 mt-8 flex-wrap">
                 <button class="btn" style="min-width:160px; font-size:13px;" onclick="showPage('store')">View Plants ✦</button>
@@ -2627,7 +2626,7 @@ body.dark-mode .scoreboard-item.current {
 
 
         const intros = {
-            en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is a boutique botanical studio in Israel, specialising in rare aroids — Tissue Culture plants, variegated Monstera, Alocasia, and Philodendron.</p><p>Every plant is imported, propagated, and acclimated in-house. By the time it reaches you, it's stable and ready to grow.</p><p>Order via WhatsApp. We'll take care of the rest.</p></div>`,
+            en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is a boutique botanical studio in Israel, specialising in rare aroids — Tissue Culture plants, variegated Monstera, Alocasia, and Philodendron.</p><p>Every plant is imported, propagated, and acclimated in-house. By the time it reaches you, it's stable and ready to grow.</p><p>Order via WhatsApp. We'll take care of the rest.</p><p style="font-size:0.85em;opacity:0.7;border-top:1px dashed rgba(180,120,140,0.3);padding-top:14px;margin-top:18px;"><strong>Visiting from outside Israel?</strong> We don't ship internationally yet — but our <a href="#" onclick="showPage('encyclopedia');return false;" style="color:var(--pink);text-decoration:underline;">free botanical encyclopedia</a> and <a href="https://www.instagram.com/pinkleaf.studio" target="_blank" rel="noopener" style="color:var(--pink);text-decoration:underline;">Instagram</a> are open to plant lovers worldwide.</p></div>`,
             he: `<div dir="rtl"><p><strong>Pink Leaf</strong> היא סטודיו בוטני בישראל לצמחים נדירים — תרבית רקמה, Monstera וריאגטית, Alocasia ו-Philodendron.</p><p>כל צמח מיובא, מורבה ומאוקלם אצלנו. כשהוא מגיע אליכם — הוא כבר יציב ומוכן לצמוח.</p><p>הזמנה בוואטסאפ. אנחנו נדאג לכל השאר.</p></div>`
         };
 
@@ -2647,7 +2646,15 @@ body.dark-mode .scoreboard-item.current {
         ];
 
         let labFloatersHidden = false;
-        let lang='he', rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
+        // Auto-detect language: stored preference > browser language > default 'he'
+        // Hebrew browsers see Hebrew. Everyone else gets English so US/intl visitors aren't lost.
+        let lang = (function(){
+            const stored = localStorage.getItem('pl_lang');
+            if (stored === 'he' || stored === 'en') return stored;
+            const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            return nav.startsWith('he') ? 'he' : 'en';
+        })();
+        let rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
         let bestStreak = parseInt(localStorage.getItem('pl_best_streak')) || 0;
         let totalCorrect = parseInt(localStorage.getItem('pl_total_correct')) || 0;
         let currentQuestion = null;
@@ -3212,9 +3219,11 @@ function checkLab(choiceIndex) {
             saveAccPrefs();
         }
 
-        function toggleLang(){ 
-            lang = lang === 'he' ? 'en' : 'he'; 
+        function toggleLang(){
+            lang = lang === 'he' ? 'en' : 'he';
+            localStorage.setItem('pl_lang', lang);
             document.dir = lang === 'he' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
             // Update all language-sensitive UI elements
             const isHe = lang === 'he';
             const el = (id) => document.getElementById(id);
@@ -3777,6 +3786,14 @@ function checkLab(choiceIndex) {
 
 
         window.onload = () => {
+            // Apply detected language to document direction + lang attribute on first paint
+            document.dir = lang === 'he' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            // Sync nav labels to detected language
+            document.querySelectorAll('.nav-link').forEach(n => {
+                const label = n.getAttribute('data-' + lang);
+                if(label) n.innerText = label;
+            });
             updateIntro();
             updateXPDisplay();
             updateRegistryLoginState();
