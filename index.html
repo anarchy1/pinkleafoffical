@@ -384,7 +384,7 @@
         :root { 
             --bg: #fdfdfd; 
             --text: #1a1a1a; 
-            --pink: #a8506b; 
+            --pink: #d4a5b2; 
             --mellow-pink: rgba(212, 165, 178, 0.4); 
             --border: rgba(212, 165, 178, 0.3); 
             --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5); 
@@ -2163,6 +2163,24 @@ body.dark-mode .scoreboard-item.current {
             .bag-icon-btn { z-index: 10000; }
             body.on-lab-page .logo-container { z-index: 8500 !important; position: relative; }
         }
+    
+        /* ── MOBILE SAFETY: force homepage intro, store carousel, and lab floaters to render ── */
+        #intro-content { display: block !important; color: var(--text); opacity: 0.92; font-size: 14px; line-height: 1.75; }
+        #intro-content p { margin-bottom: 14px; }
+        @media (max-width: 600px) {
+          /* Carousel sized to fit narrow screens */
+          .carousel-container { height: 480px !important; perspective: 1400px !important; }
+          .carousel-wheel { width: 260px !important; height: 400px !important; }
+          .store-card { padding: 18px !important; border-radius: 28px !important; }
+          .portal { width: 140px !important; margin-bottom: 14px !important; }
+        }
+        @media (max-width: 767px) {
+          /* Both lab floaters MUST render on mobile; beat inline display:none */
+          body.on-lab-page #registry-float,
+          body.on-lab-page #scoreboard-float { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+          /* Tighten registry height so content doesn't overflow */
+          body.on-lab-page #registry-float { max-height: 70vh; overflow: auto; }
+        }
     </style>
 </head>
 <body>
@@ -2361,7 +2379,7 @@ body.dark-mode .scoreboard-item.current {
 
     <main id="page-intro" class="max-w-2xl mx-auto p-6 text-center">
         <div class="p-16 border border-[var(--border)] rounded-[70px] bg-[var(--mellow-pink)] backdrop-blur-md mb-10">
-            <h1 style="font-family:'Cinzel',serif; font-size:22px; letter-spacing:3px; margin-bottom:18px; color:var(--pink); text-transform:uppercase;">Pink Leaf Botanical Studios</h1>
+            <h1 style="font-family:'Cinzel',serif; font-size:22px; letter-spacing:3px; margin-bottom:18px; color:#7a3a50; text-transform:uppercase;">Pink Leaf Botanical Studios</h1>
             <div id="intro-content" class="text-[14px] opacity-90 space-y-6 tracking-[1px] leading-relaxed"></div>
             <div class="flex justify-center gap-6 mt-8 flex-wrap">
                 <button class="btn" style="min-width:160px; font-size:13px;" onclick="showPage('store')">View Plants ✦</button>
@@ -2911,8 +2929,8 @@ body.dark-mode .scoreboard-item.current {
             const reg = document.getElementById('registry-float');
             const score = document.getElementById('scoreboard-float');
             const restoreBtn = document.getElementById('lab-floaters-restore');
-            // Only show if on lab page and on wide screens
-            if (document.body.classList.contains('on-lab-page') && window.innerWidth > 767) {
+            // Restore on any viewport as long as we're on the lab page
+            if (document.body.classList.contains('on-lab-page')) {
                 if (reg)   { reg.style.removeProperty('display'); reg.style.setProperty('display', 'flex', 'important'); }
                 if (score) { score.style.removeProperty('display'); score.style.setProperty('display', 'flex', 'important'); }
             }
