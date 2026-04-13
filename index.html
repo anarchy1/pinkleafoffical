@@ -19,8 +19,6 @@
 
     <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
-    <link rel="alternate" hreflang="he-IL" href="https://pinkleaf.co.il/">
-    <link rel="alternate" hreflang="en" href="https://pinkleaf.co.il/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -120,50 +118,6 @@
           "inLanguage": ["he", "en"]
         },
         {
-          "@type": "Brand",
-          "@id": "https://pinkleaf.co.il/#brand",
-          "name": "Pink Leaf",
-          "logo": "https://pinkleaf.co.il/logo-light.png",
-          "url": "https://pinkleaf.co.il/"
-        },
-        {
-          "@type": "MerchantReturnPolicy",
-          "@id": "https://pinkleaf.co.il/#return-policy",
-          "applicableCountry": "IL",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 7,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/ReturnShippingFees"
-        },
-        {
-          "@type": "OfferShippingDetails",
-          "@id": "https://pinkleaf.co.il/#shipping-policy",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "35",
-            "currency": "ILS"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "IL"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 2,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 4,
-              "unitCode": "DAY"
-            }
-          }
-        },
-        {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-polly-pink",
           "name": "Alocasia Polly Pink Variegata",
@@ -174,7 +128,11 @@
           "image": [
             "https://pinkleaf.co.il/plants/PV19.jpg"
           ],
-          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
+          "brand": {
+            "@type": "Brand",
+            "name": "Pink Leaf",
+            "logo": "https://pinkleaf.co.il/logo-light.png"
+          },
           "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
           "additionalProperty": [
             { "@type": "PropertyValue", "name": "Propagation", "value": "Tissue Culture" },
@@ -192,8 +150,6 @@
             "priceValidUntil": "2026-12-31",
             "seller": { "@id": "https://pinkleaf.co.il/#store" },
             "areaServed": "IL",
-            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
-            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
             "offers": [
               {
                 "@type": "Offer",
@@ -203,11 +159,8 @@
                 "price": "199",
                 "priceCurrency": "ILS",
                 "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
                 "priceValidUntil": "2026-12-31",
                 "seller": { "@id": "https://pinkleaf.co.il/#store" },
-                "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
-                "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
                 "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20Regular%20Variegation"
               },
               {
@@ -218,12 +171,9 @@
                 "price": "350",
                 "priceCurrency": "ILS",
                 "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
                 "priceValidUntil": "2026-12-31",
                 "seller": { "@id": "https://pinkleaf.co.il/#store" },
-                "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
-                "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
-                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20Regular%20Variegation"
+                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20High%20Variegation"
               }
             ]
           }
@@ -232,76 +182,44 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-heart-balloon",
           "name": "Alocasia Heart Balloon",
-          "sku": "PL-AHB-001",
           "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. Opening Sale — ₪500. TC-propagated for consistency.",
           "image": "https://pinkleaf.co.il/plants/PV81.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
-          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
           "offers": {
             "@type": "Offer",
-            "@id": "https://pinkleaf.co.il/#offer-heart-balloon",
             "price": "500",
             "priceCurrency": "ILS",
             "availability": "https://schema.org/InStock",
-            "itemCondition": "https://schema.org/NewCondition",
             "priceValidUntil": "2026-12-31",
-            "seller": { "@id": "https://pinkleaf.co.il/#store" },
-            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
-            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
-            "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Heart%20Balloon"
-          }
+            "seller": { "@id": "https://pinkleaf.co.il/#store" }
+          },
+          "category": "Rare Aroids"
         },
         {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-macrorrhiza-var",
           "name": "Alocasia Macrorrhiza Variegata",
-          "sku": "PL-AMV-001",
           "description": "The Giant Taro in its rare variegated form — bold white-and-green sectoral variegation on oversized leaves. Starter ₪50, Mature from ₪150 (varies by size and pot).",
           "image": "https://pinkleaf.co.il/plants/PV25.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
-          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "ILS",
-            "lowPrice": "50",
-            "highPrice": "150",
-            "offerCount": 2,
-            "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31",
-            "seller": { "@id": "https://pinkleaf.co.il/#store" },
-            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
-            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
-            "offers": [
-              { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Macrorrhiza%20Variegata%20-%20Starter" },
-              { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Macrorrhiza%20Variegata%20-%20Mature" }
-            ]
-          }
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "offers": [
+            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+          ],
+          "category": "Rare Aroids"
         },
         {
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-philodendron-jose-buono",
           "name": "Philodendron Jose Buono",
-          "sku": "PL-PJB-001",
           "description": "Collector-grade Philodendron with irregular cream-and-green variegation on elongated, architectural leaves. Starter ₪50, Mature from ₪150 (varies by size and pot).",
           "image": "https://pinkleaf.co.il/plants/PV48.jpg",
-          "brand": { "@id": "https://pinkleaf.co.il/#brand" },
-          "category": "Home & Garden > Plants > Houseplants > Rare Aroids",
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "ILS",
-            "lowPrice": "50",
-            "highPrice": "150",
-            "offerCount": 2,
-            "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31",
-            "seller": { "@id": "https://pinkleaf.co.il/#store" },
-            "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" },
-            "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" },
-            "offers": [
-              { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Philodendron%20Jose%20Buono%20-%20Starter" },
-              { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "priceValidUntil": "2026-12-31", "seller": { "@id": "https://pinkleaf.co.il/#store" }, "hasMerchantReturnPolicy": { "@id": "https://pinkleaf.co.il/#return-policy" }, "shippingDetails": { "@id": "https://pinkleaf.co.il/#shipping-policy" }, "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Philodendron%20Jose%20Buono%20-%20Mature" }
-            ]
-          }
+          "brand": { "@id": "https://pinkleaf.co.il/#store" },
+          "offers": [
+            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+          ],
+          "category": "Rare Aroids"
         }
       ]
     }
@@ -2235,51 +2153,6 @@ body.dark-mode .scoreboard-item.current {
             background: none;
         }
         body.dark-mode .care-soldout-btn { color: rgba(255,255,255,0.2) !important; }
-
-        /* ── COMING SOON BANNER (store) ── */
-        .coming-soon-banner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 22px;
-            margin: 14px auto 34px;
-            padding: 18px 24px;
-            max-width: 640px;
-        }
-        .coming-soon-banner .csb-line {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--pink), transparent);
-            opacity: 0.6;
-        }
-        .coming-soon-banner .csb-text {
-            text-align: center;
-            white-space: nowrap;
-        }
-        .coming-soon-banner .csb-label {
-            font-family: 'Cinzel', serif;
-            font-size: 9px;
-            letter-spacing: 4px;
-            opacity: 0.4;
-            margin-bottom: 6px;
-        }
-        .coming-soon-banner .csb-title {
-            font-family: 'Cinzel', serif;
-            font-size: 15px;
-            letter-spacing: 6px;
-            color: var(--pink);
-            margin-bottom: 6px;
-        }
-        .coming-soon-banner .csb-sub {
-            font-size: 10px;
-            letter-spacing: 2px;
-            opacity: 0.45;
-        }
-        @media (max-width: 520px) {
-            .coming-soon-banner { gap: 10px; padding: 14px 8px; margin-bottom: 24px; }
-            .coming-soon-banner .csb-title { font-size: 13px; letter-spacing: 4px; }
-            .coming-soon-banner .csb-sub { font-size: 9px; letter-spacing: 1px; white-space: normal; }
-        }
         /* ── DARK MODE PATCHES ── */
         body.dark-mode nav { background: var(--bg); }
         body.dark-mode .care-product-card { background: rgba(20,10,14,0.85); border-color: rgba(212,165,178,0.15); }
@@ -2510,18 +2383,8 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-store" class="hidden max-w-4xl mx-auto relative px-4 pb-20">
-        <!-- COMING SOON BANNER -->
-        <div class="coming-soon-banner">
-            <div class="csb-line"></div>
-            <div class="csb-text">
-                <p class="csb-label">PINK LEAF STUDIO</p>
-                <p class="csb-title">COMING SOON</p>
-                <p class="csb-sub">New collection dropping shortly · בקרוב</p>
-            </div>
-            <div class="csb-line"></div>
-        </div>
         <!-- filter hidden — all items available -->
-
+        
         <button class="side-arrow left-10" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
         <div id="store-grid"></div>
         <button class="side-arrow right-10" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
@@ -2535,6 +2398,8 @@ body.dark-mode .scoreboard-item.current {
             <button onclick="renderVault('Others')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">OTHERS</button>
         </div>
         <div id="vault-grid" class="vault-grid"></div>
+    </main>
+
     </main>
 
     <main id="page-encyclopedia" class="hidden pb-24">
@@ -3168,12 +3033,25 @@ body.dark-mode .scoreboard-item.current {
                 let priceRows = "";
                 Object.entries(item.prices).forEach(([size, price]) => {
                     const label = size === 'l10' ? '10 ליטר' : (size === 'l2' ? '2 ליטר' : '1 ליטר');
-                    // ALL sizes — not available (coming soon)
-                    priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
-                        <span class="care-size-price">${label}</span>
-                        <span class="care-size-price">${price}₪</span>
-                        <button disabled class="care-soldout-btn" aria-disabled="true">לא זמין</button>
-                    </div>`;
+                    const is1L = size === 'l1';
+                    if (is1L) {
+                        // 1L — fully purchasable
+                        priceRows += `<div class="flex justify-between items-center border-b border-[var(--border)] py-1">
+                            <span>${label}</span>
+                            <span class="font-bold text-[var(--pink)]">${price}₪</span>
+                            <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:11px;margin-top:0;min-height:36px;"
+                                onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}','${imgPath}')">
+                                + BAG
+                            </button>
+                        </div>`;
+                    } else {
+                        // 2L / 10L — sold out, disabled
+                        priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
+                            <span class="care-size-price">${label}</span>
+                            <span class="care-size-price">${price}₪</span>
+                            <button disabled class="care-soldout-btn" aria-disabled="true">אזל</button>
+                        </div>`;
+                    }
                 });
                 html += `
                 <div class="care-product-card">
