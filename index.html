@@ -2163,6 +2163,15 @@ body.dark-mode .scoreboard-item.current {
             .bag-icon-btn { z-index: 10000; }
             body.on-lab-page .logo-container { z-index: 8500 !important; position: relative; }
         }
+    
+        /* MOBILE READABILITY — ≤767px only */
+        @media (max-width: 767px) {
+          #page-intro { padding: 16px !important; }
+          #page-intro > div:first-child { padding: 28px 20px !important; border-radius: 36px !important; }
+          #page-intro h1 { color: #2c1a22 !important; font-size: 19px !important; letter-spacing: 2px !important; }
+          #intro-content { opacity: 1 !important; color: #2c1a22 !important; font-size: 15px !important; line-height: 1.7 !important; display: block !important; }
+          #intro-content p { margin-bottom: 12px !important; }
+        }
     </style>
 </head>
 <body>
