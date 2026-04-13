@@ -891,7 +891,7 @@
             justify-content: center; 
             position: relative; 
             margin-top: 20px;
-            isolation: isolate;
+            /* isolation: isolate; — removed, breaks 3D on Safari */
             z-index: 1;
         }
         .carousel-wheel { 
@@ -2162,6 +2162,37 @@ body.dark-mode .scoreboard-item.current {
             /* Mobile: no floater/icon overlap with content */
             .bag-icon-btn { z-index: 10000; }
             body.on-lab-page .logo-container { z-index: 8500 !important; position: relative; }
+        }
+    
+        /* MOBILE CAROUSEL FIX */
+        @media (max-width: 767px) {
+          #page-store { overflow-x: hidden; }
+          .carousel-container {
+            height: auto !important;
+            perspective: none !important;
+            overflow: visible !important;
+          }
+          .carousel-wheel {
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+            transform: none !important;
+            transform-style: flat !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 16px !important;
+          }
+          .store-card {
+            position: relative !important;
+            opacity: 1 !important;
+            filter: none !important;
+            transform: none !important;
+            width: 90% !important;
+            height: auto !important;
+            min-height: 420px !important;
+          }
+          .side-arrow { display: none !important; }
         }
     </style>
 </head>
