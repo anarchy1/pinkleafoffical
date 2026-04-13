@@ -2163,7 +2163,23 @@ body.dark-mode .scoreboard-item.current {
             .bag-icon-btn { z-index: 10000; }
             body.on-lab-page .logo-container { z-index: 8500 !important; position: relative; }
         }
-    </style>
+
+        /* MOBILE READABILITY — ≤767px only; desktop untouched */
+        @media (max-width: 767px) {
+          #page-intro { padding: 16px !important; }
+          #page-intro > div:first-child { padding: 28px 20px !important; border-radius: 36px !important; }
+          #page-intro h1 { color: #6e2f44 !important; font-size: 19px !important; letter-spacing: 2px !important; }
+          #intro-content { opacity: 1 !important; color: #3a2028 !important; font-size: 15px !important; line-height: 1.7 !important; display: block !important; }
+          #intro-content p { margin-bottom: 12px !important; }
+          .carousel-container { height: 460px !important; perspective: 1200px !important; }
+          .carousel-wheel { width: 240px !important; height: 380px !important; }
+          .store-card { padding: 20px !important; border-radius: 30px !important; }
+          .store-card .portal { width: 130px !important; }
+          body.on-lab-page #registry-float,
+          body.on-lab-page #scoreboard-float { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+          body.on-lab-page #registry-float { max-height: 62vh; overflow: auto; }
+        }
+        </style>
 </head>
 <body>
     <!-- Skip to main content (WCAG 2.4.1 / IS 5568 required) -->
@@ -2652,7 +2668,7 @@ body.dark-mode .scoreboard-item.current {
             const stored = localStorage.getItem('pl_lang');
             if (stored === 'he' || stored === 'en') return stored;
             const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
-            return nav.startsWith('en') ? 'en' : 'he';
+            return 'he';
         })();
         let rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
         let bestStreak = parseInt(localStorage.getItem('pl_best_streak')) || 0;
