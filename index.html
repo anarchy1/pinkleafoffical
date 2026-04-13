@@ -384,7 +384,7 @@
         :root { 
             --bg: #fdfdfd; 
             --text: #1a1a1a; 
-            --pink: #d4a5b2; 
+            --pink: #a8506b; 
             --mellow-pink: rgba(212, 165, 178, 0.4); 
             --border: rgba(212, 165, 178, 0.3); 
             --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5); 
@@ -2646,13 +2646,13 @@ body.dark-mode .scoreboard-item.current {
         ];
 
         let labFloatersHidden = false;
-        // Auto-detect language: stored preference > browser language > default 'he'
-        // Hebrew browsers see Hebrew. Everyone else gets English so US/intl visitors aren't lost.
+        // Auto-detect language: stored preference > browser language > default 'he' (Israel first)
+        // Default Hebrew for Israeli audience; English browsers explicitly get English.
         let lang = (function(){
             const stored = localStorage.getItem('pl_lang');
             if (stored === 'he' || stored === 'en') return stored;
             const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
-            return nav.startsWith('he') ? 'he' : 'en';
+            return nav.startsWith('en') ? 'en' : 'he';
         })();
         let rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
         let bestStreak = parseInt(localStorage.getItem('pl_best_streak')) || 0;
