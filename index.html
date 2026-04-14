@@ -3382,11 +3382,13 @@ function checkLab(choiceIndex) {
         function hidePrivacyPolicy() { document.getElementById('privacy-modal-overlay').classList.add('hidden'); }
 
         // Cookie consent (Israeli Privacy Protection Law / חוק הגנת הפרטיות)
-        (function() {
+        // Note: cookie-banner element is below this script, so use DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
             if (localStorage.getItem('pl_cookie_consent')) {
-                document.getElementById('cookie-banner').classList.add('hidden');
+                const banner = document.getElementById('cookie-banner');
+                if (banner) banner.classList.add('hidden');
             }
-        })();
+        });
         function cookieConsent(choice) {
             localStorage.setItem('pl_cookie_consent', choice);
             document.getElementById('cookie-banner').classList.add('hidden');
