@@ -2709,8 +2709,7 @@ body.dark-mode .scoreboard-item.current {
         let lang = (function(){
             const stored = localStorage.getItem('pl_lang');
             if (stored === 'he' || stored === 'en') return stored;
-            const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
-            return nav.startsWith('he') ? 'he' : 'en';
+            return 'he';
         })();
         let rot=0, streak=0, xp = parseInt(localStorage.getItem('pl_xp')) || 0;
         let bestStreak = parseInt(localStorage.getItem('pl_best_streak')) || 0;
@@ -3429,7 +3428,7 @@ function checkLab(choiceIndex) {
         }
 
         function addToCart(id, name, btn) {
-            const card = btn.closest('.store-card, .store-card-flat');
+            const card = btn.closest('.store-card');
             const select = card ? card.querySelector('.availability-select') : null;
             const grade = select ? select.value : '';
 
