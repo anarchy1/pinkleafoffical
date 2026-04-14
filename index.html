@@ -3057,16 +3057,6 @@ body.dark-mode .scoreboard-item.current {
 
         function spin(d){ /* carousel removed — flat grid active */ }
 
-
-        
-            rot += d * window.sAng; 
-            const wheel = document.getElementById('wheel');
-            if(wheel) wheel.style.transform = `rotateY(${rot}deg)`; 
-            const cards = document.querySelectorAll('.store-card'); 
-            const act = (Math.round(-rot/window.sAng) % window.sLen + window.sLen) % window.sLen; 
-            cards.forEach((c,i) => c.classList.toggle('card-focus', i === act));
-        }
-
         function renderVault(f){ 
     let h = ""; 
     Object.keys(MASTER_DB).forEach(id => {
