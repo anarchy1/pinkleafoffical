@@ -943,18 +943,18 @@
             box-shadow: 0 0 30px 8px rgba(212,165,178,0.25), 0 0 0 2px var(--pink);
             border-color: var(--pink);
         }
-        .side-arrow { 
-            position: absolute; 
-            top: 50%; 
-            transform: translateY(-50%); 
-            width: 60px; 
-            height: 60px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            cursor: pointer; 
-            z-index: 1000; 
-            background: none; 
+        .side-arrow {
+            display: none; /* carousel removed — flat grid */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            background: none;
             border: none; 
         }
         .arrow-shape { 
@@ -2995,7 +2995,7 @@ body.dark-mode .scoreboard-item.current {
             }
 
             let h = '<div class="store-grid-flat">';
-            filteredItems.forEach((item) => {
+            filteredItems.forEach(function(item) {
                 const isAvailable = item.status === 'available';
                 let badgeLabel = isAvailable ? 'Available' : 'Coming Soon';
                 let badgeClass = isAvailable ? 'badge-available' : 'badge-coming-soon';
@@ -3003,7 +3003,7 @@ body.dark-mode .scoreboard-item.current {
                     badgeLabel = '🌿 Opening Sale';
                     badgeClass = 'badge-opening-sale';
                 }
-                const badge = '<span class="availability-badge ' + badgeClass + '">' + badgeLabel + '</span>';
+                const badge = `<span class="availability-badge ${badgeClass}">${badgeLabel}</span>`;
 
                 let dropdownHTML = '';
                 if (isAvailable && item.availability) {
@@ -3013,8 +3013,8 @@ body.dark-mode .scoreboard-item.current {
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Variant</option>';
                         item.availability.forEach(opt => {
                             const price = ITEM_PRICES[item.id + '_' + opt];
-                            const priceLabel = price ? ' — ₪' + price : '';
-                            dropdownHTML += '<option value="' + opt + '">' + opt + priceLabel + '</option>';
+                            const priceLabel = price ? ` — ₪${price}` : '';
+                            dropdownHTML += `<option value="${opt}">${opt}${priceLabel}</option>`;
                         });
                         dropdownHTML += '</select></div>';
                     } else {
@@ -3024,26 +3024,28 @@ body.dark-mode .scoreboard-item.current {
                             const isOptAvailable = item.availability.includes(opt);
                             const price = ITEM_PRICES[item.id + '_' + opt];
                             const isMature = opt === 'Mature Plant';
-                            const priceLabel = price ? (isMature ? ' — from ₪' + price : ' — ₪' + price) : '';
-                            dropdownHTML += isOptAvailable
-                                ? '<option value="' + opt + '">' + opt + priceLabel + '</option>'
-                                : '<option disabled>' + opt + ' (Unavailable)</option>';
+                            const priceLabel = price ? (isMature ? ` — from ₪${price}` : ` — ₪${price}`) : '';
+                            if (isOptAvailable) {
+                                dropdownHTML += `<option value="${opt}">${opt}${priceLabel}</option>`;
+                            } else {
+                                dropdownHTML += `<option disabled>${opt} (Unavailable)</option>`;
+                            }
                         });
                         dropdownHTML += '</select></div>';
                     }
                 }
 
                 const btnHTML = isAvailable
-                    ? '<button class="add-to-cart-btn" id="cart-btn-' + item.id + '" onclick="addToCart('' + item.id + '', '' + item.name + '', this)">ADD TO BAG</button>'
+                    ? `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name.replace(/'/g, String.fromCharCode(39))}', this)">ADD TO BAG</button>`
                     : '<button class="btn" style="opacity:0.5;cursor:not-allowed" disabled>COMING SOON</button>';
 
-                h += '<div class="store-card-flat">'
+                h += `<div class="store-card-flat">`
                     + badge
-                    + '<div class="portal"><img src="plants/' + item.id + '.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>'
-                    + '<p class="serif text-[11px] font-bold text-center mb-4">' + item.name + '</p>'
+                    + `<div class="portal"><img src="plants/${item.id}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>`
+                    + `<p class="serif text-[11px] font-bold text-center mb-4">${item.name}</p>`
                     + '<div class="w-full space-y-2 mb-4">'
-                    + '<div class="stat-row"><span>☀️ Light</span><span>' + item.light + '</span></div>'
-                    + '<div class="stat-row"><span>💧 Humidity</span><span>' + item.humidity + '</span></div>'
+                    + `<div class="stat-row"><span>☀️ Light</span><span>${item.light}</span></div>`
+                    + `<div class="stat-row"><span>💧 Humidity</span><span>${item.humidity}</span></div>`
                     + '</div>'
                     + dropdownHTML
                     + btnHTML
@@ -3053,8 +3055,10 @@ body.dark-mode .scoreboard-item.current {
             document.getElementById('store-grid').innerHTML = h;
         }
 
+        function spin(d){ /* carousel removed — flat grid active */ }
+
+
         
-        function spin(d){ 
             rot += d * window.sAng; 
             const wheel = document.getElementById('wheel');
             if(wheel) wheel.style.transform = `rotateY(${rot}deg)`; 
