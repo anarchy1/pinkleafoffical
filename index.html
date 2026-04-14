@@ -3429,7 +3429,7 @@ function checkLab(choiceIndex) {
         }
 
         function addToCart(id, name, btn) {
-            const card = btn.closest('.store-card');
+            const card = btn.closest('.store-card, .store-card-flat');
             const select = card ? card.querySelector('.availability-select') : null;
             const grade = select ? select.value : '';
 
