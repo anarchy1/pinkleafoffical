@@ -3704,7 +3704,7 @@ function checkLab(choiceIndex) {
                 }
             });
 
-            if (noResults) noResults.classList.toggle('hidden', anyVisible);
+            if (noResults) noResults.classList.toggle('hidden', anyVisible || ENCYC_ARTICLES.length === 0);
         }
 
         function renderEncyclopedia() {
