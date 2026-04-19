@@ -2059,7 +2059,7 @@ body.dark-mode .scoreboard-item.current {
                 background: rgba(15,10,14,0.12) !important;
             }
             /* SWAP sides on mobile: scoreboard → left (bigger), registry → right (compact) */
-            body.on-lab-page .lab-registry-float  { left: auto !important; right: 8px !important; width: 100px !important; }
+            body.on-lab-page .lab-registry-float  { left: calc(100vw - 108px) !important; right: auto !important; width: 100px !important; }
             body.on-lab-page .lab-scoreboard-float { right: auto !important; left: 8px !important; width: 130px !important; height: 220px !important; top: 0 !important; }
             /* keep text readable */
             body.on-lab-page .lab-registry-float .registry-header-small,
@@ -3052,7 +3052,17 @@ body.dark-mode .scoreboard-item.current {
             cards.forEach((c,i) => c.classList.toggle('card-focus', i === act));
         }
 
-        function renderCareProducts() {
+        function renderVault(f){
+    let h = "";
+    Object.keys(MASTER_DB).forEach(id => {
+        if(MASTER_DB[id].family === f){
+            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
+        }
+    });
+    document.getElementById('vault-grid').innerHTML = h;
+}
+
+                function renderCareProducts() {
             let html = "";
             Object.entries(SUBSTRATE_DB).forEach(([key, item]) => {
                 // Define imgPath BEFORE the price loop so it's available inside the onClick handlers
