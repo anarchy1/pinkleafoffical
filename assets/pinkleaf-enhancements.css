@@ -4,36 +4,15 @@
    Aesthetic: minimal, botanical-lab, RTL-aware.
    ───────────────────────────────────────────────────────── */
 
-/* ─── 1. POP-UP COLLISION FIX (mobile <768px) ───────────── */
-/* Problem: lab-registry-float ("Join Rankings") + xp-counter
-   overlap the WhatsApp FAB on mobile.
-   Solution: hide the lab/registry pop-ups on mobile entirely,
-   they're a desktop-only engagement element. The WhatsApp FAB
-   stays as the single primary action. */
+/* ─── 1. WHATSAPP FAB (mobile) ──────────────────────────── */
+/* Keep the WhatsApp FAB prominent on mobile. Lab floaters are
+   positioned by index.html so they sit above the FAB, not over it. */
 @media (max-width: 768px) {
-    .lab-registry-float,
-    #registry-float,
-    #xp-counter,
-    .badge-toast {
-        display: none !important;
-    }
-    /* Make the WhatsApp FAB unmistakable on mobile */
     a[aria-label="Chat on WhatsApp"] {
         bottom: 20px !important;
         right: 16px !important;
         width: 60px !important;
         height: 60px !important;
-    }
-}
-
-/* If on desktop and the registry IS visible, make sure it
-   never sits on top of the WhatsApp FAB — push it left/up. */
-@media (min-width: 769px) {
-    .lab-registry-float,
-    #registry-float {
-        right: auto !important;
-        left: 16px !important;
-        bottom: 16px !important;
     }
 }
 
