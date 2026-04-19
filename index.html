@@ -2059,8 +2059,8 @@ body.dark-mode .scoreboard-item.current {
                 background: rgba(15,10,14,0.12) !important;
             }
             /* SWAP sides on mobile: scoreboard → left (bigger), registry → right (compact) */
-            body.on-lab-page .lab-registry-float  { left: auto !important; right: 8px !important; width: 130px !important; }
-            body.on-lab-page .lab-scoreboard-float { right: auto !important; left: 8px !important; width: 130px !important; height: 220px !important; top: 44px !important; }
+            body.on-lab-page .lab-registry-float  { left: auto !important; right: 8px !important; width: 100px !important; }
+            body.on-lab-page .lab-scoreboard-float { right: auto !important; left: 8px !important; width: 130px !important; height: 220px !important; top: 0 !important; }
             /* keep text readable */
             body.on-lab-page .lab-registry-float .registry-header-small,
             body.on-lab-page .lab-scoreboard-float .scoreboard-header-small { font-size: 9px !important; }
@@ -2949,10 +2949,10 @@ body.dark-mode .scoreboard-item.current {
             const reg = document.getElementById('registry-float');
             const score = document.getElementById('scoreboard-float');
             const restoreBtn = document.getElementById('lab-floaters-restore');
-            // Remove inline display override — CSS handles desktop vs mobile correctly
-            if (document.body.classList.contains('on-lab-page')) {
-                if (reg)   { reg.style.removeProperty('display'); }
-                if (score) { score.style.removeProperty('display'); }
+            // Only show if on lab page and on wide screens
+            if (document.body.classList.contains('on-lab-page') && window.innerWidth > 767) {
+                if (reg)   { reg.style.removeProperty('display'); reg.style.setProperty('display', 'flex', 'important'); }
+                if (score) { score.style.removeProperty('display'); score.style.setProperty('display', 'flex', 'important'); }
             }
             if (restoreBtn) restoreBtn.style.display = 'none';
             labFloatersHidden = false;
