@@ -2949,8 +2949,8 @@ body.dark-mode .scoreboard-item.current {
             const reg = document.getElementById('registry-float');
             const score = document.getElementById('scoreboard-float');
             const restoreBtn = document.getElementById('lab-floaters-restore');
-            // Only show if on lab page and on wide screens
-            if (document.body.classList.contains('on-lab-page') && window.innerWidth > 767) {
+            // Restore on all screen sizes — CSS handles positioning per breakpoint
+            if (document.body.classList.contains('on-lab-page')) {
                 if (reg)   { reg.style.removeProperty('display'); reg.style.setProperty('display', 'flex', 'important'); }
                 if (score) { score.style.removeProperty('display'); score.style.setProperty('display', 'flex', 'important'); }
             }
