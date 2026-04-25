@@ -960,11 +960,11 @@
             background: none;
             border: none;
         }
-        .arrow-shape { 
-            width: 30px; 
-            height: 30px; 
-            border-left: 3px solid var(--pink); 
-            border-bottom: 3px solid var(--pink); 
+        .arrow-shape {
+            width: 30px;
+            height: 30px;
+            border-left: 3px solid var(--pink);
+            border-bottom: 3px solid var(--pink);
         }
         .arrow-left { transform: rotate(45deg); }
         .arrow-right { transform: rotate(-135deg); }
@@ -2388,7 +2388,7 @@ body.dark-mode .scoreboard-item.current {
     <nav>
         <button class="nav-link nav-active" onclick="showPage('intro', this)" data-he="בית" data-en="HOME">בית</button>
         <button class="nav-link" onclick="showPage('store', this)" data-he="חנות" data-en="STORE">חנות</button>
-        <button class="nav-link" onclick="showPage('care', this)" data-he="טיפול" data-en="CARE">טיפול</button>
+        <button class="nav-link" onclick="showPage('care', this)" data-he="טיפול" data-en="CARE" style="display:none;">טיפול</button>
         <button class="nav-link" onclick="showPage('vault', this)" data-he="ארכיון" data-en="ARCHIVE">ארכיון</button>
         <button class="nav-link" onclick="showPage('encyclopedia', this)" data-he="אנציקלופדיה" data-en="ENCYCLOPEDIA">אנציקלופדיה</button>
         <button class="nav-link" onclick="showPage('lab', this)" data-he="מעבדה" data-en="LAB">מעבדה</button>
@@ -2420,9 +2420,9 @@ body.dark-mode .scoreboard-item.current {
     <main id="page-store" class="hidden max-w-4xl mx-auto relative px-4 pb-20">
         <!-- filter hidden — all items available -->
         
-        <button class="side-arrow left-10" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
+        <button class="side-arrow -left-4 sm:-left-8" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
         <div id="store-grid"></div>
-        <button class="side-arrow right-10" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
+        <button class="side-arrow -right-4 sm:-right-8" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
     </main>
 
     <main id="page-vault" class="hidden max-w-7xl mx-auto p-6">
@@ -2547,7 +2547,7 @@ body.dark-mode .scoreboard-item.current {
 
     </main>
 
-    <main id="page-care" class="hidden max-w-7xl mx-auto p-6 text-center pb-20">
+    <main id="page-care" class="hidden max-w-7xl mx-auto p-6 text-center pb-20" data-temporarily-hidden="true">
         <div class="logo-container" style="padding-top: 20px;">
             <h2 class="serif mb-10 tracking-[3px] opacity-60 text-[14px]">BOTANICAL CARE</h2>
         </div>
