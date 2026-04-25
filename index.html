@@ -2383,7 +2383,7 @@ body.dark-mode .scoreboard-item.current {
         </div>
     </div>
 
-    <div class="logo-container"><img id="main-logo" src="logo-dark.png" class="main-logo" onclick="showPage('intro')"></div>
+    <div class="logo-container"><img id="main-logo" src="logo-dark.png" class="main-logo" onclick="showPage('intro')" alt="Pink Leaf Botanical Studios"></div>
     
     <nav>
         <button class="nav-link nav-active" onclick="showPage('intro', this)" data-he="בית" data-en="HOME">בית</button>
@@ -2443,7 +2443,7 @@ body.dark-mode .scoreboard-item.current {
         <div id="encyc-index" class="max-w-3xl mx-auto px-5">
             <div class="text-center mb-8">
                 <h2 class="serif tracking-[5px] text-[11px] opacity-50 mb-2">PINK LEAF</h2>
-                <h1 class="serif tracking-[3px] text-[18px] mb-3">BOTANICAL ENCYCLOPEDIA</h1>
+                <h2 class="serif tracking-[3px] text-[18px] mb-3">BOTANICAL ENCYCLOPEDIA</h2>
                 <p class="text-[12px] opacity-40 tracking-[3px]">MASTERCLASS SERIES · 5 TECHNICAL GUIDES</p>
                 <div class="mt-5" style="height:1px; background: linear-gradient(to right, transparent, var(--pink), transparent);"></div>
             </div>
@@ -2560,7 +2560,7 @@ body.dark-mode .scoreboard-item.current {
         <div id="lab-box" class="p-10 border border-[var(--border)] rounded-[60px] bg-[var(--mellow-pink)]"></div>
         <div id="lab-correction">
             <div id="lab-incorrect-label" style="font-size:52px;line-height:1;margin-bottom:12px;min-height:56px;display:flex;align-items:center;justify-content:center;">❌</div>
-            <div class="portal mx-auto w-48 h-48"><img id="correct-img" class="w-full h-full object-cover"></div>
+            <div class="portal mx-auto w-48 h-48"><img id="correct-img" class="w-full h-full object-cover" alt=""></div>
             <p id="correct-name" class="serif text-lg my-6 uppercase tracking-widest"></p>
             <button onclick="closeCorrection()" id="lab-retry-btn" aria-label="Try Again" title="Try Again" style="font-size:40px;background:none;border:none;cursor:pointer;padding:12px;line-height:1;">❌</button>
         </div>
@@ -2744,7 +2744,7 @@ body.dark-mode .scoreboard-item.current {
                 toast.className = 'badge-toast';
                 document.body.appendChild(toast);
             }
-            toast.innerHTML = `<img src="${badge.img}" style="width:36px;height:36px;vertical-align:middle;margin-right:10px;display:inline-block;"> ${badge.label} — ${badge.desc}`;
+            toast.innerHTML = `<img src="${badge.img}" alt="${badge.label}" style="width:36px;height:36px;vertical-align:middle;margin-right:10px;display:inline-block;"> ${badge.label} — ${badge.desc}`;
             toast.classList.add('show');
             xp += 50;
             updateXPDisplay();
@@ -3026,7 +3026,7 @@ body.dark-mode .scoreboard-item.current {
                 h += `
                 <div class="store-card ${i===0?'card-focus':''}" style="transform:rotateY(${i*ang}deg) translateZ(280px)">
                     ${badge}
-                    <div class="portal"><img src="plants/${item.id}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
+                    <div class="portal"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-4">${item.name}</p>
                     ${dropdownHTML}
                     <div class="w-full space-y-1 mb-2">
@@ -3057,7 +3057,7 @@ body.dark-mode .scoreboard-item.current {
     let h = "";
     Object.keys(MASTER_DB).forEach(id => {
         if(MASTER_DB[id].family === f){
-            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
+            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" alt="${MASTER_DB[id].name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
         }
     });
     document.getElementById('vault-grid').innerHTML = h;
@@ -3094,7 +3094,7 @@ body.dark-mode .scoreboard-item.current {
                 html += `
                 <div class="care-product-card">
                     <div class="portal mx-auto w-32 h-32 mb-4">
-                        <img src="${imgPath}" class="w-full h-full object-cover"
+                        <img src="${imgPath}" alt="${item.name}" class="w-full h-full object-cover"
                             onerror="this.src='logo-dark.png'">
                     </div>
                     <h3 class="serif text-[12px] tracking-[2px] text-center mb-3">${item.name}</h3>
@@ -3154,7 +3154,7 @@ body.dark-mode .scoreboard-item.current {
 
     const streakTarget = streak >= 10 ? 10 : 5;
     const badgeRow = earnedBadges.length > 0
-        ? `<div style="display:flex; justify-content:center; gap:6px; margin-bottom:6px;">${BADGES.filter(b => earnedBadges.includes(b.id)).map(b => `<img src="${b.img}" style="width:28px;height:28px;" title="${b.label}">`).join('')}</div>`
+        ? `<div style="display:flex; justify-content:center; gap:6px; margin-bottom:6px;">${BADGES.filter(b => earnedBadges.includes(b.id)).map(b => `<img src="${b.img}" alt="${b.label}" style="width:28px;height:28px;" title="${b.label}">`).join('')}</div>`
         : '';
 
     document.getElementById('lab-box').innerHTML = `
@@ -3163,7 +3163,7 @@ body.dark-mode .scoreboard-item.current {
         <p class="serif" style="font-size:12px; letter-spacing:3px; opacity:0.4; margin-bottom:2px;">XP: ${xp} &nbsp;|&nbsp; BEST: ${bestStreak}</p>
         ${badgeRow}
         ${renderStreakBar()}
-        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
+        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
         ${loginHint}
         <div class="flex flex-col gap-4">
             ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
@@ -3875,7 +3875,7 @@ function checkLab(choiceIndex) {
     <!-- ── SEO: crawlable fallback for search engines ── -->
     <noscript>
     <div style="max-width:900px;margin:0 auto;padding:40px 20px;font-family:sans-serif;">
-        <h1>Pink Leaf Botanical Studios | פינק ליף סטודיו בוטני</h1>
+        <h2>Pink Leaf Botanical Studios | פינק ליף סטודיו בוטני</h2>
         <p>Israel's rare aroid plant studio — Tissue Culture propagation, botanical encyclopedia, and professional care guides. חנות צמחים נדירים בישראל.</p>
 
         <h2>🌿 Store — Available Plants</h2>
