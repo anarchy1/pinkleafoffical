@@ -1147,8 +1147,9 @@
             position: fixed;
             right: 0;
             top: 50%;
-            transform: translateY(-50%);
-            z-index: 99999;
+            transform: translateY(-50%) translateZ(0);
+            z-index: 999999;
+            will-change: transform;
             width: 44px;
             height: 52px;
             border-radius: 8px 0 0 8px;
@@ -2171,11 +2172,6 @@ body.dark-mode .scoreboard-item.current {
         @media (max-width: 767px) {
           .side-arrow { display: flex !important; }
         }
-        /* Mobile: shrink the carousel wheel + cards so they fit phone screens cleanly */
-        @media (max-width: 480px) {
-          .carousel-wheel { width: 240px; height: 440px; }
-          .carousel-container { height: 460px; align-items: flex-start; margin-top: 0; }
-        }
     
         /* FLAT STORE GRID — replaces 3D carousel */
         .store-grid-flat {
@@ -2425,9 +2421,9 @@ body.dark-mode .scoreboard-item.current {
     <main id="page-store" class="hidden max-w-4xl mx-auto relative px-4 pb-20">
         <!-- filter hidden — all items available -->
         
-        <button class="side-arrow left-8 sm:left-12" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
+        <button class="side-arrow left-0 sm:left-2" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
         <div id="store-grid"></div>
-        <button class="side-arrow right-8 sm:right-12" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
+        <button class="side-arrow right-0 sm:right-2" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
     </main>
 
     <main id="page-vault" class="hidden max-w-7xl mx-auto p-6">
