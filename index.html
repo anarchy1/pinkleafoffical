@@ -2988,11 +2988,11 @@ body.dark-mode .scoreboard-item.current {
             }
             
             const ang = 360 / filteredItems.length;
-            // Dynamic radius: prevent side cards overlapping the front card when count is high.
-            // For ≤8 items keeps current 280px; scales up beyond that based on wedge angle.
-            const cardWidth = 320;
-            const radius = Math.max(280, Math.ceil(cardWidth * 1.15 / (2 * Math.sin(Math.PI / filteredItems.length))));
-            let h = `<div class="carousel-container"><div class="carousel-wheel" id="wheel">`;
+            // Scale the wheel down when there are many cards so they appear smaller and
+            // overlap less. For ≤8 cards the wheel stays at its native size (scale 1).
+            const wheelScale = filteredItems.length <= 8 ? 1 : Math.max(0.55, 8 / filteredItems.length);
+            window.sScale = wheelScale;
+            let h = `<div class="carousel-container"><div class="carousel-wheel" id="wheel" style="transform: scale(${wheelScale}) rotateY(0deg)">`;
             
             filteredItems.forEach((item, i)=>{ 
                 const isAvailable = item.status === "available";
@@ -3040,7 +3040,7 @@ body.dark-mode .scoreboard-item.current {
                     '<button class="btn" style="opacity: 0.5; cursor: not-allowed;" disabled>COMING SOON</button>';
                 
                 h += `
-                <div class="store-card ${i===0?'card-focus':''}" style="transform:rotateY(${i*ang}deg) translateZ(${radius}px)">
+                <div class="store-card ${i===0?'card-focus':''}" style="transform:rotateY(${i*ang}deg) translateZ(280px)">
                     ${badge}
                     <div class="portal"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-4">${item.name}</p>
@@ -3055,18 +3055,45 @@ body.dark-mode .scoreboard-item.current {
             
             h += '</div></div>';
             document.getElementById('store-grid').innerHTML = h;
-            window.sLen = filteredItems.length; 
-            window.sAng = ang; 
+            window.sLen = filteredItems.length;
+            window.sAng = ang;
             rot = 0;
+            applyInitialCardVisibility();
         }
 
-        function spin(d){ 
-            rot += d * window.sAng; 
+        function spin(d){
+            rot += d * window.sAng;
             const wheel = document.getElementById('wheel');
-            if(wheel) wheel.style.transform = `rotateY(${rot}deg)`; 
-            const cards = document.querySelectorAll('.store-card'); 
-            const act = (Math.round(-rot/window.sAng) % window.sLen + window.sLen) % window.sLen; 
-            cards.forEach((c,i) => c.classList.toggle('card-focus', i === act));
+            const scale = window.sScale || 1;
+            if(wheel) wheel.style.transform = `scale(${scale}) rotateY(${rot}deg)`;
+            const cards = document.querySelectorAll('.store-card');
+            const act = (Math.round(-rot/window.sAng) % window.sLen + window.sLen) % window.sLen;
+            const ang = window.sAng;
+            cards.forEach((c, i) => {
+                let af = ((i - act) * ang + 180) % 360 - 180;
+                if (af > 180) af -= 360;
+                if (af < -180) af += 360;
+                const abs = Math.abs(af);
+                // Hide cards beyond ±90° from focus; fade cards between ±50° and ±90°
+                if (abs > 90) c.style.opacity = '0';
+                else if (abs > 50) c.style.opacity = ((90 - abs) / 40).toFixed(2);
+                else c.style.opacity = '';
+                c.classList.toggle('card-focus', i === act);
+            });
+        }
+        // Apply initial visibility filter on render (act=0)
+        function applyInitialCardVisibility() {
+            const cards = document.querySelectorAll('.store-card');
+            const ang = window.sAng || 90;
+            cards.forEach((c, i) => {
+                let af = (i * ang + 180) % 360 - 180;
+                if (af > 180) af -= 360;
+                if (af < -180) af += 360;
+                const abs = Math.abs(af);
+                if (abs > 90) c.style.opacity = '0';
+                else if (abs > 50) c.style.opacity = ((90 - abs) / 40).toFixed(2);
+                else c.style.opacity = '';
+            });
         }
 
         function renderVault(f){
