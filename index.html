@@ -387,14 +387,14 @@
             --pink: #d4a5b2; 
             --mellow-pink: rgba(212, 165, 178, 0.4); 
             --border: rgba(212, 165, 178, 0.3); 
-            --glow: 0 12px 40px rgba(212, 165, 178, 0.22);
+            --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5);
         }
         body.dark-mode {
             --bg: #111111;
             --text: #f0f0f0;
             --mellow-pink: rgba(212, 165, 178, 0.18);
             --border: rgba(212, 165, 178, 0.3);
-            --glow: 0 12px 50px rgba(212, 165, 178, 0.18);
+            --glow: 0 0 65px 20px rgba(212, 165, 178, 0.4);
         }
         /* Force all text elements to inherit the light color in dark mode */
         body.dark-mode,
@@ -2709,9 +2709,9 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available", openingSale: true },
-            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "available" },
+            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming" },
+            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming" },
+            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming" },
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
             { id: "PV87", name: "Alocasia Maharani Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
             { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
