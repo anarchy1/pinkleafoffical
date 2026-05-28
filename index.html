@@ -1148,7 +1148,7 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 10001;
+            z-index: 99999;
             width: 44px;
             height: 52px;
             border-radius: 8px 0 0 8px;
@@ -2174,7 +2174,7 @@ body.dark-mode .scoreboard-item.current {
         /* Mobile: shrink the carousel wheel + cards so they fit phone screens cleanly */
         @media (max-width: 480px) {
           .carousel-wheel { width: 240px; height: 360px; }
-          .carousel-container { height: 440px; }
+          .carousel-container { height: 380px; align-items: flex-start; margin-top: 0; }
         }
     
         /* FLAT STORE GRID — replaces 3D carousel */
