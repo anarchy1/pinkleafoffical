@@ -16,9 +16,19 @@
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
+    <!-- Pink Leaf layer system: z-index tokens + overlay container.
+         MUST load BEFORE pinkleaf-enhancements.css so the tokens
+         (--pl-z-overlay-lang, etc.) resolve. -->
+    <link rel="stylesheet" href="/assets/pinkleaf-layer-system.css?v=20260529">
+
     <!-- Pink Leaf enhancements: collision fix, lazy images, lang toggle, price concierge -->
     <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css?v=20260528b">
     <script defer src="/assets/pinkleaf-enhancements.js?v=20260528b"></script>
+
+    <!-- Pink Leaf overlay manager: re-parents all persistent
+         controls (WhatsApp FAB, lang toggle, accessibility,
+         carousel arrows) into a single #pl-overlay layer. -->
+    <script defer src="/assets/pinkleaf-overlay.js?v=20260529"></script>
 
     <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
