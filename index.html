@@ -789,21 +789,24 @@
         .serif { font-family: 'Cinzel', serif; }
         
         /* Z-INDEX HIERARCHY - TOP RULER HIGHEST */
-        .top-ruler { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            right: 0; 
-            padding: 10px 25px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            font-size: 10px; 
-            letter-spacing: 4px; 
-            background: var(--bg); 
-            z-index: 9999; 
+        .top-ruler {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            letter-spacing: 4px;
+            background: var(--bg);
+            z-index: 1000000;
             backdrop-filter: blur(10px);
             border-bottom: none;
+            transform: translate3d(0,0,0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
         .lang-toggle-btn {
             border: 1px solid var(--border);
@@ -959,7 +962,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 10000;
+            z-index: 1000001;
             background: transparent;
             border: none;
         }
@@ -1164,10 +1167,10 @@
             position: fixed;
             right: 0;
             top: 50%;
-            transform: translateY(-50%) translateZ(0);
+            transform: translateY(-50%) translate3d(0,0,0);
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            z-index: 999999;
+            z-index: 1000000;
             width: 44px;
             height: 52px;
             border-radius: 8px 0 0 8px;
@@ -2676,37 +2679,7 @@ body.dark-mode .scoreboard-item.current {
     "PV86":{"name":"Alocasia nebula albo var","family":"Alocasia"},
     "PV87":{"name":"Alocasia Maharani variegated","family":"Alocasia"},
     "PV88":{"name":"Caladium lindenii var","family":"Others"},
-    "PV89":{"name":"Alocasia melo white var","family":"Alocasia"},
-    "PV90":{"name":"Alocasia Azlanii Aurea Variegated","family":"Alocasia"},
-    "PV91":{"name":"Alocasia Bambino Pink Lava Variegated","family":"Alocasia"},
-    "PV92":{"name":"Alocasia Bisma Platinum Albo Variegated","family":"Alocasia"},
-    "PV93":{"name":"Alocasia Brancifolia Albo Variegated","family":"Alocasia"},
-    "PV94":{"name":"Alocasia Chantrieri Pink Variegated","family":"Alocasia"},
-    "PV95":{"name":"Alocasia Cuprea Aurea Variegated Latte","family":"Alocasia"},
-    "PV96":{"name":"Alocasia Cuprea Red Secret Super Pink","family":"Alocasia"},
-    "PV97":{"name":"Alocasia Dragon Breath Aurea Variegated","family":"Alocasia"},
-    "PV98":{"name":"Alocasia Heterophylla Metallic Blue Aurea","family":"Alocasia"},
-    "PV99":{"name":"Alocasia Longiloba Grandis Aurea Variegated","family":"Alocasia"},
-    "PV100":{"name":"Alocasia Maharani Gold Variegated","family":"Alocasia"},
-    "PV101":{"name":"Alocasia Nairobi Nights Camouflage Tricolor","family":"Alocasia"},
-    "PV102":{"name":"Alocasia Pink Dragon Stardust Mint Variegated","family":"Alocasia"},
-    "PV103":{"name":"Alocasia Polly Lava Variegated","family":"Alocasia"},
-    "PV104":{"name":"Alocasia Watsoniana Doff Albo Variegated","family":"Alocasia"},
-    "PV105":{"name":"Philodendron Black Cardinal Variegated","family":"Philodendron"},
-    "PV106":{"name":"Philodendron Goeldi Variegated","family":"Philodendron"},
-    "PV107":{"name":"Philodendron Imperial Red Variegated","family":"Philodendron"},
-    "PV108":{"name":"Philodendron Pinnatifidum Olympiad Albo Variegated","family":"Philodendron"},
-    "PV109":{"name":"Philodendron Red Heart Variegated","family":"Philodendron"},
-    "PV110":{"name":"Philodendron Silver Sword Variegated","family":"Philodendron"},
-    "PV111":{"name":"Philodendron White Knight Tricolor Variegated","family":"Philodendron"},
-    "PV112":{"name":"Philodendron White Princess Tricolor Variegated","family":"Philodendron"},
-    "PV113":{"name":"Philodendron White Wizard Tricolor Variegated","family":"Philodendron"},
-    "PV114":{"name":"Philodendron Yellow Congo Variegated","family":"Philodendron"},
-    "PV115":{"name":"Monstera Bulbasaur","family":"Monstera"},
-    "PV116":{"name":"Monstera Deliciosa Ocean Lava","family":"Monstera"},
-    "PV118":{"name":"Monstera Devil Monster Premium Variegated","family":"Monstera"},
-    "PV119":{"name":"Monstera Electro Light Tri-color","family":"Monstera"},
-    "PV120":{"name":"Monstera Thai Constellation Miracle Tricolor","family":"Monstera"}
+    "PV89":{"name":"Alocasia melo white var","family":"Alocasia"}
 };
 
 
@@ -3948,7 +3921,7 @@ function checkLab(choiceIndex) {
 
     <!-- WhatsApp FAB -->
     <a href="https://wa.me/972559116990" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-       style="position:fixed; bottom:24px; right:24px; z-index:9999;
+       style="position:fixed; bottom:24px; right:24px; z-index:1000000;
               width:54px; height:54px; border-radius:50%;
               background:#25D366; display:flex; align-items:center; justify-content:center;
               box-shadow:0 4px 16px rgba(37,211,102,0.45); transition:transform 0.2s, box-shadow 0.2s;
