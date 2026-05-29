@@ -67,6 +67,13 @@
         if (opts && opts.stripInlineZ && el.style) {
             el.style.zIndex = '';
         }
+        // Strip classes whose positioning assumed a different
+        // parent (e.g. `.arrow-pos-left { left:0 !important }`
+        // is meaningful inside `.store-frame` but wrong inside
+        // the viewport-fixed overlay).
+        if (opts && opts.stripClasses) {
+            opts.stripClasses.forEach((c) => el.classList.remove(c));
+        }
 
         overlay.appendChild(el);
         return el;
@@ -89,12 +96,18 @@
         // Language toggle (injected late by enhancements.js)
         adopt(overlay, document.querySelector('.pl-lang-toggle'), 'lang');
 
-        // Carousel arrows (currently inside <main id="page-store">)
-        const arrows = document.querySelectorAll('main#page-store > button.side-arrow');
-        if (arrows.length === 2) {
-            // First one is left (spin(1) → prev), second is right (spin(-1) → next).
-            adopt(overlay, arrows[0], 'arrow', { arrow: 'prev', onlyOn: 'store' });
-            adopt(overlay, arrows[1], 'arrow', { arrow: 'next', onlyOn: 'store' });
+        // Carousel arrows. Live inside <main id="page-store">,
+        // possibly nested in a frame wrapper (`.store-frame`).
+        // Use the explicit position classes when present
+        // (`.arrow-pos-left` / `.arrow-pos-right`), otherwise
+        // fall back to source order.
+        const storeMain = document.getElementById('page-store');
+        if (storeMain) {
+            const left  = storeMain.querySelector('.side-arrow.arrow-pos-left, .side-arrow:not(.arrow-pos-right):first-of-type');
+            const right = storeMain.querySelector('.side-arrow.arrow-pos-right, .side-arrow:not(.arrow-pos-left):last-of-type');
+            const arrowOpts = { onlyOn: 'store', stripClasses: ['arrow-pos-left', 'arrow-pos-right', '-left-4', '-right-4', 'sm:-left-8', 'sm:-right-8'] };
+            if (left)  adopt(overlay, left,  'arrow', Object.assign({ arrow: 'prev' }, arrowOpts));
+            if (right) adopt(overlay, right, 'arrow', Object.assign({ arrow: 'next' }, arrowOpts));
         }
     }
 
