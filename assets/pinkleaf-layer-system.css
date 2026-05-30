@@ -171,19 +171,16 @@
     padding: 0;
 }
 
+/* Arrow positioning is dir-agnostic: the prev button keeps
+   its `.arrow-left` glyph (chevron points ◀) and stays on
+   the LEFT edge of the viewport; the next button keeps its
+   `.arrow-right` glyph (chevron points ▶) on the RIGHT edge.
+   We don't mirror in RTL — the glyphs are not symmetric
+   (they're rotated quarter-borders), so swapping sides
+   would leave both arrows pointing inward toward the
+   carousel instead of outward. */
 #pl-overlay [data-pl-arrow="prev"] { left:  clamp(8px, calc(50% - 240px), 24px); }
 #pl-overlay [data-pl-arrow="next"] { right: clamp(8px, calc(50% - 240px), 24px); }
-
-/* RTL: swap visual side without re-flipping the arrow
-   glyph (the glyph itself is symmetric via rotation). */
-[dir="rtl"] #pl-overlay [data-pl-arrow="prev"] {
-    left: auto;
-    right: clamp(8px, calc(50% - 240px), 24px);
-}
-[dir="rtl"] #pl-overlay [data-pl-arrow="next"] {
-    right: auto;
-    left:  clamp(8px, calc(50% - 240px), 24px);
-}
 
 /* ─── 4. WHATSAPP FAB (after re-parent) ──────────────────
    The FAB's inline style was z-index:9999. Inside the
