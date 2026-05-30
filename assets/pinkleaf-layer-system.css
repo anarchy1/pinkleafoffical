@@ -57,8 +57,14 @@
     --pl-z-logo:                8500;
     --pl-z-top-ruler:           9000;
 
-    /* OVERLAY — persistent global UI. Lives in #pl-overlay. */
-    --pl-z-overlay-root:        9500;   /* the #pl-overlay container itself */
+    /* OVERLAY — persistent global UI. Lives in #pl-overlay.
+       Root sits at 9999 so it outranks the legacy
+       cookie-consent banner (z:9998 in index.html). The
+       overlay uses `isolation: isolate`, so its internal
+       tier tokens below are only relative to the root.
+       Stays below --pl-z-modal-backdrop (10000) so dialogs
+       still cover the FAB / language toggle correctly. */
+    --pl-z-overlay-root:        9999;   /* the #pl-overlay container itself */
     --pl-z-overlay-arrows:      9600;   /* carousel navigation */
     --pl-z-overlay-lang:        9700;   /* language toggle */
     --pl-z-overlay-whatsapp:    9800;   /* WhatsApp FAB */
