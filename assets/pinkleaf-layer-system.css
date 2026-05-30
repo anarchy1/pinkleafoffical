@@ -65,10 +65,16 @@
        Stays below --pl-z-modal-backdrop (10000) so dialogs
        still cover the FAB / language toggle correctly. */
     --pl-z-overlay-root:        9999;   /* the #pl-overlay container itself */
-    --pl-z-overlay-arrows:      9600;   /* carousel navigation */
+    /* Internal order inside the overlay (only relative ranks):
+       arrows < lang < a11y-trigger < FAB. The FAB sits on top
+       so it's never visually hidden by another overlay control —
+       even on narrow viewports where they could collide. The
+       a11y *drawer* uses --pl-z-modal-priority (10010) so it
+       still opens over the FAB. */
+    --pl-z-overlay-arrows:      9600;   /* carousel navigation (lowest) */
     --pl-z-overlay-lang:        9700;   /* language toggle */
-    --pl-z-overlay-whatsapp:    9800;   /* WhatsApp FAB */
-    --pl-z-overlay-a11y:        9900;   /* accessibility trigger */
+    --pl-z-overlay-a11y:        9800;   /* accessibility trigger */
+    --pl-z-overlay-whatsapp:    9900;   /* WhatsApp FAB (highest) */
 
     /* MODALS — full-screen interrupts. Above overlay. */
     --pl-z-modal-backdrop:     10000;
@@ -215,6 +221,36 @@ body { overflow-x: clip; }
 @supports not (overflow: clip) {
     html, body { overflow-x: hidden; }   /* fallback — accepted trade-off */
 }
+
+/* ─── 6b. CONTAIN CARDS: cards can never paint over overlay ─
+   The carousel uses perspective + preserve-3d + translateZ
+   to pop a focused card "toward" the viewer. In 3D space
+   that card visually sits in front of its siblings — and
+   on iOS Safari it has historically been able to paint
+   above fixed-position siblings outside its container.
+
+   Pinning #page-store with `isolation: isolate` and
+   `contain: layout paint` forces a hard stacking-context
+   boundary at the page level. Anything inside — cards,
+   wheel, frame — is bounded to z:0..2999 of that context
+   and can never render above the overlay root (z:9999),
+   no matter what 3D transforms the wheel applies. */
+#page-store {
+    isolation: isolate;
+    contain: layout paint;
+}
+
+/* Ceiling for in-card z-index: the focused card uses z:100,
+   the wheel uses 3D transforms. Cap anything inside the
+   carousel to <3000 so a stray inline style can never
+   crash into the overlay band. */
+.carousel-container,
+.carousel-wheel,
+.store-card,
+.store-card.card-focus {
+    z-index: var(--pl-z-card-rest);
+}
+.store-card.card-focus { z-index: var(--pl-z-card-focus); }
 
 /* ─── 7. SAFE-AREA INSETS (iOS notch / home bar) ─────────
    Push overlay controls inside the safe area so the
