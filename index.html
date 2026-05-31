@@ -3316,7 +3316,16 @@ body.dark-mode .scoreboard-item.current {
         }
 
         function startLab(){
-    const keys = Object.keys(MASTER_DB);
+    // Quiz pool: PV1-PV89 only. The archive vault uses the full
+    // MASTER_DB (191 entries), but PV109+ entries have images
+    // whose contents don't yet match the names, so we exclude
+    // them from the quiz until they're verified. familyPool
+    // below derives from this list, so distractor answers are
+    // also restricted to the verified set.
+    const keys = Object.keys(MASTER_DB).filter(k => {
+        const n = parseInt(k.replace('PV', ''), 10);
+        return n <= 89;
+    });
     const qId = keys[Math.floor(Math.random() * keys.length)];
     const plant = MASTER_DB[qId];
 
