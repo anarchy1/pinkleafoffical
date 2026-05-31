@@ -263,16 +263,32 @@
     });
 
     // ─── 5. MOBILE COLLISION GUARD (JS belt+suspenders) ──
-    // CSS already hides the registry/XP popups <768px, but on
-    // some Android browsers backdrop-filter can keep them painted.
-    // We force display:none in JS too so the WhatsApp FAB is alone.
+    // The lab page's three corner widgets — #registry-float
+    // (left), #scoreboard-float (right; CSS in index.html
+    // moves it to left:8px on mobile), and #xp-counter —
+    // collide with the lab game card on narrow viewports.
+    // CSS in pinkleaf-enhancements.css already hides all
+    // three below 768px; this JS pass is belt+suspenders so
+    // Android browsers whose backdrop-filter keeps painted
+    // layers around still get them hidden.
+    //
+    // We must use setProperty(...'important') because the
+    // index.html on-lab-page rules use `display: flex !important`
+    // — a plain `el.style.display = 'none'` would lose to that.
     PinkLeaf.guardMobileCollision = function () {
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        if (!isMobile) return;
-        const ids = ['registry-float', 'xp-counter'];
+        const ids = ['registry-float', 'scoreboard-float', 'xp-counter'];
         ids.forEach((id) => {
             const el = document.getElementById(id);
-            if (el) el.style.display = 'none';
+            if (!el) return;
+            if (isMobile) {
+                el.style.setProperty('display', 'none', 'important');
+            } else {
+                // On resize back to desktop, clear our inline
+                // override so the index.html on-lab-page rules
+                // can put the widget back.
+                el.style.removeProperty('display');
+            }
         });
     };
 

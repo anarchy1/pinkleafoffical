@@ -153,3 +153,26 @@ picture.pl-picture {
         padding: 6px 11px;
     }
 }
+
+/* ─── 5. LAB FLOATER MOBILE GUARD ───────────────────────
+   On the lab page, #registry-float (left) and
+   #scoreboard-float (right; CSS in index.html moves it to
+   left:8px on mobile) are fixed corner widgets. On narrow
+   viewports they collide with the lab game card in the
+   centre — the user saw the leaderboard "bleeding through"
+   on the left edge and the registration form floating
+   over the game.
+
+   guardMobileCollision() in the JS sets inline display:none
+   but the index.html rule
+       body.on-lab-page .lab-registry-float { display:flex !important }
+   beats inline non-important styles. We win cleanly here by
+   targeting the IDs (higher specificity than the .class rule
+   in index.html) with our own !important. */
+@media (max-width: 768px) {
+    body.on-lab-page #registry-float,
+    body.on-lab-page #scoreboard-float,
+    body.on-lab-page #xp-counter {
+        display: none !important;
+    }
+}
