@@ -2459,6 +2459,34 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-vault" class="hidden max-w-7xl mx-auto p-6">
+        <!-- Temporary under-construction banner -->
+        <div id="vault-construction-banner" style="
+            max-width:640px;
+            margin:0 auto 32px;
+            padding:18px 28px;
+            text-align:center;
+            background:linear-gradient(135deg, rgba(252,228,236,0.55), rgba(250,240,245,0.75));
+            border:1px solid rgba(212,165,178,0.4);
+            border-radius:40px;
+            backdrop-filter:blur(8px);
+            -webkit-backdrop-filter:blur(8px);
+            box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 4px 18px rgba(212,165,178,0.10);
+            font-family:'Heebo','Inter',sans-serif;">
+            <p class="serif" style="
+                font-size:11px;
+                letter-spacing:3px;
+                color:var(--pink);
+                opacity:0.85;
+                margin:0 0 6px;
+                text-transform:uppercase;">🌿 הארכיון מתעדכן · Archive Updating 🌿</p>
+            <p style="
+                font-size:13px;
+                color:var(--text);
+                opacity:0.7;
+                margin:0;
+                line-height:1.5;">נחזור בקרוב · Coming back soon</p>
+        </div>
+
         <div class="flex justify-center flex-wrap gap-8 mb-16">
             <button onclick="renderVault('Alocasia')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">ALOCASIA</button>
             <button onclick="renderVault('Monstera')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">MONSTERA</button>
