@@ -2083,7 +2083,7 @@ body.dark-mode .scoreboard-item.current {
             }
             /* SWAP sides on mobile: scoreboard → left (bigger), registry → right (compact) */
             body.on-lab-page .lab-registry-float  { left: calc(100vw - 108px) !important; right: auto !important; width: 100px !important; }
-            body.on-lab-page .lab-scoreboard-float { right: auto !important; left: 8px !important; width: 130px !important; height: 220px !important; top: 0 !important; }
+            body.on-lab-page .lab-scoreboard-float { display: none !important; }
             /* keep text readable */
             body.on-lab-page .lab-registry-float .registry-header-small,
             body.on-lab-page .lab-scoreboard-float .scoreboard-header-small { font-size: 9px !important; }
@@ -3278,7 +3278,7 @@ body.dark-mode .scoreboard-item.current {
         }
 
         function startLab(){
-    const keys = Object.keys(MASTER_DB);
+    const keys = Object.keys(MASTER_DB).filter(k => parseInt(k.replace('PV',''),10) <= 89);
     const qId = keys[Math.floor(Math.random() * keys.length)];
     const plant = MASTER_DB[qId];
 
