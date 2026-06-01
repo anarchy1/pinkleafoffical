@@ -16,9 +16,19 @@
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
+    <!-- Pink Leaf layer system: z-index tokens + overlay container.
+         MUST load BEFORE pinkleaf-enhancements.css so the tokens
+         (--pl-z-overlay-lang, etc.) resolve. -->
+    <link rel="stylesheet" href="/assets/pinkleaf-layer-system.css?v=20260529">
+
     <!-- Pink Leaf enhancements: collision fix, lazy images, lang toggle, price concierge -->
     <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css?v=20260528b">
     <script defer src="/assets/pinkleaf-enhancements.js?v=20260528b"></script>
+
+    <!-- Pink Leaf overlay manager: re-parents all persistent
+         controls (WhatsApp FAB, lang toggle, accessibility,
+         carousel arrows) into a single #pl-overlay layer. -->
+    <script defer src="/assets/pinkleaf-overlay.js?v=20260529"></script>
 
     <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
@@ -2449,6 +2459,34 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-vault" class="hidden max-w-7xl mx-auto p-6">
+        <!-- Temporary under-construction banner -->
+        <div id="vault-construction-banner" style="
+            max-width:640px;
+            margin:0 auto 32px;
+            padding:18px 28px;
+            text-align:center;
+            background:linear-gradient(135deg, rgba(252,228,236,0.55), rgba(250,240,245,0.75));
+            border:1px solid rgba(212,165,178,0.4);
+            border-radius:40px;
+            backdrop-filter:blur(8px);
+            -webkit-backdrop-filter:blur(8px);
+            box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 4px 18px rgba(212,165,178,0.10);
+            font-family:'Heebo','Inter',sans-serif;">
+            <p class="serif" style="
+                font-size:11px;
+                letter-spacing:3px;
+                color:var(--pink);
+                opacity:0.85;
+                margin:0 0 6px;
+                text-transform:uppercase;">🌿 הארכיון מתעדכן · Archive Updating 🌿</p>
+            <p style="
+                font-size:13px;
+                color:var(--text);
+                opacity:0.7;
+                margin:0;
+                line-height:1.5;">נחזור בקרוב · Coming back soon</p>
+        </div>
+
         <div class="flex justify-center flex-wrap gap-8 mb-16">
             <button onclick="renderVault('Alocasia')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">ALOCASIA</button>
             <button onclick="renderVault('Monstera')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">MONSTERA</button>
@@ -2679,7 +2717,109 @@ body.dark-mode .scoreboard-item.current {
     "PV86":{"name":"Alocasia nebula albo var","family":"Alocasia"},
     "PV87":{"name":"Alocasia Maharani variegated","family":"Alocasia"},
     "PV88":{"name":"Caladium lindenii var","family":"Others"},
-    "PV89":{"name":"Alocasia melo white var","family":"Alocasia"}
+    "PV89":{"name":"Alocasia melo white var","family":"Alocasia"},
+    "PV109":{"name":"Aglaonema Very Red Valentine","family":"Others"},
+    "PV110":{"name":"Aglaonema Geely Red","family":"Others"},
+    "PV111":{"name":"Aglaonema Super Whiter","family":"Others"},
+    "PV112":{"name":"Alocasia Azlanii Aurea Variegated","family":"Alocasia"},
+    "PV113":{"name":"Alocasia Bambino Pink Variegated","family":"Alocasia"},
+    "PV114":{"name":"Alocasia Black Satin Pink Vein","family":"Alocasia"},
+    "PV115":{"name":"Alocasia Brancifolia Albo Variegated","family":"Alocasia"},
+    "PV116":{"name":"Alocasia Calidora Albo Variegated","family":"Alocasia"},
+    "PV117":{"name":"Alocasia Chantrieri Pink Variegated","family":"Alocasia"},
+    "PV118":{"name":"Alocasia Cucullata Albo Variegated","family":"Alocasia"},
+    "PV119":{"name":"Alocasia Cuprea Aurea Variegated Latte","family":"Alocasia"},
+    "PV120":{"name":"Alocasia Cuprea Red Secret Mint Variegated","family":"Alocasia"},
+    "PV121":{"name":"Alocasia Dragon Breath Albo Variegated","family":"Alocasia"},
+    "PV122":{"name":"Alocasia Dragon Breath Aurea Variegated","family":"Alocasia"},
+    "PV123":{"name":"Alocasia Dragon Scale Aurea Variegated","family":"Alocasia"},
+    "PV124":{"name":"Alocasia Dragon Scale Variegated Tri-Color","family":"Alocasia"},
+    "PV125":{"name":"Alocasia Emerald Tide","family":"Alocasia"},
+    "PV126":{"name":"Alocasia Heart Balloon Pink Variegated","family":"Alocasia"},
+    "PV127":{"name":"Alocasia Heterophylla Metallic Blue Albo Variegated","family":"Alocasia"},
+    "PV128":{"name":"Alocasia Heterophylla Metallic Blue Aurea Variegated","family":"Alocasia"},
+    "PV129":{"name":"Alocasia Jacklyn","family":"Alocasia"},
+    "PV130":{"name":"Alocasia Jacklyn Mystic Variegated","family":"Alocasia"},
+    "PV131":{"name":"Alocasia Lauterbachiana Aurea Variegated","family":"Alocasia"},
+    "PV132":{"name":"Alocasia Loco","family":"Alocasia"},
+    "PV133":{"name":"Alocasia Longiloba Narrow Variegated","family":"Alocasia"},
+    "PV134":{"name":"Alocasia Longiloba Suhirmaniana Aurea Variegated","family":"Alocasia"},
+    "PV135":{"name":"Alocasia Mandala","family":"Alocasia"},
+    "PV136":{"name":"Alocasia Melo Aurea Variegated","family":"Alocasia"},
+    "PV137":{"name":"Alocasia Ninja Aurea Variegated","family":"Alocasia"},
+    "PV138":{"name":"Alocasia Ninja Mint Variegated","family":"Alocasia"},
+    "PV139":{"name":"Alocasia Nobilis Aurea Variegated","family":"Alocasia"},
+    "PV140":{"name":"Alocasia Odora Silver Aurea Variegated","family":"Alocasia"},
+    "PV141":{"name":"Alocasia Pink Dragon Mint Variegated","family":"Alocasia"},
+    "PV142":{"name":"Alocasia Plumbea Flying Squid","family":"Alocasia"},
+    "PV143":{"name":"Alocasia Polly Ghost Mint Variegated","family":"Alocasia"},
+    "PV144":{"name":"Alocasia Polly Shattered Ruby Variegated","family":"Alocasia"},
+    "PV145":{"name":"Alocasia Regal Shields Aurea Variegated","family":"Alocasia"},
+    "PV146":{"name":"Alocasia Sarian Aurea Variegated","family":"Alocasia"},
+    "PV147":{"name":"Alocasia Scalprum Aurea Variegated","family":"Alocasia"},
+    "PV148":{"name":"Alocasia Sedenii Aurea Variegated","family":"Alocasia"},
+    "PV149":{"name":"Alocasia Shock Treatment Aurea Variegated","family":"Alocasia"},
+    "PV150":{"name":"Alocasia Simpo Aurea Variegated","family":"Alocasia"},
+    "PV151":{"name":"Alocasia Venom","family":"Alocasia"},
+    "PV152":{"name":"Alocasia Watsoniana Doff Albo Variegated","family":"Alocasia"},
+    "PV153":{"name":"Alocasia Watsoniana Glossy Aurea Variegated","family":"Alocasia"},
+    "PV154":{"name":"Alocasia Watsoniana Glossy Pink Variegated","family":"Alocasia"},
+    "PV155":{"name":"Alocasia Wentii Aurea Variegated Latte","family":"Alocasia"},
+    "PV156":{"name":"Alocasia Wentii Pink Variegated","family":"Alocasia"},
+    "PV157":{"name":"Alocasia Yucatan Princess Albo Variegated","family":"Alocasia"},
+    "PV158":{"name":"Alocasia Yucatan Princess Pink Variegated","family":"Alocasia"},
+    "PV159":{"name":"Anthurium Ace of Spades","family":"Others"},
+    "PV160":{"name":"Anthurium Dark Phoenix Mint Variegated","family":"Others"},
+    "PV161":{"name":"Anthurium Forgetii Variegated","family":"Others"},
+    "PV162":{"name":"Anthurium Luxurians","family":"Others"},
+    "PV163":{"name":"Anthurium Pallidiflorum","family":"Others"},
+    "PV164":{"name":"Anthurium Queen Of Hearts","family":"Others"},
+    "PV165":{"name":"Anthurium Regale","family":"Others"},
+    "PV166":{"name":"Anthurium Veitchii","family":"Others"},
+    "PV167":{"name":"Anthurium Vittarifolium Variegated","family":"Others"},
+    "PV168":{"name":"Anthurium Warocqueanum","family":"Others"},
+    "PV169":{"name":"Anthurium Sp Napo","family":"Others"},
+    "PV170":{"name":"Caladium The Only One In the Universe","family":"Others"},
+    "PV171":{"name":"Colocasia Bastet Queen","family":"Others"},
+    "PV172":{"name":"Epipremnum Giganteum Variegated","family":"Others"},
+    "PV173":{"name":"Homalomena Rubescens Aurea Variegated","family":"Others"},
+    "PV174":{"name":"Homalomena Rubescens Mint Variegated","family":"Others"},
+    "PV175":{"name":"Homalomena Occulta Variegated","family":"Others"},
+    "PV176":{"name":"Monstera Albo","family":"Monstera"},
+    "PV177":{"name":"Monstera Burle Marx Flame","family":"Monstera"},
+    "PV178":{"name":"Monstera Deliciosa Ocean Lava","family":"Monstera"},
+    "PV179":{"name":"Monstera Deliciosa Super Golden","family":"Monstera"},
+    "PV180":{"name":"Monstera Devil Monster","family":"Monstera"},
+    "PV181":{"name":"Monstera Electro Light","family":"Monstera"},
+    "PV182":{"name":"Monstera Green Coral","family":"Monstera"},
+    "PV183":{"name":"Monstera Jungle Mint","family":"Monstera"},
+    "PV184":{"name":"Monstera Lemon Lime Full Variegation","family":"Monstera"},
+    "PV185":{"name":"Monstera White Lava Ghost","family":"Monstera"},
+    "PV186":{"name":"Philodendron Callosum","family":"Philodendron"},
+    "PV187":{"name":"Philodendron Gigas","family":"Philodendron"},
+    "PV188":{"name":"Philodendron Gloriosum Variegated Tri-Color","family":"Philodendron"},
+    "PV189":{"name":"Philodendron Green Congo","family":"Philodendron"},
+    "PV190":{"name":"Philodendron Green Lemon","family":"Philodendron"},
+    "PV191":{"name":"Philodendron Imperial Red Variegated","family":"Philodendron"},
+    "PV192":{"name":"Philodendron Jungle Fever Variegated","family":"Philodendron"},
+    "PV193":{"name":"Philodendron Narrow Variegated","family":"Philodendron"},
+    "PV194":{"name":"Philodendron Orange Princess Variegated","family":"Philodendron"},
+    "PV195":{"name":"Philodendron Pinnatifidum Olympiad Albo Variegated","family":"Philodendron"},
+    "PV196":{"name":"Philodendron Pink Princess","family":"Philodendron"},
+    "PV197":{"name":"Philodendron Polypodioides","family":"Philodendron"},
+    "PV198":{"name":"Philodendron Radiatum Variegated","family":"Philodendron"},
+    "PV199":{"name":"Philodendron Red Congo Variegated","family":"Philodendron"},
+    "PV200":{"name":"Philodendron Red Heart Variegated","family":"Philodendron"},
+    "PV201":{"name":"Philodendron Rojo Congo","family":"Philodendron"},
+    "PV202":{"name":"Philodendron Spiritus Sancti","family":"Philodendron"},
+    "PV203":{"name":"Philodendron Strawberry Milkshake","family":"Philodendron"},
+    "PV204":{"name":"Philodendron Super Atom Variegated","family":"Philodendron"},
+    "PV205":{"name":"Philodendron Sunspot","family":"Philodendron"},
+    "PV206":{"name":"Philodendron Verrucosum Mint Variegated","family":"Philodendron"},
+    "PV207":{"name":"Philodendron Whipple Way","family":"Philodendron"},
+    "PV208":{"name":"Philodendron White Knight Aurea Variegated","family":"Philodendron"},
+    "PV209":{"name":"Philodendron White Princess Aurea Variegated","family":"Philodendron"},
+    "PV210":{"name":"Philodendron White Wizard Aurea Variegated","family":"Philodendron"}
 };
 
 

@@ -115,11 +115,14 @@ picture.pl-picture {
 }
 
 /* ─── 4. LANGUAGE TOGGLE BUTTON ─────────────────────────── */
+/* z-index is provided by pinkleaf-layer-system.css once the
+   button is adopted into #pl-overlay. The fallback value
+   here only applies if the layer system fails to load. */
 .pl-lang-toggle {
     position: fixed;
     top: 16px;
     left: 16px;
-    z-index: 9990;
+    z-index: var(--pl-z-overlay-lang, 9990);
     display: inline-flex;
     align-items: center;
     gap: 6px;
