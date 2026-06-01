@@ -2083,7 +2083,7 @@ body.dark-mode .scoreboard-item.current {
             }
             /* SWAP sides on mobile: scoreboard → left (bigger), registry → right (compact) */
             body.on-lab-page .lab-registry-float  { left: calc(100vw - 108px) !important; right: auto !important; width: 100px !important; }
-            body.on-lab-page .lab-scoreboard-float { display: none !important; }
+            body.on-lab-page .lab-scoreboard-float { right: auto !important; left: 8px !important; width: 130px !important; height: 220px !important; top: 0 !important; }
             /* keep text readable */
             body.on-lab-page .lab-registry-float .registry-header-small,
             body.on-lab-page .lab-scoreboard-float .scoreboard-header-small { font-size: 9px !important; }
@@ -2119,9 +2119,7 @@ body.dark-mode .scoreboard-item.current {
         .lab-scoreboard-float { right: 10px !important; height: 200px !important; }
 
         body.on-lab-page .lab-registry-float  { display: flex !important; flex-direction: column !important; }
-        @media (min-width: 768px) {
-            body.on-lab-page .lab-scoreboard-float { display: flex !important; flex-direction: column !important; }
-        }
+        body.on-lab-page .lab-scoreboard-float { display: flex !important; flex-direction: column !important; }
 
         body.dark-mode .lab-registry-float,
         body.dark-mode .lab-scoreboard-float  { background: rgba(15,10,14,0.35); border-color: rgba(212,165,178,0.12); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
