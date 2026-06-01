@@ -16,19 +16,9 @@
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-    <!-- Pink Leaf layer system: z-index tokens + overlay container.
-         MUST load BEFORE pinkleaf-enhancements.css so the tokens
-         (--pl-z-overlay-lang, etc.) resolve. -->
-    <link rel="stylesheet" href="/assets/pinkleaf-layer-system.css?v=20260529">
-
     <!-- Pink Leaf enhancements: collision fix, lazy images, lang toggle, price concierge -->
     <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css?v=20260528b">
     <script defer src="/assets/pinkleaf-enhancements.js?v=20260528b"></script>
-
-    <!-- Pink Leaf overlay manager: re-parents all persistent
-         controls (WhatsApp FAB, lang toggle, accessibility,
-         carousel arrows) into a single #pl-overlay layer. -->
-    <script defer src="/assets/pinkleaf-overlay.js?v=20260529"></script>
 
     <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
@@ -2459,34 +2449,6 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-vault" class="hidden max-w-7xl mx-auto p-6">
-        <!-- Temporary under-construction banner -->
-        <div id="vault-construction-banner" style="
-            max-width:640px;
-            margin:0 auto 32px;
-            padding:18px 28px;
-            text-align:center;
-            background:linear-gradient(135deg, rgba(252,228,236,0.55), rgba(250,240,245,0.75));
-            border:1px solid rgba(212,165,178,0.4);
-            border-radius:40px;
-            backdrop-filter:blur(8px);
-            -webkit-backdrop-filter:blur(8px);
-            box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 4px 18px rgba(212,165,178,0.10);
-            font-family:'Heebo','Inter',sans-serif;">
-            <p class="serif" style="
-                font-size:11px;
-                letter-spacing:3px;
-                color:var(--pink);
-                opacity:0.85;
-                margin:0 0 6px;
-                text-transform:uppercase;">🌿 הארכיון מתעדכן · Archive Updating 🌿</p>
-            <p style="
-                font-size:13px;
-                color:var(--text);
-                opacity:0.7;
-                margin:0;
-                line-height:1.5;">נחזור בקרוב · Coming back soon</p>
-        </div>
-
         <div class="flex justify-center flex-wrap gap-8 mb-16">
             <button onclick="renderVault('Alocasia')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">ALOCASIA</button>
             <button onclick="renderVault('Monstera')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">MONSTERA</button>
@@ -3316,12 +3278,7 @@ body.dark-mode .scoreboard-item.current {
         }
 
         function startLab(){
-    // Quiz pool: PV1-PV89 only — the original verified set.
-    // The archive vault still reads the full 191-entry MASTER_DB,
-    // but only this pool drives the quiz. familyPool below derives
-    // from the same keys array, so distractor answers inherit the
-    // filter automatically.
-    const keys = Object.keys(MASTER_DB).filter(k => parseInt(k.replace('PV', '')) <= 89);
+    const keys = Object.keys(MASTER_DB);
     const qId = keys[Math.floor(Math.random() * keys.length)];
     const plant = MASTER_DB[qId];
 
