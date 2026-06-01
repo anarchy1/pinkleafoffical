@@ -3354,8 +3354,8 @@ body.dark-mode .scoreboard-item.current {
         ${renderStreakBar()}
         <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
         ${loginHint}
-        <div class="flex flex-col gap-4">
-            ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
+        <div style="display:flex; flex-direction:column; gap:1rem; width:100%;">
+            ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})" style="width:100%;">${c}</button>`).join('')}
         </div>`;
 }
 
