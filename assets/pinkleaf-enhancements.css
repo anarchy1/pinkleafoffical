@@ -153,30 +153,3 @@ picture.pl-picture {
         padding: 6px 11px;
     }
 }
-
-/* ─── 5. LAB SCOREBOARD MOBILE POSITION ─────────────────
-   index.html's mobile rule
-       body.on-lab-page .lab-scoreboard-float { top:0; left:8px;
-                                                width:130px;
-                                                height:220px; }
-   anchors the leaderboard to the top-left corner — which on
-   a narrow phone screen sits on top of the centred lab game
-   card and "bleeds through" along its left edge.
-
-   We move it to the bottom-left and shrink it so it stays
-   visible (per the user's "don't hide it entirely" rule)
-   but no longer overlaps the upper game card area where
-   the player's attention focuses. ID selector beats the
-   .class rule in index.html on specificity, so this
-   override sticks without escalation. */
-@media (max-width: 768px) {
-    body.on-lab-page #scoreboard-float {
-        top: auto !important;
-        bottom: 96px !important;            /* clear of the cookie banner + WhatsApp FAB */
-        left: 8px !important;
-        right: auto !important;
-        width: 108px !important;
-        height: auto !important;
-        max-height: 150px !important;
-    }
-}
