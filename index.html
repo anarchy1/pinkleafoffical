@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
 
     <!-- Primary SEO -->
     <title>Pink Leaf | אנציקלופדיה בוטנית · Rare Aroid Plants Israel</title>
@@ -16,19 +13,9 @@
     <link rel="canonical" href="https://pinkleaf.co.il/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-    <!-- Pink Leaf layer system: z-index tokens + overlay container.
-         MUST load BEFORE pinkleaf-enhancements.css so the tokens
-         (--pl-z-overlay-lang, etc.) resolve. -->
-    <link rel="stylesheet" href="/assets/pinkleaf-layer-system.css?v=20260529">
-
     <!-- Pink Leaf enhancements: collision fix, lazy images, lang toggle, price concierge -->
-    <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css?v=20260528b">
-    <script defer src="/assets/pinkleaf-enhancements.js?v=20260528b"></script>
-
-    <!-- Pink Leaf overlay manager: re-parents all persistent
-         controls (WhatsApp FAB, lang toggle, accessibility,
-         carousel arrows) into a single #pl-overlay layer. -->
-    <script defer src="/assets/pinkleaf-overlay.js?v=20260529"></script>
+    <link rel="stylesheet" href="/assets/pinkleaf-enhancements.css?v=20260419">
+    <script defer src="/assets/pinkleaf-enhancements.js?v=20260419"></script>
 
     <!-- Single bilingual page — language switched client-side, not via separate URLs -->
     <link rel="alternate" hreflang="x-default" href="https://pinkleaf.co.il/">
@@ -400,14 +387,14 @@
             --pink: #d4a5b2; 
             --mellow-pink: rgba(212, 165, 178, 0.4); 
             --border: rgba(212, 165, 178, 0.3); 
-            --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5);
+            --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5); 
         }
-        body.dark-mode {
-            --bg: #111111;
-            --text: #f0f0f0;
-            --mellow-pink: rgba(212, 165, 178, 0.18);
-            --border: rgba(212, 165, 178, 0.3);
-            --glow: 0 0 65px 20px rgba(212, 165, 178, 0.4);
+        body.dark-mode { 
+            --bg: #111111; 
+            --text: #f0f0f0; 
+            --mellow-pink: rgba(212, 165, 178, 0.18); 
+            --border: rgba(212, 165, 178, 0.3); 
+            --glow: 0 0 65px 20px rgba(212, 165, 178, 0.4); 
         }
         /* Force all text elements to inherit the light color in dark mode */
         body.dark-mode,
@@ -799,24 +786,21 @@
         .serif { font-family: 'Cinzel', serif; }
         
         /* Z-INDEX HIERARCHY - TOP RULER HIGHEST */
-        .top-ruler {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 10px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 10px;
-            letter-spacing: 4px;
-            background: var(--bg);
-            z-index: 1000000;
+        .top-ruler { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            padding: 10px 25px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 10px; 
+            letter-spacing: 4px; 
+            background: var(--bg); 
+            z-index: 9999; 
             backdrop-filter: blur(10px);
             border-bottom: none;
-            transform: translate3d(0,0,0);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
         }
         .lang-toggle-btn {
             border: 1px solid var(--border);
@@ -914,16 +898,16 @@
             position: relative;
             width: 320px;
             height: 460px;
-            transform-style: preserve-3d;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+            transform-style: preserve-3d; 
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1); 
         }
-        .store-card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            transition: opacity 0.4s ease, border 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 40px;
+        .store-card { 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            backface-visibility: hidden; 
+            transition: 0.8s ease; 
+            border-radius: 40px; 
             background: linear-gradient(160deg, rgba(255,255,255,0.98) 0%, rgba(253,250,252,0.95) 100%);
             border: 1px solid var(--border); 
             display: flex; 
@@ -967,28 +951,14 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 1000001;
-            background: transparent;
+            z-index: 1000;
+            background: none;
             border: none;
-        }
-        /* Container that wraps wheel + arrows, capped at wheel-width + arrow buffer.
-           This way arrows at left:0/right:0 always sit just outside the wheel edges,
-           regardless of viewport width. */
-        .store-frame {
-            position: relative;
-            max-width: 440px;
-            margin: 0 auto;
-        }
-        .arrow-pos-left { left: 0 !important; }
-        .arrow-pos-right { right: 0 !important; }
-        @media (max-width: 480px) {
-            .side-arrow { width: 44px; height: 44px; }
-            .store-frame { max-width: 408px; }
         }
         .arrow-shape {
             width: 30px;
@@ -1177,10 +1147,8 @@
             position: fixed;
             right: 0;
             top: 50%;
-            transform: translateY(-50%) translate3d(0,0,0);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            z-index: 1000000;
+            transform: translateY(-50%);
+            z-index: 10001;
             width: 44px;
             height: 52px;
             border-radius: 8px 0 0 8px;
@@ -2449,44 +2417,15 @@ body.dark-mode .scoreboard-item.current {
         </div>
     </main>
 
-    <main id="page-store" class="hidden max-w-4xl mx-auto px-4 pb-20">
+    <main id="page-store" class="hidden max-w-4xl mx-auto relative px-4 pb-20">
         <!-- filter hidden — all items available -->
-        <div class="store-frame">
-            <button class="side-arrow arrow-pos-left" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
-            <div id="store-grid"></div>
-            <button class="side-arrow arrow-pos-right" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
-        </div>
+        
+        <button class="side-arrow -left-4 sm:-left-8" onclick="spin(1)"><div class="arrow-shape arrow-left"></div></button>
+        <div id="store-grid"></div>
+        <button class="side-arrow -right-4 sm:-right-8" onclick="spin(-1)"><div class="arrow-shape arrow-right"></div></button>
     </main>
 
     <main id="page-vault" class="hidden max-w-7xl mx-auto p-6">
-        <!-- Temporary under-construction banner -->
-        <div id="vault-construction-banner" style="
-            max-width:640px;
-            margin:0 auto 32px;
-            padding:18px 28px;
-            text-align:center;
-            background:linear-gradient(135deg, rgba(252,228,236,0.55), rgba(250,240,245,0.75));
-            border:1px solid rgba(212,165,178,0.4);
-            border-radius:40px;
-            backdrop-filter:blur(8px);
-            -webkit-backdrop-filter:blur(8px);
-            box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 4px 18px rgba(212,165,178,0.10);
-            font-family:'Heebo','Inter',sans-serif;">
-            <p class="serif" style="
-                font-size:11px;
-                letter-spacing:3px;
-                color:var(--pink);
-                opacity:0.85;
-                margin:0 0 6px;
-                text-transform:uppercase;">🌿 הארכיון מתעדכן · Archive Updating 🌿</p>
-            <p style="
-                font-size:13px;
-                color:var(--text);
-                opacity:0.7;
-                margin:0;
-                line-height:1.5;">נחזור בקרוב · Coming back soon</p>
-        </div>
-
         <div class="flex justify-center flex-wrap gap-8 mb-16">
             <button onclick="renderVault('Alocasia')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">ALOCASIA</button>
             <button onclick="renderVault('Monstera')" class="serif text-[11px] opacity-40 hover:opacity-100 tracking-[4px]">MONSTERA</button>
@@ -2717,109 +2656,7 @@ body.dark-mode .scoreboard-item.current {
     "PV86":{"name":"Alocasia nebula albo var","family":"Alocasia"},
     "PV87":{"name":"Alocasia Maharani variegated","family":"Alocasia"},
     "PV88":{"name":"Caladium lindenii var","family":"Others"},
-    "PV89":{"name":"Alocasia melo white var","family":"Alocasia"},
-    "PV109":{"name":"Aglaonema Very Red Valentine","family":"Others"},
-    "PV110":{"name":"Aglaonema Geely Red","family":"Others"},
-    "PV111":{"name":"Aglaonema Super Whiter","family":"Others"},
-    "PV112":{"name":"Alocasia Azlanii Aurea Variegated","family":"Alocasia"},
-    "PV113":{"name":"Alocasia Bambino Pink Variegated","family":"Alocasia"},
-    "PV114":{"name":"Alocasia Black Satin Pink Vein","family":"Alocasia"},
-    "PV115":{"name":"Alocasia Brancifolia Albo Variegated","family":"Alocasia"},
-    "PV116":{"name":"Alocasia Calidora Albo Variegated","family":"Alocasia"},
-    "PV117":{"name":"Alocasia Chantrieri Pink Variegated","family":"Alocasia"},
-    "PV118":{"name":"Alocasia Cucullata Albo Variegated","family":"Alocasia"},
-    "PV119":{"name":"Alocasia Cuprea Aurea Variegated Latte","family":"Alocasia"},
-    "PV120":{"name":"Alocasia Cuprea Red Secret Mint Variegated","family":"Alocasia"},
-    "PV121":{"name":"Alocasia Dragon Breath Albo Variegated","family":"Alocasia"},
-    "PV122":{"name":"Alocasia Dragon Breath Aurea Variegated","family":"Alocasia"},
-    "PV123":{"name":"Alocasia Dragon Scale Aurea Variegated","family":"Alocasia"},
-    "PV124":{"name":"Alocasia Dragon Scale Variegated Tri-Color","family":"Alocasia"},
-    "PV125":{"name":"Alocasia Emerald Tide","family":"Alocasia"},
-    "PV126":{"name":"Alocasia Heart Balloon Pink Variegated","family":"Alocasia"},
-    "PV127":{"name":"Alocasia Heterophylla Metallic Blue Albo Variegated","family":"Alocasia"},
-    "PV128":{"name":"Alocasia Heterophylla Metallic Blue Aurea Variegated","family":"Alocasia"},
-    "PV129":{"name":"Alocasia Jacklyn","family":"Alocasia"},
-    "PV130":{"name":"Alocasia Jacklyn Mystic Variegated","family":"Alocasia"},
-    "PV131":{"name":"Alocasia Lauterbachiana Aurea Variegated","family":"Alocasia"},
-    "PV132":{"name":"Alocasia Loco","family":"Alocasia"},
-    "PV133":{"name":"Alocasia Longiloba Narrow Variegated","family":"Alocasia"},
-    "PV134":{"name":"Alocasia Longiloba Suhirmaniana Aurea Variegated","family":"Alocasia"},
-    "PV135":{"name":"Alocasia Mandala","family":"Alocasia"},
-    "PV136":{"name":"Alocasia Melo Aurea Variegated","family":"Alocasia"},
-    "PV137":{"name":"Alocasia Ninja Aurea Variegated","family":"Alocasia"},
-    "PV138":{"name":"Alocasia Ninja Mint Variegated","family":"Alocasia"},
-    "PV139":{"name":"Alocasia Nobilis Aurea Variegated","family":"Alocasia"},
-    "PV140":{"name":"Alocasia Odora Silver Aurea Variegated","family":"Alocasia"},
-    "PV141":{"name":"Alocasia Pink Dragon Mint Variegated","family":"Alocasia"},
-    "PV142":{"name":"Alocasia Plumbea Flying Squid","family":"Alocasia"},
-    "PV143":{"name":"Alocasia Polly Ghost Mint Variegated","family":"Alocasia"},
-    "PV144":{"name":"Alocasia Polly Shattered Ruby Variegated","family":"Alocasia"},
-    "PV145":{"name":"Alocasia Regal Shields Aurea Variegated","family":"Alocasia"},
-    "PV146":{"name":"Alocasia Sarian Aurea Variegated","family":"Alocasia"},
-    "PV147":{"name":"Alocasia Scalprum Aurea Variegated","family":"Alocasia"},
-    "PV148":{"name":"Alocasia Sedenii Aurea Variegated","family":"Alocasia"},
-    "PV149":{"name":"Alocasia Shock Treatment Aurea Variegated","family":"Alocasia"},
-    "PV150":{"name":"Alocasia Simpo Aurea Variegated","family":"Alocasia"},
-    "PV151":{"name":"Alocasia Venom","family":"Alocasia"},
-    "PV152":{"name":"Alocasia Watsoniana Doff Albo Variegated","family":"Alocasia"},
-    "PV153":{"name":"Alocasia Watsoniana Glossy Aurea Variegated","family":"Alocasia"},
-    "PV154":{"name":"Alocasia Watsoniana Glossy Pink Variegated","family":"Alocasia"},
-    "PV155":{"name":"Alocasia Wentii Aurea Variegated Latte","family":"Alocasia"},
-    "PV156":{"name":"Alocasia Wentii Pink Variegated","family":"Alocasia"},
-    "PV157":{"name":"Alocasia Yucatan Princess Albo Variegated","family":"Alocasia"},
-    "PV158":{"name":"Alocasia Yucatan Princess Pink Variegated","family":"Alocasia"},
-    "PV159":{"name":"Anthurium Ace of Spades","family":"Others"},
-    "PV160":{"name":"Anthurium Dark Phoenix Mint Variegated","family":"Others"},
-    "PV161":{"name":"Anthurium Forgetii Variegated","family":"Others"},
-    "PV162":{"name":"Anthurium Luxurians","family":"Others"},
-    "PV163":{"name":"Anthurium Pallidiflorum","family":"Others"},
-    "PV164":{"name":"Anthurium Queen Of Hearts","family":"Others"},
-    "PV165":{"name":"Anthurium Regale","family":"Others"},
-    "PV166":{"name":"Anthurium Veitchii","family":"Others"},
-    "PV167":{"name":"Anthurium Vittarifolium Variegated","family":"Others"},
-    "PV168":{"name":"Anthurium Warocqueanum","family":"Others"},
-    "PV169":{"name":"Anthurium Sp Napo","family":"Others"},
-    "PV170":{"name":"Caladium The Only One In the Universe","family":"Others"},
-    "PV171":{"name":"Colocasia Bastet Queen","family":"Others"},
-    "PV172":{"name":"Epipremnum Giganteum Variegated","family":"Others"},
-    "PV173":{"name":"Homalomena Rubescens Aurea Variegated","family":"Others"},
-    "PV174":{"name":"Homalomena Rubescens Mint Variegated","family":"Others"},
-    "PV175":{"name":"Homalomena Occulta Variegated","family":"Others"},
-    "PV176":{"name":"Monstera Albo","family":"Monstera"},
-    "PV177":{"name":"Monstera Burle Marx Flame","family":"Monstera"},
-    "PV178":{"name":"Monstera Deliciosa Ocean Lava","family":"Monstera"},
-    "PV179":{"name":"Monstera Deliciosa Super Golden","family":"Monstera"},
-    "PV180":{"name":"Monstera Devil Monster","family":"Monstera"},
-    "PV181":{"name":"Monstera Electro Light","family":"Monstera"},
-    "PV182":{"name":"Monstera Green Coral","family":"Monstera"},
-    "PV183":{"name":"Monstera Jungle Mint","family":"Monstera"},
-    "PV184":{"name":"Monstera Lemon Lime Full Variegation","family":"Monstera"},
-    "PV185":{"name":"Monstera White Lava Ghost","family":"Monstera"},
-    "PV186":{"name":"Philodendron Callosum","family":"Philodendron"},
-    "PV187":{"name":"Philodendron Gigas","family":"Philodendron"},
-    "PV188":{"name":"Philodendron Gloriosum Variegated Tri-Color","family":"Philodendron"},
-    "PV189":{"name":"Philodendron Green Congo","family":"Philodendron"},
-    "PV190":{"name":"Philodendron Green Lemon","family":"Philodendron"},
-    "PV191":{"name":"Philodendron Imperial Red Variegated","family":"Philodendron"},
-    "PV192":{"name":"Philodendron Jungle Fever Variegated","family":"Philodendron"},
-    "PV193":{"name":"Philodendron Narrow Variegated","family":"Philodendron"},
-    "PV194":{"name":"Philodendron Orange Princess Variegated","family":"Philodendron"},
-    "PV195":{"name":"Philodendron Pinnatifidum Olympiad Albo Variegated","family":"Philodendron"},
-    "PV196":{"name":"Philodendron Pink Princess","family":"Philodendron"},
-    "PV197":{"name":"Philodendron Polypodioides","family":"Philodendron"},
-    "PV198":{"name":"Philodendron Radiatum Variegated","family":"Philodendron"},
-    "PV199":{"name":"Philodendron Red Congo Variegated","family":"Philodendron"},
-    "PV200":{"name":"Philodendron Red Heart Variegated","family":"Philodendron"},
-    "PV201":{"name":"Philodendron Rojo Congo","family":"Philodendron"},
-    "PV202":{"name":"Philodendron Spiritus Sancti","family":"Philodendron"},
-    "PV203":{"name":"Philodendron Strawberry Milkshake","family":"Philodendron"},
-    "PV204":{"name":"Philodendron Super Atom Variegated","family":"Philodendron"},
-    "PV205":{"name":"Philodendron Sunspot","family":"Philodendron"},
-    "PV206":{"name":"Philodendron Verrucosum Mint Variegated","family":"Philodendron"},
-    "PV207":{"name":"Philodendron Whipple Way","family":"Philodendron"},
-    "PV208":{"name":"Philodendron White Knight Aurea Variegated","family":"Philodendron"},
-    "PV209":{"name":"Philodendron White Princess Aurea Variegated","family":"Philodendron"},
-    "PV210":{"name":"Philodendron White Wizard Aurea Variegated","family":"Philodendron"}
+    "PV89":{"name":"Alocasia melo white var","family":"Alocasia"}
 };
 
 
@@ -2837,22 +2674,10 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming" },
-            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming" },
-            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming" },
+            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "available", openingSale: true },
+            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "available" },
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
-            { id: "PV87", name: "Alocasia Maharani Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV40", name: "Alocasia Ninja Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV18", name: "Alocasia Wentii Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV89", name: "Alocasia Melo Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV44", name: "Alocasia Pink Dragon Stardust Mint", availability: ["Stardust Mint"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV78", name: "Alocasia Simpo Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV35", name: "Alocasia Jacklyn Variegated", availability: ["Variegated"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV37", name: "Alocasia Silver Dragon Aurea", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV15", name: "Alocasia Dragon Scale Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV23", name: "Alocasia Black Velvet Aurea", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV14", name: "Alocasia Dragon Scale Mint", availability: ["Mint"], light: "70%", humidity: "85%", status: "available" },
         ];
 
         let labFloatersHidden = false;
@@ -3150,7 +2975,7 @@ body.dark-mode .scoreboard-item.current {
                 filteredItems = ALL_STORE_ITEMS.filter(item => item.status === 'coming');
             }
             
-            const ang = 360 / filteredItems.length;
+            const ang = 360 / filteredItems.length; 
             let h = `<div class="carousel-container"><div class="carousel-wheel" id="wheel">`;
             
             filteredItems.forEach((item, i)=>{ 
@@ -3214,32 +3039,18 @@ body.dark-mode .scoreboard-item.current {
             
             h += '</div></div>';
             document.getElementById('store-grid').innerHTML = h;
-            window.sLen = filteredItems.length;
-            window.sAng = ang;
+            window.sLen = filteredItems.length; 
+            window.sAng = ang; 
             rot = 0;
-            applyInitialCardVisibility();
         }
 
-        function spin(d){
-            rot += d * window.sAng;
+        function spin(d){ 
+            rot += d * window.sAng; 
             const wheel = document.getElementById('wheel');
-            if(wheel) wheel.style.transform = `rotateY(${rot}deg)`;
-            const cards = document.querySelectorAll('.store-card');
-            const act = (Math.round(-rot/window.sAng) % window.sLen + window.sLen) % window.sLen;
-            // Show only the focus card; everything else is hidden. Smooth cross-fade
-            // is provided by the existing 0.8s opacity transition on .store-card.
-            cards.forEach((c, i) => {
-                c.style.opacity = i === act ? '' : '0';
-                c.style.pointerEvents = i === act ? '' : 'none';
-                c.classList.toggle('card-focus', i === act);
-            });
-        }
-        function applyInitialCardVisibility() {
-            const cards = document.querySelectorAll('.store-card');
-            cards.forEach((c, i) => {
-                c.style.opacity = i === 0 ? '' : '0';
-                c.style.pointerEvents = i === 0 ? '' : 'none';
-            });
+            if(wheel) wheel.style.transform = `rotateY(${rot}deg)`; 
+            const cards = document.querySelectorAll('.store-card'); 
+            const act = (Math.round(-rot/window.sAng) % window.sLen + window.sLen) % window.sLen; 
+            cards.forEach((c,i) => c.classList.toggle('card-focus', i === act));
         }
 
         function renderVault(f){
@@ -3354,8 +3165,8 @@ body.dark-mode .scoreboard-item.current {
         ${renderStreakBar()}
         <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
         ${loginHint}
-        <div style="display:flex; flex-direction:column; gap:1rem; width:100%;">
-            ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})" style="width:100%;">${c}</button>`).join('')}
+        <div class="flex flex-col gap-4">
+            ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
         </div>`;
 }
 
@@ -3596,18 +3407,6 @@ function checkLab(choiceIndex) {
             "PV25_Mature Plant": 150,   // 150–350 depending on size/pot
             "PV48_Starter Plant": 50,
             "PV48_Mature Plant": 150,   // 150–350 depending on size/pot
-            "PV87_Albo": 880,
-            "PV84_Pink": 650,
-            "PV40_Albo": 550,
-            "PV18_Pink": 550,
-            "PV89_Albo": 450,
-            "PV44_Stardust Mint": 450,
-            "PV78_Albo": 450,
-            "PV35_Variegated": 450,
-            "PV37_Aurea": 450,
-            "PV15_Albo": 420,
-            "PV23_Aurea": 450,
-            "PV14_Mint": 150,
         };
 
         // Load from localStorage
@@ -4061,14 +3860,13 @@ function checkLab(choiceIndex) {
 
     <!-- WhatsApp FAB -->
     <a href="https://wa.me/972559116990" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-       style="position:fixed; bottom:24px; right:24px; z-index:1000000;
+       style="position:fixed; bottom:24px; right:24px; z-index:9999;
               width:54px; height:54px; border-radius:50%;
               background:#25D366; display:flex; align-items:center; justify-content:center;
               box-shadow:0 4px 16px rgba(37,211,102,0.45); transition:transform 0.2s, box-shadow 0.2s;
-              text-decoration:none;
-              transform:translate3d(0,0,0); -webkit-backface-visibility:hidden; backface-visibility:hidden;"
-       onmouseover="this.style.transform='scale(1.1) translate3d(0,0,0)';this.style.boxShadow='0 6px 24px rgba(37,211,102,0.6)'"
-       onmouseout="this.style.transform='translate3d(0,0,0)';this.style.boxShadow='0 4px 16px rgba(37,211,102,0.45)'">
+              text-decoration:none;"
+       onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 24px rgba(37,211,102,0.6)'"
+       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,0.45)'">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
