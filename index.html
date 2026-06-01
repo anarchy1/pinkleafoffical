@@ -2119,7 +2119,9 @@ body.dark-mode .scoreboard-item.current {
         .lab-scoreboard-float { right: 10px !important; height: 200px !important; }
 
         body.on-lab-page .lab-registry-float  { display: flex !important; flex-direction: column !important; }
-        body.on-lab-page .lab-scoreboard-float { display: flex !important; flex-direction: column !important; }
+        @media (min-width: 768px) {
+            body.on-lab-page .lab-scoreboard-float { display: flex !important; flex-direction: column !important; }
+        }
 
         body.dark-mode .lab-registry-float,
         body.dark-mode .lab-scoreboard-float  { background: rgba(15,10,14,0.35); border-color: rgba(212,165,178,0.12); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
