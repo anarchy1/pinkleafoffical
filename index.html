@@ -3316,14 +3316,12 @@ body.dark-mode .scoreboard-item.current {
         }
 
         function startLab(){
-    // Quiz scope: only the three families the user actually
-    // sells/grows. "Others" (Anthurium, Aglaonema, Caladium,
-    // Colocasia, Epipremnum, Homalomena) is excluded so the
-    // game stays focused on the storefront's plant range.
-    // familyPool below derives from the same keys array, so
-    // distractor answers automatically inherit the filter.
-    const QUIZ_FAMILIES = ['Alocasia', 'Philodendron', 'Monstera'];
-    const keys = Object.keys(MASTER_DB).filter(k => QUIZ_FAMILIES.includes(MASTER_DB[k].family));
+    // Quiz pool: PV1-PV89 only — the original verified set.
+    // The archive vault still reads the full 191-entry MASTER_DB,
+    // but only this pool drives the quiz. familyPool below derives
+    // from the same keys array, so distractor answers inherit the
+    // filter automatically.
+    const keys = Object.keys(MASTER_DB).filter(k => parseInt(k.replace('PV', '')) <= 89);
     const qId = keys[Math.floor(Math.random() * keys.length)];
     const plant = MASTER_DB[qId];
 
