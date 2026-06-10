@@ -999,38 +999,6 @@
             letter-spacing: 2px;
             font-size: 13px;
         }
-        /* Dismissible maintenance notice (remove when site work is done) */
-        .maint-banner {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            background: var(--mellow-pink, #f7e9ef);
-            color: var(--pink, #c2185b);
-            font-size: 12px;
-            letter-spacing: 0.4px;
-            line-height: 1.5;
-            padding: 9px 44px;
-            text-align: center;
-            border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
-            z-index: 60;
-        }
-        .maint-close {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: inherit;
-            font-size: 18px;
-            line-height: 1;
-            cursor: pointer;
-            opacity: 0.55;
-            padding: 4px 8px;
-        }
-        .maint-close:hover { opacity: 1; }
         .portal {
             border-radius: 50%;
             overflow: hidden;
@@ -2305,12 +2273,6 @@ body.dark-mode .scoreboard-item.current {
 <body>
     <!-- Skip to main content (WCAG 2.4.1 / IS 5568 required) -->
     <a class="skip-to-content" href="#page-intro">דלג לתוכן הראשי / Skip to main content</a>
-
-    <div id="maint-banner" class="maint-banner" role="status">
-        <span>🌿 We are upgrading our store right now, some areas may still change. Thanks for your patience! · אנחנו משדרגים את החנות, ייתכנו שינויים בימים הקרובים. תודה על הסבלנות!</span>
-        <button class="maint-close" aria-label="Dismiss" onclick="this.parentElement.style.display='none';try{localStorage.setItem('pl_maint_hidden','1')}catch(e){}">×</button>
-    </div>
-    <script>try{if(localStorage.getItem('pl_maint_hidden')==='1'){var _mb=document.getElementById('maint-banner');if(_mb)_mb.style.display='none';}}catch(e){}</script>
 
     <div class="top-ruler">
         <div class="serif">PINK LEAF // COLLECTION</div>
