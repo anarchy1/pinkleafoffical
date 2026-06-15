@@ -39,6 +39,24 @@ honestly do, plus external automation.
   a Make/Zapier endpoint URL. Scaffold once Kat provides it; do not build
   speculative dead UI.
 
+## Lab game plant database pipeline (set up 2026-06-15)
+- The lab quiz reads MASTER_DB in index.html. There are 210 plant photos in
+  plants/ but only 171 were in the game; 39 (PV90-PV111, PV159-PV175) had photos
+  but no name, so they were unused.
+- MASTER_DB is now AUTO-GENERATED. Source of truth: tools/plant-db.csv
+  (columns id,name,family). Generator: tools/build_plant_db.py rewrites the block
+  in index.html between the "// BEGIN MASTER_DB" and "// END MASTER_DB" markers.
+- To add or grow plants: drop plants/PVxxx.jpg, add a row "PVxxx,Real Name," to
+  the CSV (family auto-derives from the first word: Alocasia/Monstera/Philodendron
+  else Others), then run `python3 tools/build_plant_db.py`. Do not hand-edit
+  between the markers.
+- Safety: a row is only written if it has BOTH a real name AND a photo. Blank-name
+  rows are skipped, so the game never shows an empty or invented plant. The 39
+  blank rows are waiting on Kat to supply real names (no AI-invented names: that
+  was explicitly rejected as a brand/credibility risk).
+- Re-running the generator with the current CSV is idempotent (reproduces the 171
+  entries byte-for-byte).
+
 ## Reference stores in the niche (what good ones do)
 - Foliage Factory (foliage-factory.com/category/shop-aroids): category filters
   kept consistent across the shop. Strong filter-driven grid.
