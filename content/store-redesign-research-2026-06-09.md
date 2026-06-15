@@ -79,17 +79,20 @@ What this tells us for our build:
 
 ## Shipping and checkout policy (set by Kat, 2026-06-15)
 - NO minimum order. A single plant can check out on its own.
-- Shipping is a flat nationwide fee (placeholder NIS 35 in code as STORE_POLICY
-  .shippingFlat; confirm the real number before Meshulam goes live).
-- Shipping days are Sunday and Monday ONLY, so a parcel never sits over the
-  Israeli weekend. Delivery can take up to 5 business days. This must be
-  explained to the customer at checkout.
+- Shipping is QUOTED PER ORDER, not a fixed online fee, because the cost depends
+  on parcel size. The online total is plants only; Kat confirms shipping per
+  order. (Earlier in the same conversation a flat NIS 35 fee was briefly built,
+  then reversed in favor of quote-per-order. Do not re-add a fixed fee unless
+  Kat asks.)
 - Standard parcel is 40x40 cm. If the plant does not fit the 40x40 box, the
-  shipping fee is DOUBLED, confirmed per order by Pink Leaf. (No per-item size
-  data in the catalog yet, so this stays a manual confirmation for now; if we
-  later tag oversized SKUs we can automate it via STORE_POLICY.oversizeMultiplier.)
-- Implemented in index.html: computeBagTotals() is the single source of truth
-  for subtotal + flat shipping + total; the bag drawer shows the breakdown plus
-  a Hebrew shipping-policy note, and the WhatsApp concierge message includes the
-  shipping line and the oversize-doubles note. These changes live on branch
-  claude/checkout-card-plans-bcwo6h, not yet merged to main.
+  shipping fee is DOUBLED. No per-item size data in the catalog yet, so this is
+  a manual confirmation; STORE_POLICY.oversizeMultiplier (=2) documents it for
+  later automation if oversized SKUs get tagged.
+- Shipping days are Sunday and Monday ONLY, so a parcel never sits over the
+  Israeli weekend. Delivery can take up to 5 business days. This is shown to the
+  customer at checkout.
+- Implemented in index.html: computeBagTotals() returns plants-only subtotal and
+  total (no shipping line); the bag drawer shows a Hebrew note that price
+  excludes shipping, shipping is confirmed per order, ships Sun/Mon, up to 5
+  business days, over 40x40 cm doubles. The WhatsApp concierge message carries
+  the same. Lives on branch claude/checkout-card-plans-bcwo6h, not yet on main.
