@@ -1269,6 +1269,30 @@
             box-shadow: -2px 0 10px rgba(0,0,0,0.1);
         }
         .acc-trigger:hover { width: 50px; }
+        /* Visible day/night control. Reuses the existing dark-mode toggle
+           (accToggleDark); sits just above the accessibility trigger. */
+        .theme-fab {
+            position: fixed;
+            right: 0;
+            top: calc(50% - 66px);
+            transform: translateY(-50%) translate3d(0,0,0);
+            z-index: 10001;
+            width: 44px;
+            height: 52px;
+            border-radius: 8px 0 0 8px;
+            border: 1px solid var(--border);
+            border-right: none;
+            background: var(--pink);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.2s;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        }
+        .theme-fab:hover { width: 50px; }
         .acc-drawer {
             position: fixed;
             right: -290px;
@@ -2325,6 +2349,7 @@ body.dark-mode .scoreboard-item.current {
     </div>
 
     <!-- ACCESSIBILITY TRIGGER (Israeli IS 5568 / תקנות נגישות) -->
+    <button class="theme-fab" id="theme-fab" onclick="accToggleDark()" aria-label="מצב יום או לילה / Toggle day or night">🌙</button>
     <button class="acc-trigger" id="acc-trigger" aria-label="פתיחת תפריט נגישות / Open Accessibility Menu" aria-expanded="false" aria-controls="acc-drawer">♿</button>
 
     <!-- ACCESSIBILITY DRAWER -->
@@ -3552,6 +3577,8 @@ function checkLab(choiceIndex) {
             if(document.getElementById('main-logo')) document.getElementById('main-logo').src = d ? 'logo-dark.png' : 'logo-light.png';
             const btn = document.getElementById('btn-dark');
             if(btn){ btn.classList.toggle('on', d); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); }
+            const fab = document.getElementById('theme-fab');
+            if(fab){ fab.textContent = d ? '☀️' : '🌙'; }
             saveAccPrefs();
         }
 
@@ -3649,7 +3676,7 @@ function checkLab(choiceIndex) {
             try {
                 const p = JSON.parse(localStorage.getItem('pl_acc') || '{}');
                 if (p.fontSize) { accFontLevel = p.fontSize; document.body.style.fontSize = (16 + p.fontSize) + 'px'; }
-                if (p.dark) { document.body.classList.add('dark-mode'); document.getElementById('main-logo').src = 'logo-dark.png'; const b = document.getElementById('btn-dark'); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} }
+                if (p.dark) { document.body.classList.add('dark-mode'); document.getElementById('main-logo').src = 'logo-dark.png'; const b = document.getElementById('btn-dark'); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} const fab = document.getElementById('theme-fab'); if(fab){fab.textContent='☀️';} }
                 const map = {'acc-high-contrast':'btn-contrast','acc-negative-contrast':'btn-negative','acc-grayscale':'btn-grayscale','acc-underline-links':'btn-links','acc-readable-font':'btn-font','acc-dyslexia-font':'btn-dyslexia','acc-no-motion':'btn-motion'};
                 (p.classes||[]).forEach(cls => { document.body.classList.add(cls); const b = document.getElementById(map[cls]); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} });
             } catch(e){}
