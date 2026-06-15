@@ -42,12 +42,13 @@ that should survive across sessions HERE, in the repo.
 - Lay it out like a standard rare-plant niche store (clean product grid).
 
 ### Payments
-- Chosen provider: **PayPlus** (Israeli gateway; supports Israeli cards and Bit,
-  and hosted payment pages that work from a static site).
+- Chosen provider: **Meshulam (Grow)** (Israeli gateway; supports Israeli cards
+  and Bit, and hosted payment pages / payment links that work from a static
+  site). Updated 2026-06-15 by Kat; supersedes the earlier PayPlus pick.
 - Current live flow: WhatsApp "Price Concierge" inquiry links plus bank transfer.
   Product schema carries real prices for Google rich results, but Offer URLs
   currently route to WhatsApp rather than a checkout.
-- Goal: integrate a real PayPlus checkout (hosted payment page / payment links,
+- Goal: integrate a real Meshulam checkout (hosted payment page / payment links,
   since the site is static and cannot process cards server-side).
 
 ### Deploy / dev environment notes

@@ -2370,7 +2370,6 @@ body.dark-mode .scoreboard-item.current {
         <!-- Header -->
         <div class="bag-drawer-header">
             <div class="bag-header-left">
-                <div class="bag-drawer-eyebrow">PINK LEAF</div>
                 <div class="bag-drawer-headline">Shopping Bag</div>
                 <div class="bag-item-tally" id="bag-tally">0 ITEMS</div>
             </div>
@@ -2406,8 +2405,7 @@ body.dark-mode .scoreboard-item.current {
                 REQUEST AVAILABILITY VIA CONCIERGE
             </button>
             <div class="bag-fine-print">
-                כל ההזמנות מאושרות ידנית על ידי Pink Leaf.<br>
-                All orders are manually confirmed by Pink Leaf.
+                כל ההזמנות מאושרות ידנית על ידי Pink Leaf
             </div>
         </div>
 
@@ -3190,27 +3188,33 @@ body.dark-mode .scoreboard-item.current {
                 if (isAvailable && item.availability) {
                     const standardGrades = ["Tissue Culture", "Starter Plant", "Mature Plant", "Corm"];
                     const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
+                    const fmtPrice = (opt) => {
+                        const price = ITEM_PRICES[`${item.id}_${opt}`];
+                        if (!price) return '';
+                        return opt === 'Mature Plant' ? ` - from ₪${price}` : ` - ₪${price}`;
+                    };
 
                     if (hasCustomOptions) {
-                        // Custom variants (e.g., variegation tiers)
-                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Variant</option>';
+                        // Custom variants (e.g., variegation tiers).
+                        // Single-variant plants skip the "Select Variant" placeholder so
+                        // the one option is pre-selected and ADD TO BAG works in one tap.
+                        const single = item.availability.length === 1;
+                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select">';
+                        if (!single) dropdownHTML += '<option value="">Select Variant</option>';
                         item.availability.forEach(opt => {
-                            const price = ITEM_PRICES[`${item.id}_${opt}`];
-                            const priceLabel = price ? ` - ₪${price}` : '';
-                            dropdownHTML += `<option value="${opt}">${opt}${priceLabel}</option>`;
+                            dropdownHTML += `<option value="${opt}">${opt}${fmtPrice(opt)}</option>`;
                         });
                         dropdownHTML += '</select></div>';
                     } else {
                         const allOptions = ["Starter Plant", "Mature Plant"];
-
-                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select"><option value="">Select Size</option>';
+                        const availableCount = allOptions.filter(o => item.availability.includes(o)).length;
+                        const single = availableCount === 1;
+                        dropdownHTML = '<div class="availability-dropdown"><select class="availability-select">';
+                        if (!single) dropdownHTML += '<option value="">Select Size</option>';
                         allOptions.forEach(opt => {
                             const isOptAvailable = item.availability.includes(opt);
-                            const price = ITEM_PRICES[`${item.id}_${opt}`];
-                            const isMature = opt === 'Mature Plant';
-                            const priceLabel = price ? (isMature ? ` - from ₪${price}` : ` - ₪${price}`) : '';
                             dropdownHTML += isOptAvailable ?
-                                `<option value="${opt}">${opt}${priceLabel}</option>` :
+                                `<option value="${opt}">${opt}${fmtPrice(opt)}</option>` :
                                 `<option disabled>${opt} (Unavailable)</option>`;
                         });
                         dropdownHTML += '</select></div>';
@@ -3636,7 +3640,17 @@ function checkLab(choiceIndex) {
         function addToCart(id, name, btn) {
             const card = btn.closest('.product-card, .store-card, .store-card-flat');
             const select = card ? card.querySelector('.availability-select') : null;
-            const grade = select ? select.value : '';
+            let grade = select ? select.value : '';
+
+            // Backstop: if nothing is chosen but only one real option exists, use it
+            // so single-variant plants always add instead of silently flashing red.
+            if (select && !grade) {
+                const opts = Array.from(select.options).filter(o => o.value && !o.disabled);
+                if (opts.length === 1) {
+                    select.value = opts[0].value;
+                    grade = opts[0].value;
+                }
+            }
 
             if (select && !grade) {
                 select.style.border = '1.5px solid #e57373';
