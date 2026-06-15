@@ -2395,11 +2395,22 @@ body.dark-mode .scoreboard-item.current {
 
         <!-- Footer / total / CTA -->
         <div class="bag-footer">
+            <div class="bag-total-row" id="bag-subtotal-row" style="display:none;font-size:0.8rem;opacity:0.75;">
+                <span class="bag-total-label">SUBTOTAL · סכום ביניים</span>
+                <span class="bag-total-amount" id="bag-subtotal-display">-</span>
+            </div>
+            <div class="bag-total-row" id="bag-shipping-row" style="display:none;font-size:0.8rem;opacity:0.75;">
+                <span class="bag-total-label">SHIPPING · משלוח ארצי</span>
+                <span class="bag-total-amount" id="bag-shipping-display">-</span>
+            </div>
             <div class="bag-total-row">
                 <span class="bag-total-label">ESTIMATED TOTAL</span>
                 <span class="bag-total-amount" id="bag-total-display">-</span>
             </div>
             <div class="bag-total-note" id="bag-total-note">PRICES CONFIRMED ON INQUIRY</div>
+            <div class="bag-ship-policy" id="bag-ship-policy" dir="auto" style="display:none;font-size:0.72rem;opacity:0.72;margin-top:6px;line-height:1.55;">
+                משלוח בימים ראשון-שני בלבד כדי שהחבילה לא תיתקע בסופ״ש, אספקה עד 5 ימי עסקים. צמח שאינו נכנס לאריזת 40x40 ס״מ: דמי המשלוח כפולים, באישור Pink Leaf.
+            </div>
             <button class="bag-cta" onclick="sendBagWhatsApp()">
                 <span>💬</span>
                 REQUEST AVAILABILITY VIA CONCIERGE
@@ -3623,8 +3634,32 @@ function checkLab(choiceIndex) {
             "PV14_Mint": 150,
         };
 
+        // Store policy (set by Kat, 2026-06-15). shippingFlat is a PLACEHOLDER:
+        // confirm the real nationwide flat fee before Meshulam checkout goes live.
+        // No minimum order. We ship Sunday/Monday only so parcels avoid the
+        // weekend; delivery up to 5 business days. Standard parcel is 40x40 cm;
+        // a plant that does not fit ships at double the flat fee, confirmed per
+        // order by Pink Leaf.
+        const STORE_POLICY = {
+            shippingFlat: 35,        // flat nationwide shipping fee, ILS (confirm amount)
+            boxLimitCm: 40,          // standard parcel is 40x40 cm
+            oversizeMultiplier: 2,   // fee doubles if the order exceeds the box
+        };
+
         // Load from localStorage
         let bag = JSON.parse(localStorage.getItem('pl_bag') || '[]');
+
+        // Single source of truth for cart money: subtotal, flat shipping, total.
+        // Used by the bag display and (later) the Meshulam checkout handoff.
+        function computeBagTotals() {
+            const priced = bag.filter(i => i.price !== null);
+            const unpriced = bag.filter(i => i.price === null);
+            const subtotal = priced.reduce((s, i) => s + (i.price * i.qty), 0);
+            const hasPriced = priced.length > 0;
+            const shipping = hasPriced ? STORE_POLICY.shippingFlat : 0;
+            const total = subtotal + shipping;
+            return { priced, unpriced, subtotal, shipping, total, hasPriced };
+        }
 
         function saveBag() {
             localStorage.setItem('pl_bag', JSON.stringify(bag));
@@ -3710,15 +3745,26 @@ function checkLab(choiceIndex) {
             if (emptyState) emptyState.style.display = bag.length === 0 ? 'flex' : 'none';
             if (itemsList) itemsList.style.display = bag.length === 0 ? 'none' : 'block';
 
-            // Total
-            const priced = bag.filter(i => i.price !== null);
-            const unpriced = bag.filter(i => i.price === null);
-            if (priced.length > 0) {
-                const sum = priced.reduce((s, i) => s + (i.price * i.qty), 0);
-                if (totalDisplay) totalDisplay.textContent = `${sum.toLocaleString()}₪`;
-                if (totalNote && unpriced.length > 0) totalNote.textContent = `+ ${unpriced.length} ITEM(S) PRICED ON INQUIRY`;
-                else if (totalNote) totalNote.textContent = 'PRICES CONFIRMED ON INQUIRY';
+            // Total: subtotal + flat nationwide shipping
+            const t = computeBagTotals();
+            const subtotalRow = document.getElementById('bag-subtotal-row');
+            const shippingRow = document.getElementById('bag-shipping-row');
+            const subtotalDisplay = document.getElementById('bag-subtotal-display');
+            const shippingDisplay = document.getElementById('bag-shipping-display');
+            const shipPolicy = document.getElementById('bag-ship-policy');
+            if (t.hasPriced) {
+                if (subtotalRow) subtotalRow.style.display = 'flex';
+                if (shippingRow) shippingRow.style.display = 'flex';
+                if (shipPolicy) shipPolicy.style.display = 'block';
+                if (subtotalDisplay) subtotalDisplay.textContent = `${t.subtotal.toLocaleString()}₪`;
+                if (shippingDisplay) shippingDisplay.textContent = `${t.shipping.toLocaleString()}₪`;
+                if (totalDisplay) totalDisplay.textContent = `${t.total.toLocaleString()}₪`;
+                if (totalNote && t.unpriced.length > 0) totalNote.textContent = `+ ${t.unpriced.length} ITEM(S) PRICED ON INQUIRY · INCL. SHIPPING`;
+                else if (totalNote) totalNote.textContent = 'INCLUDES NATIONWIDE SHIPPING';
             } else {
+                if (subtotalRow) subtotalRow.style.display = 'none';
+                if (shippingRow) shippingRow.style.display = 'none';
+                if (shipPolicy) shipPolicy.style.display = 'none';
                 if (totalDisplay) totalDisplay.textContent = '-';
                 if (totalNote) totalNote.textContent = 'PRICES CONFIRMED ON INQUIRY';
             }
@@ -3784,8 +3830,7 @@ function checkLab(choiceIndex) {
             if (bag.length === 0) return;
 
             const clientName = (document.getElementById('bag-client-name')?.value || '').trim();
-            const priced = bag.filter(i => i.price !== null);
-            const total = priced.reduce((s, i) => s + (i.price * i.qty), 0);
+            const t = computeBagTotals();
             const div = '─────────────────────────';
 
             let lines = [];
@@ -3800,10 +3845,13 @@ function checkLab(choiceIndex) {
                 lines.push(`  ↳ ${item.grade || 'Inquiry'} · ${priceStr}`);
             });
             lines.push(div);
-            if (priced.length > 0) {
-                let totalLine = `סה״כ משוער: *${total.toLocaleString()}₪*`;
-                if (priced.length < bag.length) totalLine += ' + פריטים לתמחור';
+            if (t.hasPriced) {
+                lines.push(`סכום ביניים: ${t.subtotal.toLocaleString()}₪`);
+                lines.push(`משלוח ארצי (ימים א׳-ב׳): ${t.shipping.toLocaleString()}₪`);
+                let totalLine = `סה״כ משוער: *${t.total.toLocaleString()}₪*`;
+                if (t.unpriced.length > 0) totalLine += ' + פריטים לתמחור';
                 lines.push(totalLine);
+                lines.push('אריזה מעל 40x40 ס״מ: דמי משלוח כפולים');
             }
             if (clientName) lines.push(`👤 ${clientName}`);
             lines.push(div);

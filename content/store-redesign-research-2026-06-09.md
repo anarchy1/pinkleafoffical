@@ -76,3 +76,20 @@ What this tells us for our build:
   loyalty/club discount (they give 10%).
 - "ICP certified" is the Israeli card-clearing standard. Using Meshulam, a
   licensed Israeli gateway, covers the equivalent trust signal for us.
+
+## Shipping and checkout policy (set by Kat, 2026-06-15)
+- NO minimum order. A single plant can check out on its own.
+- Shipping is a flat nationwide fee (placeholder NIS 35 in code as STORE_POLICY
+  .shippingFlat; confirm the real number before Meshulam goes live).
+- Shipping days are Sunday and Monday ONLY, so a parcel never sits over the
+  Israeli weekend. Delivery can take up to 5 business days. This must be
+  explained to the customer at checkout.
+- Standard parcel is 40x40 cm. If the plant does not fit the 40x40 box, the
+  shipping fee is DOUBLED, confirmed per order by Pink Leaf. (No per-item size
+  data in the catalog yet, so this stays a manual confirmation for now; if we
+  later tag oversized SKUs we can automate it via STORE_POLICY.oversizeMultiplier.)
+- Implemented in index.html: computeBagTotals() is the single source of truth
+  for subtotal + flat shipping + total; the bag drawer shows the breakdown plus
+  a Hebrew shipping-policy note, and the WhatsApp concierge message includes the
+  shipping line and the oversize-doubles note. These changes live on branch
+  claude/checkout-card-plans-bcwo6h, not yet merged to main.
