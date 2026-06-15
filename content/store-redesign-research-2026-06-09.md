@@ -4,6 +4,41 @@ Durable notes for the store standardization. Goal: replace the card/carousel
 "game" with a clean, standard rare-plant store, three categories (Alocasia,
 Monstera, Philodendron), nationwide IL shipping, PayPlus checkout.
 
+## Studio overhaul decisions (set by Kat, 2026-06-15)
+These came out of the "system architecture overhaul" manifest. Reality check
+first: the site is a static single index.html on GitHub Pages, no backend, no
+database, no cloud functions. So decisions were scoped to what a static site can
+honestly do, plus external automation.
+
+- ARCHITECTURE: stay static + external automation. No fake client-side "login"
+  (a static site cannot secure one; View Source defeats it). Real SMS/email and
+  any B2B gating go through an external no-code service (Make/Zapier) plus forms,
+  not a server in this repo. Do NOT build a gated /lab-portal with JS-only auth.
+- ACCLIMATION GATING (Task 1, DONE): ALL_STORE_ITEMS entries can carry an
+  optional `acclimation` stage ("in-transit", "customs", "deflasked",
+  "hardening"). A gated plant hides its price, shows a "Limited Release" badge and
+  "Price Tier: Premium Collector - inquire for current sheet", and swaps Add to
+  Bag for a "Join Studio Waitlist" button (requestAllocation -> WhatsApp
+  concierge, bilingual). PV19/PV81/PV25 are flagged as the genuine incoming
+  imports. To gate or ungate a plant, edit the `acclimation` key on its entry.
+- THEME (Task 3, DONE, preview only): the existing day/night toggle is UNCHANGED.
+  Only the CSS variables inside body.dark-mode were retuned to the obsidian
+  "Botanical Lab" look: --bg #121212, --text #ffffff, accent --pink overridden to
+  emerald #00E676 (flows to all --pink/--border/--glow surfaces). Do not rewrite
+  the toggle. Lives on branch claude/checkout-card-plans-bcwo6h for preview before
+  any merge to main.
+- PRICING BUFFER (Task 2, DONE): delivered as an internal calculator at
+  tools/pricing-calculator.html (noindex), NOT a live cloud function. Formula
+  Final = (Base * Markup) / (1 - Buffer), default buffer 0.20 for high-risk
+  variegates. Back-office only; use it to set the number, then type the price in.
+- SCARCITY: honest "limited release / by allocation" framing only. Do NOT cap
+  visible units below real stock (dark pattern, consumer-protection risk in
+  Israel under חוק הגנת הצרכן). The waitlist gating supplies real scarcity.
+- STILL OPEN (need Kat / an external service before building): the B2B
+  micropropagation intake and the auto SMS/email-on-acclimation webhook both need
+  a Make/Zapier endpoint URL. Scaffold once Kat provides it; do not build
+  speculative dead UI.
+
 ## Reference stores in the niche (what good ones do)
 - Foliage Factory (foliage-factory.com/category/shop-aroids): category filters
   kept consistent across the shop. Strong filter-driven grid.

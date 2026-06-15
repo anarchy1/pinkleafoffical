@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pink Leaf - Speculative Pricing Buffer (internal)</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; background: #121212; color: #fff;
+         max-width: 560px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+  h1 { font-size: 20px; color: #00E676; }
+  p.note { opacity: 0.7; font-size: 13px; }
+  label { display: block; margin: 16px 0 4px; font-size: 13px; letter-spacing: 0.5px; }
+  input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(0,230,118,0.3);
+          background: rgba(0,230,118,0.06); color: #fff; font-size: 16px; }
+  .out { margin-top: 24px; padding: 18px; border: 1px solid rgba(0,230,118,0.3);
+         border-radius: 10px; background: rgba(0,230,118,0.06); }
+  .out .big { font-size: 30px; color: #00E676; font-weight: 700; }
+  .row { display: flex; justify-content: space-between; font-size: 13px; opacity: 0.85; margin-top: 6px; }
+  code { color: #00E676; }
+</style>
+</head>
+<body>
+  <h1>Speculative Pricing Buffer</h1>
+  <p class="note">Internal tool. Not linked from the public site. It sets a retail
+  price that still hits the target margin after an expected acclimation loss on a
+  tissue culture batch.</p>
+  <p class="note">Formula: <code>Final = (Base import cost &times; Markup) / (1 - Loss buffer)</code>.
+  If the buffer is 20%, the surviving 80% of a batch carries the cost of the 20%
+  that does not make it.</p>
+
+  <label>Base import cost per unit (ILS)</label>
+  <input id="base" type="number" value="100" min="0" step="1">
+
+  <label>Markup multiplier</label>
+  <input id="markup" type="number" value="2.5" min="0" step="0.1">
+
+  <label>Target loss buffer (0 to 0.95). High-risk variegates default to 0.20</label>
+  <input id="buffer" type="number" value="0.20" min="0" max="0.95" step="0.01">
+
+  <div class="out">
+    <div>Recommended retail price</div>
+    <div class="big" id="final">-</div>
+    <div class="row"><span>Pre-buffer (Base &times; Markup)</span><span id="pre">-</span></div>
+    <div class="row"><span>Buffer uplift</span><span id="uplift">-</span></div>
+  </div>
+
+  <script>
+    function ils(n){ return Math.round(n).toLocaleString() + ' ₪'; }
+    function recompute(){
+      const base = parseFloat(document.getElementById('base').value) || 0;
+      const markup = parseFloat(document.getElementById('markup').value) || 0;
+      let buffer = parseFloat(document.getElementById('buffer').value) || 0;
+      if (buffer < 0) buffer = 0;
+      if (buffer > 0.95) buffer = 0.95;
+      const pre = base * markup;
+      const final = pre / (1 - buffer);
+      document.getElementById('pre').textContent = ils(pre);
+      document.getElementById('final').textContent = ils(final);
+      document.getElementById('uplift').textContent = ils(final - pre);
+    }
+    document.querySelectorAll('input').forEach(i => i.addEventListener('input', recompute));
+    recompute();
+  </script>
+</body>
+</html>

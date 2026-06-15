@@ -389,12 +389,17 @@
             --border: rgba(212, 165, 178, 0.3); 
             --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5); 
         }
-        body.dark-mode { 
-            --bg: #111111; 
-            --text: #f0f0f0; 
-            --mellow-pink: rgba(212, 165, 178, 0.18); 
-            --border: rgba(212, 165, 178, 0.3); 
-            --glow: 0 0 65px 20px rgba(212, 165, 178, 0.4); 
+        /* Dark mode is the "Botanical Lab" aesthetic: deep obsidian ground with a
+           high-contrast emerald accent and crisp white text. The day/night toggle
+           is untouched; only these CSS variables change, so all accent surfaces
+           that read --pink/--border/--glow shift to emerald in dark mode. */
+        body.dark-mode {
+            --bg: #121212;
+            --text: #ffffff;
+            --pink: #00E676;
+            --mellow-pink: rgba(0, 230, 118, 0.16);
+            --border: rgba(0, 230, 118, 0.30);
+            --glow: 0 0 65px 20px rgba(0, 230, 118, 0.35);
         }
         /* Force all text elements to inherit the light color in dark mode */
         body.dark-mode,
@@ -1075,8 +1080,37 @@
             letter-spacing: 0.04em;
         }
         body.dark-mode .badge-opening-sale { color: #ffcc55; }
-        
-        .availability-dropdown { 
+
+        /* Acclimation gating (Task 1): imports in transit, customs, or hardening
+           show an honest "limited release / by allocation" treatment instead of a
+           speculative price and Add to Bag. */
+        .badge-allocation {
+            background: var(--mellow-pink);
+            border: 1px solid var(--border);
+            color: var(--pink);
+            letter-spacing: 0.04em;
+        }
+        .alloc-tier {
+            font-size: 11px;
+            text-align: center;
+            line-height: 1.5;
+            margin: 0 0 10px;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .alloc-tier .alloc-stage {
+            font-size: 10px;
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+        }
+        .alloc-btn {
+            background: var(--mellow-pink) !important;
+            border: 1px solid var(--border) !important;
+            color: var(--pink) !important;
+        }
+
+        .availability-dropdown {
             width: 100%; 
             margin-bottom: 15px; 
         }
@@ -2830,9 +2864,9 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming" },
-            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming" },
-            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming" },
+            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming", acclimation: "hardening" },
+            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming", acclimation: "in-transit" },
+            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming", acclimation: "customs" },
             { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
             { id: "PV87", name: "Alocasia Maharani Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
             { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
@@ -3158,6 +3192,35 @@ body.dark-mode .scoreboard-item.current {
             renderStore();
         }
 
+        // Acclimation gating (Task 1). A plant flagged with one of these stages is
+        // not sold at a speculative price. To gate a plant, add an `acclimation`
+        // key to its ALL_STORE_ITEMS entry, e.g. acclimation: "hardening".
+        const ACCLIMATION_LABELS = {
+            "in-transit": "In Transit",
+            "customs":    "In Customs",
+            "deflasked":  "Deflasked",
+            "hardening":  "Hardening Off",
+        };
+        const ACCLIMATION_HE = {
+            "in-transit": "במשלוח",
+            "customs":    "במכס",
+            "deflasked":  "לאחר צנצנת",
+            "hardening":  "בהקשחה",
+        };
+        function acclimationStage(item){
+            const s = item && item.acclimation;
+            return ACCLIMATION_LABELS[s] ? s : null;
+        }
+
+        // Waitlist / private allocation handoff for gated imports: routes to the
+        // WhatsApp concierge with an honest note about the plant's current stage.
+        function requestAllocation(id, name, stage){
+            const msg = (lang === 'he')
+                ? `היי, אשמח להצטרף לרשימת ההמתנה / הקצאה פרטית עבור ${name}. ידוע לי שהצמח כרגע ${ACCLIMATION_HE[stage] || ''} והמחיר נקבע לפי גיליון המחירים העדכני.`
+                : `Hi, I'd like to join the waitlist / request a private allocation for ${name}. I understand it is currently ${(ACCLIMATION_LABELS[stage] || '').toLowerCase()} and pricing follows the current collector sheet.`;
+            window.open(`https://wa.me/972559116990?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
         function renderStore(){
             let items = ALL_STORE_ITEMS;
             if (storeCategory !== 'all') {
@@ -3179,16 +3242,27 @@ body.dark-mode .scoreboard-item.current {
             let h = '';
             items.forEach(item => {
                 const isAvailable = item.status === "available";
+                const stage = acclimationStage(item);
+                const gated = !!stage;
                 let badgeLabel = isAvailable ? 'Available' : 'Coming Soon';
                 let badgeClass = isAvailable ? 'badge-available' : 'badge-coming-soon';
                 if (isAvailable && item.openingSale) {
                     badgeLabel = '🌿 Opening Sale';
                     badgeClass = 'badge-opening-sale';
                 }
+                if (gated) {
+                    badgeLabel = 'Limited Release';
+                    badgeClass = 'badge-allocation';
+                }
                 const badge = `<span class="availability-badge ${badgeClass}">${badgeLabel}</span>`;
 
+                // Gated imports hide the speculative price entirely.
+                const tierHTML = gated
+                    ? `<p class="alloc-tier" dir="auto">Price Tier: Premium Collector<br><span class="alloc-stage">${ACCLIMATION_LABELS[stage]} · inquire for current sheet</span></p>`
+                    : '';
+
                 let dropdownHTML = '';
-                if (isAvailable && item.availability) {
+                if (!gated && isAvailable && item.availability) {
                     const standardGrades = ["Tissue Culture", "Starter Plant", "Mature Plant", "Corm"];
                     const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
                     const fmtPrice = (opt) => {
@@ -3224,15 +3298,21 @@ body.dark-mode .scoreboard-item.current {
                     }
                 }
 
-                const btnHTML = isAvailable ?
-                    `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>` :
-                    '<button class="btn" style="opacity: 0.5; cursor: not-allowed;" disabled>COMING SOON</button>';
+                let btnHTML;
+                if (gated) {
+                    btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="requestAllocation('${item.id}', '${item.name}', '${stage}')">Join Studio Waitlist</button>`;
+                } else if (isAvailable) {
+                    btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
+                } else {
+                    btnHTML = '<button class="btn" style="opacity: 0.5; cursor: not-allowed;" disabled>COMING SOON</button>';
+                }
 
                 h += `
                 <div class="product-card">
                     ${badge}
-                    <div class="portal"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
+                    <div class="portal"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable && !gated ? '1' : '0.85'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-3 mt-3">${item.name}</p>
+                    ${tierHTML}
                     ${dropdownHTML}
                     <div class="w-full space-y-1 mb-2">
                         <div class="stat-row"><span>☀️ Light</span><span>${item.light}</span></div>
