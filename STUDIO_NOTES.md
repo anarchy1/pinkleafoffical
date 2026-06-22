@@ -14,8 +14,10 @@ sessions. Newest stuff goes at the top.
 
 - Provider: Meshulam (Grow). Plan is a hosted payment page or payment links so
   the static site can take real payments (Israeli cards + Bit).
-- Status: not wired up yet. Next step needs the Meshulam account details
-  (page/link IDs or merchant credentials) before checkout can go live.
+- Status (2026-06-15): Meshulam account NOT set up / not approved yet. This is
+  the real blocker. Checkout work is on hold until the account exists and is
+  approved. Next step is Kat completing Meshulam merchant signup, then I wire in
+  the payment links.
 - Until then, Offers route to the WhatsApp Price Concierge plus bank transfer.
 
 ## Pricing direction (in progress)
