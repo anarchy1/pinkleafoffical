@@ -2905,24 +2905,26 @@ body.dark-mode .scoreboard-item.current {
             "pazo": { name: "מצע פזו / Pazo Mix", desc: "תערובת ייחודית הכוללת פחם, זאוליט, פומיס ובזלת. ניקוז מצוין ואוורור מקסימלי.", prices: { l2: 17, l10: 83 }, img: "plants/pazo-mix.jpg" }
         };
 
+        // >>> BEGIN GENERATED: store items (source: tools/store-catalog.csv, build: tools/build_store.py) <<<
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming", acclimation: "hardening" },
-            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming", acclimation: "in-transit" },
-            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming", acclimation: "customs" },
-            { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
-            { id: "PV87", name: "Alocasia Maharani Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV40", name: "Alocasia Ninja Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV18", name: "Alocasia Wentii Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV89", name: "Alocasia Melo Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV44", name: "Alocasia Pink Dragon Stardust Mint", availability: ["Stardust Mint"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV78", name: "Alocasia Simpo Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV35", name: "Alocasia Jacklyn Variegated", availability: ["Variegated"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV37", name: "Alocasia Silver Dragon Aurea", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV15", name: "Alocasia Dragon Scale Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV23", name: "Alocasia Black Velvet Aurea", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
-            { id: "PV14", name: "Alocasia Dragon Scale Mint", availability: ["Mint"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV19", name: "Alocasia Polly Pink var", family: "Alocasia", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming", acclimation: "hardening" },
+            { id: "PV81", name: "Alocasia Heart Balloon", family: "Alocasia", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming", acclimation: "in-transit" },
+            { id: "PV25", name: "Alocasia Macrorrhiza Var.", family: "Alocasia", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming", acclimation: "customs" },
+            { id: "PV48", name: "Philodendron Jose Buono", family: "Philodendron", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
+            { id: "PV87", name: "Alocasia Maharani Albo", family: "Alocasia", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", family: "Alocasia", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV40", name: "Alocasia Ninja Albo", family: "Alocasia", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV18", name: "Alocasia Wentii Pink", family: "Alocasia", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV89", name: "Alocasia Melo Albo", family: "Alocasia", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV44", name: "Alocasia Pink Dragon Stardust Mint", family: "Alocasia", availability: ["Stardust Mint"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV78", name: "Alocasia Simpo Albo", family: "Alocasia", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV35", name: "Alocasia Jacklyn Variegated", family: "Alocasia", availability: ["Variegated"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV37", name: "Alocasia Silver Dragon Aurea", family: "Alocasia", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV15", name: "Alocasia Dragon Scale Albo", family: "Alocasia", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV23", name: "Alocasia Black Velvet Aurea", family: "Alocasia", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV14", name: "Alocasia Dragon Scale Mint", family: "Alocasia", availability: ["Mint"], light: "70%", humidity: "85%", status: "available" },
         ];
+        // >>> END GENERATED: store items <<<
 
         let labFloatersHidden = false;
         // Auto-detect language: stored preference > browser language > default 'he'
@@ -3217,6 +3219,9 @@ body.dark-mode .scoreboard-item.current {
         // Resolve a store item's family. Prefer the vault's MASTER_DB tag,
         // fall back to parsing the genus from the name so it never misclassifies.
         function plFamily(item){
+            // The catalog's category column (tools/store-catalog.csv) wins, so a
+            // plant always lands in the tab Kat chose for it.
+            if (item.family) return item.family;
             if (typeof MASTER_DB !== 'undefined' && MASTER_DB[item.id] && MASTER_DB[item.id].family) {
                 return MASTER_DB[item.id].family;
             }
@@ -3770,14 +3775,15 @@ function checkLab(choiceIndex) {
             "Corm":            null,
         };
         // Per-item price overrides - populate as you add prices
+        // >>> BEGIN GENERATED: item prices (source: tools/store-catalog.csv, build: tools/build_store.py) <<<
         const ITEM_PRICES = {
             "PV19_High Variegation": 330,
             "PV19_Regular Variegation": 330,
             "PV81_Starter Plant": 500,
             "PV25_Starter Plant": 50,
-            "PV25_Mature Plant": 150,   // 150–350 depending on size/pot
+            "PV25_Mature Plant": 150,
             "PV48_Starter Plant": 50,
-            "PV48_Mature Plant": 150,   // 150–350 depending on size/pot
+            "PV48_Mature Plant": 150,
             "PV87_Albo": 880,
             "PV84_Pink": 650,
             "PV40_Albo": 550,
@@ -3791,6 +3797,7 @@ function checkLab(choiceIndex) {
             "PV23_Aurea": 450,
             "PV14_Mint": 150,
         };
+        // >>> END GENERATED: item prices <<<
 
         // Store policy (set by Kat, 2026-06-15). No minimum order. Shipping is
         // QUOTED PER ORDER, not a fixed online fee, because it depends on parcel
