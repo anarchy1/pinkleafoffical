@@ -12,6 +12,7 @@ across sessions and stops disappearing into chat.
 |-------------------|-----------------------------------------------------------------------|
 | `name`            | plant name, however you write it (e.g. Alocasia Frydek Albo)          |
 | `type`            | `Corm` or `TC`. They acclimate on different clocks, so keep them apart |
+| `qty`             | how many of this variety are in propagation                           |
 | `acclimation_start` | the date it went into acclimation, as `YYYY-MM-DD` (e.g. 2026-06-10) |
 | `category`        | `Alocasia`, `Monstera`, or `Philodendron`                             |
 | `price_ils`       | price in shekels. Leave blank if not researched yet                   |
