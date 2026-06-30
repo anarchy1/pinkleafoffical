@@ -41,6 +41,18 @@ Captured 2026-06-15. Names transliterated from Hebrew; a few are best-guess.
 ## Other data points
 - Devil Monster sold by a competitor for 1,500₪ (from Kat, June 2026). Our price 850.
 
+## International reference: Alocasia Bambino Pink Variegated (web, June 2026)
+FX about 3.7₪ per USD. Israel market usually runs higher than these.
+| What it is | USD | ≈ ILS |
+|---|---|---|
+| Tiny starter / TC plantlet (2 to 2.5") | ~45 | ~165 |
+| Established, rooted, 2 to 4 leaves (6") | ~89 | ~330 |
+| Full retail established | ~134 | ~495 |
+
+Our Bambino Pink is 150₪. Fair if a small starter; underpriced (350 to 450₪) if
+established. Confirm size before setting final.
+Sources: Siena Plants, Rare Plant Fairy, Aroid Market, eBay.
+
 ## Our own April 2026 IG catalog (Alocasia TC Stock), for reference
 | Variety | Qty | Price (₪) |
 |---|---|---|
