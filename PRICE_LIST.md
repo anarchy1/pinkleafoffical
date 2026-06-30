@@ -2,7 +2,8 @@
 
 Source: Kat's working price list, given in session. Currency is ILS (₪).
 Master copy: `tools/price-list.csv`. Edit there, keep this readable view in sync.
-One price per variety. This is the seller-facing list.
+One price per variety. These are TARGET prices for when each plant is grown out
+and sale-ready. The plants are still developing, not established yet.
 
 | Variety | Price (₪) |
 |---|---|
@@ -21,4 +22,4 @@ One price per variety. This is the seller-facing list.
 | Yucatan Princess Pink | 450 |
 | Melo Aurea | 450 |
 | Monstera Aurea Borsigiana | 450 |
-| Bambino Pink | 150 |
+| Bambino Pink | 250 |
