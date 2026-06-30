@@ -2,6 +2,7 @@
 
 Source: Kat's working price list, given in session. Currency is ILS (₪).
 Master copy: `tools/price-list.csv`. Edit there, keep this readable view in sync.
+TC (tissue culture) versions are priced at base + 15%.
 
 | Variety | Price (₪) |
 |---|---|
@@ -9,7 +10,9 @@ Master copy: `tools/price-list.csv`. Edit there, keep this readable view in sync
 | Venom high var | 2,500 |
 | Venom low var | 1,850 |
 | Cuprea Super Pink | 1,000 |
+| Cuprea Super Pink (TC) | 1,150 |
 | Cuprea Pink Mint | 950 |
+| Cuprea Pink Mint (TC) | 1,093 |
 | Cuprea Aurea Latte | 950 |
 | Chantrieri Pink | 750 |
 | Nobilis Pink K | 765 |
@@ -21,13 +24,3 @@ Master copy: `tools/price-list.csv`. Edit there, keep this readable view in sync
 | Melo Aurea | 450 |
 | Monstera Aurea Borsigiana | 450 |
 | Bambino Pink | 150 |
-
-## Tissue culture (TC) versions
-
-Kat's note: "these can go more up 15% each." Applied as base + 15%.
-Confirm these two before quoting.
-
-| Variety | Base (₪) | TC price, +15% (₪) |
-|---|---|---|
-| Cuprea Pink Mint (TC) | 950 | 1,093 |
-| Cuprea Super Pink (TC) | 1,000 | 1,150 |
