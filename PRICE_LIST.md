@@ -2,17 +2,15 @@
 
 Source: Kat's working price list, given in session. Currency is ILS (₪).
 Master copy: `tools/price-list.csv`. Edit there, keep this readable view in sync.
-TC (tissue culture) versions are priced at base + 15%.
+One price per variety. This is the seller-facing list.
 
 | Variety | Price (₪) |
 |---|---|
 | Devil Monster | 850 |
 | Venom high var | 2,500 |
 | Venom low var | 1,850 |
-| Cuprea Super Pink | 1,000 |
-| Cuprea Super Pink (TC) | 1,150 |
-| Cuprea Pink Mint | 950 |
-| Cuprea Pink Mint (TC) | 1,093 |
+| Cuprea Super Pink | 1,150 |
+| Cuprea Pink Mint | 1,093 |
 | Cuprea Aurea Latte | 950 |
 | Chantrieri Pink | 750 |
 | Nobilis Pink K | 765 |
