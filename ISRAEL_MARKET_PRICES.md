@@ -53,6 +53,44 @@ Our Bambino Pink is 150₪. Fair if a small starter; underpriced (350 to 450₪)
 established. Confirm size before setting final.
 Sources: Siena Plants, Rare Plant Fairy, Aroid Market, eBay.
 
+## Full list research: international web (June 2026)
+Are we the lowest? Compared per variety. Big caveat: cheap TC plantlets, corms,
+and pups sell far below sale-ready grown plants. Our prices are TARGETS for grown
+plants, so the fair comparison is the established tier. FX 3.7₪ per USD. These
+exclude shipping and Israeli import cost, which push real landed price higher.
+
+| Variety | Our ₪ | ≈USD | Lowest established market | Lowest vs grown plants? | Flag |
+|---|---|---|---|---|---|
+| Devil Monster | 850 | ~230 | ~$800 (~2,960₪) | YES, far under | Confirm it is the Monstera deliciosa sport, not an Alocasia |
+| Venom high var | 2,500 | ~676 | ~$1,795 (~6,640₪) | YES | |
+| Venom low var | 1,850 | ~500 | no clean tier exists | UNCLEAR | Market does not split Venom high/low; define our two SKUs |
+| Cuprea Super Pink | 1,150 | ~311 | $992 to $1,253 multi-leaf | YES vs multi-leaf | Cheap small/TC exist |
+| Cuprea Pink Mint | 1,093 | ~295 | $260 established small (TC $53) | NO | Only fits a large heavily variegated plant |
+| Cuprea Aurea Latte | 950 | ~257 | ~$495 (~1,830₪) | YES | |
+| Chantrieri Pink | 750 | ~203 | ~$252 (~932₪) | YES, at/under floor | |
+| Nobilis Pink K | 765 | ~207 | pups $95 to $210 | NO vs pups, OK vs established | |
+| Pseudo Sanderiana Pink | 650 | ~176 | ~$185 (~685₪) US grown | ROUGHLY EVEN | small imports $85 undercut |
+| Watsoniana Doff Pink | 650 | ~176 | $295 to $350 retail grown | YES vs retail grown | |
+| Ninja Pink | 600 | ~162 | no reliable data | UNCLEAR | Identity fuzzy (often "Black Velvet Ninja from pink mother") |
+| Azlanii Orange | 600 | ~162 | $28 to $50 if NON-variegated | NO if plain azlanii | BIGGEST FLAG: confirm variegated or not |
+| Yucatan Princess Pink | 450 | ~122 | pups $55 to $60 | NO vs pups, OK vs established | |
+| Melo Aurea | 450 | ~122 | ~$125 rooted (~460₪) | ROUGHLY EVEN | |
+| Monstera Aurea Borsigiana | 450 | ~122 | small $95 to $190 | NO vs small, OK vs mature | Common, liquid market |
+
+### Bottom line
+- At the SALE-READY GROWN tier we are at or under the lowest credible market price
+  on: Devil Monster, Venom high, Cuprea Aurea Latte, Chantrieri Pink, Watsoniana.
+  Roughly even on Pseudo Sanderiana, Melo, Cuprea Super Pink.
+- We are NOT the lowest where cheap TC/pups/corms flood the market: Cuprea Pink
+  Mint, Nobilis Pink K, Yucatan Princess, Monstera Aurea. Those are smaller-format
+  products, not the same thing we sell.
+- Needs Kat's identity check before final pricing:
+  1. Azlanii Orange (600): variegated or plain? Plain azlanii is a $28 to $50
+     common plant, so 600 would be far above market.
+  2. Venom high vs low (2,500 / 1,850): what defines the two grades.
+  3. Devil Monster: confirm it is the Monstera sport (then 850 is a steal).
+  4. Cuprea Pink Mint (1,093): justified only if large and heavily variegated.
+
 ## Our own April 2026 IG catalog (Alocasia TC Stock), for reference
 | Variety | Qty | Price (₪) |
 |---|---|---|
