@@ -122,7 +122,7 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 | Verrucosum Mint Variegated | 94 |
 | Whipple Way | 30 |
 | White Beauty Variegated | 715 |
-| White Wizard | 5 |
+| White Wizard | SOLD OUT |
 | Jose Buono | TBD |
 | Pink Princess Splash | TBD |
 | PP Marble Galaxy | TBD |
