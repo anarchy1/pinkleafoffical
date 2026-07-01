@@ -3,6 +3,25 @@
 Running, durable notes for the studio. Saved in the repo so they survive across
 sessions. Newest stuff goes at the top.
 
+## Tasks and shopping (updated 2026-07-01)
+
+Buy tomorrow:
+- Plastic boxes (acclimation / storage)
+- Plant food / fertilizer (start actually feeding the plants)
+- Other acclimation-process supplies
+
+Acclimation: improve the acclimation process for incoming plants; begin using
+fertilizer. Both the China (Kunming) TC shipment and the Thai (Jakkrit) order
+will need proper acclimation on arrival.
+
+Marketing/design: create PlantHero-style Instagram posts for the incoming
+plants. Style to match: cream background, dark green serif headline, dusty-pink
+accent for the plant name, cutout plant photo on soft fabric with palm shadow.
+Brand it Pink Leaf (pink + green). Batch content + schedule via Meta Business
+Suite.
+
+Still open: set up private finances/receipts tracking (NOT the public repo).
+
 ## Packing and supplies shopping list (saved 2026-06-15)
 
 - Stingray: ordered, no commitment.
