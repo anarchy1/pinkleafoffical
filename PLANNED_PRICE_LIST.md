@@ -138,28 +138,28 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 | Pothos N'Joy (White) | TBD |
 | Marcuriza Splash | TBD |
 
-## TBD - suggested prices from web research (2026-07-01, confirm before final)
-FX 3.7₪/USD. "sugg" = my market-based suggestion, Kat to approve.
+## TBD - suggested prices (Israeli market, middle ground; anchored to Kat's own comparable set prices)
+Method: price each TBD like the closest plant Kat already priced, not off the cheap international number. Kat to approve.
 
-| Variety | Suggested ₪ | Basis | Flag |
+| Variety | Suggested ₪ | Anchored to (your set price) | Flag |
 |---|---|---|---|
-| Azlanii Pink Variegated | 400 | variegated azlanii ~$300-470 established, pink premium | |
-| Watsoniana Pink Shiny Variegated | 450 | shiny pink var ~$176-315 ($651-1165₪) | likely SAME plant as "Watsoniana Glossy Pink 430", confirm |
-| Dragon Scale Albo Variegated | 400 | albo ~$100-200+ (370-740₪) | |
-| Dragon Scale Mint Variegated | 200 | market $30 TC to $425 est; competitor sold at 150 | |
-| Black Velvet Aurea Variegated | 70 | aurea/gold form | likely SAME as "Black Velvet Gold 69", confirm |
-| Macrorrhiza Variegated | 150 | macrorrhizos albo $38-100+ (141-370₪) | |
-| Macrorrhizos Splash | 150 | thin data, priced alongside macrorrhiza | low confidence |
-| Amazonica Pink Variegated | 330 | Amazonica = Polly, $144-555₪ | likely SAME as "Polly Pink 330", confirm |
-| Yellow Marilyn (Monstera) | 200 | $40-251 (148-929₪) | |
-| Green Elf (Monstera) | hold | no web data found | need info on what it is |
-| Jose Buono (Philo) | 180 | $56-241₪; comparable to your Tortum 180 | |
-| Pink Princess Splash (Philo) | 113 | PP marble/splash $55-111 | |
-| PP Marble Galaxy (Philo) | 200 | premium Pink Princess marble grade | |
-| Billietiae Variegated (Philo) | 215 | $144-925₪; comparable to your Silver Sword 215 | |
-| Anthurium Jungle Variegated | 250 | variegated anthurium $204+, thin data | low confidence |
+| Azlanii Pink Variegated | 500 | between Azlanii Albo 314 and Azlanii Orange 600 | |
+| Watsoniana Pink Shiny Variegated | 430 | your Watsoniana Glossy Pink 430 | likely the SAME plant, confirm/merge |
+| Dragon Scale Albo Variegated | 200 | premium over Dragon Scale Tri-Color 75 | |
+| Dragon Scale Mint Variegated | 113 | your Pink Dragon Stardust Mint 113 | |
+| Black Velvet Aurea Variegated | 69 | your Black Velvet Gold 69 | likely the SAME plant, confirm/merge |
+| Macrorrhiza Variegated | 120 | modest Alocasia tier | |
+| Macrorrhizos Splash | 120 | alongside Macrorrhiza | low confidence |
+| Amazonica Pink Variegated | 330 | your Polly Pink 330 (same plant) | same as Polly Pink, confirm/merge |
+| Yellow Marilyn (Monstera) | 200 | your Lemon Pom Pom 215 tier | |
+| Green Elf (Monstera) | hold | no data | need info on what it is |
+| Jose Buono (Philo) | 180 | your Tortum 180 | |
+| Pink Princess Splash (Philo) | 145 | your Strawberry Marble 145 | |
+| PP Marble Galaxy (Philo) | 200 | premium Pink Princess marble | |
+| Billietiae Variegated (Philo) | 215 | your Silver Sword 215 | |
+| Anthurium Jungle Variegated | 250 | thin data, mid tier | low confidence |
 | Pothos N'Joy (White) | 40 | common inexpensive pothos | |
-| Marcuriza Splash | hold | name not identified, no data | confirm what plant this is |
+| Marcuriza Splash | hold | name not identified | confirm what plant this is |
 
 ## Worth a second look (set prices that research flags)
 - White Wizard 5: research says White Wizard is $20-89 (74-329₪). 5₪ looks like a typo, should likely be ~90 to 150.
