@@ -7,18 +7,18 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 ## Headline availability (the current sellable/priority set)
 | Variety | ₪ | Status |
 |---|---|---|
-| Devil Monster | 850 | coming soon |
-| Venom high var | 2,500 | available |
-| Venom low var | 1,850 | available |
-| Cuprea Super Pink | 1,150 | coming soon |
-| Cuprea Pink Mint | 1,093 | available |
+| Devil Monster | 950 | |
+| Venom high var | 2,500 | |
+| Venom low var | 1,850 | SOLD OUT |
+| Cuprea Super Pink | 1,250 | |
+| Cuprea Pink Mint | 1,093 | |
 | Cuprea Aurea Latte | 950 | corms (acclimation) |
-| Chantrieri Pink | 750 | |
+| Chantrieri Pink | 900 | |
 | Nobilis Pink K | 765 | |
-| Pseudo Sanderiana Pink | 650 | |
+| Pseudo Sanderiana Pink | 700 | |
 | Watsoniana Doff Pink | 650 | |
 | Ninja Pink | 600 | |
-| Azlanii Orange | 600 | sold |
+| Azlanii Orange | 600 | SOLD OUT |
 | Yucatan Princess Pink | 450 | |
 | Melo Aurea | 450 | |
 | Monstera Aurea Borsigiana | 450 | available |
