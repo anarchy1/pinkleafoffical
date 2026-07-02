@@ -2,9 +2,10 @@
 """
 Pink Leaf Instagram post generator.
 
-Reproduces the Pink Leaf post template (arch photo, big logo, care list, Hebrew
-story) as 1080x1553 PNGs. This is the durable version of the design system built
-in the studio session, so posts can be regenerated any time without redoing it.
+Renders the Pink Leaf post template (arch photo, big logo, care list, Hebrew
+story) as 1080x1350 PNGs (Instagram 4:5, the max portrait size, so Instagram
+does NOT crop the top/bottom). All branding is kept out of the bottom-right
+corner where Instagram overlays the sound button on posts with music.
 
 Usage:
     pip install pillow pillow-heif
@@ -28,6 +29,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT = os.path.join(REPO, "social-posts")
 LOGO = os.path.join(REPO, "logo-dark.png")
+W, H = 1080, 1350
 PK = "#c98da0"; GR = "#324b39"; PKd = "#b87a92"
 
 def find_chrome():
@@ -43,7 +45,6 @@ def b64(path):
     return base64.b64encode(open(path, "rb").read()).decode()
 
 def logo_b64():
-    """logo-dark.png with its white background knocked out to transparent."""
     im = Image.open(LOGO).convert("RGBA"); px = im.load(); w, h = im.size
     for y in range(h):
         for x in range(w):
@@ -76,33 +77,34 @@ def html(p, logo):
     photo = photo_b64(p["photo"])
     rows = "".join(f'<div class="cr"><div class="ci">{IC[k]}</div><div class="ct">{t}</div></div>' for k,t in CARE[p["care"]])
     return f"""<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>
-@page{{size:1080px 1553px;margin:0}}*{{margin:0;padding:0;box-sizing:border-box}}
-body{{width:1080px;height:1553px;background:#f0e8dc;font-family:'DejaVu Sans',sans-serif;color:#463f36;position:relative;overflow:hidden}}
-.wm{{position:absolute;left:60px;top:52px}}
-.wm .a{{font-family:'FreeSerif',serif;font-size:33px;letter-spacing:5px;color:{GR};font-weight:bold}}
-.wm .b{{font-size:14px;letter-spacing:6px;color:{PK};margin-top:3px}}
-.hline{{position:absolute;left:300px;width:610px;top:74px;border-top:1px solid #d9bfc6}}
-.hleaf{{position:absolute;left:998px;top:56px;width:30px;height:30px;transform:rotate(20deg)}}
-.col{{position:absolute;left:60px;top:168px;width:452px;text-align:right}}
-h1{{font-family:'FreeSerif',serif;font-size:74px;line-height:1.03;color:{GR};font-weight:bold}}
-.subhe{{font-size:26px;color:{PK};font-weight:bold;margin-top:16px}}
-.suben{{font-size:30px;color:{PK};font-weight:bold;letter-spacing:1px}}
-.dot{{width:6px;height:6px;border-radius:50%;background:{PK};margin:18px 0 18px auto}}
-.story{{font-size:24px;line-height:1.72;font-weight:300}}
-.careh{{display:flex;align-items:center;gap:12px;margin:24px 0 4px;flex-direction:row-reverse}}
-.careh .t{{font-family:'FreeSerif',serif;font-size:26px;color:{GR};font-weight:bold;white-space:nowrap}}
-.careh .lv{{width:24px;height:24px}} .careh .ln{{flex:1;border-top:1px solid #d9bfc6}}
-.cr{{display:flex;direction:ltr;align-items:center;padding:9px 0;border-bottom:1px solid #e6d8dc}}
-.ci{{width:58px;flex:none;text-align:center}} .ci svg{{width:30px;height:30px}}
-.ct{{flex:1;text-align:right;font-size:21px;font-weight:300;border-left:1px solid #e6d8dc;margin-left:18px;padding-right:18px}}
-.photo{{position:absolute;left:552px;top:140px;width:474px;height:1168px;border-radius:237px 237px 22px 22px;background-image:url('data:image/jpeg;base64,{photo}');background-size:cover;background-position:{p['bgpos']};box-shadow:0 20px 46px rgba(60,40,45,.24)}}
-.archln{{position:absolute;left:540px;top:120px;width:498px;height:1198px;border:1px solid #cbb0b8;border-radius:249px 249px 24px 24px}}
-.sumbox{{position:absolute;left:60px;top:1224px;width:452px;height:282px;border:1px solid #d3bcc2;border-radius:18px;display:flex;direction:ltr;align-items:center;padding:0 30px;gap:24px}}
-.sumbox .lg img{{height:238px;display:block}}
-.sumbox .vd{{width:1px;height:206px;background:#e0cdd2;flex:none}}
-.sumbox .tg{{flex:1;text-align:right;font-size:16px;line-height:1.55;color:#6a6157;font-weight:300}}
-.ig{{position:absolute;left:702px;top:1352px;display:flex;direction:ltr;align-items:center;gap:11px}}
-.ig svg{{width:34px;height:34px}} .ig span{{font-size:26px;color:{PKd};font-weight:bold}}
+@page{{size:{W}px {H}px;margin:0}}*{{margin:0;padding:0;box-sizing:border-box}}
+body{{width:{W}px;height:{H}px;background:#f0e8dc;font-family:'DejaVu Sans',sans-serif;color:#463f36;position:relative;overflow:hidden}}
+.wm{{position:absolute;left:58px;top:44px}}
+.wm .a{{font-family:'FreeSerif',serif;font-size:30px;letter-spacing:5px;color:{GR};font-weight:bold}}
+.wm .b{{font-size:13px;letter-spacing:5px;color:{PK};margin-top:3px}}
+.hline{{position:absolute;left:288px;width:600px;top:62px;border-top:1px solid #d9bfc6}}
+.hleaf{{position:absolute;left:1000px;top:46px;width:28px;height:28px;transform:rotate(20deg)}}
+.col{{position:absolute;left:58px;top:138px;width:452px;text-align:right}}
+h1{{font-family:'FreeSerif',serif;font-size:66px;line-height:1.02;color:{GR};font-weight:bold}}
+.subhe{{font-size:24px;color:{PK};font-weight:bold;margin-top:13px}}
+.suben{{font-size:27px;color:{PK};font-weight:bold;letter-spacing:1px}}
+.dot{{width:6px;height:6px;border-radius:50%;background:{PK};margin:14px 0 14px auto}}
+.story{{font-size:22px;line-height:1.62;font-weight:300}}
+.careh{{display:flex;align-items:center;gap:11px;margin:18px 0 2px;flex-direction:row-reverse}}
+.careh .t{{font-family:'FreeSerif',serif;font-size:24px;color:{GR};font-weight:bold;white-space:nowrap}}
+.careh .lv{{width:22px;height:22px}} .careh .ln{{flex:1;border-top:1px solid #d9bfc6}}
+.cr{{display:flex;direction:ltr;align-items:center;padding:7px 0;border-bottom:1px solid #e6d8dc}}
+.ci{{width:54px;flex:none;text-align:center}} .ci svg{{width:27px;height:27px}}
+.ct{{flex:1;text-align:right;font-size:19px;font-weight:300;border-left:1px solid #e6d8dc;margin-left:16px;padding-right:16px}}
+.photo{{position:absolute;left:552px;top:124px;width:470px;height:970px;border-radius:235px 235px 20px 20px;background-image:url('data:image/jpeg;base64,{photo}');background-size:cover;background-position:{p['bgpos']};box-shadow:0 18px 40px rgba(60,40,45,.24)}}
+.archln{{position:absolute;left:540px;top:108px;width:494px;height:1000px;border:1px solid #cbb0b8;border-radius:247px 247px 22px 22px}}
+.sumbox{{position:absolute;left:58px;top:1120px;width:466px;height:186px;border:1px solid #d3bcc2;border-radius:16px;display:flex;direction:ltr;align-items:center;padding:0 24px;gap:20px}}
+.sumbox .lg img{{height:150px;display:block}}
+.sumbox .vd{{width:1px;height:120px;background:#e0cdd2;flex:none}}
+.sumbox .rt{{flex:1;text-align:right}}
+.sumbox .tg{{font-size:16px;line-height:1.5;color:#6a6157;font-weight:300}}
+.sumbox .hd{{margin-top:8px;display:flex;direction:ltr;justify-content:flex-end;align-items:center;gap:8px}}
+.sumbox .hd svg{{width:24px;height:24px}} .sumbox .hd span{{font-size:18px;color:{PKd};font-weight:bold}}
 </style></head><body>
 <div class="wm"><div class="a">PINK LEAF</div><div class="b">BOTANICAL STUDIOS</div></div>
 <div class="hline"></div><div class="hleaf">{IC['leafsm']}</div>
@@ -110,8 +112,9 @@ h1{{font-family:'FreeSerif',serif;font-size:74px;line-height:1.03;color:{GR};fon
 <div class="col"><h1>{p['h1a']}<br>{p['h1b']}</h1><div class="subhe">{p['subhe']}</div><div class="suben">{p['suben']}</div><div class="dot"></div>
  <div class="story">{p['story']}</div>
  <div class="careh"><span class="lv">{IC['leafsm']}</span><span class="ln"></span><span class="t">איך מטפלים</span></div>{rows}</div>
-<div class="sumbox"><div class="lg"><img src="data:image/png;base64,{logo}"></div><div class="vd"></div><div class="tg">נבחרת בקפידה.<br>גדלה באהבה.<br>נשלחת אליכם. <span style="color:{PK}">&#9829;</span></div></div>
-<div class="ig">{IC['ig']}<span>@pinkleaf.studio</span></div>
+<div class="sumbox"><div class="lg"><img src="data:image/png;base64,{logo}"></div><div class="vd"></div>
+ <div class="rt"><div class="tg">נבחרת בקפידה.<br>גדלה באהבה.<br>נשלחת אליכם. <span style="color:{PK}">&#9829;</span></div>
+ <div class="hd">{IC['ig']}<span>@pinkleaf.studio</span></div></div></div>
 </body></html>"""
 
 def main():
@@ -124,7 +127,7 @@ def main():
         out = os.path.join(OUT, p["id"] + ".png")
         subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu",
             "--hide-scrollbars", "--force-device-scale-factor=1",
-            "--screenshot=" + out, "--window-size=1080,1553", hp],
+            "--screenshot=" + out, f"--window-size={W},{H}", hp],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print("rendered", p["id"])
     for f in ("_logo_trans.png", "_p.jpg", "_cur.html"):
