@@ -15,7 +15,7 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 | Cuprea Aurea Latte | 950 | corms (acclimation) |
 | Chantrieri Pink | 900 | |
 | Nobilis Pink K | 765 | |
-| Pseudo Sanderiana Pink | 700 | |
+| Pseudo Sanderiana Pink | 650 | |
 | Watsoniana Doff Pink | 650 | |
 | Ninja Pink | 600 | |
 | Azlanii Orange | 600 | SOLD OUT |
