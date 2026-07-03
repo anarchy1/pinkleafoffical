@@ -5,7 +5,12 @@ PRIVACY: this repo is PUBLIC, so NO customer names, prices, or totals live here.
 Those are kept in chat only. If the repo is made private, we can store the full
 thing (names, prices, totals) here instead.
 
-Two orders are in play. Keep them separate when locating plants and printing labels.
+Two orders are in play, both PICKUP (customers coming to collect). Keep them
+separate when locating plants and printing labels.
+
+## Pickup readiness (quick status)
+- Order A: missing 1 plant (Zebrina Aurea Variegated) - ask supplier.
+- Order B: missing 2 plants (Jacklyn Mystic Variegated, Dragon Scale Albo Variegated).
 
 ## Order A - TC order (12 items)
 Status: located / MISSING per digging through stock.
