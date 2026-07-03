@@ -73,6 +73,19 @@ kept here per how it was grouped. The Mint version needs confirming.
 ## Philodendron
 | Variety | QTY |
 |---|---|
+| Caramel Marble Variegated | 7 |
+| Green Lemon | 1 |
+| Melano Orange Variegated | 2 |
+| Micans Variegated | 1 |
+| Narrow Variegated | 1 |
+| Red Congo Variegated | 2 |
+| Strawberry Marble Variegated | 3 |
+| Tortum Variegated | 1 |
+| Verrucosum Mint Variegated | 2 |
+| White Beauty Variegated | 2 |
+| Whipple Way | 1 |
+
+Philodendron subtotal: 23 pieces.
 
 ## Other
 | Variety | QTY |
