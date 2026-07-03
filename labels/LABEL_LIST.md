@@ -20,6 +20,22 @@ Status: STARTED. Building it up. Not complete yet.
 ## Monstera
 | Variety | QTY |
 |---|---|
+| Deliciosa Banana Super Golden | 3 |
+| Devil Monster | 6 |
+| Electro Light | 1 |
+| Green Snow | 1 |
+| Legacy | 3 |
+| Lemon Lime Full Variegation | 3 |
+| Lemon Pom Pom | 1 |
+| Mint (Full mint) | 2 |
+| Rhaphidophora Tetrasperma Variegated | 1 |
+| Rhaphidophora Tetrasperma Mint Variegated (confirm) | 1 |
+| Star Shadow | 3 |
+| White Monster | 4 |
+
+Monstera subtotal: 29 pieces.
+Note: Rhaphidophora Tetrasperma is technically a mini-monstera (own genus),
+kept here per how it was grouped. The Mint version needs confirming.
 
 ## Philodendron
 | Variety | QTY |
