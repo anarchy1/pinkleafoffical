@@ -1,28 +1,31 @@
-# Tomorrow's plan (set 2026-07-02 night)
+# Kat's list (updated 2026-07-04)
 
-Short, ordered task list for the next session so nothing gets lost.
+The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 
-## 1. Save the full order list, then cross-check "missing"
-- Kat pastes the FULL order list (the supplier / TC order).
-- Save it into the repo so it persists.
-- Cross-check the missing varieties against it: were they actually ordered?
-  If a "missing" plant was never on the order, it is not really missing.
-- Current missing candidates (see MISSING_PLANTS.md):
-  - Zebrina Aurea Variegated (only Mint found in stock)
-  - Dragon Scale Albo Variegated (found, but misplaced after reorg)
-  - Jacklyn Mystic Variegated (not yet located)
+## Personal
+- [ ] Book medical appointments (Kat + daughter).
+- [ ] Collect all receipts (from bag + email) and file them (Notion Receipts & Expenses).
 
-## 2. Print labels
-- Big label run. Decide format/what goes on each label before printing.
+## Supplies to buy
+- [ ] Packaging boxes.
+- [ ] Packing stuffing / filler material (foam, paper, bags).
+- [ ] Distilled water (running low, for TC acclimation rinses).
+- [ ] Fluval Stratum substrate (may need more).
 
-## 3. Sell-first vs acclimate-first split
-- Go through the collection and split into two groups:
-  - Sell off first (profitable, sellable now).
-  - Acclimate first (needs time before selling).
-- Acclimation space is limited (two boxes). Prioritize accordingly.
+## The room / studio setup
+- [ ] Explore shelving for the room.
+- [ ] Clear out the room.
+- [ ] Sort out items to sell (declutter, list what to sell).
+- [ ] Dedicate the spare PC to Claude (set it up so a local session can run and work
+      from it, like dispatch on the Mac).
 
-## Notes
-- Two separate orders are in play: Idan's TC order and a presale order.
-  Keep them apart when locating plants and printing labels.
-- Presale prices come from the PRESALE catalog, not PLANNED_PRICE_LIST.md.
-  (Presale catalog still needs to be saved to the repo.)
+## Plants / shipment (carried over)
+- [ ] Name the 3 unidentified Alocasia so the label list is complete.
+- [ ] Print cup labels (see labels/STICKER_PRINT_LIST.md, grouped by family, client plants first).
+- [ ] Acclimate the client plants first (Toren, Riba, Roi), then own stock by value.
+- [ ] Pay Noah Custom Ltd (customs brokerage): IBAN IL89 0206 1500 0000 0118 537,
+      confirm 500 vs 564 with Mola.
+- [ ] Supplier shortfall to raise: Zebrina Aurea Variegated x1 (never sent).
+
+## Add as they come up
+- [ ] (Kat said there were more important things, add here.)
