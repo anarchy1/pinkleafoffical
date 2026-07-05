@@ -31,7 +31,7 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 | Bambino Aurea Variegated | 55 |
 | Bambino Pink Variegated | 150 (set) |
 | Bambino Pink Lava Variegated | 301 |
-| Black Velvet Pink Variegated | 700 (set) |
+| Black Velvet Pink Variegated | 450 (set) |
 | Black Velvet Gold Variegated | 69 |
 | Chantrieri Pink Variegated | 750 (set) |
 | Cuprea Aurea Variegated Latte | 950 (set) |
