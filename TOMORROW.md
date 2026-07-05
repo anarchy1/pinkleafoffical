@@ -15,6 +15,16 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Cat litter.
 - [ ] Cat food.
 - [ ] 2 more acclimation boxes (no more than two).
+- [ ] Groceries / food (out of meat).
+
+## Errands
+- [ ] Throw out trash.
+- [ ] Get rid of old television.
+
+## Design (not urgent, later)
+- [ ] Redesign the cup/product stickers. Add: website address, phone number,
+      maybe a QR code. Possibly two sets, including a kawaii / holographic
+      cartoonish version. Keep the "different version every time" idea.
 
 ## The room / studio setup
 - [ ] Explore shelving for the room.
