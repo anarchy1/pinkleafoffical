@@ -11,6 +11,7 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Packing stuffing / filler material (foam, paper, bags).
 - [ ] Distilled water (running low, for TC acclimation rinses).
 - [ ] Fluval Stratum substrate (may need more).
+- [ ] New stickers / label paper (for the cup labels, running low).
 
 ## The room / studio setup
 - [ ] Explore shelving for the room.
