@@ -14,7 +14,8 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] New stickers / label paper (for the cup labels, running low).
 - [ ] Cat litter.
 - [ ] Cat food.
-- [ ] 2 more acclimation boxes (no more than two).
+- [x] 2 more acclimation boxes (no more than two). DONE: 2 storage boxes from
+      MiniMax, ₪59 each, ₪118 total (05/07/2026).
 - [ ] Groceries / food (out of meat).
 
 ## Website / online
