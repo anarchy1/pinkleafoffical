@@ -4,6 +4,30 @@ Competitor and market prices observed in Israeli plant groups, for pricing and
 undercutting decisions. All from PUBLIC posts (Instagram, Facebook groups), so
 this is market data, not private info. Currency is ILS (₪). Newest on top.
 
+## KEY RULE: never price Kat BELOW the Israeli market. Check these first.
+Primary Israeli retail references to always check before setting a price:
+- **rootine.co.il** (major Israeli retailer, shows in Google Shopping)
+- Israeli FB/WhatsApp seller groups (e.g. Idan's list, Nekudat Chen)
+
+### rootine.co.il (captured 2026-07-05, Google Shopping)
+| Variety | Price (₪) |
+|---|---|
+| Alocasia Black Velvet Pink Variegated | 779.87 |
+| Alocasia Polly Pink Variegated | 478.80 |
+
+### Israeli seller group (Idan's list, captured 2026-07-05)
+| Variety | Price (₪) |
+|---|---|
+| Alocasia Black Velvet Pink | 550 |
+| Alocasia Yucatan Princess Pink | 350 |
+| Alocasia Maharani Albo | 850 |
+| Alocasia Ninja Tri-Color | 300 |
+| Alocasia Pseudo Sanderiana Aurea | 650 |
+| Philo Caramel Marble (base/head/albo) | 200 / 240 / 650 |
+| Monstera Mint | 275 |
+| Monstera Bulbasaur | 400 |
+| Monstera Albo | 100-120 |
+
 ## Competitor: Nekudat Chen (נקודת חן, Hadar HaAm)
 Source: "Aroids Lovers Israel - Buy - Sell - Trade" FB group, seller post.
 Captured 2026-06-15. Names transliterated from Hebrew; a few are best-guess.
