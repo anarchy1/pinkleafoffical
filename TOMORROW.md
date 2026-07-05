@@ -17,6 +17,12 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] 2 more acclimation boxes (no more than two).
 - [ ] Groceries / food (out of meat).
 
+## Website / online
+- [ ] Install "Suram" for the website (CONFIRM what Suram is: SSL cert? a plugin?
+      Meshulam payment? Kat to clarify).
+- [ ] Instagram: business account's contact button goes to Kat's PERSONAL phone.
+      Change the profile contact phone to the WORK number.
+
 ## Errands
 - [ ] Throw out trash.
 - [ ] Get rid of old television.
