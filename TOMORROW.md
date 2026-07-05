@@ -42,4 +42,11 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Supplier shortfall to raise: Zebrina Aurea Variegated x1 (never sent).
 
 ## Add as they come up
+- [ ] Make a price list.
 - [ ] (Kat said there were more important things, add here.)
+
+## Acclimation note
+- Kat is acclimating ~1 box of plants per day, worst-looking / most urgent first.
+  That triage is correct.
+- Customers who have not decided yet AND want TC: leave those as TC plugs, do NOT
+  acclimate them. They are the lowest priority for the boxes.
