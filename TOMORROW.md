@@ -12,6 +12,9 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Distilled water (running low, for TC acclimation rinses).
 - [ ] Fluval Stratum substrate (may need more).
 - [ ] New stickers / label paper (for the cup labels, running low).
+- [ ] Cat litter.
+- [ ] Cat food.
+- [ ] 2 more acclimation boxes (no more than two).
 
 ## The room / studio setup
 - [ ] Explore shelving for the room.
