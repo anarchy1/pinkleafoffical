@@ -31,7 +31,7 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 | Bambino Aurea Variegated | 55 |
 | Bambino Pink Variegated | 150 (set) |
 | Bambino Pink Lava Variegated | 301 |
-| Black Velvet Pink Variegated | 63 |
+| Black Velvet Pink Variegated | 450 (set) |
 | Black Velvet Gold Variegated | 69 |
 | Chantrieri Pink Variegated | 750 (set) |
 | Cuprea Aurea Variegated Latte | 950 (set) |
@@ -49,7 +49,7 @@ master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
 | Nairobi Nights A Grade | 251 |
 | Ninja Albo Variegated | 250 |
 | Nobilis Pink Variegated K Version | 765 (set) |
-| Pink Dragon Stardust Mint Variegated | 113 |
+| Pink Dragon Stardust Mint Variegated | 250 (set) |
 | Polly Ghost Mint Variegated | 55 |
 | Polly Lava Variegated | 500 |
 | Polly Pink Variegated | 330 |
