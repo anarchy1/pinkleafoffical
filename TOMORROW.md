@@ -19,6 +19,9 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Groceries / food (out of meat).
 
 ## Website / online
+- [ ] PRIORITY: add Meshulam (Grow) checkout to the site so customers can pay by
+      credit card. The Bit failure with Karin (2026-07-06) is the reason: stop
+      being hostage to one payment app. This is the standing plan (see CLAUDE.md).
 - [ ] "Suram": UNCLEAR, do not action until Kat says what it is. Kat flagged this
       item does not make sense to her either. Probably a mis-hearing (Meshulam?
       an SSL cert? a plugin?). PARK IT until confirmed. Claude will not add vague
@@ -56,8 +59,9 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 
 ## Tomorrow's new missions (2026-07-06 night)
 - [ ] Karin: send the ready morning message (payment/Bit + Melo-not-TC + Maharani
-      price + Yucatan yellow-leaf transparency). Put 550+ for Maharani. Only hand
-      over plants once payment has actually CLEARED.
+      price + Yucatan yellow-leaf transparency). Maharani = 480 (Kat's choice; the
+      floor is 550, so 480 is a deliberate relationship discount, never lower).
+      Only hand over plants once payment has actually CLEARED.
 - [ ] Karin payment: call Bit to sort why it did not go through (or offer bank
       transfer / PayBox).
 - [ ] New plant to log: Ninja Olive Variegated (add to stock list + price it to
