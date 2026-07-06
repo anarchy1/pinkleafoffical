@@ -1,0 +1,8 @@
+
+# post-generator temp artifacts
+tools/post-generator/__pycache__/
+tools/post-generator/_logo_trans.png
+tools/post-generator/_p.jpg
+tools/post-generator/_cur.html
+tools/post-generator/_venom*.png
+tools/post-generator/_venom*.html
