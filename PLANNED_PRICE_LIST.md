@@ -169,3 +169,34 @@ Method: price each TBD like the closest plant Kat already priced, not off the ch
 ## Discrepancies to reconcile (Kat to confirm)
 - Cuprea Pink Mint: this list says 950 (set), headline says 1,093. Which is final?
 - Cuprea Super Pink: headline 1,150 vs "Cuprea Red Secret Super Pink" 1000 (set). Same plant? Which price?
+
+## TC PRICING FLOOR (added 2026-07-06, do NOT quote below this)
+Standing rule after repeatedly under-pricing Kat. TC (tissue culture) plugs are
+cheaper than a grown plant, but "cheaper than a 4,200 nursery specimen" means
+hundreds, NOT ~300. Method: anchor to the REAL grown/nursery price, then TC sits
+at roughly 20 to 35% of that, and NEVER below the Israeli market (rootine.co.il,
+Idan's list). Grails carry a higher floor because their grown specimens hit
+thousands.
+
+Context anchor (Kat, 2026-07-06): a nursery sells grown Melo and Maharani at
+about 4,200 each. That is the ceiling these TCs discount DOWN from.
+
+| Variety | Grown/market anchor | TC FLOOR (never below) |
+|---|---|---|
+| Melo Albo | ~4,200 nursery / 750 April | 550 |
+| Maharani Albo | ~4,200 nursery / 850 Idan | 550 |
+| Cuprea (Super Pink / Pink Mint) | 950-1,250 | 500 |
+| Venom Pink | 1,850-2,500 | 700 |
+| Watsoniana True Pink | 650+ | 450 |
+| Black Velvet Pink | 779 rootine | 420 |
+| Polly Pink | 478 rootine | 320 |
+| Yucatan Princess Pink | 350-450 | 300 |
+| Silver Dragon Aurea | 280 April | 240 |
+| Jacklyn Mystic | 350 April | 230 |
+
+Rule of thumb for anything not listed: TC floor = max( 25% of the grown price,
+the lowest Israeli-market price for that plant ). When unsure, price UP and let
+Kat come down, never the reverse.
+
+Note: Melo Albo is NOT currently available as TC (only in acclimation). Quote it
+as an acclimating/grown plant, not a TC plug.
