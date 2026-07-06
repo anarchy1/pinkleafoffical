@@ -19,7 +19,7 @@ To add a plant: add an entry to posts_data.json and drop its photo in ./photos/ 
 Product posts must use a real photo of the actual plant.
 """
 import base64, json, os, subprocess, glob, sys
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont, ImageChops
 try:
     import pillow_heif; pillow_heif.register_heif_opener()
 except Exception:
@@ -117,20 +117,66 @@ h1{{font-family:'FreeSerif',serif;font-size:66px;line-height:1.02;color:{GR};fon
  <div class="hd">{IC['ig']}<span>@pinkleaf.studio</span></div></div></div>
 </body></html>"""
 
+# --- ULTRA RARE corner banner (baked template) ---------------------------
+# Draws a "\" pink ribbon across the arch's top-right corner, ends CLIPPED
+# flush to the arch edge, on any post whose data has "ultra": true. Placement
+# is locked to match the approved reference (see templates/ULTRA_RARE_banner.md).
+# AL/AT/AW/AH MUST match the .photo rect in the CSS above (left/top/width/height).
+AL, AT, AW, AH = 552, 124, 470, 970
+BANNER_FONT = "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
+
+def _arch_mask():
+    m = Image.new("L", (W, H), 0); d = ImageDraw.Draw(m)
+    R = AL + AW; Bt = AT + AH
+    d.ellipse([AL, AT, R, AT + 2 * 235], fill=255)   # top dome (radius 235)
+    d.rectangle([AL, AT + 235, R, Bt], fill=255)     # body
+    return m
+
+def _ribbon(text="✦ ULTRA RARE ✦", angle=-45):
+    pink = (201, 141, 160, 255); cream = (247, 240, 230, 255)
+    font = ImageFont.truetype(BANNER_FONT, 33)
+    tb = ImageDraw.Draw(Image.new("RGBA", (10, 10))).textbbox((0, 0), text, font=font)
+    tw, th = tb[2] - tb[0], tb[3] - tb[1]
+    sw, sh = tw + 170, th + 34   # extra length so clipped ends reach both arch edges
+    strip = Image.new("RGBA", (sw, sh), pink)
+    ds = ImageDraw.Draw(strip)
+    ds.rectangle([5, 5, sw - 6, sh - 6], outline=cream, width=2)
+    ds.text(((sw - tw) / 2 - tb[0], (sh - th) / 2 - tb[1]), text, font=font, fill=cream)
+    return strip.rotate(angle, expand=True, resample=Image.BICUBIC)
+
+def add_banner(img, cx=895, cy=250):
+    base = img.convert("RGBA"); rib = _ribbon(); w, h = rib.size
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    layer.alpha_composite(rib, (int(cx - w / 2), int(cy - h / 2)))
+    r, g, b, a = layer.split()
+    a = ImageChops.multiply(a, _arch_mask())   # clip ribbon flush to the arch
+    base.alpha_composite(Image.merge("RGBA", (r, g, b, a)))
+    return base.convert("RGB")
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     chrome = find_chrome(); logo = logo_b64()
     data = json.load(open(os.path.join(HERE, "posts_data.json"), encoding="utf-8"))
+    only = set(sys.argv[1:])            # optional: render just these ids
+    if only:
+        data = [p for p in data if p["id"] in only]
     for p in data:
         hp = os.path.join(HERE, "_cur.html")
         open(hp, "w", encoding="utf-8").write(html(p, logo))
-        out = os.path.join(OUT, p["id"] + ".png")
+        raw = os.path.join(HERE, "_raw.png")
+        # render taller than needed, then crop: headless Chrome leaves an
+        # unpainted band at the very bottom of a screenshot.
         subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu",
             "--hide-scrollbars", "--force-device-scale-factor=1",
-            "--screenshot=" + out, f"--window-size={W},{H}", hp],
+            "--screenshot=" + raw, f"--window-size={W},{H + 140}",
+            "--user-data-dir=/tmp/_pg_cud", hp],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print("rendered", p["id"])
-    for f in ("_logo_trans.png", "_p.jpg", "_cur.html"):
+        im = Image.open(raw).convert("RGB").crop((0, 0, W, H))
+        if p.get("ultra"):
+            im = add_banner(im)
+        im.save(os.path.join(OUT, p["id"] + ".png"))
+        print("rendered", p["id"], "(ULTRA RARE)" if p.get("ultra") else "")
+    for f in ("_logo_trans.png", "_p.jpg", "_cur.html", "_raw.png"):
         try: os.remove(os.path.join(HERE, f))
         except OSError: pass
     print("done ->", OUT)
