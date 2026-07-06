@@ -1,4 +1,4 @@
-# Kat's list (updated 2026-07-04)
+# Kat's list (updated 2026-07-06)
 
 The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 
@@ -19,10 +19,15 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Groceries / food (out of meat).
 
 ## Website / online
-- [ ] Install "Suram" for the website (CONFIRM what Suram is: SSL cert? a plugin?
-      Meshulam payment? Kat to clarify).
-- [ ] Instagram: business account's contact button goes to Kat's PERSONAL phone.
-      Change the profile contact phone to the WORK number.
+- [ ] "Suram": UNCLEAR, do not action until Kat says what it is. Kat flagged this
+      item does not make sense to her either. Probably a mis-hearing (Meshulam?
+      an SSL cert? a plugin?). PARK IT until confirmed. Claude will not add vague
+      items like this again without checking first.
+- [ ] Instagram contact button points to Kat's PERSONAL phone, change it to the
+      WORK number. NOTE: neither Claude (cloud) nor dispatch (Mac) can do this,
+      there is no Meta/Instagram access on either side. Kat does it in the app:
+      Profile > Edit profile > Contact options (or "Public business information")
+      > Phone > replace with the work number > Save. ~30 seconds.
 
 ## Errands
 - [ ] Throw out trash.
@@ -41,16 +46,26 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
       from it, like dispatch on the Mac).
 
 ## Plants / shipment (carried over)
-- [ ] Name the 3 unidentified Alocasia so the label list is complete.
-- [ ] Print cup labels (see labels/STICKER_PRINT_LIST.md, grouped by family, client plants first).
+- [ ] Name the 3 unidentified Alocasia so the label list is complete. (Kat: the
+      naming/locations item was confusing, show her the specific plants/photos
+      before adding names, do not guess.)
+- [x] Print cup labels. DONE (Kat printed them, 05-06/07).
 - [ ] Acclimate the client plants first (Toren, Riba, Roi), then own stock by value.
-- [ ] Pay Noah Custom Ltd (customs brokerage): IBAN IL89 0206 1500 0000 0118 537,
-      confirm 500 vs 564 with Mola.
+- [x] Pay Noah Custom Ltd (customs brokerage). DONE (Kat paid the customs).
 - [ ] Supplier shortfall to raise: Zebrina Aurea Variegated x1 (never sent).
 
+## Tomorrow's new missions (2026-07-06 night)
+- [ ] Karin: send the ready morning message (payment/Bit + Melo-not-TC + Maharani
+      price + Yucatan yellow-leaf transparency). Put 550+ for Maharani. Only hand
+      over plants once payment has actually CLEARED.
+- [ ] Karin payment: call Bit to sort why it did not go through (or offer bank
+      transfer / PayBox).
+- [ ] New plant to log: Ninja Olive Variegated (add to stock list + price it to
+      the TC floor + it can get a post).
+- [ ] Two customer orders to fulfill (names/details to confirm with Kat).
+
 ## Add as they come up
-- [ ] Make a price list.
-- [ ] (Kat said there were more important things, add here.)
+- [x] Make a price list. DONE (PLANNED_PRICE_LIST.md, now with a TC pricing floor).
 
 ## Acclimation note
 - Kat is acclimating ~1 box of plants per day, worst-looking / most urgent first.
