@@ -42,14 +42,22 @@ that should survive across sessions HERE, in the repo.
 - Lay it out like a standard rare-plant niche store (clean product grid).
 
 ### Payments
-- Chosen provider: **Meshulam (Grow)** (Israeli gateway; supports Israeli cards
-  and Bit, and hosted payment pages / payment links that work from a static
-  site). Updated 2026-06-15 by Kat; supersedes the earlier PayPlus pick.
+- LEADING PICK (2026-07-06): **Invoice4u**. Why it beats Meshulam for us: it does
+  card + Bit checkout via an embeddable payment button / hosted payment page (works
+  on our static GitHub Pages site, no server) AND auto-issues the tax invoice/receipt
+  (חשבונית מס קבלה) on payment, which Meshulam does not. One system for payments +
+  invoicing + expenses, cutting Kat's admin load and covering the 2026 חשבונית ישראל
+  reform. OPEN ITEM: confirm the monthly plan + per-transaction clearing fee. Needs
+  the paid סליקה + documents plan and merchant approval. Plan: Kat registers and
+  generates a payment button/link, Claude wires it into the product Offer URLs
+  (replacing the WhatsApp routing).
+- Earlier pick: **Meshulam (Grow)** (2026-06-15, superseded PayPlus). Valid fallback
+  if Invoice4u fees come back worse.
 - Current live flow: WhatsApp "Price Concierge" inquiry links plus bank transfer.
   Product schema carries real prices for Google rich results, but Offer URLs
   currently route to WhatsApp rather than a checkout.
-- Goal: integrate a real Meshulam checkout (hosted payment page / payment links,
-  since the site is static and cannot process cards server-side).
+- Goal: integrate a real hosted checkout (payment page / payment links, since the
+  site is static and cannot process cards server-side).
 
 ### Deploy / dev environment notes
 - This repo deploys via GitHub Pages; pushing to `main` goes live in ~60s.

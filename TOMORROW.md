@@ -19,9 +19,12 @@ The running to-do. Delivery to Tzfat is already scheduled (dispatch did it).
 - [ ] Groceries / food (out of meat).
 
 ## Website / online
-- [ ] PRIORITY: add Meshulam (Grow) checkout to the site so customers can pay by
-      credit card. The Bit failure with Karin (2026-07-06) is the reason: stop
-      being hostage to one payment app. This is the standing plan (see CLAUDE.md).
+- [ ] PRIORITY: add a real card checkout to the site so customers can pay by credit
+      card (the Bit failure with Karin, 2026-07-06, is the reason). LEADING provider
+      is now Invoice4u (card + Bit + auto tax invoices, embeddable on a static site).
+      NEXT: (1) Kat confirms Invoice4u monthly + clearing fee vs Meshulam, (2) Kat
+      registers and generates a payment button/link, (3) Claude wires it into the
+      product pages. See CLAUDE.md > Payments.
 - [ ] "Suram": UNCLEAR, do not action until Kat says what it is. Kat flagged this
       item does not make sense to her either. Probably a mis-hearing (Meshulam?
       an SSL cert? a plugin?). PARK IT until confirmed. Claude will not add vague
