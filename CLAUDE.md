@@ -47,10 +47,13 @@ that should survive across sessions HERE, in the repo.
   on our static GitHub Pages site, no server) AND auto-issues the tax invoice/receipt
   (חשבונית מס קבלה) on payment, which Meshulam does not. One system for payments +
   invoicing + expenses, cutting Kat's admin load and covering the 2026 חשבונית ישראל
-  reform. OPEN ITEM: confirm the monthly plan + per-transaction clearing fee. Needs
-  the paid סליקה + documents plan and merchant approval. Plan: Kat registers and
-  generates a payment button/link, Claude wires it into the product Offer URLs
-  (replacing the WhatsApp routing).
+  reform. FEES (from invoice4u.co.il, 2026-07): 60-day free trial; invoicing plan
+  from ~19-21₪/mo on annual + VAT (up to 1,000 docs/mo); card clearing 0.9% monthly
+  payout (0.8% above 50k/mo), 1.2% weekly payout, 1.4% for 24h payout. The 0.9% is
+  low for Israel (typical 1.5-2.5%), and beats Meshulam, which also lacks the bundled
+  invoicing. Confirm the exact plan tier on signup; needs merchant approval. Plan:
+  Kat registers (free trial), generates a payment button/link, Claude wires it into
+  the product Offer URLs (replacing the WhatsApp routing).
 - Earlier pick: **Meshulam (Grow)** (2026-06-15, superseded PayPlus). Valid fallback
   if Invoice4u fees come back worse.
 - Current live flow: WhatsApp "Price Concierge" inquiry links plus bank transfer.
