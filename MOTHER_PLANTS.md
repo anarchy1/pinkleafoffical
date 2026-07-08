@@ -13,7 +13,7 @@ you have a backup (a division, a pup, or a successful TC batch of it).
 - [ ] Bambino Pink Lava Variegated
 - [ ] Bambino Pink Variegated
 - [ ] Bambino Variegated
-- [ ] Chantrieri Pink Variegated
+- [x] Chantrieri Pink Variegated  -- NOT a mother: this single one is owed to Riba (see CLIENT_RESERVED.md). Give it to her.
 - [ ] Cuprea Aurea Variegated Latte
 - [ ] Dragon Scale Albo Variegated
 - [ ] Loco (Green)
