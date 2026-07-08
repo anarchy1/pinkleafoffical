@@ -24,7 +24,7 @@ Dragon Scale Albo Variegated - 1
 Dragon Scale Variegated Tri-Color - 3
 Golden Bone Mint Variegated - 2
 Heart Balloon Pink Variegated - 2
-Jacklyn Mystic Variegated - 2
+Jacklyn Mystic Variegated - 0 (both gone: 1 taken, 1 sold, per Kat 2026-07; verify)
 Loco (Green) - 1
 Melo Albo Variegated - 6
 Nairobi Nights A Grade - 2
