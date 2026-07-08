@@ -17,21 +17,19 @@ Deliver acclimated within a month: Toren, Riba, Roi.
 | Melo Albo Variegated | 6 | [ ] | [ ] |
 | Silver Dragon Aurea Variegated | 4 | [ ] | [ ] |
 
-Note: per the log you HAVE all 7 of Toren's. You said you don't have them, so the
-log is off somewhere. Tick "Have it?" for the ones you actually find, and tell me
-which are truly missing so I can fix the record and flag what to reorder.
+UPDATE 2026-07: Kat confirmed she has ALL 7 of Toren's in hand (including 2x
+Watsoniana Doff Albo, now added to the stock log). Toren just needs acclimation +
+delivery. No missing plants.
 
-## Riba - 1 plant
-| Plant | In stock (log) | Have it? | Acclimated? |
-|---|---|---|---|
-| Chantrieri Pink Variegated | 1 (this one is Riba's) | [ ] | [ ] |
+## Riba - DELIVERED (done)
+- Chantrieri Pink Variegated: delivered to Riba. Off the queue.
 
-## Roi - 2 plants
+## Roi - 2 plants (OPEN)
 | Plant | In stock (log) | Have it? | Acclimated? |
 |---|---|---|---|
 | Black Velvet Pink Variegated | 2 | [ ] | [ ] |
 | Melano Orange Variegated | 2 | [ ] | [ ] |
 
-## Total: 10 plants to acclimate + deliver
-Priority by value/fragility if boxes are tight: Chantrieri Pink, Azlanii Albo,
-Wentii Pink, Cuprea Red Secret Mint first.
+## Remaining to acclimate + deliver: 9 plants (Toren 7 + Roi 2)
+Riba is done. Priority by value/fragility if boxes are tight: Azlanii Albo,
+Wentii Pink, Cuprea Red Secret Mint, Black Velvet Pink first.

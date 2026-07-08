@@ -7,11 +7,12 @@ records to Notion (private) instead of this public repo.
 acclim = Kat acclimates the whole order (goes in the box first, delivered acclimated).
 plug = customer acclimates themselves.
 
-STATUS SUMMARY:
-- CHECKED OUT (already received): Tom, Zach, Idan.
-- PENDING, Kat acclimates (owed acclimated ~within a month): Toren, Riba, Roi.
-- PENDING, plug: Avi.
-- CANCELLED (out, getting nothing): Eran.
+STATUS SUMMARY (updated 2026-07):
+- CHECKED OUT / delivered: Tom, Zach, Avi, Riba, Idan.
+- STILL OPEN, Kat acclimates then delivers: Toren (7), Roi (2). These are the ONLY
+  two open orders. Toren's 7 are all in hand (Kat confirmed). Roi = Black Velvet
+  Pink + Melano Orange.
+- CANCELLED: Eran.
 - UNASSIGNED: 5x Stingray Aurea (whose order? confirm).
 
 ---
@@ -50,7 +51,7 @@ Note: list says "TC to order," but status summary had Zach checked out. Confirm.
 Kat flagged she may not physically have all of these. See ACCLIMATION_QUEUE.md;
 confirm which are in hand vs missing.
 
-## Avi  -  plug  -  3 plants  -  PENDING  -  ₪991
+## Avi  -  plug  -  3 plants  -  DELIVERED  -  ₪991
 - Monstera Mint (Full Mint) - 113
 - Monstera Devil Monster - 439
 - Monstera Yellow Brooklyn - 439
@@ -71,16 +72,14 @@ his new wishlist: White Beauty, Doff Albo, etc. Quote new items at FLOOR prices.
 - Narrow Variegated - 82
 - Verrucosum Mint Variegated - 94
 
-## Riba  -  ACCLIM  -  1 plant  -  PENDING  -  ₪634
+## Riba  -  ACCLIM  -  1 plant  -  DELIVERED  -  ₪634
 (plant 534 + acclimation 100)
-- Chantrieri Pink Variegated - 534
-  (you have only 1 Chantrieri Pink total; this one is Riba's, do not sell it.)
+- Chantrieri Pink Variegated - 534  (delivered to Riba)
 
-## Roi  -  ACCLIM?  -  PENDING  -  ₪63 (+ acclim?)
+## Roi  -  ACCLIM  -  2 plants  -  OPEN  -  ₪63 + Melano (+ acclim)
 - Alocasia Black Velvet Pink Variegated - 63
-DISCREPANCY: earlier records had Roi = Black Velvet Pink + Melano Orange (2 plants,
-acclim). This new paste shows only Black Velvet Pink at 63, no Melano, no acclim
-fee. Confirm: is Roi's Melano Orange still on, and is he acclim or plug?
+- Philodendron Melano Orange Variegated  (Kat confirmed Roi wanted 2 plants)
+STILL TO CONFIRM: Melano's price and the acclimation fee for Roi's order.
 
 ## Eran  -  CANCELLED (getting nothing)  -  was ₪1,122
 - Caramel Marble Variegated - 38

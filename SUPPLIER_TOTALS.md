@@ -41,6 +41,7 @@ Scalprum Mint - 1
 Silver Dragon Aurea Variegated - 4
 Simpo Albo Variegated - 1
 Stingray Aurea Variegated - 4
+Watsoniana Doff Albo Variegated - 2 (confirmed by Kat 2026-07, was missing from log)
 Watsoniana Doff Pink Variegated - 2
 Watsoniana Glossy Pink Variegated - 2
 Wentii Aurea Variegated Latte - 1
