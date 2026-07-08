@@ -1,97 +1,94 @@
-# Orders tracker
+# Orders tracker (combined master)
 
-All customer orders. First names only, no prices, no surnames (public repo).
-acclim = Kat provides professional acclimation for that whole order (goes in the box first).
+PRIVACY: this repo is PUBLIC. First names only, no surnames. Prices here are the
+ORIGINAL order/presale prices (low, pre pricing-floor). Consider moving full order
+records to Notion (private) instead of this public repo.
+
+acclim = Kat acclimates the whole order (goes in the box first, delivered acclimated).
 plug = customer acclimates themselves.
 
-STATUS SUMMARY (updated):
-- CHECKED OUT (already got their order): Edan, Zach, Tom Sapir.
-- PENDING, Kat acclimates: Toren, Riba, Roi.
+STATUS SUMMARY:
+- CHECKED OUT (already received): Tom, Zach, Idan.
+- PENDING, Kat acclimates (owed acclimated ~within a month): Toren, Riba, Roi.
 - PENDING, plug: Avi.
 - CANCELLED (out, getting nothing): Eran.
+- UNASSIGNED: 5x Stingray Aurea (whose order? confirm).
 
-## Tom  -  plug (customer acclimates)  -  6 plants
-- Alocasia: Black Velvet Gold Variegated
-- Alocasia: Melo Albo Variegated
-- Alocasia: Nobilis Pink Variegated K Version
-- Alocasia: Polly Pink Variegated
-- Alocasia: Jacklyn Mystic Variegated
-- Alocasia: Dragon Scale Albo Variegated
+---
 
-## Zach  -  plug (customer acclimates)  -  10 plants
+## Tom  -  plug  -  6 plants  -  CHECKED OUT  -  ₪502
+- Black Velvet Gold Variegated - 69
+- Melo Albo Variegated - 126
+- Nobilis Pink Variegated K Version - 94
+- Polly Pink Variegated - 63
+- Jacklyn Mystic Variegated - 94
+- Dragon Scale Albo Variegated - 56
+
+## Zach  -  plug  -  10 plants (TC to order)  -  CHECKED OUT? confirm
+(no per-item prices given)
 - Monstera: White Monster
 - Monstera: Green Snow
 - Monstera: Electro Light
-- Philodendron: Caramel Marble Variegated
-- Alocasia: Cuprea Red Secret Mint Variegated
-- Alocasia: Cuprea Red Secret Super Pink
-- Alocasia: Azlanii Albo Variegated
-- Alocasia: Black Velvet Gold Variegated
-- Alocasia: Nobilis Pink Variegated K Version
-- Alocasia: Regal Shields Albo Variegated
+- Philodendron: Caramel Marble
+- Cuprea Red Secret Mint
+- Cuprea Red Secret Pink
+- Azlanii Albo Variegated
+- Black Velvet Gold
+- Nobilis Pink Variegated K Version
+- Regal Shields Albo
+Note: list says "TC to order," but status summary had Zach checked out. Confirm.
 
-## Toren  -  ACCLIM (Kat acclimates)  -  7 plants
-- Alocasia: Azlanii Albo Variegated
-- Alocasia: Watsoniana Doff Albo Variegated
-- Alocasia: Wentii Pink Variegated
-- Alocasia: Nairobi Nights Camouflage Tricolor
-- Alocasia: Cuprea Red Secret Mint Variegated
-- Alocasia: Melo Albo Variegated
-- Alocasia: Silver Dragon Aurea Variegated
+## Toren  -  ACCLIM  -  7 plants  -  PENDING  -  ₪2,050
+(plants 1,350 + acclimation 7 x 100 = 700)
+- Azlanii Albo Variegated - 314
+- Watsoniana Doff Albo Variegated - 113
+- Wentii Pink Variegated - 251
+- Nairobi Nights Camouflage Tricolor (A Grade) - 251
+- Cuprea Red Secret Mint Variegated - 251
+- Melo Albo Variegated - 126
+- Silver Dragon Aurea Variegated - 44
+Kat flagged she may not physically have all of these. See ACCLIMATION_QUEUE.md;
+confirm which are in hand vs missing.
 
-## Avi  -  plug (customer acclimates)  -  3 plants
-- Monstera: Mint (Full Mint)
-- Monstera: Devil Monster
-- Monstera: Yellow Brooklyn
+## Avi  -  plug  -  3 plants  -  PENDING  -  ₪991
+- Monstera Mint (Full Mint) - 113
+- Monstera Devil Monster - 439
+- Monstera Yellow Brooklyn - 439
 
-## Edan  -  plug (customer acclimates)  -  12 plants
-- Alocasia: Cuprea Red Secret Mint Variegated
-- Alocasia: Dragon Scale Variegated Tri-Color
-- Alocasia: Nairobi Nights A Grade
-- Alocasia: Regal Shields Albo Variegated
-- Alocasia: Scalprum Mint
-- Alocasia: Zebrina Mint Variegated
-- Alocasia: Zebrina Aurea Variegated
-- Alocasia: Golden Bone Mint Variegated
-- Alocasia: Pink Dragon Stardust Mint Variegated
-- Alocasia: Sarian Aurea Variegated
-- Philodendron: Narrow Variegated
-- Philodendron: Verrucosum Mint Variegated
+## Idan  -  plug  -  12 plants  -  CHECKED OUT  -  ₪2,082
+(this is the same person as the old "Edan" entry; reseller, now wants MORE, see
+his new wishlist: White Beauty, Doff Albo, etc. Quote new items at FLOOR prices.)
+- Cuprea Mint Variegated - 30
+- Dragon Scale Variegated Tri-Color - 75
+- Nairobi Nights Variegated A Grade - 251
+- Regal Shields Albo Variegated - 345
+- Scalprum Mint - 251
+- Zebrina Mint Variegated - 94
+- Zebrina Aurea Variegated - 119
+- Golden Bone Mint Variegated - 502
+- Pink Dragon Stardust Mint Variegated - 113
+- Sarian Aurea Variegated - 126
+- Narrow Variegated - 82
+- Verrucosum Mint Variegated - 94
 
-## Riba  -  ACCLIM (Kat acclimates)  -  1 plants
-- Alocasia: Chantrieri Pink Variegated
+## Riba  -  ACCLIM  -  1 plant  -  PENDING  -  ₪634
+(plant 534 + acclimation 100)
+- Chantrieri Pink Variegated - 534
+  (you have only 1 Chantrieri Pink total; this one is Riba's, do not sell it.)
 
-## Eran  -  CANCELLED / OUT (getting nothing)
-(was 5 plants with acclimation; removed from all lists)
-- Philodendron: Caramel Marble Variegated
-- Alocasia: Melo Albo Variegated
-- Alocasia: Maharani Albo Variegated
-- Alocasia: Nobilis Pink Variegated K Version
-- Alocasia: Watsoniana Doff Pink Variegated
+## Roi  -  ACCLIM?  -  PENDING  -  ₪63 (+ acclim?)
+- Alocasia Black Velvet Pink Variegated - 63
+DISCREPANCY: earlier records had Roi = Black Velvet Pink + Melano Orange (2 plants,
+acclim). This new paste shows only Black Velvet Pink at 63, no Melano, no acclim
+fee. Confirm: is Roi's Melano Orange still on, and is he acclim or plug?
 
-## Roi  -  ACCLIM (Kat acclimates)  -  2 plants
-- Alocasia: Black Velvet Pink Variegated
-- Philodendron: Melano Orange Variegated
+## Eran  -  CANCELLED (getting nothing)  -  was ₪1,122
+- Caramel Marble Variegated - 38
+- Melo Albo Variegated - 126
+- Maharani Albo Variegated - 251
+- Nobilis Pink Variegated K Version - 94
+- Watsoniana Doff Pink Variegated - 113
+- Professional acclimation (5 plants) - 500
 
-## UNASSIGNED (5 stingray note)
+## UNASSIGNED
 - Stingray Aurea Variegated x5 (whose order? confirm)
-
-## ACCLIMATE FIRST (Kat's boxes) - Eran removed, 10 plants
-These are the paid-acclimation plants Kat is contractually responsible for.
-Toren (7):
-- Alocasia: Azlanii Albo Variegated
-- Alocasia: Watsoniana Doff Albo Variegated
-- Alocasia: Wentii Pink Variegated
-- Alocasia: Nairobi Nights Camouflage Tricolor
-- Alocasia: Cuprea Red Secret Mint Variegated
-- Alocasia: Melo Albo Variegated
-- Alocasia: Silver Dragon Aurea Variegated
-Riba (1):
-- Alocasia: Chantrieri Pink Variegated
-Roi (2):
-- Alocasia: Black Velvet Pink Variegated
-- Philodendron: Melano Orange Variegated
-
-Total to acclimate now: 10 plants (all Alocasia except Roi's Melano Orange).
-If boxes are tight, priority by value/fragility: Chantrieri Pink, Azlanii Albo,
-Wentii Pink, Cuprea Red Secret Mint first.
