@@ -35,7 +35,8 @@ Legend:
   specifically confirmed in public materials.
 - Phyto: YES per their materials (can issue phytosanitary certificate,
   certificate of origin, packing list, invoice). Ships by air.
-- Contact seen publicly: mkt1@youngplant.cn (confirm current before relying on it).
+- Contact (from search, confirm current before relying): WhatsApp +86 18928528163,
+  phone +86 13923295524, email mkt1@youngplant.cn, Facebook fsyoungplants.
 - Confidence (real exporter): MED-HIGH. This looks like a substantial, genuine
   TC producer with a verifiable multi-platform footprint.
 - Confidence (ships to Israel): UNKNOWN / must ask.
@@ -52,6 +53,11 @@ Legend:
 - Confidence (real exporter): MED. Consistent public presence, phyto claim is
   explicit, but not independently verified beyond their own marketing.
 - Confidence (ships to Israel): UNKNOWN / must ask.
+- Contact: no public WhatsApp/phone found; reach via Contact Us form on
+  plantsupp.com, Facebook (Guangzhou PlantsUp Nursery), or TikTok @guangzhouplantsup.
+- In-stock variegated TC seen (2026-07): Philodendron White Wizard, Burle Marx Albo,
+  Pink Marble; Alocasia Watsoniana 'Pride of Curup', Odora Okinawa Silver; Monstera
+  Adansonii Variegated. Good variety, fills Minhui's gaps.
 - Source: https://www.plantsupp.com/
 
 ### C. IWATER (floraseedlings.com)
