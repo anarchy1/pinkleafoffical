@@ -7,15 +7,18 @@ received inventory (SUPPLIER_TOTALS) or the incoming rares. Flagged the unsure o
 ## ALOCASIA - HAVE (priced)
 | Plant | Was | Final | Note |
 |---|---|---|---|
-| Azlanii Albo Variegated | 314 | 850 | comp Azlanii Pink 950 |
+| Azlanii Albo Variegated (= "Azlanii Pink") | 314 | 850 | Kat: Azlanii Pink IS the Albo, one plant |
+| Bambino Oreo (Gold) Variegated | 55 | 250 | Kat: gold/aurea = our "Bambino Variegated" |
 | Bambino Pink Variegated | 150 set | 150 | keep (set) |
 | Bambino Pink Lava Variegated | 301 | 300 | keep |
 | Black Velvet Pink Variegated | 63 | 450 | presale->retail |
-| Black Velvet Gold Variegated | 69 | 450 | presale->retail |
+| Black Velvet Gold Variegated (= Black Velvet Aurea) | 69 | 450 | Kat: same plant, keep name "Gold" |
 | Chantrieri Pink Variegated | 750 set | 750 | keep (comp 1100, room up) |
 | Cuprea Aurea Latte Variegated | 950 set | 950 | keep (comp 1200) |
 | Cuprea Red Secret Mint Variegated | 250 | 450 | |
 | Cuprea Red Secret Super Pink | 1000 set | 1000 | keep (comp 1200) |
+| Cuprea Pink Mint | 950 set | 950 | Kat: distinct cheaper variety, NOT the True Pink |
+| Cuprea True Pink | incoming | 2900 | grail, cost ~1,739; distinct from Pink Mint |
 | Dragon Scale Tri-Color Variegated | 75 | 450 | |
 | Dragon Scale Albo Variegated | TBD | 500 | |
 | Golden Bone Mint Variegated | 502 | 650 | comp 750 |
@@ -46,14 +49,13 @@ received inventory (SUPPLIER_TOTALS) or the incoming rares. Flagged the unsure o
 | Yucatan Princess Pink Variegated | 450 set | 450 | keep (comp 670) |
 | Zebrina Mint Variegated | 94 | 500 | comp 600 |
 | Pseudo-Sanderiana Pink | 650 set | 650 | keep (incoming) |
-| Venom High Variegation | 2500 set | 2500 | comp Venom Albo 2350; consider 2,000-2,250 to undercut |
+| Venom High Variegation | 2500 | 2000 | Kat: undercut competitor 2,350 |
 | Venom Low Variegation | 1850 set | 1850 | keep |
 | Venom Aurea | (incoming) | 1800 | comp Venom Albo 2350 |
 | Maharani Albo Variegated | 500 | 700 | comp 800 |
 | Sedenii Aurea | (incoming) | 650 | |
 | Metallic Blue Aurea | (incoming) | 800 | comp Metallic Blue Aurea 900 |
 | Metallic Blue Albo | (incoming) | 900 | |
-| Cuprea True Pink / Pink Mint | 950 set | 950 | keep, but CONFIRM it's in hand |
 
 ## REMOVE - NOT in our inventory (never received / sold out / phantom)
 - Jacklyn Aurea Variegated (not received)
@@ -63,10 +65,7 @@ received inventory (SUPPLIER_TOTALS) or the incoming rares. Flagged the unsure o
 - Zebrina Aurea Variegated (never sent by supplier)
 - Melo Aurea (not received)
 - Azlanii Orange (not received)
-- Azlanii Pink Variegated (not received - CONFIRM if incoming)
 - Dragon Scale Mint Variegated (not received)
-- Bambino Aurea Variegated (we have "Bambino Variegated" - CONFIRM if same)
-- Black Velvet Aurea Variegated (we have Black Velvet GOLD - CONFIRM if same)
 - Macrorrhiza Variegated (not received - this is a BUY-target, not stock)
 - Macrorrhizos Splash (not received)
 - Amazonica Pink Variegated (not received)
@@ -115,9 +114,9 @@ received inventory (SUPPLIER_TOTALS) or the incoming rares. Flagged the unsure o
 | Rhaphidophora Tetrasperma Variegated | 380 | 380 |
 | Rhaphidophora Tetrasperma Mint | (in stock) | 380 |
 
-## CONFIRM with Kat
-- Venom High at 2500 sits ABOVE the competitor (2350). Undercut to 2,000-2,250?
-- Bambino Aurea vs our "Bambino Variegated": same plant or remove?
-- Black Velvet Aurea vs our "Black Velvet Gold": same plant or remove?
-- Cuprea Pink Mint (950) vs the incoming Cuprea True Pink: same, or two plants?
-- Azlanii Pink: do we actually have it (incoming), or remove?
+## RESOLVED (Kat, 2026-07)
+- Venom High -> 2,000 (undercut competitor 2,350).
+- Bambino "Aurea" is Bambino Oreo (gold), = our "Bambino Variegated". KEEP.
+- Black Velvet Aurea = Black Velvet Gold, one plant, keep name "Gold".
+- Cuprea Pink Mint (950) and Cuprea True Pink are TWO different varieties. Both kept.
+- Azlanii Pink IS Azlanii Albo, one plant. KEEP (no separate Azlanii Pink line).
