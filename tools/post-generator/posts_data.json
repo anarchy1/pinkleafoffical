@@ -190,5 +190,17 @@
   "photo": "MetallicBlue.jpg",
   "bgpos": "center 33%",
   "ultra": true
+ },
+ {
+  "id": "18-metallic-blue-albo",
+  "h1a": "אלוקסיה",
+  "h1b": "מטאליק בלו אלבו",
+  "subhe": "כחול מתכתי, שלג לבן",
+  "suben": "Metallic Blue Albo",
+  "story": "עלים מוארכים בברק כחול-מתכתי עמוק, עם כתמי שלג לבנים ודרמטיים של הזן האלבו. כל עלה נפרש בתבנית ייחודית משלו, ואין שניים זהים. נדירה במיוחד, ופריט אספנים אמיתי.",
+  "care": "ALO",
+  "photo": "MetallicBlueAlbo.jpg",
+  "bgpos": "center 40%",
+  "ultra": true
  }
 ]

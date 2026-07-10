@@ -63,3 +63,33 @@ ULTRA RARE, לאספנים שמחפשים את יוצא הדופן.
 💬 רוצים אותה? שלחו הודעה לפרטים ומחיר.
 
 #פינקליף #אלוקסיה #sedenii #alocasia #ultrarare #rareplants #variegated #צמחים_נדירים #plantsofisrael
+
+---
+
+## Metallic Blue Aurea card (Alocasia, ULTRA RARE)
+
+אלוקסיה מטאליק בלו · Alocasia Metallic Blue Aurea 🖤💛
+
+ברק כחול-מתכתי כמעט לא אמיתי, עם זהב וחמאה של הזן האוראה פרושים על העלווה הכהה. כל עלה בתבנית ייחודית משלו. נדירה במיוחד.
+
+פריט אספנים אמיתי, ULTRA RARE.
+
+📍 רמת גן · משלוחים לכל הארץ · ביקורים בתיאום
+💬 רוצים אותה? שלחו הודעה לפרטים ומחיר.
+
+#פינקליף #אלוקסיה #metallicblue #alocasia #ultrarare #rareplants #variegated #צמחים_נדירים #plantsofisrael
+
+---
+
+## Metallic Blue Albo card (Alocasia, ULTRA RARE)
+
+אלוקסיה מטאליק בלו אלבו · Alocasia Metallic Blue Albo 🖤🤍
+
+כחול מתכתי, שלג לבן. עלים מוארכים בברק כחול-מתכתי עמוק עם כתמי שלג לבנים ודרמטיים. כל עלה בתבנית משלו, ואין שניים זהים.
+
+פריט אספנים אמיתי, ULTRA RARE.
+
+📍 רמת גן · משלוחים לכל הארץ · ביקורים בתיאום
+💬 רוצים אותה? שלחו הודעה לפרטים ומחיר.
+
+#פינקליף #אלוקסיה #metallicblue #alocasia #ultrarare #rareplants #variegated #צמחים_נדירים #plantsofisrael
