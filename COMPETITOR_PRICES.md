@@ -4,9 +4,12 @@ Source: a competitor's TC price sheet Kat received ("MNG_TC" pdf). Each plant ha
 a small TYPED ₪ number (wholesale/cost level) and a big HANDWRITTEN number
 (retail selling price). The gap teaches the markup: retail is ~3-4x landed cost.
 
-USE THIS AS THE MARKET ANCHOR. It proves Pink Leaf has been pricing FAR below the
-market. "Reduce prices" is backwards for us; if we want to undercut this
-competitor to win, undercut from THEIR number, not from our old lowballs.
+USE THIS AS THE MARKET ANCHOR for setting fresh RETAIL prices. IMPORTANT: the low
+numbers elsewhere in our files (Melo 126-300, etc.) were PRESALE / PREORDER prices
+for bulk special clients buying via TC, NOT retail quotes. Do not treat them as
+retail. Set retail fresh, positioned UNDER this competitor to win the sale but
+well above cost. Kat's call: e.g. Melo ~650 (competitor 1,200) is the sweet spot,
+accessible, healthy margin, clearly cheaper than them.
 
 Format: Plant | cost (typed ₪) | competitor RETAIL (handwritten ₪)
 
@@ -77,26 +80,18 @@ Lemon Lime Var | 85 | 350
 Mint Monstera | 38 | 250
 White Monster | 38 | 250
 
-## What this proves vs our old prices (the underpricing gap)
-| Plant | Our old/quoted | Competitor retail |
+## Reference: competitor retail vs our known RETAIL points
+(Our presale/preorder numbers are NOT included here, they are not retail.)
+| Plant | Our retail | Competitor retail |
 |---|---|---|
-| Melo Albo | 126-300 | 1200 |
-| Maharani Albo | 480-550 | 800 |
-| Chantrieri Pink | 534 | 1100 |
-| Regal Shields Albo | 345 | 1420 |
-| Nobilis Pink | 94-450 | 1000 |
-| Jacklyn Aurea | 130-145 | 500 |
-| Wentii Pink | 110-251 | 600 |
-| Yucatan Pink | 200-230 | 670 |
-| Azlanii Pink | 314 | 950 |
-| Zebrina Aurea | 100-119 | 600 |
-| Venom Pink (Albo) | ~700 floor | 2350 |
-| Cuprea Super Pink | 1250 | 1200 (WE WERE RIGHT HERE) |
+| Venom Pink Albo | 2,500 -> dropping to 2,000 | 2,350 |
+| Cuprea Super Pink | 1,250 | 1,200 |
+| Melo Albo | ~650 (Kat's target) | 1,200 |
 
 ## Pricing rule going forward
-1. Retail = about 3 to 4x landed cost (this competitor's own ratio).
-2. Anchor each plant to this competitor's retail. To win business, sit at or
-   slightly UNDER their number (e.g. Melo 1200 -> us ~1000-1100), never near the
-   old lowballs.
-3. Note: we already priced Cuprea Super Pink correctly (~1200). Everything else
-   needs to come UP toward these anchors.
+1. Position UNDER this competitor to win the sale, but keep a healthy margin over
+   landed cost (their sheet shows retail is ~3-4x cost, so even undercutting them
+   leaves strong margin).
+2. Set each plant's RETAIL fresh against the competitor column, do NOT reuse the
+   presale/preorder numbers.
+3. Reference points Kat set: Venom Albo 2,000, Melo ~650, Cuprea Super Pink 1,250.
