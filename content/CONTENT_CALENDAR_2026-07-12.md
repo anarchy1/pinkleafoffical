@@ -7,18 +7,25 @@ Venom Pink + Ocean Mint go out THIS Friday (10 July), so they're not repeated he
 Captions: product-card captions are inline below; BTS captions are in
 social-posts/captions-tc-bts.md.
 
-| Day | Date | Post | Asset | Type |
-|---|---|---|---|---|
-| Sun | 12 Jul | Alocasia Cuprea (Red Secret) | social-posts/01-cuprea.png | hero |
-| Mon | 13 Jul | BTS: the glowing acclimation box | raw-photos/IMG_7083 | BTS |
-| Tue | 14 Jul | Alocasia Black Velvet Pink | social-posts/04-black-velvet-pink.png | hero |
-| Wed | 15 Jul | BTS: cozy TC unboxing (White Monster) | raw-photos/IMG_7095 | BTS |
-| Thu | 16 Jul | Alocasia Azlanii | social-posts/11-azlanii.png | hero |
-| Fri | 17 Jul | Alocasia Watsoniana (Pink Shiny) | social-posts/06-watsoniana.png | hero |
-| Sat | 18 Jul | BTS: the rinse step (how-to) | raw-photos/IMG_6462 | BTS |
+Focus: the INCOMING RARE order. Ready-carded ones scheduled below; the 3 new
+ones (Venom Aurea, Sedenii Aurea, Metallic Blue) drop in as soon as Kat sends a
+photo of each.
 
-Swap any day for a newer rare once Kat sends its photo (I'll build the card in the
-same template and drop it in).
+| Day | Date | Post | Asset | Status |
+|---|---|---|---|---|
+| Sun | 12 Jul | Alocasia Maharani Albo | social-posts/02-maharani.png | READY |
+| Mon | 13 Jul | BTS: the glowing acclimation box | raw-photos/IMG_7083 | READY |
+| Tue | 14 Jul | Yellow Marilyn | social-posts/12-yellow-marilyn.png | READY |
+| Wed | 15 Jul | Venom Aurea | (needs photo) | PENDING PHOTO |
+| Thu | 16 Jul | Pseudo Pink | social-posts/05-pseudo-sanderiana.png | READY |
+| Fri | 17 Jul | Sedenii Aurea | (needs photo) | PENDING PHOTO |
+| Sat | 18 Jul | Metallic Blue | (needs photo) | PENDING PHOTO |
+
+Cuprea True Pink / Watsoniana True Pink: confirm if the existing Cuprea Red Secret
+(01) and Watsoniana Pink Shiny (06) cards are the same variety, or if they need
+their own photo + card.
+
+Once the 3 photos arrive, all seven days are hero cards in the same template.
 
 ---
 
