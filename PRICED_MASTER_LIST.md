@@ -75,7 +75,8 @@ received inventory (SUPPLIER_TOTALS) or the incoming rares. Flagged the unsure o
 - PHILODENDRON: Silver Sword Variegated (not received), White Wizard (not
   received), Jose Buono, Pink Princess Splash, PP Marble Galaxy, Billietiae
   Variegated (all not received)
-- OTHER: Colocasia Bastet Queen, Musa Nono Pink Variegated (not received)
+- OTHER: Colocasia Bastet Queen, Musa Nono Pink Variegated, Rhaphidophora
+  Tetrasperma Variegated (Kat: we don't have these)
 
 ## MONSTERA - HAVE (priced)
 | Plant | Was | Final | Note |
@@ -111,7 +112,6 @@ received inventory (SUPPLIER_TOTALS) or the incoming rares. Flagged the unsure o
 ## OTHER - HAVE
 | Plant | Was | Final |
 |---|---|---|
-| Rhaphidophora Tetrasperma Variegated | 380 | 380 |
 | Rhaphidophora Tetrasperma Mint | (in stock) | 380 |
 
 ## RESOLVED (Kat, 2026-07)
