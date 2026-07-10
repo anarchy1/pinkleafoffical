@@ -16,7 +16,7 @@ photo of each.
 | Sun | 12 Jul | Alocasia Maharani Albo | social-posts/02-maharani.png | READY |
 | Mon | 13 Jul | BTS: the glowing acclimation box | raw-photos/IMG_7083 | READY |
 | Tue | 14 Jul | Yellow Marilyn | social-posts/12-yellow-marilyn.png | READY |
-| Wed | 15 Jul | Venom Aurea | (needs photo) | PENDING PHOTO |
+| Wed | 15 Jul | Venom Aurea | social-posts/15-venom-aurea.png | READY |
 | Thu | 16 Jul | Pseudo Pink | social-posts/05-pseudo-sanderiana.png | READY |
 | Fri | 17 Jul | Sedenii Aurea | (needs photo) | PENDING PHOTO |
 | Sat | 18 Jul | Metallic Blue | (needs photo) | PENDING PHOTO |
