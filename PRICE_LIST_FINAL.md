@@ -7,9 +7,9 @@ joke prices. Only plants we actually have. Prices in ₪.
 | Plant | Price |
 |---|---|
 | Azlanii Albo (Pink) Variegated | 850 |
-| Bambino Oreo (Gold) Variegated | 250 |
+| Bambino Oreo (Gold) Variegated | 180 |
 | Bambino Pink Variegated | 150 |
-| Bambino Pink Lava Variegated | 300 |
+| Bambino Pink Lava Variegated | 400 |
 | Black Velvet Pink Variegated | 450 |
 | Black Velvet Gold Variegated | 450 |
 | Chantrieri Pink Variegated | 750 |
@@ -18,8 +18,8 @@ joke prices. Only plants we actually have. Prices in ₪.
 | Cuprea Red Secret Super Pink | 1,000 |
 | Cuprea Pink Mint | 950 |
 | Cuprea True Pink | 2,900 |
-| Dragon Scale Albo Variegated | 500 |
-| Dragon Scale Tri-Color Variegated | 450 |
+| Dragon Scale Albo Variegated | 450 |
+| Dragon Scale Tri-Color Variegated | 400 |
 | Golden Bone Mint Variegated | 650 |
 | Heart Balloon Pink Variegated | 700 |
 | Loco (Green) | 120 |
