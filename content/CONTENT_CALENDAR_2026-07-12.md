@@ -18,7 +18,7 @@ photo of each.
 | Tue | 14 Jul | Yellow Marilyn | social-posts/12-yellow-marilyn.png | READY |
 | Wed | 15 Jul | Venom Aurea | social-posts/15-venom-aurea.png | READY |
 | Thu | 16 Jul | Pseudo Pink | social-posts/05-pseudo-sanderiana.png | READY |
-| Fri | 17 Jul | Sedenii Aurea | (needs photo) | PENDING PHOTO |
+| Fri | 17 Jul | Sedenii Aurea | social-posts/16-sedenii-aurea.png | READY |
 | Sat | 18 Jul | Metallic Blue | (needs photo) | PENDING PHOTO |
 
 Cuprea True Pink / Watsoniana True Pink: confirm if the existing Cuprea Red Secret

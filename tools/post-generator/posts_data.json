@@ -166,5 +166,17 @@
   "photo": "VenomAurea.jpg",
   "bgpos": "center 40%",
   "ultra": true
+ },
+ {
+  "id": "16-sedenii-aurea",
+  "h1a": "אלוקסיה",
+  "h1b": "סדני אוראה",
+  "subhe": "החץ המוזהב",
+  "suben": "Sedenii Aurea",
+  "story": "כלאיים אצילי עם עלים גדולים בצורת חץ ומרקם עמוק. הזן האוראה מפזר זהב וירוק לימון על העלווה הכהה, וכל עלה נפרש בתבנית משלו. נדירה, פסלית, ופריט אספנים אמיתי במיוחד.",
+  "care": "ALO",
+  "photo": "SedeniiAurea.jpg",
+  "bgpos": "center 33%",
+  "ultra": true
  }
 ]

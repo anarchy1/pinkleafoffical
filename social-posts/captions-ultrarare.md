@@ -46,3 +46,18 @@ ULTRA RARE, לאספנים שמחפשים את יוצא הדופן.
 💬 רוצים אותה? שלחו הודעה לפרטים ומחיר.
 
 #פינקליף #אלוקסיה #venomaurea #alocasia #ultrarare #rareplants #variegated #צמחים_נדירים #plantsofisrael
+
+---
+
+## Sedenii Aurea card (Alocasia, ULTRA RARE)
+
+אלוקסיה סדני אוראה 💛🌿
+
+החץ המוזהב. עלים גדולים בצורת חץ, זהב וירוק לימון פרושים על ירוק כהה, וכל עלה בתבנית ייחודית משלו. פסלית, נדירה, בלתי נשכחת.
+
+פריט אספנים אמיתי, ULTRA RARE.
+
+📍 רמת גן · משלוחים לכל הארץ · ביקורים בתיאום
+💬 רוצים אותה? שלחו הודעה לפרטים ומחיר.
+
+#פינקליף #אלוקסיה #sedenii #alocasia #ultrarare #rareplants #variegated #צמחים_נדירים #plantsofisrael
