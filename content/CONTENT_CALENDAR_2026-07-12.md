@@ -19,7 +19,10 @@ photo of each.
 | Wed | 15 Jul | Venom Aurea | social-posts/15-venom-aurea.png | READY |
 | Thu | 16 Jul | Pseudo Pink | social-posts/05-pseudo-sanderiana.png | READY |
 | Fri | 17 Jul | Sedenii Aurea | social-posts/16-sedenii-aurea.png | READY |
-| Sat | 18 Jul | Metallic Blue | (needs photo) | PENDING PHOTO |
+| Sat | 18 Jul | Metallic Blue Aurea | social-posts/17-metallic-blue-aurea.png | READY |
+
+Extra cards ready to slot in / carry to the following week: Metallic Blue Albo
+(social-posts/18-metallic-blue-albo.png, in progress).
 
 Cuprea True Pink / Watsoniana True Pink: confirm if the existing Cuprea Red Secret
 (01) and Watsoniana Pink Shiny (06) cards are the same variety, or if they need

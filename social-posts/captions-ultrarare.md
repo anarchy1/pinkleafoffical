@@ -1,12 +1,14 @@
 # ULTRA RARE hero-card captions (product posts)
 
+RULE: every plant caption's first line includes the ENGLISH name (Kat, always).
+
 Post the card image, paste the matching caption. Hebrew, Pink Leaf voice.
 
 ---
 
 ## Venom Pink card (Alocasia, ULTRA RARE)
 
-אלוקסיה ונום פינק 🖤🩷
+אלוקסיה ונום פינק · Alocasia Venom Pink 🖤🩷
 
 ורוד שמתפשט כמו רעל. כל עלה נפרש בתבנית משלו, ורוד רך וכסוף על ירוק עמוק, פראי ובלתי צפוי. אין שניים זהים, וזה בדיוק היופי.
 
@@ -21,7 +23,7 @@ Post the card image, paste the matching caption. Hebrew, Pink Leaf voice.
 
 ## Ocean Mint card (Monstera, ULTRA RARE)
 
-מונסטרה אושן מינט 🌊🌿
+מונסטרה אושן מינט · Monstera Ocean Mint 🌊🌿
 
 גלים של מנטה. הווריאגציה נפרשת על העלה כמו קצף ים, ירוק עמוק, מנטה רך ושמנת, עדינה ויציבה יותר מהזן הלבן. נוכחות רעננה שלא רואים כל יום.
 
@@ -36,7 +38,7 @@ ULTRA RARE, לאספנים שמחפשים את יוצא הדופן.
 
 ## Venom Aurea card (Alocasia, ULTRA RARE)
 
-אלוקסיה ונום אוראה 🖤💛
+אלוקסיה ונום אוראה · Alocasia Venom Aurea 🖤💛
 
 זהב שמתפשט כמו רעל. ונום אוראה עוטה זהב וחמאה על עלווה ירוקה עמוקה, עם ורידים כסופים, וכל עלה נפרש בתבנית משלו. אין שניים זהים, וזה בדיוק היופי.
 
@@ -51,7 +53,7 @@ ULTRA RARE, לאספנים שמחפשים את יוצא הדופן.
 
 ## Sedenii Aurea card (Alocasia, ULTRA RARE)
 
-אלוקסיה סדני אוראה 💛🌿
+אלוקסיה סדני אוראה · Alocasia Sedenii Aurea 💛🌿
 
 החץ המוזהב. עלים גדולים בצורת חץ, זהב וירוק לימון פרושים על ירוק כהה, וכל עלה בתבנית ייחודית משלו. פסלית, נדירה, בלתי נשכחת.
 
