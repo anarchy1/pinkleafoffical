@@ -6,3 +6,13 @@ tools/post-generator/_p.jpg
 tools/post-generator/_cur.html
 tools/post-generator/_venom*.png
 tools/post-generator/_venom*.html
+
+# Kat: social-media cards + plant photos stay LOCAL only, never commit
+social-posts/14-venom-pink.png
+social-posts/15-venom-aurea.png
+social-posts/16-sedenii-aurea.png
+social-posts/17-metallic-blue-aurea.png
+social-posts/18-metallic-blue-albo.png
+tools/post-generator/photos/Venom*.jpg
+tools/post-generator/photos/SedeniiAurea.jpg
+tools/post-generator/photos/MetallicBlue*.jpg
