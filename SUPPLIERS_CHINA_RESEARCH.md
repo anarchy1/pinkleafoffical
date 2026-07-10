@@ -16,6 +16,15 @@ writing with each supplier.
 
 ---
 
+## 0. WARM LEAD already in Kat's inbox (found 2026-07 in Gmail)
+### Foshan Green Circle Farm - "Mango" (yan@gcfarm.com.cn)
+- Contact: Mango, yan@gcfarm.com.cn, +86 17727344299, www.greencirclefarm.com.cn
+- Status: Mango emailed a "Catalog for Rare Varieties 2026" (April 2026, found her on
+  Facebook). Kat replied asking for prices + how they handle shipping. Thread STALLED
+  with no price reply on file. This is a warm lead sitting unfollowed. REVIVE IT:
+  ask for the price list and Israel shipping (DHL? phyto cert? MOQ?). Could be a
+  variety-rich alternative to Minhui.
+
 ## 1. Candidate suppliers (leads to vet, not verified partners)
 
 Legend:
