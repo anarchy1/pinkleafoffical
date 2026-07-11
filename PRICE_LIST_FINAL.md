@@ -1,8 +1,13 @@
 # Pink Leaf price list - FINAL (2026-07)
 
-Every price shows the COMPETITOR price beside ours, so pricing is always anchored
-to them: we stay UNDER the competitor, above real cost. "-" = competitor has no
-listing for it (priced by tier + real cost). Prices in ₪.
+PRICING PHILOSOPHY (Kat, 2026-07): we are premium beginners playing the long game.
+Do NOT undercut aggressively. Price to the TOP. On plants the competitor HAS,
+undercut modestly to win. On plants they do NOT have (the "-" rows = our
+exclusives), price HIGH, there is no one to undercut. We won't make instant sales
+either way, and prices grow as we grow. Never reduce prices just to move product.
+
+Every price shows the COMPETITOR price beside ours. "-" = competitor has no
+listing (our exclusive, price to the top). Prices in ₪.
 
 ## ALOCASIA
 | Plant | Competitor | Ours |
@@ -62,7 +67,7 @@ listing for it (priced by tier + real cost). Prices in ₪.
 | Plant | Competitor | Ours |
 |---|---|---|
 | Deliciosa Banana Super Golden | - | 450 |
-| Devil Monster | 1500 | 1300 |
+| Devil Monster | 1500 | 1000 |
 | Electro Light | 600 | 550 |
 | Green Snow | 700 | 650 |
 | Legacy | 800 | 750 |
