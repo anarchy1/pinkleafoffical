@@ -13,7 +13,7 @@ listing for it (priced by tier + real cost). Prices in ₪.
 | Bambino Pink Lava Variegated | - | 700 |
 | Black Velvet Pink Variegated | - | 450 |
 | Black Velvet Gold Variegated | - | 450 |
-| Chantrieri Pink Variegated | 1100 | 1000 |
+| Chantrieri Pink Variegated | 1100 | 950 |
 | Cuprea Aurea Latte Variegated | 1200 | 1100 |
 | Cuprea Red Secret Mint Variegated | - | 600 |
 | Cuprea Red Secret Super Pink | 1200 | 1100 |
@@ -62,7 +62,7 @@ listing for it (priced by tier + real cost). Prices in ₪.
 | Plant | Competitor | Ours |
 |---|---|---|
 | Deliciosa Banana Super Golden | - | 450 |
-| Devil Monster | 1750 | 1500 |
+| Devil Monster | 4500 | 3500 |
 | Electro Light | 600 | 550 |
 | Green Snow | 700 | 650 |
 | Legacy | 800 | 750 |
