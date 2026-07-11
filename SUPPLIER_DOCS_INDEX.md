@@ -24,6 +24,17 @@ Three different origins. Do NOT lump them together.
     Yellow Marilyn $10.7 - very cheap)
   - **Catalog_plants_.pdf** (12 pp) - catalog (Epipremnum, Ficus, Monstera)
   - **Live_plants_2_.pdf** (12 pp) - catalog (Begonias + more)
+  - **Catalog_plants_ (new)** + **Catalognew_** (12 pp each) - newer Min Hui catalogs
+  - Consolidated into **MINHUI_CATALOG.md** (129 varieties, USD prices). This is
+    the working list for deciding what to IMPORT (Min Hui ships to Israel, we hold
+    a license). Includes many varieties we don't carry (nebula, frydek, odora,
+    macrorrhizos, Burle Marx Albo, Jose Buono, olympiad, etc.) + cheap TC fillers
+    (Thai Constellation ~$1, Yellow Marilyn/White Monster/Gloriosum ~$10).
+
+## 4. MANGO / Green Circle Farm - catalog only, NOT a usable supplier
+- **Catalog_for_Rare_Varieties2026.pdf** (31 pp). Does NOT ship to Israel (per
+  Kat). Irrelevant for ordering. Note: their catalog text mentions Fedex/DHL, so
+  worth one re-check whether Israel is truly excluded before writing them off.
 
 ## 3. MNG TC  - the COMPETITOR's supplier price sheet (unidentified)
 - No company name printed on it. Prices in ₪ (wholesale + handwritten retail).
