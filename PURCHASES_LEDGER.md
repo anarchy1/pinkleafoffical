@@ -19,7 +19,7 @@ one payment applied across versions, so the balances need confirming. Amounts US
 ### Min Hui order A - DELIVERED 2026-02-03 (Alibaba, Trade Assurance)
 - "Alocasia SPP", Express, DAP, delivered to Ramat Gan 2026-02-03.
 - Alibaba order screen shows Subtotal/Total **USD 1,209.00**, shipping FREE.
-  (Attachment: 以色列katy davidovich.xlsx = the plant list.)
+  (Attachment: an .xlsx with the plant list.)
 - Status: delivered & completed. CONFIRM this $1,209 is order A's final paid total.
 
 ### Min Hui order B - revised several times ("2nd list, with license")

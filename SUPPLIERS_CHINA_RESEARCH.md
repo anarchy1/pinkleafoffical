@@ -270,7 +270,7 @@ MOQ, would help me move quickly.
 Thank you,
 [Name]
 [Business name]
-Ramat Gan, Israel [postal code 5229581 if a shipping quote needs it]
+Ramat Gan, Israel [postal code on request]
 
 ---
 

@@ -4,7 +4,7 @@ These are promised to paying customers whose orders are still PENDING. Pull them
 label "reserved / [name]," keep them out of sellable stock. Same discipline as
 MOTHER_PLANTS.md: if it's owed, it can't be grabbed by someone else.
 
-Already delivered (NOT owed anymore): Edan, Zach, Tom Sapir. Eliba got hers too.
+Already delivered (NOT owed anymore): Edan, Zach, Tom. Eliba got hers too.
 Cancelled: Eran (getting nothing).
 
 ## Toren (ACCLIM, Kat acclimates) - 7
