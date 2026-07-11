@@ -62,7 +62,7 @@ listing for it (priced by tier + real cost). Prices in ₪.
 | Plant | Competitor | Ours |
 |---|---|---|
 | Deliciosa Banana Super Golden | - | 450 |
-| Devil Monster | 4500 | 3500 |
+| Devil Monster | 1500 | 1300 |
 | Electro Light | 600 | 550 |
 | Green Snow | 700 | 650 |
 | Legacy | 800 | 750 |
