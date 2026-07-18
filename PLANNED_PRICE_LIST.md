@@ -1,0 +1,202 @@
+# Pink Leaf - planned price list (ILS)
+
+Kat's full planned price list, given 2026-07-01. Currency ILS (₪). This is the
+master. "(set)" = final. "TBD" = still needs a price. Supersedes the older
+16-item PRICE_LIST.md.
+
+## Headline availability (the current sellable/priority set)
+| Variety | ₪ | Status |
+|---|---|---|
+| Devil Monster | 950 | |
+| Venom high var | 2,500 | |
+| Venom low var | 1,850 | SOLD OUT |
+| Cuprea Super Pink | 1,250 | |
+| Cuprea Pink Mint | 1,093 | |
+| Cuprea Aurea Latte | 950 | corms (acclimation) |
+| Chantrieri Pink | 900 | |
+| Nobilis Pink K | 765 | |
+| Pseudo Sanderiana Pink | 650 | |
+| Watsoniana Doff Pink | 650 | |
+| Ninja Pink | 600 | |
+| Azlanii Orange | 600 | SOLD OUT |
+| Yucatan Princess Pink | 450 | |
+| Melo Aurea | 450 | |
+| Monstera Aurea Borsigiana | 450 | available |
+| Bambino Pink | 150 | coming |
+
+## ALOCASIA
+| Variety | ₪ |
+|---|---|
+| Azlanii Albo Variegated | 314 |
+| Bambino Aurea Variegated | 55 |
+| Bambino Pink Variegated | 150 (set) |
+| Bambino Pink Lava Variegated | 301 |
+| Black Velvet Pink Variegated | 450 (set) |
+| Black Velvet Gold Variegated | 69 |
+| Chantrieri Pink Variegated | 750 (set) |
+| Cuprea Aurea Variegated Latte | 950 (set) |
+| Cuprea Red Secret Mint Variegated | 250 |
+| Cuprea Red Secret Super Pink | 1000 (set) |
+| Dragon Scale Tri-Color Variegated | 75 |
+| Golden Bone Mint Variegated | 502 |
+| Heart Balloon Pink Variegated | 499 |
+| Jacklyn Aurea Variegated | 145 |
+| Jacklyn Mystic Variegated | 94 |
+| Loco (Green) | 30 |
+| Maharani Albo Variegated | 500 |
+| Melo Albo Variegated | 126 |
+| Nairobi Nights Camouflage Tricolor | 220 |
+| Nairobi Nights A Grade | 251 |
+| Ninja Albo Variegated | 250 |
+| Nobilis Pink Variegated K Version | 765 (set) |
+| Pink Dragon Stardust Mint Variegated | 250 (set) |
+| Polly Ghost Mint Variegated | 55 |
+| Polly Lava Variegated | 500 |
+| Polly Pink Variegated | 330 |
+| Regal Shields Albo Variegated | 345 |
+| Sarian Albo Variegated | 130 |
+| Sarian Aurea Variegated | 126 |
+| Scalprum Mint | 251 |
+| Silver Dragon Aurea Variegated | 180 |
+| Simpo Albo Variegated | 105 |
+| Stingray Aurea Variegated | 138 |
+| Watsoniana Doff Albo Variegated | 120 |
+| Watsoniana Doff Pink Variegated | 650 (set) |
+| Watsoniana Glossy Pink Variegated | 430 |
+| Watsoniana Glossy Aurea Variegated | 355 |
+| Wentii Aurea Variegated Latte | 30 |
+| Wentii Pink Variegated | 800 |
+| Xanthosoma Mickey Mouse Variegated | 30 |
+| Yucatan Princess Pink Variegated | 450 (set) |
+| Zebrina Aurea Variegated | 119 |
+| Zebrina Mint Variegated | 94 |
+| Pseudo Sanderiana Pink | 650 (set) |
+| Melo Aurea | 450 (set) |
+| Ninja Pink | 600 (set) |
+| Azlanii Orange | 600 (set) |
+| Cuprea Pink Mint | 950 (set) |
+| Venom High Variegation | 2500 (set) |
+| Venom Low Variegation | 1850 (set) |
+| Azlanii Pink Variegated | TBD |
+| Watsoniana Pink Shiny Variegated | TBD |
+| Dragon Scale Albo Variegated | TBD |
+| Dragon Scale Mint Variegated | TBD |
+| Black Velvet Aurea Variegated | TBD |
+| Macrorrhiza Variegated | TBD |
+| Macrorrhizos Splash | TBD |
+| Amazonica Pink Variegated | TBD |
+
+## MONSTERA
+| Variety | ₪ |
+|---|---|
+| Deliciosa Banana Super Golden | 30 |
+| Devil Monster | 850 (set) |
+| Devil Monster Premium Variegated | SOLD OUT |
+| Electro Light | 190 |
+| Green Snow | 65 |
+| Legacy | 55 |
+| Lemon Lime Full Variegation | 180 |
+| Lemon Pom Pom | 215 |
+| Deliciosa Ocean Lava | SOLD OUT |
+| Mint (Full Mint) | 113 |
+| Placer Gold | 55 |
+| Star Shadow | 145 |
+| White Monster | 20 |
+| Aurea Borsigiana | 450 (set) |
+| Yellow Brooklyn | 439 |
+| Yellow Marilyn | TBD |
+| Green Elf | TBD |
+
+## PHILODENDRON
+| Variety | ₪ |
+|---|---|
+| Caramel Marble Variegated | 35 |
+| Green Lemon | 180 |
+| Melano Orange Variegated | 55 |
+| Micans Variegated | 70 |
+| Narrow Variegated | 82 |
+| Red Congo Variegated | 80 |
+| Silver Sword Variegated | 215 |
+| Strawberry Marble Variegated | 145 |
+| Tortum Variegated | 180 |
+| Verrucosum Mint Variegated | 94 |
+| Whipple Way | 30 |
+| White Beauty Variegated | 715 |
+| White Wizard | SOLD OUT |
+| Jose Buono | TBD |
+| Pink Princess Splash | TBD |
+| PP Marble Galaxy | TBD |
+| Billietiae Variegated | TBD |
+
+## OTHER
+| Variety | ₪ |
+|---|---|
+| Colocasia Bastet Queen | 15 |
+| Musa Nono Pink Variegated | 30 |
+| Rhaphidophora Tetrasperma Variegated | 380 |
+| Anthurium Jungle Variegated | TBD |
+| Pothos N'Joy (White) | TBD |
+| Marcuriza Splash | TBD |
+
+## TBD - suggested prices (Israeli market, middle ground; anchored to Kat's own comparable set prices)
+Method: price each TBD like the closest plant Kat already priced, not off the cheap international number. Kat to approve.
+
+| Variety | Suggested ₪ | Anchored to (your set price) | Flag |
+|---|---|---|---|
+| Azlanii Pink Variegated | 500 | between Azlanii Albo 314 and Azlanii Orange 600 | |
+| Watsoniana Pink Shiny Variegated | 430 | your Watsoniana Glossy Pink 430 | likely the SAME plant, confirm/merge |
+| Dragon Scale Albo Variegated | 200 | premium over Dragon Scale Tri-Color 75 | |
+| Dragon Scale Mint Variegated | 113 | your Pink Dragon Stardust Mint 113 | |
+| Black Velvet Aurea Variegated | 69 | your Black Velvet Gold 69 | likely the SAME plant, confirm/merge |
+| Macrorrhiza Variegated | 120 | modest Alocasia tier | |
+| Macrorrhizos Splash | 120 | alongside Macrorrhiza | low confidence |
+| Amazonica Pink Variegated | 330 | your Polly Pink 330 (same plant) | same as Polly Pink, confirm/merge |
+| Yellow Marilyn (Monstera) | 200 | your Lemon Pom Pom 215 tier | |
+| Green Elf (Monstera) | hold | no data | need info on what it is |
+| Jose Buono (Philo) | 180 | your Tortum 180 | |
+| Pink Princess Splash (Philo) | 145 | your Strawberry Marble 145 | |
+| PP Marble Galaxy (Philo) | 200 | premium Pink Princess marble | |
+| Billietiae Variegated (Philo) | 215 | your Silver Sword 215 | |
+| Anthurium Jungle Variegated | 250 | thin data, mid tier | low confidence |
+| Pothos N'Joy (White) | 40 | common inexpensive pothos | |
+| Marcuriza Splash | hold | name not identified | confirm what plant this is |
+
+## Worth a second look (set prices that research flags)
+- White Wizard 5: research says White Wizard is $20-89 (74-329₪). 5₪ looks like a typo, should likely be ~90 to 150.
+- Caramel Marble 35: that is starter/TC level. Established Caramel Marble is $167₪+ and up to thousands. Fine if yours is a small plug, low if established.
+- Dragon Scale Mint (your April 420 vs this list): market tops out around 425 for established, competitor sold at 150. The 200 suggestion sits in between.
+
+## Discrepancies to reconcile (Kat to confirm)
+- Cuprea Pink Mint: this list says 950 (set), headline says 1,093. Which is final?
+- Cuprea Super Pink: headline 1,150 vs "Cuprea Red Secret Super Pink" 1000 (set). Same plant? Which price?
+
+## TC PRICING FLOOR (added 2026-07-06, do NOT quote below this)
+Standing rule after repeatedly under-pricing Kat. TC (tissue culture) plugs are
+cheaper than a grown plant, but "cheaper than a 4,200 nursery specimen" means
+hundreds, NOT ~300. Method: anchor to the REAL grown/nursery price, then TC sits
+at roughly 20 to 35% of that, and NEVER below the Israeli market (rootine.co.il,
+Idan's list). Grails carry a higher floor because their grown specimens hit
+thousands.
+
+Context anchor (Kat, 2026-07-06): a nursery sells grown Melo and Maharani at
+about 4,200 each. That is the ceiling these TCs discount DOWN from.
+
+| Variety | Grown/market anchor | TC FLOOR (never below) |
+|---|---|---|
+| Melo Albo | ~4,200 nursery / 750 April | 550 |
+| Maharani Albo | ~4,200 nursery / 850 Idan | 550 |
+| Cuprea (Super Pink / Pink Mint) | 950-1,250 | 500 |
+| Venom Pink | 1,850-2,500 | 700 |
+| Watsoniana True Pink | 650+ | 450 |
+| Black Velvet Pink | 779 rootine | 420 |
+| Polly Pink | 478 rootine | 320 |
+| Yucatan Princess Pink | 350-450 | 300 |
+| Silver Dragon Aurea | 280 April | 240 |
+| Jacklyn Mystic | 350 April | 230 |
+
+Rule of thumb for anything not listed: TC floor = max( 25% of the grown price,
+the lowest Israeli-market price for that plant ). When unsure, price UP and let
+Kat come down, never the reverse.
+
+Note: Melo Albo is NOT currently available as TC (only in acclimation). Quote it
+as an acclimating/grown plant, not a TC plug.

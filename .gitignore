@@ -1,0 +1,17 @@
+
+# post-generator temp artifacts
+tools/post-generator/__pycache__/
+tools/post-generator/_logo_trans.png
+tools/post-generator/_p.jpg
+tools/post-generator/_cur.html
+tools/post-generator/_venom*.png
+tools/post-generator/_venom*.html
+
+# Private financial docs: never commit receipt/invoice images to the public repo
+expenses/receipts/
+expenses/*.jpg
+expenses/*.jpeg
+expenses/*.png
+expenses/*.pdf
+**/invoice*.pdf
+**/Invoice*.pdf
