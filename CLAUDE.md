@@ -20,6 +20,64 @@ place; treat the hook as a backstop, not a license to be sloppy.
 
 ---
 
+## Claude Code project brief (read first)
+
+A fast orientation for any new session. Detail lives in the sections below.
+
+### What Pink Leaf is
+Rare and variegated plant studio in Ramat Gan, Israel. Owner: Kat. It imports
+tissue-culture aroids (Alocasia, Monstera, Philodendron) from suppliers abroad,
+acclimates them, and sells to Israeli collectors. Bilingual (Hebrew RTL /
+English), currency ILS. Instagram `@pinkleaf.studio`. By-appointment studio plus
+nationwide shipping in Israel.
+
+### What we do here
+Claude acts as the operations brain: pricing decisions, drafting customer replies
+(Hebrew and English), building supplier sourcing lists, producing social content
+(Instagram/Facebook cards, a product catalog, care guides), setting up payments,
+and above all building a reliable inventory system.
+
+### Where everything is stored
+- Website and code: GitHub repo `anarchy1/pinkleafoffical`, on GitHub Pages, live
+  at `pinkleaf.co.il`. Push to `main` goes live in about 60 seconds.
+- Branches: `main` is the live site. `claude/checkout-card-plans-bcwo6h` is the
+  feature/storage branch where social cards and generated content live, NOT the
+  website.
+- Business, financial, and personal data (money, inventory, client names, prices,
+  orders): NEVER in the repo. It lives in Notion (the "Pink Leaf Business
+  Overview" space: Full Inventory, Customer Orders, market research) and in chat.
+- Durable project decisions: this `CLAUDE.md`.
+- Channels: Kat handles WhatsApp, Instagram, and Facebook herself. Claude has NO
+  access to those and works from Kat's screenshots. Claude does have Gmail,
+  Notion, Google Calendar, and GitHub.
+
+### Standing rules (do not break)
+- Never use em dashes anywhere (see Writing style above).
+- Never put business/financial/personal data in the repo.
+- Never push to `main` (the live site) without asking first.
+- Social/card content goes to the feature branch, never the live site.
+- Never reveal stock quantities in public captions.
+- Tell the truth, do not flatter, own mistakes plainly.
+- The real inventory source of truth is the Notion inventory, NOT the repo's
+  `SUPPLIER_TOTALS.md` (that file is planned/ordered quantities and has proven
+  unreliable against the physical count).
+
+### Where we're at (snapshot, update as it changes)
+- Mid a fresh physical inventory count, box by box, to establish a true baseline
+  because the stored records kept disagreeing with reality. Goal: one live Notion
+  inventory as the single source of truth that every sale registers against.
+- A supplier shipment is stuck in customs; some requested plants are in that box,
+  not lost.
+- Catalog rebuild in progress: an earlier 9-page catalog had bugs (reversed
+  Hebrew, wrong/placeholder/watermarked photos). A corrected sample page is proven
+  (proper RTL Hebrew, clean tiles). It needs Kat's real photos to finish and must
+  not go to customers until stock is confirmed.
+- Payments: Invoice4u account created. Next, generate the hosted payment link
+  inside the account, then wire it into the product Buy buttons. Do not go live
+  until inventory is verified clean.
+
+---
+
 ## Project context and standing decisions
 
 This section is the durable memory for this project. Past sessions kept losing
