@@ -71,7 +71,7 @@ Melano Orange Variegated - 2
 Micans Variegated - 1
 Narrow Variegated - 2
 Red Congo Variegated - 2
-Strawberry Marble Variegated - 3
+Strawberry Marble Variegated - 0 (SOLD OUT on arrival, never received; was a miscount vs Caramel Marble, confirmed by Kat 2026-07. Do NOT offer.)
 Tortum Variegated - 1
 Verrucosum Mint Variegated - 3
 Whipple Way - 1
