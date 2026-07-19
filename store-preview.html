@@ -19,8 +19,9 @@
        Notion inventory is the single source of truth, not this file.
     2. Real photos. Tiles reuse the existing plants/PVxx.jpg paths where they
        exist; several are placeholders or need Kat's real shots.
-    3. Real payment link. The "Inquire" buttons are placeholders (href="#").
-       Wire in the Invoice4u hosted payment link only after inventory is clean.
+    3. Real payment link. The "Inquire" buttons open a real WhatsApp chat with
+       a pre-filled Hebrew message (purchase or waitlist). A hosted Invoice4u
+       payment link can replace that flow later, once inventory is clean.
     4. Hebrew plant names, if wanted. The live site keeps Latin names in the
        store data, so this preview does the same.
 
@@ -264,6 +265,102 @@
             color: var(--pink);
         }
 
+        /* Placeholder logo (used when a real photo cannot be shown) */
+        .card-photo img.ph-logo {
+            object-fit: contain;
+            padding: 22%;
+            opacity: 0.9;
+        }
+
+        /* Care chips and genus care line */
+        .care-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+        .care-chip {
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            padding: 3px 9px;
+            border-radius: 50px;
+            background: var(--mellow-pink);
+            color: var(--text);
+            white-space: nowrap;
+        }
+        .care-line {
+            font-size: 11px;
+            line-height: 1.5;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        /* Variant selector */
+        .variant-wrap { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+        .variant-label {
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            font-family: 'Cinzel', serif;
+        }
+        .variant-btns { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+        .variant-btn {
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            padding: 5px 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .variant-btn:hover { border-color: var(--pink); }
+        .variant-btn-active {
+            background: var(--pink);
+            color: #fff;
+            border-color: var(--pink);
+        }
+
+        /* Trust / info section */
+        .trust-section {
+            max-width: 1000px;
+            margin: 56px auto 0;
+            padding: 0 20px;
+        }
+        .trust-section h2 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: var(--pink);
+            margin-bottom: 22px;
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .trust-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 18px;
+            background: var(--card-bg);
+            text-align: center;
+        }
+        .trust-card .trust-ico { font-size: 22px; display: block; margin-bottom: 8px; }
+        .trust-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .trust-card p { font-size: 12px; opacity: 0.72; line-height: 1.5; }
+        .trust-card a { color: var(--pink); text-decoration: none; }
+        .trust-card a:hover { text-decoration: underline; }
+
         .store-empty {
             grid-column: 1 / -1;
             text-align: center;
@@ -317,31 +414,63 @@
 
     <main class="store-grid" id="store-grid"></main>
 
+    <section class="trust-section" id="trust-section">
+        <h2 id="trust-title">Why buy from Pink Leaf</h2>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <span class="trust-ico">📦</span>
+                <h3 id="trust-ship-t">Nationwide shipping</h3>
+                <p id="trust-ship-d">Shipped carefully packed across Israel.</p>
+            </div>
+            <div class="trust-card">
+                <span class="trust-ico">🌱</span>
+                <h3 id="trust-acc-t">In-house import and acclimation</h3>
+                <p id="trust-acc-d">Every plant is imported, propagated, and acclimated in-house on a 21-day acclimation protocol before it ships.</p>
+            </div>
+            <div class="trust-card">
+                <span class="trust-ico">🏡</span>
+                <h3 id="trust-studio-t">Studio by appointment</h3>
+                <p id="trust-studio-d">Visit the studio in Ramat Gan by appointment.</p>
+            </div>
+            <div class="trust-card">
+                <span class="trust-ico">📸</span>
+                <h3 id="trust-ig-t">Follow us</h3>
+                <p><a href="https://instagram.com/pinkleaf.studio" target="_blank" rel="noopener" id="trust-ig-d">Instagram @pinkleaf.studio</a></p>
+            </div>
+        </div>
+    </section>
+
     <footer class="preview-foot">
+        <div id="footer-contact">Reach us on WhatsApp and Instagram</div>
         Store redesign prototype for Pink Leaf. Prices and names pulled from the site data.
         Photos, confirmed inventory, and the real payment link are still to be added.
     </footer>
 
     <script>
         // ── Product data (copied verbatim from index.html ALL_STORE_ITEMS) ──
+        // light and humidity values are the same care figures shown on the live site.
         const ALL_STORE_ITEMS = [
-            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], status: "coming" },
-            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], status: "coming" },
-            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], status: "coming" },
-            { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], status: "available" },
-            { id: "PV87", name: "Alocasia Maharani Albo", availability: ["Albo"], status: "available" },
-            { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", availability: ["Pink"], status: "available" },
-            { id: "PV40", name: "Alocasia Ninja Albo", availability: ["Albo"], status: "available" },
-            { id: "PV18", name: "Alocasia Wentii Pink", availability: ["Pink"], status: "available" },
-            { id: "PV89", name: "Alocasia Melo Albo", availability: ["Albo"], status: "available" },
-            { id: "PV44", name: "Alocasia Pink Dragon Stardust Mint", availability: ["Stardust Mint"], status: "available" },
-            { id: "PV78", name: "Alocasia Simpo Albo", availability: ["Albo"], status: "available" },
-            { id: "PV35", name: "Alocasia Jacklyn Variegated", availability: ["Variegated"], status: "available" },
-            { id: "PV37", name: "Alocasia Silver Dragon Aurea", availability: ["Aurea"], status: "available" },
-            { id: "PV15", name: "Alocasia Dragon Scale Albo", availability: ["Albo"], status: "available" },
-            { id: "PV23", name: "Alocasia Black Velvet Aurea", availability: ["Aurea"], status: "available" },
-            { id: "PV14", name: "Alocasia Dragon Scale Mint", availability: ["Mint"], status: "available" },
+            { id: "PV19", name: "Alocasia Polly Pink var", availability: ["High Variegation", "Regular Variegation"], light: "70%", humidity: "85%", status: "coming" },
+            { id: "PV81", name: "Alocasia Heart Balloon", availability: ["Starter Plant"], light: "70%", humidity: "85%", status: "coming" },
+            { id: "PV25", name: "Alocasia Macrorrhiza Var.", availability: ["Starter Plant", "Mature Plant"], light: "65%", humidity: "80%", status: "coming" },
+            { id: "PV48", name: "Philodendron Jose Buono", availability: ["Starter Plant", "Mature Plant"], light: "55%", humidity: "75%", status: "available" },
+            { id: "PV87", name: "Alocasia Maharani Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV84", name: "Alocasia Pseudo Sanderiana Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV40", name: "Alocasia Ninja Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV18", name: "Alocasia Wentii Pink", availability: ["Pink"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV89", name: "Alocasia Melo Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV44", name: "Alocasia Pink Dragon Stardust Mint", availability: ["Stardust Mint"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV78", name: "Alocasia Simpo Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV35", name: "Alocasia Jacklyn Variegated", availability: ["Variegated"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV37", name: "Alocasia Silver Dragon Aurea", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV15", name: "Alocasia Dragon Scale Albo", availability: ["Albo"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV23", name: "Alocasia Black Velvet Aurea", availability: ["Aurea"], light: "70%", humidity: "85%", status: "available" },
+            { id: "PV14", name: "Alocasia Dragon Scale Mint", availability: ["Mint"], light: "70%", humidity: "85%", status: "available" },
         ];
+
+        // Images that must not be shown because they carry a competitor watermark.
+        // PV23 (Alocasia Black Velvet Aurea) falls back to the logo placeholder.
+        const BLOCKED_PHOTOS = { "PV23": true };
 
         // ── Real prices (copied verbatim from index.html ITEM_PRICES) ──
         // No prices invented. Items missing here fall back to "Price on inquiry".
@@ -376,10 +505,27 @@
                 coming: "בקרוב",
                 from: "החל מ",
                 inquire: "לפרטים ורכישה",
+                waitlist: "הצטרפו לרשימת המתנה",
                 inquiryPrice: "מחיר לפי פנייה",
                 emptyPrefix: "אוסף",
                 emptySuffix: "נפתח בקרוב",
                 emptyAll: "צמחים",
+                lightLabel: "אור",
+                humidityLabel: "לחות",
+                variantLabel: "בחירת גודל / סוג",
+                careAlocasia: "אלוקזיה אוהבת חום ולחות גבוהה. עשויה לעבור רדימה בחורף, לכן שמרו על תנאים יציבים.",
+                carePhilodendron: "פילודנדרון מטפס וקל לגידול, אוהב אור עקיף ובהיר.",
+                careGeneric: "צמח פנים טרופי, אור עקיף ובהיר ולחות יציבה.",
+                trustTitle: "למה לקנות מ-Pink Leaf",
+                trustShipT: "משלוח ארצי",
+                trustShipD: "משלוח לכל רחבי ישראל, ארוז בקפידה.",
+                trustAccT: "יבוא ואקלום עצמאי",
+                trustAccD: "כל צמח מיובא, מרוּבֶּה ומאוקלם אצלנו בפרוטוקול אקלום של 21 יום לפני המשלוח.",
+                trustStudioT: "סטודיו בתיאום מראש",
+                trustStudioD: "ביקורים בסטודיו ברמת גן בתיאום מראש.",
+                trustIgT: "עקבו אחרינו",
+                trustIgD: "אינסטגרם pinkleaf.studio@",
+                footerContact: "לפניות: וואטסאפ ואינסטגרם",
             },
             en: {
                 introTitle: "The Store",
@@ -388,10 +534,27 @@
                 coming: "Coming soon",
                 from: "from",
                 inquire: "Inquire to buy",
+                waitlist: "Join the waitlist",
                 inquiryPrice: "Price on inquiry",
                 emptyPrefix: "The",
                 emptySuffix: "collection is opening soon",
                 emptyAll: "plants",
+                lightLabel: "Light",
+                humidityLabel: "Humidity",
+                variantLabel: "Choose size / type",
+                careAlocasia: "Alocasia loves warmth and high humidity. It can go dormant in winter, so keep its conditions stable.",
+                carePhilodendron: "Philodendron is an easy climber that enjoys bright, indirect light.",
+                careGeneric: "A tropical houseplant that likes bright, indirect light and steady humidity.",
+                trustTitle: "Why buy from Pink Leaf",
+                trustShipT: "Nationwide shipping",
+                trustShipD: "Shipped carefully packed across Israel.",
+                trustAccT: "In-house import and acclimation",
+                trustAccD: "Every plant is imported, propagated, and acclimated in-house on a 21-day acclimation protocol before it ships.",
+                trustStudioT: "Studio by appointment",
+                trustStudioD: "Visit the studio in Ramat Gan by appointment.",
+                trustIgT: "Follow us",
+                trustIgD: "Instagram @pinkleaf.studio",
+                footerContact: "Reach us on WhatsApp and Instagram",
             }
         };
 
@@ -425,6 +588,81 @@
             return new Set(prices).size > 1;
         }
 
+        // Remembers which variant the shopper picked, keyed by item id.
+        const selectedVariant = {};
+        function variantOf(item) {
+            const opts = item.availability || [];
+            if (selectedVariant[item.id] && opts.includes(selectedVariant[item.id])) {
+                return selectedVariant[item.id];
+            }
+            return opts[0] || '';
+        }
+
+        // Short, genus-appropriate care line. Truthful and generic, no per-plant claims.
+        function careLine(item, t) {
+            const n = (item.name || '').toLowerCase();
+            if (n.includes('alocasia')) return t.careAlocasia;
+            if (n.includes('philodendron')) return t.carePhilodendron;
+            return t.careGeneric;
+        }
+
+        // Builds the WhatsApp inquiry link with a pre-filled Hebrew message.
+        // Purchase message for in-stock items, waitlist message for coming-soon.
+        function whatsappLink(item) {
+            const WA = 'https://wa.me/972559116990?text=';
+            const variant = variantOf(item);
+            let msg;
+            if (item.status === 'available') {
+                const suffix = variant ? (' (' + variant + ')') : '';
+                msg = 'היי! אשמח לרכוש את הצמח: ' + item.name + suffix + '. אפשר לקבל פרטים על מחיר ומשלוח?';
+            } else {
+                msg = 'היי! אשמח להצטרף לרשימת ההמתנה עבור: ' + item.name + '. תעדכנו אותי כשהוא זמין?';
+            }
+            return WA + encodeURIComponent(msg);
+        }
+
+        // Price for the currently selected variant, or null if that variant has no real price.
+        function priceForVariant(item) {
+            const p = ITEM_PRICES[item.id + '_' + variantOf(item)];
+            return (typeof p === 'number') ? p : null;
+        }
+
+        // Repaints one card's price and refreshes its inquiry link after a variant change.
+        function selectVariant(id, opt) {
+            selectedVariant[id] = opt;
+            const item = ALL_STORE_ITEMS.find(it => it.id === id);
+            if (!item) return;
+            const card = document.querySelector('.product-card[data-card="' + id + '"]');
+            if (!card) return;
+            card.querySelectorAll('.variant-btn').forEach(b => {
+                b.classList.toggle('variant-btn-active', b.dataset.opt === opt);
+            });
+            const priceEl = card.querySelector('.price-slot');
+            if (priceEl) priceEl.innerHTML = priceMarkup(item, T[lang]);
+            const link = card.querySelector('.buy-btn');
+            if (link) link.href = whatsappLink(item);
+        }
+
+        // Price markup for a card, reflecting the selected variant when there is one.
+        function priceMarkup(item, t) {
+            if (item.availability && item.availability.length > 1) {
+                const p = priceForVariant(item);
+                if (p === null) return '<div class="card-inquiry">' + t.inquiryPrice + '</div>';
+                return '<div class="card-price">₪' + p + '</div>';
+            }
+            const low = lowestPrice(item);
+            if (low === null) return '<div class="card-inquiry">' + t.inquiryPrice + '</div>';
+            if (hasPriceRange(item)) {
+                return '<div class="card-price"><span class="from-label">' + t.from + '</span>₪' + low + '</div>';
+            }
+            return '<div class="card-price">₪' + low + '</div>';
+        }
+
+        // Escapes a string for safe use inside an HTML attribute value.
+        function attr(s) {
+            return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
         function renderStore() {
             const t = T[lang];
             let items = ALL_STORE_ITEMS.slice();
@@ -447,28 +685,54 @@
                 const badgeClass = isAvailable ? 'badge-available' : 'badge-coming';
                 const badgeText = isAvailable ? t.available : t.coming;
 
-                const low = lowestPrice(item);
-                let priceHTML;
-                if (low === null) {
-                    priceHTML = '<div class="card-inquiry">' + t.inquiryPrice + '</div>';
-                } else if (hasPriceRange(item)) {
-                    priceHTML = '<div class="card-price"><span class="from-label">' + t.from + '</span>₪' + low + '</div>';
-                } else {
-                    priceHTML = '<div class="card-price">₪' + low + '</div>';
+                const priceHTML = '<div class="price-slot">' + priceMarkup(item, t) + '</div>';
+
+                // Variant selector for items with more than one tier.
+                let variantHTML = '';
+                if (item.availability && item.availability.length > 1) {
+                    let btns = '';
+                    item.availability.forEach((opt, i) => {
+                        const active = (opt === variantOf(item)) ? ' variant-btn-active' : '';
+                        btns += '<button type="button" class="variant-btn' + active + '" data-opt="' +
+                            attr(opt) + '" onclick="selectVariant(\'' + item.id + '\', this.dataset.opt)">' +
+                            opt + '</button>';
+                    });
+                    variantHTML = '<div class="variant-wrap">' +
+                        '<span class="variant-label">' + t.variantLabel + '</span>' +
+                        '<div class="variant-btns" dir="ltr">' + btns + '</div>' +
+                    '</div>';
                 }
 
-                // Buy button is a placeholder until the real payment link is ready.
+                // Care chips (light / humidity) and one genus-appropriate care line.
+                let careHTML = '';
+                const chips = [];
+                if (item.light) chips.push('<span class="care-chip">☀ ' + t.lightLabel + ' ' + item.light + '</span>');
+                if (item.humidity) chips.push('<span class="care-chip">💧 ' + t.humidityLabel + ' ' + item.humidity + '</span>');
+                if (chips.length) {
+                    careHTML = '<div class="care-chips" dir="ltr">' + chips.join('') + '</div>';
+                }
+                careHTML += '<div class="care-line">' + careLine(item, t) + '</div>';
+
+                // Real WhatsApp inquiry link (purchase for in-stock, waitlist for coming-soon).
                 const btnClass = isAvailable ? 'buy-btn' : 'buy-btn soft';
-                const btn = '<a href="#" class="' + btnClass + '" data-id="' + item.id + '" onclick="return false;">' + t.inquire + '</a>';
+                const btnLabel = isAvailable ? t.inquire : t.waitlist;
+                const btn = '<a href="' + whatsappLink(item) + '" class="' + btnClass +
+                    '" data-id="' + item.id + '" target="_blank" rel="noopener">' + btnLabel + '</a>';
+
+                // PV23 carries a competitor watermark, so show the logo placeholder instead.
+                const imgSrc = BLOCKED_PHOTOS[item.id] ? 'logo-dark.png' : ('plants/' + item.id + '.jpg');
+                const imgClass = BLOCKED_PHOTOS[item.id] ? ' class="ph-logo"' : '';
 
                 html += '' +
-                    '<div class="product-card">' +
+                    '<div class="product-card" data-card="' + item.id + '">' +
                         '<span class="avail-badge ' + badgeClass + '">' + badgeText + '</span>' +
                         '<div class="card-photo">' +
-                            '<img src="plants/' + item.id + '.jpg" alt="' + item.name + '" loading="lazy" onerror="this.src=\'logo-dark.png\'">' +
+                            '<img src="' + imgSrc + '"' + imgClass + ' alt="' + attr(item.name) + '" loading="lazy" onerror="this.src=\'logo-dark.png\';this.className=\'ph-logo\'">' +
                         '</div>' +
                         '<div class="card-body">' +
                             '<div class="card-name" dir="ltr">' + item.name + '</div>' +
+                            careHTML +
+                            variantHTML +
                             priceHTML +
                             btn +
                         '</div>' +
@@ -490,6 +754,17 @@
             document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
             document.getElementById('intro-title').textContent = t.introTitle;
             document.getElementById('intro-sub').textContent = t.introSub;
+            // Trust / info section
+            document.getElementById('trust-title').textContent = t.trustTitle;
+            document.getElementById('trust-ship-t').textContent = t.trustShipT;
+            document.getElementById('trust-ship-d').textContent = t.trustShipD;
+            document.getElementById('trust-acc-t').textContent = t.trustAccT;
+            document.getElementById('trust-acc-d').textContent = t.trustAccD;
+            document.getElementById('trust-studio-t').textContent = t.trustStudioT;
+            document.getElementById('trust-studio-d').textContent = t.trustStudioD;
+            document.getElementById('trust-ig-t').textContent = t.trustIgT;
+            document.getElementById('trust-ig-d').textContent = t.trustIgD;
+            document.getElementById('footer-contact').textContent = t.footerContact;
             renderStore();
         }
 
