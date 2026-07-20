@@ -2471,6 +2471,10 @@ body.dark-mode .scoreboard-item.current {
             <div class="bag-ship-policy" id="bag-ship-policy" dir="auto" style="display:none;font-size:0.72rem;opacity:0.72;margin-top:6px;line-height:1.55;">
                 המחיר אינו כולל משלוח. דמי המשלוח מאושרים פרטנית לכל הזמנה לפי גודל האריזה. משלוח בימים ראשון-שני בלבד כדי שהחבילה לא תיתקע בסופ״ש, אספקה עד 5 ימי עסקים. צמח שאינו נכנס לאריזת 40x40 ס״מ: דמי המשלוח כפולים.
             </div>
+            <button class="bag-cta" id="bag-pay-btn" onclick="payWithInvoice4u()" style="display:none;">
+                <span>💳</span>
+                שלמו בכרטיס או ב-Bit / PAY SECURELY
+            </button>
             <button class="bag-cta" onclick="sendBagWhatsApp()">
                 <span>💬</span>
                 REQUEST AVAILABILITY VIA CONCIERGE
@@ -3797,6 +3801,27 @@ function checkLab(choiceIndex) {
             oversizeMultiplier: 2,   // base fee doubles if the order exceeds the box
         };
 
+        // Invoice4u hosted payment page (Quick Payment Page / דף תשלום מהיר).
+        // Paste the payment page URL from the Invoice4u account between the
+        // quotes to switch on card + Bit checkout. While it is empty, the
+        // "Pay by card" button stays hidden and checkout uses the WhatsApp
+        // concierge, so nothing is broken for customers in the meantime.
+        // If the hosted page reads the amount from a URL parameter, set its
+        // name here (common values: "sum", "Sum", "amount"); leave as is for
+        // an open-amount page where the customer types the total shown.
+        const INVOICE4U_PAY_URL = '';
+        const INVOICE4U_SUM_PARAM = 'sum';
+
+        function payWithInvoice4u() {
+            const t = computeBagTotals();
+            if (!INVOICE4U_PAY_URL || !t.hasPriced) { sendBagWhatsApp(); return; }
+            let url = INVOICE4U_PAY_URL;
+            if (INVOICE4U_SUM_PARAM) {
+                url += (url.includes('?') ? '&' : '?') + INVOICE4U_SUM_PARAM + '=' + encodeURIComponent(t.total);
+            }
+            window.open(url, '_blank');
+        }
+
         // Load from localStorage
         let bag = JSON.parse(localStorage.getItem('pl_bag') || '[]');
 
@@ -3899,6 +3924,10 @@ function checkLab(choiceIndex) {
             // Total: plants only. Shipping is quoted per order (size-dependent).
             const t = computeBagTotals();
             const shipPolicy = document.getElementById('bag-ship-policy');
+            const payBtn = document.getElementById('bag-pay-btn');
+            // Card checkout appears only once a payment link is configured and
+            // the bag has at least one priced plant.
+            if (payBtn) payBtn.style.display = (INVOICE4U_PAY_URL && t.hasPriced) ? 'flex' : 'none';
             if (t.hasPriced) {
                 if (shipPolicy) shipPolicy.style.display = 'block';
                 if (totalDisplay) totalDisplay.textContent = `${t.total.toLocaleString()}₪`;
