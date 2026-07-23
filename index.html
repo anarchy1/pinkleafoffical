@@ -2182,6 +2182,124 @@ body.dark-mode .scoreboard-item.current {
         /* Hide old cart elements */
         .cart-float, .cart-drawer, .cart-overlay { display: none !important; }
 
+        /* ── PRODUCT DETAIL MODAL ── */
+        .portal[onclick], .pd-clickable { cursor: pointer; }
+        .pd-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(20, 10, 14, 0.55);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+        .pd-overlay.open { display: flex; }
+        .pd-panel {
+            position: relative;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            overflow: hidden;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            animation: pdIn 0.28s ease;
+        }
+        @keyframes pdIn {
+            from { opacity: 0; transform: translateY(14px) scale(0.98); }
+            to { opacity: 1; transform: none; }
+        }
+        .pd-media {
+            background: var(--mellow-pink);
+            min-height: 300px;
+            overflow: hidden;
+        }
+        .pd-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pd-body {
+            padding: 34px 32px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        .pd-name {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.28;
+            margin: 6px 0 10px;
+            color: var(--text);
+        }
+        .pd-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--pink);
+            margin: 0 0 16px;
+        }
+        .pd-care {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            margin: 4px 0 16px;
+        }
+        .pd-careline {
+            font-size: 12px;
+            opacity: 0.8;
+            line-height: 1.55;
+            margin: 10px 0 0;
+        }
+        .pd-desc {
+            font-size: 13px;
+            line-height: 1.65;
+            opacity: 0.85;
+            margin: 0 0 20px;
+        }
+        .pd-action { margin-top: auto; }
+        .pd-close {
+            position: absolute;
+            top: 14px;
+            inset-inline-end: 14px;
+            z-index: 3;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .pd-close:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
+        @media (max-width: 640px) {
+            .pd-overlay { padding: 0; align-items: flex-end; }
+            .pd-panel {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                max-height: 100%;
+                border-radius: 22px 22px 0 0;
+            }
+            .pd-media { min-height: 0; height: 38vh; }
+            .pd-body { padding: 24px 22px 34px; max-height: none; }
+        }
+
         /* LAB CARD - PULL UP VERY CLOSE TO MENU BAR */
         body.on-lab-page #page-lab {
             padding-top: 0px !important;
@@ -3508,8 +3626,8 @@ body.dark-mode .scoreboard-item.current {
                 h += `
                 <div class="product-card">
                     ${badge}
-                    <div class="portal"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable && !gated ? '1' : '0.85'}"></div>
-                    <p class="serif text-[11px] font-bold text-center mb-3 mt-3">${item.name}</p>
+                    <div class="portal" onclick="openProduct('${item.id}')"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable && !gated ? '1' : '0.85'}"></div>
+                    <p class="serif text-[11px] font-bold text-center mb-3 mt-3 pd-clickable" onclick="openProduct('${item.id}')">${item.name}</p>
                     ${(!gated && isAvailable) ? `<p class="card-price" dir="auto" style="text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;color:var(--pink);">${(() => { const ps = (item.availability||[]).map(o => ITEM_PRICES[item.id+'_'+o]).filter(p => typeof p === 'number'); if(!ps.length) return ''; const mn = Math.min(...ps); return (new Set(ps).size>1 ? 'from ₪' : '₪') + mn; })()}</p>` : ''}
                     ${tierHTML}
                     ${dropdownHTML}
@@ -3523,6 +3641,134 @@ body.dark-mode .scoreboard-item.current {
 
             grid.innerHTML = h;
         }
+
+        // ── PRODUCT DETAIL MODAL ──
+        // Full-view overlay a shopper opens by tapping a plant's photo or name.
+        // Reuses the store's real helpers (prices, families, cart, waitlist) so it
+        // never duplicates data or invents anything.
+        let pdCurrentItem = null;
+
+        function pdEsc(s){ return String(s == null ? '' : s).replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
+
+        function pdCareLine(genus){
+            if (genus === 'Alocasia') return 'Alocasia: loves warmth and high humidity, and can slow down or go dormant in winter.';
+            if (genus === 'Monstera') return 'Monstera: bright indirect light, an easy climber.';
+            if (genus === 'Philodendron') return 'Philodendron: bright indirect light, a natural climber.';
+            return 'Bright indirect light and steady humidity keep it thriving.';
+        }
+
+        function pdDesc(item, genus){
+            const base = `A tissue-culture propagated ${genus}, acclimated in-house here in Israel so it arrives stable and ready to settle into your collection.`;
+            const opts = item.availability || [];
+            const variant = opts.length === 1 ? opts[0] : '';
+            if (variant && /albo|aurea|pink|mint|variegat|tri-?color|lava|camouflage|stardust|ghost|latte|blue|silver|gold/i.test(variant)) {
+                return `${base} This is the ${variant} selection, chosen for its coloring.`;
+            }
+            return base;
+        }
+
+        function pdUpdatePrice(){
+            const item = pdCurrentItem;
+            if (!item) return;
+            const el = document.getElementById('pd-price');
+            if (!el) return;
+            const gated = !!acclimationStage(item);
+            const isAvailable = item.status === 'available';
+            if (gated || !isAvailable) { el.textContent = 'Price on inquiry'; return; }
+            const opts = item.availability || [];
+            const sel = document.getElementById('pd-variant');
+            if (opts.length > 1 && sel && sel.value) {
+                const p = ITEM_PRICES[item.id + '_' + sel.value];
+                el.textContent = (typeof p === 'number') ? ('₪' + p) : 'Price on inquiry';
+                return;
+            }
+            const ps = opts.map(o => ITEM_PRICES[item.id + '_' + o]).filter(p => typeof p === 'number');
+            if (!ps.length) { el.textContent = 'Price on inquiry'; return; }
+            const mn = Math.min(...ps);
+            el.textContent = (new Set(ps).size > 1 ? 'from ₪' : '₪') + mn;
+        }
+
+        function pdSelectVariant(){ pdUpdatePrice(); }
+
+        function openProduct(id){
+            const item = ALL_STORE_ITEMS.find(i => i.id === id);
+            if (!item) return;
+            pdCurrentItem = item;
+            const isAvailable = item.status === 'available';
+            const stage = acclimationStage(item);
+            const gated = !!stage;
+            const genus = plFamily(item);
+
+            const img = document.getElementById('pd-img');
+            img.onerror = function(){ this.onerror = null; this.src = 'logo-dark.png'; };
+            img.src = 'plants/' + item.id + '.jpg';
+            img.alt = item.name;
+
+            const badge = document.getElementById('pd-badge');
+            let bl, bc;
+            if (gated) { bl = ACCLIMATION_LABELS[stage]; bc = 'badge-allocation'; }
+            else if (isAvailable) { bl = 'Available'; bc = 'badge-available'; }
+            else { bl = 'Coming Soon'; bc = 'badge-coming-soon'; }
+            badge.className = 'availability-badge ' + bc;
+            badge.textContent = bl;
+
+            document.getElementById('pd-name').textContent = item.name;
+
+            const vw = document.getElementById('pd-variant-wrap');
+            const sel = document.getElementById('pd-variant');
+            sel.innerHTML = '';
+            if (!gated && isAvailable && item.availability && item.availability.length) {
+                item.availability.forEach(opt => {
+                    const price = ITEM_PRICES[item.id + '_' + opt];
+                    const o = document.createElement('option');
+                    o.value = opt;
+                    o.textContent = opt + (typeof price === 'number' ? ' - ₪' + price : '');
+                    sel.appendChild(o);
+                });
+                vw.style.display = item.availability.length > 1 ? 'block' : 'none';
+            } else {
+                vw.style.display = 'none';
+            }
+
+            pdUpdatePrice();
+
+            document.getElementById('pd-light').textContent = item.light || '-';
+            document.getElementById('pd-humidity').textContent = item.humidity || '-';
+            document.getElementById('pd-careline').textContent = pdCareLine(genus);
+            document.getElementById('pd-desc').textContent = pdDesc(item, genus);
+
+            const action = document.getElementById('pd-action');
+            if (gated) {
+                action.innerHTML = `<button class="add-to-cart-btn alloc-btn" onclick="requestAllocation('${pdEsc(item.id)}', '${pdEsc(item.name)}', '${pdEsc(stage)}')">Join Studio Waitlist</button>`;
+            } else if (isAvailable) {
+                action.innerHTML = `<button class="add-to-cart-btn" onclick="addToCart('${pdEsc(item.id)}', '${pdEsc(item.name)}', this)">ADD TO BAG</button>`;
+            } else {
+                action.innerHTML = `<button class="add-to-cart-btn" style="opacity:0.5;cursor:not-allowed;" disabled>COMING SOON</button>`;
+            }
+
+            const ov = document.getElementById('pd-overlay');
+            ov.classList.add('open');
+            ov.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProduct(){
+            const ov = document.getElementById('pd-overlay');
+            if (ov) { ov.classList.remove('open'); ov.setAttribute('aria-hidden', 'true'); }
+            document.body.style.overflow = '';
+            pdCurrentItem = null;
+        }
+
+        function pdOverlayClick(e){
+            if (e.target === document.getElementById('pd-overlay')) closeProduct();
+        }
+
+        document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape') {
+                const ov = document.getElementById('pd-overlay');
+                if (ov && ov.classList.contains('open')) closeProduct();
+            }
+        });
 
         function spin(d){
             rot += d * window.sAng;
@@ -4078,7 +4324,7 @@ function checkLab(choiceIndex) {
         }
 
         function addToCart(id, name, btn) {
-            const card = btn.closest('.product-card, .store-card, .store-card-flat');
+            const card = btn.closest('.product-card, .store-card, .store-card-flat, .pd-panel');
             const select = card ? card.querySelector('.availability-select') : null;
             let grade = select ? select.value : '';
 
@@ -4707,6 +4953,31 @@ function checkLab(choiceIndex) {
             משתמשים בעוגיות אנליטיקס של Google בלבד. ניתן לבטל עוגיות בהגדרות הדפדפן או ללחוץ "דחייה" בבאנר.</p>
             <p><strong>זכויותיך לפי חוק הגנת הפרטיות (התשמ"א-1981):</strong><br>
             זכות לעיון, תיקון, ומחיקה של כל מידע שנשמר עלייך. לפניות: <a href="https://wa.me/972559116990" style="color:var(--pink);">+972-55-911-6990</a></p>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="pd-overlay" class="pd-overlay" aria-hidden="true" onclick="pdOverlayClick(event)">
+        <div class="pd-panel" role="dialog" aria-modal="true" aria-labelledby="pd-name">
+            <button class="pd-close" type="button" aria-label="Close" onclick="closeProduct()">&times;</button>
+            <div class="pd-media">
+                <img id="pd-img" src="logo-dark.png" alt="">
+            </div>
+            <div class="pd-body">
+                <div><span id="pd-badge" class="availability-badge"></span></div>
+                <h2 id="pd-name" class="pd-name serif"></h2>
+                <p id="pd-price" class="pd-price"></p>
+                <div id="pd-variant-wrap" class="availability-dropdown" style="display:none;">
+                    <select id="pd-variant" class="availability-select" onchange="pdSelectVariant()"></select>
+                </div>
+                <div class="pd-care">
+                    <div class="stat-row"><span>&#9728;&#65039; Light</span><span id="pd-light"></span></div>
+                    <div class="stat-row"><span>&#128167; Humidity</span><span id="pd-humidity"></span></div>
+                    <p id="pd-careline" class="pd-careline"></p>
+                </div>
+                <p id="pd-desc" class="pd-desc"></p>
+                <div id="pd-action" class="pd-action"></div>
+            </div>
         </div>
     </div>
 
