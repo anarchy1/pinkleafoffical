@@ -964,6 +964,31 @@
             color: var(--pink);
             border-bottom-color: var(--pink);
         }
+        .store-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 4px auto 18px;
+            max-width: 720px;
+        }
+        .store-search, .store-select {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            color: inherit;
+            background: var(--card-bg, rgba(255,255,255,0.03));
+            border: 1px solid var(--border, rgba(212,165,178,0.35));
+            border-radius: 50px;
+            padding: 9px 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .store-search { flex: 1 1 220px; min-width: 160px; }
+        .store-select { cursor: pointer; }
+        .store-search:focus, .store-select:focus { border-color: var(--pink); }
+        .store-search::placeholder { opacity: 0.5; }
+        .store-count { text-align:center; font-size:11px; letter-spacing:1px; opacity:0.5; margin-bottom:14px; }
         .store-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -2568,6 +2593,23 @@ body.dark-mode .scoreboard-item.current {
             <button class="store-tab" onclick="setStoreCategory('Monstera', this)">MONSTERA</button>
             <button class="store-tab" onclick="setStoreCategory('Philodendron', this)">PHILODENDRON</button>
         </div>
+        <div class="store-controls">
+            <input type="text" id="store-search" class="store-search" oninput="setStoreSearch(this.value)" placeholder="חיפוש צמח / Search plants..." dir="auto" aria-label="Search plants">
+            <select id="store-price" class="store-select" onchange="setStorePrice(this.value)" aria-label="Filter by price">
+                <option value="all">Any price</option>
+                <option value="0-300">Under ₪300</option>
+                <option value="300-600">₪300 - 600</option>
+                <option value="600-1000">₪600 - 1000</option>
+                <option value="1000-9999999">₪1000+</option>
+            </select>
+            <select id="store-sort" class="store-select" onchange="setStoreSort(this.value)" aria-label="Sort">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="name">Name A-Z</option>
+            </select>
+        </div>
+        <div id="store-count" class="store-count"></div>
         <div id="store-grid" class="store-grid"></div>
     </main>
 
@@ -3286,6 +3328,24 @@ body.dark-mode .scoreboard-item.current {
 
         // Active store category tab: 'all' | 'Alocasia' | 'Monstera' | 'Philodendron'
         let storeCategory = 'all';
+        let storeSearch = '';
+        let storePrice = 'all';
+        let storeSort = 'featured';
+
+        function setStoreSearch(v){ storeSearch = v; renderStore(); }
+        function setStorePrice(v){ storePrice = v; renderStore(); }
+        function setStoreSort(v){ storeSort = v; renderStore(); }
+
+        // Lowest real price across an item's variants, or null if none.
+        function storeMinPrice(item){
+            if (!item.availability) return null;
+            let low = null;
+            item.availability.forEach(opt => {
+                const p = ITEM_PRICES[item.id + '_' + opt];
+                if (typeof p === 'number' && (low === null || p < low)) low = p;
+            });
+            return low;
+        }
 
         // Resolve a store item's family. Prefer the vault's MASTER_DB tag,
         // fall back to parsing the genus from the name so it never misclassifies.
@@ -3337,20 +3397,43 @@ body.dark-mode .scoreboard-item.current {
         }
 
         function renderStore(){
-            let items = ALL_STORE_ITEMS;
+            let items = ALL_STORE_ITEMS.slice();
             if (storeCategory !== 'all') {
                 items = items.filter(item => plFamily(item) === storeCategory);
             }
-            // Available plants first, "coming soon" after.
-            items = items.slice().sort((a, b) =>
-                (a.status === 'available' ? 0 : 1) - (b.status === 'available' ? 0 : 1));
+            // Search by name
+            const q = storeSearch.trim().toLowerCase();
+            if (q) items = items.filter(it => (it.name || '').toLowerCase().includes(q));
+            // Price range filter (price-on-inquiry items drop out when a range is set)
+            if (storePrice !== 'all') {
+                const parts = storePrice.split('-').map(Number);
+                const lo = parts[0], hi = parts[1];
+                items = items.filter(it => { const p = storeMinPrice(it); return p !== null && p >= lo && p <= hi; });
+            }
+            // Sort
+            if (storeSort === 'price-asc' || storeSort === 'price-desc') {
+                items.sort((a, b) => {
+                    const pa = storeMinPrice(a), pb = storeMinPrice(b);
+                    if (pa === null && pb === null) return 0;
+                    if (pa === null) return 1;
+                    if (pb === null) return -1;
+                    return storeSort === 'price-asc' ? pa - pb : pb - pa;
+                });
+            } else if (storeSort === 'name') {
+                items.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+            } else {
+                // Featured: available plants first, coming soon after.
+                items.sort((a, b) => (a.status === 'available' ? 0 : 1) - (b.status === 'available' ? 0 : 1));
+            }
 
             const grid = document.getElementById('store-grid');
             if (!grid) return;
 
+            const countEl = document.getElementById('store-count');
+            if (countEl) countEl.textContent = items.length ? `${items.length} plant${items.length !== 1 ? 's' : ''}` : '';
+
             if (!items.length) {
-                const label = storeCategory === 'all' ? 'plants' : storeCategory;
-                grid.innerHTML = `<div class="store-empty">More ${label} coming soon 🌿</div>`;
+                grid.innerHTML = `<div class="store-empty">No plants match. Try clearing the search or filters 🌿</div>`;
                 return;
             }
 
