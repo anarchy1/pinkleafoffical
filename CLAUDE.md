@@ -61,6 +61,12 @@ and above all building a reliable inventory system.
 - The real inventory source of truth is the Notion inventory, NOT the repo's
   `SUPPLIER_TOTALS.md` (that file is planned/ordered quantities and has proven
   unreliable against the physical count).
+- ALWAYS upload durable business info to Notion (the Pink Leaf Business Overview
+  space): new products, orders, supplier details, prices, receipts, decisions.
+  Do not let it live only in chat. If the Notion connector is disconnected at the
+  moment, stage the content (scratchpad) and push it to Notion as soon as it
+  reconnects. Financial/price data still never gets committed to the repo, it goes
+  to Notion and chat only.
 
 ### Where we're at (snapshot, update as it changes)
 - Mid a fresh physical inventory count, box by box, to establish a true baseline
