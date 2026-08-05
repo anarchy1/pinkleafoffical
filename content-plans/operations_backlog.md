@@ -15,9 +15,18 @@ Legend: [ ] to do · [~] in progress / partial · [x] done · (Kat) needs Kat ·
 
 ## 2. Inventory & shipments
 - [ ] (Kat) Full physical inventory count, establish true baseline in Notion as single source of truth.
-- [ ] Four shipments incoming after the current delivery. Track 2 that have tracking now.
+- [ ] Four shipments incoming after the current delivery.
+- DHL tracking numbers (all in transit, from screenshot Aug 4):
+  - DHL 2738084882 - Transky (Fujian) Agricultural-Technology - signature required on delivery
+  - DHL 7056211105 - Min Hui (Fujian) Horticultural
+  - DHL 2518741886 - Transky (Fujian) Agricultural-Technology - signature required on delivery
+  - Track at del.dhl.com (DHL blocks automated status pulls, tap the links from the DHL WhatsApp messages).
 - [ ] Register all incoming plants (what is new and coming) in Notion.
 - [ ] (Kat) Send plant list for the current "grey" delivery so cards can be built.
+
+## 2b. Sourcing - sphagnum moss (order online, no travel needed)
+- Exotica (Patagonia sphagnum), Snakes.co.il (terrarium grade), Growshop, Urban/Meshek50 (Netanya).
+- Ask for: NZ or Patagonia AAA long-fiber. All ship nationwide to the studio.
 
 ## 3. Cards (we used to make these, resume)
 - [ ] Build plant cards for the plants in the current delivery (like before).
