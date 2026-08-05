@@ -24,6 +24,14 @@ Legend: [ ] to do · [~] in progress / partial · [x] done · (Kat) needs Kat ·
 - [ ] Register all incoming plants (what is new and coming) in Notion.
 - [ ] (Kat) Send plant list for the current "grey" delivery so cards can be built.
 
+## 2a. Min Hui FedEx delivery - label number key (write number on cup, no printing)
+Order = 5 varieties, 140 plants (Min Hui invoice 23/07/2026, USD 479.8 via FedEx).
+- 1 = Monstera Burle Marx Flame (x20)
+- 2 = Philodendron Pink Princess Marble Variegated (x20)
+- 3 = Platycerium AKKI / Staghorn / Deer Horn (x20) - pot in sphagnum moss
+- 4 = Alocasia Macrorrhizos Variegated (x60)
+- 5 = Philodendron Majesty (x20)
+
 ## 2b. Sourcing - sphagnum moss (order online, no travel needed)
 - Exotica (Patagonia sphagnum), Snakes.co.il (terrarium grade), Growshop, Urban/Meshek50 (Netanya).
 - Ask for: NZ or Patagonia AAA long-fiber. All ship nationwide to the studio.
