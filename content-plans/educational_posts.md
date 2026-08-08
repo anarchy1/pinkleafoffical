@@ -1,21 +1,23 @@
 # Educational posts (paste-ready or use as on-camera script)
 
-## POST 1 - Can you grow aroids outside? Yes, but...
+## POST 1 - Growing tropicals outside (THE ONE CORRECT VERSION, per Kat)
+Point: you CAN create an outdoor tropical-garden environment for aroids (even a balcony),
+if the conditions are right (shade, humidity, correct soil, sun direction). Full sun / wrong
+soil = deterioration. The caution is out of CARE, to protect an expensive plant and its buyer.
+Attach: the pink Alocasia on the sunny deck.
 --- Hebrew ---
-האמת על גידול בחוץ 🌿
+אפשר לגדל טרופיים בחוץ? בהחלט 🌿
 
-כן, אפשר בהחלט לגדל אלוקסיות ואת רוב האזואידים בחוץ בארץ. אבל יש תנאים שאסור לפספס:
+אלוקסיות, פילודנדרונים ומונסטרות אוהבים חום, ואפשר ליצור להם פינה טרופית בחוץ, אפילו על מרפסת.
 
-🌱 רק צמח בוגר ומבוסס. לא תינוק, ולא צמח שעדיין בתהליך אקלום.
-🌿 צל עמוק. שמש ישירה תשרוף את העלים במהירות.
-☂️ הגנה וכיסוי, גם מהחום וגם מהגשם הישיר.
+אבל התנאי שקובע הכל: לא שמש ישירה מלאה. הם צריכים צל, לחות, ומצע נכון, והכל תלוי במיקום ובכיוון שהשמש פוגעת.
 
-צמח נדיר בגודל תינוק, ששווה מאות עד אלפי שקלים, לא נכנס לאדמה בחוץ. הוא צריך קודם זמן, יציבות ואקלום. מגדלים אותו חזק בפנים, ורק כשהוא בוגר ומבוסס אפשר לחשוב על בחוץ, בצל ובהגנה.
+בתנאים הנכונים הם משגשגים, אפשר אפילו עם צמחים צעירים כל עוד הם מבוססים. בשמש חזקה או מצע לא מתאים, הצמח ידרדר.
 
-תשמרו על הצמחים היקרים שלכם 🩷
+כשאני אומרת אל תוציאו את הצמח סתם החוצה, זה מתוך דאגה, שהצמח היקר שקניתם ימשיך לגדול ולא ימות 🩷
 
 --- English ---
-The truth about growing outdoors 🌿 Yes, you can grow alocasias and most aroids outside in Israel. But: only a mature, established plant, never a baby and never one still acclimating. Deep shade, direct sun burns the leaves fast. And cover, from both heat and direct rain. A baby rare worth hundreds to thousands of shekels does not go in the ground outside. Grow it strong indoors first. 🩷
+Can you grow tropicals outside? Absolutely 🌿 Alocasia, Philodendron and Monstera love heat, and you can create an outdoor tropical corner for them, even on a balcony. But the one condition that decides everything: no full direct sun. They need shade, humidity, and the right soil, and it all depends on the spot and which direction the sun hits. In the right conditions they thrive, even younger plants once established. In strong sun or the wrong soil, the plant deteriorates. When I say don't just put your plant outside, it's out of care, so the expensive plant you bought keeps growing instead of dying 🩷
 
 ## POST 2 - Got a young plant? Don't touch the substrate
 --- Hebrew ---
@@ -78,19 +80,3 @@ Imagery: macro close-up of the Fluval granules, or a baby plant nestled in it in
 You can acclimate other ways, so why do we choose Fluval Stratum? 🌿 Honestly, there are several ways: sphagnum moss, perlite and pumice, LECA and semi-hydro, pon, even water. Each works in the right hands. So why Fluval for babies and tissue culture? Because in the most fragile stage it gives the highest odds of survival. It's forgiving and stable, hard to get wrong (LECA and water demand precision, and a weak young root has no room for error). It's the perfect balance of moisture and air (sphagnum tends to stay too wet and mold, perlite alone is too dry, Fluval sits right in the middle). It's clean, lightly mineral, gently pH-buffered. That's why we acclimate with it, it's the safest choice for the most fragile window. And once the plant is strong and established? Move it to whatever system you love. But first, let it get strong 🩷
 
 Imagery: carousel of 3 cups (Fluval, sphagnum, LECA) with a check on the Fluval, or the Fluval macro shot.
-
-
-## POST 1b - Plants outside (VERSION FOR THE SUNNY PINK DECK PHOTOS)
-Use this version with the styled sunny outdoor photos (the pink Alocasia on the deck).
---- Hebrew ---
-אלוקסיות בחוץ? כן, אנחנו אוהבות 🌿☀️
-
-בימים היפים, הצמחים הבוגרים והמבוססים יוצאים קצת לשמש.
-
-הכללים פשוטים: צמח בוגר (לא תינוק), אור בוקר או צל מואר, ותמיד לחזור פנימה בסוף.
-
-אין כמו לראות אותם נהנים 🩷
---- English ---
-Aroids outside? Yes, we love it 🌿☀️ On beautiful days, the mature, established plants get a little sun. The rules are simple: an established plant (not a baby), morning light or bright shade, and always back inside after. Nothing like watching them enjoy it 🩷
-
-Imagery: the styled sunny deck photos (pink Alocasia in the white pot).
