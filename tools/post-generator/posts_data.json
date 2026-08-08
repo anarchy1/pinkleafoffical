@@ -422,5 +422,16 @@
   "care": "PHIL",
   "photo": "PV199.jpg",
   "bgpos": "center 40%"
+ },
+ {
+  "id": "40-maculata-pink",
+  "h1a": "בגוניה",
+  "h1b": "מקולטה פינק",
+  "subhe": "כנף המלאך המנוקדת",
+  "suben": "Begonia Maculata Pink",
+  "story": "בגוניית כנף המלאך המנוקדת, בגרסה הוורודה הנדירה. עלים ארוכים בצורת כנף, ירוק עמוק עם נקודות כסף וגוונים של ורוד רך. דרמטית, שונה, ובלתי נשכחת.",
+  "care": "BEG",
+  "photo": "maculata_pink.jpg",
+  "bgpos": "center 30%"
  }
 ]
