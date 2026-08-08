@@ -78,3 +78,19 @@ Imagery: macro close-up of the Fluval granules, or a baby plant nestled in it in
 You can acclimate other ways, so why do we choose Fluval Stratum? 🌿 Honestly, there are several ways: sphagnum moss, perlite and pumice, LECA and semi-hydro, pon, even water. Each works in the right hands. So why Fluval for babies and tissue culture? Because in the most fragile stage it gives the highest odds of survival. It's forgiving and stable, hard to get wrong (LECA and water demand precision, and a weak young root has no room for error). It's the perfect balance of moisture and air (sphagnum tends to stay too wet and mold, perlite alone is too dry, Fluval sits right in the middle). It's clean, lightly mineral, gently pH-buffered. That's why we acclimate with it, it's the safest choice for the most fragile window. And once the plant is strong and established? Move it to whatever system you love. But first, let it get strong 🩷
 
 Imagery: carousel of 3 cups (Fluval, sphagnum, LECA) with a check on the Fluval, or the Fluval macro shot.
+
+
+## POST 1b - Plants outside (VERSION FOR THE SUNNY PINK DECK PHOTOS)
+Use this version with the styled sunny outdoor photos (the pink Alocasia on the deck).
+--- Hebrew ---
+אלוקסיות בחוץ? כן, אנחנו אוהבות 🌿☀️
+
+בימים היפים, הצמחים הבוגרים והמבוססים יוצאים קצת לשמש.
+
+הכללים פשוטים: צמח בוגר (לא תינוק), אור בוקר או צל מואר, ותמיד לחזור פנימה בסוף.
+
+אין כמו לראות אותם נהנים 🩷
+--- English ---
+Aroids outside? Yes, we love it 🌿☀️ On beautiful days, the mature, established plants get a little sun. The rules are simple: an established plant (not a baby), morning light or bright shade, and always back inside after. Nothing like watching them enjoy it 🩷
+
+Imagery: the styled sunny deck photos (pink Alocasia in the white pot).
