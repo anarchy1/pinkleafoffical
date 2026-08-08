@@ -444,5 +444,16 @@
   "photo": "burle_marx.jpg",
   "bgpos": "center 40%",
   "id": "41-burle-marx"
+ },
+ {
+  "id": "42-jungle-mint",
+  "h1a": "מונסטרה",
+  "h1b": "ג'ינגל מינט",
+  "subhe": "וריאציית המינט",
+  "suben": "Monstera Jungle Mint",
+  "story": "וריאציית מינט מרהיבה. עלים מפוצלים בגווני קרם ומנטה על ירוק עמוק, כל עלה בתבנית משלו. יציבה, נדירה, ומבוקשת מאוד.",
+  "care": "MON",
+  "photo": "jungle_mint.jpg",
+  "bgpos": "center 40%"
  }
 ]
