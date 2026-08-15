@@ -2533,7 +2533,7 @@ body.dark-mode .scoreboard-item.current {
     <nav>
         <button class="nav-link nav-active" onclick="showPage('intro', this)" data-he="בית" data-en="HOME">בית</button>
         <button class="nav-link" onclick="showPage('store', this)" data-he="חנות" data-en="STORE">חנות</button>
-        <button class="nav-link" onclick="showPage('care', this)" data-he="טיפול" data-en="CARE" style="display:none;">טיפול</button>
+        <button class="nav-link" onclick="showPage('care', this)" data-he="טיפול" data-en="CARE">טיפול</button>
         <button class="nav-link" onclick="showPage('vault', this)" data-he="ארכיון" data-en="ARCHIVE">ארכיון</button>
         <button class="nav-link" onclick="showPage('encyclopedia', this)" data-he="אנציקלופדיה" data-en="ENCYCLOPEDIA">אנציקלופדיה</button>
         <button class="nav-link" onclick="showPage('lab', this)" data-he="מעבדה" data-en="LAB">מעבדה</button>
@@ -2695,7 +2695,7 @@ body.dark-mode .scoreboard-item.current {
 
     </main>
 
-    <main id="page-care" class="hidden max-w-7xl mx-auto p-6 text-center pb-20" data-temporarily-hidden="true">
+    <main id="page-care" class="hidden max-w-7xl mx-auto p-6 text-center pb-20">
         <div class="logo-container" style="padding-top: 20px;">
             <h2 class="serif mb-10 tracking-[3px] opacity-60 text-[14px]">BOTANICAL CARE</h2>
         </div>
@@ -2898,11 +2898,12 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const SUBSTRATE_DB = {
-            "basalt": { name: "שבבי בזלת / Basalt Chips", desc: "עשירה ביסודות קורט כמו ברזל, מגנזיום, סיליקה, סידן ואשלגן המשתחררים בהדרגה.", prices: { l2: 11, l10: 44 }, img: "plants/basalt-chips.jpg" },
-            "zeolite": { name: "זאוליט / Zeolite", desc: "משפר את תערובת השתילה: שומר מים ודשנים זמינים לצמח, מונע עודפי מלחים ומאזן pH.", prices: { l1: 28, l2: 50, l10: 220 }, img: "plants/zeolite.jpg" },
-            "carbon": { name: "פחם פעיל / Activated Carbon", desc: "סופח רעלים ופטריות, מונע ריחות וריקבון שורשים. מוסיף אוורור לתערובת.", prices: { l1: 39, l2: 66, l10: 330 }, img: "plants/activated-carbon.jpg" },
-            "pumice": { name: "פומיס / Pumice", desc: "משפר אוורור וניקוז, מעודד התפתחות שורשים בריאה. אידיאלי למצע מאוורר ונושם.", prices: { l2: 11, l10: 33 }, img: "plants/pumice.jpg" },
-            "pazo": { name: "מצע פזו / Pazo Mix", desc: "תערובת ייחודית הכוללת פחם, זאוליט, פומיס ובזלת. ניקוז מצוין ואוורור מקסימלי.", prices: { l2: 17, l10: 83 }, img: "plants/pazo-mix.jpg" }
+            "soilfree": { name: "מצע ארואידים נטול אדמה / Soil-Free Mix", desc: "תערובת פרימיום מאווררת ונושמת לארואידים, מונעת ריקבון ומעניקה לשורשים מקסימום חמצן. קוקוס, פרלייט מנופה, פומיס, הידרוטון, בארק אורנים ופחם פעיל.", prices: { l5: 60, l10: 110 }, img: "plants/care/soilfree.jpg" },
+            "terralux": { name: "טרה-לוקס מינרלי סמי-הידרו / Terra-Lux", desc: "תערובת מינרלית טהורה לגידול סמי-הידרופוני נקי, בלי חומר אורגני שמתקלקל או מושך מזיקים לבית. פומיס, טוף וזאולייט.", prices: { l5: 70, l10: 120 }, img: "plants/care/terralux.jpg" },
+            "succulents": { name: "מצע סוקולנטים וקקטוסים / Succulent Mix", desc: "תערובת נטולת אדמה לסוקולנטים וקקטוסים, ניקוז מהיר במיוחד למניעת ריקבון תוך שמירה על לחות מאוזנת. קוקוס, פרלייט, טוף, פחם פעיל וזאולייט.", prices: { l5: 60, l10: 110 }, img: "plants/care/succulents.jpg" },
+            "zeolitebase": { name: "זאולייט בייס / Zeolite Base", desc: "מינרל טבעי שסופח עודפי מים ומזון ומשחרר בהדרגה, מייצב pH, משפר אוורור ומונע ריקבון שורשים. תוסף מושלם לכל מצע.", prices: { l5: 90 }, img: "plants/care/zeolitebase.jpg" },
+            "zeoliteboost": { name: "זאולייט בוסט / Zeolite Boost", desc: "אבקת זאולייט מועשרת להחיאה וחיזוק מצעים דחוסים ועייפים, זריקת מרץ של מינרלים ומזון ישר לשורשים, ללא סכנת צריבה.", prices: { l5: 90 }, img: "plants/care/zeoliteboost.jpg" },
+            "charcoal": { name: "פחם פעיל פרימיום / Activated Charcoal", desc: "פילטר ביולוגי שסופח רעלים ועודפי דשן, מונע עובש וריחות ושומר על מצע סטרילי. רכיב חובה בכל תערובת ארואידים ובטרריומים.", prices: { l5: 200 }, img: "plants/care/charcoal.jpg" }
         };
 
         const ALL_STORE_ITEMS = [
@@ -3397,26 +3398,15 @@ body.dark-mode .scoreboard-item.current {
                 const imgPath = item.img || `plants/care/substrate/${key}.jpg`;
                 let priceRows = "";
                 Object.entries(item.prices).forEach(([size, price]) => {
-                    const label = size === 'l10' ? '10 ליטר' : (size === 'l2' ? '2 ליטר' : '1 ליטר');
-                    const is1L = size === 'l1';
-                    if (is1L) {
-                        // 1L - fully purchasable
-                        priceRows += `<div class="flex justify-between items-center border-b border-[var(--border)] py-1">
-                            <span>${label}</span>
-                            <span class="font-bold text-[var(--pink)]">${price}₪</span>
-                            <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:11px;margin-top:0;min-height:36px;"
-                                onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}','${imgPath}')">
-                                + BAG
-                            </button>
-                        </div>`;
-                    } else {
-                        // 2L / 10L - sold out, disabled
-                        priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
-                            <span class="care-size-price">${label}</span>
-                            <span class="care-size-price">${price}₪</span>
-                            <button disabled class="care-soldout-btn" aria-disabled="true">אזל</button>
-                        </div>`;
-                    }
+                    const label = size === 'l10' ? '10 ליטר' : (size === 'l5' ? '5 ליטר' : (size === 'l2' ? '2 ליטר' : '1 ליטר'));
+                    priceRows += `<div class="flex justify-between items-center border-b border-[var(--border)] py-1">
+                        <span>${label}</span>
+                        <span class="font-bold text-[var(--pink)]">${price}₪</span>
+                        <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:11px;margin-top:0;min-height:36px;"
+                            onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}','${imgPath}')">
+                            + BAG
+                        </button>
+                    </div>`;
                 });
                 html += `
                 <div class="care-product-card">
