@@ -95,3 +95,40 @@ White Monster | 38 | 250
 2. Set each plant's RETAIL fresh against the competitor column, do NOT reuse the
    presale/preorder numbers.
 3. Reference points Kat set: Venom Albo 2,000, Melo ~650, Cuprea Super Pink 1,250.
+
+## Rotem Rare Plants (rotem_rare_plants) - top Israeli seller, BENCHMARK (captured 2026-08)
+His "מבצע יריד" = fair/sale prices (roughly 50% off). His REGULAR price is the benchmark.
+Prices ILS. Note: Rotem's stock is mostly small/babies; Pink Leaf's edge = acclimation + bigger.
+
+| Plant | Rotem regular | Rotem sale | Pink Leaf | Action |
+|---|---|---|---|---|
+| Alocasia Melo Albo | 1,999 | 995 | 650 | RAISE (we are way under) |
+| Alocasia Sanderiana Pink Var | 1,799 | - | 650 | RAISE |
+| Alocasia Ninja Albo | 1,200 | - | 600 | RAISE |
+| Alocasia Cuprea Pink Var | 1,099 | - | ~1,100 | aligned |
+| Alocasia Heart Balloon Pink | - | 995 | 750 | RAISE (~900) |
+| Alocasia Stingray Aurea | 850 | 499 | 500 | RAISE toward 700+ |
+| Alocasia Scalprum Aurea | 750 | - | 600 (Scalprum Mint) | diff variant |
+| Alocasia Ninja Aurea | 650-800 | 499 | (Ninja Pink 600) | ~ |
+| Alocasia Black Velvet Gold | 499 | - | 450 | aligned |
+| Alocasia Sinuata Var | 499 | - | - | not on our list |
+| Monstera White Monster | 385 | - | 250 | RAISE |
+| Alocasia Black Velvet Pink | 399 | - | 450 | nudge down to ~399 |
+| Philodendron Melanochrysum Var | 299 | - | - | not listed |
+| Philodendron Caramel Marble | 289 | 199 | ~300 | align ~250 |
+| Philodendron Black Cardinal Var | 250 | 149 | 1,000 | DROP HARD (way over) |
+| Philodendron Bipi Var | 399-599 | - | - | |
+| Philodendron Golden Bipi Tricolor | - | 995 | - | |
+| Alocasia Dragon Scale Mint | 99 | - | ~150 | ~ |
+| Alocasia Lauterbachiana Var | 99 | - | - | |
+| Monstera Creme Brulee | 99 | - | - | |
+| Epipremnum Bali Hanuman | 99 | - | - | |
+| Ficus Kinnori (variegated) | 89 | - | - | |
+
+KEY TAKEAWAYS:
+- Pink Leaf is UNDER-priced on premium Alocasias (Melo Albo, Sanderiana, Ninja Albo, Heart
+  Balloon, Stingray, White Monster). Room to RAISE.
+- Pink Leaf is WAY OVER on Black Cardinal (1,000 vs Rotem 250 / 149 sale). Drop hard.
+- Rotem's regular prices are the benchmark, not his fair-sale prices.
+- Pink Leaf edge = acclimated + often bigger, so pricing AT or slightly above Rotem's
+  regular is justified on quality. Do NOT undercut across the board.
