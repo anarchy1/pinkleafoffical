@@ -22,12 +22,13 @@ listing (our exclusive, price to the top). Prices in ₪.
 | Cuprea Aurea Latte Variegated | 1200 | 1100 |
 | Cuprea Red Secret Mint Variegated | - | 600 |
 | Cuprea Red Secret Super Pink | 1200 | 1100 |
-| Cuprea Pink Mint | - | 950 |
+| Cuprea Pink Mint | 800 | 800 |
 | Cuprea True Pink | - | 2900 |
 | Dragon Scale Albo Variegated | - | 450 |
 | Dragon Scale Tri-Color Variegated | - | 400 |
 | Golden Bone Mint Variegated | 750 | 700 |
 | Heart Balloon Pink Variegated | 800 | 750 |
+| Jacklyn Mystic Variegated | 390 | 380 |
 | Loco (Green) | - | 120 |
 | Longiloba Thaicon (confirm name) | 1400 | 1300 |
 | Maharani Albo Variegated | 800 | 700 |
@@ -68,14 +69,14 @@ listing (our exclusive, price to the top). Prices in ₪.
 |---|---|---|
 | Deliciosa Banana Super Golden | - | 450 |
 | Devil Monster | 1500 | 1000 |
-| Electro Light | 600 | 550 |
-| Green Snow | 700 | 650 |
+| Electro Light | 500 | 500 |
+| Green Snow | 450 | 450 |
 | Legacy | 800 | 750 |
 | Lemon Lime Full Variegation | 350 | 300 |
 | Lemon Pom Pom | - | 550 |
 | Mint (Full Mint) | 250 | 250 |
 | Ocean Mint | - | 1200 |
-| Star Shadow | - | 550 |
+| Star Shadow | 550 | 520 |
 | White Monster | 250 | 250 |
 | Yellow Marilyn | - | 800 |
 
@@ -88,7 +89,7 @@ listing (our exclusive, price to the top). Prices in ₪.
 | Micans Variegated | 280 | 280 |
 | Narrow Variegated | 300 | 280 |
 | Red Congo Variegated | 130 | 120 |
-| Strawberry Marble Variegated | 450 | 400 |
+| Strawberry Marble Variegated | 600 | 400 |
 | Tortum Variegated | 420 | 380 |
 | Verrucosum Mint Variegated | - | 450 |
 | Whipple Way | - | 350 |
