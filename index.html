@@ -243,9 +243,58 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-LG4598NF5Z');
+        // Sections are rendered client-side, so send our own page_view from showPage()
+        // instead of letting the tag fire one automatically on load.
+        gtag('config', 'G-LG4598NF5Z', { send_page_view: false });
     </script>
-    
+
+    <!-- Pink Leaf conversion events -->
+    <script>
+        // Small wrapper so a blocked/absent gtag never breaks the UI.
+        function plTrack(name, params) {
+            try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+        }
+
+        // view_item — fires once per plant per page load (the carousel re-focuses
+        // the same card constantly, so without this it would spam the property).
+        var plSeenItems = {};
+        function plViewItem(id) {
+            if (!id || plSeenItems[id]) return;
+            plSeenItems[id] = true;
+            var item = null;
+            try { item = (typeof ALL_STORE_ITEMS !== 'undefined') && ALL_STORE_ITEMS.filter(function(x){ return x.id === id; })[0]; } catch (e) {}
+            var name = (item && item.name) || (typeof MASTER_DB !== 'undefined' && MASTER_DB[id] && MASTER_DB[id].name) || id;
+            // Report the cheapest grade as the item's value — a plant has no single
+            // price until a size is picked, and "from" pricing is what the card shows.
+            var price = 0;
+            try {
+                var grades = (item && item.availability) || [];
+                var found = grades
+                    .map(function (g) { return getItemPrice(id, g); })
+                    .filter(function (p) { return typeof p === 'number' && p > 0; });
+                if (found.length) price = Math.min.apply(null, found);
+            } catch (e) {}
+            plTrack('view_item', {
+                currency: 'ILS',
+                value: price,
+                items: [{ item_id: id, item_name: name, price: price }]
+            });
+        }
+
+        // whatsapp_click — delegated so it covers both the static links and every
+        // wa.me link built at runtime (store, bag, encyclopedia).
+        document.addEventListener('click', function (e) {
+            var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"]');
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+            plTrack('whatsapp_click', {
+                link_url: href,
+                link_text: (a.innerText || a.textContent || '').trim().slice(0, 100),
+                page_section: (document.querySelector('main:not(.hidden)') || {}).id || 'unknown'
+            });
+        }, true);
+    </script>
+
     <!-- Firebase SDK -->
     <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
@@ -378,7 +427,8 @@
     window.firebaseReady = true;
     </script>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind, built locally (see tailwind.config.js). Replaces the Play CDN script. -->
+    <link rel="stylesheet" href="/assets/tw.css?v=20260826">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2405,7 +2455,7 @@ body.dark-mode .scoreboard-item.current {
         </div>
     </div>
 
-    <div class="logo-container"><img id="main-logo" src="logo-dark.png" class="main-logo" onclick="showPage('intro')" alt="Pink Leaf Botanical Studios"></div>
+    <div class="logo-container"><img id="main-logo" src="logo-dark.webp" class="main-logo" onclick="showPage('intro')" alt="Pink Leaf Botanical Studios"></div>
     
     <nav>
         <button class="nav-link nav-active" onclick="showPage('intro', this)" data-he="בית" data-en="HOME">בית</button>
@@ -2583,7 +2633,7 @@ body.dark-mode .scoreboard-item.current {
         <div id="lab-box" class="p-10 border border-[var(--border)] rounded-[60px] bg-[var(--mellow-pink)]"></div>
         <div id="lab-correction">
             <div id="lab-incorrect-label" style="font-size:52px;line-height:1;margin-bottom:12px;min-height:56px;display:flex;align-items:center;justify-content:center;">❌</div>
-            <div class="portal mx-auto w-48 h-48"><img id="correct-img" class="w-full h-full object-cover" alt=""></div>
+            <div class="portal mx-auto w-48 h-48"><img loading="lazy" id="correct-img" class="w-full h-full object-cover" alt=""></div>
             <p id="correct-name" class="serif text-lg my-6 uppercase tracking-widest"></p>
             <button onclick="closeCorrection()" id="lab-retry-btn" aria-label="Try Again" title="Try Again" style="font-size:40px;background:none;border:none;cursor:pointer;padding:12px;line-height:1;">❌</button>
         </div>
@@ -2689,11 +2739,11 @@ body.dark-mode .scoreboard-item.current {
         };
 
         const SUBSTRATE_DB = {
-            "basalt": { name: "שבבי בזלת / Basalt Chips", desc: "עשירה ביסודות קורט כמו ברזל, מגנזיום, סיליקה, סידן ואשלגן המשתחררים בהדרגה.", prices: { l2: 11, l10: 44 }, img: "plants/basalt-chips.jpg" },
-            "zeolite": { name: "זאוליט / Zeolite", desc: "משפר את תערובת השתילה: שומר מים ודשנים זמינים לצמח, מונע עודפי מלחים ומאזן pH.", prices: { l1: 28, l2: 50, l10: 220 }, img: "plants/zeolite.jpg" },
-            "carbon": { name: "פחם פעיל / Activated Carbon", desc: "סופח רעלים ופטריות, מונע ריחות וריקבון שורשים. מוסיף אוורור לתערובת.", prices: { l1: 39, l2: 66, l10: 330 }, img: "plants/activated-carbon.jpg" },
-            "pumice": { name: "פומיס / Pumice", desc: "משפר אוורור וניקוז, מעודד התפתחות שורשים בריאה. אידיאלי למצע מאוורר ונושם.", prices: { l2: 11, l10: 33 }, img: "plants/pumice.jpg" },
-            "pazo": { name: "מצע פזו / Pazo Mix", desc: "תערובת ייחודית הכוללת פחם, זאוליט, פומיס ובזלת. ניקוז מצוין ואוורור מקסימלי.", prices: { l2: 17, l10: 83 }, img: "plants/pazo-mix.jpg" }
+            "basalt": { name: "שבבי בזלת / Basalt Chips", desc: "עשירה ביסודות קורט כמו ברזל, מגנזיום, סיליקה, סידן ואשלגן המשתחררים בהדרגה.", prices: { l2: 11, l10: 44 }, img: "plants/basalt-chips.webp" },
+            "zeolite": { name: "זאוליט / Zeolite", desc: "משפר את תערובת השתילה: שומר מים ודשנים זמינים לצמח, מונע עודפי מלחים ומאזן pH.", prices: { l1: 28, l2: 50, l10: 220 }, img: "plants/zeolite.webp" },
+            "carbon": { name: "פחם פעיל / Activated Carbon", desc: "סופח רעלים ופטריות, מונע ריחות וריקבון שורשים. מוסיף אוורור לתערובת.", prices: { l1: 39, l2: 66, l10: 330 }, img: "plants/activated-carbon.webp" },
+            "pumice": { name: "פומיס / Pumice", desc: "משפר אוורור וניקוז, מעודד התפתחות שורשים בריאה. אידיאלי למצע מאוורר ונושם.", prices: { l2: 11, l10: 33 }, img: "plants/pumice.webp" },
+            "pazo": { name: "מצע פזו / Pazo Mix", desc: "תערובת ייחודית הכוללת פחם, זאוליט, פומיס ובזלת. ניקוז מצוין ואוורור מקסימלי.", prices: { l2: 17, l10: 83 }, img: "plants/pazo-mix.webp" }
         };
 
         const ALL_STORE_ITEMS = [
@@ -2749,11 +2799,11 @@ body.dark-mode .scoreboard-item.current {
 
         // ── BADGE SYSTEM ──
         const BADGES = [
-            { id: 'first5',   at: 5,   label: 'Seedling',         img: 'plants/leaf.PNG',  desc: '5 streak' },
-            { id: 'ten',      at: 10,  label: 'Botanist',         img: 'plants/leaf2.PNG', desc: '10 streak' },
-            { id: 'twenty',   at: 20,  label: 'Plant Whisperer',  img: 'plants/leaf3.PNG', desc: '20 streak' },
-            { id: 'fifty',    at: 50,  label: 'Master Collector',  img: 'plants/leaf4.PNG', desc: '50 correct' },
-            { id: 'hundred',  at: 100, label: 'Legend',            img: 'plants/leaf4.PNG', desc: '100 correct' },
+            { id: 'first5',   at: 5,   label: 'Seedling',         img: 'plants/leaf.webp',  desc: '5 streak' },
+            { id: 'ten',      at: 10,  label: 'Botanist',         img: 'plants/leaf2.webp', desc: '10 streak' },
+            { id: 'twenty',   at: 20,  label: 'Plant Whisperer',  img: 'plants/leaf3.webp', desc: '20 streak' },
+            { id: 'fifty',    at: 50,  label: 'Master Collector',  img: 'plants/leaf4.webp', desc: '50 correct' },
+            { id: 'hundred',  at: 100, label: 'Legend',            img: 'plants/leaf4.webp', desc: '100 correct' },
         ];
         let earnedBadges = JSON.parse(localStorage.getItem('pl_badges') || '[]');
 
@@ -2779,7 +2829,7 @@ body.dark-mode .scoreboard-item.current {
                 toast.className = 'badge-toast';
                 document.body.appendChild(toast);
             }
-            toast.innerHTML = `<img src="${badge.img}" alt="${badge.label}" style="width:36px;height:36px;vertical-align:middle;margin-right:10px;display:inline-block;"> ${badge.label} — ${badge.desc}`;
+            toast.innerHTML = `<img loading="lazy" src="${badge.img}" alt="${badge.label}" style="width:36px;height:36px;vertical-align:middle;margin-right:10px;display:inline-block;"> ${badge.label} — ${badge.desc}`;
             toast.classList.add('show');
             xp += 50;
             updateXPDisplay();
@@ -2802,7 +2852,7 @@ body.dark-mode .scoreboard-item.current {
             const leaves = [];
             for (let i = 0; i < target; i++) {
                 const lit = i < filled;
-                leaves.push(`<img src="plants/leaf.PNG" class="streak-leaf ${lit ? 'lit' : ''}" alt="🌿">`);
+                leaves.push(`<img loading="lazy" src="plants/leaf.webp" class="streak-leaf ${lit ? 'lit' : ''}" alt="🌿">`);
             }
             return `<div class="streak-bar">${leaves.join('')}</div>`;
         }
@@ -2953,6 +3003,15 @@ body.dark-mode .scoreboard-item.current {
         startLab();
     }
     if (p === 'encyclopedia') { loadEncyclopedia(); }
+
+    // 5. Analytics — each section switch is both a section_view and a virtual
+    //    page_view, so single-page sections show up in GA4's page reports.
+    plTrack('section_view', { section_name: p, language: (typeof lang !== 'undefined' ? lang : 'he') });
+    plTrack('page_view', {
+        page_title: 'Pink Leaf — ' + p,
+        page_location: location.origin + location.pathname + '#' + p,
+        page_path: '/#' + p
+    });
 }
 
 
@@ -3061,7 +3120,7 @@ body.dark-mode .scoreboard-item.current {
                 h += `
                 <div class="store-card ${i===0?'card-focus':''}" style="transform:rotateY(${i*ang}deg) translateZ(280px)">
                     ${badge}
-                    <div class="portal"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
+                    <div class="portal"><img src="plants/${item.id}.webp" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.webp'" style="opacity: ${isAvailable ? '1' : '0.6'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-4">${item.name}</p>
                     ${dropdownHTML}
                     <div class="w-full space-y-1 mb-2">
@@ -3076,8 +3135,10 @@ body.dark-mode .scoreboard-item.current {
             document.getElementById('store-grid').innerHTML = h;
             window.sLen = filteredItems.length;
             window.sAng = ang;
+            window.sItems = filteredItems;
             rot = 0;
             applyInitialCardVisibility();
+            if (filteredItems[0]) plViewItem(filteredItems[0].id);
         }
 
         function spin(d){
@@ -3093,6 +3154,8 @@ body.dark-mode .scoreboard-item.current {
                 c.style.pointerEvents = i === act ? '' : 'none';
                 c.classList.toggle('card-focus', i === act);
             });
+            // The focused card is the one the visitor is actually looking at.
+            if (window.sItems && window.sItems[act]) plViewItem(window.sItems[act].id);
         }
         function applyInitialCardVisibility() {
             const cards = document.querySelectorAll('.store-card');
@@ -3106,7 +3169,7 @@ body.dark-mode .scoreboard-item.current {
     let h = "";
     Object.keys(MASTER_DB).forEach(id => {
         if(MASTER_DB[id].family === f){
-            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" alt="${MASTER_DB[id].name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
+            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.webp" alt="${MASTER_DB[id].name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.webp'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
         }
     });
     document.getElementById('vault-grid').innerHTML = h;
@@ -3143,8 +3206,8 @@ body.dark-mode .scoreboard-item.current {
                 html += `
                 <div class="care-product-card">
                     <div class="portal mx-auto w-32 h-32 mb-4">
-                        <img src="${imgPath}" alt="${item.name}" class="w-full h-full object-cover"
-                            onerror="this.src='logo-dark.png'">
+                        <img src="${imgPath}" alt="${item.name}" class="w-full h-full object-cover" loading="lazy"
+                            onerror="this.src='logo-dark.webp'">
                     </div>
                     <h3 class="serif text-[12px] tracking-[2px] text-center mb-3">${item.name}</h3>
                     <p class="text-[12px] leading-relaxed opacity-70 mb-4 text-right" dir="rtl">${item.desc}</p>
@@ -3160,7 +3223,7 @@ body.dark-mode .scoreboard-item.current {
             if (existing) {
                 existing.qty += 1;
             } else {
-                bag.push({ id, name, grade: size, price, qty: 1, isCare: true, img: img || `plants/${id}.jpg` });
+                bag.push({ id, name, grade: size, price, qty: 1, isCare: true, img: img || `plants/${id}.webp` });
             }
             saveBag();
             updateBagUI();
@@ -3203,7 +3266,7 @@ body.dark-mode .scoreboard-item.current {
 
     const streakTarget = streak >= 10 ? 10 : 5;
     const badgeRow = earnedBadges.length > 0
-        ? `<div style="display:flex; justify-content:center; gap:6px; margin-bottom:6px;">${BADGES.filter(b => earnedBadges.includes(b.id)).map(b => `<img src="${b.img}" alt="${b.label}" style="width:28px;height:28px;" title="${b.label}">`).join('')}</div>`
+        ? `<div style="display:flex; justify-content:center; gap:6px; margin-bottom:6px;">${BADGES.filter(b => earnedBadges.includes(b.id)).map(b => `<img loading="lazy" src="${b.img}" alt="${b.label}" style="width:28px;height:28px;" title="${b.label}">`).join('')}</div>`
         : '';
 
     document.getElementById('lab-box').innerHTML = `
@@ -3212,7 +3275,7 @@ body.dark-mode .scoreboard-item.current {
         <p class="serif" style="font-size:12px; letter-spacing:3px; opacity:0.4; margin-bottom:2px;">XP: ${xp} &nbsp;|&nbsp; BEST: ${bestStreak}</p>
         ${badgeRow}
         ${renderStreakBar()}
-        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
+        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.webp" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.webp'"></div>
         ${loginHint}
         <div class="flex flex-col gap-4">
             ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
@@ -3313,7 +3376,7 @@ function checkLab(choiceIndex) {
 
         function toggleTheme(){
             const d = document.body.classList.toggle('dark-mode');
-            if(document.getElementById('main-logo')) document.getElementById('main-logo').src = d ? 'logo-dark.png' : 'logo-light.png';
+            if(document.getElementById('main-logo')) document.getElementById('main-logo').src = d ? 'logo-dark.webp' : 'logo-light.webp';
             const btn = document.getElementById('btn-dark');
             if(btn){ btn.classList.toggle('on', d); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); }
             saveAccPrefs();
@@ -3397,7 +3460,7 @@ function checkLab(choiceIndex) {
             accFontLevel = 0;
             document.querySelectorAll('.acc-toggle-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
             document.body.classList.remove('dark-mode');
-            document.getElementById('main-logo').src = 'logo-light.png';
+            document.getElementById('main-logo').src = 'logo-light.webp';
             localStorage.removeItem('pl_acc');
         }
 
@@ -3413,7 +3476,7 @@ function checkLab(choiceIndex) {
             try {
                 const p = JSON.parse(localStorage.getItem('pl_acc') || '{}');
                 if (p.fontSize) { accFontLevel = p.fontSize; document.body.style.fontSize = (16 + p.fontSize) + 'px'; }
-                if (p.dark) { document.body.classList.add('dark-mode'); document.getElementById('main-logo').src = 'logo-dark.png'; const b = document.getElementById('btn-dark'); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} }
+                if (p.dark) { document.body.classList.add('dark-mode'); document.getElementById('main-logo').src = 'logo-dark.webp'; const b = document.getElementById('btn-dark'); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} }
                 const map = {'acc-high-contrast':'btn-contrast','acc-negative-contrast':'btn-negative','acc-grayscale':'btn-grayscale','acc-underline-links':'btn-links','acc-readable-font':'btn-font','acc-dyslexia-font':'btn-dyslexia','acc-no-motion':'btn-motion'};
                 (p.classes||[]).forEach(cls => { document.body.classList.add(cls); const b = document.getElementById(map[cls]); if(b){b.classList.add('on');b.setAttribute('aria-pressed','true');} });
             } catch(e){}
@@ -3577,7 +3640,7 @@ function checkLab(choiceIndex) {
                 <div class="bag-item">
                     <img class="bag-item-thumb"
                         src="${imgSrc}"
-                        onerror="this.src='logo-dark.png'"
+                        onerror="this.src='logo-dark.webp'"
                         alt="${item.name}">
                     <div class="bag-item-body">
                         <div class="bag-item-name" dir="auto">${item.name}</div>
