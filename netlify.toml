@@ -1,0 +1,6 @@
+# Pink Leaf is a static site. index.html lives at the repo root.
+# This forces Netlify to publish the root and run no build, so the store
+# and payment always deploy exactly as they did on GitHub Pages.
+[build]
+  publish = "."
+  command = ""
