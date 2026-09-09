@@ -3356,7 +3356,7 @@ body.dark-mode .scoreboard-item.current {
             }
         }
 
-        function showPage(p, el) {
+        function showPage(p, el, fromRoute) {
     // 1. Manage Lab-specific layout classes
     document.body.classList.remove('on-lab-page');
     if (p === 'lab') document.body.classList.add('on-lab-page');
@@ -3396,6 +3396,7 @@ body.dark-mode .scoreboard-item.current {
         startLab();
     }
     if (p === 'encyclopedia') { loadEncyclopedia(); }
+    if (!fromRoute && !window._plRouting) plPushHash(p);
 }
 
 
@@ -3691,7 +3692,7 @@ body.dark-mode .scoreboard-item.current {
 
         function pdSelectVariant(){ pdUpdatePrice(); }
 
-        function openProduct(id){
+        function openProduct(id, fromRoute){
             const item = ALL_STORE_ITEMS.find(i => i.id === id);
             if (!item) return;
             pdCurrentItem = item;
@@ -3751,13 +3752,23 @@ body.dark-mode .scoreboard-item.current {
             ov.classList.add('open');
             ov.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+            if (!fromRoute && !window._plRouting) { plPushHash('plant/' + id); window._plPushedPlant = true; }
         }
 
-        function closeProduct(){
+        function closeProduct(fromRoute){
             const ov = document.getElementById('pd-overlay');
+            const wasOpen = ov && ov.classList.contains('open');
+            const pushed = window._plPushedPlant; window._plPushedPlant = false;
             if (ov) { ov.classList.remove('open'); ov.setAttribute('aria-hidden', 'true'); }
             document.body.style.overflow = '';
             pdCurrentItem = null;
+            if (!fromRoute && !window._plRouting && wasOpen) {
+                if (pushed) { history.back(); }
+                else if ((location.hash||'').indexOf('/plant/') !== -1) {
+                    window._plRouting = true; showPage('store', null, true);
+                    history.replaceState({p:'store'}, '', '#/store'); window._plRouting = false;
+                }
+            }
         }
 
         function pdOverlayClick(e){
@@ -4755,6 +4766,29 @@ function checkLab(choiceIndex) {
         // ───────────────────────────────────────────────────────────────
 
 
+        // ─── URL ROUTING (hash-based; no server config needed) ───────────
+        window._plRouting = false; window._plPushedPlant = false;
+        const PL_PAGES = ['intro','store','vault','encyclopedia','lab','care'];
+        function plPushHash(p){ const t = '#/' + p; if (location.hash !== t) history.pushState({p:p}, '', t); }
+        function plApplyRoute(){
+            const h = location.hash || '';
+            if (h && h.indexOf('#/') !== 0) return; // leave non-#/ hashes (articles) alone
+            window._plRouting = true;
+            try {
+                const raw = h.indexOf('#/') === 0 ? h.slice(2) : '';
+                const parts = raw.split('/');
+                if (parts[0] === 'plant' && parts[1]) {
+                    showPage('store', null, true); openProduct(parts[1], true);
+                } else {
+                    const ov = document.getElementById('pd-overlay');
+                    if (ov && ov.classList.contains('open')) closeProduct(true);
+                    const p = PL_PAGES.indexOf(parts[0]) !== -1 ? parts[0] : 'intro';
+                    showPage(p, null, true);
+                }
+            } finally { window._plRouting = false; }
+        }
+        window.addEventListener('popstate', function(){ plApplyRoute(); });
+
         window.onload = () => {
             // Apply detected language to document direction + lang attribute on first paint
             document.dir = lang === 'he' ? 'rtl' : 'ltr';
@@ -4769,9 +4803,9 @@ function checkLab(choiceIndex) {
             updateRegistryLoginState();
             updateBagUI(); // restore persisted bag from localStorage
 
-            // Always start at home; clear any leftover URL hash
-            history.replaceState('', document.title, window.location.pathname + window.location.search);
-            showPage('intro');
+            // URL routing: honor the hash on load (deep links, refresh), else home
+            if ((location.hash || '').indexOf('#/') === 0) { plApplyRoute(); }
+            else { showPage('intro', null, true); }
         };
     </script>
 
