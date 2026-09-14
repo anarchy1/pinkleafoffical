@@ -58,5 +58,36 @@ that should survive across sessions HERE, in the repo.
   and pushes (this is what `fix_git_lock.command` on the Desktop clears). When a
   Mac session "can't push," that lock is the usual cause.
 
+### Private data rules (HARD)
+
+The site is a static HTML/JS build. Anything you put in `index.html` (or any
+other file that gets deployed) ships to the public, even if it is not visually
+rendered on the page. `view-source:` and browser dev tools reveal all of it.
+
+Never write these into any file that deploys:
+
+- **Acclimation / supply-chain state per plant.** Do NOT add fields like
+  `acclimation: "in-transit"`, `"customs"`, `"deflasked"`, `"hardening"`,
+  `"quarantine"` on store items, MASTER_DB entries, or anywhere else in the
+  source. If a plant is not for sale, use `status: "coming"` and nothing more.
+  The customer-facing badge only ever says "Coming Soon".
+- **Cost basis / wholesale / margin numbers.** Retail price on offer schema is
+  fine. Internal cost, MOQ, supplier invoice numbers, and margin math are not.
+- **Customer names, phone numbers, addresses, WhatsApp threads, order history.**
+  Aggregate anonymous stats are fine; individual records are never in source.
+- **Supplier names on individual SKUs.** Min Hui, PlantHero, individual
+  hobbyists, private growers. Fine in Notion, never in the deployed site.
+- **Internal freight / customs / phyto costs and dates.**
+- **Kat's personal contact info beyond what is already on the public page
+  footer.**
+
+If any past session left one of these in a deployed file, strip it. If you are
+unsure whether something is safe to ship, default to NO and ask.
+
+Chat output rule: even when the user asks "is X live?", answer yes/no and give
+a count. Do not paste the raw contents of the list into the chat unless the
+user explicitly asks for the full contents. A chat transcript can be
+screenshotted or shared; treat it like any other surface.
+
 > If any decision above is wrong or out of date, correct it here so it stays
 > correct for every future session.
