@@ -1,5 +1,35 @@
 # Project instructions
 
+## FIRST: read the operations registry
+
+**Before doing ANY work on orders, customers, suppliers, inventory, refunds or
+money, open this page and read it:**
+
+> **Pink Leaf Operations Registry (START HERE)**
+> https://app.notion.com/p/3dcbce507fd3810aa211e95a6b16eb24
+
+It is the durable record of this business. It holds the active order records,
+the supplier list, the standing rules, and the documentation protocol. Kat
+should never have to re-explain something that is already written there.
+
+Chat history does not persist between sessions. The registry does. So:
+
+1. **Read it first.** Do not ask Kat to re-explain context that is on that page.
+2. **Write to it last.** Before finishing any session that touches orders,
+   customers, suppliers or money, record what happened: decisions made, money
+   moved (date, amount, method, reference), what is still open and who owns it,
+   and any new standing rule Kat states.
+3. **Respect the standing rules** in that page. They exist because they were
+   already argued once. Do not re-litigate them.
+
+If a record for the thing you are working on does not exist, create it in
+Notion under "Pink Leaf Business Overview" and link it in the registry's
+Active Records table.
+
+Never put customer names, order history, cost basis, supplier names per SKU, or
+shipping method discussions into this repo. That data lives in Notion only. See
+the private data rules below.
+
 ## Writing style
 
 **HARD RULE: Never use em dashes.**
