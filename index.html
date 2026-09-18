@@ -1100,6 +1100,20 @@
         }
         body.dark-mode .badge-opening-sale { color: #ffcc55; }
 
+        /* Live stock (Google Sheet). A plant counted down to 0 goes grey and
+           stops being purchasable; the last unit gets an urgency badge. */
+        .badge-sold-out {
+            background: rgba(120, 120, 120, 0.16);
+            border: 1px solid rgba(120, 120, 120, 0.4);
+            color: #8a8a8a;
+        }
+        .badge-last-one {
+            background: rgba(214, 90, 90, 0.16);
+            border: 1px solid rgba(214, 90, 90, 0.5);
+            color: #c4504f;
+        }
+        body.dark-mode .badge-last-one { color: #ff8b8a; }
+
         /* Acclimation gating (Task 1): imports in transit, customs, or hardening
            show an honest "limited release / by allocation" treatment instead of a
            speculative price and Add to Bag. */
@@ -3562,6 +3576,8 @@ body.dark-mode .scoreboard-item.current {
                 const isAvailable = item.status === "available";
                 const stage = acclimationStage(item);
                 const gated = !!stage;
+                const soldOut = isAvailable && !gated && itemSoldOut(item);
+                const unitsLeft = itemUnitsLeft(item);
                 let badgeLabel = isAvailable ? 'Available' : 'Coming Soon';
                 let badgeClass = isAvailable ? 'badge-available' : 'badge-coming-soon';
                 if (isAvailable && item.openingSale) {
@@ -3572,6 +3588,13 @@ body.dark-mode .scoreboard-item.current {
                     badgeLabel = 'Limited Release';
                     badgeClass = 'badge-allocation';
                 }
+                if (soldOut) {
+                    badgeLabel = 'Sold Out';
+                    badgeClass = 'badge-sold-out';
+                } else if (isAvailable && !gated && unitsLeft === 1) {
+                    badgeLabel = 'Last One';
+                    badgeClass = 'badge-last-one';
+                }
                 const badge = `<span class="availability-badge ${badgeClass}">${badgeLabel}</span>`;
 
                 // Gated imports hide the speculative price entirely.
@@ -3580,7 +3603,7 @@ body.dark-mode .scoreboard-item.current {
                     : '';
 
                 let dropdownHTML = '';
-                if (!gated && isAvailable && item.availability) {
+                if (!gated && isAvailable && !soldOut && item.availability) {
                     const standardGrades = ["Tissue Culture", "Starter Plant", "Mature Plant", "Corm"];
                     const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
                     const fmtPrice = (opt) => {
@@ -3597,20 +3620,24 @@ body.dark-mode .scoreboard-item.current {
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select">';
                         if (!single) dropdownHTML += '<option value="">Select Variant</option>';
                         item.availability.forEach(opt => {
-                            dropdownHTML += `<option value="${opt}">${opt}${fmtPrice(opt)}</option>`;
+                            const oos = variantSoldOut(item.id, opt);
+                            dropdownHTML += oos
+                                ? `<option disabled>${opt} (Sold Out)</option>`
+                                : `<option value="${opt}">${opt}${fmtPrice(opt)}</option>`;
                         });
                         dropdownHTML += '</select></div>';
                     } else {
                         const allOptions = ["Starter Plant", "Mature Plant"];
-                        const availableCount = allOptions.filter(o => item.availability.includes(o)).length;
+                        const availableCount = allOptions.filter(o => item.availability.includes(o) && !variantSoldOut(item.id, o)).length;
                         const single = availableCount === 1;
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select">';
                         if (!single) dropdownHTML += '<option value="">Select Size</option>';
                         allOptions.forEach(opt => {
-                            const isOptAvailable = item.availability.includes(opt);
-                            dropdownHTML += isOptAvailable ?
+                            const listed = item.availability.includes(opt);
+                            const oos = listed && variantSoldOut(item.id, opt);
+                            dropdownHTML += (listed && !oos) ?
                                 `<option value="${opt}">${opt}${fmtPrice(opt)}</option>` :
-                                `<option disabled>${opt} (Unavailable)</option>`;
+                                `<option disabled>${opt} (${oos ? 'Sold Out' : 'Unavailable'})</option>`;
                         });
                         dropdownHTML += '</select></div>';
                     }
@@ -3619,6 +3646,8 @@ body.dark-mode .scoreboard-item.current {
                 let btnHTML;
                 if (gated) {
                     btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="requestAllocation('${item.id}', '${item.name}', '${stage}')">Join Studio Waitlist</button>`;
+                } else if (soldOut) {
+                    btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="requestAllocation('${item.id}', '${item.name}', 'sold-out')">NOTIFY ME</button>`;
                 } else if (isAvailable) {
                     btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
                 } else {
@@ -3709,6 +3738,7 @@ body.dark-mode .scoreboard-item.current {
             const badge = document.getElementById('pd-badge');
             let bl, bc;
             if (gated) { bl = ACCLIMATION_LABELS[stage]; bc = 'badge-allocation'; }
+            else if (isAvailable && itemSoldOut(item)) { bl = 'Sold Out'; bc = 'badge-sold-out'; }
             else if (isAvailable) { bl = 'Available'; bc = 'badge-available'; }
             else { bl = 'Coming Soon'; bc = 'badge-coming-soon'; }
             badge.className = 'availability-badge ' + bc;
@@ -4233,6 +4263,7 @@ function checkLab(choiceIndex) {
             "PV155_Aurea Latte": 550,
             "PV18_Pink": 550,
             "X_xanthosoma_mickey_Plant": 350,
+
             "PV158_Pink": 600,
             "PV30_Mint": 550,
             // MONSTERA
@@ -4276,6 +4307,134 @@ function checkLab(choiceIndex) {
             "X_brown_beauty_Variegated": 500,
             "X_atabapoense_pink_Pink": 800,
         };
+
+        // ── LIVE STOCK (Google Sheet) ──────────────────────────────────────
+        // Single source of truth for what is actually on the shelf. The sheet has
+        // one row per plant variant: id, variant, name, category, qty, price,
+        // status. Publish it to the web as CSV and paste that URL below to turn
+        // the live sync on.
+        //
+        // While it is empty, or if the sheet cannot be reached, the store behaves
+        // exactly as it does today. A stale price beats a store that fails to
+        // render, so every error here is swallowed on purpose.
+        //
+        // qty, per row:
+        //   blank  not counted yet, so the plant stays purchasable
+        //   0      Sold Out: the badge flips and ADD TO BAG is replaced
+        //   1      in stock, and the card shows "Last One"
+        //
+        // Only public-safe columns belong in that sheet. Publishing makes the tab
+        // readable by anyone holding the link, so no cost, supplier or customer
+        // columns, ever.
+        const STOCK_SHEET_CSV = '';
+
+        // "PV21_Aurea" -> { qty, price, status }. Empty means no live data.
+        let LIVE_STOCK = {};
+
+        function stockKey(id, variant){ return id + '_' + variant; }
+
+        // Tolerates quoted fields, escaped quotes and commas inside a cell.
+        function parseCSV(text){
+            const rows = [];
+            let row = [], field = '', quoted = false;
+            for (let i = 0; i < text.length; i++){
+                const c = text[i];
+                if (quoted){
+                    if (c === '"'){
+                        if (text[i + 1] === '"'){ field += '"'; i++; }
+                        else quoted = false;
+                    } else field += c;
+                } else if (c === '"'){ quoted = true; }
+                else if (c === ','){ row.push(field); field = ''; }
+                else if (c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; }
+                else if (c !== '\r'){ field += c; }
+            }
+            if (field !== '' || row.length){ row.push(field); rows.push(row); }
+            return rows;
+        }
+
+        async function loadLiveStock(){
+            if (!STOCK_SHEET_CSV) return;
+            try {
+                const res = await fetch(STOCK_SHEET_CSV, { cache: 'no-store' });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const rows = parseCSV(await res.text());
+                if (rows.length < 2) throw new Error('sheet is empty');
+
+                const head = rows[0].map(h => h.trim().toLowerCase());
+                const iId = head.indexOf('id'), iVar = head.indexOf('variant');
+                const iQty = head.indexOf('qty'), iPrice = head.indexOf('price');
+                const iStatus = head.indexOf('status');
+                if (iId < 0 || iVar < 0) throw new Error('sheet needs id and variant columns');
+
+                const next = {};
+                rows.slice(1).forEach(r => {
+                    const id = (r[iId] || '').trim();
+                    const variant = (r[iVar] || '').trim();
+                    if (!id || !variant) return;
+
+                    const rawQty = iQty >= 0 ? (r[iQty] || '').trim() : '';
+                    const rawPrice = iPrice >= 0 ? (r[iPrice] || '').trim() : '';
+                    const qty = rawQty === '' ? null : parseInt(rawQty, 10);
+                    const price = rawPrice === '' ? null : parseInt(rawPrice, 10);
+                    const status = iStatus >= 0 ? (r[iStatus] || '').trim().toLowerCase() : '';
+
+                    next[stockKey(id, variant)] = {
+                        qty: Number.isFinite(qty) ? qty : null,
+                        price: Number.isFinite(price) ? price : null,
+                        status: status || null,
+                    };
+                    // The sheet wins on price, so one number changes in one place.
+                    if (Number.isFinite(price)) ITEM_PRICES[stockKey(id, variant)] = price;
+                });
+
+                LIVE_STOCK = next;
+                syncStoreStatus();
+                renderStore();
+            } catch (err) {
+                console.warn('Live stock unavailable, using the built-in list.', err);
+            }
+        }
+
+        // null means the sheet says nothing about this variant, so never block a sale.
+        function variantQty(id, variant){
+            const row = LIVE_STOCK[stockKey(id, variant)];
+            return row ? row.qty : null;
+        }
+
+        function variantSoldOut(id, variant){ return variantQty(id, variant) === 0; }
+
+        function itemVariants(item){
+            return (item.availability && item.availability.length) ? item.availability : ['Plant'];
+        }
+
+        // Sold out only once every variant has been counted and all are at zero.
+        // One uncounted variant keeps the plant live, so a half-finished count
+        // can never hide something Kat actually has.
+        function itemSoldOut(item){
+            const variants = itemVariants(item);
+            const counted = variants.map(v => variantQty(item.id, v)).filter(q => q !== null);
+            return counted.length === variants.length && counted.every(q => q === 0);
+        }
+
+        function itemUnitsLeft(item){
+            const counted = itemVariants(item).map(v => variantQty(item.id, v)).filter(q => q !== null);
+            return counted.length ? counted.reduce((a, b) => a + b, 0) : null;
+        }
+
+        // Lets the sheet retire a plant or bring one forward with no code change.
+        function syncStoreStatus(){
+            ALL_STORE_ITEMS.forEach(item => {
+                for (const v of itemVariants(item)){
+                    const row = LIVE_STOCK[stockKey(item.id, v)];
+                    if (row && (row.status === 'available' || row.status === 'coming')){
+                        item.status = row.status;
+                        break;
+                    }
+                }
+            });
+        }
+
 
         // Store policy (set by Kat, 2026-06-15). No minimum order. Shipping is
         // QUOTED PER ORDER, not a fixed online fee, because it depends on parcel
@@ -4354,6 +4513,16 @@ function checkLab(choiceIndex) {
                 select.style.border = '1.5px solid #e57373';
                 select.style.boxShadow = '0 0 0 2px rgba(229,115,115,0.25)';
                 setTimeout(() => { select.style.border = ''; select.style.boxShadow = ''; }, 1500);
+                return;
+            }
+
+            // Backstop for a page left open while the sheet counted down to zero.
+            // Checks the whole plant as well as the chosen variant, so a missing
+            // or mismatched grade can never smuggle a sold-out plant into the bag.
+            const soldOutItem = ALL_STORE_ITEMS.find(i => i.id === id);
+            if (variantSoldOut(id, grade) || (soldOutItem && itemSoldOut(soldOutItem))) {
+                btn.textContent = 'SOLD OUT';
+                setTimeout(() => { btn.textContent = 'ADD TO BAG'; }, 1800);
                 return;
             }
 
@@ -4800,6 +4969,7 @@ function checkLab(choiceIndex) {
             });
             updateIntro();
             updateXPDisplay();
+            loadLiveStock();
             updateRegistryLoginState();
             updateBagUI(); // restore persisted bag from localStorage
 
