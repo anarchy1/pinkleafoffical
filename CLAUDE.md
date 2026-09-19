@@ -89,6 +89,10 @@ Never write these into any file that deploys:
   The customer-facing badge only ever says "Coming Soon".
 - **Cost basis / wholesale / margin numbers.** Retail price on offer schema is
   fine. Internal cost, MOQ, supplier invoice numbers, and margin math are not.
+  A margin calculator (`tools/pricing-calculator.html`: base import cost,
+  markup multiplier, acclimation loss buffer) was live on the site until
+  2026-09-19 and has been deleted. It is still in the git history of a public
+  repo, so treat the numbers in it as burned.
 - **Customer names, phone numbers, addresses, WhatsApp threads, order history.**
   Aggregate anonymous stats are fine; individual records are never in source.
 - **Supplier names on individual SKUs.** Min Hui, PlantHero, individual
@@ -99,6 +103,11 @@ Never write these into any file that deploys:
 
 If any past session left one of these in a deployed file, strip it. If you are
 unsure whether something is safe to ship, default to NO and ask.
+
+`netlify.toml` blocks `/tools/*`, `/content/*`, `/CLAUDE.md` and `/RESET.md`
+with a 404, and `robots.txt` disallows the first two. That is a backstop for
+working files, not a place to hide private data: the repo is public on GitHub,
+so anything committed is readable there whether or not the site serves it.
 
 Chat output rule: even when the user asks "is X live?", answer yes/no and give
 a count. Do not paste the raw contents of the list into the chat unless the

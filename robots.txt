@@ -6,6 +6,8 @@ Disallow: /*?utm_
 Disallow: /*?ref=
 Disallow: /*?sid=
 Disallow: /cdn-cgi/
+Disallow: /tools/
+Disallow: /content/
 # CSS/JS/images must remain crawlable so Google can render the page
 Allow: /assets/
 Allow: /plants/
