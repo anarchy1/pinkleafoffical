@@ -41,6 +41,17 @@ that should survive across sessions HERE, in the repo.
 - Standardize the store into THREE categories: **Alocasia, Monstera, Philodendron.**
 - Lay it out like a standard rare-plant niche store (clean product grid).
 
+### Encyclopedia and social (standing rule)
+- **Every new encyclopedia entry gets a social post.** Set by Kat 2026-09-19.
+  An entry is not done when it deploys, it is done when the post copy exists
+  alongside it. Write the post in the same commit as the entry.
+- Format: one post per entry, Hebrew and English, both ready to paste, plus a
+  platform, a visual suggestion and a goal. Follow
+  `content/week-2026-04-10-social.md` and
+  `content/encyclopedia-posts-2026-09-19.md`.
+- Every post links to the entry page on `pinkleaf.co.il/encyclopedia/`.
+- Claude cannot publish to Instagram from a session. It drafts, Kat posts.
+
 ### Payments
 - Chosen provider: **Meshulam (Grow)** (Israeli gateway; supports Israeli cards
   and Bit, and hosted payment pages / payment links that work from a static
