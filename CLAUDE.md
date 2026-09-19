@@ -52,7 +52,23 @@ that should survive across sessions HERE, in the repo.
   since the site is static and cannot process cards server-side).
 
 ### Deploy / dev environment notes
-- This repo deploys via GitHub Pages; pushing to `main` goes live in ~60s.
+- **The live host is Netlify, not GitHub Pages.** `pinkleaf.co.il` is served by
+  the Netlify project `pinkleaf` (team `kdtatt`,
+  https://app.netlify.com/projects/pinkleaf). The domain's DNS does not point at
+  GitHub Pages IPs.
+- **Pushing to `main` does NOT deploy.** Checked 2026-09-19: the Netlify project
+  is not building from the repo. Its published production deploy was created by
+  a manual upload ("Deploy triggered by upload", no commit ref) dated
+  2026-09-09. Every commit after that sat on `main` without reaching the site.
+  Until someone links the repo in Netlify (Project configuration, Build and
+  deploy, Link repository), a push has to be followed by an actual Netlify
+  deploy.
+- The old `pages build and deployment` workflow still runs green on every push
+  to `main`. It proves nothing about the live site. Do not cite it as evidence
+  that something shipped; check the Netlify project's current deploy instead.
+- `netlify.toml` publishes the repo root with no build, so **everything in the
+  repo is served**, internal files included. See the private data rules below
+  before adding anything to the repo.
 - Pushing from a cloud Claude session works fine.
 - On the Mac, git sometimes gets a stuck `.git/index.lock` that blocks commits
   and pushes (this is what `fix_git_lock.command` on the Desktop clears). When a
