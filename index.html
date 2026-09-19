@@ -2746,12 +2746,12 @@ body.dark-mode .scoreboard-item.current {
 
     <main id="page-encyclopedia" class="hidden pb-24">
 
-        <!-- INDEX VIEW: search + tags + 5 article cards -->
+        <!-- INDEX VIEW: search + tags + article cards (count comes from entries.json) -->
         <div id="encyc-index" class="max-w-3xl mx-auto px-5">
             <div class="text-center mb-8">
                 <h2 class="serif tracking-[5px] text-[11px] opacity-50 mb-2">PINK LEAF</h2>
                 <h2 class="serif tracking-[3px] text-[18px] mb-3">BOTANICAL ENCYCLOPEDIA</h2>
-                <p class="text-[12px] opacity-40 tracking-[3px]">MASTERCLASS SERIES · 5 TECHNICAL GUIDES</p>
+                <p id="encyc-count" class="text-[12px] opacity-40 tracking-[3px]">MASTERCLASS SERIES · 20 TECHNICAL GUIDES</p>
                 <div class="mt-5" style="height:1px; background: linear-gradient(to right, transparent, var(--pink), transparent);"></div>
             </div>
 
@@ -4626,6 +4626,11 @@ function checkLab(choiceIndex) {
             const list = document.getElementById('encyc-cards-list');
             if (!list) return;
             const isHe = lang === 'he';
+
+            const countEl = document.getElementById('encyc-count');
+            if (countEl && ENCYC_ARTICLES.length > 0) {
+                countEl.textContent = `MASTERCLASS SERIES · ${ENCYC_ARTICLES.length} TECHNICAL GUIDES`;
+            }
 
             if (ENCYC_ARTICLES.length === 0) {
                 list.innerHTML = '<p style="text-align:center;opacity:0.3;padding:30px;font-family:Cinzel,serif;font-size:12px;letter-spacing:3px;">LOADING...</p>';
