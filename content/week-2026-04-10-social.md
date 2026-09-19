@@ -17,7 +17,7 @@ Bilingual (Hebrew + English) posts ready to publish on Instagram, Facebook, and 
 צמחי TC גדלים במעבדה בתנאים סטריליים לחלוטין — בלי חרקים, בלי פטריות, בלי מחלות נגיפיות.
 זה אומר: התחלה נקייה, גנטיקה יציבה, וריגציה שנשמרת.
 
-בפינק ליף, כל אלוקזיה וריאגטית שאנחנו מוכרות עברה הליך TC — זו הסיבה שהוורידציה נשארת יציבה ולא "מתפוצצת" אחרי כמה עלים חדשים.
+בפינק ליף, כל אלוקסיה וריאגטית שאנחנו מוכרות עברה הליך TC — זו הסיבה שהוורידציה נשארת יציבה ולא "מתפוצצת" אחרי כמה עלים חדשים.
 
 רוצה להבין איך זה עובד? יש לנו מאמר מלא באנציקלופדיה 👇
 pinkleaf.co.il/encyclopedia/tissue-culture.html
@@ -51,7 +51,7 @@ pinkleaf.co.il/encyclopedia/tissue-culture.html
 ```
 Alocasia Polly Pink Variegata 💗
 
-הכוכבת של פינק ליף. אלוקזיה פולי עם וריאגציה ורודה-בלאש, כל עלה מגלה דוגמה אחרת.
+הכוכבת של פינק ליף. אלוקסיה פולי עם וריאגציה ורודה-בלאש, כל עלה מגלה דוגמה אחרת.
 
 🧪 TC-propagated — וריאגציה יציבה לטווח ארוך
 📦 אקלום מלא לפני משלוח — לא אתן לכם צמח שלא עבר 21 ימי הסתגלות
@@ -183,7 +183,7 @@ Follow for more science-backed plant tips 🌿
 ```
 היום הכי כיף: צמחים יוצאים לבית חדש 💌
 
-שלושה אלוקזיה הולכים השבוע לגננים מקצועיים מכל הארץ.
+שלושה אלוקסיה הולכים השבוע לגננים מקצועיים מכל הארץ.
 כל צמח עבר:
 ✅ TC propagation
 ✅ 21 ימי אקלום
@@ -230,7 +230,7 @@ Thank you for trusting Pink Leaf. We grow slowly because I want every plant to s
 ## HASHTAG BANK (save for reuse)
 
 **Hebrew/Israel:**
-#צמחיםנדירים #PinkLeafStudios #פינקליף #אלוקזיה #צמחיבית #גידולצמחים #TissueCultureIsrael
+#צמחיםנדירים #PinkLeafStudios #פינקליף #אלוקסיה #צמחיבית #גידולצמחים #TissueCultureIsrael
 
 **English/Global:**
 #RarePlants #VariegatedPlants #Alocasia #Monstera #TissueCulture #PlantCollector #AroidAddicts #PinkLeafBotanical #RareAroids #TCPropagation

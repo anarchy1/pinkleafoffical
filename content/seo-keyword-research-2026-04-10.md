@@ -4,18 +4,18 @@
 ## STEP 1: Keyword Expansion
 
 ### Seed topic: Alocasia
-- איך להתחיל לגדל אלוקזיה בבית?
-- איך להשקות אלוקזיה?
-- למה העלים של האלוקזיה מצהיבים?
-- למה האלוקזיה שלי לא מוציאה עלים חדשים?
-- מתי להעביר אלוקזיה לעציץ גדול יותר?
-- כמה אור צריכה אלוקזיה וריאגטית?
-- איפה קונים אלוקזיה נדירה בישראל?
-- איפה לשים אלוקזיה בבית?
-- האם אלוקזיה פולי רעילה לחתולים?
-- האם אפשר לגדל אלוקזיה מחוץ לבית בישראל?
-- מה ההבדל בין אלוקזיה פולי רגילה לפולי פינק?
-- כמה עולה אלוקזיה ורוודיה (Variegated) בישראל?
+- איך להתחיל לגדל אלוקסיה בבית?
+- איך להשקות אלוקסיה?
+- למה העלים של האלוקסיה מצהיבים?
+- למה האלוקסיה שלי לא מוציאה עלים חדשים?
+- מתי להעביר אלוקסיה לעציץ גדול יותר?
+- כמה אור צריכה אלוקסיה וריאגטית?
+- איפה קונים אלוקסיה נדירה בישראל?
+- איפה לשים אלוקסיה בבית?
+- האם אלוקסיה פולי רעילה לחתולים?
+- האם אפשר לגדל אלוקסיה מחוץ לבית בישראל?
+- מה ההבדל בין אלוקסיה פולי רגילה לפולי פינק?
+- כמה עולה אלוקסיה ורוודיה (Variegated) בישראל?
 
 ### Seed topic: Rare Plants / צמחים נדירים
 - איך לבחור צמח נדיר ראשון?
@@ -65,15 +65,15 @@
 ## STEP 2: Google intent grouping
 
 ### 1. Care (how-to)
-- איך להשקות אלוקזיה
+- איך להשקות אלוקסיה
 - איך לאקלם צמח TC מפלסק
-- איך להתחיל לגדל אלוקזיה בבית
+- איך להתחיל לגדל אלוקסיה בבית
 - איך להשקות צמחים בישראל בקיץ
 - איך לדעת אם הצמח צריך השקיה
 
 ### 2. Problems (troubleshooting)
-- למה העלים של האלוקזיה מצהיבים
-- למה האלוקזיה שלי לא מוציאה עלים חדשים
+- למה העלים של האלוקסיה מצהיבים
+- למה האלוקסיה שלי לא מוציאה עלים חדשים
 - למה העלים של המונסטרה מתחילים להחליד
 - איך להילחם בכנימות על צמחי בית
 - למה העלים של הצמח שלי נובלים
@@ -85,10 +85,10 @@
 - האם צמחים נדירים קשים לגידול
 
 ### 4. Buying (high intent)
-- איפה קונים אלוקזיה נדירה בישראל
+- איפה קונים אלוקסיה נדירה בישראל
 - כמה עולה צמח וריאגטי בישראל
 - למה צמחים נדירים כל כך יקרים
-- מה ההבדל בין אלוקזיה פולי רגילה לפולי פינק
+- מה ההבדל בין אלוקסיה פולי רגילה לפולי פינק
 - האם צמחי TC שווים יותר
 
 ---
@@ -100,9 +100,9 @@ Criteria: high commercial/conversion intent + relevance to Pink Leaf's actual pr
 | # | Keyword | Intent | Why it wins |
 |---|---------|--------|-------------|
 | 1 | **איך לאקלם צמח TC מפלסק** | Care + educational | Almost zero Hebrew content exists. Drives people who JUST bought a TC plant — the moment of maximum buyer anxiety. Pink Leaf is one of very few TC suppliers in Israel. |
-| 2 | **למה העלים של האלוקזיה מצהיבים** | Problem | High search volume — everyone's Alocasia yellows eventually. Problem-state traffic converts well because you catch them before they give up. |
-| 3 | **איפה קונים אלוקזיה נדירה בישראל** | Buying (peak intent) | Direct purchase intent. Answer must position Pink Leaf as THE answer without being salesy. |
-| 4 | **מה ההבדל בין אלוקזיה פולי רגילה לפולי פינק** | Buying + comparison | Specific to your flagship product. The "Regular vs. Pink" comparison search is exactly how a buyer decides which to order. |
+| 2 | **למה העלים של האלוקסיה מצהיבים** | Problem | High search volume — everyone's Alocasia yellows eventually. Problem-state traffic converts well because you catch them before they give up. |
+| 3 | **איפה קונים אלוקסיה נדירה בישראל** | Buying (peak intent) | Direct purchase intent. Answer must position Pink Leaf as THE answer without being salesy. |
+| 4 | **מה ההבדל בין אלוקסיה פולי רגילה לפולי פינק** | Buying + comparison | Specific to your flagship product. The "Regular vs. Pink" comparison search is exactly how a buyer decides which to order. |
 | 5 | **מה זה Tissue Culture בצמחים** | Beginner + educational | Entry-level question with mid-funnel value — teaching what TC is also teaches why Pink Leaf's TC plants are worth paying more for. |
 
 ---
