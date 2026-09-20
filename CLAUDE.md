@@ -30,11 +30,29 @@ that should survive across sessions HERE, in the repo.
 
 ### The business
 - Pink Leaf Botanical Studios: rare and variegated plant studio, Ramat Gan, Israel.
-- Site: `pinkleaf.co.il`, a static site on GitHub Pages (custom domain via CNAME).
+- Site: `pinkleaf.co.il`, a static site hosted on Netlify (custom domain via
+  CNAME). NOT GitHub Pages. See Deploy / dev environment notes below.
 - Bilingual: Hebrew (RTL) and English (LTR). Currency is ILS (`₪`).
 - Owner: Kat. Visits by appointment. Nationwide shipping across Israel is active.
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
   India dropship store; using it was a real past bug, fixed across 35 files).
+
+### Business plans and personal strategy documents (HARD RULE, set by Kat 2026-09-20)
+- A business plan, or anything like it, personal or strategic, not code, not
+  site content, never gets written into this repo or pushed anywhere, draft
+  or final, even to a feature branch, even with private numbers already
+  stripped out. This repo is public. Writing a document like that here puts
+  it online, full stop.
+- Deliver documents like this directly instead, as a file handed to Kat in
+  the session, so it stays on her device. Ask before committing anything
+  like this. The "record durable decisions in the repo" practice above is
+  for facts about the business and the codebase, never for documents like
+  this.
+- This rule exists because a business-plan draft got committed and pushed to
+  a public branch here before Kat had seen it. It was removed, then the
+  branch it was on was rewritten from scratch to clear it from history too,
+  at her request. Do not repeat it, and do not go looking for it in old
+  commits.
 
 ### Store direction (current plan)
 - Replace the card/carousel "game" layout. It is overengineered for the need.
