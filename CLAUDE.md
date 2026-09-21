@@ -51,6 +51,12 @@ that should survive across sessions HERE, in the repo.
   `content/encyclopedia-posts-2026-09-19.md`.
 - Every post links to the entry page on `pinkleaf.co.il/encyclopedia/`.
 - Claude cannot publish to Instagram from a session. It drafts, Kat posts.
+- **The posting cadence and the queue live in `content/content-system.md`.**
+  Three posts a week (Sunday education, Tuesday plant spotlight, Thursday is
+  Kat's freestyle slot), drawn from a bank of entries that have no post yet.
+  When asked for content, read that file, draft the next weeks in the queue,
+  and update its drafted log. Kat's own ideas always take priority over the
+  queue; the queue is the floor for a week with no inspiration, not a cap.
 
 ### Payments
 - Chosen provider: **Meshulam (Grow)** (Israeli gateway; supports Israeli cards
