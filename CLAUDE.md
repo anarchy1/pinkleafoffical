@@ -30,7 +30,9 @@ that should survive across sessions HERE, in the repo.
 
 ### The business
 - Pink Leaf Botanical Studios: rare and variegated plant studio, Ramat Gan, Israel.
-- Site: `pinkleaf.co.il`, a static site on GitHub Pages (custom domain via CNAME).
+- Site: `pinkleaf.co.il`, a static site served by **Netlify** (see the deploy
+  notes below). The `CNAME` file in the repo is a leftover from the old GitHub
+  Pages setup and does not control the live domain.
 - Bilingual: Hebrew (RTL) and English (LTR). Currency is ILS (`₪`).
 - Owner: Kat. Visits by appointment. Nationwide shipping across Israel is active.
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
@@ -86,6 +88,16 @@ that should survive across sessions HERE, in the repo.
 - `netlify.toml` publishes the repo root with no build, so **everything in the
   repo is served**, internal files included. See the private data rules below
   before adding anything to the repo.
+- **A cloud Claude session cannot deploy to Netlify.** Tried three times across
+  2026-09-19 and 2026-09-23: the Netlify connector can read the project fine
+  but every deploy upload returns 403 Forbidden from Netlify, not from the
+  sandbox. The connection has read access only. Do not burn time retrying it.
+  Deploy from the Mac instead: `npx netlify-cli deploy --prod --dir .` in the
+  repo, or drag the folder onto the Deploys tab. The lasting fix is linking the
+  repo in Netlify so a push deploys by itself.
+- The sandbox also cannot reach `pinkleaf.co.il` at all (egress blocked), so a
+  cloud session can never confirm what is live by fetching it. Check the
+  Netlify project's current deploy instead, or ask Kat.
 - Pushing from a cloud Claude session works fine.
 - On the Mac, git sometimes gets a stuck `.git/index.lock` that blocks commits
   and pushes (this is what `fix_git_lock.command` on the Desktop clears). When a
