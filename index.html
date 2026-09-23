@@ -56,7 +56,7 @@
           "email": "contact@pinkleaf.co.il",
           "priceRange": "₪₪-₪₪₪",
           "currenciesAccepted": "ILS",
-          "paymentAccepted": "Bank Transfer, WhatsApp Pay, PayPlus",
+          "paymentAccepted": "Bank Transfer, Bit, Credit Card",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+972-55-911-6990",
@@ -118,7 +118,7 @@
           "alternateName": "אלוקסיה פולי פינק וריאגטה",
           "sku": "PL-APP-001",
           "mpn": "PINKLEAF-APP-2026",
-          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Tissue Culture propagated for genetic stability and stable variegation. Each leaf displays a unique pattern. Two tiers available: Regular Variegation (₪199) and High Variegation (₪350). Acclimated 21 days before shipping.",
+          "description": "Rare pink-variegated Alocasia with stunning blush-toned leaf markings. Tissue Culture propagated for genetic stability and stable variegation. Each leaf displays a unique pattern. Acclimated 21 days before shipping.",
           "image": [
             "https://pinkleaf.co.il/plants/PV19.jpg"
           ],
@@ -137,9 +137,9 @@
             "@type": "AggregateOffer",
             "@id": "https://pinkleaf.co.il/#offer-polly-pink",
             "priceCurrency": "ILS",
-            "lowPrice": "199",
-            "highPrice": "350",
-            "offerCount": 2,
+            "lowPrice": "470",
+            "highPrice": "470",
+            "offerCount": 1,
             "availability": "https://schema.org/OutOfStock",
             "priceValidUntil": "2026-12-31",
             "seller": { "@id": "https://pinkleaf.co.il/#store" },
@@ -148,26 +148,14 @@
               {
                 "@type": "Offer",
                 "@id": "https://pinkleaf.co.il/#offer-polly-pink-regular",
-                "name": "Regular Variegation",
-                "description": "Pink variegation covering ~10–30% of each leaf. Younger acclimated plant. Recommended for first-time collectors.",
-                "price": "199",
+                "name": "Pink Variegation",
+                "description": "Pink variegation on each leaf, pattern unique to the plant. Acclimated 21 days before shipping.",
+                "price": "470",
                 "priceCurrency": "ILS",
                 "availability": "https://schema.org/OutOfStock",
                 "priceValidUntil": "2026-12-31",
                 "seller": { "@id": "https://pinkleaf.co.il/#store" },
                 "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20Regular%20Variegation"
-              },
-              {
-                "@type": "Offer",
-                "@id": "https://pinkleaf.co.il/#offer-polly-pink-high",
-                "name": "High Variegation",
-                "description": "Pink variegation covering ~40–70% of each leaf. Mature plant with proven stable variegation. Statement piece.",
-                "price": "350",
-                "priceCurrency": "ILS",
-                "availability": "https://schema.org/OutOfStock",
-                "priceValidUntil": "2026-12-31",
-                "seller": { "@id": "https://pinkleaf.co.il/#store" },
-                "url": "https://wa.me/972559116990?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20Alocasia%20Polly%20Pink%20Variegata%20-%20High%20Variegation"
               }
             ]
           }
@@ -176,14 +164,14 @@
           "@type": "Product",
           "@id": "https://pinkleaf.co.il/#product-alocasia-heart-balloon",
           "name": "Alocasia Heart Balloon",
-          "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. Opening Sale - ₪500. TC-propagated for consistency.",
+          "description": "Distinctive heart-shaped Alocasia with inflated, balloon-like leaves. TC-propagated for consistency.",
           "image": "https://pinkleaf.co.il/plants/PV81.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
           "offers": {
             "@type": "Offer",
-            "price": "500",
+            "price": "750",
             "priceCurrency": "ILS",
-            "availability": "https://schema.org/OutOfStock",
+            "availability": "https://schema.org/InStock",
             "priceValidUntil": "2026-12-31",
             "seller": { "@id": "https://pinkleaf.co.il/#store" }
           },
@@ -197,8 +185,8 @@
           "image": "https://pinkleaf.co.il/plants/PV25.jpg",
           "brand": { "@id": "https://pinkleaf.co.il/#store" },
           "offers": [
-            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
-            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
+            { "@type": "Offer", "name": "Starter Plant", "price": "50", "priceCurrency": "ILS", "availability": "https://schema.org/OutOfStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } },
+            { "@type": "Offer", "name": "Mature Plant", "price": "150", "priceCurrency": "ILS", "availability": "https://schema.org/OutOfStock", "seller": { "@id": "https://pinkleaf.co.il/#store" } }
           ],
           "category": "Rare Aroids"
         },
@@ -2523,42 +2511,42 @@ body.dark-mode .scoreboard-item.current {
         <!-- High Contrast -->
         <div class="acc-row">
             <div><div class="acc-label">ניגודיות גבוהה</div><div class="acc-label-en">High Contrast</div></div>
-            <button class="acc-toggle-btn" id="btn-contrast" onclick="accToggleMode('acc-high-contrast','btn-contrast')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-contrast" aria-label="ניגודיות גבוהה" onclick="accToggleMode('acc-high-contrast','btn-contrast')" aria-pressed="false"></button>
         </div>
         <!-- Negative Contrast -->
         <div class="acc-row">
             <div><div class="acc-label">ניגודיות הפוכה</div><div class="acc-label-en">Negative Contrast</div></div>
-            <button class="acc-toggle-btn" id="btn-negative" onclick="accToggleMode('acc-negative-contrast','btn-negative')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-negative" aria-label="ניגודיות הפוכה" onclick="accToggleMode('acc-negative-contrast','btn-negative')" aria-pressed="false"></button>
         </div>
         <!-- Grayscale -->
         <div class="acc-row">
             <div><div class="acc-label">גווני אפור</div><div class="acc-label-en">Grayscale</div></div>
-            <button class="acc-toggle-btn" id="btn-grayscale" onclick="accToggleMode('acc-grayscale','btn-grayscale')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-grayscale" aria-label="גווני אפור" onclick="accToggleMode('acc-grayscale','btn-grayscale')" aria-pressed="false"></button>
         </div>
         <!-- Underline Links -->
         <div class="acc-row">
             <div><div class="acc-label">קישורים מודגשים</div><div class="acc-label-en">Underline Links</div></div>
-            <button class="acc-toggle-btn" id="btn-links" onclick="accToggleMode('acc-underline-links','btn-links')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-links" aria-label="הדגשת קישורים" onclick="accToggleMode('acc-underline-links','btn-links')" aria-pressed="false"></button>
         </div>
         <!-- Readable Font -->
         <div class="acc-row">
             <div><div class="acc-label">גופן קריא</div><div class="acc-label-en">Readable Font</div></div>
-            <button class="acc-toggle-btn" id="btn-font" onclick="accToggleMode('acc-readable-font','btn-font')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-font" aria-label="הגדלת טקסט" onclick="accToggleMode('acc-readable-font','btn-font')" aria-pressed="false"></button>
         </div>
         <!-- Dyslexia Font -->
         <div class="acc-row">
             <div><div class="acc-label">גופן דיסלקציה</div><div class="acc-label-en">Dyslexia Font</div></div>
-            <button class="acc-toggle-btn" id="btn-dyslexia" onclick="accToggleMode('acc-dyslexia-font','btn-dyslexia')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-dyslexia" aria-label="גופן לדיסלקציה" onclick="accToggleMode('acc-dyslexia-font','btn-dyslexia')" aria-pressed="false"></button>
         </div>
         <!-- Pause Animations -->
         <div class="acc-row">
             <div><div class="acc-label">עצירת אנימציות</div><div class="acc-label-en">Pause Animations</div></div>
-            <button class="acc-toggle-btn" id="btn-motion" onclick="accToggleMode('acc-no-motion','btn-motion')" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-motion" aria-label="עצירת אנימציות" onclick="accToggleMode('acc-no-motion','btn-motion')" aria-pressed="false"></button>
         </div>
         <!-- Dark Mode -->
         <div class="acc-row">
             <div><div class="acc-label">מצב לילה</div><div class="acc-label-en">Dark Mode</div></div>
-            <button class="acc-toggle-btn" id="btn-dark" onclick="accToggleDark()" aria-pressed="false"></button>
+            <button class="acc-toggle-btn" id="btn-dark" aria-label="מצב לילה" onclick="accToggleDark()" aria-pressed="false"></button>
         </div>
 
         <hr class="acc-divider">
@@ -4358,18 +4346,6 @@ function checkLab(choiceIndex) {
         // Studio pickup, by appointment.
         const PICKUP_LOCATION = { he: 'רמת גן, בתיאום מראש', en: 'Ramat Gan, by appointment' };
 
-        const INVOICE4U_PAY_URL = PAYMENT.card.pageUrl;
-        const INVOICE4U_SUM_PARAM = PAYMENT.card.sumParam;
-
-        function payWithInvoice4u() {
-            const t = computeBagTotals();
-            if (!INVOICE4U_PAY_URL || !t.hasPriced) { sendBagWhatsApp(); return; }
-            let url = INVOICE4U_PAY_URL;
-            if (INVOICE4U_SUM_PARAM) {
-                url += (url.includes('?') ? '&' : '?') + INVOICE4U_SUM_PARAM + '=' + encodeURIComponent(t.total);
-            }
-            window.open(url, '_blank');
-        }
 
         // Load from localStorage
         let bag = JSON.parse(localStorage.getItem('pl_bag') || '[]');
