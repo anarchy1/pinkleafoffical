@@ -2614,9 +2614,9 @@ body.dark-mode .scoreboard-item.current {
             <div class="bag-ship-policy" id="bag-ship-policy" dir="auto" style="display:none;font-size:0.72rem;opacity:0.72;margin-top:6px;line-height:1.55;">
                 המחיר אינו כולל משלוח. דמי המשלוח מאושרים פרטנית לכל הזמנה לפי גודל האריזה. משלוח בימים ראשון-שני בלבד כדי שהחבילה לא תיתקע בסופ״ש, אספקה עד 5 ימי עסקים. צמח שאינו נכנס לאריזת 40x40 ס״מ: דמי המשלוח כפולים.
             </div>
-            <button class="bag-cta" id="bag-pay-btn" onclick="payWithInvoice4u()" style="display:none;">
-                <span>💳</span>
-                שלמו בכרטיס או ב-Bit / PAY SECURELY
+            <button class="bag-cta" id="bag-checkout-btn" onclick="goCheckout()" style="display:none;">
+                <span>🧾</span>
+                תשלום על מצעים / CHECKOUT SUBSTRATE
             </button>
             <button class="bag-cta" onclick="sendBagWhatsApp()">
                 <span>💬</span>
@@ -2674,7 +2674,7 @@ body.dark-mode .scoreboard-item.current {
     <nav>
         <button class="nav-link nav-active" onclick="showPage('intro', this)" data-he="בית" data-en="HOME">בית</button>
         <button class="nav-link" onclick="showPage('store', this)" data-he="חנות" data-en="STORE">חנות</button>
-        <button class="nav-link" onclick="showPage('care', this)" data-he="טיפול" data-en="CARE" style="display:none;">טיפול</button>
+        <button class="nav-link" onclick="showPage('care', this)" data-he="טיפול" data-en="CARE">טיפול</button>
         <button class="nav-link" onclick="showPage('vault', this)" data-he="ארכיון" data-en="ARCHIVE">ארכיון</button>
         <button class="nav-link" onclick="showPage('encyclopedia', this)" data-he="אנציקלופדיה" data-en="ENCYCLOPEDIA">אנציקלופדיה</button>
         <button class="nav-link" onclick="showPage('lab', this)" data-he="מעבדה" data-en="LAB">מעבדה</button>
@@ -2854,11 +2854,43 @@ body.dark-mode .scoreboard-item.current {
 
     </main>
 
-    <main id="page-care" class="hidden max-w-7xl mx-auto p-6 text-center pb-20" data-temporarily-hidden="true">
+    <main id="page-care" class="hidden max-w-7xl mx-auto p-6 text-center pb-20">
         <div class="logo-container" style="padding-top: 20px;">
             <h2 class="serif mb-10 tracking-[3px] opacity-60 text-[14px]">BOTANICAL CARE</h2>
         </div>
         <div id="care-products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 20px; justify-items: center; max-width: 960px; margin: 0 auto;"></div>
+    </main>
+
+    <style>
+        .co-wrap { max-width: 560px; margin: 0 auto; text-align: start; }
+        .co-h { font-family: Cinzel, serif; letter-spacing: 3px; font-size: 14px; opacity: 0.6; text-align: center; margin: 24px 0 22px; }
+        .co-card { border: 1px solid var(--border); border-radius: 18px; padding: 18px 18px 16px; margin-bottom: 16px; background: var(--card, transparent); }
+        .co-legend { font-size: 10px; letter-spacing: 2.4px; text-transform: uppercase; opacity: 0.5; margin-bottom: 12px; }
+        .co-line { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 7px 0; font-size: 13px; border-bottom: 1px solid var(--border); }
+        .co-line:last-child { border-bottom: 0; }
+        .co-line-name { flex: 1; line-height: 1.45; }
+        .co-qty { display: inline-flex; align-items: center; gap: 8px; }
+        .co-qty button { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--text); cursor: pointer; font-size: 14px; line-height: 1; }
+        .co-qty span { min-width: 18px; text-align: center; font-variant-numeric: tabular-nums; }
+        .co-opt { display: flex; gap: 10px; align-items: flex-start; padding: 11px 12px; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; cursor: pointer; font-size: 13px; }
+        .co-opt.sel { border-color: var(--pink); }
+        .co-opt input { margin-top: 3px; accent-color: var(--pink); flex: none; }
+        .co-opt small { display: block; opacity: 0.6; font-size: 11.5px; margin-top: 2px; }
+        .co-field { margin-bottom: 10px; }
+        .co-field label { display: block; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; opacity: 0.55; margin-bottom: 5px; }
+        .co-field input, .co-field textarea { box-sizing: border-box; width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: transparent; color: var(--text); font: inherit; font-size: 14px; }
+        .co-field input:focus, .co-field textarea:focus { outline: 2px solid var(--pink); outline-offset: -1px; }
+        .co-tot { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; }
+        .co-tot.grand { font-size: 17px; font-weight: 700; border-top: 1px solid var(--border); margin-top: 6px; padding-top: 12px; }
+        .co-note { font-size: 11.5px; opacity: 0.65; line-height: 1.6; margin-top: 8px; }
+        .co-err { color: #c0392b; font-size: 12.5px; margin-bottom: 10px; min-height: 1em; }
+        .co-back { background: none; border: 0; color: var(--pink); font: inherit; font-size: 12.5px; cursor: pointer; padding: 6px 0; }
+        .co-done-ref { font-family: ui-monospace, Menlo, monospace; font-size: 18px; letter-spacing: 2px; color: var(--pink); }
+        .co-pay-box { border: 1px dashed var(--border); border-radius: 12px; padding: 14px; font-size: 13px; line-height: 1.7; margin-top: 12px; }
+    </style>
+
+    <main id="page-checkout" class="hidden max-w-3xl mx-auto px-5 pb-24">
+        <div class="co-wrap" id="checkout-root"></div>
     </main>
 
     <main id="page-lab" class="hidden max-w-md mx-auto p-6 text-center relative">
@@ -3054,6 +3086,18 @@ body.dark-mode .scoreboard-item.current {
         const intros = {
             en: `<div dir="ltr"><p><strong>Pink Leaf</strong> is a boutique botanical studio in Israel, specialising in rare aroids - Tissue Culture plants, variegated Monstera, Alocasia, and Philodendron.</p><p>Every plant is imported, propagated, and acclimated in-house. By the time it reaches you, it's stable and ready to grow.</p><p>Order via WhatsApp. We'll take care of the rest.</p><p style="font-size:0.85em;opacity:0.7;border-top:1px dashed rgba(180,120,140,0.3);padding-top:14px;margin-top:18px;"><strong>Visiting from outside Israel?</strong> We don't ship internationally yet - but our <a href="#" onclick="showPage('encyclopedia');return false;" style="color:var(--pink);text-decoration:underline;">free botanical encyclopedia</a> and <a href="https://www.instagram.com/pinkleaf.studio" target="_blank" rel="noopener" style="color:var(--pink);text-decoration:underline;">Instagram</a> are open to plant lovers worldwide.</p></div>`,
             he: `<div dir="rtl"><p><strong>Pink Leaf</strong> היא סטודיו בוטני בישראל לצמחים נדירים - תרבית רקמה, Monstera וריאגטית, Alocasia ו-Philodendron.</p><p>כל צמח מיובא, מורבה ומאוקלם אצלנו. כשהוא מגיע אליכם - הוא כבר יציב ומוכן לצמוח.</p><p>הזמנה בוואטסאפ. אנחנו נדאג לכל השאר.</p></div>`
+        };
+
+        // Sizes that are out of stock, per product key. Anything not listed
+        // here is purchasable online. Example: soilfree: ['l10'].
+        const SUBSTRATE_SOLD_OUT = {};
+
+        // Size keys used in SUBSTRATE_DB prices, and how they read to a customer.
+        const SIZE_LABELS = {
+            l1:  { he: '1 ליטר',  en: '1 L'  },
+            l2:  { he: '2 ליטר',  en: '2 L'  },
+            l5:  { he: '5 ליטר',  en: '5 L'  },
+            l10: { he: '10 ליטר', en: '10 L' },
         };
 
         const SUBSTRATE_DB = {
@@ -3386,6 +3430,7 @@ body.dark-mode .scoreboard-item.current {
     if (p === 'store') renderStore();
     if (p === 'vault') renderVault('Alocasia');
     if (p === 'care') renderCareProducts();
+    if (p === 'checkout') renderCheckout();
     if (p === 'lab') {
         // Reset floater visibility when entering lab page
         if (typeof labFloatersHidden !== 'undefined' && labFloatersHidden) {
@@ -3806,30 +3851,28 @@ body.dark-mode .scoreboard-item.current {
 }
 
                 function renderCareProducts() {
+            const isHe = lang === 'he';
             let html = "";
             Object.entries(SUBSTRATE_DB).forEach(([key, item]) => {
-                // Define imgPath BEFORE the price loop so it's available inside the onClick handlers
                 const imgPath = item.img || `plants/care/substrate/${key}.jpg`;
+                const soldOut = SUBSTRATE_SOLD_OUT[key] || [];
                 let priceRows = "";
                 Object.entries(item.prices).forEach(([size, price]) => {
-                    const label = size === 'l10' ? '10 ליטר' : (size === 'l2' ? '2 ליטר' : '1 ליטר');
-                    const is1L = size === 'l1';
-                    if (is1L) {
-                        // 1L - fully purchasable
+                    const label = (SIZE_LABELS[size] || { he: size, en: size })[isHe ? 'he' : 'en'];
+                    if (soldOut.includes(size)) {
+                        priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
+                            <span class="care-size-price">${label}</span>
+                            <span class="care-size-price">${price}₪</span>
+                            <button disabled class="care-soldout-btn" aria-disabled="true">${isHe ? 'אזל' : 'SOLD OUT'}</button>
+                        </div>`;
+                    } else {
                         priceRows += `<div class="flex justify-between items-center border-b border-[var(--border)] py-1">
                             <span>${label}</span>
                             <span class="font-bold text-[var(--pink)]">${price}₪</span>
                             <button class="add-to-cart-btn" style="width:auto;padding:6px 14px;font-size:11px;margin-top:0;min-height:36px;"
                                 onclick="addCareToCart('${key}','${item.name.replace(/'/g,"\\'")}',${price},'${label}','${imgPath}')">
-                                + BAG
+                                + ${isHe ? 'לסל' : 'BAG'}
                             </button>
-                        </div>`;
-                    } else {
-                        // 2L / 10L - sold out, disabled
-                        priceRows += `<div class="care-soldout-row flex justify-between items-center border-b border-[var(--border)] py-1">
-                            <span class="care-size-price">${label}</span>
-                            <span class="care-size-price">${price}₪</span>
-                            <button disabled class="care-soldout-btn" aria-disabled="true">אזל</button>
                         </div>`;
                     }
                 });
@@ -3840,10 +3883,9 @@ body.dark-mode .scoreboard-item.current {
                             onerror="this.src='logo-dark.png'">
                     </div>
                     <h3 class="serif text-[12px] tracking-[2px] text-center mb-3">${item.name}</h3>
-                    <p class="text-[12px] leading-relaxed opacity-70 mb-4 text-right" dir="rtl">${item.desc}</p>
-                    <div class="text-[11px] space-y-1 w-full">${priceRows}</div>
+                    <p class="text-[12px] leading-relaxed opacity-70 text-right" dir="rtl">${item.desc}</p>
+                    <div class="text-[11px] space-y-1 w-full mt-4">${priceRows}</div>
                 </div>`;
-                // priceRows uses addCareToCart(key, ...) which now passes key as id for thumb lookup
             });
             document.getElementById('care-products-grid').innerHTML = html;
         }
@@ -4288,16 +4330,36 @@ function checkLab(choiceIndex) {
             oversizeMultiplier: 2,   // base fee doubles if the order exceeds the box
         };
 
-        // Invoice4u hosted payment page (Quick Payment Page / דף תשלום מהיר).
-        // Paste the payment page URL from the Invoice4u account between the
-        // quotes to switch on card + Bit checkout. While it is empty, the
-        // "Pay by card" button stays hidden and checkout uses the WhatsApp
-        // concierge, so nothing is broken for customers in the meantime.
-        // If the hosted page reads the amount from a URL parameter, set its
-        // name here (common values: "sum", "Sum", "amount"); leave as is for
-        // an open-amount page where the customer types the total shown.
-        const INVOICE4U_PAY_URL = '';
-        const INVOICE4U_SUM_PARAM = 'sum';
+        // ─── PAYMENT CONFIG ──────────────────────────────────────────────
+        // Everything a customer can pay with. A method only appears at
+        // checkout once it is filled in here, so nothing half-configured ever
+        // reaches a customer.
+        //
+        // card:  Meshulam (Grow) hosted payment page. Create the payment page
+        //        in the Grow dashboard and paste its URL into pageUrl. If that
+        //        page takes the amount from a query parameter, put the
+        //        parameter's name in sumParam; leave sumParam empty for an
+        //        open-amount page where the customer types the total shown.
+        // bit:   Bit request to the studio number. On by default because the
+        //        number is already public on the site.
+        // bank:  Fill in to offer bank transfer. Empty account = hidden.
+        const PAYMENT = {
+            card: { pageUrl: '', sumParam: 'sum' },
+            bit:  { phone: '055-911-6990' },
+            bank: { beneficiary: '', bank: '', branch: '', account: '' },
+        };
+
+        // Flat delivery fee for a substrate-only order, in shekels. Substrate
+        // ships in a predictable parcel, so this can be an exact number and the
+        // customer sees a complete total. While it is null the checkout says
+        // shipping is confirmed with the order, which matches the plant policy.
+        const SUBSTRATE_SHIPPING_ILS = null;
+
+        // Studio pickup, by appointment.
+        const PICKUP_LOCATION = { he: 'רמת גן, בתיאום מראש', en: 'Ramat Gan, by appointment' };
+
+        const INVOICE4U_PAY_URL = PAYMENT.card.pageUrl;
+        const INVOICE4U_SUM_PARAM = PAYMENT.card.sumParam;
 
         function payWithInvoice4u() {
             const t = computeBagTotals();
@@ -4411,10 +4473,10 @@ function checkLab(choiceIndex) {
             // Total: plants only. Shipping is quoted per order (size-dependent).
             const t = computeBagTotals();
             const shipPolicy = document.getElementById('bag-ship-policy');
-            const payBtn = document.getElementById('bag-pay-btn');
-            // Card checkout appears only once a payment link is configured and
-            // the bag has at least one priced plant.
-            if (payBtn) payBtn.style.display = (INVOICE4U_PAY_URL && t.hasPriced) ? 'flex' : 'none';
+            // Substrate is fixed price, so it can be bought online end to end.
+            // The checkout button appears as soon as the bag holds any.
+            const coBtn = document.getElementById('bag-checkout-btn');
+            if (coBtn) coBtn.style.display = bag.some(i => i.isCare) ? 'flex' : 'none';
             if (t.hasPriced) {
                 if (shipPolicy) shipPolicy.style.display = 'block';
                 if (totalDisplay) totalDisplay.textContent = `${t.total.toLocaleString()}₪`;
@@ -4520,6 +4582,269 @@ function checkLab(choiceIndex) {
         // Legacy stubs - keep so old HTML refs don't break
         function toggleCartDrawer() {}
         function sendWhatsAppOrder() { sendBagWhatsApp(); }
+
+        // ─── SUBSTRATE CHECKOUT ──────────────────────────────────────────
+        // Substrate has fixed prices and a predictable parcel, so unlike the
+        // plants it can be bought online end to end. Plants stay on the
+        // concierge flow and are listed here only as a reminder.
+
+        const CO_T = {
+            he: {
+                head: 'תשלום', empty: 'אין מצעים בסל.', browse: 'למצעים',
+                summary: 'סיכום הזמנה', fulfil: 'איסוף או משלוח',
+                pickup: 'איסוף עצמי מהסטודיו', delivery: 'משלוח עד הבית',
+                deliveryNote: 'משלוח בכל הארץ, בימים א׳-ב׳, אספקה עד 5 ימי עסקים.',
+                details: 'פרטים ליצירת קשר', name: 'שם מלא', phone: 'טלפון',
+                city: 'עיר', street: 'רחוב ומספר', notes: 'הערות (אופציונלי)',
+                payHow: 'איך תרצו לשלם', card: 'כרטיס אשראי', bit: 'ביט',
+                bank: 'העברה בנקאית', items: 'מצעים', shipping: 'משלוח',
+                tbd: 'מאושר עם ההזמנה', free: 'ללא עלות', total: 'סה״כ',
+                place: 'שליחת ההזמנה', back: 'חזרה',
+                errFields: 'צריך שם וטלפון כדי להמשיך.',
+                errAddr: 'צריך עיר ורחוב למשלוח.',
+                errPay: 'בחרו אמצעי תשלום.',
+                plants: 'יש בסל גם צמחים. הם מאושרים בנפרד מול הסטודיו ואינם כלולים בתשלום הזה.',
+                doneHead: 'ההזמנה נשלחה', ref: 'מספר הזמנה',
+                doneNote: 'ההזמנה נפתחה אצלכם בוואטסאפ ונשלחת לסטודיו. שומרים את מספר ההזמנה.',
+                payBit: 'שלחו {sum}₪ בביט למספר {phone} וציינו את מספר ההזמנה.',
+                payBank: 'העבירו {sum}₪ לחשבון שלהלן וציינו את מספר ההזמנה.',
+                payCard: 'לתשלום בכרטיס אשראי בדף המאובטח:',
+                payCardBtn: 'מעבר לתשלום', newOrder: 'הזמנה חדשה',
+                waHead: 'הזמנת מצעים',
+            },
+            en: {
+                head: 'Checkout', empty: 'No substrate in the bag.', browse: 'Browse substrate',
+                summary: 'Order summary', fulfil: 'Pickup or delivery',
+                pickup: 'Studio pickup', delivery: 'Delivery',
+                deliveryNote: 'Nationwide, dispatched Sunday and Monday, up to 5 business days.',
+                details: 'Contact details', name: 'Full name', phone: 'Phone',
+                city: 'City', street: 'Street and number', notes: 'Notes (optional)',
+                payHow: 'How would you like to pay', card: 'Credit card', bit: 'Bit',
+                bank: 'Bank transfer', items: 'Substrate', shipping: 'Shipping',
+                tbd: 'confirmed with your order', free: 'free', total: 'Total',
+                place: 'Place order', back: 'Back',
+                errFields: 'Name and phone are needed to continue.',
+                errAddr: 'City and street are needed for delivery.',
+                errPay: 'Choose a payment method.',
+                plants: 'Your bag also has plants. Those are confirmed separately with the studio and are not part of this payment.',
+                doneHead: 'Order sent', ref: 'Order number',
+                doneNote: 'The order opened in your WhatsApp and is on its way to the studio. Keep the order number.',
+                payBit: 'Send {sum} ILS by Bit to {phone} and quote the order number.',
+                payBank: 'Transfer {sum} ILS to the account below and quote the order number.',
+                payCard: 'Pay by card on the secure page:',
+                payCardBtn: 'Go to payment', newOrder: 'New order',
+                waHead: 'Substrate order',
+            }
+        };
+
+        let checkoutState = { fulfilment: 'delivery', payment: '', placed: null, error: '' };
+
+        function careLines()  { return bag.filter(i => i.isCare); }
+        function plantLines() { return bag.filter(i => !i.isCare); }
+
+        function checkoutTotals() {
+            const lines = careLines();
+            const items = lines.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            const pickup = checkoutState.fulfilment === 'pickup';
+            const shipping = pickup ? 0 : SUBSTRATE_SHIPPING_ILS;
+            const known = (shipping !== null && shipping !== undefined);
+            return { lines, items, pickup, shipping, known, total: items + (known ? shipping : 0) };
+        }
+
+        function paymentMethods() {
+            const out = [];
+            if (PAYMENT.card && PAYMENT.card.pageUrl) out.push('card');
+            if (PAYMENT.bit && PAYMENT.bit.phone) out.push('bit');
+            if (PAYMENT.bank && PAYMENT.bank.account) out.push('bank');
+            return out;
+        }
+
+        function makeOrderRef() {
+            const d = new Date();
+            const ymd = String(d.getFullYear()).slice(2)
+                + String(d.getMonth() + 1).padStart(2, '0')
+                + String(d.getDate()).padStart(2, '0');
+            let tail = '';
+            for (let i = 0; i < 4; i++) tail += 'ACDEFHJKLMNPRTUVWXY349'[Math.floor(Math.random() * 21)];
+            return 'PL-' + ymd + '-' + tail;
+        }
+
+        function setFulfilment(v) { checkoutState.fulfilment = v; renderCheckout(); }
+        function setPayMethod(v)  { checkoutState.payment = v; renderCheckout(); }
+
+        function checkoutQty(id, size, delta) {
+            const line = bag.find(i => i.isCare && i.id === id && i.grade === size);
+            if (!line) return;
+            line.qty += delta;
+            if (line.qty <= 0) bag = bag.filter(i => i !== line);
+            saveBag(); updateBagUI(); renderCheckout();
+        }
+
+        function goCheckout() { toggleBag(false); showPage('checkout'); }
+
+        function renderCheckout() {
+            const root = document.getElementById('checkout-root');
+            if (!root) return;
+            const isHe = lang === 'he';
+            const t = CO_T[isHe ? 'he' : 'en'];
+            root.setAttribute('dir', isHe ? 'rtl' : 'ltr');
+
+            if (checkoutState.placed) { root.innerHTML = checkoutDoneHtml(t, isHe); return; }
+
+            const tot = checkoutTotals();
+            if (tot.lines.length === 0) {
+                root.innerHTML = '<div class="co-h">' + t.head + '</div>'
+                    + '<div class="co-card" style="text-align:center">'
+                    + '<p style="font-size:14px;opacity:0.7;margin-bottom:14px">' + t.empty + '</p>'
+                    + '<button class="btn" onclick="showPage(\'care\')">' + t.browse + '</button></div>';
+                return;
+            }
+
+            const methods = paymentMethods();
+            if (methods.length && !methods.includes(checkoutState.payment)) checkoutState.payment = methods[0];
+
+            const money = n => n.toLocaleString() + '₪';
+            const lineRows = tot.lines.map(i => `
+                <div class="co-line">
+                    <span class="co-line-name">${i.name}<br><small style="opacity:0.6">${i.grade}</small></span>
+                    <span class="co-qty">
+                        <button type="button" aria-label="-" onclick="checkoutQty('${i.id}','${i.grade}',-1)">-</button>
+                        <span>${i.qty}</span>
+                        <button type="button" aria-label="+" onclick="checkoutQty('${i.id}','${i.grade}',1)">+</button>
+                    </span>
+                    <span style="min-width:62px;text-align:end;font-variant-numeric:tabular-nums">${money(i.price * i.qty)}</span>
+                </div>`).join('');
+
+            const opt = (val, label, note, group, handler) => `
+                <label class="co-opt ${checkoutState[group] === val ? 'sel' : ''}">
+                    <input type="radio" name="co-${group}" ${checkoutState[group] === val ? 'checked' : ''}
+                        onchange="${handler}('${val}')">
+                    <span>${label}${note ? '<small>' + note + '</small>' : ''}</span>
+                </label>`;
+
+            const payLabels = { card: t.card, bit: t.bit, bank: t.bank };
+            const payOpts = methods.map(m => opt(m, payLabels[m], '', 'payment', 'setPayMethod')).join('');
+
+            const shipRow = tot.pickup
+                ? `<div class="co-tot"><span>${t.shipping}</span><span>${t.free}</span></div>`
+                : (tot.known
+                    ? `<div class="co-tot"><span>${t.shipping}</span><span>${money(tot.shipping)}</span></div>`
+                    : `<div class="co-tot"><span>${t.shipping}</span><span style="opacity:0.7">${t.tbd}</span></div>`);
+
+            root.innerHTML = `
+                <div class="co-h">${t.head}</div>
+
+                <div class="co-card">
+                    <div class="co-legend">${t.summary}</div>
+                    ${lineRows}
+                </div>
+
+                <div class="co-card">
+                    <div class="co-legend">${t.fulfil}</div>
+                    ${opt('delivery', t.delivery, t.deliveryNote, 'fulfilment', 'setFulfilment')}
+                    ${opt('pickup', t.pickup, PICKUP_LOCATION[isHe ? 'he' : 'en'], 'fulfilment', 'setFulfilment')}
+                </div>
+
+                <div class="co-card">
+                    <div class="co-legend">${t.details}</div>
+                    <div class="co-field"><label for="co-name">${t.name}</label><input id="co-name" type="text" maxlength="60" autocomplete="name"></div>
+                    <div class="co-field"><label for="co-phone">${t.phone}</label><input id="co-phone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel"></div>
+                    ${tot.pickup ? '' : `
+                    <div class="co-field"><label for="co-city">${t.city}</label><input id="co-city" type="text" maxlength="40" autocomplete="address-level2"></div>
+                    <div class="co-field"><label for="co-street">${t.street}</label><input id="co-street" type="text" maxlength="80" autocomplete="street-address"></div>`}
+                    <div class="co-field"><label for="co-notes">${t.notes}</label><textarea id="co-notes" rows="2" maxlength="300"></textarea></div>
+                </div>
+
+                ${methods.length ? `<div class="co-card"><div class="co-legend">${t.payHow}</div>${payOpts}</div>` : ''}
+
+                <div class="co-card">
+                    <div class="co-tot"><span>${t.items}</span><span>${money(tot.items)}</span></div>
+                    ${shipRow}
+                    <div class="co-tot grand"><span>${t.total}</span><span>${money(tot.total)}${tot.known ? '' : ' +'}</span></div>
+                    ${plantLines().length ? `<p class="co-note">${t.plants}</p>` : ''}
+                </div>
+
+                <div class="co-err" id="co-error">${checkoutState.error || ''}</div>
+                <button class="btn" style="width:100%" onclick="placeOrder()">${t.place}</button>
+                <div style="text-align:center"><button class="co-back" onclick="showPage('care')">${t.back}</button></div>
+            `;
+
+            ['co-name','co-phone','co-city','co-street','co-notes'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el && checkoutState[id]) el.value = checkoutState[id];
+                if (el) el.addEventListener('input', () => { checkoutState[id] = el.value; });
+            });
+        }
+
+        function placeOrder() {
+            const isHe = lang === 'he';
+            const t = CO_T[isHe ? 'he' : 'en'];
+            const tot = checkoutTotals();
+            if (tot.lines.length === 0) return;
+
+            const val = id => (document.getElementById(id)?.value || '').trim();
+            const name = val('co-name'), phone = val('co-phone');
+            const city = val('co-city'), street = val('co-street'), notes = val('co-notes');
+            const methods = paymentMethods();
+
+            const fail = m => { checkoutState.error = m; renderCheckout(); };
+            if (!name || !phone) return fail(t.errFields);
+            if (!tot.pickup && (!city || !street)) return fail(t.errAddr);
+            if (methods.length && !checkoutState.payment) return fail(t.errPay);
+            checkoutState.error = '';
+
+            const ref = makeOrderRef();
+            const div = '─────────────────────────';
+            const lines = [];
+            lines.push('*🌿 Pink Leaf | ' + t.waHead + '*');
+            lines.push(t.ref + ': *' + ref + '*');
+            lines.push(div);
+            tot.lines.forEach(i => lines.push('• ' + i.qty + 'x ' + i.name + ' (' + i.grade + ') · ' + (i.price * i.qty).toLocaleString() + '₪'));
+            lines.push(div);
+            lines.push(t.items + ': ' + tot.items.toLocaleString() + '₪');
+            lines.push(t.shipping + ': ' + (tot.pickup ? t.free : (tot.known ? tot.shipping.toLocaleString() + '₪' : t.tbd)));
+            lines.push(t.total + ': *' + tot.total.toLocaleString() + '₪' + (tot.known ? '' : ' +') + '*');
+            lines.push(div);
+            lines.push('👤 ' + name + ' · ' + phone);
+            lines.push(tot.pickup
+                ? (t.pickup + ': ' + PICKUP_LOCATION[isHe ? 'he' : 'en'])
+                : (t.delivery + ': ' + street + ', ' + city));
+            if (checkoutState.payment) lines.push('💳 ' + ({ card: t.card, bit: t.bit, bank: t.bank }[checkoutState.payment]));
+            if (notes) lines.push('📝 ' + notes);
+            if (plantLines().length) lines.push(div + '\n' + t.plants);
+
+            checkoutState.placed = { ref: ref, total: tot.total, known: tot.known, method: checkoutState.payment };
+            window.open('https://wa.me/972559116990?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+
+            bag = bag.filter(i => !i.isCare);
+            saveBag(); updateBagUI();
+            renderCheckout();
+        }
+
+        function checkoutDoneHtml(t, isHe) {
+            const o = checkoutState.placed;
+            const sum = o.total.toLocaleString();
+            let pay = '';
+            if (o.method === 'bit') {
+                pay = '<div class="co-pay-box">' + t.payBit.replace('{sum}', sum).replace('{phone}', PAYMENT.bit.phone) + '</div>';
+            } else if (o.method === 'bank') {
+                const b = PAYMENT.bank;
+                pay = '<div class="co-pay-box">' + t.payBank.replace('{sum}', sum)
+                    + '<br>' + b.beneficiary + '<br>' + b.bank + ' · ' + b.branch + ' · ' + b.account + '</div>';
+            } else if (o.method === 'card') {
+                let url = PAYMENT.card.pageUrl;
+                if (PAYMENT.card.sumParam) url += (url.includes('?') ? '&' : '?') + PAYMENT.card.sumParam + '=' + encodeURIComponent(o.total);
+                pay = '<div class="co-pay-box">' + t.payCard
+                    + '<br><a class="btn" style="display:inline-block;margin-top:10px" href="' + url + '" target="_blank" rel="noopener">' + t.payCardBtn + '</a></div>';
+            }
+            return '<div class="co-h">' + t.doneHead + '</div>'
+                + '<div class="co-card" style="text-align:center">'
+                + '<div class="co-legend">' + t.ref + '</div>'
+                + '<div class="co-done-ref">' + o.ref + '</div>'
+                + '<p class="co-note">' + t.doneNote + '</p>'
+                + pay + '</div>'
+                + '<div style="text-align:center"><button class="co-back" onclick="checkoutState.placed=null;showPage(\'care\')">' + t.newOrder + '</button></div>';
+        }
 
         // Init on load
         updateBagUI();
@@ -4773,7 +5098,7 @@ function checkLab(choiceIndex) {
 
         // ─── URL ROUTING (hash-based; no server config needed) ───────────
         window._plRouting = false; window._plPushedPlant = false;
-        const PL_PAGES = ['intro','store','vault','encyclopedia','lab','care'];
+        const PL_PAGES = ['intro','store','vault','encyclopedia','lab','care','checkout'];
         function plPushHash(p){ const t = '#/' + p; if (location.hash !== t) history.pushState({p:p}, '', t); }
         function plApplyRoute(){
             const h = location.hash || '';
