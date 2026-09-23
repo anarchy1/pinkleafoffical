@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Photo coming soon">
+  <title>Photo coming soon</title>
+  <rect width="600" height="600" fill="#f7f1ec"/>
+  <g fill="none" stroke="#cfa6b4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 168c74 0 134 60 134 134 0 74-60 134-134 134s-134-60-134-134c0-74 60-134 134-134z" opacity="0.35"/>
+    <path d="M300 214c0 0 66 24 66 92 0 50-38 80-66 80s-66-30-66-80c0-68 66-92 66-92z"/>
+    <path d="M300 236v146"/>
+    <path d="M300 300l-34-26M300 336l34-26"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+        font-size="34" fill="#9a8b84" direction="rtl">צילום בקרוב</text>
+  <text x="300" y="512" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+        font-size="26" fill="#b6a9a2" letter-spacing="2">PHOTO COMING</text>
+</svg>

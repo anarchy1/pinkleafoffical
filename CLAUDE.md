@@ -91,6 +91,37 @@ that should survive across sessions HERE, in the repo.
   and pushes (this is what `fix_git_lock.command` on the Desktop clears). When a
   Mac session "can't push," that lock is the usual cause.
 
+### Build scripts (run these, do not hand-edit what they own)
+
+All of these run from the repo root and are idempotent.
+
+- `python3 content/build-entries.py content/new-entries-YYYY-MM-DD.json`
+  Wires a batch of encyclopedia entries into entries.json, standalone pages,
+  footer links and the sitemap. Each entry needs a `short` field for the
+  footer label.
+- `python3 tools/build_product_schema.py`
+  Regenerates all Product structured data from `ALL_STORE_ITEMS` and
+  `ITEM_PRICES`, which are the store's source of truth. Run it after any
+  price or status change, or the schema and the store drift apart again.
+  Hand-written detail (description, SKU, Hebrew name) lives in the RICH map
+  inside the script; price and availability deliberately cannot be set there.
+- `python3 tools/build_index_pages.py`
+  Regenerates `/encyclopedia/index.html` and `/articles/index.html` from
+  entries.json and the article files. Run it after adding either.
+- `python3 tools/build_hreflang.py`
+  Maintains hreflang on the three genuine article translation pairs, and
+  strips any hreflang that appears outside its managed block.
+- `python3 tools/optimize_images.py [--dry-run]`
+  Caps photos at 1400px on the long edge, quality 85. Run it after adding
+  images. Skips anything already under 150 KB.
+- `python3 tools/build_plant_db.py`
+  Regenerates MASTER_DB in index.html from `tools/plant-db.csv`.
+
+Gotcha worth knowing: the Humanizer hook rewrites long dashes inside any
+file it touches, source code included. It once turned a script's own
+dash-stripping helper into a plain-hyphen replacer. Build those characters
+with `chr(0x2014)` rather than writing them literally or as an escape.
+
 ### Private data rules (HARD)
 
 The site is a static HTML/JS build. Anything you put in `index.html` (or any

@@ -3654,7 +3654,7 @@ body.dark-mode .scoreboard-item.current {
                 h += `
                 <div class="product-card">
                     ${badge}
-                    <div class="portal" onclick="openProduct('${item.id}')"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'" style="opacity: ${isAvailable && !gated ? '1' : '0.85'}"></div>
+                    <div class="portal" onclick="openProduct('${item.id}')"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'" style="opacity: ${isAvailable && !gated ? '1' : '0.85'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-3 mt-3 pd-clickable" onclick="openProduct('${item.id}')">${item.name}</p>
                     ${(!gated && isAvailable) ? `<p class="card-price" dir="auto" style="text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;color:var(--pink);">${(() => { const ps = (item.availability||[]).map(o => ITEM_PRICES[item.id+'_'+o]).filter(p => typeof p === 'number'); if(!ps.length) return ''; const mn = Math.min(...ps); return (new Set(ps).size>1 ? 'from ₪' : '₪') + mn; })()}</p>` : ''}
                     ${tierHTML}
@@ -3728,7 +3728,7 @@ body.dark-mode .scoreboard-item.current {
             const genus = plFamily(item);
 
             const img = document.getElementById('pd-img');
-            img.onerror = function(){ this.onerror = null; this.src = 'logo-dark.png'; };
+            img.onerror = function(){ this.onerror = null; this.src = '/assets/photo-coming.svg'; };
             img.src = 'plants/' + item.id + '.jpg';
             img.alt = item.name;
 
@@ -3825,7 +3825,7 @@ body.dark-mode .scoreboard-item.current {
     let h = "";
     Object.keys(MASTER_DB).forEach(id => {
         if(MASTER_DB[id].family === f){
-            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" alt="${MASTER_DB[id].name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
+            h += `<div class="vault-item"><div class="portal mx-auto w-full mb-2"><img src="plants/${id}.jpg" alt="${MASTER_DB[id].name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'"></div><p class="vault-name px-2">${MASTER_DB[id].name}</p></div>`;
         }
     });
     document.getElementById('vault-grid').innerHTML = h;
@@ -3861,7 +3861,7 @@ body.dark-mode .scoreboard-item.current {
                 <div class="care-product-card">
                     <div class="portal mx-auto w-32 h-32 mb-4">
                         <img src="${imgPath}" alt="${item.name}" class="w-full h-full object-cover"
-                            onerror="this.src='logo-dark.png'">
+                            onerror="this.src='/assets/photo-coming.svg'">
                     </div>
                     <h3 class="serif text-[12px] tracking-[2px] text-center mb-3">${item.name}</h3>
                     <p class="text-[12px] leading-relaxed opacity-70 text-right" dir="rtl">${item.desc}</p>
@@ -3970,7 +3970,7 @@ body.dark-mode .scoreboard-item.current {
         <p class="serif" style="font-size:12px; letter-spacing:3px; opacity:0.4; margin-bottom:2px;">XP: ${xp} &nbsp;|&nbsp; BEST: ${bestStreak}</p>
         ${badgeRow}
         ${renderStreakBar()}
-        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='logo-dark.png'"></div>
+        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'"></div>
         ${loginHint}
         <div class="flex flex-col gap-4">
             ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
@@ -4474,7 +4474,7 @@ function checkLab(choiceIndex) {
                 <div class="bag-item">
                     <img class="bag-item-thumb"
                         src="${imgSrc}"
-                        onerror="this.src='logo-dark.png'"
+                        onerror="this.src='/assets/photo-coming.svg'"
                         alt="${item.name}">
                     <div class="bag-item-body">
                         <div class="bag-item-name" dir="auto">${item.name}</div>
