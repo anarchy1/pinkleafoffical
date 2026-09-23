@@ -38,10 +38,22 @@ that should survive across sessions HERE, in the repo.
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
   India dropship store; using it was a real past bug, fixed across 35 files).
 
-### Store direction (current plan)
-- Replace the card/carousel "game" layout. It is overengineered for the need.
-- Standardize the store into THREE categories: **Alocasia, Monstera, Philodendron.**
-- Lay it out like a standard rare-plant niche store (clean product grid).
+### Store direction (DONE, 2026-09-23)
+The plan below was already built by an earlier session and is live in the code.
+Recording it as done so no future session rebuilds it.
+- Clean product grid, no carousel and no game. Category tabs, search, price
+  filter, sort, result count, availability badges.
+- Tabs are generated from the catalogue, not hard-coded, so a plant can never
+  end up in no tab. Alocasia, Monstera and Philodendron are the standard three;
+  an OTHER tab appears only while something sits outside them (currently 2).
+- Acclimation gating is GONE, not just unused. The stage vocabulary
+  ("in-transit", "customs", "deflasked", "hardening") sat in the deployed
+  source as dead code after the data was stripped. Do not reintroduce it: the
+  private data rules below forbid shipping supply-chain state, and a key name
+  in public source is still that state.
+- A plant that is not in stock offers a waitlist button ("NOTIFY ME" /
+  "עדכנו אותי") that opens the WhatsApp concierge. It used to be a disabled
+  dead button on 15 plants.
 
 ### Encyclopedia and social (standing rule)
 - **Every new encyclopedia entry gets a social post.** Set by Kat 2026-09-19.

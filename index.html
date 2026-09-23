@@ -860,6 +860,12 @@
             color: var(--pink);
             border-bottom-color: var(--pink);
         }
+        .store-tab-n {
+            font-size: 0.78em;
+            opacity: 0.55;
+            margin-inline-start: 4px;
+            font-variant-numeric: tabular-nums;
+        }
         .store-controls {
             display: flex;
             justify-content: center;
@@ -999,26 +1005,6 @@
         /* Acclimation gating (Task 1): imports in transit, customs, or hardening
            show an honest "limited release / by allocation" treatment instead of a
            speculative price and Add to Bag. */
-        .badge-allocation {
-            background: var(--mellow-pink);
-            border: 1px solid var(--border);
-            color: var(--pink);
-            letter-spacing: 0.04em;
-        }
-        .alloc-tier {
-            font-size: 11px;
-            text-align: center;
-            line-height: 1.5;
-            margin: 0 0 10px;
-            opacity: 0.85;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .alloc-tier .alloc-stage {
-            font-size: 10px;
-            opacity: 0.7;
-            letter-spacing: 0.5px;
-        }
         .alloc-btn {
             background: var(--mellow-pink) !important;
             border: 1px solid var(--border) !important;
@@ -2687,12 +2673,7 @@ body.dark-mode .scoreboard-item.current {
     <main id="page-store" class="hidden max-w-6xl mx-auto relative px-4 pb-24">
         <p class="store-ship">🌿 Nationwide shipping across Israel · משלוחים עד הבית לכל הארץ</p>
         <p class="store-babynote" dir="auto" style="max-width:760px;margin:4px auto 16px;text-align:center;font-size:12.5px;line-height:1.65;background:rgba(214,145,168,0.10);border:1px solid rgba(214,145,168,0.32);border-radius:12px;padding:11px 16px;color:var(--pink);">🌱 שימו לב: הצמחים נשלחים בגודל צעיר (starter). התמונות מציגות את הזן בבגרותו, והצמח שתקבלו מגיע צעיר וגדל לזה עם הזמן.<br><span style="opacity:0.85;">Please note: plants ship young (starter size). Photos show the mature variety, and your plant arrives young and grows into it over time.</span></p>
-        <div class="store-tabs" id="store-tabs">
-            <button class="store-tab store-tab-active" onclick="setStoreCategory('all', this)">ALL</button>
-            <button class="store-tab" onclick="setStoreCategory('Alocasia', this)">ALOCASIA</button>
-            <button class="store-tab" onclick="setStoreCategory('Monstera', this)">MONSTERA</button>
-            <button class="store-tab" onclick="setStoreCategory('Philodendron', this)">PHILODENDRON</button>
-        </div>
+        <div class="store-tabs" id="store-tabs"></div>
         <div class="store-controls">
             <input type="text" id="store-search" class="store-search" oninput="setStoreSearch(this.value)" placeholder="חיפוש צמח / Search plants..." dir="auto" aria-label="Search plants">
             <select id="store-price" class="store-select" onchange="setStorePrice(this.value)" aria-label="Filter by price">
@@ -3513,36 +3494,50 @@ body.dark-mode .scoreboard-item.current {
             renderStore();
         }
 
-        // Acclimation gating (Task 1). A plant flagged with one of these stages is
-        // not sold at a speculative price. To gate a plant, add an `acclimation`
-        // key to its ALL_STORE_ITEMS entry, e.g. acclimation: "hardening".
-        const ACCLIMATION_LABELS = {
-            "in-transit": "Coming Soon",
-            "customs":    "Coming Soon",
-            "deflasked":  "Coming Soon",
-            "hardening":  "Coming Soon",
-        };
-        const ACCLIMATION_HE = {
-            "in-transit": "בקרוב",
-            "customs":    "בקרוב",
-            "deflasked":  "בקרוב",
-            "hardening":  "בקרוב",
-        };
-        function acclimationStage(item){
-            const s = item && item.acclimation;
-            return ACCLIMATION_LABELS[s] ? s : null;
-        }
-
-        // Waitlist / private allocation handoff for gated imports: routes to the
-        // WhatsApp concierge with an honest note about the plant's current stage.
-        function requestAllocation(id, name, stage){
+        // Waitlist handoff for a plant that is not in stock yet. A "Coming Soon"
+        // card used to end in a disabled button, which is a dead end for someone
+        // who wants that exact plant. This routes them to the concierge instead.
+        function joinWaitlist(id, name){
             const msg = (lang === 'he')
                 ? `היי, אשמח להצטרף לרשימת ההמתנה עבור ${name}. תעדכנו אותי בבקשה כשהוא יהיה זמין 🌿`
                 : `Hi, I'd like to join the waitlist for ${name}. Please let me know when it becomes available.`;
             window.open(`https://wa.me/972559116990?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        // The tabs come from the catalogue rather than being hard-coded, so a
+        // plant can never end up in no tab at all. Two were: Xanthosoma Mickey
+        // Mouse and Rhaphidophora Tetrasperma, both for sale, both reachable
+        // only under ALL. Alocasia, Monstera and Philodendron stay the standard
+        // three; OTHER appears only while something actually sits outside them.
+        function renderStoreTabs(){
+            const wrap = document.getElementById('store-tabs');
+            if (!wrap) return;
+            // Built once. renderStore runs on every keystroke in the search box,
+            // and rebuilding the bar each time is pointless DOM churn: the counts
+            // come from the whole catalogue, not the filtered view.
+            if (wrap.children.length) {
+                wrap.querySelectorAll('.store-tab').forEach(t => {
+                    const cat = (t.getAttribute('onclick') || '').split("'")[1];
+                    t.classList.toggle('store-tab-active', cat === storeCategory);
+                });
+                return;
+            }
+            const present = new Set(ALL_STORE_ITEMS.map(plFamily));
+            const order = ['Alocasia', 'Monstera', 'Philodendron', 'Others'];
+            const label = { Alocasia: 'ALOCASIA', Monstera: 'MONSTERA', Philodendron: 'PHILODENDRON', Others: 'OTHER' };
+            const cats = ['all'].concat(order.filter(c => present.has(c)));
+            wrap.innerHTML = cats.map(c => {
+                const active = (storeCategory === c) ? ' store-tab-active' : '';
+                const count = c === 'all'
+                    ? ALL_STORE_ITEMS.length
+                    : ALL_STORE_ITEMS.filter(i => plFamily(i) === c).length;
+                return `<button class="store-tab${active}" onclick="setStoreCategory('${c}', this)">`
+                     + `${c === 'all' ? 'ALL' : label[c]} <span class="store-tab-n">${count}</span></button>`;
+            }).join('');
+        }
+
         function renderStore(){
+            renderStoreTabs();
             let items = ALL_STORE_ITEMS.slice();
             if (storeCategory !== 'all') {
                 items = items.filter(item => plFamily(item) === storeCategory);
@@ -3586,27 +3581,16 @@ body.dark-mode .scoreboard-item.current {
             let h = '';
             items.forEach(item => {
                 const isAvailable = item.status === "available";
-                const stage = acclimationStage(item);
-                const gated = !!stage;
                 let badgeLabel = isAvailable ? 'Available' : 'Coming Soon';
                 let badgeClass = isAvailable ? 'badge-available' : 'badge-coming-soon';
                 if (isAvailable && item.openingSale) {
                     badgeLabel = '🌿 Opening Sale';
                     badgeClass = 'badge-opening-sale';
                 }
-                if (gated) {
-                    badgeLabel = 'Limited Release';
-                    badgeClass = 'badge-allocation';
-                }
                 const badge = `<span class="availability-badge ${badgeClass}">${badgeLabel}</span>`;
 
-                // Gated imports hide the speculative price entirely.
-                const tierHTML = gated
-                    ? `<p class="alloc-tier" dir="auto">Price Tier: Premium Collector<br><span class="alloc-stage">${ACCLIMATION_LABELS[stage]} · inquire for current sheet</span></p>`
-                    : '';
-
                 let dropdownHTML = '';
-                if (!gated && isAvailable && item.availability) {
+                if (isAvailable && item.availability) {
                     const standardGrades = ["Tissue Culture", "Starter Plant", "Mature Plant", "Corm"];
                     const hasCustomOptions = item.availability.some(a => !standardGrades.includes(a));
                     const fmtPrice = (opt) => {
@@ -3642,22 +3626,20 @@ body.dark-mode .scoreboard-item.current {
                     }
                 }
 
+                const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
                 let btnHTML;
-                if (gated) {
-                    btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="requestAllocation('${item.id}', '${item.name}', '${stage}')">Join Studio Waitlist</button>`;
-                } else if (isAvailable) {
+                if (isAvailable) {
                     btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
                 } else {
-                    btnHTML = '<button class="btn" style="opacity: 0.5; cursor: not-allowed;" disabled>COMING SOON</button>';
+                    btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${item.id}', '${item.name}')">${waitLabel}</button>`;
                 }
 
                 h += `
                 <div class="product-card">
                     ${badge}
-                    <div class="portal" onclick="openProduct('${item.id}')"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'" style="opacity: ${isAvailable && !gated ? '1' : '0.85'}"></div>
+                    <div class="portal" onclick="openProduct('${item.id}')"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'" style="opacity: ${isAvailable ? '1' : '0.85'}"></div>
                     <p class="serif text-[11px] font-bold text-center mb-3 mt-3 pd-clickable" onclick="openProduct('${item.id}')">${item.name}</p>
-                    ${(!gated && isAvailable) ? `<p class="card-price" dir="auto" style="text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;color:var(--pink);">${(() => { const ps = (item.availability||[]).map(o => ITEM_PRICES[item.id+'_'+o]).filter(p => typeof p === 'number'); if(!ps.length) return ''; const mn = Math.min(...ps); return (new Set(ps).size>1 ? 'from ₪' : '₪') + mn; })()}</p>` : ''}
-                    ${tierHTML}
+                    ${isAvailable ? `<p class="card-price" dir="auto" style="text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;color:var(--pink);">${(() => { const ps = (item.availability||[]).map(o => ITEM_PRICES[item.id+'_'+o]).filter(p => typeof p === 'number'); if(!ps.length) return ''; const mn = Math.min(...ps); return (new Set(ps).size>1 ? 'from ₪' : '₪') + mn; })()}</p>` : ''}
                     ${dropdownHTML}
                     <div class="w-full space-y-1 mb-2">
                         <div class="stat-row"><span>☀️ Light</span><span>${item.light}</span></div>
@@ -3700,9 +3682,8 @@ body.dark-mode .scoreboard-item.current {
             if (!item) return;
             const el = document.getElementById('pd-price');
             if (!el) return;
-            const gated = !!acclimationStage(item);
             const isAvailable = item.status === 'available';
-            if (gated || !isAvailable) { el.textContent = 'Price on inquiry'; return; }
+            if (!isAvailable) { el.textContent = 'Price on inquiry'; return; }
             const opts = item.availability || [];
             const sel = document.getElementById('pd-variant');
             if (opts.length > 1 && sel && sel.value) {
@@ -3723,8 +3704,6 @@ body.dark-mode .scoreboard-item.current {
             if (!item) return;
             pdCurrentItem = item;
             const isAvailable = item.status === 'available';
-            const stage = acclimationStage(item);
-            const gated = !!stage;
             const genus = plFamily(item);
 
             const img = document.getElementById('pd-img');
@@ -3734,8 +3713,7 @@ body.dark-mode .scoreboard-item.current {
 
             const badge = document.getElementById('pd-badge');
             let bl, bc;
-            if (gated) { bl = ACCLIMATION_LABELS[stage]; bc = 'badge-allocation'; }
-            else if (isAvailable) { bl = 'Available'; bc = 'badge-available'; }
+            if (isAvailable) { bl = 'Available'; bc = 'badge-available'; }
             else { bl = 'Coming Soon'; bc = 'badge-coming-soon'; }
             badge.className = 'availability-badge ' + bc;
             badge.textContent = bl;
@@ -3745,7 +3723,7 @@ body.dark-mode .scoreboard-item.current {
             const vw = document.getElementById('pd-variant-wrap');
             const sel = document.getElementById('pd-variant');
             sel.innerHTML = '';
-            if (!gated && isAvailable && item.availability && item.availability.length) {
+            if (isAvailable && item.availability && item.availability.length) {
                 item.availability.forEach(opt => {
                     const price = ITEM_PRICES[item.id + '_' + opt];
                     const o = document.createElement('option');
@@ -3766,12 +3744,11 @@ body.dark-mode .scoreboard-item.current {
             document.getElementById('pd-desc').textContent = pdDesc(item, genus);
 
             const action = document.getElementById('pd-action');
-            if (gated) {
-                action.innerHTML = `<button class="add-to-cart-btn alloc-btn" onclick="requestAllocation('${pdEsc(item.id)}', '${pdEsc(item.name)}', '${pdEsc(stage)}')">Join Studio Waitlist</button>`;
-            } else if (isAvailable) {
+            if (isAvailable) {
                 action.innerHTML = `<button class="add-to-cart-btn" onclick="addToCart('${pdEsc(item.id)}', '${pdEsc(item.name)}', this)">ADD TO BAG</button>`;
             } else {
-                action.innerHTML = `<button class="add-to-cart-btn" style="opacity:0.5;cursor:not-allowed;" disabled>COMING SOON</button>`;
+                const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
+                action.innerHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${pdEsc(item.id)}', '${pdEsc(item.name)}')">${waitLabel}</button>`;
             }
 
             const ov = document.getElementById('pd-overlay');
