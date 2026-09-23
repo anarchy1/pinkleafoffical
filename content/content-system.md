@@ -76,7 +76,13 @@ That is 10 Sundays and 5 Tuesdays of content that needs zero new thinking.
 
 Already written and unposted, use these first or slot them anywhere:
 `fertilizing-rare-aroids`, `pests-thrips-mites-quarantine`,
-`alocasia-corm-propagation` (see `content/encyclopedia-posts-2026-09-19.md`).
+`alocasia-corm-propagation` (see `content/encyclopedia-posts-2026-09-19.md`),
+`choosing-your-substrate`, `first-48-hours-new-plant`
+(see `content/posts-2026-09-23.md`).
+
+Run `choosing-your-substrate` first. The substrate store now has a working
+checkout behind it, so it is the first post a reader can act on without
+opening WhatsApp.
 
 ## The job
 
@@ -98,6 +104,7 @@ post in the same commit as the entry, and it goes to the front of the queue.
 |---|---|---|
 | `content/week-2026-04-10-social.md` | tissue-culture, 21-day-hardening-sop, Polly Pink spotlight | 2026-04-10 |
 | `content/encyclopedia-posts-2026-09-19.md` | fertilizing, pests, corms | 2026-09-19 |
+| `content/posts-2026-09-23.md` | choosing a substrate, first 48 hours | 2026-09-23 |
 
 ## What is still manual, and honestly
 
