@@ -2744,14 +2744,7 @@ body.dark-mode .scoreboard-item.current {
             </div>
 
             <!-- TOPIC TAG CHIPS -->
-            <div id="encyc-tags" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; justify-content:center;">
-                <button class="encyc-tag active" data-tag="all" onclick="setEncycTag('all')">ALL</button>
-                <button class="encyc-tag" data-tag="tc" onclick="setEncycTag('tc')">TISSUE CULTURE</button>
-                <button class="encyc-tag" data-tag="acclimation" onclick="setEncycTag('acclimation')">ACCLIMATION</button>
-                <button class="encyc-tag" data-tag="substrate" onclick="setEncycTag('substrate')">SUBSTRATE</button>
-                <button class="encyc-tag" data-tag="light" onclick="setEncycTag('light')">LIGHT & HUMIDITY</button>
-                <button class="encyc-tag" data-tag="investment" onclick="setEncycTag('investment')">INVESTMENT</button>
-            </div>
+            <div id="encyc-tags" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; justify-content:center;"></div>
 
             <!-- ARTICLE CARDS -->
             <div id="encyc-cards-list"></div>
@@ -4862,15 +4855,50 @@ function checkLab(choiceIndex) {
                 });
         }
 
-        // Tag chip → slug prefix mapping
-        const TAG_MAP = {
-            'all':         null,
-            'tc':          'post-flask',
-            'acclimation': '21-day',
-            'substrate':   'engineered',
-            'light':       'atmospheric',
-            'investment':  'investment',
-        };
+        // Topic chips. These used to map a chip to a single slug prefix, which
+        // meant every chip showed exactly one entry out of 26 and quietly hid
+        // the other 25. They now match against what an entry is actually about:
+        // its tag, title, subtitle and SEO keywords, in both languages.
+        const ENCYC_TOPICS = [
+            { key: 'all',         he: 'הכל',         en: 'ALL',              terms: null },
+            { key: 'tc',          he: 'תרבית רקמה',  en: 'TISSUE CULTURE',   terms: ['tissue culture', 'flask', 'meristem', 'sterilization', 'תרבית רקמה', 'פלסק', 'צנצנת'] },
+            { key: 'acclimation', he: 'אקלום',       en: 'ACCLIMATION',      terms: ['acclimat', 'hardening', 'arrival', 'quarantine', 'first 48', 'אקלום', 'אקלימ', 'הקשחה', 'בידוד', 'קליטה'] },
+            { key: 'substrate',   he: 'מצעים',       en: 'SUBSTRATE',        terms: ['substrate', 'soil', 'leca', 'semi-hydro', 'zeolite', 'charcoal', 'repot', 'מצע', 'סובסטרט', 'זאולייט', 'עציץ'] },
+            { key: 'water',       he: 'מים והזנה',   en: 'WATER & FEEDING',  terms: ['water quality', 'watering', 'fertiliz', 'feeding', 'nutrition', 'מי ברז', 'השקיה', 'דישון', 'הזנה'] },
+            { key: 'light',       he: 'סביבה',       en: 'ENVIRONMENT',      terms: ['light', 'vpd', 'ppfd', 'lux', 'humidity', 'outdoor', 'balcony', 'sharav', 'אור', 'לחות', 'תאורה', 'מרפסת', 'שרב', 'אקלים'] },
+            { key: 'pests',       he: 'מזיקים',      en: 'PESTS',            terms: ['pest', 'thrips', 'mite', 'mealybug', 'gnat', 'symptom', 'diagnos', 'מזיק', 'תריפס', 'אקרי', 'כנימ', 'אבחון'] },
+            { key: 'propagation', he: 'ריבוי',       en: 'PROPAGATION',      terms: ['propagat', 'corm', 'cutting', 'ריבוי', 'פקע', 'ייחור'] },
+            { key: 'variegation', he: 'נימור',       en: 'VARIEGATION',      terms: ['variegation', 'chimer', 'revert', 'sectoral', 'albo', 'aurea', 'נימור', 'כימר', 'מנומר'] },
+            { key: 'guides',      he: 'מדריכי צמחים', en: 'PLANT GUIDES',    terms: ['care guide', 'plant profile', 'complete care', 'מדריך טיפול', 'פרופיל צמח'] },
+            { key: 'buying',      he: 'קנייה',       en: 'BUYING',           terms: ['investment', 'genetic stability', 'buying', 'variegation type', 'toxic', 'pet safe', 'השקע', 'לקנות', 'יציבות גנטית', 'רעיל', 'בטיחות'] },
+        ];
+
+        function encycTopicMatches(article, key) {
+            const topic = ENCYC_TOPICS.find(t => t.key === key);
+            if (!topic || !topic.terms) return true;
+            const hay = [
+                article.slug, article.tag.he, article.tag.en,
+                article.title.he, article.title.en,
+                article.subtitle.he, article.subtitle.en,
+                ...(article.keywords || [])
+            ].join(' ').toLowerCase();
+            return topic.terms.some(t => hay.includes(t));
+        }
+
+        function renderEncycTopics() {
+            const wrap = document.getElementById('encyc-tags');
+            if (!wrap) return;
+            const isHe = lang === 'he';
+            wrap.innerHTML = ENCYC_TOPICS.map(t => {
+                const n = t.terms
+                    ? ENCYC_ARTICLES.filter(a => encycTopicMatches(a, t.key)).length
+                    : ENCYC_ARTICLES.length;
+                if (t.terms && n === 0) return '';
+                const active = t.key === activeEncycTag ? ' active' : '';
+                return `<button class="encyc-tag${active}" data-tag="${t.key}" onclick="setEncycTag('${t.key}')">`
+                     + `${isHe ? t.he : t.en} <span style="opacity:0.55">${n}</span></button>`;
+            }).join('');
+        }
 
         function setEncycTag(tag) {
             activeEncycTag = tag;
@@ -4886,7 +4914,7 @@ function checkLab(choiceIndex) {
             let anyVisible = false;
 
             ENCYC_ARTICLES.forEach(a => {
-                const slugMatch = !TAG_MAP[activeEncycTag] || a.slug.startsWith(TAG_MAP[activeEncycTag]);
+                const slugMatch = encycTopicMatches(a, activeEncycTag);
                 const searchText = [
                     a.title.he, a.title.en,
                     a.subtitle.he, a.subtitle.en,
@@ -4910,6 +4938,8 @@ function checkLab(choiceIndex) {
             const list = document.getElementById('encyc-cards-list');
             if (!list) return;
             const isHe = lang === 'he';
+
+            renderEncycTopics();
 
             const countEl = document.getElementById('encyc-count');
             if (countEl && ENCYC_ARTICLES.length > 0) {

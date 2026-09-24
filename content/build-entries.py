@@ -23,7 +23,9 @@ print('entries.json:', len(d['entries']), 'entries (+%d)' % len(added))
 
 # 2) standalone HTML pages from the existing template
 tpl = open('encyclopedia/engineered-substrates.html', encoding='utf8').read()
-SUB_OLD = 'Potting soil is slow death. This is not an opinion — it is chemistry.'
+# Must match encyclopedia/engineered-substrates.html exactly. The em dash
+# cleanup rewrote that subtitle, which silently invalidated this matcher.
+SUB_OLD = 'Potting soil is slow death. This is not an opinion, it is chemistry.'
 HE_LABEL = '<div class="lang-label">&#1506;&#1489;&#1512;&#1497;&#1514;</div>'
 
 def page(e):

@@ -1,4 +1,4 @@
-# Pink Leaf — Hebrew SEO Keyword Research & Selection
+# Pink Leaf, Hebrew SEO Keyword Research & Selection
 *Generated 2026-04-10 for SEO article pipeline*
 
 ## STEP 1: Keyword Expansion
@@ -95,16 +95,16 @@
 
 ## STEP 3: 5 BEST OPPORTUNITIES SELECTED
 
-Criteria: high commercial/conversion intent + relevance to Pink Leaf's actual products (Alocasia Polly Pink, TC plants, variegated aroids) + LOW competition in Hebrew (most Hebrew plant content is either nursery homepages or generic Chabad-style encyclopedias — little mid-funnel educational content exists).
+Criteria: high commercial/conversion intent + relevance to Pink Leaf's actual products (Alocasia Polly Pink, TC plants, variegated aroids) + LOW competition in Hebrew (most Hebrew plant content is either nursery homepages or generic Chabad-style encyclopedias, little mid-funnel educational content exists).
 
 | # | Keyword | Intent | Why it wins |
 |---|---------|--------|-------------|
-| 1 | **איך לאקלם צמח TC מפלסק** | Care + educational | Almost zero Hebrew content exists. Drives people who JUST bought a TC plant — the moment of maximum buyer anxiety. Pink Leaf is one of very few TC suppliers in Israel. |
-| 2 | **למה העלים של האלוקסיה מצהיבים** | Problem | High search volume — everyone's Alocasia yellows eventually. Problem-state traffic converts well because you catch them before they give up. |
+| 1 | **איך לאקלם צמח TC מפלסק** | Care + educational | Almost zero Hebrew content exists. Drives people who JUST bought a TC plant, the moment of maximum buyer anxiety. Pink Leaf is one of very few TC suppliers in Israel. |
+| 2 | **למה העלים של האלוקסיה מצהיבים** | Problem | High search volume, everyone's Alocasia yellows eventually. Problem-state traffic converts well because you catch them before they give up. |
 | 3 | **איפה קונים אלוקסיה נדירה בישראל** | Buying (peak intent) | Direct purchase intent. Answer must position Pink Leaf as THE answer without being salesy. |
 | 4 | **מה ההבדל בין אלוקסיה פולי רגילה לפולי פינק** | Buying + comparison | Specific to your flagship product. The "Regular vs. Pink" comparison search is exactly how a buyer decides which to order. |
-| 5 | **מה זה Tissue Culture בצמחים** | Beginner + educational | Entry-level question with mid-funnel value — teaching what TC is also teaches why Pink Leaf's TC plants are worth paying more for. |
+| 5 | **מה זה Tissue Culture בצמחים** | Beginner + educational | Entry-level question with mid-funnel value, teaching what TC is also teaches why Pink Leaf's TC plants are worth paying more for. |
 
 ---
 
-*Articles for each of these 5 keywords are in `/articles/heb/*.html` — see next file.*
+*Articles for each of these 5 keywords are in `/articles/heb/*.html`, see next file.*
