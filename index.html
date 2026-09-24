@@ -265,7 +265,13 @@
     window.firebaseReady = true;
     </script>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind, pre-built. This used to be the Play CDN
+         (<script src="https://cdn.tailwindcss.com">), which Tailwind documents as
+         development only: it ships about 360 KB of JavaScript and then generates
+         the stylesheet in the browser on every single visit. This file is the
+         same utilities, generated ahead of time, at about 10 KB. Regenerate it
+         with tools/build_tailwind.sh after adding new utility classes. -->
+    <link rel="stylesheet" href="/assets/pinkleaf-tailwind.css?v=20260923">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -832,7 +838,14 @@
             font-size: 12px;
             letter-spacing: 1px;
             opacity: 0.6;
-            margin: 10px 0 22px;
+            margin: 10px auto 22px;
+            /* One mixed Hebrew and English line is wider than a phone, and it was
+               running off the right edge instead of wrapping, so the English half
+               of the shipping promise was cut off. */
+            max-width: 40rem;
+            padding-inline: 16px;
+            overflow-wrap: anywhere;
+            line-height: 1.6;
         }
         .store-tabs {
             display: flex;

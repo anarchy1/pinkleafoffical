@@ -110,6 +110,11 @@ Recording it as done so no future session rebuilds it.
 - The sandbox also cannot reach `pinkleaf.co.il` at all (egress blocked), so a
   cloud session can never confirm what is live by fetching it. Check the
   Netlify project's current deploy instead, or ask Kat.
+- The sandbox blocks most third-party hosts, so a cloud session renders the
+  site WITHOUT the external CDNs a visitor gets. Tailwind was blocked this
+  whole time, which means earlier visual checks were of an unstyled-ish page.
+  Self-hosting Tailwind (above) fixed that for Tailwind; Firebase, confetti and
+  Google Fonts are still blocked in the sandbox and load fine in production.
 - Pushing from a cloud Claude session works fine.
 - On the Mac, git sometimes gets a stuck `.git/index.lock` that blocks commits
   and pushes (this is what `fix_git_lock.command` on the Desktop clears). When a
@@ -138,6 +143,12 @@ All of these run from the repo root and are idempotent.
 - `python3 tools/optimize_images.py [--dry-run]`
   Caps photos at 1400px on the long edge, quality 85. Run it after adding
   images. Skips anything already under 150 KB.
+- `sh tools/build_tailwind.sh`
+  Regenerates `assets/pinkleaf-tailwind.css` from the utility classes used in
+  index.html. Run it after adding a new Tailwind class, or that class will
+  silently do nothing. The site used to load Tailwind's Play CDN, which their
+  docs say is development only; it shipped about 360 KB of JS and built the
+  stylesheet in the browser on every visit.
 - `python3 tools/build_plant_db.py`
   Regenerates MASTER_DB in index.html from `tools/plant-db.csv`.
 
