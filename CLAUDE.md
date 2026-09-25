@@ -30,6 +30,22 @@ Never put customer names, order history, cost basis, supplier names per SKU, or
 shipping method discussions into this repo. That data lives in Notion only. See
 the private data rules below.
 
+## SECOND: read the brand spec before designing anything
+
+**Before putting the logo on anything (Instagram card, post, slide, label,
+document, page), read `brand/README.md`.**
+
+It says which logo file is which, what each one is for, and what is missing.
+The short version, because it has already gone wrong twice:
+
+- **Never crop the logo, rebuild it in text, or substitute an emoji.** Use a
+  file from `brand/` whole.
+- `logo-light.png` and `logo-dark.png` in the repo root are the **website
+  header pair**. They are not general purpose assets.
+- `favicon.png` is a different drawing entirely. It is not the logo.
+- Kat's real design pack lives on her Mac and does NOT reach cloud sessions.
+  If the asset needed is not in `brand/`, ask her for it. Do not improvise.
+
 ## Writing style
 
 **HARD RULE: Never use em dashes.**
