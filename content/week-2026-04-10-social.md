@@ -1,11 +1,11 @@
-# Pink Leaf — Social Content Pack
+# Pink Leaf, Social Content Pack
 ## Week of April 10, 2026
 
 Bilingual (Hebrew + English) posts ready to publish on Instagram, Facebook, and WhatsApp Status.
 
 ---
 
-## POST 1 — Educational / Tissue Culture Myth-Busting
+## POST 1, Educational / Tissue Culture Myth-Busting
 **Platform:** Instagram + Facebook
 **Visual:** Close-up of a TC flask OR a newly acclimated plant
 **Goal:** Authority + education (brings in the curious buyer)
@@ -14,10 +14,10 @@ Bilingual (Hebrew + English) posts ready to publish on Instagram, Facebook, and 
 ```
 אתם יודעים מה ההבדל בין צמח "רגיל" לצמח Tissue Culture? 🧪🌱
 
-צמחי TC גדלים במעבדה בתנאים סטריליים לחלוטין — בלי חרקים, בלי פטריות, בלי מחלות נגיפיות.
+צמחי TC גדלים במעבדה בתנאים סטריליים לחלוטין, בלי חרקים, בלי פטריות, בלי מחלות נגיפיות.
 זה אומר: התחלה נקייה, גנטיקה יציבה, וריגציה שנשמרת.
 
-בפינק ליף, כל אלוקזיה וריאגטית שאנחנו מוכרות עברה הליך TC — זו הסיבה שהוורידציה נשארת יציבה ולא "מתפוצצת" אחרי כמה עלים חדשים.
+בפינק ליף, כל אלוקסיה וריאגטית שאנחנו מוכרות עברה הליך TC, זו הסיבה שהוורידציה נשארת יציבה ולא "מתפוצצת" אחרי כמה עלים חדשים.
 
 רוצה להבין איך זה עובד? יש לנו מאמר מלא באנציקלופדיה 👇
 pinkleaf.co.il/encyclopedia/tissue-culture.html
@@ -29,7 +29,7 @@ pinkleaf.co.il/encyclopedia/tissue-culture.html
 ```
 Do you know the real difference between a "regular" plant and a Tissue Culture plant? 🧪🌱
 
-TC plants grow in a sterile lab environment — no pests, no fungi, no viral disease.
+TC plants grow in a sterile lab environment, no pests, no fungi, no viral disease.
 That means: clean genetics, stable variegation, and a plant that doesn't "revert" after a few new leaves.
 
 At Pink Leaf, every variegated Alocasia we sell is TC-propagated. That's why the variegation stays stable instead of fading out.
@@ -42,7 +42,7 @@ pinkleaf.co.il/encyclopedia/tissue-culture.html
 
 ---
 
-## POST 2 — Product Spotlight: Alocasia Polly Pink Variegata
+## POST 2, Product Spotlight: Alocasia Polly Pink Variegata
 **Platform:** Instagram (carousel of 3-5 images) + Facebook
 **Visual:** Best photos of the actual plant (use plants/PV19.jpg or similar)
 **Goal:** Drive direct sales
@@ -51,10 +51,10 @@ pinkleaf.co.il/encyclopedia/tissue-culture.html
 ```
 Alocasia Polly Pink Variegata 💗
 
-הכוכבת של פינק ליף. אלוקזיה פולי עם וריאגציה ורודה-בלאש, כל עלה מגלה דוגמה אחרת.
+הכוכבת של פינק ליף. אלוקסיה פולי עם וריאגציה ורודה-בלאש, כל עלה מגלה דוגמה אחרת.
 
-🧪 TC-propagated — וריאגציה יציבה לטווח ארוך
-📦 אקלום מלא לפני משלוח — לא אתן לכם צמח שלא עבר 21 ימי הסתגלות
+🧪 TC-propagated, וריאגציה יציבה לטווח ארוך
+📦 אקלום מלא לפני משלוח, לא אתן לכם צמח שלא עבר 21 ימי הסתגלות
 🇮🇱 משלוח בארץ
 
 💰 High Variegation: ₪350
@@ -69,10 +69,10 @@ Alocasia Polly Pink Variegata 💗
 ```
 Alocasia Polly Pink Variegata 💗
 
-The star of Pink Leaf. Pink-variegated Polly — every new leaf reveals a different pattern.
+The star of Pink Leaf. Pink-variegated Polly, every new leaf reveals a different pattern.
 
-🧪 TC-propagated — stable variegation long-term
-📦 Fully acclimated before shipping — 21-day hardening SOP, no shortcuts
+🧪 TC-propagated, stable variegation long-term
+📦 Fully acclimated before shipping, 21-day hardening SOP, no shortcuts
 🇮🇱 Delivery across Israel
 
 💰 High Variegation: ₪350
@@ -85,7 +85,7 @@ DM to order 👉
 
 ---
 
-## POST 3 — Behind-the-Scenes / Trust Builder
+## POST 3, Behind-the-Scenes / Trust Builder
 **Platform:** Instagram Story + Reel
 **Visual:** Your grow room, flasks, or the 21-day hardening setup
 **Goal:** Build trust (shows you're real, not a reseller)
@@ -96,8 +96,8 @@ DM to order 👉
 
 We don't ship plants the day they come out of flask. Ever. 🙅‍♀️
 
-תהליך אקלום מלא — לחות, אור, ונטילציה — עד שהצמח יציב לסביבה ביתית.
-A full acclimation protocol — humidity, light, airflow — until the plant is stable for home conditions.
+תהליך אקלום מלא, לחות, אור, ונטילציה, עד שהצמח יציב לסביבה ביתית.
+A full acclimation protocol, humidity, light, airflow, until the plant is stable for home conditions.
 
 זו הסיבה ש-95%+ מהצמחים שלנו שורדים את המעבר.
 That's why 95%+ of our plants survive the transition.
@@ -107,7 +107,7 @@ That's why 95%+ of our plants survive the transition.
 
 ---
 
-## POST 4 — Educational Carousel / "3 Mistakes"
+## POST 4, Educational Carousel / "3 Mistakes"
 **Platform:** Instagram carousel
 **Visual:** 5-slide carousel, text over clean plant photos
 **Goal:** Save/share engagement
@@ -143,8 +143,8 @@ Mistake #2: Full sun immediately
 ☀️ צמחי TC רגילים לאור מלאכותי חלש
 ☀️ TC plants are used to weak artificial light
 
-✅ הכניסו אור הדרגתי — 7 ימים צל, אז אור עקיף בהיר
-✅ Gradual light — 7 days shade, then bright indirect
+✅ הכניסו אור הדרגתי, 7 ימים צל, אז אור עקיף בהיר
+✅ Gradual light, 7 days shade, then bright indirect
 ```
 
 **Slide 4**:
@@ -174,7 +174,7 @@ Follow for more science-backed plant tips 🌿
 
 ---
 
-## POST 5 — Customer Value / Trust
+## POST 5, Customer Value / Trust
 **Platform:** Facebook + Instagram Story
 **Visual:** A thank-you graphic or the 3 sold plants going out
 **Goal:** Social proof (even small numbers are proof)
@@ -183,7 +183,7 @@ Follow for more science-backed plant tips 🌿
 ```
 היום הכי כיף: צמחים יוצאים לבית חדש 💌
 
-שלושה אלוקזיה הולכים השבוע לגננים מקצועיים מכל הארץ.
+שלושה אלוקסיה הולכים השבוע לגננים מקצועיים מכל הארץ.
 כל צמח עבר:
 ✅ TC propagation
 ✅ 21 ימי אקלום
@@ -230,7 +230,7 @@ Thank you for trusting Pink Leaf. We grow slowly because I want every plant to s
 ## HASHTAG BANK (save for reuse)
 
 **Hebrew/Israel:**
-#צמחיםנדירים #PinkLeafStudios #פינקליף #אלוקזיה #צמחיבית #גידולצמחים #TissueCultureIsrael
+#צמחיםנדירים #PinkLeafStudios #פינקליף #אלוקסיה #צמחיבית #גידולצמחים #TissueCultureIsrael
 
 **English/Global:**
 #RarePlants #VariegatedPlants #Alocasia #Monstera #TissueCulture #PlantCollector #AroidAddicts #PinkLeafBotanical #RareAroids #TCPropagation

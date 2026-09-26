@@ -76,16 +76,47 @@ that should survive across sessions HERE, in the repo.
 
 ### The business
 - Pink Leaf Botanical Studios: rare and variegated plant studio, Ramat Gan, Israel.
-- Site: `pinkleaf.co.il`, a static site on GitHub Pages (custom domain via CNAME).
+- Site: `pinkleaf.co.il`, a static site served by **Netlify** (see the deploy
+  notes below). The `CNAME` file in the repo is a leftover from the old GitHub
+  Pages setup and does not control the live domain.
 - Bilingual: Hebrew (RTL) and English (LTR). Currency is ILS (`₪`).
 - Owner: Kat. Visits by appointment. Nationwide shipping across Israel is active.
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
   India dropship store; using it was a real past bug, fixed across 35 files).
 
-### Store direction (current plan)
-- Replace the card/carousel "game" layout. It is overengineered for the need.
-- Standardize the store into THREE categories: **Alocasia, Monstera, Philodendron.**
-- Lay it out like a standard rare-plant niche store (clean product grid).
+### Store direction (DONE, 2026-09-23)
+The plan below was already built by an earlier session and is live in the code.
+Recording it as done so no future session rebuilds it.
+- Clean product grid, no carousel and no game. Category tabs, search, price
+  filter, sort, result count, availability badges.
+- Tabs are generated from the catalogue, not hard-coded, so a plant can never
+  end up in no tab. Alocasia, Monstera and Philodendron are the standard three;
+  an OTHER tab appears only while something sits outside them (currently 2).
+- Acclimation gating is GONE, not just unused. The stage vocabulary
+  ("in-transit", "customs", "deflasked", "hardening") sat in the deployed
+  source as dead code after the data was stripped. Do not reintroduce it: the
+  private data rules below forbid shipping supply-chain state, and a key name
+  in public source is still that state.
+- A plant that is not in stock offers a waitlist button ("NOTIFY ME" /
+  "עדכנו אותי") that opens the WhatsApp concierge. It used to be a disabled
+  dead button on 15 plants.
+
+### Encyclopedia and social (standing rule)
+- **Every new encyclopedia entry gets a social post.** Set by Kat 2026-09-19.
+  An entry is not done when it deploys, it is done when the post copy exists
+  alongside it. Write the post in the same commit as the entry.
+- Format: one post per entry, Hebrew and English, both ready to paste, plus a
+  platform, a visual suggestion and a goal. Follow
+  `content/week-2026-04-10-social.md` and
+  `content/encyclopedia-posts-2026-09-19.md`.
+- Every post links to the entry page on `pinkleaf.co.il/encyclopedia/`.
+- Claude cannot publish to Instagram from a session. It drafts, Kat posts.
+- **The posting cadence and the queue live in `content/content-system.md`.**
+  Three posts a week (Sunday education, Tuesday plant spotlight, Thursday is
+  Kat's freestyle slot), drawn from a bank of entries that have no post yet.
+  When asked for content, read that file, draft the next weeks in the queue,
+  and update its drafted log. Kat's own ideas always take priority over the
+  queue; the queue is the floor for a week with no inspiration, not a cap.
 
 ### Payments
 - Chosen provider: **Meshulam (Grow)** (Israeli gateway; supports Israeli cards
@@ -98,11 +129,79 @@ that should survive across sessions HERE, in the repo.
   since the site is static and cannot process cards server-side).
 
 ### Deploy / dev environment notes
-- This repo deploys via GitHub Pages; pushing to `main` goes live in ~60s.
+- **The live host is Netlify, not GitHub Pages.** `pinkleaf.co.il` is served by
+  the Netlify project `pinkleaf` (team `kdtatt`,
+  https://app.netlify.com/projects/pinkleaf). The domain's DNS does not point at
+  GitHub Pages IPs.
+- **Pushing to `main` does NOT deploy.** Checked 2026-09-19: the Netlify project
+  is not building from the repo. Its published production deploy was created by
+  a manual upload ("Deploy triggered by upload", no commit ref) dated
+  2026-09-09. Every commit after that sat on `main` without reaching the site.
+  Until someone links the repo in Netlify (Project configuration, Build and
+  deploy, Link repository), a push has to be followed by an actual Netlify
+  deploy.
+- The old `pages build and deployment` workflow still runs green on every push
+  to `main`. It proves nothing about the live site. Do not cite it as evidence
+  that something shipped; check the Netlify project's current deploy instead.
+- `netlify.toml` publishes the repo root with no build, so **everything in the
+  repo is served**, internal files included. See the private data rules below
+  before adding anything to the repo.
+- **A cloud Claude session cannot deploy to Netlify.** Tried three times across
+  2026-09-19 and 2026-09-23: the Netlify connector can read the project fine
+  but every deploy upload returns 403 Forbidden from Netlify, not from the
+  sandbox. The connection has read access only. Do not burn time retrying it.
+  Deploy from the Mac instead: `npx netlify-cli deploy --prod --dir .` in the
+  repo, or drag the folder onto the Deploys tab. The lasting fix is linking the
+  repo in Netlify so a push deploys by itself.
+- The sandbox also cannot reach `pinkleaf.co.il` at all (egress blocked), so a
+  cloud session can never confirm what is live by fetching it. Check the
+  Netlify project's current deploy instead, or ask Kat.
+- The sandbox blocks most third-party hosts, so a cloud session renders the
+  site WITHOUT the external CDNs a visitor gets. Tailwind was blocked this
+  whole time, which means earlier visual checks were of an unstyled-ish page.
+  Self-hosting Tailwind (above) fixed that for Tailwind; Firebase, confetti and
+  Google Fonts are still blocked in the sandbox and load fine in production.
 - Pushing from a cloud Claude session works fine.
 - On the Mac, git sometimes gets a stuck `.git/index.lock` that blocks commits
   and pushes (this is what `fix_git_lock.command` on the Desktop clears). When a
   Mac session "can't push," that lock is the usual cause.
+
+### Build scripts (run these, do not hand-edit what they own)
+
+All of these run from the repo root and are idempotent.
+
+- `python3 content/build-entries.py content/new-entries-YYYY-MM-DD.json`
+  Wires a batch of encyclopedia entries into entries.json, standalone pages,
+  footer links and the sitemap. Each entry needs a `short` field for the
+  footer label.
+- `python3 tools/build_product_schema.py`
+  Regenerates all Product structured data from `ALL_STORE_ITEMS` and
+  `ITEM_PRICES`, which are the store's source of truth. Run it after any
+  price or status change, or the schema and the store drift apart again.
+  Hand-written detail (description, SKU, Hebrew name) lives in the RICH map
+  inside the script; price and availability deliberately cannot be set there.
+- `python3 tools/build_index_pages.py`
+  Regenerates `/encyclopedia/index.html` and `/articles/index.html` from
+  entries.json and the article files. Run it after adding either.
+- `python3 tools/build_hreflang.py`
+  Maintains hreflang on the three genuine article translation pairs, and
+  strips any hreflang that appears outside its managed block.
+- `python3 tools/optimize_images.py [--dry-run]`
+  Caps photos at 1400px on the long edge, quality 85. Run it after adding
+  images. Skips anything already under 150 KB.
+- `sh tools/build_tailwind.sh`
+  Regenerates `assets/pinkleaf-tailwind.css` from the utility classes used in
+  index.html. Run it after adding a new Tailwind class, or that class will
+  silently do nothing. The site used to load Tailwind's Play CDN, which their
+  docs say is development only; it shipped about 360 KB of JS and built the
+  stylesheet in the browser on every visit.
+- `python3 tools/build_plant_db.py`
+  Regenerates MASTER_DB in index.html from `tools/plant-db.csv`.
+
+Gotcha worth knowing: the Humanizer hook rewrites long dashes inside any
+file it touches, source code included. It once turned a script's own
+dash-stripping helper into a plain-hyphen replacer. Build those characters
+with `chr(0x2014)` rather than writing them literally or as an escape.
 
 ### Private data rules (HARD)
 
@@ -119,6 +218,10 @@ Never write these into any file that deploys:
   The customer-facing badge only ever says "Coming Soon".
 - **Cost basis / wholesale / margin numbers.** Retail price on offer schema is
   fine. Internal cost, MOQ, supplier invoice numbers, and margin math are not.
+  A margin calculator (`tools/pricing-calculator.html`: base import cost,
+  markup multiplier, acclimation loss buffer) was live on the site until
+  2026-09-19 and has been deleted. It is still in the git history of a public
+  repo, so treat the numbers in it as burned.
 - **Customer names, phone numbers, addresses, WhatsApp threads, order history.**
   Aggregate anonymous stats are fine; individual records are never in source.
 - **Supplier names on individual SKUs.** Min Hui, PlantHero, individual
@@ -129,6 +232,11 @@ Never write these into any file that deploys:
 
 If any past session left one of these in a deployed file, strip it. If you are
 unsure whether something is safe to ship, default to NO and ask.
+
+`netlify.toml` blocks `/tools/*`, `/content/*`, `/CLAUDE.md` and `/RESET.md`
+with a 404, and `robots.txt` disallows the first two. That is a backstop for
+working files, not a place to hide private data: the repo is public on GitHub,
+so anything committed is readable there whether or not the site serves it.
 
 Chat output rule: even when the user asks "is X live?", answer yes/no and give
 a count. Do not paste the raw contents of the list into the chat unless the
