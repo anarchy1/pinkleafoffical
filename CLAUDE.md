@@ -89,6 +89,12 @@ you are not re-reporting something already known or already fixed.
    by a session on the Mac, not by this check: `docs/` and `.claude/` had been
    served the whole time, and adding files to `docs/` made it worse without
    anyone noticing. Adding a folder means adding a rule, every time.
+   **Do not assume a folder is public because its name sounds public.** `src/`
+   was waved through on the first run of this check on the grounds that a
+   folder called src must be site source. It is dead code referenced by nothing,
+   full of old marketing drafts, and it carried the `#PinkLeafStore` hashtag,
+   the wrong-handle bug that was supposedly fixed across 35 files. Open the
+   folder and check what actually references it before calling it public.
 
 **What you may do alone, and what needs Kat.** Fixing drift, regenerating
 derived files, closing a data leak, and repairing something broken are ordinary

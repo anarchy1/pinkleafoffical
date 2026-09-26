@@ -133,3 +133,31 @@ reversed. The repo now has the equivalent fix committed, but it is not live
 until the next deploy, and GitHub is not current until someone pushes.
 
 Open: push to GitHub, and refresh Kat's Mac folder before anyone works in it.
+
+---
+
+## 26 September 2026, hourly pass 2
+
+All seven check points clean: no drift into the branch, 83 offers with zero
+schema mismatches, 80 store items with no gaps, no per-plant supply chain
+state, everything parses, `STOCK_SHEET_CSV` still empty.
+
+**Found: `src/` was being served, and it is dead code.** Nothing in any HTML
+file references it. It holds `quick-config.js` and `social-media-content.js`,
+old Instagram content planning from around March, plus a stale copy of
+`entries.json`. No secrets in it.
+
+It does carry **`#PinkLeafStore` five times**, which is the wrong-handle bug
+that was supposedly fixed across 35 files. It survived precisely because
+nothing references the folder, so no search for the bad handle ever visited it.
+Now 404d and disallowed in robots.
+
+**The check itself was the problem.** Its first run waved `src/` through on the
+grounds that a folder called src must be site source. Point 7 now says to check
+what references a folder before calling it public.
+
+**Open for Kat: `src/` should probably be deleted, not just hidden.** It is
+dead, it is stale, and it contradicts the brand. Blocking it stops the site
+serving it, but the repo is public on GitHub so the wrong handle is still
+readable there. Deleting needs her word, per the standing rule about never
+deleting anything she has not named.

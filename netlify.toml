@@ -41,3 +41,8 @@
   from = "/.claude/*"
   to = "/"
   status = 404
+
+[[redirects]]
+  from = "/src/*"
+  to = "/"
+  status = 404
