@@ -130,9 +130,58 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-LG4598NF5Z');
+        // Sections are rendered client-side, so send our own page_view from showPage()
+        // instead of letting the tag fire one automatically on load.
+        gtag('config', 'G-LG4598NF5Z', { send_page_view: false });
     </script>
-    
+
+    <!-- Pink Leaf conversion events -->
+    <script>
+        // Small wrapper so a blocked/absent gtag never breaks the UI.
+        function plTrack(name, params) {
+            try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+        }
+
+        // view_item, fires once per plant per page load (the carousel re-focuses
+        // the same card constantly, so without this it would spam the property).
+        var plSeenItems = {};
+        function plViewItem(id) {
+            if (!id || plSeenItems[id]) return;
+            plSeenItems[id] = true;
+            var item = null;
+            try { item = (typeof ALL_STORE_ITEMS !== 'undefined') && ALL_STORE_ITEMS.filter(function(x){ return x.id === id; })[0]; } catch (e) {}
+            var name = (item && item.name) || (typeof MASTER_DB !== 'undefined' && MASTER_DB[id] && MASTER_DB[id].name) || id;
+            // Report the cheapest grade as the item's value, a plant has no single
+            // price until a size is picked, and "from" pricing is what the card shows.
+            var price = 0;
+            try {
+                var grades = (item && item.availability) || [];
+                var found = grades
+                    .map(function (g) { return getItemPrice(id, g); })
+                    .filter(function (p) { return typeof p === 'number' && p > 0; });
+                if (found.length) price = Math.min.apply(null, found);
+            } catch (e) {}
+            plTrack('view_item', {
+                currency: 'ILS',
+                value: price,
+                items: [{ item_id: id, item_name: name, price: price }]
+            });
+        }
+
+        // whatsapp_click, delegated so it covers both the static links and every
+        // wa.me link built at runtime (store, bag, encyclopedia).
+        document.addEventListener('click', function (e) {
+            var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"]');
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+            plTrack('whatsapp_click', {
+                link_url: href,
+                link_text: (a.innerText || a.textContent || '').trim().slice(0, 100),
+                page_section: (document.querySelector('main:not(.hidden)') || {}).id || 'unknown'
+            });
+        }, true);
+    </script>
+
     <!-- Firebase SDK -->
     <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
@@ -2692,7 +2741,7 @@ body.dark-mode .scoreboard-item.current {
         </div>
     </div>
 
-    <div class="logo-container"><img id="main-logo" src="logo-dark.png" class="main-logo" onclick="showPage('intro')" alt="Pink Leaf Botanical Studios"></div>
+    <div class="logo-container"><img id="main-logo" src="logo-dark.webp" class="main-logo" onclick="showPage('intro')" alt="Pink Leaf Botanical Studios"></div>
     
     <nav>
         <button class="nav-link nav-active" onclick="showPage('intro', this)" data-he="בית" data-en="HOME">בית</button>
@@ -2911,7 +2960,7 @@ body.dark-mode .scoreboard-item.current {
         <div id="lab-box" class="p-10 border border-[var(--border)] rounded-[60px] bg-[var(--mellow-pink)]"></div>
         <div id="lab-correction">
             <div id="lab-incorrect-label" style="font-size:52px;line-height:1;margin-bottom:12px;min-height:56px;display:flex;align-items:center;justify-content:center;">❌</div>
-            <div class="portal mx-auto w-48 h-48"><img id="correct-img" class="w-full h-full object-cover" alt=""></div>
+            <div class="portal mx-auto w-48 h-48"><img loading="lazy" id="correct-img" class="w-full h-full object-cover" alt=""></div>
             <p id="correct-name" class="serif text-lg my-6 uppercase tracking-widest"></p>
             <button onclick="closeCorrection()" id="lab-retry-btn" aria-label="Try Again" title="Try Again" style="font-size:40px;background:none;border:none;cursor:pointer;padding:12px;line-height:1;">❌</button>
         </div>
@@ -3249,11 +3298,11 @@ body.dark-mode .scoreboard-item.current {
 
         // ── BADGE SYSTEM ──
         const BADGES = [
-            { id: 'first5',   at: 5,   label: 'Seedling',         img: 'plants/leaf.PNG',  desc: '5 streak' },
-            { id: 'ten',      at: 10,  label: 'Botanist',         img: 'plants/leaf2.PNG', desc: '10 streak' },
-            { id: 'twenty',   at: 20,  label: 'Plant Whisperer',  img: 'plants/leaf3.PNG', desc: '20 streak' },
-            { id: 'fifty',    at: 50,  label: 'Master Collector',  img: 'plants/leaf4.PNG', desc: '50 correct' },
-            { id: 'hundred',  at: 100, label: 'Legend',            img: 'plants/leaf4.PNG', desc: '100 correct' },
+            { id: 'first5',   at: 5,   label: 'Seedling',         img: 'plants/leaf.webp',  desc: '5 streak' },
+            { id: 'ten',      at: 10,  label: 'Botanist',         img: 'plants/leaf2.webp', desc: '10 streak' },
+            { id: 'twenty',   at: 20,  label: 'Plant Whisperer',  img: 'plants/leaf3.webp', desc: '20 streak' },
+            { id: 'fifty',    at: 50,  label: 'Master Collector',  img: 'plants/leaf4.webp', desc: '50 correct' },
+            { id: 'hundred',  at: 100, label: 'Legend',            img: 'plants/leaf4.webp', desc: '100 correct' },
         ];
         let earnedBadges = JSON.parse(localStorage.getItem('pl_badges') || '[]');
 
@@ -3279,7 +3328,7 @@ body.dark-mode .scoreboard-item.current {
                 toast.className = 'badge-toast';
                 document.body.appendChild(toast);
             }
-            toast.innerHTML = `<img src="${badge.img}" alt="${badge.label}" style="width:36px;height:36px;vertical-align:middle;margin-right:10px;display:inline-block;"> ${badge.label} - ${badge.desc}`;
+            toast.innerHTML = `<img loading="lazy" src="${badge.img}" alt="${badge.label}" style="width:36px;height:36px;vertical-align:middle;margin-right:10px;display:inline-block;"> ${badge.label} - ${badge.desc}`;
             toast.classList.add('show');
             xp += 50;
             updateXPDisplay();
@@ -3302,7 +3351,7 @@ body.dark-mode .scoreboard-item.current {
             const leaves = [];
             for (let i = 0; i < target; i++) {
                 const lit = i < filled;
-                leaves.push(`<img src="plants/leaf.PNG" class="streak-leaf ${lit ? 'lit' : ''}" alt="🌿">`);
+                leaves.push(`<img loading="lazy" src="plants/leaf.webp" class="streak-leaf ${lit ? 'lit' : ''}" alt="🌿">`);
             }
             return `<div class="streak-bar">${leaves.join('')}</div>`;
         }
@@ -3455,6 +3504,15 @@ body.dark-mode .scoreboard-item.current {
     }
     if (p === 'encyclopedia') { loadEncyclopedia(); }
     if (!fromRoute && !window._plRouting) plPushHash(p);
+
+    // 5. Analytics, each section switch is both a section_view and a virtual
+    //    page_view, so single-page sections show up in GA4's page reports.
+    plTrack('section_view', { section_name: p, language: (typeof lang !== 'undefined' ? lang : 'he') });
+    plTrack('page_view', {
+        page_title: 'Pink Leaf: ' + p,
+        page_location: location.origin + location.pathname + '#' + p,
+        page_path: '/#' + p
+    });
 }
 
 
@@ -3692,7 +3750,7 @@ body.dark-mode .scoreboard-item.current {
 
                 const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
                 let btnHTML;
-                if (soldOut) {
+                if (isAvailable && !soldOut) {
                     btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
                 } else {
                     btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${item.id}', '${item.name}')">${waitLabel}</button>`;
@@ -3714,6 +3772,7 @@ body.dark-mode .scoreboard-item.current {
             });
 
             grid.innerHTML = h;
+            if (filteredItems[0]) plViewItem(filteredItems[0].id);
         }
 
         // ── PRODUCT DETAIL MODAL ──
@@ -3764,6 +3823,7 @@ body.dark-mode .scoreboard-item.current {
         function pdSelectVariant(){ pdUpdatePrice(); }
 
         function openProduct(id, fromRoute){
+            plViewItem(id);
             const item = ALL_STORE_ITEMS.find(i => i.id === id);
             if (!item) return;
             pdCurrentItem = item;
@@ -3860,6 +3920,8 @@ body.dark-mode .scoreboard-item.current {
                 c.style.pointerEvents = i === act ? '' : 'none';
                 c.classList.toggle('card-focus', i === act);
             });
+            // The focused card is the one the visitor is actually looking at.
+            if (window.sItems && window.sItems[act]) plViewItem(window.sItems[act].id);
         }
 
         function renderVault(f){
@@ -3901,7 +3963,7 @@ body.dark-mode .scoreboard-item.current {
                 html += `
                 <div class="care-product-card">
                     <div class="portal mx-auto w-32 h-32 mb-4">
-                        <img src="${imgPath}" alt="${item.name}" class="w-full h-full object-cover"
+                        <img src="${imgPath}" alt="${item.name}" class="w-full h-full object-cover" loading="lazy"
                             onerror="this.src='/assets/photo-coming.svg'">
                     </div>
                     <h3 class="serif text-[12px] tracking-[2px] text-center mb-3">${item.name}</h3>
@@ -3917,7 +3979,7 @@ body.dark-mode .scoreboard-item.current {
             if (existing) {
                 existing.qty += 1;
             } else {
-                bag.push({ id, name, grade: size, price, qty: 1, isCare: true, img: img || `plants/${id}.jpg` });
+                bag.push({ id, name, grade: size, price, qty: 1, isCare: true, img: img || `plants/${id}.webp` });
             }
             saveBag();
             updateBagUI();
@@ -4002,7 +4064,7 @@ body.dark-mode .scoreboard-item.current {
 
     const streakTarget = streak >= 10 ? 10 : 5;
     const badgeRow = earnedBadges.length > 0
-        ? `<div style="display:flex; justify-content:center; gap:6px; margin-bottom:6px;">${BADGES.filter(b => earnedBadges.includes(b.id)).map(b => `<img src="${b.img}" alt="${b.label}" style="width:28px;height:28px;" title="${b.label}">`).join('')}</div>`
+        ? `<div style="display:flex; justify-content:center; gap:6px; margin-bottom:6px;">${BADGES.filter(b => earnedBadges.includes(b.id)).map(b => `<img loading="lazy" src="${b.img}" alt="${b.label}" style="width:28px;height:28px;" title="${b.label}">`).join('')}</div>`
         : '';
 
     document.getElementById('lab-box').innerHTML = `
@@ -4112,7 +4174,7 @@ function checkLab(choiceIndex) {
 
         function toggleTheme(){
             const d = document.body.classList.toggle('dark-mode');
-            if(document.getElementById('main-logo')) document.getElementById('main-logo').src = d ? 'logo-dark.png' : 'logo-light.png';
+            if(document.getElementById('main-logo')) document.getElementById('main-logo').src = d ? 'logo-dark.webp' : 'logo-light.webp';
             const btn = document.getElementById('btn-dark');
             if(btn){ btn.classList.toggle('on', d); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); }
             const fab = document.getElementById('theme-fab');
@@ -4198,7 +4260,7 @@ function checkLab(choiceIndex) {
             accFontLevel = 0;
             document.querySelectorAll('.acc-toggle-btn').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
             document.body.classList.remove('dark-mode');
-            document.getElementById('main-logo').src = 'logo-light.png';
+            document.getElementById('main-logo').src = 'logo-light.webp';
             localStorage.removeItem('pl_acc');
         }
 
