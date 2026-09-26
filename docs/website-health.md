@@ -107,3 +107,29 @@ shape, so real leaks are not buried in noise.
 Nothing else was actionable. The remaining queue is blocked on Kat: the sticker
 shortlist, the Google Sheet URL for the stock feed, a Meshulam account, and
 approval on the seasonal palettes.
+
+---
+
+## 26 September 2026, deployed
+
+A session on the Mac merged the branch and deployed it. Live and verified by
+that session: corrected prices in the store (Alocasia Albo reads 831),
+`/stickers/` opens, GA4 and the article WhatsApp buttons intact, the
+"imports in transit" comment gone from page source, encyclopedia and store
+both load.
+
+**It found something this check had missed.** `docs/` and `.claude/` were being
+served. `netlify.toml` publishes the repo root, so any new top-level folder is
+public the moment it is committed, and this session had been adding files to
+`docs/` without ever asking whether `docs/` was blocked. Health check point 7
+now compares the repo's top-level directories against the 404 rules, so a new
+folder cannot be added without a rule.
+
+**Drift, again, in the other direction.** The Mac deployed from a separate copy
+and did not push to GitHub. So the live site currently carries a fix that exists
+nowhere in the repository, and Kat's own Mac folder still holds the older
+version. This is the same failure that stranded the price corrections, just
+reversed. The repo now has the equivalent fix committed, but it is not live
+until the next deploy, and GitHub is not current until someone pushes.
+
+Open: push to GitHub, and refresh Kat's Mac folder before anyone works in it.

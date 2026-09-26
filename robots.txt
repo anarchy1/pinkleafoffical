@@ -7,6 +7,8 @@ Disallow: /*?ref=
 Disallow: /*?sid=
 Disallow: /cdn-cgi/
 Disallow: /tools/
+Disallow: /.claude/
+Disallow: /docs/
 Disallow: /brand/
 Disallow: /content/
 # CSS/JS/images must remain crawlable so Google can render the page

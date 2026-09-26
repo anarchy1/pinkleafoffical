@@ -31,3 +31,13 @@
   from = "/RESET.md"
   to = "/"
   status = 404
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/"
+  status = 404
+
+[[redirects]]
+  from = "/.claude/*"
+  to = "/"
+  status = 404

@@ -82,6 +82,13 @@ you are not re-reporting something already known or already fixed.
    blocks parse, no references to helpers a merge removed.
 6. **Unbuilt switches.** Flag config that is wired but empty, for example
    `STOCK_SHEET_CSV`. The feature reads as done and does nothing.
+7. **Every internal folder is blocked.** `netlify.toml` publishes the repo root,
+   so a new top-level folder is served the moment it is committed. Compare the
+   directories in the repo root against the 404 rules in `netlify.toml` and the
+   Disallow lines in `robots.txt`, and add any that are missing. This was found
+   by a session on the Mac, not by this check: `docs/` and `.claude/` had been
+   served the whole time, and adding files to `docs/` made it worse without
+   anyone noticing. Adding a folder means adding a rule, every time.
 
 **What you may do alone, and what needs Kat.** Fixing drift, regenerating
 derived files, closing a data leak, and repairing something broken are ordinary
