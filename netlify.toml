@@ -13,6 +13,11 @@
   status = 404
 
 [[redirects]]
+  from = "/brand/*"
+  to = "/"
+  status = 404
+
+[[redirects]]
   from = "/content/*"
   to = "/"
   status = 404
