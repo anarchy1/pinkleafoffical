@@ -65,8 +65,15 @@ direction. Do not treat `origin/main` as proof of what is live.
    Netlify preview URLs are blocked by the network egress policy, so audits are
    code-level only. Kat can open this in the cloud environment's network access
    settings.
-6. **Seasonal theming requested.** Kat wants the look to change for holidays.
-   Not started. Should be one theme token set switched by date, not hand edits.
+6. **Seasonal theming: mechanism built, OFF, awaiting Kat's approval of a
+   look.** `SEASON_THEMES` in index.html switches the same six palette tokens
+   dark mode already uses, by date window, repeating yearly. Sukkot, winter and
+   Tu BiShvat palettes are drafted. `enabled` is `false`, so the site looks
+   exactly as it does today and nothing ships until she says yes. Seasons apply
+   in light mode only so they never fight the Botanical Lab dark palette.
+   Two things she has to do: approve a palette, and check the Sukkot and
+   Tu BiShvat windows each year, since Hebrew dates move against the Gregorian
+   calendar. Winter does not move.
 7. **Sticker page requested**, 26 September. Kat is printing collectible
    stickers to include as a bonus with orders. She wants a page for them on the
    site. One sticker is printed, eleven more are concepts awaiting a shortlist.

@@ -297,6 +297,35 @@
             --border: rgba(0, 230, 118, 0.30);
             --glow: 0 0 65px 20px rgba(0, 230, 118, 0.35);
         }
+
+        /* ── SEASONAL THEMES ───────────────────────────────────────────────
+           A season is nothing more than the same six tokens with different
+           values, exactly like dark mode. Nothing else in the stylesheet
+           needs to know a season exists.
+
+           Seasons apply in light mode only. Dark mode is the Botanical Lab
+           look and it stays that way, so the two never fight over the accent.
+
+           Dates and the master switch live in SEASON_THEMES in the script.
+           Everything here is dormant until a season class is on <body>. */
+        body.season-sukkot:not(.dark-mode) {
+            --pink: #C08A3E;
+            --mellow-pink: rgba(192, 138, 62, 0.34);
+            --border: rgba(192, 138, 62, 0.28);
+            --glow: 0 0 50px 15px rgba(192, 138, 62, 0.40);
+        }
+        body.season-winter:not(.dark-mode) {
+            --pink: #6E8F87;
+            --mellow-pink: rgba(110, 143, 135, 0.34);
+            --border: rgba(110, 143, 135, 0.28);
+            --glow: 0 0 50px 15px rgba(110, 143, 135, 0.40);
+        }
+        body.season-tu-bishvat:not(.dark-mode) {
+            --pink: #6E9153;
+            --mellow-pink: rgba(110, 145, 83, 0.34);
+            --border: rgba(110, 145, 83, 0.28);
+            --glow: 0 0 50px 15px rgba(110, 145, 83, 0.40);
+        }
         /* Force all text elements to inherit the light color in dark mode */
         body.dark-mode,
         body.dark-mode p,
@@ -4219,6 +4248,56 @@ function checkLab(choiceIndex) {
             "Corm":            null,
         };
         // Per-item price overrides - populate as you add prices
+        /* ── SEASONAL THEMES ───────────────────────────────────────────────
+           Switches the six palette tokens for a date window. The CSS lives
+           next to the dark mode block.
+
+           OFF until Kat approves a look. Flip enabled to true, check the
+           dates, and the season applies by itself from then on. Ranges are
+           month and day, so they repeat every year. A range may wrap the new
+           year (from 12-15 to 01-10 works).
+
+           Hebrew calendar dates move against the Gregorian one, so Sukkot and
+           Tu BiShvat need their window checked each year. Winter does not. */
+        const SEASON_THEMES = {
+            enabled: false,
+            // ORDER MATTERS: first match wins. Narrow, dated seasons go above
+            // broad ones or the broad one swallows them. Tu BiShvat sits
+            // inside the winter window, so it has to come first.
+            seasons: [
+                { name: 'sukkot',      from: '09-25', to: '10-12' },
+                { name: 'tu-bishvat',  from: '01-20', to: '02-08' },
+                { name: 'winter',      from: '12-01', to: '01-31' },
+            ],
+        };
+
+        function activeSeason(today = new Date()) {
+            if (!SEASON_THEMES.enabled) return null;
+            const md = String(today.getMonth() + 1).padStart(2, '0') + '-'
+                     + String(today.getDate()).padStart(2, '0');
+            for (const s of SEASON_THEMES.seasons) {
+                const wraps = s.from > s.to;
+                const hit = wraps ? (md >= s.from || md <= s.to)
+                                  : (md >= s.from && md <= s.to);
+                if (hit) return s.name;
+            }
+            return null;
+        }
+
+        function applySeason() {
+            const body = document.body;
+            if (!body) return;
+            SEASON_THEMES.seasons.forEach(s => body.classList.remove('season-' + s.name));
+            const season = activeSeason();
+            if (season) body.classList.add('season-' + season);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', applySeason);
+        } else {
+            applySeason();
+        }
+
         const ITEM_PRICES = {
             // ALOCASIA
             "PV82_Albo": 831,
