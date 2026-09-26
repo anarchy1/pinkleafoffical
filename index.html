@@ -2165,6 +2165,23 @@ body.dark-mode .scoreboard-item.current {
         }
         .add-to-cart-btn:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
         .add-to-cart-btn.added { background: rgba(100,200,100,0.08); border-color: rgba(100,200,100,0.5); color: rgba(100,200,100,0.9); }
+        /* Add to Bag is the main action on a card, so it is filled, not outlined.
+           The notify-me variant (.alloc-btn) keeps its soft look via !important. */
+        .add-to-cart-btn:not(.alloc-btn):not(.added) {
+            background: #b97a8e;
+            border-color: #b97a8e;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(185,122,142,0.28);
+        }
+        .add-to-cart-btn:not(.alloc-btn):not(.added):hover {
+            background: #a4677b; border-color: #a4677b; color: #fff;
+            transform: translateY(-1px);
+        }
+        body.dark-mode .add-to-cart-btn:not(.alloc-btn):not(.added) {
+            background: var(--pink); border-color: var(--pink); color: #0b0b0b;
+            box-shadow: none;
+        }
         /* Hide old cart elements */
         .cart-float, .cart-drawer, .cart-overlay { display: none !important; }
 
