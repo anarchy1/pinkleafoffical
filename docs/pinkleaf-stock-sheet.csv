@@ -1,0 +1,84 @@
+﻿id,variant,qty,price,status,"plant name (ignored by the site, for you)"
+PV82,Albo,,831,available,Alocasia Azlanii Albo (Pink)
+PV21,Aurea,,422,available,Alocasia Bambino Aurea
+PV113,Pink Lava,,706,available,Alocasia Bambino Pink Lava
+PV22,Pink,,451,available,Alocasia Black Velvet Pink
+PV23,Gold,,449,available,Alocasia Black Velvet Gold
+PV117,Pink,,937,available,Alocasia Chantrieri Pink
+PV119,Aurea Latte,,952,available,Alocasia Cuprea Aurea Latte
+PV120,Mint,,586,available,Alocasia Cuprea Red Secret Mint
+PV73,Super Pink,,1081,available,Alocasia Cuprea Red Secret Super Pink
+X_cuprea_pink_mint,Pink Mint,,944,available,Alocasia Cuprea Pink Mint
+X_cuprea_true_pink,True Pink,,1454,available,Alocasia Cuprea True Pink
+PV15,Albo,,447,available,Alocasia Dragon Scale Albo
+PV124,Tri-Color,,389,available,Alocasia Dragon Scale Tri-Color
+X_golden_bone_mint,Mint,,691,available,Alocasia Golden Bone Mint
+PV81,Pink,,557,available,Alocasia Heart Balloon Pink
+PV132,Green,,121,available,Alocasia Loco (Green)
+PV26,Thaicon,,1307,available,Alocasia Longiloba Thaicon
+PV87,Albo,,682,available,Alocasia Maharani Albo
+PV89,Albo,,648,available,Alocasia Melo Albo
+X_melo_aurea,Aurea,,547,available,Alocasia Melo Aurea
+PV128,Aurea,,774,coming,Alocasia Metallic Blue Aurea
+PV127,Albo,,692,coming,Alocasia Metallic Blue Albo
+PV32,A Grade,,639,available,Alocasia Nairobi Nights A Grade
+X_nairobi_camouflage,Camouflage Tricolor,,637,available,Alocasia Nairobi Nights Camouflage Tricolor
+PV40,Albo,,592,available,Alocasia Ninja Albo
+PV79,Pink K,,647,available,Alocasia Nobilis Pink K
+PV44,Stardust Mint,,503,available,Alocasia Pink Dragon Stardust Mint
+PV143,Ghost Mint,,451,available,Alocasia Polly Ghost Mint
+X_polly_lava,Lava,,1003,available,Alocasia Polly Lava
+PV19,Pink,,347,coming,Alocasia Polly Pink
+PV84,Pink,,633,available,Alocasia Pseudo-Sanderiana Pink
+PV43,Albo,,1302,coming,Alocasia Regal Shields Albo
+PV146,Aurea,,601,available,Alocasia Sarian Aurea
+PV80,Mint,,591,available,Alocasia Scalprum Mint
+PV148,Aurea,,634,coming,Alocasia Sedenii Aurea
+PV37,Aurea,,451,available,Alocasia Silver Dragon Aurea
+PV78,Albo,,449,available,Alocasia Simpo Albo
+PV74,Aurea,,504,available,Alocasia Stingray Aurea
+PV151,Pink High Var,,1998,available,Alocasia Venom Pink (High Variegation)
+X_venom_aurea,Aurea,,1753,coming,Alocasia Venom Aurea
+PV152,Albo,,504,available,Alocasia Watsoniana Doff Albo
+PV77,Pink,,644,available,Alocasia Watsoniana Doff Pink
+PV154,Pink Shiny,,878,available,Alocasia Watsoniana Glossy / Pink Shiny
+PV155,Aurea Latte,,551,available,Alocasia Wentii Aurea Latte
+PV18,Pink,,542,available,Alocasia Wentii Pink
+X_xanthosoma_mickey,Plant,,346,available,Xanthosoma Mickey Mouse
+PV158,Pink,,601,available,Alocasia Yucatan Princess Pink
+PV30,Mint,,541,available,Alocasia Zebrina Mint
+PV179,Super Golden,,451,available,Monstera Deliciosa Banana Super Golden
+PV180,Plant,,947,available,Monstera Devil Monster
+PV181,Plant,,533,available,Monstera Electro Light
+PV5,Plant,,652,available,Monstera Green Snow
+PV6,Plant,,748,available,Monstera Legacy
+PV184,Full Variegation,,301,available,Monstera Lemon Lime Full Variegation
+X_monstera_lemon_pompom,Plant,,543,available,Monstera Lemon Pom Pom
+PV10,Full Mint,,248,available,Monstera Mint (Full Mint)
+X_monstera_ocean_mint,Mint,,1186,available,Monstera Ocean Mint
+X_monstera_star_shadow,Plant,,549,available,Monstera Star Shadow
+PV11,Plant,,246,available,Monstera White Monster
+PV8,Plant,,802,available,Monstera Yellow Marilyn
+PV60,Plant,,347,available,Philodendron Caramel Marble
+PV190,Plant,,484,available,Philodendron Green Lemon
+X_philo_melano_orange,Plant,,442,available,Philodendron Melano Orange
+PV50,Plant,,281,available,Philodendron Micans
+PV193,Plant,,271,available,Philodendron Narrow
+PV199,Plant,,119,available,Philodendron Red Congo
+PV66,Plant,,381,available,Philodendron Tortum
+PV206,Mint,,448,available,Philodendron Verrucosum Mint
+PV207,Plant,,339,available,Philodendron Whipple Way
+X_philo_white_beauty,Plant,,1186,available,Philodendron White Beauty
+PV13,Mint,,369,available,Rhaphidophora Tetrasperma Mint
+PV48,Starter Plant,,49,coming,Philodendron Jose Buono
+PV48,Mature Plant,,147,coming,Philodendron Jose Buono
+PV14,Mint,,151,coming,Alocasia Dragon Scale Mint
+PV25,Starter Plant,,49,coming,Alocasia Macrorrhiza Var.
+PV25,Mature Plant,,147,coming,Alocasia Macrorrhiza Var.
+X_angela_aurea,Aurea,,438,coming,Philodendron Angela Aurea Var
+X_black_cardinal,Plant,,986,coming,Philodendron Black Cardinal Var
+X_black_cardinal,TC Bag,,252,coming,Philodendron Black Cardinal Var
+X_radiatum,Variegated,,341,coming,Philodendron Radiatum Var
+X_monstera_jungle_mint,Variegated,,693,coming,Monstera Jungle Mint
+X_brown_beauty,Variegated,,486,coming,Philodendron Brown Beauty Var
+X_atabapoense_pink,Pink,,774,coming,Philodendron Atabapoense Pink Var

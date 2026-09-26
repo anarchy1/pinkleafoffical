@@ -215,3 +215,30 @@ Nothing else was actionable. The queue is blocked on Kat: sticker shortlist,
 Strawberry Shake price, the Google Sheet URL, a Meshulam account, and approval
 on the seasonal palettes. The `filteredItems` crash fix is still waiting on a
 deploy to reach the live store.
+
+---
+
+## 26 September 2026, hourly passes 5 and 6
+
+Both clean on all eight points, no new findings.
+
+**Took the one open item that was not actually blocked on Kat.**
+`STOCK_SHEET_CSV` has been flagged as an unbuilt switch on every pass. The code
+was never the blocker: the store already parses a published Google Sheet, honours
+`qty`, `price` and `status`, and falls back safely when the sheet is missing.
+What was missing was anyone telling Kat what the sheet should contain.
+
+So: `docs/pinkleaf-stock-sheet.csv` is generated from the live store with all 83
+rows, one per plant per size, ids, variants and current prices already filled.
+Only `qty` needs entering. `docs/STOCK-SHEET-SETUP.md` covers publishing it as
+CSV and the one line change to turn it on.
+
+This matters more than it sounds. Every stock error this project has had traces
+to there being no current count: Bambino proposed twice for a live quote when
+the corms never germinated, a doubled dragon count, a Regal Shield quoted to a
+customer that turned out to be a guest plant. The September shelf count is the
+best record there is and it is already wrong.
+
+Note for whoever wires it up: the published sheet is public. Keep it to id,
+variant, qty, price and status. No cost, no supplier, no customer names, no
+guest-plant flags.
