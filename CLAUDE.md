@@ -96,6 +96,16 @@ you are not re-reporting something already known or already fixed.
    the wrong-handle bug that was supposedly fixed across 35 files. Open the
    folder and check what actually references it before calling it public.
 
+8. **The store still works.** Run `python3 tools/smoke_test.py`. It loads the
+   real page in a real browser and asserts that available plants offer ADD TO
+   BAG and coming-soon plants offer the waitlist. **This is the only check here
+   that tests behaviour rather than shape.** On 26 September a merge resolution
+   left the buy button on the wrong branch of an if, so every available plant
+   showed NOTIFY ME and nothing could be bought, in production. Every other
+   check passed: the scripts parsed, the schema matched, nothing was undefined.
+   A logic inversion is valid code that happens to be wrong, and no amount of
+   grepping finds it. Run this after every merge, without exception.
+
 **What you may do alone, and what needs Kat.** Fixing drift, regenerating
 derived files, closing a data leak, and repairing something broken are ordinary
 repo work: do them and say so. Anything customer visible, a price on the live

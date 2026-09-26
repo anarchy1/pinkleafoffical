@@ -161,3 +161,37 @@ dead, it is stale, and it contradicts the brand. Blocking it stops the site
 serving it, but the repo is public on GitHub so the wrong handle is still
 readable there. Deleting needs her word, per the standing rule about never
 deleting anything she has not named.
+
+---
+
+## 26 September 2026, hourly pass 3
+
+The Mac pushed to GitHub, so the repository and the live site agree again. All
+of this branch's work is on main.
+
+**I broke the store and did not catch it.** The merge in 6eba2cc left the buy
+button on the wrong branch of an if, so every available plant showed NOTIFY ME
+and nothing on pinkleaf.co.il could be bought. A session on the Mac found it
+and fixed it in f5b3d5c. It was live for some hours.
+
+Every check in place passed while that was true. The scripts parsed, the schema
+matched the store, no variable was undefined, no private data shipped. **A
+logic inversion is valid code that is simply wrong**, and nothing that looks at
+shape can see it.
+
+**So there is now a behavioural check.** `tools/smoke_test.py` loads the page in
+a real browser and asserts that available plants offer ADD TO BAG and
+coming-soon plants offer the waitlist. It is health check point 8 and it runs
+after every merge.
+
+**It found a second live bug on its first run.** `renderStore` referenced
+`filteredItems`, which is not defined anywhere. The local variable is `items`.
+This threw on every store render, on main and therefore in production, killing
+the GA4 view_item event and anything after it in that call stack. Fixed.
+
+**Also from main: `force = true` on the 404 rules.** Without it Netlify serves a
+file that exists and never applies the redirect, so the internal-folder blocking
+this branch added was doing nothing at all. Main's version is now kept, with
+`/.claude/*` and `/src/*` added on top.
+
+Waiting on Kat: a deploy, so the `filteredItems` fix reaches the live store.
