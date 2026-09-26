@@ -74,12 +74,36 @@ direction. Do not treat `origin/main` as proof of what is live.
    Two things she has to do: approve a palette, and check the Sukkot and
    Tu BiShvat windows each year, since Hebrew dates move against the Gregorian
    calendar. Winter does not move.
-7. **Sticker page requested**, 26 September. Kat is printing collectible
-   stickers to include as a bonus with orders. She wants a page for them on the
-   site. One sticker is printed, eleven more are concepts awaiting a shortlist.
-   Assets are in `brand/`. Page not started, set not chosen.
+7. ~~Sticker page requested.~~ **Built 26 September**, at `/stickers/`, and
+   linked from the intro buttons and the crawlable index. Shows the one printed
+   sticker; the other five are a single panel rather than five empty tiles,
+   which had made the phone page 8000px of mostly nothing. Still open: Kat's
+   shortlist of the final six, so the page can fill in.
 8. **The round online logo is not in the site code.** Kat uses
    `brand/logo-round-online.jpg` as the logo online, but the site still loads
    the old `logo-light.png` / `logo-dark.png` pair. She calls the round one
    temporary, so this is on hold rather than a defect, but the two are out of
    step and someone will notice.
+
+---
+
+## 26 September 2026, hourly pass 1
+
+Health check: branch drift 0 behind and 16 ahead, schema 83 offers 0 mismatches,
+store data clean at 80 items, no private data, everything parses,
+`STOCK_SHEET_CSV` still empty.
+
+**Fixed: the stickers page was orphaned.** It shipped with nothing linking to
+it, reachable only by typing the URL. Added a button on the intro beside
+Instagram, and an entry in the crawlable index so search engines find it. A page
+nobody can reach is the same as no page.
+
+**Tightened health check 4.** It was matching bare words like "deflasked" and
+flagging two public teaching articles every pass. The forbidden thing is a
+per-plant field such as `acclimation: "deflasked"`, not the word in an article
+explaining deflasking to customers. The check now looks for the assignment
+shape, so real leaks are not buried in noise.
+
+Nothing else was actionable. The remaining queue is blocked on Kat: the sticker
+shortlist, the Google Sheet URL for the stock feed, a Meshulam account, and
+approval on the seasonal palettes.

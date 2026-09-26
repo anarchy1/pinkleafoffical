@@ -69,9 +69,15 @@ you are not re-reporting something already known or already fixed.
    point at options that do not exist, no duplicate ids, every item has a photo
    or the shared placeholder.
 4. **Private data in deployed files.** Grep `index.html` and everything else that
-   ships for acclimation and supply chain words, cost, wholesale, margin,
+   ships for acclimation and supply chain state, cost, wholesale, margin,
    supplier names, customer details. Check comments too, not just rendered text.
    A dead CSS comment naming customs and hardening shipped to production once.
+   **Match the state, not the vocabulary.** The forbidden thing is a per-plant
+   field such as `acclimation: "deflasked"`, not the word in a public article
+   teaching customers what deflasking is. Search for the assignment shape
+   (`acclimation:`, `"in-transit"`, `"customs"`, `stage:`) rather than bare
+   words, or the encyclopedia articles light up every pass and the real signal
+   gets lost in the noise.
 5. **It still runs.** All inline scripts pass `node --check`, all `ld+json`
    blocks parse, no references to helpers a merge removed.
 6. **Unbuilt switches.** Flag config that is wired but empty, for example
