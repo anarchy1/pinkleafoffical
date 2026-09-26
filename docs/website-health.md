@@ -56,12 +56,23 @@ direction. Do not treat `origin/main` as proof of what is live.
    sheet URL, "sold out means sold out" is not actually working.
 3. **No checkout.** Offer URLs route to WhatsApp. Meshulam through Invoice4U is
    the chosen provider and the payment link is generated per order by hand.
-4. **Store direction not started.** The agreed plan is to drop the card and
-   carousel layout for a clean product grid in three categories, Alocasia,
-   Monstera and Philodendron. The current layout is still the old one.
+4. ~~Store direction not started.~~ **Wrong, corrected same day.** The clean
+   product grid was already built on 23 September and is live in the code. That
+   claim came from reading a stale `CLAUDE.md` before the merge brought the
+   current one in. Lesson for the audit: read `CLAUDE.md` after merging main,
+   not before, or you will report finished work as outstanding.
 5. **Cannot see production from a cloud session.** `pinkleaf.co.il` and the
    Netlify preview URLs are blocked by the network egress policy, so audits are
    code-level only. Kat can open this in the cloud environment's network access
    settings.
 6. **Seasonal theming requested.** Kat wants the look to change for holidays.
    Not started. Should be one theme token set switched by date, not hand edits.
+7. **Sticker page requested**, 26 September. Kat is printing collectible
+   stickers to include as a bonus with orders. She wants a page for them on the
+   site. One sticker is printed, eleven more are concepts awaiting a shortlist.
+   Assets are in `brand/`. Page not started, set not chosen.
+8. **The round online logo is not in the site code.** Kat uses
+   `brand/logo-round-online.jpg` as the logo online, but the site still loads
+   the old `logo-light.png` / `logo-dark.png` pair. She calls the round one
+   temporary, so this is on hold rather than a defect, but the two are out of
+   step and someone will notice.

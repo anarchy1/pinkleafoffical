@@ -33,10 +33,31 @@ at a glance and she had to catch it twice.
 | `logo-light.png` (repo root) | Same lockup, **white** wordmark, 500 x 500 with transparent padding | The website only, on dark backgrounds |
 | `logo-dark.png` (repo root) | Same lockup, **rose gold** wordmark, 500 x 500 with transparent padding | The website only, on light backgrounds. `lockup-rose-trimmed.png` is this file trimmed |
 | `favicon.png` (repo root) | A simple pink gradient leaf, 612 x 408. **Not the real mark.** A different drawing entirely | Browser tab icon only. Never use it as the logo |
+| `brand/logo-round-online.jpg` | **The current online logo**, added 26 Sep 2026. Round, cream and rose, split green and pink monstera inside a gold ring, wordmark, then site, phone and Instagram. 1254 x 1254 | Profile pictures and anywhere the brand needs to appear as a single round badge with contact details |
+| `brand/sticker-printed-kawaii-round.jpg` | **A sticker that was actually printed.** Round, holographic, kawaii split monstera with a face, "grown with love." and the handle. 1254 x 1254 | Reference for the sticker line. Not a logo, do not use it as one |
+| `brand/sticker-concepts-sheet.jpg` | Eleven sticker **concepts** on one sheet, kawaii and pixel art, holographic. Not printed, not chosen | Picking the collectible set. Concepts only |
 
 The light/dark naming refers to the mode the file is used in on the site, not
 to the colour of the artwork. That is easy to get backwards, so check the
 actual file before using it.
+
+### Three different things, do not mix them up
+
+This has already caused confusion, so it is written down.
+
+1. **The round online logo** (`logo-round-online.jpg`) is what Kat shows as the
+   logo online right now. She calls it temporary, so expect it to change.
+2. **The website header pair** (`logo-light.png` / `logo-dark.png`) is still
+   what the site itself loads. The round logo has NOT replaced it in the code.
+3. **The stickers** are a separate product, not branding. They go to customers
+   as a bonus and as collectibles.
+
+**Two visual languages are in play on purpose.** The logo and the site are
+premium: rose gold, cream, restraint. The stickers are kawaii: faces,
+holographic, pixel art, hearts. That is a deliberate split, a serious front of
+house and a playful thing in the box. Keep each one in its own lane. Never put
+a kawaii face on the store or the cards, and never put the formal lockup on a
+collectible sticker.
 
 ---
 
