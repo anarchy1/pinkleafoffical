@@ -46,6 +46,46 @@ The short version, because it has already gone wrong twice:
 - Kat's real design pack lives on her Mac and does NOT reach cloud sessions.
   If the asset needed is not in `brand/`, ask her for it. Do not improvise.
 
+## THIRD: audit the site on your own initiative, do not wait to be asked
+
+Kat's standing instruction, 26 September 2026: check, learn, compare against
+what the site could be, and improve it. Often. Without being asked. Make sure
+everything is functional, the store included.
+
+So every session that touches this repo runs the health check below before
+finishing, and reports what it found even when the answer is "nothing broke".
+Findings and their status live in `docs/website-health.md`. Read that first so
+you are not re-reporting something already known or already fixed.
+
+**The health check.** Each of these has caught a real bug already:
+
+1. **Branch drift.** `git log --oneline origin/main..HEAD` and the reverse. Work
+   stranded on a branch is work that is not live. This was missed once and Kat's
+   price corrections sat unshipped for days.
+2. **Schema against store.** Every price in the Product structured data must
+   match `ITEM_PRICES`. When a price changes, run
+   `python3 tools/build_product_schema.py`. It drifted twice.
+3. **Store data integrity.** Every purchasable option has a price, no price rows
+   point at options that do not exist, no duplicate ids, every item has a photo
+   or the shared placeholder.
+4. **Private data in deployed files.** Grep `index.html` and everything else that
+   ships for acclimation and supply chain words, cost, wholesale, margin,
+   supplier names, customer details. Check comments too, not just rendered text.
+   A dead CSS comment naming customs and hardening shipped to production once.
+5. **It still runs.** All inline scripts pass `node --check`, all `ld+json`
+   blocks parse, no references to helpers a merge removed.
+6. **Unbuilt switches.** Flag config that is wired but empty, for example
+   `STOCK_SHEET_CSV`. The feature reads as done and does nothing.
+
+**What you may do alone, and what needs Kat.** Fixing drift, regenerating
+derived files, closing a data leak, and repairing something broken are ordinary
+repo work: do them and say so. Anything customer visible, a price on the live
+store, a layout change, new copy, is hers to approve before it ships.
+
+**Deploying is not yours.** The live host is Netlify and pushing to `main` does
+not deploy. A cloud session cannot deploy at all. The deploy runs from Kat's Mac,
+so finish by telling her exactly what is waiting and what it will change.
+
 ## Writing style
 
 **HARD RULE: Never use em dashes.**
