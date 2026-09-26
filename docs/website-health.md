@@ -195,3 +195,23 @@ this branch added was doing nothing at all. Main's version is now kept, with
 `/.claude/*` and `/src/*` added on top.
 
 Waiting on Kat: a deploy, so the `filteredItems` fix reaches the live store.
+
+---
+
+## 26 September 2026, hourly pass 4
+
+All eight points clear, including the behavioural smoke test: 65 available
+plants offer ADD TO BAG, 15 coming-soon offer the waitlist, no JS errors.
+No new findings.
+
+**Consolidated the check into `tools/health_check.py`.** It had been ad hoc
+shell and python retyped each pass, and that drifted: two false alarms in four
+runs, first flagging the word "deflasked" in public teaching articles, then
+counting a config comment as a config flag. Both were noise, and noise is how a
+real finding gets scrolled past. One command now, and a fix to a check stays
+fixed.
+
+Nothing else was actionable. The queue is blocked on Kat: sticker shortlist,
+Strawberry Shake price, the Google Sheet URL, a Meshulam account, and approval
+on the seasonal palettes. The `filteredItems` crash fix is still waiting on a
+deploy to reach the live store.

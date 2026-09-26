@@ -57,6 +57,13 @@ finishing, and reports what it found even when the answer is "nothing broke".
 Findings and their status live in `docs/website-health.md`. Read that first so
 you are not re-reporting something already known or already fixed.
 
+**Run it with one command: `python3 tools/health_check.py`.** It does all eight
+points below and exits non-zero if anything needs attention. Do not retype the
+checks by hand: doing that four times produced two false alarms, once flagging
+the word "deflasked" in public teaching articles and once counting a config
+comment as a config flag. A check that cries wolf gets ignored, which is worse
+than no check. If a point is wrong, fix it in the script so the fix sticks.
+
 **The health check.** Each of these has caught a real bug already:
 
 1. **Branch drift.** `git log --oneline origin/main..HEAD` and the reverse. Work
