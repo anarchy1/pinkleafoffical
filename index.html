@@ -3750,7 +3750,7 @@ body.dark-mode .scoreboard-item.current {
 
                 const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
                 let btnHTML;
-                if (soldOut) {
+                if (isAvailable && !soldOut) {
                     btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
                 } else {
                     btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${item.id}', '${item.name}')">${waitLabel}</button>`;
