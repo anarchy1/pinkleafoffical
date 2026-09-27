@@ -280,3 +280,137 @@ Health check point 5 parses `404.html` too, so it cannot rot.
 **Customer visible, so it is Kat's call before it ships.** It only ever appears
 on a URL that today shows a Netlify page, so the downside of shipping it is
 close to zero, but the copy is new copy and she approves copy.
+
+---
+
+## 27 September 2026, deep audit
+
+Kat asked for a full inspection rather than the standing eight point check.
+This went wider: page weight measured in a browser, every internal link,
+sitemap against real files, the store driven through search, tabs, filters,
+sorts, cart and waitlist, robots and crawl rules, content integrity.
+
+### The big one: the store ships 2.3 MB of photos to a phone
+
+Measured on a 390px viewport over a real server, opening the store and
+scrolling six screens pulls **2.7 MB, of which 2.3 MB is 21 plant photos**.
+Each store card is a 140px circle and loads the full 1400px photo into it.
+The heaviest single card is PV117 at 402 KB. That is roughly a hundred times
+more pixels than the circle can show.
+
+The fix is a thumbnail set. Measured on a random 25 photo sample:
+
+| | total | per photo |
+| --- | --- | --- |
+| as shipped today | 4609 KB | 184 KB |
+| as 420px webp | 625 KB | 25 KB |
+
+**87% smaller.** Across the whole set that is 36 MB of photos becoming about
+4 MB, and the store scroll dropping from 2.3 MB to roughly 300 KB. The full
+size photo stays exactly as it is for the product modal. Nothing about how the
+site looks changes.
+
+Not built yet: it adds about 4 MB of generated files and changes how every
+product card loads its image, and the last time a change like that went in
+without her seeing it the store spent hours unbuyable. Her call.
+
+### 32 MB of files nothing loads
+
+- **28 MB of `.webp` plant photos.** 221 files. The site references exactly
+  four of them, the `leaf*.webp` streak icons. Every plant photo loads as
+  `.jpg`. Someone started a webp migration and never wired it up. Worth
+  knowing before generating thumbnails, because 61 of the 80 store plants
+  already have a webp sitting there.
+- **4.5 MB of `.MP4`** in `plants/` (`plantyouwin`, `planthappy`,
+  `plantmastercollector`). Reward clips from the game that was removed. No
+  file references them.
+
+Both are served to the public and sit in a public repo. Deleting needs Kat to
+name them, per the standing rule.
+
+### robots.txt was cancelling its own rules for Google
+
+The file had a long `User-agent: *` block disallowing `/tools/`, `/src/`,
+`/.claude/`, `/docs/`, `/brand/` and `/content/`, and then:
+
+```
+User-agent: Googlebot
+Allow: /
+```
+
+A crawler obeys only the most specific group that matches it and ignores `*`
+entirely. So for Googlebot, and Googlebot-Image, every one of those Disallow
+lines did nothing, and the file was actively pointing Google at the internal
+folders. The `force = true` 404s in `netlify.toml` meant it got a 404 rather
+than the files, so nothing leaked, but the invitation should never have been
+there. **Fixed:** both Google groups now repeat the rules in full.
+
+### The checks were testing an unstyled page
+
+`tools/smoke_test.py` loaded `index.html` over `file://`. Under `file://` a
+root-relative path like `/assets/pinkleaf-tailwind.css` resolves to the
+filesystem root and 404s. So every smoke run, and every visual check this
+project has done in a sandbox, was of a page with **no Tailwind and no
+`pinkleaf-enhancements.js`**. A bug in either was invisible to the test.
+
+**Fixed:** the smoke test now starts a local HTTP server on a random port and
+loads the page the way a visitor gets it, with two new assertions, that every
+local asset returns 200 and that both stylesheets actually applied. Nine
+checks now, all passing.
+
+### `optimize_images.py` stays silent about photos it skips
+
+The size skip runs before the dimension check, so a photo over the 1400px cap
+that already weighs under 150 KB is never resized and never mentioned. Thirteen
+photos are above the cap, one at 2000x2000, while the run printed
+"0 also resized". **Fixed the reporting**, so it now names them. Did not
+re-encode them: that is Kat's photography and a lossy rewrite is not something
+to do unasked.
+
+### An orphan encyclopedia page
+
+`encyclopedia/acclimation-from-sphagnum-to-soil.html`, 1058 words, is in
+`sitemap.xml` but is not in `entries.json` and is not linked from
+`encyclopedia/index.html` or anywhere else. Google is told it exists; no
+visitor can navigate to it. Same shape as the stickers page last week.
+
+It is clean, for the record. A first pass flagged eight private-data hits in
+it and every one was the CSS property `margin` matching a sloppy throwaway
+grep. That is exactly the noise CLAUDE.md warns about, caught before it was
+reported.
+
+Left alone: putting it back in the index is customer visible, and it may have
+been pulled deliberately.
+
+### Checked and clean
+
+- **No broken internal links** across 53 HTML files.
+- **Sitemap**: 52 URLs, none dead. All 27 encyclopedia and 16 article pages listed.
+- **MASTER_DB**: 171 ids, every one has a photo.
+- **Store behaviour**, driven in a browser: search narrows and clears
+  correctly, the empty state shows a message rather than a blank grid, the five
+  category tabs filter and restore, all four price bands filter, all four sorts
+  reorder correctly, add to bag persists, the waitlist button is wired to
+  `joinWaitlist`. No JS errors through any of it.
+- **No horizontal overflow** at 390px or 1280px on any page.
+- **Accessibility panel** is present and correct: eight toggles with
+  `aria-label` and `aria-pressed`, plus dark mode.
+- **Social post standing rule**: all 26 entries in `entries.json` have a post
+  in `content/`.
+- Every store item without a photo is one of the eight known `X_` placeholders.
+
+### Three things I flagged and then disproved
+
+Worth recording, because reporting them would have wasted her time:
+
+1. "An 81st store card with no data." It is the quiz image on the lab page,
+   which shares the `.portal` class. 80 store cards is correct.
+2. "The sort control does nothing." My probe selected the price filter instead
+   of `#store-sort`, then compared plant ids that happened to be identical for
+   the first three. All four sorts work.
+3. "No empty-state message." It says "No plants match. Try clearing the search
+   or filters" and my probe only searched for Hebrew phrasings.
+
+Which points at a small real thing: **the store's own strings are English
+only.** A Hebrew visitor on a Hebrew RTL page gets "80 plants" and
+"No plants match. Try clearing the search or filters". Minor, and copy, so hers.

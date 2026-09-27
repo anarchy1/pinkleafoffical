@@ -18,11 +18,42 @@ Allow: /plants/
 Allow: /*.css$
 Allow: /*.js$
 
+# Googlebot and Googlebot-Image used to have their own groups saying
+# "Allow: /" and nothing else. A crawler obeys only the most specific group
+# that matches it and ignores the * group completely, so those two lines were
+# cancelling every Disallow above for the one crawler that matters, and
+# pointing Google straight at /tools/, /docs/, /brand/, /content/, /src/ and
+# /.claude/. The 404 rules in netlify.toml meant it got nothing, but there was
+# no reason to send it looking. The groups are repeated in full instead.
+
 User-agent: Googlebot
-Allow: /
+Disallow: /?s=
+Disallow: /?sort=
+Disallow: /?filter=
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*?sid=
+Disallow: /cdn-cgi/
+Disallow: /tools/
+Disallow: /src/
+Disallow: /.claude/
+Disallow: /docs/
+Disallow: /brand/
+Disallow: /content/
+Allow: /assets/
+Allow: /plants/
+Allow: /*.css$
+Allow: /*.js$
 
 User-agent: Googlebot-Image
-Allow: /
+Disallow: /tools/
+Disallow: /src/
+Disallow: /.claude/
+Disallow: /docs/
+Disallow: /brand/
+Disallow: /content/
+Allow: /assets/
+Allow: /plants/
 
 User-agent: SemrushBot
 Disallow: /

@@ -18,14 +18,42 @@ behaviour rather than on shape.
 
 Exit code 0 means pass, 1 means fail.
 """
+import contextlib
+import functools
+import http.server
 import pathlib
 import re
+import socketserver
 import sys
+import threading
 
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
+
+
+@contextlib.contextmanager
+def serve(root):
+    """Serve the repo over HTTP for the duration of the test.
+
+    This used to load index.html over file://, where a root-relative path
+    like /assets/pinkleaf-tailwind.css resolves to the filesystem root and
+    404s. So every run was of a page with no Tailwind and no
+    pinkleaf-enhancements.js, and a bug in either was invisible here. Over
+    HTTP the page loads the way a visitor gets it.
+    """
+    class Quiet(http.server.SimpleHTTPRequestHandler):
+        def log_message(self, *a):
+            pass
+
+    handler = functools.partial(Quiet, directory=str(root))
+    with socketserver.TCPServer(("127.0.0.1", 0), handler) as httpd:
+        threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        try:
+            yield f"http://127.0.0.1:{httpd.server_address[1]}"
+        finally:
+            httpd.shutdown()
 
 failures = []
 notes = []
@@ -53,12 +81,15 @@ def main():
         if re.search(r'id:\s*"', line) and 'status: "coming"' in line
     )
 
-    with sync_playwright() as p:
+    with serve(ROOT) as base, sync_playwright() as p:
         browser = p.chromium.launch(executable_path=CHROME)
         page = browser.new_page(viewport={"width": 1280, "height": 1000})
         errors = []
+        missing = []
         page.on("pageerror", lambda e: errors.append(str(e)))
-        page.goto(index.as_uri())
+        page.on("requestfailed",
+                lambda r: missing.append(r.url) if "127.0.0.1" in r.url else None)
+        page.goto(f"{base}/index.html")
         page.wait_for_timeout(1200)
 
         # Get into the store.
@@ -76,6 +107,20 @@ def main():
         }""")
 
         check("page throws no JS errors", not errors, "; ".join(errors[:2]))
+        check(
+            "every local asset loads",
+            not missing,
+            ", ".join(u.split("/")[-1] for u in missing[:4]),
+        )
+        check(
+            "the stylesheets actually applied",
+            page.evaluate("""() => {
+                const hrefs = [...document.styleSheets].map(s => s.href || '');
+                return hrefs.some(h => h.includes('tailwind'))
+                    && hrefs.some(h => h.includes('enhancements'));
+            }"""),
+            "tailwind and enhancements css",
+        )
         check("store renders plant cards", counts["cards"] > 0, f"{counts['cards']} cards")
         check("buy buttons exist at all", counts["buttons"] > 0, f"{counts['buttons']} buttons")
 

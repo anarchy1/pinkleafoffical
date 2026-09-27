@@ -46,6 +46,21 @@ def kb(path):
     return os.path.getsize(path) / 1024
 
 
+def oversized(path):
+    """Over the pixel cap, whatever it weighs.
+
+    The size skip below runs first, so a photo that is over MAX_EDGE but
+    already light is never resized and never mentioned. Thirteen photos were
+    sitting above the cap (one at 2000x2000) while the run reported
+    "0 also resized", which reads as nothing needing attention. Report them.
+    """
+    try:
+        with Image.open(path) as im:
+            return max(im.size) > MAX_EDGE
+    except Exception:
+        return False
+
+
 def do_photo(path, dry):
     before = kb(path)
     if before < SKIP_UNDER_KB:
@@ -95,6 +110,7 @@ def main():
     photos = sorted(set(photos))
     before_total = after_total = 0
     touched = resized_count = 0
+    skipped_oversized = []
     for f in photos:
         b, a, resized = do_photo(f, dry)
         if b:
@@ -106,8 +122,14 @@ def main():
             s = kb(f)
             before_total += s
             after_total += s
+            if oversized(f):
+                skipped_oversized.append(f)
 
     print('photos: %d total, %d rewritten (%d also resized)' % (len(photos), touched, resized_count))
+    if skipped_oversized:
+        print('  %d over the %dpx cap but under the %d KB skip, so left alone:'
+              % (len(skipped_oversized), MAX_EDGE, SKIP_UNDER_KB))
+        print('    ' + ', '.join(os.path.basename(f) for f in skipped_oversized))
     print('  plants/  %.1f MB -> %.1f MB  (%.0f%% smaller)%s' % (
         before_total / 1024, after_total / 1024,
         100 * (1 - after_total / before_total) if before_total else 0,
