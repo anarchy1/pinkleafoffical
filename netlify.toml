@@ -8,51 +8,52 @@
 # Internal working files live in the repo but must never be served.
 # netlify.toml publishes the repo root, so block them explicitly.
 # force = true is required: without it Netlify serves a file that exists
-# and never applies the rule.
+# and never applies the rule. They point at /404.html so a blocked path
+# lands on the real not-found page rather than the homepage under a 404.
 [[redirects]]
   from = "/tools/*"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/brand/*"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/docs/*"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/content/*"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/CLAUDE.md"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/RESET.md"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/.claude/*"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true
 
 [[redirects]]
   from = "/src/*"
-  to = "/"
+  to = "/404.html"
   status = 404
   force = true

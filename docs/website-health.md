@@ -242,3 +242,41 @@ best record there is and it is already wrong.
 Note for whoever wires it up: the published sheet is public. Keep it to id,
 variant, qty, price and status. No cost, no supplier, no customer names, no
 guest-plant flags.
+
+---
+
+## 26 September 2026, hourly passes 7 to 16
+
+All clean on all eight points, every pass, no new findings and no commits. The
+check is doing its job by being quiet.
+
+---
+
+## 27 September 2026, hourly pass 17
+
+All eight points clear again.
+
+**Found: the site had no 404 page.** Netlify serves its own branded not-found
+page when the publish directory has no `404.html`, so anyone who mistyped a
+URL, or followed an old link to an encyclopedia entry that moved, landed on a
+Netlify page in English with no logo, no Hebrew and no way back to the store.
+The store, the encyclopedia and the guides were all one click away and the
+visitor was shown none of them.
+
+`404.html` is now at the repo root: Hebrew RTL with an English block, on the
+same cream and green palette as `/stickers/`, with the four real destinations,
+the WhatsApp concierge, and `noindex, follow` so it never enters search
+results. No external fonts or CDNs, so it renders the same in the sandbox as in
+production. Checked at 1280px and 390px: no horizontal overflow, no JS errors,
+and the handle renders `@pinkleaf.studio` rather than reversed.
+
+**The eight blocking rules now point at it.** They were `to = "/"`, which meant
+a request for `/CLAUDE.md` returned the entire homepage under a 404 status. It
+hid the file, which was the point, but it was a strange thing to serve. They
+now resolve to `/404.html`.
+
+Health check point 5 parses `404.html` too, so it cannot rot.
+
+**Customer visible, so it is Kat's call before it ships.** It only ever appears
+on a URL that today shows a Netlify page, so the downside of shipping it is
+close to zero, but the copy is new copy and she approves copy.

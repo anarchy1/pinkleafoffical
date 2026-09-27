@@ -124,7 +124,7 @@ def main():
 
     # 5. It still parses
     broken = 0
-    for f in ["index.html", "stickers/index.html"]:
+    for f in ["index.html", "stickers/index.html", "404.html"]:
         t = pathlib.Path(f).read_text(encoding="utf-8")
         for b in re.findall(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", t, re.S):
             if "application/ld+json" in b[:80] or '"@context"' in b[:200]:
