@@ -194,6 +194,41 @@ Recording it as done so no future session rebuilds it.
   and update its drafted log. Kat's own ideas always take priority over the
   queue; the queue is the floor for a week with no inspiration, not a cap.
 
+### Pricing (HARD, added 2026-09-28)
+
+**Kat sends the prices you give her straight to the customer, unedited.** She
+said so on 28 September: "when clients ask me for something, I send them the
+prices you give me, I don't question it." So a number in a chat reply is not a
+suggestion, it is a live quote on a real plant. Treat it that way.
+
+Three rules follow from that, and all of them were broken in one session:
+
+1. **Never invent a price.** Every number handed over must come from one of:
+   a price Kat set, a price a customer actually paid, or the documented rule
+   applied to a known cost. If none of those exist for a plant, write
+   **"needs your price"** and leave it empty. An empty row costs her one
+   question. A guessed row costs her the difference on a sale.
+2. **Say where each number came from.** Kat cannot sanity check a list that
+   looks equally authoritative all the way down. Mark which lines are hers and
+   which are derived, every time.
+3. **Never apply a flat percentage across a list.** On 28 September an 18% cut
+   was applied to every plant at once. It undercut three prices a customer had
+   paid five weeks earlier, put one plant below its own cost, and set another
+   above a price Kat had already cut. Price moves are per plant, against the
+   cost list and the sold-at record.
+
+The cost list, the 4x rule, the sold-at floors and the non-round-numbers rule
+all live on the Notion **🏷️ Pink Leaf Selling Prices** page. Read it before
+quoting anything. The rule there says TC cost × 4 **for a plant with no price
+yet**: read that literally, because a plant Kat already priced is not a gap to
+fill.
+
+**Size tiers are the recovery when a quote went out too low.** Kat already
+prices by specimen (Polly Pink grown 350 / baby 250; Watsoniana corm 620 /
+TC 452). If a list price was set for a small plant and the customer picks the
+most developed one, quoting that specimen at its own higher price is honest
+and is existing practice. It is not the same as raising a price after the fact.
+
 ### Payments
 - Chosen provider: **Meshulam (Grow)** (Israeli gateway; supports Israeli cards
   and Bit, and hosted payment pages / payment links that work from a static
