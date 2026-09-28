@@ -5,6 +5,14 @@
   publish = "."
   command = ""
 
+# Server side of the card checkout (netlify/functions/checkout.mjs).
+# index.html ships with the function so it prices orders from the exact
+# table the store displays. `netlify deploy --prod --dir .` bundles this.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["index.html"]
+
 # Internal working files live in the repo but must never be served.
 # netlify.toml publishes the repo root, so block them explicitly.
 # force = true is required: without it Netlify serves a file that exists
@@ -17,6 +25,12 @@
 
 [[redirects]]
   from = "/brand/*"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify/*"
   to = "/"
   status = 404
   force = true
