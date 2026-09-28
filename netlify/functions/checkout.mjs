@@ -81,7 +81,8 @@ export default async (req) => {
     const site = (process.env.URL || 'https://pinkleaf.co.il').replace(/\/$/, '');
     const fulfilLine = pickup
         ? (lang === 'he' ? 'איסוף עצמי מהסטודיו' : 'Studio pickup')
-        : (lang === 'he' ? 'משלוח: ' : 'Delivery: ') + street + ', ' + city;
+        : (lang === 'he' ? 'משלוח: ' : 'Delivery: ') + street + ', ' + city
+            + (order.shippingSeparate ? (lang === 'he' ? ' (משלוח לתיאום, לא כלול)' : ' (delivery to arrange, not included)') : '');
 
     const request = {
         Invoice4UUserApiKey: key,

@@ -104,7 +104,8 @@ export function priceOrder(catalog, lines, fulfilment) {
     }
     const items = out.reduce((s, l) => s + l.price * l.qty, 0);
     const pickup = fulfilment === 'pickup';
-    if (!pickup && catalog.shipping === null) return { error: 'shipping_unset' };
-    const shipping = pickup ? 0 : catalog.shipping;
-    return { lines: out, items, shipping, total: items + shipping };
+    // No flat fee set: charge the items only; the studio arranges delivery.
+    const shippingSeparate = !pickup && catalog.shipping === null;
+    const shipping = pickup || shippingSeparate ? 0 : catalog.shipping;
+    return { lines: out, items, shipping, shippingSeparate, total: items + shipping };
 }

@@ -184,6 +184,10 @@ Recording it as done so no future session rebuilds it.
   data shape changes. Switched on by the Netlify env var `I4U_API_KEY`;
   without it the card option is hidden and Bit/WhatsApp work as before.
   Shipping is `SHIPPING_FLAT_ILS` in index.html, read by page and server.
+  **It is `null` since 2026-09-28:** the courier behind the 37 shekel rate
+  stopped operating. With null, delivery orders are charged for the plants
+  only and the studio arranges delivery. Put a number back only when Kat
+  names a new courier and rate.
   The receipt email is the order record (order number, address, notes).
   Details and Kat's switch-on steps: `docs/competitor-audit-2026-09-28.md`.
 

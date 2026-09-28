@@ -2544,7 +2544,7 @@ body.dark-mode .scoreboard-item.current {
       {"@type":"Product","@id":"https://pinkleaf.co.il/#product-PV25","name":"Alocasia Macrorrhiza Var.","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","alternateName":"אלוקסיה מקרוריזה וריאגטה","description":"The Giant Taro in its rare variegated form, with bold white and green sectoral variegation on oversized leaves.","image":"https://pinkleaf.co.il/plants/PV25.jpg","offers":[{"@type":"Offer","price":"49","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/PV25","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Starter Plant"},{"@type":"Offer","price":"147","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/PV25","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Mature Plant"}]},
       {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_angela_aurea","name":"Philodendron Angela Aurea Var","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":{"@type":"Offer","price":"438","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_angela_aurea","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Aurea"}},
       {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_black_cardinal","name":"Philodendron Black Cardinal Var","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":[{"@type":"Offer","price":"986","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_black_cardinal","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Plant"},{"@type":"Offer","price":"252","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_black_cardinal","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"TC Bag"}]},
-      {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_radiatum","name":"Philodendron Radiatum Var","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":{"@type":"Offer","price":"341","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_radiatum","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Variegated"}},
+      {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_radiatum","name":"Philodendron Radiatum Var","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":{"@type":"Offer","price":"341","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://pinkleaf.co.il/#/plant/X_radiatum","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Variegated"}},
       {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_monstera_jungle_mint","name":"Monstera Jungle Mint","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":{"@type":"Offer","price":"693","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_monstera_jungle_mint","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Variegated"}},
       {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_brown_beauty","name":"Philodendron Brown Beauty Var","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":{"@type":"Offer","price":"486","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_brown_beauty","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Variegated"}},
       {"@type":"Product","@id":"https://pinkleaf.co.il/#product-X_atabapoense_pink","name":"Philodendron Atabapoense Pink Var","brand":{"@id":"https://pinkleaf.co.il/#store"},"category":"Rare Aroids","offers":{"@type":"Offer","price":"774","priceCurrency":"ILS","availability":"https://schema.org/PreOrder","url":"https://pinkleaf.co.il/#/plant/X_atabapoense_pink","seller":{"@id":"https://pinkleaf.co.il/#store"},"name":"Pink"}}
@@ -3292,7 +3292,7 @@ body.dark-mode .scoreboard-item.current {
             // New sourced arrivals (to order, not yet in hand)
             { id: "X_angela_aurea", name: "Philodendron Angela Aurea Var", availability: ["Aurea"], light: "60%", humidity: "65%", status: "coming" },
             { id: "X_black_cardinal", name: "Philodendron Black Cardinal Var", availability: ["Plant", "TC Bag"], light: "60%", humidity: "65%", status: "coming" },
-            { id: "X_radiatum", name: "Philodendron Radiatum Var", availability: ["Variegated"], light: "60%", humidity: "65%", status: "coming" },
+            { id: "X_radiatum", name: "Philodendron Radiatum Var", availability: ["Variegated"], light: "60%", humidity: "65%", status: "available" },
             { id: "X_monstera_jungle_mint", name: "Monstera Jungle Mint", availability: ["Variegated"], light: "65%", humidity: "60%", status: "coming" },
             { id: "X_brown_beauty", name: "Philodendron Brown Beauty Var", availability: ["Variegated"], light: "60%", humidity: "65%", status: "coming" },
             { id: "X_atabapoense_pink", name: "Philodendron Atabapoense Pink Var", availability: ["Pink"], light: "60%", humidity: "65%", status: "coming" },
@@ -4637,30 +4637,26 @@ function checkLab(choiceIndex) {
         // checkout once it is filled in here, so nothing half-configured ever
         // reaches a customer.
         //
-        // card:  Meshulam (Grow) hosted payment page. Create the payment page
-        //        in the Grow dashboard and paste its URL into pageUrl. If that
-        //        page takes the amount from a query parameter, put the
-        //        parameter's name in sumParam; leave sumParam empty for an
-        //        open-amount page where the customer types the total shown.
+        // card:  handled by netlify/functions/checkout.mjs (Invoice4U, clearing
+        //        through Meshulam). Appears once Netlify has I4U_API_KEY; the
+        //        page asks the function whether it is on. Nothing to set here.
         // bit:   Bit request to the studio number. On by default because the
         //        number is already public on the site.
         // bank:  Fill in to offer bank transfer. Empty account = hidden.
         const PAYMENT = {
-            card: { pageUrl: '', sumParam: 'sum' },
             bit:  { phone: '055-911-6990' },
             bank: { beneficiary: '', bank: '', branch: '', account: '' },
         };
 
-        // Flat delivery fee for a substrate-only order, in shekels. Substrate
-        // ships in a predictable parcel, so this can be an exact number and the
-        // customer sees a complete total. While it is null the checkout says
-        // shipping is confirmed with the order, which matches the plant policy.
-        // Flat delivery fee anywhere in Israel, in shekels (the studio's rate).
-        // Added to every delivery order at checkout and read by the server
-        // too (netlify/lib/catalog.mjs), so change it here only. A plant too
-        // large for a 40x40 cm box ships at double the fee; the studio
-        // confirms that one with the customer.
-        const SHIPPING_FLAT_ILS = 37;
+        // Flat delivery fee in shekels, read by the page and by the server
+        // (netlify/lib/catalog.mjs), so change it here only.
+        //
+        // null = no online delivery fee. The checkout still takes delivery
+        // orders, charges the plants only, and says the studio arranges the
+        // delivery and its cost with the customer. Set to null on 28 Sep 2026
+        // when the courier behind the 37 shekel rate stopped operating. Put a
+        // number back once a new courier and rate are settled.
+        const SHIPPING_FLAT_ILS = null;
 
         // Studio pickup, by appointment.
         const PICKUP_LOCATION = { he: 'רמת גן, בתיאום מראש', en: 'Ramat Gan, by appointment' };
@@ -4779,14 +4775,14 @@ function checkLab(choiceIndex) {
                 head: 'הסל שלי', items: n => n === 1 ? 'פריט אחד' : n + ' פריטים', total: 'סה״כ צמחים ומצעים',
                 emptyHed: 'הסל ריק', emptyDek: 'כשתמצאו את הצמח הנכון, אנחנו כאן.',
                 checkout: 'לתשלום', wa: 'שאלה על הזמינות? לוואטסאפ', waOnly: 'בירור זמינות בוואטסאפ',
-                noteShip: s => 'משלוח ' + s + '₪ לכל הארץ, מחושב בתשלום', noteInq: 'מחיר מאושר בבירור',
+                noteShip: s => s === null ? 'משלוח מתואם מול הסטודיו' : 'משלוח ' + s + '₪ לכל הארץ, מחושב בתשלום', noteInq: 'מחיר מאושר בבירור',
                 policy: 'משלוח בימים א׳-ב׳ כדי שהחבילה לא תיתקע בסופ״ש, אספקה עד 5 ימי עסקים. צמח שלא נכנס לאריזת 40x40 ס״מ: דמי משלוח כפולים.',
                 fine: 'כל צמח נבדק ונארז ידנית בסטודיו',
             } : {
                 head: 'Shopping Bag', items: n => n + ' ITEM' + (n !== 1 ? 'S' : ''), total: 'SUBTOTAL',
                 emptyHed: 'YOUR BAG IS EMPTY', emptyDek: 'When you find the right plant, we are here.',
                 checkout: 'CHECKOUT', wa: 'QUESTION ABOUT AVAILABILITY? WHATSAPP', waOnly: 'REQUEST AVAILABILITY VIA CONCIERGE',
-                noteShip: s => 'SHIPPING ₪' + s + ' ANYWHERE IN ISRAEL, ADDED AT CHECKOUT', noteInq: 'PRICES CONFIRMED ON INQUIRY',
+                noteShip: s => s === null ? 'DELIVERY ARRANGED WITH THE STUDIO' : 'SHIPPING ₪' + s + ' ANYWHERE IN ISRAEL, ADDED AT CHECKOUT', noteInq: 'PRICES CONFIRMED ON INQUIRY',
                 policy: 'Ships Sunday or Monday so nothing sits in a depot over Shabbat, arrives within 5 business days. A plant too large for a 40x40 cm box ships at double the fee.',
                 fine: 'Every plant is checked and packed by hand at the studio',
             };
@@ -4932,6 +4928,7 @@ function checkLab(choiceIndex) {
                 summary: 'סיכום הזמנה', fulfil: 'איסוף או משלוח',
                 pickup: 'איסוף עצמי מהסטודיו', delivery: 'משלוח עד הבית',
                 deliveryNote: 'בכל הארץ. יוצא בימים א׳-ב׳, אספקה עד 5 ימי עסקים.',
+                deliveryLater: 'הסטודיו מתאם איתכם את המשלוח ואת עלותו אחרי ההזמנה. התשלום כאן הוא על הצמחים בלבד.',
                 oversize: 'צמח שלא נכנס לאריזת 40x40 ס״מ: דמי משלוח כפולים, והסטודיו יאשר מולכם.',
                 details: 'פרטים ליצירת קשר', name: 'שם מלא', phone: 'טלפון נייד', email: 'אימייל (לקבלה)',
                 city: 'עיר', street: 'רחוב ומספר', notes: 'הערות (אופציונלי)',
@@ -4953,7 +4950,7 @@ function checkLab(choiceIndex) {
                 single: 'כל צמח הוא פריט יחיד. אם הוא נמכר ממש לפני ההזמנה שלכם, הסטודיו יחזור אליכם ויזכה במלואו.',
                 doneHead: 'ההזמנה נשלחה', ref: 'מספר הזמנה',
                 doneNote: 'ההזמנה נפתחה אצלכם בוואטסאפ ונשלחת לסטודיו. שמרו את מספר ההזמנה.',
-                paidHead: 'תודה! התשלום התקבל', paidNote: 'הקבלה בדרך למייל שלכם. התשלום סוגר את ההזמנה ושומר את הצמחים, והמשלוח יוצא ביום א׳ או ב׳ הקרוב.',
+                paidHead: 'תודה! התשלום התקבל', paidNote: 'הקבלה בדרך למייל שלכם. התשלום סוגר את ההזמנה ושומר את הצמחים. הסטודיו יחזור אליכם לתאם משלוח או איסוף.',
                 paidHelp: 'שאלה על ההזמנה? כתבו לנו בוואטסאפ עם מספר ההזמנה.',
                 payBit: 'שלחו {sum}₪ בביט למספר {phone} וציינו את מספר ההזמנה.',
                 payBank: 'העבירו {sum}₪ לחשבון שלהלן וציינו את מספר ההזמנה.',
@@ -4965,6 +4962,7 @@ function checkLab(choiceIndex) {
                 summary: 'Order summary', fulfil: 'Pickup or delivery',
                 pickup: 'Studio pickup', delivery: 'Delivery',
                 deliveryNote: 'Anywhere in Israel. Leaves Sunday or Monday, arrives within 5 business days.',
+                deliveryLater: 'The studio arranges delivery and its cost with you after the order. This payment covers the plants only.',
                 oversize: 'A plant too large for a 40x40 cm box ships at double the fee. The studio confirms this with you.',
                 details: 'Contact details', name: 'Full name', phone: 'Mobile phone', email: 'Email (for your receipt)',
                 city: 'City', street: 'Street and number', notes: 'Notes (optional)',
@@ -4986,7 +4984,7 @@ function checkLab(choiceIndex) {
                 single: 'Every plant is a single specimen. If it sells moments before your order, the studio contacts you and refunds in full.',
                 doneHead: 'Order sent', ref: 'Order number',
                 doneNote: 'The order opened in your WhatsApp and is on its way to the studio. Keep the order number.',
-                paidHead: 'Thank you, payment received', paidNote: 'Your receipt is on its way by email. Payment closes the order and holds your plants; the shipment leaves this coming Sunday or Monday.',
+                paidHead: 'Thank you, payment received', paidNote: 'Your receipt is on its way by email. Payment closes the order and holds your plants. The studio will be in touch to arrange delivery or pickup.',
                 paidHelp: 'A question about the order? Message us on WhatsApp with the order number.',
                 payBit: 'Send {sum} ILS by Bit to {phone} and quote the order number.',
                 payBank: 'Transfer {sum} ILS to the account below and quote the order number.',
@@ -5141,9 +5139,9 @@ function checkLab(choiceIndex) {
 
                 <div class="co-card">
                     <div class="co-legend">${t.fulfil}</div>
-                    ${opt('delivery', t.delivery + (tot.known ? ' · ' + money(SHIPPING_FLAT_ILS) : ''), t.deliveryNote, 'fulfilment', 'setFulfilment')}
+                    ${opt('delivery', t.delivery + (tot.known ? ' · ' + money(SHIPPING_FLAT_ILS) : ''), tot.known || tot.pickup ? t.deliveryNote : t.deliveryLater, 'fulfilment', 'setFulfilment')}
                     ${opt('pickup', t.pickup, PICKUP_LOCATION[isHe ? 'he' : 'en'], 'fulfilment', 'setFulfilment')}
-                    ${!tot.pickup && hasPlants ? `<p class="co-note">${t.oversize}</p>` : ''}
+                    ${!tot.pickup && hasPlants && tot.known ? `<p class="co-note">${t.oversize}</p>` : ''}
                 </div>
 
                 <div class="co-card">
