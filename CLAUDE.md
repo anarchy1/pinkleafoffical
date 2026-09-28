@@ -80,6 +80,10 @@ you are not re-reporting something already known or already fixed.
    gets lost in the noise.
 5. **It still runs.** All inline scripts pass `node --check`, all `ld+json`
    blocks parse, no references to helpers a merge removed.
+   Then load the page in headless Chromium (Playwright is preinstalled) and
+   fail on any `pageerror`. Syntax passing is not running: on 28 Sep 2026 the
+   store threw on every render (`filteredItems` undefined) and broke every
+   `#/plant/` link while `node --check` stayed green.
 6. **Unbuilt switches.** Flag config that is wired but empty, for example
    `STOCK_SHEET_CSV`. The feature reads as done and does nothing.
 
@@ -171,8 +175,17 @@ Recording it as done so no future session rebuilds it.
 - Current live flow: WhatsApp "Price Concierge" inquiry links plus bank transfer.
   Product schema carries real prices for Google rich results, but Offer URLs
   currently route to WhatsApp rather than a checkout.
-- Goal: integrate a real Meshulam checkout (hosted payment page / payment links,
-  since the site is static and cannot process cards server-side).
+- **Checkout built 2026-09-28, card switch off until Kat adds the key.** One
+  checkout for plants and substrate. Card payment goes through Invoice4U
+  (which clears via Meshulam and issues the receipt) from the Netlify
+  Function `netlify/functions/checkout.mjs`. It prices orders from
+  index.html's own tables on the server, via `netlify/lib/catalog.mjs`, which
+  mirrors the parser in `tools/build_product_schema.py`: change both if the
+  data shape changes. Switched on by the Netlify env var `I4U_API_KEY`;
+  without it the card option is hidden and Bit/WhatsApp work as before.
+  Shipping is `SHIPPING_FLAT_ILS` in index.html, read by page and server.
+  The receipt email is the order record (order number, address, notes).
+  Details and Kat's switch-on steps: `docs/competitor-audit-2026-09-28.md`.
 
 ### Deploy / dev environment notes
 - **The live host is Netlify, not GitHub Pages.** `pinkleaf.co.il` is served by

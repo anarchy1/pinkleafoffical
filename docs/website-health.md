@@ -107,3 +107,55 @@ shape, so real leaks are not buried in noise.
 Nothing else was actionable. The remaining queue is blocked on Kat: the sticker
 shortlist, the Google Sheet URL for the stock feed, a Meshulam account, and
 approval on the seasonal palettes.
+
+---
+
+## 28 September 2026, full re-audit
+
+Kat asked for a competitor study, a design comparison with the most modern
+stores, and for the payment system to actually work. The full write-up is in
+`docs/competitor-audit-2026-09-28.md`.
+
+### Health check
+
+- **Branch drift:** none. Branch and `main` were level before this work.
+- **Production:** Netlify's current deploy is 26 Sep 10:17 UTC, after the
+  last commit on `main`, with the six redirect rules `netlify.toml` defines,
+  so production most likely matches `main`. Still a CLI upload with no commit
+  ref.
+- **Schema against store:** regenerating changed nothing. In sync.
+- **Store data:** 80 items, no duplicate ids, 83 price rows, no orphans,
+  every available plant's grades priced.
+- **Private data:** no assignment-shaped supply chain fields, no supplier
+  names, no cost fields in deployed files.
+- **It still runs:** all inline scripts pass `node --check`, all `ld+json`
+  parses. But see the first fix below: parsing is not the same as running.
+- **Unbuilt switches:** `STOCK_SHEET_CSV` still empty. New one:
+  `I4U_API_KEY` in Netlify switches card payment on (see the audit file).
+
+### Fixed this session
+
+| What | Why it mattered |
+| --- | --- |
+| `renderStore()` called an undefined `filteredItems` and threw on every render | Every `#/plant/` link, the kind shared on Instagram and WhatsApp, fell back to the plain store instead of opening the plant. `view_item` analytics never fired. `node --check` cannot catch this; only running the page does, so the health check now needs a browser pass too |
+| Logo swap inverted in three places | After using dark mode, or the accessibility reset, the white wordmark sat on a white page |
+| Organization schema logo was the white wordmark | Google would show a near invisible logo |
+| Floating buttons over the bag drawer on mobile | Covered the drawer title and main button |
+| Plants had no checkout; card option never appeared | Built: see the audit file, section 3 |
+
+### Lesson for the health check
+
+Add a **browser pass** to check 5: load the page in headless Chromium and
+fail on any `pageerror`. Syntax checks passed for days while the store threw
+on every render.
+
+### Open, needs Kat
+
+1. Deploy this branch. Customer visible: the new checkout with ₪37 shipping
+   shown up front, the smaller logo on inner pages, the deeper rose buttons.
+2. Add `I4U_API_KEY` in Netlify to switch card payment on, then place one
+   small real order.
+3. Confirm which phone number takes Bit (the site and the registry disagree).
+4. Approve or change the checkout's refund line and write a cancellation
+   policy.
+5. Stale crawlable store text (one plant listed as available that is coming).

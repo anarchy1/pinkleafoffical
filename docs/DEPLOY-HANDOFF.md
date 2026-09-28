@@ -1,8 +1,11 @@
-# Deploy handoff, 26 September 2026
+# Deploy handoff, 28 September 2026
 
 For a session running on Kat's Mac. A cloud session cannot deploy: the Netlify
 connection it gets is read-only and every upload returns 403 from Netlify.
 The Mac has the real credentials.
+
+The previous handoff (26 Sep, branch `claude/find-order-lists-chat-yxu11j`) is
+done: it was merged and deployed on 26 Sep.
 
 ## The commands
 
@@ -11,92 +14,69 @@ Run from the repo root. Adjust the path if the repo lives elsewhere.
 ```sh
 cd ~/pinkleafoffical
 
-# 1. get the branch
 git fetch origin
-
-# 2. move to main and make sure it is current
 git checkout main
 git pull origin main
 
-# 3. merge. This is a clean fast-forward, verified: origin/main is an
-#    ancestor of the branch, so no conflicts are possible.
-git merge origin/claude/find-order-lists-chat-yxu11j
-
-# 4. push
+# main was an ancestor of this branch when it was pushed, so this is a
+# clean fast-forward unless main moved since.
+git merge origin/claude/pinkleaf-audit-redesign-jixs5e
 git push origin main
 
-# 5. deploy. THIS is what actually publishes. Pushing does not.
+# THIS is what publishes. Pushing does not.
 npx netlify-cli deploy --prod --dir .
 ```
 
-If step 5 asks to link a project, pick the existing `pinkleaf` project. Do not
-create a new one.
+If git refuses to commit or push, a stale lock is the usual cause:
+`rm -f .git/index.lock`.
 
-## If git refuses to commit or push
+**New this time:** the deploy now includes a Netlify Function
+(`netlify/functions/checkout.mjs`). The CLI bundles it automatically from
+`netlify.toml`. The deploy summary should say "1 function deployed". If it
+says none, the card checkout will stay hidden but nothing else breaks.
 
-A stale lock file is the usual cause on the Mac:
+## Switching card payment on
 
-```sh
-rm -f .git/index.lock
-```
+Card payment stays hidden until Netlify has the Invoice4U API key.
 
-`fix_git_lock.command` on the Desktop does the same thing.
+1. Invoice4U: Settings, API. Copy the organisation API key. No API section?
+   Ask Invoice4U support to enable API access for the Meshulam terminal.
+2. Netlify: Project configuration, Environment variables. Add `I4U_API_KEY`.
+3. Deploy again (environment variables apply on the next deploy).
+4. Place one small real order, for example one bag of substrate, and check
+   that the receipt email arrives with the order number and address.
 
-## What this ships
+## What a customer will notice
 
-17 commits. The important ones, in order of why they matter:
+- **Plants can be checked out**, not only sent to WhatsApp. The bag's main
+  button is now "Checkout", with WhatsApp as the second button.
+- **Shipping ₪37 anywhere in Israel** is shown in the bag and added at
+  checkout (the registry's rate). Studio pickup is free.
+- Payment choices: Bit first, then card (once the key is in), then bank
+  transfer if bank details are ever filled in.
+- On inner pages the logo is smaller, so the store's first screen shows
+  plants. The home page is unchanged.
+- The checkout buttons are a deeper rose, for readability.
+- Plant links shared on Instagram or WhatsApp open the plant again. They had
+  been landing on the plain store.
+- After using dark mode, the logo no longer turns invisible.
 
-**1. Kat's price corrections reach the live store for the first time.**
-They had been stranded on a branch. The live store is still showing the old
-round numbers. After this, the worked-out prices are live, for example
-Alocasia Albo moves from 850 to 831, Aurea from 420 to 422, and so on across
-the whole table.
+## Needs Kat's yes before or right after deploy
 
-**2. A supply-chain leak in the live file gets closed.** A CSS comment reading
-"imports in transit, customs, or hardening" is in view-source on pinkleaf.co.il
-right now. Nobody sees it on the page. It is still public.
-
-**3. Google stops being told the wrong prices.** The product structured data
-was advertising the old prices for 79 of 80 products while the store charged
-the new ones. Regenerated with `tools/build_product_schema.py`.
-
-**4. The acclimation gating is gone from the branch too.** It had survived
-there as dead code. `CLAUDE.md` forbids shipping supply-chain state, and a key
-name in public source is still that state.
-
-**5. New: a collectible stickers page** at `/stickers/`, linked from the intro
-buttons and the crawlable index.
-
-**6. New: a seasonal theme system, switched OFF.** Sukkot, winter and
-Tu BiShvat palettes are drafted but `SEASON_THEMES.enabled` is `false`, so the
-site looks identical to today. Nothing seasonal appears until Kat approves a
-palette and it is flipped on.
-
-**7. Housekeeping:** `brand/` with the logo rules and assets, `brand/references/`
-as the inbox for design material, the site health check written into
-`CLAUDE.md`, and `/brand/*` blocked from being served.
-
-## What a customer will actually notice
-
-- Prices on the store change from round numbers to worked-out ones.
-- Sold out plants can now read as sold out, but only once
-  `STOCK_SHEET_CSV` has a Google Sheet URL. It is empty, so today this
-  changes nothing.
-- A new Hebrew stickers page, and a new button on the intro to reach it.
-
-Nothing else is visually different. The seasonal themes are off.
-
-## How to confirm it worked
-
-1. `npx netlify-cli` prints a deploy URL. Open it.
-2. Check the store shows 831 for Alocasia Azlanii Albo, not 850.
-3. Check `pinkleaf.co.il/stickers/` loads.
-4. View source and search for "in transit". It should not be there.
+1. Which phone number takes Bit. The checkout tells customers to Bit the
+   public WhatsApp number; the registry lists a different number for Bit.
+2. The checkout line: "if a plant sold moments before your order, the studio
+   refunds in full".
+3. A short cancellation policy before card payment goes live.
 
 ## Verified before handoff
 
-- Fast-forward merge, no conflicts possible
-- All five inline scripts pass `node --check`
-- Both `ld+json` blocks parse, 83 offers, zero price mismatches against the store
-- 80 store items, every purchasable option priced, no orphans, no duplicate ids
-- Stickers page HTML well formed, renders correctly at 1100px and 390px
+- All inline scripts pass `node --check`; all `ld+json` parses.
+- Headless Chromium, phone and desktop: store, bag, checkout, Bit via
+  WhatsApp, card handoff and return page, language switch. Zero page errors.
+- Checkout function tested against the real `index.html` with Invoice4U
+  mocked: server prices match the store, tampered totals are refused,
+  unavailable plants and from-prices are refused, bad name, phone and email
+  are refused, and provider errors return cleanly.
+- Not tested against Invoice4U itself. No key exists in the sandbox. Step 4
+  above is that test.
