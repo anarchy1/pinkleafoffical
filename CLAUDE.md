@@ -130,7 +130,10 @@ that should survive across sessions HERE, in the repo.
   notes below). The `CNAME` file in the repo is a leftover from the old GitHub
   Pages setup and does not control the live domain.
 - Bilingual: Hebrew (RTL) and English (LTR). Currency is ILS (`₪`).
-- Owner: Kat. Visits by appointment. Nationwide shipping: **paused as a fixed
+- Owner: Kat. **Kat is a woman: every Hebrew draft written in her voice uses
+  feminine first person** (שמחה, הייתי הולכת, ממליצה), never masculine. Address
+  each customer in their own gender. Set by Kat 2026-09-29.
+- Visits by appointment. Nationwide shipping: **paused as a fixed
   service since 2026-09-28**, the courier stopped operating. Delivery is
   arranged per order until Kat picks a new courier (see Payments below).
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
