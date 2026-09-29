@@ -103,19 +103,70 @@ Sampled, not official. Replace if the design pack says otherwise.
 
 ---
 
-## Instagram card spec
+## Instagram card spec (current, set by Kat 29 September 2026)
 
-Two page carousel. Page 1 is the plant info card. Page 2 is the parentage card
-for a hybrid, or the story card for everything else.
+Kat redrew the plant card and this is the layout to match. It replaces the
+earlier 1080 x 1350 version. Where the two disagree, this one wins.
 
-- Canvas 1080 x 1350, rendered at device scale 2.
-- Logo: `lockup-rose-trimmed.png` at 118 px tall, top left, followed by a
-  hairline rule across the rest of the width. Nothing else in the masthead.
-- Footer: text only. Three lines plus the handle, right aligned, no logo.
-- The handle needs `dir="ltr"` or Hebrew RTL renders it as `pinkleaf.studio@`.
-- Fonts: Frank Ruhl Libre for Hebrew headings, Assistant for Hebrew body,
-  Cormorant Garamond for Latin names.
-- Never put a price, a supplier name, or acclimation state on a card.
+**Canvas: square, 1:1**, rendered at device scale 2. Not 4:5.
+
+**Masthead.** Logo top left, noticeably smaller than before, roughly a tenth
+of the canvas height. To its right a hairline rule that runs to the right
+edge with **a small four-point diamond set into it**, off centre. The rule is
+not plain. A matching rule with the same diamond closes the card at the
+bottom.
+
+**Title block, right column, RTL.**
+1. Hebrew name, Frank Ruhl Libre, deep green, two lines, large.
+2. **Latin name directly underneath in italic Cormorant Garamond, rose.**
+   There is no Hebrew common-name line between them any more.
+3. Description in Assistant, **two short paragraphs with a gap**, not one block.
+
+**Divider.** Hairline with the same small diamond centred in it.
+
+**Care block.** Heading איך מטפלים in Frank Ruhl Libre, green. Then six rows,
+each with **three parts**: a line-art icon on the left, a **bold green label**
+next to it, then the value text. The labels are fixed and carry the meaning,
+so the icon is decoration rather than the only cue:
+
+| Label | What goes in it |
+| --- | --- |
+| אור | light |
+| לחות | humidity |
+| מצע | substrate |
+| השקיה | watering |
+| רגישות | what it will not tolerate |
+| קצב צמיחה | growth rate |
+
+Icons are **outline drawings, not emoji**. The old cards used emoji and they
+read as clip art next to this layout.
+
+**Photo.** Arch on the left, taller than wide, with a **thin rose hairline
+border**. Not the thick cream frame with a drop shadow that the old card used.
+
+**Footer.** Text only, bottom right, **no panel or box behind it**. Three
+lines, with "Pink Leaf" set inline in the third, then the handle in rose
+underneath. The handle needs `dir="ltr"` or Hebrew RTL renders it as
+`pinkleaf.studio@`.
+
+**Ornament.** A faint leaf watermark sits in the bottom left, very low
+contrast, behind the footer rule.
+
+**Fonts.** Frank Ruhl Libre for Hebrew headings, Assistant for Hebrew body,
+Cormorant Garamond italic for the Latin name.
+
+**Never put a price, a supplier name, or acclimation state on a card.**
+
+### When a card is the right format at all
+
+Set with Kat 29 September 2026. A card competes with the photograph, so it
+does not suit every plant.
+
+- **A plant that sells on how it looks gets a photograph and a caption, not a
+  card.** Wrapping a stunning leaf in eight lines of Hebrew works against it.
+- **A card earns its place where the story sells the plant** (Tortum, a hybrid
+  with an interesting parentage) **and on teaching content**, where there is no
+  single photo worth leading with.
 
 Render scripts live in the session scratchpad, which does not survive between
 sessions. If the cards need rebuilding, the spec above is the record.
