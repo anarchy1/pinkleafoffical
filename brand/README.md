@@ -141,8 +141,13 @@ so the icon is decoration rather than the only cue:
 Icons are **outline drawings, not emoji**. The old cards used emoji and they
 read as clip art next to this layout.
 
-**Photo.** Arch on the left, taller than wide, with a **thin rose hairline
-border**. Not the thick cream frame with a drop shadow that the old card used.
+**Photo.** Arch on the **right**, text column on the left, taller than wide,
+with a **thin rose hairline border**. Not the thick cream frame with a drop
+shadow that the old card used.
+
+**It is still a two page carousel.** Page 1 is the plant card above. Page 2 is
+the parentage card for a hybrid, or the story card for everything else. One
+card on its own is half a post.
 
 **Footer.** Text only, bottom right, **no panel or box behind it**. Three
 lines, with "Pink Leaf" set inline in the third, then the handle in rose
