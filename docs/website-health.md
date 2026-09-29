@@ -159,3 +159,19 @@ on every render.
 4. Approve or change the checkout's refund line and write a cancellation
    policy.
 5. Stale crawlable store text (one plant listed as available that is coming).
+
+---
+
+## 29 September 2026, second pass
+
+- **Drift:** branch 3 ahead of `main`, 0 behind. Nothing deployed since
+  26 Sep.
+- **Found: work recorded but never committed.** Notion's inventory page says
+  the Philodendron Radiatum was switched to available on 28 Sep. No branch
+  had that change. Applied here and the schema regenerated. If a Mac session
+  made it locally, expect a trivial merge.
+- **Delivery:** the courier behind the 37 shekel rate stopped operating.
+  `SHIPPING_FLAT_ILS` is now null: delivery orders pay for the plants only and
+  the studio arranges delivery. Browser and function tests re-run clean.
+- **Still open from yesterday:** Bit number, refund line, cancellation
+  policy, stale crawlable store text, `STOCK_SHEET_CSV` empty.
