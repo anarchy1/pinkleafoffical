@@ -175,3 +175,27 @@ on every render.
   the studio arranges delivery. Browser and function tests re-run clean.
 - **Still open from yesterday:** Bit number, refund line, cancellation
   policy, stale crawlable store text, `STOCK_SHEET_CSV` empty.
+
+---
+
+## 30 September 2026, SEO pass on articles and encyclopedia
+
+45 pages checked (27 encyclopedia, 18 articles). The basics are sound on every
+page: canonical, one h1, Open Graph, structured data, sitemap entry, internal
+links, no duplicate titles or descriptions.
+
+What holds them back in search:
+
+1. **38 of 45 titles are English only.** Israeli buyers search in Hebrew.
+   Only 10 pages declare `lang="he"`; the encyclopedia pages carry Hebrew
+   content under `lang="en" dir="ltr"`.
+2. **23 titles are over 65 characters** and get cut off in Google results.
+3. **30 meta descriptions are outside 70 to 170 characters** (some over 200,
+   some under 50).
+4. **26 pages have no `datePublished`**, so search engines cannot see them as
+   fresh.
+5. **Cadence:** Kat's plan was five new topics a week. The encyclopedia has 26
+   entries in total. The gap is the pipeline, not the pages.
+
+Fixing 1 to 3 is new customer-facing copy in Google results, so it waits for
+Kat's approval.
