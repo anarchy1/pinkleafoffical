@@ -308,6 +308,15 @@ All of these run from the repo root and are idempotent.
   stylesheet in the browser on every visit.
 - `python3 tools/build_plant_db.py`
   Regenerates MASTER_DB in index.html from `tools/plant-db.csv`.
+- `python3 tools/price_photo.py PHOTO PRICE [PHOTO PRICE ...] [--outdir DIR]`
+  Puts a rose price badge on a plant photo for Kat to send. **Use this rather
+  than writing the overlay by hand each time.** Her photos are Display P3 with
+  an embedded colour profile; Pillow drops that profile on save unless it is
+  carried across, and a file with no profile gets read as sRGB, which flattens
+  every colour. A set of Atabapoense photos went out dim on 30 September for
+  exactly this reason and the pinks, the whole reason anyone buys these plants,
+  suffered most. The script preserves the profile and EXIF, and prints the
+  worst pixel difference outside the badge so a regression shows as a number.
 
 Gotcha worth knowing: the Humanizer hook rewrites long dashes inside any
 file it touches, source code included. It once turned a script's own
