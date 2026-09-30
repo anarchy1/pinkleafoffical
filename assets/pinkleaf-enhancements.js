@@ -160,6 +160,9 @@
     };
 
     PinkLeaf.initLangToggle = function () {
+        // index.html has its own full language system (toggleLang, pl_lang). A second
+        // toggle here only flipped direction and fought it, so defer to the page.
+        if (typeof window.toggleLang === 'function') return;
         // Restore from localStorage if user previously chose
         let saved = null;
         try {
