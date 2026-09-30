@@ -129,6 +129,16 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        // Consent mode: nothing is stored until the visitor accepts the cookie
+        // banner. Returning visitors who already accepted are granted at once.
+        (function(){
+            var ok = false;
+            try { ok = localStorage.getItem('pl_cookie_consent') === 'accept'; } catch (e) {}
+            gtag('consent', 'default', {
+                analytics_storage: ok ? 'granted' : 'denied',
+                ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+            });
+        })();
         gtag('js', new Date());
         // Sections are rendered client-side, so send our own page_view from showPage()
         // instead of letting the tag fire one automatically on load.
@@ -3635,6 +3645,37 @@ body.dark-mode .scoreboard-item.current {
         // Mouse and Rhaphidophora Tetrasperma, both for sale, both reachable
         // only under ALL. Alocasia, Monstera and Philodendron stay the standard
         // three; OTHER appears only while something actually sits outside them.
+        // Store UI strings. Hebrew is the default for Israeli visitors, so every
+        // label a shopper reads goes through ST() instead of being hardcoded.
+        // A hoisted function, not a const: the router can render the store before
+        // this line has run, and a const would still be uninitialised then.
+        function STORE_STR_TABLE(){ return {
+            all: ['הכל', 'ALL'], other: ['אחר', 'OTHER'],
+            available: ['זמין', 'Available'], coming: ['בקרוב', 'Coming Soon'],
+            soldOut: ['אזל', 'Sold Out'], lastOne: ['אחרון במלאי', 'Last One'],
+            openingSale: ['🌿 מבצע פתיחה', '🌿 Opening Sale'],
+            addToBag: ['הוספה לסל', 'ADD TO BAG'], added: ['✓ נוסף', '✓ ADDED'],
+            selectVariant: ['בחירת סוג', 'Select Variant'], selectSize: ['בחירת גודל', 'Select Size'],
+            unavailable: ['לא זמין', 'Unavailable'], from: ['החל מ-', 'from '],
+            priceInquiry: ['מחיר בפנייה', 'Price on inquiry'],
+            light: ['אור', 'Light'], humidity: ['לחות', 'Humidity'],
+            plants: [n => `${n} צמחים`, n => `${n} plant${n !== 1 ? 's' : ''}`],
+            empty: ['לא נמצאו צמחים. נסו לנקות את החיפוש או הסינון 🌿', 'No plants match. Try clearing the search or filters 🌿'],
+            anyPrice: ['כל המחירים', 'Any price'], under300: ['עד ₪300', 'Under ₪300'],
+            featured: ['מומלצים', 'Featured'], priceAsc: ['מחיר: מהנמוך לגבוה', 'Price: low to high'],
+            priceDesc: ['מחיר: מהגבוה לנמוך', 'Price: high to low'], nameAZ: ['שם א-ת', 'Name A-Z']
+        }; }
+        function ST(key, arg){
+            const v = STORE_STR_TABLE()[key][(typeof lang !== 'undefined' && lang === 'en') ? 1 : 0];
+            return typeof v === 'function' ? v(arg) : v;
+        }
+        function applyStoreControlLabels(){
+            const set = (sel, map) => { const e = document.getElementById(sel); if (!e) return;
+                [...e.options].forEach(o => { if (map[o.value]) o.textContent = ST(map[o.value]); }); };
+            set('store-price', { 'all': 'anyPrice', '0-300': 'under300' });
+            set('store-sort', { 'featured': 'featured', 'price-asc': 'priceAsc', 'price-desc': 'priceDesc', 'name': 'nameAZ' });
+        }
+
         function renderStoreTabs(){
             const wrap = document.getElementById('store-tabs');
             if (!wrap) return;
@@ -3650,7 +3691,7 @@ body.dark-mode .scoreboard-item.current {
             }
             const present = new Set(ALL_STORE_ITEMS.map(plFamily));
             const order = ['Alocasia', 'Monstera', 'Philodendron', 'Others'];
-            const label = { Alocasia: 'ALOCASIA', Monstera: 'MONSTERA', Philodendron: 'PHILODENDRON', Others: 'OTHER' };
+            const label = { Alocasia: 'ALOCASIA', Monstera: 'MONSTERA', Philodendron: 'PHILODENDRON', Others: ST('other') };
             const cats = ['all'].concat(order.filter(c => present.has(c)));
             wrap.innerHTML = cats.map(c => {
                 const active = (storeCategory === c) ? ' store-tab-active' : '';
@@ -3658,12 +3699,13 @@ body.dark-mode .scoreboard-item.current {
                     ? ALL_STORE_ITEMS.length
                     : ALL_STORE_ITEMS.filter(i => plFamily(i) === c).length;
                 return `<button class="store-tab${active}" onclick="setStoreCategory('${c}', this)">`
-                     + `${c === 'all' ? 'ALL' : label[c]} <span class="store-tab-n">${count}</span></button>`;
+                     + `${c === 'all' ? ST('all') : label[c]} <span class="store-tab-n">${count}</span></button>`;
             }).join('');
         }
 
         function renderStore(){
             renderStoreTabs();
+            applyStoreControlLabels();
             let items = ALL_STORE_ITEMS.slice();
             if (storeCategory !== 'all') {
                 items = items.filter(item => plFamily(item) === storeCategory);
@@ -3697,10 +3739,10 @@ body.dark-mode .scoreboard-item.current {
             if (!grid) return;
 
             const countEl = document.getElementById('store-count');
-            if (countEl) countEl.textContent = items.length ? `${items.length} plant${items.length !== 1 ? 's' : ''}` : '';
+            if (countEl) countEl.textContent = items.length ? ST('plants', items.length) : '';
 
             if (!items.length) {
-                grid.innerHTML = `<div class="store-empty">No plants match. Try clearing the search or filters 🌿</div>`;
+                grid.innerHTML = `<div class="store-empty">${ST('empty')}</div>`;
                 return;
             }
 
@@ -3709,17 +3751,17 @@ body.dark-mode .scoreboard-item.current {
                 const isAvailable = item.status === "available";
                 const soldOut = isAvailable && itemSoldOut(item);
                 const unitsLeft = itemUnitsLeft(item);
-                let badgeLabel = isAvailable ? 'Available' : 'Coming Soon';
+                let badgeLabel = isAvailable ? ST('available') : ST('coming');
                 let badgeClass = isAvailable ? 'badge-available' : 'badge-coming-soon';
                 if (isAvailable && item.openingSale) {
-                    badgeLabel = '🌿 Opening Sale';
+                    badgeLabel = ST('openingSale');
                     badgeClass = 'badge-opening-sale';
                 }
                 if (soldOut) {
-                    badgeLabel = 'Sold Out';
+                    badgeLabel = ST('soldOut');
                     badgeClass = 'badge-sold-out';
                 } else if (isAvailable && unitsLeft === 1) {
-                    badgeLabel = 'Last One';
+                    badgeLabel = ST('lastOne');
                     badgeClass = 'badge-last-one';
                 }
                 const badge = `<span class="availability-badge ${badgeClass}">${badgeLabel}</span>`;
@@ -3731,7 +3773,7 @@ body.dark-mode .scoreboard-item.current {
                     const fmtPrice = (opt) => {
                         const price = ITEM_PRICES[`${item.id}_${opt}`];
                         if (!price) return '';
-                        return opt === 'Mature Plant' ? ` - from ₪${price}` : ` - ₪${price}`;
+                        return opt === 'Mature Plant' ? ` - ${ST('from')}₪${price}` : ` - ₪${price}`;
                     };
 
                     if (hasCustomOptions) {
@@ -3740,11 +3782,11 @@ body.dark-mode .scoreboard-item.current {
                         // the one option is pre-selected and ADD TO BAG works in one tap.
                         const single = item.availability.length === 1;
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select">';
-                        if (!single) dropdownHTML += '<option value="">Select Variant</option>';
+                        if (!single) dropdownHTML += `<option value="">${ST('selectVariant')}</option>`;
                         item.availability.forEach(opt => {
                             const oos = variantSoldOut(item.id, opt);
                             dropdownHTML += oos
-                                ? `<option disabled>${opt} (Sold Out)</option>`
+                                ? `<option disabled>${opt} (${ST('soldOut')})</option>`
                                 : `<option value="${opt}">${opt}${fmtPrice(opt)}</option>`;
                         });
                         dropdownHTML += '</select></div>';
@@ -3753,13 +3795,13 @@ body.dark-mode .scoreboard-item.current {
                         const availableCount = allOptions.filter(o => item.availability.includes(o) && !variantSoldOut(item.id, o)).length;
                         const single = availableCount === 1;
                         dropdownHTML = '<div class="availability-dropdown"><select class="availability-select">';
-                        if (!single) dropdownHTML += '<option value="">Select Size</option>';
+                        if (!single) dropdownHTML += `<option value="">${ST('selectSize')}</option>`;
                         allOptions.forEach(opt => {
                             const listed = item.availability.includes(opt);
                             const oos = listed && variantSoldOut(item.id, opt);
                             dropdownHTML += (listed && !oos) ?
                                 `<option value="${opt}">${opt}${fmtPrice(opt)}</option>` :
-                                `<option disabled>${opt} (${oos ? 'Sold Out' : 'Unavailable'})</option>`;
+                                `<option disabled>${opt} (${oos ? ST('soldOut') : ST('unavailable')})</option>`;
                         });
                         dropdownHTML += '</select></div>';
                     }
@@ -3768,7 +3810,7 @@ body.dark-mode .scoreboard-item.current {
                 const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
                 let btnHTML;
                 if (isAvailable && !soldOut) {
-                    btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
+                    btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">${ST('addToBag')}</button>`;
                 } else {
                     btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${item.id}', '${item.name}')">${waitLabel}</button>`;
                 }
@@ -3781,15 +3823,15 @@ body.dark-mode .scoreboard-item.current {
                     ${isAvailable ? `<p class="card-price" dir="auto" style="text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;color:var(--pink);">${(() => { const ps = (item.availability||[]).map(o => ITEM_PRICES[item.id+'_'+o]).filter(p => typeof p === 'number'); if(!ps.length) return ''; const mn = Math.min(...ps); return (new Set(ps).size>1 ? 'from ₪' : '₪') + mn; })()}</p>` : ''}
                     ${dropdownHTML}
                     <div class="w-full space-y-1 mb-2">
-                        <div class="stat-row"><span>☀️ Light</span><span>${item.light}</span></div>
-                        <div class="stat-row"><span>💧 Humidity</span><span>${item.humidity}</span></div>
+                        <div class="stat-row"><span>☀️ ${ST('light')}</span><span>${item.light}</span></div>
+                        <div class="stat-row"><span>💧 ${ST('humidity')}</span><span>${item.humidity}</span></div>
                     </div>
                     ${btnHTML}
                 </div>`;
             });
 
             grid.innerHTML = h;
-            if (filteredItems[0]) plViewItem(filteredItems[0].id);
+            if (items[0]) plViewItem(items[0].id);
         }
 
         // ── PRODUCT DETAIL MODAL ──
@@ -3823,18 +3865,18 @@ body.dark-mode .scoreboard-item.current {
             const el = document.getElementById('pd-price');
             if (!el) return;
             const isAvailable = item.status === 'available';
-            if (!isAvailable) { el.textContent = 'Price on inquiry'; return; }
+            if (!isAvailable) { el.textContent = ST('priceInquiry'); return; }
             const opts = item.availability || [];
             const sel = document.getElementById('pd-variant');
             if (opts.length > 1 && sel && sel.value) {
                 const p = ITEM_PRICES[item.id + '_' + sel.value];
-                el.textContent = (typeof p === 'number') ? ('₪' + p) : 'Price on inquiry';
+                el.textContent = (typeof p === 'number') ? ('₪' + p) : ST('priceInquiry');
                 return;
             }
             const ps = opts.map(o => ITEM_PRICES[item.id + '_' + o]).filter(p => typeof p === 'number');
-            if (!ps.length) { el.textContent = 'Price on inquiry'; return; }
+            if (!ps.length) { el.textContent = ST('priceInquiry'); return; }
             const mn = Math.min(...ps);
-            el.textContent = (new Set(ps).size > 1 ? 'from ₪' : '₪') + mn;
+            el.textContent = (new Set(ps).size > 1 ? ST('from') + '₪' : '₪') + mn;
         }
 
         function pdSelectVariant(){ pdUpdatePrice(); }
@@ -3854,8 +3896,9 @@ body.dark-mode .scoreboard-item.current {
 
             const badge = document.getElementById('pd-badge');
             let bl, bc;
-            if (isAvailable && itemSoldOut(item)) { bl = 'Sold Out'; bc = 'badge-sold-out'; }
-            else { bl = 'Coming Soon'; bc = 'badge-coming-soon'; }
+            if (isAvailable && itemSoldOut(item)) { bl = ST('soldOut'); bc = 'badge-sold-out'; }
+            else if (isAvailable) { bl = ST('available'); bc = 'badge-available'; }
+            else { bl = ST('coming'); bc = 'badge-coming-soon'; }
             badge.className = 'availability-badge ' + bc;
             badge.textContent = bl;
 
@@ -3886,7 +3929,7 @@ body.dark-mode .scoreboard-item.current {
 
             const action = document.getElementById('pd-action');
             if (isAvailable) {
-                action.innerHTML = `<button class="add-to-cart-btn" onclick="addToCart('${pdEsc(item.id)}', '${pdEsc(item.name)}', this)">ADD TO BAG</button>`;
+                action.innerHTML = `<button class="add-to-cart-btn" onclick="addToCart('${pdEsc(item.id)}', '${pdEsc(item.name)}', this)">${ST('addToBag')}</button>`;
             } else {
                 const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
                 action.innerHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${pdEsc(item.id)}', '${pdEsc(item.name)}')">${waitLabel}</button>`;
@@ -4218,6 +4261,7 @@ function checkLab(choiceIndex) {
                 if(label) n.innerText = label;
             });
             if(!document.getElementById('page-care').classList.contains('hidden')) renderCareProducts();
+            { const t = document.getElementById('store-tabs'); if (t) t.innerHTML = ''; if (typeof renderStore === 'function') renderStore(); }
             if(!document.getElementById('page-encyclopedia').classList.contains('hidden')) {
                 const articleView = document.getElementById('encyc-article-view');
                 if (!articleView.classList.contains('hidden')) {
@@ -4316,6 +4360,7 @@ function checkLab(choiceIndex) {
         function cookieConsent(choice) {
             localStorage.setItem('pl_cookie_consent', choice);
             document.getElementById('cookie-banner').classList.add('hidden');
+            try { gtag('consent', 'update', { analytics_storage: choice === 'accept' ? 'granted' : 'denied' }); } catch (e) {}
         }
 
         // ─── SELECTION BAG - CONCIERGE CART ───────────────────────────
@@ -4693,7 +4738,7 @@ function checkLab(choiceIndex) {
             const soldOutItem = ALL_STORE_ITEMS.find(i => i.id === id);
             if (variantSoldOut(id, grade) || (soldOutItem && itemSoldOut(soldOutItem))) {
                 btn.textContent = 'SOLD OUT';
-                setTimeout(() => { btn.textContent = 'ADD TO BAG'; }, 1800);
+                setTimeout(() => { btn.textContent = ST('addToBag'); }, 1800);
                 return;
             }
 
@@ -4706,9 +4751,9 @@ function checkLab(choiceIndex) {
             }
             saveBag();
 
-            btn.textContent = '✓ ADDED';
+            btn.textContent = ST('added');
             btn.classList.add('added');
-            setTimeout(() => { btn.textContent = 'ADD TO BAG'; btn.classList.remove('added'); }, 1800);
+            setTimeout(() => { btn.textContent = ST('addToBag'); btn.classList.remove('added'); }, 1800);
 
             updateBagUI();
             renderBagItems();
