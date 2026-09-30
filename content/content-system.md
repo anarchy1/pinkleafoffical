@@ -109,7 +109,7 @@ post in the same commit as the entry, and it goes to the front of the queue.
 | `content/posts-2026-09-23.md` | choosing a substrate, first 48 hours | 2026-09-23 |
 | `content/posts-2026-09-24.md` | toxicity, light, outdoors in Israel, is it really rare | 2026-09-24 |
 | `content/posts-2026-09-26.md` | Philodendron Tortum spotlight | 2026-09-26 |
-| `content/posts-2026-09-30.md` | Philodendron Pink Princess Marble spotlight | 2026-09-30 |
+| `content/posts-2026-09-30.md` | Pink Princess Marble spotlight, Angela Aurea spotlight | 2026-09-30 |
 
 **A caption is not written until it is in this folder.** The Tortum caption sat
 only in a working session's scratch space, which does not survive the session,
