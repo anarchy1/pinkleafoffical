@@ -100,7 +100,14 @@ def main():
             const txt = [...document.querySelectorAll('.add-to-cart-btn')].map(b => b.textContent.trim());
             return {
                 cards: document.querySelectorAll('.portal').length,
-                addToBag: txt.filter(t => /ADD TO BAG/i.test(t)).length,
+                // Both labels, both languages. The store defaults to Hebrew,
+                // so an English-only matcher reports zero buy buttons on a
+                // perfectly working store. That happened on 30 September: the
+                // waitlist check already matched both languages, the buy check
+                // did not, and the merge that made the store speak Hebrew
+                // looked exactly like the 26 September button inversion.
+                // If a label changes in index.html, change it here too.
+                addToBag: txt.filter(t => /ADD TO BAG|הוספה לסל/i.test(t)).length,
                 waitlist: txt.filter(t => /NOTIFY ME|עדכנו אותי/.test(t)).length,
                 buttons: txt.length,
             };
