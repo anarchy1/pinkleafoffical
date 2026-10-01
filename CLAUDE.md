@@ -254,6 +254,13 @@ All of these run from the repo root and are idempotent.
 - `python3 tools/build_hreflang.py`
   Maintains hreflang on the three genuine article translation pairs, and
   strips any hreflang that appears outside its managed block.
+- `python3 tools/apply_seo_meta.py`
+  Sets the Google title, description and og/twitter tags of every article and
+  encyclopedia page from `tools/seo_meta.json`, and adds datePublished /
+  dateModified from git. Edit the JSON, not the pages. Titles at most 60
+  characters, Hebrew first on encyclopedia pages (Israeli buyers search in
+  Hebrew). A new page is not done until it has a line in that JSON. Needs a
+  full clone (`git fetch --unshallow`) for the dates.
 - `python3 tools/optimize_images.py [--dry-run]`
   Caps photos at 1400px on the long edge, quality 85. Run it after adding
   images. Skips anything already under 150 KB.

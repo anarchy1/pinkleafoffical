@@ -199,3 +199,13 @@ What holds them back in search:
 
 Fixing 1 to 3 is new customer-facing copy in Google results, so it waits for
 Kat's approval.
+
+### Fixed 1 Oct 2026 (Kat approved)
+
+All 45 pages now have titles of 60 characters or fewer, descriptions of 115
+to 160, Hebrew-first titles and descriptions on the 27 encyclopedia pages, and
+datePublished / dateModified from git history. Seven garbled Hebrew
+descriptions that Google was showing were rewritten. Source of truth:
+`tools/seo_meta.json`, applied by `tools/apply_seo_meta.py`. Page language
+attributes were left as they are: the encyclopedia pages carry both languages,
+and flipping their direction would move the layout.
