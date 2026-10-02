@@ -324,7 +324,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;500;600&family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root { 
             --bg: #fdfdfd; 
@@ -982,6 +982,56 @@
         .store-search:focus, .store-select:focus { border-color: var(--pink); }
         .store-search::placeholder { opacity: 0.5; }
         .store-count { text-align:center; font-size:11px; letter-spacing:1px; opacity:0.5; margin-bottom:14px; }
+        /* ── Pink Modern store, 2 Oct 2026 (Kat chose the pink direction) ──
+           White ground, the plants carry the colour, deep rose only on what
+           you press. #B04A6F under white text measures about 5.2:1. */
+        :root { --rose: #B04A6F; --rose-dark: #963C5D; --blush: #FBEFF3; --ink: #2A1B22; }
+        body { font-family: 'Heebo', 'Inter', sans-serif; }
+        #page-store .store-ship { text-align: center; font-size: 13px; font-weight: 500; color: var(--ink); opacity: .75; margin: 6px 0 4px; letter-spacing: 0; }
+        #page-store .store-babynote { max-width: 640px; margin: 0 auto 14px; text-align: center; font-size: 13px; line-height: 1.6; color: #6E4A58; background: var(--blush); border-radius: 999px; padding: 8px 18px; }
+        #page-store .store-controls { max-width: 760px; margin: 6px auto 12px; }
+        #page-store .store-search { flex: 1 1 100%; font-family: 'Heebo', sans-serif; font-size: 15px; padding: 13px 20px; background: var(--blush); border: 1px solid transparent; letter-spacing: 0; }
+        #page-store .store-search:focus { border-color: var(--rose); background: #fff; }
+        #page-store .store-select { font-family: 'Heebo', sans-serif; font-size: 13px; letter-spacing: 0; padding: 9px 16px; background: #fff; }
+        #page-store .store-tabs { gap: 8px; margin: 4px 0 6px; }
+        #page-store .store-tab { font-family: 'Heebo', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0; opacity: 1; padding: 8px 16px; border: 1px solid #E9C9D4; border-radius: 999px; color: var(--ink); background: #fff; }
+        #page-store .store-tab:hover { border-color: var(--rose); }
+        #page-store .store-tab-active { background: var(--rose); border-color: var(--rose); color: #fff; }
+        #page-store .store-tab-n { opacity: .7; }
+        #page-store .store-count { font-size: 12px; letter-spacing: 0; }
+        #page-store .store-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px 18px; margin-top: 14px; }
+        .product-card.pl2 { padding: 0; border: none; border-radius: 0; background: transparent; align-items: stretch; box-shadow: none; }
+        .product-card.pl2:hover { transform: none; box-shadow: none; }
+        body.dark-mode .product-card.pl2 { background: transparent; }
+        .pl2-img { position: relative; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden; background: var(--blush); cursor: pointer; }
+        .pl2-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+        .pl2-img:hover img { transform: scale(1.03); }
+        .pl2-coming .pl2-img img { opacity: .85; }
+        .pl2-img .availability-badge { position: absolute; top: 10px; inset-inline-end: 10px; margin: 0; background: #fff; border: none; box-shadow: 0 1px 4px rgba(0,0,0,.12); font-size: 10px; padding: 4px 9px; }
+        /* Everything on sale is available; only the exceptions get a badge. */
+        .pl2-img .badge-available { display: none; }
+        .pl2-body { display: flex; flex-direction: column; flex: 1; gap: 2px; padding: 10px 4px 0; text-align: start; }
+        .pl2-body .add-to-cart-btn { margin-top: auto !important; }
+        .pl2-body .pl2-price, .pl2-body .pl2-pick, .pl2-body .pl2-hide { margin-bottom: 10px; }
+        .pl2-name { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.3; color: var(--text); text-align: right; }
+        [dir="ltr"] .pl2-body .pl2-name { text-align: left; }
+        .pl2-sub { margin: 0; font-size: 13px; color: #8A6F79; }
+        .pl2-price { margin: 2px 0 0; font-size: 16px; font-weight: 700; color: var(--text); }
+        .pl2-hide { display: none; }
+        .pl2-pick .availability-select { width: 100%; margin-top: 6px; font-family: 'Heebo', sans-serif; border-radius: 999px; }
+        .product-card.pl2 .add-to-cart-btn { margin-top: 10px; padding: 12px; min-height: 46px; border-radius: 999px; font-family: 'Heebo', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .5px; background: var(--rose); border-color: var(--rose); color: #fff; }
+        .product-card.pl2 .add-to-cart-btn:hover { background: var(--rose-dark); border-color: var(--rose-dark); }
+        .product-card.pl2 .add-to-cart-btn.alloc-btn { background: #fff !important; color: var(--rose) !important; border: 1.5px solid var(--rose) !important; opacity: 1; }
+        .product-card.pl2 .add-to-cart-btn.added { background: #2E6B3A; border-color: #2E6B3A; color: #fff; }
+        @media (max-width: 600px) {
+            #page-store .store-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 10px; }
+            .pl2-name { font-size: 13px; }
+            .pl2-sub { font-size: 12px; }
+            .product-card.pl2 .add-to-cart-btn { font-size: 12px; min-height: 42px; padding: 10px 6px; }
+            #page-store .store-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 4px; }
+            #page-store .store-tab { flex: none; }
+        }
+
         .store-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -2774,11 +2824,10 @@ body.dark-mode .scoreboard-item.current {
     </main>
 
     <main id="page-store" class="hidden max-w-6xl mx-auto relative px-4 pb-24">
-        <p class="store-ship">🌿 Nationwide shipping across Israel · משלוחים עד הבית לכל הארץ</p>
-        <p class="store-babynote" dir="auto" style="max-width:760px;margin:4px auto 16px;text-align:center;font-size:12.5px;line-height:1.65;background:rgba(214,145,168,0.10);border:1px solid rgba(214,145,168,0.32);border-radius:12px;padding:11px 16px;color:var(--pink);">🌱 שימו לב: הצמחים נשלחים בגודל צעיר (starter). התמונות מציגות את הזן בבגרותו, והצמח שתקבלו מגיע צעיר וגדל לזה עם הזמן.<br><span style="opacity:0.85;">Please note: plants ship young (starter size). Photos show the mature variety, and your plant arrives young and grows into it over time.</span></p>
-        <div class="store-tabs" id="store-tabs"></div>
+        <p class="store-ship" id="store-ship"></p>
+        <p class="store-babynote" id="store-babynote" dir="auto"></p>
         <div class="store-controls">
-            <input type="text" id="store-search" class="store-search" oninput="setStoreSearch(this.value)" placeholder="חיפוש צמח / Search plants..." dir="auto" aria-label="Search plants">
+            <input type="search" id="store-search" class="store-search" oninput="setStoreSearch(this.value)" placeholder="חיפוש לפי שם, למשל Angela Aurea" dir="auto" aria-label="Search plants">
             <select id="store-price" class="store-select" onchange="setStorePrice(this.value)" aria-label="Filter by price">
                 <option value="all">Any price</option>
                 <option value="0-300">Under ₪300</option>
@@ -2793,6 +2842,7 @@ body.dark-mode .scoreboard-item.current {
                 <option value="name">Name A-Z</option>
             </select>
         </div>
+        <div class="store-tabs" id="store-tabs"></div>
         <div id="store-count" class="store-count"></div>
         <div id="store-grid" class="store-grid"></div>
     </main>
@@ -3661,16 +3711,20 @@ body.dark-mode .scoreboard-item.current {
             // Built once. renderStore runs on every keystroke in the search box,
             // and rebuilding the bar each time is pointless DOM churn: the counts
             // come from the whole catalogue, not the filtered view.
-            if (wrap.children.length) {
+            if (wrap.children.length && wrap.dataset.lang === lang) {
                 wrap.querySelectorAll('.store-tab').forEach(t => {
                     const cat = (t.getAttribute('onclick') || '').split("'")[1];
                     t.classList.toggle('store-tab-active', cat === storeCategory);
                 });
                 return;
             }
+            wrap.dataset.lang = lang;
             const present = new Set(ALL_STORE_ITEMS.map(plFamily));
             const order = ['Alocasia', 'Monstera', 'Philodendron', 'Others'];
-            const label = { Alocasia: 'ALOCASIA', Monstera: 'MONSTERA', Philodendron: 'PHILODENDRON', Others: 'OTHER' };
+            const he = lang === 'he';
+            const label = he
+                ? { Alocasia: 'אלוקסיה', Monstera: 'מונסטרה', Philodendron: 'פילודנדרון', Others: 'עוד נדירים' }
+                : { Alocasia: 'Alocasia', Monstera: 'Monstera', Philodendron: 'Philodendron', Others: 'Other' };
             const cats = ['all'].concat(order.filter(c => present.has(c)));
             wrap.innerHTML = cats.map(c => {
                 const active = (storeCategory === c) ? ' store-tab-active' : '';
@@ -3678,11 +3732,20 @@ body.dark-mode .scoreboard-item.current {
                     ? ALL_STORE_ITEMS.length
                     : ALL_STORE_ITEMS.filter(i => plFamily(i) === c).length;
                 return `<button class="store-tab${active}" onclick="setStoreCategory('${c}', this)">`
-                     + `${c === 'all' ? 'ALL' : label[c]} <span class="store-tab-n">${count}</span></button>`;
+                     + `${c === 'all' ? (he ? 'הכל' : 'All') : label[c]} <span class="store-tab-n">${count}</span></button>`;
             }).join('');
         }
 
         function renderStore(){
+            const isHeS = lang === 'he';
+            const ship = document.getElementById('store-ship');
+            if (ship) ship.textContent = isHeS
+                ? 'איסוף מהסטודיו ברמת גן · משלוח בתיאום אישי'
+                : 'Pickup from the studio in Ramat Gan · delivery arranged with you';
+            const note = document.getElementById('store-babynote');
+            if (note) note.textContent = isHeS
+                ? 'הצמחים נשלחים צעירים. התמונה מראה את הזן בבגרותו, והצמח שלכם גדל לשם.'
+                : 'Plants ship young. The photo shows the variety grown; yours grows into it.';
             renderStoreTabs();
             let items = ALL_STORE_ITEMS.slice();
             if (storeCategory !== 'all') {
@@ -3785,26 +3848,46 @@ body.dark-mode .scoreboard-item.current {
                     }
                 }
 
-                const waitLabel = lang === 'he' ? 'עדכנו אותי' : 'NOTIFY ME';
+                const isHe = lang === 'he';
+                const waitLabel = isHe ? 'עדכנו אותי' : 'Notify me';
+                const safeName = pdEsc(item.name);
                 let btnHTML;
                 if (isAvailable && !soldOut) {
-                    btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${item.name}', this)">ADD TO BAG</button>`;
+                    btnHTML = `<button class="add-to-cart-btn" id="cart-btn-${item.id}" onclick="addToCart('${item.id}', '${safeName}', this)">ADD TO BAG</button>`;
                 } else {
-                    btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${item.id}', '${item.name}')">${waitLabel}</button>`;
+                    btnHTML = `<button class="add-to-cart-btn alloc-btn" onclick="joinWaitlist('${item.id}', '${safeName}')">${waitLabel}</button>`;
                 }
+                const famHe = { Alocasia: 'אלוקסיה', Monstera: 'מונסטרה', Philodendron: 'פילודנדרון', Others: 'נדיר' };
+                const fam = plFamily(item);
+                const famLabel = isHe ? (famHe[fam] || fam) : (fam === 'Others' ? 'Rare' : fam);
+                // Every plant ships young (see the note above the grid), so the
+                // card says so rather than letting the photo imply a grown plant.
+                const sizeLabel = isAvailable ? (isHe ? 'צמח צעיר' : 'Young plant') : (isHe ? 'בקרוב' : 'Coming soon');
+                const priceTxt = (() => {
+                    if (!isAvailable) return '';
+                    const ps = (item.availability || []).map(o => ITEM_PRICES[item.id + '_' + o]).filter(p => typeof p === 'number');
+                    if (!ps.length) return '';
+                    const mn = Math.min(...ps).toLocaleString();
+                    const from = new Set(ps).size > 1 ? (isHe ? 'החל מ-' : 'from ') : '';
+                    return isHe ? `${from}${mn} ₪` : `${from}₪${mn}`;
+                })();
+                // A single option needs no picker; the select stays in the
+                // card (hidden) because addToCart reads the grade from it.
+                const singleOption = (item.availability || []).length === 1;
 
                 h += `
-                <div class="product-card">
-                    ${badge}
-                    <div class="portal" onclick="openProduct('${item.id}')"><img src="plants/${item.id}.jpg" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'" style="opacity: ${isAvailable ? '1' : '0.85'}"></div>
-                    <p class="serif text-[11px] font-bold text-center mb-3 mt-3 pd-clickable" onclick="openProduct('${item.id}')">${item.name}</p>
-                    ${isAvailable ? `<p class="card-price" dir="auto" style="text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;color:var(--pink);">${(() => { const ps = (item.availability||[]).map(o => ITEM_PRICES[item.id+'_'+o]).filter(p => typeof p === 'number'); if(!ps.length) return ''; const mn = Math.min(...ps); return (new Set(ps).size>1 ? 'from ₪' : '₪') + mn; })()}</p>` : ''}
-                    ${dropdownHTML}
-                    <div class="w-full space-y-1 mb-2">
-                        <div class="stat-row"><span>☀️ Light</span><span>${item.light}</span></div>
-                        <div class="stat-row"><span>💧 Humidity</span><span>${item.humidity}</span></div>
+                <div class="product-card pl2${isAvailable ? '' : ' pl2-coming'}">
+                    <div class="pl2-img" onclick="openProduct('${item.id}')">
+                        <img src="plants/${item.id}.jpg" alt="${item.name}" loading="lazy" onerror="this.src='/assets/photo-coming.svg'">
+                        ${badge}
                     </div>
-                    ${btnHTML}
+                    <div class="pl2-body">
+                        <p class="pl2-name pd-clickable" dir="ltr" onclick="openProduct('${item.id}')">${item.name}</p>
+                        <p class="pl2-sub">${famLabel} · ${sizeLabel}</p>
+                        ${priceTxt ? `<p class="pl2-price" dir="auto">${priceTxt}</p>` : ''}
+                        <div class="${singleOption ? 'pl2-hide' : 'pl2-pick'}">${dropdownHTML}</div>
+                        ${btnHTML}
+                    </div>
                 </div>`;
             });
 
@@ -4240,6 +4323,7 @@ function checkLab(choiceIndex) {
             if(!document.getElementById('page-care').classList.contains('hidden')) renderCareProducts();
             updateBagUI(); renderBagItems();
             if(!document.getElementById('page-checkout').classList.contains('hidden')) renderCheckout();
+            if(!document.getElementById('page-store').classList.contains('hidden')) renderStore();
             if(!document.getElementById('page-encyclopedia').classList.contains('hidden')) {
                 const articleView = document.getElementById('encyc-article-view');
                 if (!articleView.classList.contains('hidden')) {
