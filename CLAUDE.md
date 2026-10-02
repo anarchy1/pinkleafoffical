@@ -156,6 +156,14 @@ Recording it as done so no future session rebuilds it.
   "עדכנו אותי") that opens the WhatsApp concierge. It used to be a disabled
   dead button on 15 plants.
 
+### Brand colour (standing rule, Kat 2 Oct 2026)
+- **The brand is pink, and it is the logo's pink.** Not black, and not a
+  dusty or deep "old" rose either. Kat rejected both. Take colours from
+  `brand/logo-round-online.jpg`: leaf pink `#ECA9A5`, mauve wordmark
+  `#916065`, cream ground. In index.html these are `--rose`, `--mauve`,
+  `--on-rose` (deep mauve `#5E3540` for text on the pink, 5.2:1; white on
+  this pink is unreadable) and `--blush`.
+
 ### Encyclopedia and social (standing rule)
 - **Every new encyclopedia entry gets a social post.** Set by Kat 2026-09-19.
   An entry is not done when it deploys, it is done when the post copy exists
