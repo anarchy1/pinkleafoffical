@@ -209,3 +209,30 @@ descriptions that Google was showing were rewritten. Source of truth:
 `tools/seo_meta.json`, applied by `tools/apply_seo_meta.py`. Page language
 attributes were left as they are: the encyclopedia pages carry both languages,
 and flipping their direction would move the layout.
+
+## 2 Oct 2026: store restyle (Pink Modern) and branch drift
+
+Kat chose the pink direction from the mockups. The store grid is rebuilt:
+square photos two across on phones (was one plant per screen), family chips
+in the visitor's language, search first, one deep rose button per card, and
+family plus "young plant" under every name so the grown photo is not taken
+for what ships. Only exception badges show (sold out, coming soon, last one,
+sale).
+
+Found while doing it:
+
+- **Branch drift.** `main` had two store commits this branch lacked (Hebrew
+  store strings via `ST()`, filled ADD TO BAG). Merged in; the Hebrew labels
+  are kept.
+- **Button contrast.** That filled button was #b97a8e under white text,
+  about 3.2:1, below the 4.5:1 for normal text. Now `--rose` #B04A6F, about
+  5.2:1.
+- **Stale delivery line.** The store still said "Nationwide shipping across
+  Israel" after the courier stopped on 28 Sep. Now: pickup from the studio,
+  delivery arranged per order.
+- **Unescaped names in handlers.** Store cards passed plant names raw into
+  `onclick`; a name with an apostrophe would break the button. Now `pdEsc`.
+
+Health check: inline scripts pass `node --check`, JSON-LD parses, no
+supply-chain fields, schema matches prices, browser pass with no `pageerror`,
+add to bag and both checkout paths work. Not deployed: waits on Kat.
