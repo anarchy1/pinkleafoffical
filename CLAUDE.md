@@ -163,6 +163,9 @@ Recording it as done so no future session rebuilds it.
   `#916065`, cream ground. In index.html these are `--rose`, `--mauve`,
   `--on-rose` (deep mauve `#5E3540` for text on the pink, 5.2:1; white on
   this pink is unreadable) and `--blush`.
+- **Shapes are square, not rounded** (Kat, 2 Oct 2026: she chose the squared
+  mockup's shapes, in pink). Corners use `--radius: 4px` in index.html; no
+  pill buttons or round photo frames on the store.
 - **Design assets come from Kat.** She has a ChatGPT plan and has it draw
   headers, banners and social visuals. When a page or post needs artwork,
   ask her for that specific piece rather than generating or improvising

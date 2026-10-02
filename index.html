@@ -1035,6 +1035,14 @@
         .product-card.pl2 .add-to-cart-btn:hover { background: var(--rose-dark); border-color: var(--rose-dark); }
         .product-card.pl2 .add-to-cart-btn.alloc-btn { background: #fff !important; color: var(--on-rose) !important; border: 1.5px solid var(--mauve) !important; opacity: 1; }
         .product-card.pl2 .add-to-cart-btn.added { background: #2E6B3A; border-color: #2E6B3A; color: #fff; }
+        /* Square corners (Kat, 2 Oct 2026: the squared black mockup's shapes,
+           kept in the brand pink). One token so the look stays consistent. */
+        :root { --radius: 4px; }
+        #page-store .store-search, #page-store .store-select, #page-store .store-tab,
+        #page-store .store-babynote, .pl2-img, .pl2-img .availability-badge,
+        .pl2-pick .availability-select, .product-card .add-to-cart-btn,
+        #bag-checkout-btn, .co-submit, .bag-cta-quiet { border-radius: var(--radius) !important; }
+        .product-card .add-to-cart-btn:not(.alloc-btn):not(.added) { box-shadow: none; }
         @media (max-width: 600px) {
             #page-store .store-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 10px; }
             .pl2-name { font-size: 13px; }
