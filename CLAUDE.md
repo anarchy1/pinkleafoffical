@@ -163,6 +163,11 @@ Recording it as done so no future session rebuilds it.
   `#916065`, cream ground. In index.html these are `--rose`, `--mauve`,
   `--on-rose` (deep mauve `#5E3540` for text on the pink, 5.2:1; white on
   this pink is unreadable) and `--blush`.
+- **Design assets come from Kat.** She has a ChatGPT plan and has it draw
+  headers, banners and social visuals. When a page or post needs artwork,
+  ask her for that specific piece rather than generating or improvising
+  one (Kat, 2 Oct 2026). Plants shown for sale or as a variety reference
+  must be real photos, not drawn ones.
 
 ### Encyclopedia and social (standing rule)
 - **Every new encyclopedia entry gets a social post.** Set by Kat 2026-09-19.
