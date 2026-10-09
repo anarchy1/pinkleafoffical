@@ -1,0 +1,167 @@
+{
+  "_about": "Search titles and descriptions for every article and encyclopedia page. Applied by tools/apply_seo_meta.py. Titles stay at or under 60 characters including the brand; descriptions roughly 110 to 160. Encyclopedia pages lead with Hebrew because Israeli buyers search in Hebrew. English-only articles keep English.",
+  "encyclopedia/post-flask-sterilization.html": {
+    "title": "חיטוי שורשי TC אחרי הצנצנת: הפרוטוקול | Pink Leaf",
+    "description": "מדריך מקצועי לחיטוי שורשי Tissue Culture אחרי הצנצנת: מי חמצן ביחס 1:4, הסרת אגר ידנית ומניעת עובש. הפרוטוקול של Pink Leaf לצמחים נדירים."
+  },
+  "encyclopedia/21-day-hardening-sop.html": {
+    "title": "אקלום צמחי TC: פרוטוקול 21 הימים | Pink Leaf",
+    "description": "מדריך שבוע אחר שבוע לאקלום צמחי Tissue Culture: פתיחה הדרגתית של הכיפה, ניהול לחות, ואיך מבדילים בין הלם שתילה לריקבון שורשים."
+  },
+  "encyclopedia/engineered-substrates.html": {
+    "title": "מצע מקצועי לארואידים נדירים | Pink Leaf",
+    "description": "פורמולת מצע מקצועית לארואידים נדירים: קליפות אורכיאטה, פרלייט וקוקוס ביחסים מדויקים, ולמה Fluval Stratum הוא הסטנדרט לצמחי TC צעירים."
+  },
+  "encyclopedia/atmospheric-data-vpd-ppfd.html": {
+    "title": "VPD ו-PPFD: לחות ואור לצמחים נדירים | Pink Leaf",
+    "description": "הסבר מעשי על VPD ו-PPFD לארואידים נדירים: יעדי לחות, אור ואוורור שמונעים שריפה של האזורים הלבנים בעלה ועצירת גדילה."
+  },
+  "encyclopedia/investment-variegation-stability.html": {
+    "title": "השקעה ויציבות נימור: איך קונים נכון | Pink Leaf",
+    "description": "איך בודקים יציבות נימור לפני שקונים צמח נדיר: מה לחפש בגבעול ובניצנים, יחס ירוק ולבן, ואיך מזהים צמח שהוא השקעה. מדריך הרכישה של Pink Leaf."
+  },
+  "encyclopedia/plant-health-indicators.html": {
+    "title": "5 סימנים שהצמח שלכם משגשג | Pink Leaf",
+    "description": "5 סימנים מקצועיים לארואיד בריא: קצב הוצאת עלים, צבע השורשים, תנוחת העלים, יציבות הנימור ועוד. כך יודעים שהצמח לא רק שורד אלא משגשג."
+  },
+  "encyclopedia/leaf-symptom-diagnosis.html": {
+    "title": "תסמינים בעלים: מה הצמח מנסה להגיד | Pink Leaf",
+    "description": "מדריך אבחון לפי העלים: קצוות חומים, עלים צהובים, כתמים שחורים ועלה שלא נפתח. מה כל סימן אומר ומה עושים, לפי הפרוטוקול של Pink Leaf."
+  },
+  "encyclopedia/plant-alocasia-polly-pink-variegata.html": {
+    "title": "Alocasia Polly Pink Variegata: מדריך טיפול | Pink Leaf",
+    "description": "מדריך טיפול מלא לאלוקסיה פולי פינק מנומרת: אור, לחות, מצע, אקלום ושימור הנימור הוורוד הנדיר, כדי שהצמח ישגשג בבית בישראל."
+  },
+  "encyclopedia/plant-alocasia-heart-balloon.html": {
+    "title": "Alocasia Heart Balloon: מדריך טיפול | Pink Leaf",
+    "description": "מדריך טיפול מלא לאלוקסיה הארט בלון: מבנה העלה הייחודי, דרישות לחות ומצע, ואיך מונעים נפילת עלים ותרדמה מוקדמת בחורף הישראלי."
+  },
+  "encyclopedia/plant-alocasia-macrorrhiza-variegata.html": {
+    "title": "Alocasia Macrorrhiza Variegata: מדריך טיפול | Pink Leaf",
+    "description": "מדריך טיפול מלא לאלוקסיה מקרוריזה מנומרת: אור, מצע, לחות ודישון, ואיך שומרים על נימור לבן יציב בצמח שגדל לגודל של ממש."
+  },
+  "encyclopedia/plant-philodendron-jose-buono.html": {
+    "title": "Philodendron Jose Buono: מדריך טיפול | Pink Leaf",
+    "description": "מדריך טיפול מלא לפילודנדרון ג׳וז בואנו: אור, מצע, לחות ודישון, ואיך שומרים על הנימור הקרם יציב לאורך זמן בתנאי הבית בישראל."
+  },
+  "encyclopedia/tissue-culture.html": {
+    "title": "תרבית רקמה: המדע מאחורי הצמח | Pink Leaf",
+    "description": "מה זה תרבית רקמה, למה צמחי TC שונים מצמחים רגילים, ואיך מאקלמים אותם נכון. המדריך של Pink Leaf לצמחים נדירים בישראל, מהצנצנת ועד העציץ."
+  },
+  "encyclopedia/variegation-types.html": {
+    "title": "סוגי וריאגציה: ההבדלים הגנטיים | Pink Leaf",
+    "description": "סוגי הוריאגציה בצמחים: כימרית, סקטוריאלית, ספורט, יציבה מתרבית רקמה, וריאגציה ורודה. מה יציב, מה עובר בתורשה ומה זה אומר לאספנים."
+  },
+  "encyclopedia/semi-hydro-leca-guide.html": {
+    "title": "סמי-הידרו ו-LECA לארואידים | Pink Leaf",
+    "description": "מדריך מלא ל-LECA ולגידול סמי-הידרו בארואידים נדירים: מצע, מיכלים, דישון ו-pH, ולמה גדלים מקצועיים עוברים לשיטה הזאת."
+  },
+  "encyclopedia/repotting-tc-plant.html": {
+    "title": "העברת צמח TC מהצנצנת לעציץ | Pink Leaf",
+    "description": "איך מעבירים צמח Tissue Culture לעציץ בעדינות: מתי הוא מוכן, איזה גודל עציץ, איזה מצע ואיזו טמפרטורה, כדי שהגדילה תמשיך אחרי האקלום."
+  },
+  "encyclopedia/plant-monstera-albo-variegata.html": {
+    "title": "Monstera Albo Variegata: מדריך לאספנים | Pink Leaf",
+    "description": "מדריך מלא למונסטרה אלבו וריגטה: נימור כימרי, תנאי גידול, סימנים שהנימור חוזר לירוק ואיך מונעים את זה, ולמה האלבו מאבדת נימור בקלות."
+  },
+  "encyclopedia/water-quality-ph-aroids.html": {
+    "title": "איכות מים ו-pH לארואידים | Pink Leaf",
+    "description": "למה מי ברז מזיקים לארואידים נדירים, מהו טווח ה-pH האידיאלי (6.0 עד 6.5), ערכי EC ו-TDS נכונים, ומה ההבדל בין מים מזוקקים, מסוננים ו-RO."
+  },
+  "encyclopedia/fertilizing-rare-aroids.html": {
+    "title": "דישון ארואידים נדירים: המדריך | Pink Leaf",
+    "description": "מדריך דישון מקצועי לארואידים נדירים: יחס NPK, מינון לפי EC ולא לפי התווית, מים בישראל, שטיפת מלחים, ומה שונה בצמחי TC ובצמחים מנומרים."
+  },
+  "encyclopedia/pests-thrips-mites-quarantine.html": {
+    "title": "מזיקים בארואידים: תריפסים, אקריות ובידוד | Pink Leaf",
+    "description": "זיהוי וטיפול בארבעת המזיקים הנפוצים בצמחי בית נדירים בישראל: תריפסים, אקריות, כנימות קמחיות וזבובוני קרקע, ופרוטוקול בידוד של 14 יום."
+  },
+  "encyclopedia/alocasia-corm-propagation.html": {
+    "title": "פקעות אלוקסיה: איסוף, הנבטה וגידול | Pink Leaf",
+    "description": "ריבוי אלוקסיה מפקעות: איך מוצאים פקעות בהחלפת עציץ, קילוף, הנבטה בספגנום או LECA בלחות 90%, זמני השתרשות, ומה קורה לנימור."
+  },
+  "encyclopedia/choosing-your-substrate.html": {
+    "title": "איזה מצע לאיזה צמח: מדריך בחירה | Pink Leaf",
+    "description": "מדריך בחירת מצע לצמחים נדירים: מתי מצע נטול אדמה, מתי מינרלי סמי-הידרו, מה מתאים לסוקולנטים, ומה התפקיד של זאולייט ופחם פעיל."
+  },
+  "encyclopedia/first-48-hours-new-plant.html": {
+    "title": "48 השעות הראשונות עם צמח חדש | Pink Leaf",
+    "description": "מה עושים כשצמח נדיר מגיע: פתיחת האריזה, בדיקת שורשים, איפה להניח אותו, מה נורמלי ומה לא, ולמה לא מחליפים עציץ ולא מדשנים בשבועות הראשונים."
+  },
+  "encyclopedia/are-aroids-toxic-pets-children.html": {
+    "title": "האם ארואידים רעילים לחיות מחמד וילדים? | Pink Leaf",
+    "description": "האם אלוקסיה, מונסטרה ופילודנדרון רעילים לחתולים, לכלבים ולילדים? מה קורה כשנוגסים בעלה, מה עושים מיד ומתי פונים לווטרינר או לרופא."
+  },
+  "encyclopedia/how-much-light-israeli-apartment.html": {
+    "title": "כמה אור הצמח צריך בדירה ישראלית | Pink Leaf",
+    "description": "מדריך אור מעשי לצמחים נדירים בדירה בישראל: איזה חלון, באיזה מרחק, ולמה חלון דרומי שורף. כולל מדידה בטלפון ומתי צריך תאורת גידול."
+  },
+  "encyclopedia/growing-aroids-outdoors-israel.html": {
+    "title": "אפשר לגדל ארואידים בחוץ בישראל? | Pink Leaf",
+    "description": "אפשר להוציא אלוקסיה, מונסטרה ופילודנדרון למרפסת בישראל? מה שורד את הקיץ, למה שרב מסוכן יותר מהחורף, ואילו כיווני מרפסת עובדים."
+  },
+  "encyclopedia/is-it-really-rare-buying-check.html": {
+    "title": "איך יודעים שצמח נדיר באמת נדיר | Pink Leaf",
+    "description": "מדריך קנייה לצמחים נדירים בישראל: איך מבדילים נימור יציב מנימור שיחזור לירוק, למה צמח TC שווה יותר, ואילו שאלות לשאול מוכר לפני שמשלמים."
+  },
+  "encyclopedia/acclimation-from-sphagnum-to-soil.html": {
+    "title": "From Sphagnum Moss to Soil: Transition Guide | Pink Leaf",
+    "description": "When and how to move tissue culture and newly rooted aroids from sphagnum to regular substrate: a tested protocol for Alocasia, Monstera and Philodendron."
+  },
+  "articles/alocasia-varieties-guide.html": {
+    "title": "זני אלוקסיה: זברינה, בלאק ולווט, פולי ועוד | Pink Leaf",
+    "description": null
+  },
+  "articles/aroid-propagation-guide.html": {
+    "title": "ריבוי ארואידים בבית: ייחורים, פקעות וחלוקה | Pink Leaf",
+    "description": null
+  },
+  "articles/aroid-soil-substrate-israel.html": {
+    "title": "Aroid Soil Mix for Israel: Substrate Guide | Pink Leaf",
+    "description": "The right soil mix for rare aroids in Israel: perlite ratios, bark grades, what to avoid, and why standard potting mix fails in Israeli heat."
+  },
+  "articles/aroid-substrate-diy-mix.html": {
+    "title": "מצע DIY לארואידים: המתכון המלא | Pink Leaf",
+    "description": null
+  },
+  "articles/common-pests-detection-treatment.html": {
+    "title": "Houseplant Pests: Detection and Treatment | Pink Leaf",
+    "description": "How to spot and treat spider mites, thrips and fungus gnats on rare houseplants: early warning signs, organic and chemical options, prevention."
+  },
+  "articles/humidity-guide-israel.html": {
+    "title": "Humidity for Rare Plants in Israel | Pink Leaf",
+    "description": "How to raise and hold humidity for rare tropical plants in Israel's dry climate: humidifier placement, avoiding mould, grouping plants, seasons."
+  },
+  "articles/humidity-light-vpd-guide.html": {
+    "title": "Humidity, Light and VPD for Rare Plants | Pink Leaf",
+    "description": "How humidity, light and VPD work together in rare plant care, why high humidity alone is not enough, and how to set the right environment."
+  },
+  "articles/israeli-winter-plant-care.html": {
+    "title": "Rare Tropical Plants in Israeli Winter | Pink Leaf",
+    "description": "Caring for rare Alocasia, Philodendron and Monstera through Israeli winter: cold drafts, low light, heating damage and dormancy, step by step."
+  },
+  "articles/monstera-variegata-guide.html": {
+    "title": "מונסטרה וריגטה: תאי קונסטליישן מול אלבו | Pink Leaf",
+    "description": null
+  },
+  "articles/philodendron-rare-varieties.html": {
+    "title": "פילודנדרון נדיר: מדריך זנים | Pink Leaf",
+    "description": null
+  },
+  "articles/reading-plant-roots.html": {
+    "title": "Reading Plant Roots: When to Repot | Pink Leaf",
+    "description": "Learn to read your plant's roots: what white, brown and black roots mean, how aerial roots work, root-bound signs, and when to repot."
+  },
+  "articles/tc-plant-acclimation.html": {
+    "title": "Tissue Culture Acclimation: Step by Step | Pink Leaf",
+    "description": "How to acclimate tissue culture plants from agar to soil, step by step, for rare Alocasia, Philodendron and Monstera, with the usual pitfalls."
+  },
+  "articles/variegated-alocasia-care-guide.html": {
+    "title": "Variegated Alocasia Care Guide | Pink Leaf",
+    "description": "Light, water, humidity, soil and propagation for 40+ rare variegated Alocasia varieties, with practical tips for growing them in Israel."
+  },
+  "articles/watering-rare-plants-israel.html": {
+    "title": "Watering Rare Plants in Israel | Pink Leaf",
+    "description": "How Israeli summer heat and dry winters change the way you water rare tropical plants, how to read the substrate, and when to hold back."
+  }
+}

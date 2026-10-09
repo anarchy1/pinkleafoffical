@@ -9,7 +9,7 @@
       "title_en": "Post-Flask Sterilization: The Tissue Culture Protocol",
       "subtitle_he": "מה שלא מנקים, מרקיב. מה שמרקיב, מת.",
       "subtitle_en": "What you don't clean will rot. What rots, dies.",
-      "meta_description_he": "מדריך מקצועי לחיטוי שורשי Tissue Culture באמצעות H₂O₂ ביחס 1:4, הסרת Agar ידנית, ומניעת עובש. פרוטוקול Pink Leaf הרשמי לצמחים נדירים.",
+      "meta_description_he": "מדריך מקצועי לחיטוי שורשי Tissue Culture אחרי הצנצנת: מי חמצן ביחס 1:4, הסרת אגר ידנית ומניעת עובש. הפרוטוקול של Pink Leaf לצמחים נדירים.",
       "meta_description_en": "Professional guide to sterilizing Tissue Culture roots using H₂O₂ at 1:4 ratio, manual Agar removal, and mold prevention. The official Pink Leaf SOP for rare aroids.",
       "seo_keywords": [
         "tissue culture sterilization",
@@ -68,7 +68,7 @@
       "title_en": "The Acclimation Process: The 21-Day SOP",
       "subtitle_he": "הצמח לא נכשל. הגדלן נכשל.",
       "subtitle_en": "The plant didn't fail. The grower did.",
-      "meta_description_he": "מדריך שבועי מפורט לאקלימטיזציה של צמחי Tissue Culture, לוח burping, ניהול לחות וכיפות, ואבחנה בין שוק השתלה לריקבון שורשים.",
+      "meta_description_he": "מדריך שבוע אחר שבוע לאקלום צמחי Tissue Culture: פתיחה הדרגתית של הכיפה, ניהול לחות, ואיך מבדילים בין הלם שתילה לריקבון שורשים.",
       "meta_description_en": "Detailed weekly guide to acclimating Tissue Culture plants, burping schedule, humidity dome management, and diagnosing transplant shock vs. root rot.",
       "seo_keywords": [
         "TC hardening protocol",
@@ -129,7 +129,7 @@
       "title_en": "Engineered Substrate for Rare Aroids",
       "subtitle_he": "אדמת שתילה היא מוות איטי. זה לא דעה, זה כימיה.",
       "subtitle_en": "Potting soil is slow death. This is not an opinion, it is chemistry.",
-      "meta_description_he": "פורמולת מצע מקצועית לארוידים נדירים: Orchiata Bark, Perlite, Coconut Coir ביחסים מדויקים. למה Fluval Stratum הוא הסטנדרט ל-TC starts.",
+      "meta_description_he": "פורמולת מצע מקצועית לארואידים נדירים: קליפות אורכיאטה, פרלייט וקוקוס ביחסים מדויקים, ולמה Fluval Stratum הוא הסטנדרט לצמחי TC צעירים.",
       "meta_description_en": "Professional substrate formula for rare aroids: Orchiata Bark, Perlite, Coconut Coir in precise ratios. Why Fluval Stratum is the gold standard for TC starts.",
       "seo_keywords": [
         "aroid substrate mix",
@@ -188,7 +188,7 @@
       "title_en": "VPD & PPFD: The Science of Environment for Rare Plants",
       "subtitle_he": "אם אתם לא מודדים, אתם מנחשים. וניחושים הורגים צמחים יקרים.",
       "subtitle_en": "If you're not measuring, you're guessing. And guessing kills expensive plants.",
-      "meta_description_he": "הסבר מעמיק על VPD ו-PPFD לצמחי אוור וארוידים נדירים. יעדי לחות, אור ואוורור למניעת שריפת סקטורים לבנים ועצירת גדילה.",
+      "meta_description_he": "הסבר מעשי על VPD ו-PPFD לארואידים נדירים: יעדי לחות, אור ואוורור שמונעים שריפה של האזורים הלבנים בעלה ועצירת גדילה.",
       "meta_description_en": "Deep explanation of VPD and PPFD for variegated and rare aroid plants. Humidity, light, and airflow targets to prevent white sector browning and growth stagnation.",
       "seo_keywords": [
         "VPD plants indoor",
@@ -247,7 +247,7 @@
       "title_en": "Investment & Genetic Stability: How to Buy Correctly",
       "subtitle_he": "מחיר גבוה לא מבטיח צמח טוב. בדיקה נכונה, כן.",
       "subtitle_en": "A high price doesn't guarantee a good plant. A correct inspection does.",
-      "meta_description_he": "כיצד לבדוק יציבות וריאגציה לפני רכישת צמח נדיר: בדיקת Meristem, Auxiliary Buds, ויחס ירוק-לבן. מדריך רכישה מקצועי של Pink Leaf.",
+      "meta_description_he": "איך בודקים יציבות נימור לפני שקונים צמח נדיר: מה לחפש בגבעול ובניצנים, יחס ירוק ולבן, ואיך מזהים צמח שהוא השקעה. מדריך הרכישה של Pink Leaf.",
       "meta_description_en": "How to inspect variegation stability before purchasing a rare plant: Meristem check, Auxiliary Buds, green-to-white ratio. Pink Leaf's professional buying guide.",
       "seo_keywords": [
         "variegation stability check",
@@ -306,7 +306,7 @@
       "title_en": "5 Signs Your Plant Is Thriving: Not Just Surviving",
       "subtitle_he": "צמח שחי ≠ צמח שבריא. הנה ההבדל.",
       "subtitle_en": "A plant that lives ≠ a plant that thrives. Here is the difference.",
-      "meta_description_he": "5 אינדיקטורים מקצועיים לצמח ארואיד בריא: קצב עלים, צבע שורשים, תנוחה, ורייגציה ועוד. מדריך אבחון Pink Leaf.",
+      "meta_description_he": "5 סימנים מקצועיים לארואיד בריא: קצב הוצאת עלים, צבע השורשים, תנוחת העלים, יציבות הנימור ועוד. כך יודעים שהצמח לא רק שורד אלא משגשג.",
       "meta_description_en": "5 professional health indicators for rare aroids: leaf rhythm, root color, posture, variegation and more. The Pink Leaf diagnostic guide.",
       "seo_keywords": [
         "plant health signs",
@@ -363,7 +363,7 @@
       "title_en": "Reading Leaf Symptoms: What Your Plant Is Trying to Tell You",
       "subtitle_he": "הצמח תמיד מדבר. הבעיה שרובנו לא מקשיבים נכון.",
       "subtitle_en": "The plant always speaks. The problem is that most of us don't listen correctly.",
-      "meta_description_he": "מדריך אבחון תסמינים בעלים: קצוות חומים, עלים צהובים, כתמי שחור, עלה לא נפתח. פרוטוקול קריאת תסמינים של Pink Leaf.",
+      "meta_description_he": "מדריך אבחון לפי העלים: קצוות חומים, עלים צהובים, כתמים שחורים ועלה שלא נפתח. מה כל סימן אומר ומה עושים, לפי הפרוטוקול של Pink Leaf.",
       "meta_description_en": "Leaf symptom diagnosis guide: brown tips, yellow leaves, black spots, unopened leaf. Pink Leaf's official symptom-reading protocol.",
       "seo_keywords": [
         "brown leaf tips aroid",
@@ -420,7 +420,7 @@
       "title_en": "Alocasia Polly Pink Variegata: Complete Care Guide",
       "subtitle_he": "וריאגציה ורודה, שבירות גבוהה, תגמול עצום. רק אם יודעים.",
       "subtitle_en": "Pink variegation, high sensitivity, enormous reward. If you know what you're doing.",
-      "meta_description_he": "מדריך טיפוח מלא ל-Alocasia Polly Pink Variegata, תאורה, לחות, מצע, חישול ושימור וריאגציה ורודה נדירה.",
+      "meta_description_he": "מדריך טיפול מלא לאלוקסיה פולי פינק מנומרת: אור, לחות, מצע, אקלום ושימור הנימור הוורוד הנדיר, כדי שהצמח ישגשג בבית בישראל.",
       "meta_description_en": "Complete care guide for Alocasia Polly Pink Variegata, light, humidity, substrate, hardening and preservation of rare pink variegation.",
       "seo_keywords": [
         "Alocasia Polly Pink care",
@@ -456,7 +456,7 @@
       "title_en": "Alocasia Heart Balloon: Complete Care Guide",
       "subtitle_he": "הצמח שנראה כמו בלון לב, מתנהג כמו יצור עדין.",
       "subtitle_en": "Looks like a heart balloon, behaves like a delicate creature.",
-      "meta_description_he": "מדריך טיפוח מלא ל-Alocasia Heart Balloon, מבנה העלה הייחודי, דרישות לחות, מצע אידיאלי ומניעת נפילת עלים.",
+      "meta_description_he": "מדריך טיפול מלא לאלוקסיה הארט בלון: מבנה העלה הייחודי, דרישות לחות ומצע, ואיך מונעים נפילת עלים ותרדמה מוקדמת בחורף הישראלי.",
       "meta_description_en": "Complete care guide for Alocasia Heart Balloon, unique leaf structure, humidity requirements, ideal substrate, and preventing leaf drop.",
       "seo_keywords": [
         "Alocasia Heart Balloon care",
@@ -492,7 +492,7 @@
       "title_en": "Alocasia Macrorrhiza Variegata: Complete Care Guide",
       "subtitle_he": "הענקית. וריאגציה קטעים לבנים בעלים גדולים כמו מפות.",
       "subtitle_en": "The Giant. Sectoral white variegation on leaves the size of maps.",
-      "meta_description_he": "מדריך טיפוח מלא ל-Alocasia Macrorrhiza Variegata, תאורה, מצע, לחות, שימור וריאגציה לבנה יציבה.",
+      "meta_description_he": "מדריך טיפול מלא לאלוקסיה מקרוריזה מנומרת: אור, מצע, לחות ודישון, ואיך שומרים על נימור לבן יציב בצמח שגדל לגודל של ממש.",
       "meta_description_en": "Complete care guide for Alocasia Macrorrhiza Variegata, light, substrate, humidity, and preservation of stable white sectoral variegation.",
       "seo_keywords": [
         "Alocasia Macrorrhiza Variegata care",
@@ -527,7 +527,7 @@
       "title_en": "Philodendron Jose Buono: Complete Care Guide",
       "subtitle_he": "קרם, ירוק, ארכיטקטורה. הקולקטיבל הכי פחות מסוכן לגדל.",
       "subtitle_en": "Cream, green, architecture. The most forgiving collectible to grow.",
-      "meta_description_he": "מדריך טיפוח מלא ל-Philodendron Jose Buono, תאורה, מצע, לחות, שימור וריאגציה קרם.",
+      "meta_description_he": "מדריך טיפול מלא לפילודנדרון ג׳וז בואנו: אור, מצע, לחות ודישון, ואיך שומרים על הנימור הקרם יציב לאורך זמן בתנאי הבית בישראל.",
       "meta_description_en": "Complete care guide for Philodendron Jose Buono, light, substrate, humidity and cream variegation preservation.",
       "seo_keywords": [
         "Philodendron Jose Buono care",
@@ -562,7 +562,7 @@
       "title_en": "Tissue Culture: The Science Behind the Plant",
       "subtitle_he": "לא כל צמח הוא צמח. TC הוא מדע.",
       "subtitle_en": "Not every plant is a plant. TC is science.",
-      "meta_description_he": "מה זה תרבית רקמה, למה צמחי TC שונים, ואיך מאקלמים אותם נכון. המדריך המלא של Pink Leaf לצמחים נדירים ישראל.",
+      "meta_description_he": "מה זה תרבית רקמה, למה צמחי TC שונים מצמחים רגילים, ואיך מאקלמים אותם נכון. המדריך של Pink Leaf לצמחים נדירים בישראל, מהצנצנת ועד העציץ.",
       "meta_description_en": "What is tissue culture, why TC plants are different, and how to acclimatise them correctly. The complete Pink Leaf guide to rare plants Israel.",
       "seo_keywords": [
         "tissue culture plants",
@@ -614,7 +614,7 @@
       "title_en": "Types of Variegation: Genetic Distinctions for Growers",
       "subtitle_he": "לא כל וריאגציה שווה. חלקן יציבות לנצח, חלקן ייעלמו בעלה הבא.",
       "subtitle_en": "Not all variegation is created equal. Some are stable forever, others will disappear on the next leaf.",
-      "meta_description_he": "הסבר מלא על סוגי וריאגציה בצמחים: כימרית, סקטוריאלית, ספורט, TC-יציבה, וריאגציה ורודה. יציבות, תורשה, ומשמעות לגדלנים צמחים נדירים.",
+      "meta_description_he": "סוגי הוריאגציה בצמחים: כימרית, סקטוריאלית, ספורט, יציבה מתרבית רקמה, וריאגציה ורודה. מה יציב, מה עובר בתורשה ומה זה אומר לאספנים.",
       "meta_description_en": "Complete guide to variegation types in plants: chimeral, sectoral, sport, TC-stable, and pink variegation. Stability, inheritance, and implications for rare plant growers.",
       "seo_keywords": [
         "chimeric variegation plant",
@@ -652,7 +652,7 @@
       "title_en": "Semi-Hydro LECA Guide for Aroids: Perfect Drainage",
       "subtitle_he": "מים וגזים במקביל. זהו הסוד.",
       "subtitle_en": "Water and gas simultaneously. That is the secret.",
-      "meta_description_he": "מדריך מלא ל-LECA ו-Semi-Hydroponics לארוידים נדירים: מצע, מלאים, תזוזוזה, ו-pH. מדוע גדלנים מקצועיים בחרו בשיטה זו.",
+      "meta_description_he": "מדריך מלא ל-LECA ולגידול סמי-הידרו בארואידים נדירים: מצע, מיכלים, דישון ו-pH, ולמה גדלים מקצועיים עוברים לשיטה הזאת.",
       "meta_description_en": "Complete LECA and semi-hydroponic growing guide for rare aroids: substrate, fillings, reservoir methods, and pH. Why professional growers choose this technique.",
       "seo_keywords": [
         "LECA growing aroid",
@@ -713,7 +713,7 @@
       "title_en": "Repotting a TC Plant from Flask to Pot: The Precise Guide",
       "subtitle_he": "שפיכה לתוך עציץ היא אמנות. זהו חשמל.",
       "subtitle_en": "Moving a plant to a pot is not dumping. It is precision work.",
-      "meta_description_he": "כיצד להטפט צמח Tissue Culture בעדינות: סימנים לכשיוץ, בחירת גודל עציץ, מצע וטמפרטורה. תסרוקת גדילה מתוך האקלום השלמה.",
+      "meta_description_he": "איך מעבירים צמח Tissue Culture לעציץ בעדינות: מתי הוא מוכן, איזה גודל עציץ, איזה מצע ואיזו טמפרטורה, כדי שהגדילה תמשיך אחרי האקלום.",
       "meta_description_en": "How to carefully repot a TC plant: readiness signs, pot size selection, substrate choice, and technique. Complete growing guide from full acclimation.",
       "seo_keywords": [
         "repot TC plant guide",
@@ -776,7 +776,7 @@
       "title_en": "Monstera Deliciosa 'Albo Variegata': The Collector's Guide",
       "subtitle_he": "הצמח הכי צפוי, הכי יפה, והכי קל לנזוק לזבל.",
       "subtitle_en": "The most coveted, most beautiful, and easiest to ruin.",
-      "meta_description_he": "מדריך מלא לPink Leaf: Monstera Albo Variegata, וריאגציה כימרית, תנאי גדילה, סימני ריברשן, מניעה. מדוע Monstera Albo מתאשק בקלות.",
+      "meta_description_he": "מדריך מלא למונסטרה אלבו וריגטה: נימור כימרי, תנאי גידול, סימנים שהנימור חוזר לירוק ואיך מונעים את זה, ולמה האלבו מאבדת נימור בקלות.",
       "meta_description_en": "Complete Pink Leaf guide: Monstera Albo Variegata, chimeric variegation, growing conditions, reversion signs, prevention. Why Monstera Albo reverts so easily.",
       "seo_keywords": [
         "Monstera Albo Variegata care",
@@ -814,7 +814,7 @@
       "title_en": "Water Quality & pH for Rare Aroids: Why Tap Water Is a Problem",
       "subtitle_he": "המים שלכם לא דומים למים שלי. בדוק אחרי.",
       "subtitle_en": "Your water is not my water. Test it yourself.",
-      "meta_description_he": "מדוע מי ברז מזיקים לארוידים, תחום pH אידיאלי (6.0–6.5), EC/TDS תקני, וההבדלים בין מים מזוקקים לטהורים ל-RO. הדריך Pink Leaf הסטנדרטי.",
+      "meta_description_he": "למה מי ברז מזיקים לארואידים נדירים, מהו טווח ה-pH האידיאלי (6.0 עד 6.5), ערכי EC ו-TDS נכונים, ומה ההבדל בין מים מזוקקים, מסוננים ו-RO.",
       "meta_description_en": "Why tap water damages aroids, ideal pH range (6.0–6.5), EC/TDS standards, and differences between distilled, filtered, and RO water. The Pink Leaf standard guide.",
       "seo_keywords": [
         "tap water aroids harm",
@@ -875,7 +875,7 @@
       "title_en": "Fertilizing Rare Aroids: Feed the Roots, Not the Fear",
       "subtitle_he": "רוב הצמחים הנדירים מתים ממנת יתר, לא מרעב. דשן הוא מינון, לא משאלה.",
       "subtitle_en": "Most rare plants die overfed, not underfed. Fertilizer is a dose, not a wish.",
-      "meta_description_he": "מדריך דישון מקצועי לארוידים נדירים: יחס NPK, מינון לפי EC ולא לפי התווית, מים בישראל, שטיפת מלחים, ומה שונה בצמחי TC ובצמחים מנומרים.",
+      "meta_description_he": "מדריך דישון מקצועי לארואידים נדירים: יחס NPK, מינון לפי EC ולא לפי התווית, מים בישראל, שטיפת מלחים, ומה שונה בצמחי TC ובצמחים מנומרים.",
       "meta_description_en": "Professional fertilizing guide for rare aroids: NPK ratio, dosing by EC instead of the label, Israeli tap water, salt flushing, and what changes for TC starts and variegated plants.",
       "seo_keywords": [
         "fertilizing aroids",
@@ -932,7 +932,7 @@
       "title_en": "Pests on Rare Aroids: Thrips, Spider Mites, and the 14-Day Rule",
       "subtitle_he": "אין לך בעיית מזיקים. יש לך בעיית בידוד.",
       "subtitle_en": "You don't have a pest problem. You have a quarantine problem.",
-      "meta_description_he": "זיהוי וטיפול בארבעת המזיקים שמשנים בצמחי בית נדירים בישראל: תריפסים, אקריות קורים, כנימות קמחיות וזבובוני קרקע. פרוטוקול בידוד 14 יום, ספינוסד, שמן הורטיקולטורי, ואויבים טבעיים.",
+      "meta_description_he": "זיהוי וטיפול בארבעת המזיקים הנפוצים בצמחי בית נדירים בישראל: תריפסים, אקריות, כנימות קמחיות וזבובוני קרקע, ופרוטוקול בידוד של 14 יום.",
       "meta_description_en": "Identify and treat the four pests that matter on rare houseplants in Israel: thrips, spider mites, mealybugs and fungus gnats. The 14-day quarantine protocol, spinosad, horticultural oil, and beneficial mites.",
       "seo_keywords": [
         "thrips monstera",
@@ -991,7 +991,7 @@
       "title_en": "Alocasia Corms: Harvest, Wake, and Grow Your Own Backup",
       "subtitle_he": "כל אלוקסיה בונה בשקט חלקי חילוף מתחת לאדמה. תלמדו למצוא אותם.",
       "subtitle_en": "Every Alocasia is quietly building spares underground. Learn to find them.",
-      "meta_description_he": "מדריך ריבוי אלוקסיה מפקעות: איך מוצאים פקעות בזמן החלפת עציץ, קילוף, הערה בספגנום או LECA בלחות 90%, זמני השתרשות, ומה קורה לנימור בפקעות של צמח מנומר.",
+      "meta_description_he": "ריבוי אלוקסיה מפקעות: איך מוצאים פקעות בהחלפת עציץ, קילוף, הנבטה בספגנום או LECA בלחות 90%, זמני השתרשות, ומה קורה לנימור.",
       "meta_description_en": "Alocasia corm propagation guide: finding corms at repotting, peeling, waking them in sphagnum or LECA at 90% humidity, rooting timelines, and what happens to variegation in corms from a variegated plant.",
       "seo_keywords": [
         "alocasia corms",
@@ -1048,7 +1048,7 @@
       "title_en": "Which Substrate for Which Plant: The Selection Guide",
       "subtitle_he": "יש שישה מצעים על המדף. רק אחד מהם נכון לצמח שבידיים שלכם.",
       "subtitle_en": "There are six mixes on the shelf. Only one of them is right for the plant in your hands.",
-      "meta_description_he": "מדריך בחירת מצע לצמחים נדירים: מתי מצע נטול אדמה, מתי מינרלי סמי-הידרו, מה מתאים לסוקולנטים, ומה התפקיד של זאולייט ופחם פעיל. כולל כמה ליטר צריך לכל גודל עציץ.",
+      "meta_description_he": "מדריך בחירת מצע לצמחים נדירים: מתי מצע נטול אדמה, מתי מינרלי סמי-הידרו, מה מתאים לסוקולנטים, ומה התפקיד של זאולייט ופחם פעיל.",
       "meta_description_en": "How to choose a substrate for rare plants: when a soil-free aroid mix, when a pure mineral semi-hydro mix, what suits succulents, and what zeolite and activated charcoal actually do. Includes how many litres each pot size takes.",
       "seo_keywords": [
         "aroid substrate",
@@ -1107,7 +1107,7 @@
       "title_en": "The First 48 Hours: What to Do When the Plant Arrives",
       "subtitle_he": "הצמח לא נשבר בדרך. הוא נשבר בשבוע שאחרי, ממה שעשיתם לו מרוב דאגה.",
       "subtitle_en": "The plant does not break in transit. It breaks the week after, from what worry makes you do to it.",
-      "meta_description_he": "מה עושים כשצמח נדיר מגיע במשלוח: פתיחה, בדיקת שורשים, איפה להניח, מה נורמלי ומה לא, ולמה אסור להחליף עציץ או לדשן בשבועות הראשונים. כולל פרוטוקול 48 שעות ובידוד 14 יום.",
+      "meta_description_he": "מה עושים כשצמח נדיר מגיע: פתיחת האריזה, בדיקת שורשים, איפה להניח אותו, מה נורמלי ומה לא, ולמה לא מחליפים עציץ ולא מדשנים בשבועות הראשונים.",
       "meta_description_en": "What to do when a rare plant arrives by courier: unboxing, checking the roots, where to put it, what is normal and what is not, and why repotting or fertilizing in the first weeks is a mistake. Includes the 48 hour protocol and the 14 day quarantine.",
       "seo_keywords": [
         "new plant care",
@@ -1165,7 +1165,7 @@
       "title_en": "Are Aroids Toxic? Cats, Dogs and Children",
       "subtitle_he": "התשובה הכנה היא כן, אבל לא באופן שרוב האנשים מפחדים ממנו.",
       "subtitle_en": "The honest answer is yes, but not in the way most people fear.",
-      "meta_description_he": "האם אלוקסיה, מונסטרה ופילודנדרון רעילים לחתולים, לכלבים ולילדים? מה באמת קורה כשנוגסים בעלה, מה לעשות מיד, מתי זה מקרה לווטרינר, ואיך מסדרים בית עם צמחים נדירים ובעלי חיים.",
+      "meta_description_he": "האם אלוקסיה, מונסטרה ופילודנדרון רעילים לחתולים, לכלבים ולילדים? מה קורה כשנוגסים בעלה, מה עושים מיד ומתי פונים לווטרינר או לרופא.",
       "meta_description_en": "Are Alocasia, Monstera and Philodendron toxic to cats, dogs and children? What actually happens when a leaf is chewed, what to do in the first minutes, when it is a vet visit, and how to keep rare plants in a home with animals.",
       "seo_keywords": [
         "alocasia toxic cats",
@@ -1222,7 +1222,7 @@
       "title_en": "How Much Light It Actually Needs, in an Israeli Apartment",
       "subtitle_he": "\"אור עקיף בהיר\" זו לא הוראה. זה חלון מסוים, במרחק מסוים, בכיוון מסוים.",
       "subtitle_en": "\"Bright indirect light\" is not an instruction. It is a specific window, at a specific distance, facing a specific way.",
-      "meta_description_he": "מדריך אור מעשי לצמחים נדירים בדירה בישראל: איזה חלון, באיזה מרחק, ולמה חלון דרומי בישראל שורף. כולל מדידה בטלפון, סימני יותר מדי ופחות מדי אור, ומתי צריך תאורת גידול.",
+      "meta_description_he": "מדריך אור מעשי לצמחים נדירים בדירה בישראל: איזה חלון, באיזה מרחק, ולמה חלון דרומי שורף. כולל מדידה בטלפון ומתי צריך תאורת גידול.",
       "meta_description_en": "A practical light guide for rare plants in an Israeli apartment: which window, at what distance, and why a south window in Israel burns. Includes measuring with a phone, the signs of too much and too little, and when a grow light is needed.",
       "seo_keywords": [
         "bright indirect light meaning",
@@ -1279,7 +1279,7 @@
       "title_en": "Can You Grow Aroids Outdoors in Israel?",
       "subtitle_he": "חלקם, חלק מהשנה. השרב הוא מה שמכריע, לא החורף.",
       "subtitle_en": "Some of them, part of the year. It is the sharav that decides, not the winter.",
-      "meta_description_he": "האם אפשר להוציא אלוקסיה, מונסטרה ופילודנדרון למרפסת בישראל? מה שורד את הקיץ, למה השרב מסוכן יותר מהחורף, אילו כיווני מרפסת עובדים, ופרוטוקול הוצאה והחזרה.",
+      "meta_description_he": "אפשר להוציא אלוקסיה, מונסטרה ופילודנדרון למרפסת בישראל? מה שורד את הקיץ, למה שרב מסוכן יותר מהחורף, ואילו כיווני מרפסת עובדים.",
       "meta_description_en": "Can Alocasia, Monstera and Philodendron live on a balcony in Israel? What survives the summer, why the sharav is more dangerous than the winter, which balcony aspects work, and how to move a plant out and back.",
       "seo_keywords": [
         "aroids outdoors israel",
@@ -1336,7 +1336,7 @@
       "title_en": "How to Tell a Rare Plant Is Actually Rare",
       "subtitle_he": "רוב מה שנמכר כנדיר הוא לא. חלק ממנו אפילו לא הצמח שכתוב על השלט.",
       "subtitle_en": "Most of what sells as rare is not. Some of it is not even the plant on the label.",
-      "meta_description_he": "מדריך קנייה לצמחים נדירים בישראל: איך מבדילים נימור יציב מנימור שיחזור, מה זה נימור מוויראלי, למה צמח TC שווה יותר, ואילו שאלות לשאול מוכר לפני שמשלמים.",
+      "meta_description_he": "מדריך קנייה לצמחים נדירים בישראל: איך מבדילים נימור יציב מנימור שיחזור לירוק, למה צמח TC שווה יותר, ואילו שאלות לשאול מוכר לפני שמשלמים.",
       "meta_description_en": "A buyer's guide to rare plants in Israel: telling stable variegation from variegation that will revert, what viral variegation is, why a tissue culture plant is worth more, and the questions to ask a seller before you pay.",
       "seo_keywords": [
         "how to spot fake variegated plant",

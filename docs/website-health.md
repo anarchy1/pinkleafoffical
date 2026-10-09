@@ -414,3 +414,129 @@ Worth recording, because reporting them would have wasted her time:
 Which points at a small real thing: **the store's own strings are English
 only.** A Hebrew visitor on a Hebrew RTL page gets "80 plants" and
 "No plants match. Try clearing the search or filters". Minor, and copy, so hers.
+## 28 September 2026, full re-audit
+
+Kat asked for a competitor study, a design comparison with the most modern
+stores, and for the payment system to actually work. The full write-up is in
+`docs/competitor-audit-2026-09-28.md`.
+
+### Health check
+
+- **Branch drift:** none. Branch and `main` were level before this work.
+- **Production:** Netlify's current deploy is 26 Sep 10:17 UTC, after the
+  last commit on `main`, with the six redirect rules `netlify.toml` defines,
+  so production most likely matches `main`. Still a CLI upload with no commit
+  ref.
+- **Schema against store:** regenerating changed nothing. In sync.
+- **Store data:** 80 items, no duplicate ids, 83 price rows, no orphans,
+  every available plant's grades priced.
+- **Private data:** no assignment-shaped supply chain fields, no supplier
+  names, no cost fields in deployed files.
+- **It still runs:** all inline scripts pass `node --check`, all `ld+json`
+  parses. But see the first fix below: parsing is not the same as running.
+- **Unbuilt switches:** `STOCK_SHEET_CSV` still empty. New one:
+  `I4U_API_KEY` in Netlify switches card payment on (see the audit file).
+
+### Fixed this session
+
+| What | Why it mattered |
+| --- | --- |
+| `renderStore()` called an undefined `filteredItems` and threw on every render | Every `#/plant/` link, the kind shared on Instagram and WhatsApp, fell back to the plain store instead of opening the plant. `view_item` analytics never fired. `node --check` cannot catch this; only running the page does, so the health check now needs a browser pass too |
+| Logo swap inverted in three places | After using dark mode, or the accessibility reset, the white wordmark sat on a white page |
+| Organization schema logo was the white wordmark | Google would show a near invisible logo |
+| Floating buttons over the bag drawer on mobile | Covered the drawer title and main button |
+| Plants had no checkout; card option never appeared | Built: see the audit file, section 3 |
+
+### Lesson for the health check
+
+Add a **browser pass** to check 5: load the page in headless Chromium and
+fail on any `pageerror`. Syntax checks passed for days while the store threw
+on every render.
+
+### Open, needs Kat
+
+1. Deploy this branch. Customer visible: the new checkout with ₪37 shipping
+   shown up front, the smaller logo on inner pages, the deeper rose buttons.
+2. Add `I4U_API_KEY` in Netlify to switch card payment on, then place one
+   small real order.
+3. Confirm which phone number takes Bit (the site and the registry disagree).
+4. Approve or change the checkout's refund line and write a cancellation
+   policy.
+5. Stale crawlable store text (one plant listed as available that is coming).
+
+---
+
+## 29 September 2026, second pass
+
+- **Drift:** branch 3 ahead of `main`, 0 behind. Nothing deployed since
+  26 Sep.
+- **Found: work recorded but never committed.** Notion's inventory page says
+  the Philodendron Radiatum was switched to available on 28 Sep. No branch
+  had that change. Applied here and the schema regenerated. If a Mac session
+  made it locally, expect a trivial merge.
+- **Delivery:** the courier behind the 37 shekel rate stopped operating.
+  `SHIPPING_FLAT_ILS` is now null: delivery orders pay for the plants only and
+  the studio arranges delivery. Browser and function tests re-run clean.
+- **Still open from yesterday:** Bit number, refund line, cancellation
+  policy, stale crawlable store text, `STOCK_SHEET_CSV` empty.
+
+---
+
+## 30 September 2026, SEO pass on articles and encyclopedia
+
+45 pages checked (27 encyclopedia, 18 articles). The basics are sound on every
+page: canonical, one h1, Open Graph, structured data, sitemap entry, internal
+links, no duplicate titles or descriptions.
+
+What holds them back in search:
+
+1. **38 of 45 titles are English only.** Israeli buyers search in Hebrew.
+   Only 10 pages declare `lang="he"`; the encyclopedia pages carry Hebrew
+   content under `lang="en" dir="ltr"`.
+2. **23 titles are over 65 characters** and get cut off in Google results.
+3. **30 meta descriptions are outside 70 to 170 characters** (some over 200,
+   some under 50).
+4. **26 pages have no `datePublished`**, so search engines cannot see them as
+   fresh.
+5. **Cadence:** Kat's plan was five new topics a week. The encyclopedia has 26
+   entries in total. The gap is the pipeline, not the pages.
+
+Fixing 1 to 3 is new customer-facing copy in Google results, so it waits for
+Kat's approval.
+
+### Fixed 1 Oct 2026 (Kat approved)
+
+All 45 pages now have titles of 60 characters or fewer, descriptions of 115
+to 160, Hebrew-first titles and descriptions on the 27 encyclopedia pages, and
+datePublished / dateModified from git history. Seven garbled Hebrew
+descriptions that Google was showing were rewritten. Source of truth:
+`tools/seo_meta.json`, applied by `tools/apply_seo_meta.py`. Page language
+attributes were left as they are: the encyclopedia pages carry both languages,
+and flipping their direction would move the layout.
+
+## 2 Oct 2026: store restyle (Pink Modern) and branch drift
+
+Kat chose the pink direction from the mockups. The store grid is rebuilt:
+square photos two across on phones (was one plant per screen), family chips
+in the visitor's language, search first, one deep rose button per card, and
+family plus "young plant" under every name so the grown photo is not taken
+for what ships. Only exception badges show (sold out, coming soon, last one,
+sale).
+
+Found while doing it:
+
+- **Branch drift.** `main` had two store commits this branch lacked (Hebrew
+  store strings via `ST()`, filled ADD TO BAG). Merged in; the Hebrew labels
+  are kept.
+- **Button contrast.** That filled button was #b97a8e under white text,
+  about 3.2:1, below the 4.5:1 for normal text. Now `--rose` #B04A6F, about
+  5.2:1.
+- **Stale delivery line.** The store still said "Nationwide shipping across
+  Israel" after the courier stopped on 28 Sep. Now: pickup from the studio,
+  delivery arranged per order.
+- **Unescaped names in handlers.** Store cards passed plant names raw into
+  `onclick`; a name with an apostrophe would break the button. Now `pdEsc`.
+
+Health check: inline scripts pass `node --check`, JSON-LD parses, no
+supply-chain fields, schema matches prices, browser pass with no `pageerror`,
+add to bag and both checkout paths work. Not deployed: waits on Kat.

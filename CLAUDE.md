@@ -87,6 +87,10 @@ than no check. If a point is wrong, fix it in the script so the fix sticks.
    gets lost in the noise.
 5. **It still runs.** All inline scripts pass `node --check`, all `ld+json`
    blocks parse, no references to helpers a merge removed.
+   Then load the page in headless Chromium (Playwright is preinstalled) and
+   fail on any `pageerror`. Syntax passing is not running: on 28 Sep 2026 the
+   store threw on every render (`filteredItems` undefined) and broke every
+   `#/plant/` link while `node --check` stayed green.
 6. **Unbuilt switches.** Flag config that is wired but empty, for example
    `STOCK_SHEET_CSV`. The feature reads as done and does nothing.
 7. **Every internal folder is blocked.** `netlify.toml` publishes the repo root,
@@ -156,7 +160,12 @@ that should survive across sessions HERE, in the repo.
   notes below). The `CNAME` file in the repo is a leftover from the old GitHub
   Pages setup and does not control the live domain.
 - Bilingual: Hebrew (RTL) and English (LTR). Currency is ILS (`₪`).
-- Owner: Kat. Visits by appointment. Nationwide shipping across Israel is active.
+- Owner: Kat. **Kat is a woman: every Hebrew draft written in her voice uses
+  feminine first person** (שמחה, הייתי הולכת, ממליצה), never masculine. Address
+  each customer in their own gender. Set by Kat 2026-09-29.
+- Visits by appointment. Nationwide shipping: **paused as a fixed
+  service since 2026-09-28**, the courier stopped operating. Delivery is
+  arranged per order until Kat picks a new courier (see Payments below).
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
   India dropship store; using it was a real past bug, fixed across 35 files).
 
@@ -176,6 +185,22 @@ Recording it as done so no future session rebuilds it.
 - A plant that is not in stock offers a waitlist button ("NOTIFY ME" /
   "עדכנו אותי") that opens the WhatsApp concierge. It used to be a disabled
   dead button on 15 plants.
+
+### Brand colour (standing rule, Kat 2 Oct 2026)
+- **The brand is pink, and it is the logo's pink.** Not black, and not a
+  dusty or deep "old" rose either. Kat rejected both. Take colours from
+  `brand/logo-round-online.jpg`: leaf pink `#ECA9A5`, mauve wordmark
+  `#916065`, cream ground. In index.html these are `--rose`, `--mauve`,
+  `--on-rose` (deep mauve `#5E3540` for text on the pink, 5.2:1; white on
+  this pink is unreadable) and `--blush`.
+- **Shapes are square, not rounded** (Kat, 2 Oct 2026: she chose the squared
+  mockup's shapes, in pink). Corners use `--radius: 4px` in index.html; no
+  pill buttons or round photo frames on the store.
+- **Design assets come from Kat.** She has a ChatGPT plan and has it draw
+  headers, banners and social visuals. When a page or post needs artwork,
+  ask her for that specific piece rather than generating or improvising
+  one (Kat, 2 Oct 2026). Plants shown for sale or as a variety reference
+  must be real photos, not drawn ones.
 
 ### Encyclopedia and social (standing rule)
 - **Every new encyclopedia entry gets a social post.** Set by Kat 2026-09-19.
@@ -236,8 +261,21 @@ and is existing practice. It is not the same as raising a price after the fact.
 - Current live flow: WhatsApp "Price Concierge" inquiry links plus bank transfer.
   Product schema carries real prices for Google rich results, but Offer URLs
   currently route to WhatsApp rather than a checkout.
-- Goal: integrate a real Meshulam checkout (hosted payment page / payment links,
-  since the site is static and cannot process cards server-side).
+- **Checkout built 2026-09-28, card switch off until Kat adds the key.** One
+  checkout for plants and substrate. Card payment goes through Invoice4U
+  (which clears via Meshulam and issues the receipt) from the Netlify
+  Function `netlify/functions/checkout.mjs`. It prices orders from
+  index.html's own tables on the server, via `netlify/lib/catalog.mjs`, which
+  mirrors the parser in `tools/build_product_schema.py`: change both if the
+  data shape changes. Switched on by the Netlify env var `I4U_API_KEY`;
+  without it the card option is hidden and Bit/WhatsApp work as before.
+  Shipping is `SHIPPING_FLAT_ILS` in index.html, read by page and server.
+  **It is `null` since 2026-09-28:** the courier behind the 37 shekel rate
+  stopped operating. With null, delivery orders are charged for the plants
+  only and the studio arranges delivery. Put a number back only when Kat
+  names a new courier and rate.
+  The receipt email is the order record (order number, address, notes).
+  Details and Kat's switch-on steps: `docs/competitor-audit-2026-09-28.md`.
 
 ### Deploy / dev environment notes
 - **The live host is Netlify, not GitHub Pages.** `pinkleaf.co.il` is served by
@@ -297,6 +335,13 @@ All of these run from the repo root and are idempotent.
 - `python3 tools/build_hreflang.py`
   Maintains hreflang on the three genuine article translation pairs, and
   strips any hreflang that appears outside its managed block.
+- `python3 tools/apply_seo_meta.py`
+  Sets the Google title, description and og/twitter tags of every article and
+  encyclopedia page from `tools/seo_meta.json`, and adds datePublished /
+  dateModified from git. Edit the JSON, not the pages. Titles at most 60
+  characters, Hebrew first on encyclopedia pages (Israeli buyers search in
+  Hebrew). A new page is not done until it has a line in that JSON. Needs a
+  full clone (`git fetch --unshallow`) for the dates.
 - `python3 tools/optimize_images.py [--dry-run]`
   Caps photos at 1400px on the long edge, quality 85. Run it after adding
   images. Skips anything already under 150 KB.
