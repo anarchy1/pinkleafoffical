@@ -93,9 +93,15 @@ Any session, when asked for content, does this without being told how:
 1. Read this file. Find the next week with no drafted post.
 2. Draft the Sunday and Tuesday posts for the next 2 to 4 weeks, one file per
    batch in `content/`, named `posts-YYYY-MM-DD.md`.
-3. Each post: Hebrew and English, both paste ready, plus platform, visual
-   suggestion, goal, and the link to the entry page.
+3. Each post: **Hebrew and English in ONE caption**, both paste ready, plus
+   platform, visual suggestion, goal, and the link to the entry page.
 4. Mark the rows below as drafted, and commit.
+
+**One caption, both languages. Set by Kat 8 October 2026.** Her words: "If you
+write English and Hebrew, write in the same caption. Why do I need to go to
+Facebook? Copy paste, copy paste, copy paste." Two separate posts means she
+pastes twice for every post, on every platform. Hebrew first, then a divider,
+then English, in a single block she can copy once.
 
 Standing rule from CLAUDE.md still applies: a new encyclopedia entry gets its
 post in the same commit as the entry, and it goes to the front of the queue.
