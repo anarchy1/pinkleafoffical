@@ -18,6 +18,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -162,11 +163,35 @@ def main():
     )
 
     # 8. Behaviour
-    r = subprocess.run([sys.executable, "tools/smoke_test.py"], capture_output=True, text=True)
-    (bad if r.returncode else ok)(
-        "8 store works: " + ("all smoke checks passed" if not r.returncode
-                             else "SMOKE TEST FAILED\n" + r.stdout)
-    )
+    #
+    # The smoke test needs playwright, and the interpreter that runs this script
+    # is not always the one that has it. A fresh cloud container ships several
+    # pythons and playwright sits in exactly one of them, which on 10 Oct 2026
+    # made point 8 report SMOKE TEST FAILED when every one of its nine checks
+    # actually passed. A missing module is a machine problem, not a broken
+    # store, and the two must not read the same. So: try each interpreter, and
+    # only call it a failure once one of them could actually load playwright.
+    candidates, seen = [], set()
+    for exe in [sys.executable, "python3", "python3.13", "python3.12", "python3.11"]:
+        path = shutil.which(exe) if not os.path.isabs(exe) else exe
+        if path and path not in seen:
+            seen.add(path)
+            candidates.append(path)
+
+    r = None
+    for exe in candidates:
+        r = subprocess.run([exe, "tools/smoke_test.py"], capture_output=True, text=True)
+        if not (r.returncode and "No module named 'playwright'" in r.stderr):
+            break
+
+    if r is not None and r.returncode and "No module named 'playwright'" in r.stderr:
+        bad("8 store works: SKIPPED, playwright is not installed on any python here. "
+            "Install it (pip install playwright) and rerun. This is the machine, not the store.")
+    else:
+        (bad if r.returncode else ok)(
+            "8 store works: " + ("all smoke checks passed" if not r.returncode
+                                 else "SMOKE TEST FAILED\n" + r.stdout)
+        )
 
     print("\n  ".join(["PASS"] + passes))
     if problems:
