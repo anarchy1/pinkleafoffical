@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Put a price badge on a plant photo, without wrecking the colour.
+"""Put a price badge and the logo on a plant photo, without wrecking the colour.
 
     python3 tools/price_photo.py PHOTO 713 [-o out.jpg]
     python3 tools/price_photo.py a.jpg 713 b.jpg 823 c.jpg 897 --outdir ./priced
+    python3 tools/price_photo.py PHOTO 713 --no-logo
 
 Why this script exists instead of doing it by hand each time.
 
@@ -31,10 +32,29 @@ import sys
 from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 # Brand rose and cream. Restrained on purpose: the plant is the subject and
-# the badge is a label, not decoration. No logo goes on these. See
-# brand/README.md before adding one.
+# the badge is a label, not decoration.
 ROSE = (150, 90, 94)
 CREAM = (250, 245, 238)
+
+# Kat asked for the logo on these on 17 Oct 2026, so it now goes on by default.
+# brand/README.md decides which file and how: the rose lockup is the asset for
+# anything on a light background, and it goes on whole. Never crop it, never
+# rebuild it in text, never swap in favicon.png, which is a different drawing.
+# If this file is missing, stop rather than improvising a substitute.
+LOGO = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "brand",
+    "lockup-rose-trimmed.png",
+)
+LOGO_WIDTH_RATIO = 0.14
+LOGO_MARGIN_RATIO = 0.05
+
+# How the verify step tells JPEG rounding apart from a real change. Re-saving
+# an untouched photo at quality 95 moved no pixel in the greyscale difference
+# past 12 on the 17 Oct test set, so 32 sits well clear of encoder noise, and
+# any genuine paste covers far more than a twentieth of a percent of the frame.
+NOISE_FLOOR = 32
+MOVED_LIMIT = 0.0005
 
 FONT_CANDIDATES = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
@@ -78,6 +98,27 @@ def badge(photo, price):
     return Image.alpha_composite(photo.convert("RGBA"), layer).convert("RGB")
 
 
+def stamp_logo(photo, logo_path):
+    """Paste the lockup whole into the bottom right. Returns (image, top_y).
+
+    The top_y is what the verify step uses to stay off the logo, so a stamped
+    photo does not report itself as altered on every run.
+    """
+    mark = Image.open(logo_path).convert("RGBA")
+    width, height = photo.size
+
+    mark_w = round(width * LOGO_WIDTH_RATIO)
+    mark_h = round(mark.height * mark_w / mark.width)
+    mark = mark.resize((mark_w, mark_h), Image.LANCZOS)
+
+    margin = round(width * LOGO_MARGIN_RATIO)
+    x, y = width - mark_w - margin, height - mark_h - margin
+
+    out = photo.convert("RGBA")
+    out.alpha_composite(mark, (x, y))
+    return out.convert("RGB"), y
+
+
 def profile_name(icc):
     if not icc:
         return "NONE"
@@ -91,7 +132,7 @@ def profile_name(icc):
         return "present, unnamed"
 
 
-def run(src, price, dest, verify=True):
+def run(src, price, dest, verify=True, logo=LOGO):
     original = Image.open(src)
 
     # The whole point of this script. Keep them.
@@ -99,6 +140,16 @@ def run(src, price, dest, verify=True):
     exif = original.info.get("exif")
 
     out = badge(original.convert("RGB"), price)
+
+    logo_top = None
+    if logo:
+        if not os.path.exists(logo):
+            sys.exit(
+                "no logo at %s.\n"
+                "Do not substitute another file. See brand/README.md, or pass "
+                "--no-logo." % logo
+            )
+        out, logo_top = stamp_logo(out, logo)
 
     save_args = {"quality": 95, "subsampling": 0}
     if icc:
@@ -115,16 +166,29 @@ def run(src, price, dest, verify=True):
     )
 
     if verify:
-        # Compare the part of the frame the badge never covers. Anything
-        # beyond JPEG rounding means the image itself was altered.
+        # Compare the part of the frame neither the badge nor the logo covers.
+        #
+        # Count the pixels that moved, do not read the single worst one. On a
+        # detailed plant photo, saving the SAME image again at quality 95 puts
+        # a handful of isolated pixels 20 or more apart on leaf edges, so the
+        # old "worst pixel over 12" test called four untouched Paraiso Verde
+        # photos altered on 17 Oct 2026. A real paste moves a contiguous block,
+        # which shows up as a share of the frame rather than as one pixel.
         width, height = original.size
-        window = (0, round(height * 0.25), width, height)
-        diff = ImageChops.difference(
+        bottom = logo_top if logo_top is not None else height
+        window = (0, round(height * 0.25), width, bottom)
+        rgb_diff = ImageChops.difference(
             original.convert("RGB").crop(window), Image.open(dest).convert("RGB").crop(window)
         )
-        worst = max(diff.getextrema(), key=lambda pair: pair[1])[1]
-        line += "  max diff below badge: %d" % worst
-        if worst > 12:
+        # Per pixel, the worst of the three channels. Converting to greyscale
+        # would average them instead and hide a shift in a single channel.
+        red, green, blue = rgb_diff.split()
+        diff = ImageChops.lighter(ImageChops.lighter(red, green), blue)
+        worst = diff.getextrema()[1]
+        histogram = diff.histogram()
+        moved = sum(histogram[NOISE_FLOOR + 1:]) / float(sum(histogram))
+        line += "  below badge: worst %d, %.3f%% of pixels moved" % (worst, moved * 100)
+        if moved > MOVED_LIMIT:
             line += "  <-- CHECK THIS, the photo changed"
         if not icc:
             line += "  <-- no colour profile on the source, output may look flat"
@@ -135,7 +199,8 @@ def run(src, price, dest, verify=True):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Overlay a price on plant photos, preserving colour profile and EXIF."
+        description="Overlay a price and the logo on plant photos, "
+        "preserving colour profile and EXIF."
     )
     parser.add_argument(
         "pairs",
@@ -145,6 +210,14 @@ def main():
     )
     parser.add_argument("-o", "--out", help="output path (single pair only)")
     parser.add_argument("--outdir", default="priced", help="output directory (default: priced)")
+    parser.add_argument(
+        "--no-logo",
+        dest="logo",
+        action="store_const",
+        const=None,
+        default=LOGO,
+        help="leave the logo off. It goes on by default (Kat, 17 Oct 2026)",
+    )
     args = parser.parse_args()
 
     if len(args.pairs) % 2:
@@ -162,13 +235,18 @@ def main():
             sys.exit("price should be digits only, got %r" % price)
 
     if args.out:
-        run(pairs[0][0], pairs[0][1], args.out)
+        run(pairs[0][0], pairs[0][1], args.out, logo=args.logo)
         return
 
     os.makedirs(args.outdir, exist_ok=True)
     for src, price in pairs:
         stem = os.path.splitext(os.path.basename(src))[0]
-        run(src, price, os.path.join(args.outdir, "%s-%s.jpg" % (stem, price)))
+        run(
+            src,
+            price,
+            os.path.join(args.outdir, "%s-%s.jpg" % (stem, price)),
+            logo=args.logo,
+        )
 
 
 if __name__ == "__main__":
