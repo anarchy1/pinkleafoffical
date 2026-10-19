@@ -163,16 +163,21 @@ that should survive across sessions HERE, in the repo.
 - Owner: Kat. **Kat is a woman: every Hebrew draft written in her voice uses
   feminine first person** (שמחה, הייתי הולכת, ממליצה), never masculine. Address
   each customer in their own gender. Set by Kat 2026-09-29.
-- **Never offer a studio visit, a pickup address or an appointment in anything
-  written for a customer.** Standing rule, Kat, 19 Oct 2026. She has been
-  deleting that line by hand out of every list and menu a session hands her.
-  The studio is not a place she receives people, and she does not want her
-  growing setup shown. No menu, quote, bundle, caption or post mentions
-  visiting, dropping by, collecting in person, or booking a time.
-  **This is still live on the website and is hers to decide, not a session's
-  to change.** The lines are `index.html:54` (the schema description says
-  by-appointment visits), `index.html:3812` and `index.html:4818` (checkout
-  offers pickup from the studio in Ramat Gan, by appointment).
+- **Never offer a studio visit in anything written for a customer.** Standing
+  rule, Kat, 19 Oct 2026. She has been deleting that line by hand out of every
+  list and menu a session hands her. The studio is her home, she does not
+  receive strangers in it, and she does not want her growing setup shown. No
+  menu, quote, bundle, caption or post invites anyone to visit, come and see
+  the plants, or book a time to come round.
+  **Pickup is fine and stays.** Her words: picking up does not mean entering
+  her home, they collect the plant downstairs. So collection can be offered;
+  what cannot is a visit, a tour, or wording like "from the studio" that
+  implies coming inside.
+  **One line on the live site still says visits and is hers to change, not a
+  session's:** `index.html:54`, where the structured-data description ends
+  with "By-appointment visits". The checkout pickup option at
+  `index.html:3812` and `index.html:4818` is legitimate, though "מהסטודיו" /
+  "from the studio" would read better as collection in Ramat Gan.
 - Nationwide shipping: **paused as a fixed
   service since 2026-09-28**, the courier stopped operating. Delivery is
   arranged per order until Kat picks a new courier (see Payments below).
