@@ -211,7 +211,17 @@ Recording it as done so no future session rebuilds it.
   `content/week-2026-04-10-social.md` and
   `content/encyclopedia-posts-2026-09-19.md`.
 - Every post links to the entry page on `pinkleaf.co.il/encyclopedia/`.
-- Claude cannot publish to Instagram from a session. It drafts, Kat posts.
+- **Kat posts. That is her choice, not a limitation, since 19 Oct 2026.**
+  The Instagram account `pinkleaf.studio` is connected through **Composio** and
+  the connection is live. From a session it can publish photos, carousels,
+  Reels and Stories, read and reply to comments, read DM threads and reply
+  inside an existing one, and pull account and per-post insights. It cannot
+  start a new DM to someone who has never written.
+  Nothing customer visible goes out without her say-so, so the standing rule is
+  unchanged: Claude drafts, Kat posts. What changed is that posting is now
+  available if she ever asks for it.
+  Publishing needs the image at a public HTTPS URL that Meta can fetch, or
+  uploaded through the toolkit's file field. A local path will not work.
 - **The posting cadence and the queue live in `content/content-system.md`.**
   Three posts a week (Sunday education, Tuesday plant spotlight, Thursday is
   Kat's freestyle slot), drawn from a bank of entries that have no post yet.
