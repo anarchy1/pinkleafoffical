@@ -163,7 +163,17 @@ that should survive across sessions HERE, in the repo.
 - Owner: Kat. **Kat is a woman: every Hebrew draft written in her voice uses
   feminine first person** (שמחה, הייתי הולכת, ממליצה), never masculine. Address
   each customer in their own gender. Set by Kat 2026-09-29.
-- Visits by appointment. Nationwide shipping: **paused as a fixed
+- **Never offer a studio visit, a pickup address or an appointment in anything
+  written for a customer.** Standing rule, Kat, 19 Oct 2026. She has been
+  deleting that line by hand out of every list and menu a session hands her.
+  The studio is not a place she receives people, and she does not want her
+  growing setup shown. No menu, quote, bundle, caption or post mentions
+  visiting, dropping by, collecting in person, or booking a time.
+  **This is still live on the website and is hers to decide, not a session's
+  to change.** The lines are `index.html:54` (the schema description says
+  by-appointment visits), `index.html:3812` and `index.html:4818` (checkout
+  offers pickup from the studio in Ramat Gan, by appointment).
+- Nationwide shipping: **paused as a fixed
   service since 2026-09-28**, the courier stopped operating. Delivery is
   arranged per order until Kat picks a new courier (see Payments below).
 - Instagram is `@pinkleaf.studio`. NOT `@pinkleaf.store` (that is an unrelated
