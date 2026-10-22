@@ -4,6 +4,7 @@
     python3 tools/price_photo.py PHOTO 713 [-o out.jpg]
     python3 tools/price_photo.py a.jpg 713 b.jpg 823 c.jpg 897 --outdir ./priced
     python3 tools/price_photo.py PHOTO 713 --no-logo
+    python3 tools/price_photo.py a.jpg b.jpg c.jpg --no-price   # logo only, for social
 
 Why this script exists instead of doing it by hand each time.
 
@@ -139,7 +140,8 @@ def run(src, price, dest, verify=True, logo=LOGO):
     icc = original.info.get("icc_profile")
     exif = original.info.get("exif")
 
-    out = badge(original.convert("RGB"), price)
+    # price is None for a social post, where the logo goes on and nothing else.
+    out = badge(original.convert("RGB"), price) if price else original.convert("RGB")
 
     logo_top = None
     if logo:
@@ -158,10 +160,9 @@ def run(src, price, dest, verify=True, logo=LOGO):
         save_args["exif"] = exif
     out.save(dest, **save_args)
 
-    line = "%s  %s %s  profile: %s" % (
+    line = "%s  %s  profile: %s" % (
         os.path.basename(dest),
-        price,
-        SHEQEL,
+        ("%s %s" % (price, SHEQEL)) if price else "logo only",
         profile_name(icc),
     )
 
@@ -176,7 +177,9 @@ def run(src, price, dest, verify=True, logo=LOGO):
         # which shows up as a share of the frame rather than as one pixel.
         width, height = original.size
         bottom = logo_top if logo_top is not None else height
-        window = (0, round(height * 0.25), width, bottom)
+        # Skip the top quarter only when there is a badge sitting in it.
+        top = round(height * 0.25) if price else 0
+        window = (0, top, width, bottom)
         rgb_diff = ImageChops.difference(
             original.convert("RGB").crop(window), Image.open(dest).convert("RGB").crop(window)
         )
@@ -218,12 +221,22 @@ def main():
         default=LOGO,
         help="leave the logo off. It goes on by default (Kat, 17 Oct 2026)",
     )
+    parser.add_argument(
+        "--no-price",
+        action="store_true",
+        help="stamp the logo only, for a social post. The arguments are then "
+        "photos rather than PHOTO PRICE pairs (Kat, 22 Oct 2026)",
+    )
     args = parser.parse_args()
 
-    if len(args.pairs) % 2:
-        sys.exit("give PHOTO and PRICE in pairs, e.g. small.jpg 713 big.jpg 897")
-
-    pairs = list(zip(args.pairs[0::2], args.pairs[1::2]))
+    if args.no_price:
+        if not args.logo:
+            sys.exit("--no-price and --no-logo together would stamp nothing at all")
+        pairs = [(src, None) for src in args.pairs]
+    else:
+        if len(args.pairs) % 2:
+            sys.exit("give PHOTO and PRICE in pairs, e.g. small.jpg 713 big.jpg 897")
+        pairs = list(zip(args.pairs[0::2], args.pairs[1::2]))
 
     if args.out and len(pairs) > 1:
         sys.exit("--out takes a single PHOTO PRICE pair. Use --outdir for several.")
@@ -231,7 +244,7 @@ def main():
     for src, price in pairs:
         if not os.path.exists(src):
             sys.exit("no such photo: %s" % src)
-        if not price.isdigit():
+        if price is not None and not price.isdigit():
             sys.exit("price should be digits only, got %r" % price)
 
     if args.out:
@@ -241,10 +254,11 @@ def main():
     os.makedirs(args.outdir, exist_ok=True)
     for src, price in pairs:
         stem = os.path.splitext(os.path.basename(src))[0]
+        suffix = price if price else "logo"
         run(
             src,
             price,
-            os.path.join(args.outdir, "%s-%s.jpg" % (stem, price)),
+            os.path.join(args.outdir, "%s-%s.jpg" % (stem, suffix)),
             logo=args.logo,
         )
 
