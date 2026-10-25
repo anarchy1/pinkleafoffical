@@ -244,6 +244,18 @@ Recording it as done so no future session rebuilds it.
   and update its drafted log. Kat's own ideas always take priority over the
   queue; the queue is the floor for a week with no inspiration, not a cap.
 
+### Plant names and photos (HARD, added 2026-10-25)
+
+**Kat photographed every plant herself and gave each photo its PV number.
+The photo and her label in MASTER_DB (`tools/plant-db.csv`) are the source
+of truth for what a card is.** A session may not rename a store card to a
+different variety, grade or colour (Wentii variegated is not "Wentii Pink",
+Pink Dragon Albo is not "Stardust Mint"). On 25 Oct 2026 thirteen cards
+carried names a session had invented, so the store showed plants Kat does
+not have, under her own photos. She noticed; the sessions did not.
+Cosmetic cleanup (capitalisation, albo for white) is fine. Anything that
+changes the plant needs her exact words, written down with the date.
+
 ### Pricing (HARD, added 2026-09-28)
 
 **Kat sends the prices you give her straight to the customer, unedited.** She
