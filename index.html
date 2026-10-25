@@ -344,17 +344,17 @@
             --border: rgba(212, 165, 178, 0.3); 
             --glow: 0 0 50px 15px rgba(212, 165, 178, 0.5); 
         }
-        /* Dark mode is the "Botanical Lab" aesthetic: deep obsidian ground with a
-           high-contrast emerald accent and crisp white text. The day/night toggle
-           is untouched; only these CSS variables change, so all accent surfaces
-           that read --pink/--border/--glow shift to emerald in dark mode. */
+        /* Dark mode keeps the brand pink (Kat, 25 Oct 2026: the old emerald
+           accent is gone for good). Deep ink ground, the logo's leaf pink as the
+           accent, soft text. Only these CSS variables change, so every surface
+           that reads --pink/--border/--glow stays pink at night. */
         body.dark-mode {
-            --bg: #121212;
-            --text: #ffffff;
-            --pink: #00E676;
-            --mellow-pink: rgba(0, 230, 118, 0.16);
-            --border: rgba(0, 230, 118, 0.30);
-            --glow: 0 0 65px 20px rgba(0, 230, 118, 0.35);
+            --bg: #1A1215;
+            --text: #F6EEF0;
+            --pink: #ECA9A5;
+            --mellow-pink: rgba(236, 169, 165, 0.18);
+            --border: rgba(236, 169, 165, 0.32);
+            --glow: 0 0 65px 20px rgba(236, 169, 165, 0.28);
         }
 
         /* ── SEASONAL THEMES ───────────────────────────────────────────────
