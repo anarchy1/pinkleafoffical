@@ -540,3 +540,35 @@ Found while doing it:
 Health check: inline scripts pass `node --check`, JSON-LD parses, no
 supply-chain fields, schema matches prices, browser pass with no `pageerror`,
 add to bag and both checkout paths work. Not deployed: waits on Kat.
+
+## 25 October 2026
+
+Kat reported the store was wrong (plants she had taken off sale still for
+sale, prices she had set not showing, a Wentii Pink card carrying a yellow
+aurea photo, neon green dark mode).
+
+### What was actually wrong
+
+- 37 commits of her corrections from 26 Sep to 22 Oct sat on
+  `claude/find-order-lists-chat-yxu11j`, never merged into main, never
+  deployed. Main was at 3 Oct. The Mac clone was at 26 Aug.
+- Dark mode used an emerald accent (`#00E676`). Kat hates it.
+
+### Fixed and deployed (deploy 6ade1d71eb7118a2346e14e5, green)
+
+- main fast-forwarded to the branch. Everything on it is live.
+- Dark mode accent is the brand pink `#ECA9A5` on a deep ink ground.
+- Health check: schema 83 offers in sync, 0 unpriced, private data clean,
+  no page errors, 63 plants buyable, 17 on waitlist.
+
+### Still open
+
+- Photo audit: several cards still carry stock photos that do not match the
+  variety (Wentii Pink shows an aurea plant, PV18.jpg). Needs Kat's own
+  photos, location to be confirmed with her.
+- 24 plants are listed available but absent from the 13 Sep shelf count.
+  List given to Kat 25 Oct, waiting on her yes/no per plant.
+- `STOCK_SHEET_CSV` still empty.
+- The Python `smoke_test.py` cannot launch Chromium in the sandbox (browser
+  version mismatch); the same assertions were run with Node Playwright and
+  passed. Worth switching the script to Node.

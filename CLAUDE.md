@@ -320,13 +320,21 @@ and is existing practice. It is not the same as raising a price after the fact.
 - `netlify.toml` publishes the repo root with no build, so **everything in the
   repo is served**, internal files included. See the private data rules below
   before adding anything to the repo.
-- **A cloud Claude session cannot deploy to Netlify.** Tried three times across
-  2026-09-19 and 2026-09-23: the Netlify connector can read the project fine
-  but every deploy upload returns 403 Forbidden from Netlify, not from the
-  sandbox. The connection has read access only. Do not burn time retrying it.
-  Deploy from the Mac instead: `npx netlify-cli deploy --prod --dir .` in the
-  repo, or drag the folder onto the Deploys tab. The lasting fix is linking the
-  repo in Netlify so a push deploys by itself.
+- **A cloud Claude session CAN deploy to Netlify (works since 25 Oct 2026).**
+  Call the Netlify connector's `deploy-site` with site id
+  `ff87ce11-d61f-4812-9a2d-8b296653aad6`; it returns an `npx @netlify/mcp`
+  command with a one-time proxy path. Run that command from the repo root in
+  the sandbox and it uploads the repo, builds and publishes to production in
+  about a minute. Deploy 6ade1d71eb7118a2346e14e5 shipped this way. The old
+  note that it always returned 403 is out of date. The Mac route
+  (`npx netlify-cli deploy --prod --dir .`, or drag the folder onto the
+  Deploys tab) still works too. The lasting fix is still linking the repo in
+  Netlify so a push deploys by itself.
+- **Always deploy from `main`, after merging.** On 25 Oct 2026 Kat found the
+  live store wrong because 37 commits of her own corrections (prices, photos,
+  plants taken off sale) sat on `claude/find-order-lists-chat-yxu11j` for two
+  weeks, never merged and never deployed, while the Mac's clone was months
+  behind. A branch is not done until it is on main and the deploy is green.
 - The sandbox also cannot reach `pinkleaf.co.il` at all (egress blocked), so a
   cloud session can never confirm what is live by fetching it. Check the
   Netlify project's current deploy instead, or ask Kat.
