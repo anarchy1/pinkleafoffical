@@ -572,3 +572,64 @@ aurea photo, neon green dark mode).
 - The Python `smoke_test.py` cannot launch Chromium in the sandbox (browser
   version mismatch); the same assertions were run with Node Playwright and
   passed. Worth switching the script to Node.
+
+## 26 October 2026: photo assignment audit
+
+Trigger: Kat forwarded a live check of all 80 cards. Snapshot of the
+catalogue as it stood after the fixes: `docs/catalogue-snapshot-2026-10-26.json`
+(id, name, status, image file, md5, prices). Git history is the full backup;
+the state before this pass is commit c3c84ec.
+
+### How the pieces link
+
+A card is `{id, name, availability[], status}` in `ALL_STORE_ITEMS`. Its photo
+is always `plants/<id>.jpg` (fallback `assets/photo-coming.svg`), in the grid,
+the detail view, the Vault and the quiz alike, so one file fix corrects all
+four. Prices are `ITEM_PRICES["<id>_<grade>"]`. Kat's own label per id is
+`MASTER_DB` (from `tools/plant-db.csv`). Descriptions exist only for four
+products in `RICH` inside `tools/build_product_schema.py`; the detail view
+shows a generic sentence plus the grade name.
+
+### Cause
+
+Commit 2f41065 (22 Jul 2026, "Add real photos") wrote Kat's photos to the
+wrong ids: the Bambino photo went to PV119 and the Cuprea Aurea Latte photo
+to PV113. Before that commit both ids carried unrelated images (an Anthurium
+and a Philodendron), so the swap was never visible as a regression. The
+"Pink Lava" text was the grade label on the PV113 option, invented by a
+session, not Kat's label.
+
+### Changed
+
+| id | name | old image | new image |
+| --- | --- | --- | --- |
+| PV113 | Alocasia Bambino Pink Variegated | rounded metallic Cuprea foliage (was PV113.jpg) | arrow-shaped variegated Bambino (the former PV119.jpg) |
+| PV119 | Alocasia Cuprea Aurea Latte | arrow-shaped Bambino foliage (was PV119.jpg) | rounded metallic Cuprea Aurea Latte (the former PV113.jpg) |
+| PV13 | Rhaphidophora Tetrasperma Variegated (Coming Soon) | all-green specimen | placeholder; file kept in content/retired-photos |
+| PV113 | grade label | "Pink Lava" | "Variegated" (price 706 unchanged) |
+
+Also on 25 Oct: 13 card names restored to Kat's labels, 21 plants absent from
+the shelf count moved to Coming Soon, PV154's watermarked third-party photo
+retired.
+
+### Checked, no change
+
+- No two cards share a photo file (md5 check across all PV and X ids).
+- No description is copied from another plant: only PV19, PV81, PV25, PV48
+  have one, each its own.
+- Prices, availability and design untouched. 42 available, 38 Coming Soon.
+- Detail views render in Hebrew at 390px with the correct photo (PV113,
+  PV119 screenshots taken), no page errors, buy and waitlist buttons present.
+
+### Unresolved, needs Kat's photo
+
+Cards whose photo does not prove the name (all her own files, just not
+showing the variegation): PV117 Chantrieri Pink, PV152 Watsoniana Doff Albo,
+PV77 Watsoniana Doff Pink, PV127 Metallic Blue Albo, PV199 Red Congo,
+PV206 Verrucosum Mint. Nine cards on the placeholder: Melo Aurea,
+Watsoniana Glossy, Radiatum, Venom Aurea, Angela Aurea, Black Cardinal,
+Jungle Mint, Brown Beauty, Atabapoense Pink. Do not guess a photo for any
+of these.
+
+The Vault and quiz show MASTER_DB plants beyond the store (PV1 to PV210);
+their photo mappings outside the 80 store ids were not audited.

@@ -1,0 +1,805 @@
+[
+ {
+  "id": "PV82",
+  "name": "Alocasia Azlanii White Variegated",
+  "status": "coming",
+  "image": "plants/PV82.jpg",
+  "md5": "14aeac006a",
+  "prices": {
+   "Albo": 831
+  }
+ },
+ {
+  "id": "PV21",
+  "name": "Alocasia Bambino Aurea",
+  "status": "coming",
+  "image": "plants/PV21.jpg",
+  "md5": "5183574d44",
+  "prices": {
+   "Aurea": 422
+  }
+ },
+ {
+  "id": "PV113",
+  "name": "Alocasia Bambino Pink Variegated",
+  "status": "available",
+  "image": "plants/PV113.jpg",
+  "md5": "ce0c5e6308",
+  "prices": {
+   "Variegated": 706
+  }
+ },
+ {
+  "id": "PV22",
+  "name": "Alocasia Black Velvet Pink",
+  "status": "coming",
+  "image": "plants/PV22.jpg",
+  "md5": "6f6e41e938",
+  "prices": {
+   "Pink": 451
+  }
+ },
+ {
+  "id": "PV23",
+  "name": "Alocasia Black Velvet Gold",
+  "status": "available",
+  "image": "plants/PV23.jpg",
+  "md5": "cf8f462740",
+  "prices": {
+   "Gold": 449
+  }
+ },
+ {
+  "id": "PV117",
+  "name": "Alocasia Chantrieri Pink",
+  "status": "available",
+  "image": "plants/PV117.jpg",
+  "md5": "892a534096",
+  "prices": {
+   "Pink": 653
+  }
+ },
+ {
+  "id": "PV119",
+  "name": "Alocasia Cuprea Aurea Latte",
+  "status": "available",
+  "image": "plants/PV119.jpg",
+  "md5": "737cdade0b",
+  "prices": {
+   "Aurea Latte": 952
+  }
+ },
+ {
+  "id": "PV120",
+  "name": "Alocasia Cuprea Red Secret Mint",
+  "status": "available",
+  "image": "plants/PV120.jpg",
+  "md5": "a5207a6589",
+  "prices": {
+   "Mint": 586
+  }
+ },
+ {
+  "id": "PV73",
+  "name": "Alocasia Cuprea Red Secret Variegated",
+  "status": "available",
+  "image": "plants/PV73.jpg",
+  "md5": "6d2885d012",
+  "prices": {
+   "Super Pink": 1081
+  }
+ },
+ {
+  "id": "X_cuprea_pink_mint",
+  "name": "Alocasia Cuprea Pink Mint",
+  "status": "coming",
+  "image": "plants/X_cuprea_pink_mint.jpg",
+  "md5": "82204e6db4",
+  "prices": {
+   "Pink Mint": 944
+  }
+ },
+ {
+  "id": "X_cuprea_true_pink",
+  "name": "Alocasia Cuprea True Pink",
+  "status": "coming",
+  "image": "plants/X_cuprea_true_pink.jpg",
+  "md5": "900c3910a2",
+  "prices": {
+   "True Pink": 1454
+  }
+ },
+ {
+  "id": "PV15",
+  "name": "Alocasia Dragon Scale Albo",
+  "status": "coming",
+  "image": "plants/PV15.jpg",
+  "md5": "4def6ee943",
+  "prices": {
+   "Albo": 447
+  }
+ },
+ {
+  "id": "PV124",
+  "name": "Alocasia Dragon Scale Tri-Color",
+  "status": "available",
+  "image": "plants/PV124.jpg",
+  "md5": "2d18fa9443",
+  "prices": {
+   "Tri-Color": 389
+  }
+ },
+ {
+  "id": "X_golden_bone_mint",
+  "name": "Alocasia Golden Bone Mint",
+  "status": "available",
+  "image": "plants/X_golden_bone_mint.jpg",
+  "md5": "205cbb1697",
+  "prices": {
+   "Mint": 691
+  }
+ },
+ {
+  "id": "PV81",
+  "name": "Alocasia Heart Balloon Variegated",
+  "status": "coming",
+  "image": "plants/PV81.jpg",
+  "md5": "60dd5ff31b",
+  "prices": {
+   "Pink": 557
+  }
+ },
+ {
+  "id": "PV132",
+  "name": "Alocasia Loco (Green)",
+  "status": "available",
+  "image": "plants/PV132.jpg",
+  "md5": "5d99951047",
+  "prices": {
+   "Green": 121
+  }
+ },
+ {
+  "id": "PV26",
+  "name": "Alocasia Longiloba Variegated",
+  "status": "coming",
+  "image": "plants/PV26.jpg",
+  "md5": "a068752e34",
+  "prices": {
+   "Thaicon": 1307
+  }
+ },
+ {
+  "id": "PV87",
+  "name": "Alocasia Maharani Variegated",
+  "status": "available",
+  "image": "plants/PV87.jpg",
+  "md5": "edcd899648",
+  "prices": {
+   "Albo": 682
+  }
+ },
+ {
+  "id": "PV89",
+  "name": "Alocasia Melo Albo",
+  "status": "available",
+  "image": "plants/PV89.jpg",
+  "md5": "20618b424d",
+  "prices": {
+   "Albo": 648
+  }
+ },
+ {
+  "id": "X_melo_aurea",
+  "name": "Alocasia Melo Aurea",
+  "status": "available",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Aurea": 547
+  }
+ },
+ {
+  "id": "PV128",
+  "name": "Alocasia Metallic Blue Aurea",
+  "status": "coming",
+  "image": "plants/PV128.jpg",
+  "md5": "fed02abc41",
+  "prices": {
+   "Aurea": 774
+  }
+ },
+ {
+  "id": "PV127",
+  "name": "Alocasia Metallic Blue Albo",
+  "status": "available",
+  "image": "plants/PV127.jpg",
+  "md5": "184fd6373f",
+  "prices": {
+   "Albo": 557
+  }
+ },
+ {
+  "id": "PV32",
+  "name": "Alocasia Nairobi Nights Variegated",
+  "status": "coming",
+  "image": "plants/PV32.jpg",
+  "md5": "ec238399b1",
+  "prices": {
+   "A Grade": 639
+  }
+ },
+ {
+  "id": "X_nairobi_camouflage",
+  "name": "Alocasia Nairobi Nights Camouflage Tricolor",
+  "status": "available",
+  "image": "plants/X_nairobi_camouflage.jpg",
+  "md5": "5dece43d12",
+  "prices": {
+   "Camouflage Tricolor": 637
+  }
+ },
+ {
+  "id": "PV40",
+  "name": "Alocasia Ninja Albo",
+  "status": "coming",
+  "image": "plants/PV40.jpg",
+  "md5": "d91c618acd",
+  "prices": {
+   "Albo": 592
+  }
+ },
+ {
+  "id": "PV79",
+  "name": "Alocasia Nobilis Pink K",
+  "status": "available",
+  "image": "plants/PV79.jpg",
+  "md5": "c20cbca40b",
+  "prices": {
+   "Pink K": 647
+  }
+ },
+ {
+  "id": "PV44",
+  "name": "Alocasia Pink Dragon Albo",
+  "status": "available",
+  "image": "plants/PV44.jpg",
+  "md5": "cd8fa6f127",
+  "prices": {
+   "Stardust Mint": 503
+  }
+ },
+ {
+  "id": "PV143",
+  "name": "Alocasia Polly Ghost Mint",
+  "status": "coming",
+  "image": "plants/PV143.jpg",
+  "md5": "9d91c9d740",
+  "prices": {
+   "Ghost Mint": 451
+  }
+ },
+ {
+  "id": "X_polly_lava",
+  "name": "Alocasia Polly Lava",
+  "status": "available",
+  "image": "plants/X_polly_lava.jpg",
+  "md5": "3504a8d478",
+  "prices": {
+   "Lava": 1003
+  }
+ },
+ {
+  "id": "PV19",
+  "name": "Alocasia Polly Pink",
+  "status": "coming",
+  "image": "plants/PV19.jpg",
+  "md5": "818e813682",
+  "prices": {
+   "Pink": 347
+  }
+ },
+ {
+  "id": "PV84",
+  "name": "Alocasia Pseudo-Sanderiana Pink",
+  "status": "available",
+  "image": "plants/PV84.jpg",
+  "md5": "6bbfae376a",
+  "prices": {
+   "Pink": 633
+  }
+ },
+ {
+  "id": "PV43",
+  "name": "Alocasia Regal Shields Albo",
+  "status": "coming",
+  "image": "plants/PV43.jpg",
+  "md5": "aff634df32",
+  "prices": {
+   "Albo": 1302
+  }
+ },
+ {
+  "id": "PV146",
+  "name": "Alocasia Sarian Aurea",
+  "status": "coming",
+  "image": "plants/PV146.jpg",
+  "md5": "4828b2642b",
+  "prices": {
+   "Aurea": 601
+  }
+ },
+ {
+  "id": "PV80",
+  "name": "Alocasia Scalprum Mint",
+  "status": "coming",
+  "image": "plants/PV80.jpg",
+  "md5": "f098bd135c",
+  "prices": {
+   "Mint": 591
+  }
+ },
+ {
+  "id": "PV148",
+  "name": "Alocasia Sedenii Aurea",
+  "status": "coming",
+  "image": "plants/PV148.jpg",
+  "md5": "f0e6ff36a4",
+  "prices": {
+   "Aurea": 634
+  }
+ },
+ {
+  "id": "PV37",
+  "name": "Alocasia Silver Dragon Aurea",
+  "status": "available",
+  "image": "plants/PV37.jpg",
+  "md5": "486fe2a17c",
+  "prices": {
+   "Aurea": 197
+  }
+ },
+ {
+  "id": "PV78",
+  "name": "Alocasia Simpo Albo",
+  "status": "available",
+  "image": "plants/PV78.jpg",
+  "md5": "4ce0e9f2bd",
+  "prices": {
+   "Albo": 449
+  }
+ },
+ {
+  "id": "PV74",
+  "name": "Alocasia Stingray Variegated",
+  "status": "available",
+  "image": "plants/PV74.jpg",
+  "md5": "4d735ba4c3",
+  "prices": {
+   "Aurea": 504
+  }
+ },
+ {
+  "id": "PV151",
+  "name": "Alocasia Venom Variegated",
+  "status": "available",
+  "image": "plants/PV151.jpg",
+  "md5": "f2873af276",
+  "prices": {
+   "Pink High Var": 1950
+  }
+ },
+ {
+  "id": "X_venom_aurea",
+  "name": "Alocasia Venom Aurea",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Aurea": 1753
+  }
+ },
+ {
+  "id": "PV152",
+  "name": "Alocasia Watsoniana Doff Albo",
+  "status": "available",
+  "image": "plants/PV152.jpg",
+  "md5": "af13110485",
+  "prices": {
+   "Albo": 504
+  }
+ },
+ {
+  "id": "PV77",
+  "name": "Alocasia Watsoniana Doff Pink",
+  "status": "available",
+  "image": "plants/PV77.jpg",
+  "md5": "7175b76ecf",
+  "prices": {
+   "Pink": 644
+  }
+ },
+ {
+  "id": "PV154",
+  "name": "Alocasia Watsoniana Glossy / Pink Shiny",
+  "status": "available",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Pink Shiny": 878
+  }
+ },
+ {
+  "id": "PV155",
+  "name": "Alocasia Wentii Aurea Latte",
+  "status": "coming",
+  "image": "plants/PV155.jpg",
+  "md5": "3b6409396b",
+  "prices": {
+   "Aurea Latte": 551
+  }
+ },
+ {
+  "id": "PV18",
+  "name": "Alocasia Wentii Variegated",
+  "status": "coming",
+  "image": "plants/PV18.jpg",
+  "md5": "1002df3d0e",
+  "prices": {
+   "Pink": 542
+  }
+ },
+ {
+  "id": "X_xanthosoma_mickey",
+  "name": "Xanthosoma Mickey Mouse",
+  "status": "available",
+  "image": "plants/X_xanthosoma_mickey.jpg",
+  "md5": "65e84d8226",
+  "prices": {
+   "Plant": 346
+  }
+ },
+ {
+  "id": "PV158",
+  "name": "Alocasia Yucatan Princess Pink",
+  "status": "available",
+  "image": "plants/PV158.jpg",
+  "md5": "d15d2356a4",
+  "prices": {
+   "Pink": 601
+  }
+ },
+ {
+  "id": "PV30",
+  "name": "Alocasia Zebrina Mint",
+  "status": "coming",
+  "image": "plants/PV30.jpg",
+  "md5": "983dec136e",
+  "prices": {
+   "Mint": 541
+  }
+ },
+ {
+  "id": "PV179",
+  "name": "Monstera Deliciosa Banana Super Golden",
+  "status": "coming",
+  "image": "plants/PV179.jpg",
+  "md5": "5312289ead",
+  "prices": {
+   "Super Golden": 451
+  }
+ },
+ {
+  "id": "PV180",
+  "name": "Monstera Devil Monster",
+  "status": "available",
+  "image": "plants/PV180.jpg",
+  "md5": "23789d77c2",
+  "prices": {
+   "Plant": 947
+  }
+ },
+ {
+  "id": "PV181",
+  "name": "Monstera Electro Light",
+  "status": "coming",
+  "image": "plants/PV181.jpg",
+  "md5": "a7da469eda",
+  "prices": {
+   "Plant": 533
+  }
+ },
+ {
+  "id": "PV5",
+  "name": "Monstera Green Snow",
+  "status": "coming",
+  "image": "plants/PV5.jpg",
+  "md5": "04286a51e9",
+  "prices": {
+   "Plant": 652
+  }
+ },
+ {
+  "id": "PV6",
+  "name": "Monstera Legacy",
+  "status": "available",
+  "image": "plants/PV6.jpg",
+  "md5": "d7d06e6fc8",
+  "prices": {
+   "Plant": 748
+  }
+ },
+ {
+  "id": "PV184",
+  "name": "Monstera Lemon Lime Full Variegation",
+  "status": "coming",
+  "image": "plants/PV184.jpg",
+  "md5": "ea0e2bcea0",
+  "prices": {
+   "Full Variegation": 301
+  }
+ },
+ {
+  "id": "X_monstera_lemon_pompom",
+  "name": "Monstera Lemon Pom Pom",
+  "status": "available",
+  "image": "plants/X_monstera_lemon_pompom.jpg",
+  "md5": "b0b8adbdb8",
+  "prices": {
+   "Plant": 543
+  }
+ },
+ {
+  "id": "PV10",
+  "name": "Monstera Mint Variegated",
+  "status": "coming",
+  "image": "plants/PV10.jpg",
+  "md5": "b6dea31d1f",
+  "prices": {
+   "Full Mint": 248
+  }
+ },
+ {
+  "id": "X_monstera_ocean_mint",
+  "name": "Monstera Ocean Mint",
+  "status": "available",
+  "image": "plants/X_monstera_ocean_mint.jpg",
+  "md5": "2f55dd0de5",
+  "prices": {
+   "Mint": 897
+  }
+ },
+ {
+  "id": "X_monstera_star_shadow",
+  "name": "Monstera Star Shadow",
+  "status": "coming",
+  "image": "plants/X_monstera_star_shadow.jpg",
+  "md5": "1fe40cc477",
+  "prices": {
+   "Plant": 549
+  }
+ },
+ {
+  "id": "PV11",
+  "name": "Monstera White Monster",
+  "status": "available",
+  "image": "plants/PV11.jpg",
+  "md5": "f6391e9476",
+  "prices": {
+   "Plant": 246
+  }
+ },
+ {
+  "id": "PV8",
+  "name": "Monstera Yellow Marilyn",
+  "status": "available",
+  "image": "plants/PV8.jpg",
+  "md5": "6e972a326e",
+  "prices": {
+   "Plant": 802
+  }
+ },
+ {
+  "id": "PV60",
+  "name": "Philodendron Caramel Marble",
+  "status": "available",
+  "image": "plants/PV60.jpg",
+  "md5": "d0efa1ca7a",
+  "prices": {
+   "Plant": 347
+  }
+ },
+ {
+  "id": "PV190",
+  "name": "Philodendron Green Lemon",
+  "status": "available",
+  "image": "plants/PV190.jpg",
+  "md5": "d2d685e86b",
+  "prices": {
+   "Plant": 484
+  }
+ },
+ {
+  "id": "X_philo_melano_orange",
+  "name": "Philodendron Melano Orange",
+  "status": "available",
+  "image": "plants/X_philo_melano_orange.jpg",
+  "md5": "785e9fe7c3",
+  "prices": {
+   "Plant": 825
+  }
+ },
+ {
+  "id": "PV50",
+  "name": "Philodendron Micans",
+  "status": "available",
+  "image": "plants/PV50.jpg",
+  "md5": "cb023eb53c",
+  "prices": {
+   "Plant": 281
+  }
+ },
+ {
+  "id": "PV193",
+  "name": "Philodendron Narrow",
+  "status": "coming",
+  "image": "plants/PV193.jpg",
+  "md5": "fbefc23e54",
+  "prices": {
+   "Plant": 271
+  }
+ },
+ {
+  "id": "PV199",
+  "name": "Philodendron Red Congo",
+  "status": "available",
+  "image": "plants/PV199.jpg",
+  "md5": "20b47ae51c",
+  "prices": {
+   "Plant": 119
+  }
+ },
+ {
+  "id": "PV66",
+  "name": "Philodendron Tortum",
+  "status": "coming",
+  "image": "plants/PV66.jpg",
+  "md5": "6812aac486",
+  "prices": {
+   "Plant": 381
+  }
+ },
+ {
+  "id": "PV206",
+  "name": "Philodendron Verrucosum Mint",
+  "status": "available",
+  "image": "plants/PV206.jpg",
+  "md5": "2e61c6c504",
+  "prices": {
+   "Mint": 448
+  }
+ },
+ {
+  "id": "PV207",
+  "name": "Philodendron Whipple Way",
+  "status": "available",
+  "image": "plants/PV207.jpg",
+  "md5": "7da5a4e89e",
+  "prices": {
+   "Plant": 339
+  }
+ },
+ {
+  "id": "X_philo_white_beauty",
+  "name": "Philodendron White Beauty",
+  "status": "available",
+  "image": "plants/X_philo_white_beauty.jpg",
+  "md5": "a1674a2791",
+  "prices": {
+   "Plant": 1186
+  }
+ },
+ {
+  "id": "PV13",
+  "name": "Rhaphidophora Tetrasperma Variegated",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Mint": 369
+  }
+ },
+ {
+  "id": "PV48",
+  "name": "Philodendron Jose Buono",
+  "status": "coming",
+  "image": "plants/PV48.jpg",
+  "md5": "8bd9c28782",
+  "prices": {
+   "Starter Plant": 49,
+   "Mature Plant": 147
+  }
+ },
+ {
+  "id": "PV14",
+  "name": "Alocasia Dragon Scale Mint",
+  "status": "coming",
+  "image": "plants/PV14.jpg",
+  "md5": "8ea533a0fd",
+  "prices": {
+   "Mint": 151
+  }
+ },
+ {
+  "id": "PV25",
+  "name": "Alocasia Macrorrhiza Var.",
+  "status": "coming",
+  "image": "plants/PV25.jpg",
+  "md5": "8b395563ff",
+  "prices": {
+   "Starter Plant": 49,
+   "Mature Plant": 147
+  }
+ },
+ {
+  "id": "X_angela_aurea",
+  "name": "Philodendron Angela Aurea Var",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Aurea": 438
+  }
+ },
+ {
+  "id": "X_black_cardinal",
+  "name": "Philodendron Black Cardinal Var",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Plant": 986,
+   "TC Bag": 252
+  }
+ },
+ {
+  "id": "X_radiatum",
+  "name": "Philodendron Radiatum Var",
+  "status": "available",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Variegated": 341
+  }
+ },
+ {
+  "id": "X_monstera_jungle_mint",
+  "name": "Monstera Jungle Mint",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Variegated": 693
+  }
+ },
+ {
+  "id": "X_brown_beauty",
+  "name": "Philodendron Brown Beauty Var",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Variegated": 500
+  }
+ },
+ {
+  "id": "X_atabapoense_pink",
+  "name": "Philodendron Atabapoense Pink Var",
+  "status": "coming",
+  "image": "placeholder",
+  "md5": null,
+  "prices": {
+   "Pink": 774
+  }
+ }
+]
