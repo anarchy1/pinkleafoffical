@@ -256,6 +256,18 @@ not have, under her own photos. She noticed; the sessions did not.
 Cosmetic cleanup (capitalisation, albo for white) is fine. Anything that
 changes the plant needs her exact words, written down with the date.
 
+**This rule is enforced by a gate, not by reading it (added 26 Oct 2026).**
+`docs/catalogue-lock.json` freezes every store card: id, name, photo md5,
+prices. `python3 tools/catalogue_lock.py check` is point 9 of the health
+check and fails the moment any of those differ, and `tools/deploy.sh` refuses
+to deploy while the health check fails. **Deploy only through
+`sh tools/deploy.sh`**, never with a bare netlify command, or the gate is
+bypassed. To change a card after Kat says so in her own words:
+`python3 tools/catalogue_lock.py approve PV119` (or `approve all`), and put
+her words in the commit. A session never runs `approve` on its own judgement.
+A new photo from Kat for an existing card is the same: copy it in, then
+`approve` that id, quoting her message.
+
 ### Pricing (HARD, added 2026-09-28)
 
 **Kat sends the prices you give her straight to the customer, unedited.** She

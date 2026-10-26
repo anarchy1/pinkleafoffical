@@ -30,7 +30,11 @@ import threading
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
+import glob as _glob
+# The sandbox Chromium build number changes between containers (1194, then
+# 1243 on 26 Oct 2026). A hard-coded path made point 8 a false alarm each time.
+_c = sorted(_glob.glob("/opt/pw-browsers/chromium-*/chrome-linux*/chrome"))
+CHROME = _c[-1] if _c else None
 
 
 @contextlib.contextmanager
@@ -82,13 +86,16 @@ def main():
     )
 
     with serve(ROOT) as base, sync_playwright() as p:
-        browser = p.chromium.launch(executable_path=CHROME)
+        browser = p.chromium.launch(executable_path=CHROME) if CHROME else p.chromium.launch()
         page = browser.new_page(viewport={"width": 1280, "height": 1000})
         errors = []
         missing = []
         page.on("pageerror", lambda e: errors.append(str(e)))
         page.on("requestfailed",
-                lambda r: missing.append(r.url) if "127.0.0.1" in r.url else None)
+                lambda r: missing.append(r.url) if r.url.startswith(base) else None)
+        # startswith(base), not "127.0.0.1" in url: Google Analytics beacons
+        # carry the page URL as a query parameter, so a blocked GA call in the
+        # sandbox used to read as a missing local asset (false alarm, 26 Oct).
         page.goto(f"{base}/index.html")
         page.wait_for_timeout(1200)
 
