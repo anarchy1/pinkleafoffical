@@ -4227,6 +4227,15 @@ body.dark-mode .scoreboard-item.current {
             return `<span class="win-graphic" role="img" aria-label="Correct">${g}</span>`;
         }
 
+        // A plant whose photo is retired would be a quiz about the placeholder.
+        // When the photo fails, pick another plant, a few times at most.
+        let labPhotoRetries = 0;
+        function labPhotoMissing(img){
+            img.onerror = null;
+            if (labPhotoRetries++ < 5) { startLab(); return; }
+            img.src = '/assets/photo-coming.svg';
+        }
+
         function startLab(){
     const keys = Object.keys(MASTER_DB);
     const qId = keys[Math.floor(Math.random() * keys.length)];
@@ -4264,7 +4273,7 @@ body.dark-mode .scoreboard-item.current {
         <p class="serif" style="font-size:12px; letter-spacing:3px; opacity:0.4; margin-bottom:2px;">XP: ${xp} &nbsp;|&nbsp; BEST: ${bestStreak}</p>
         ${badgeRow}
         ${renderStreakBar()}
-        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onerror="this.src='/assets/photo-coming.svg'"></div>
+        <div class="portal mx-auto mb-8 w-52 h-52"><img src="plants/${qId}.jpg" alt="${MASTER_DB[qId] ? MASTER_DB[qId].name : 'Pink Leaf plant'}" class="w-full h-full object-cover" loading="lazy" onload="labPhotoRetries=0" onerror="labPhotoMissing(this)"></div>
         ${loginHint}
         <div class="flex flex-col gap-4">
             ${choices.map((c, idx) => `<button class="btn" onclick="checkLab(${idx})">${c}</button>`).join('')}
