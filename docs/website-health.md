@@ -664,8 +664,15 @@ rounded Cuprea Aurea Latte, PV13 the placeholder, no "Pink Lava" anywhere.
   "Scalprum Mint" vs her "Scalprum white"; PV151 "Venom Variegated" (grade
   "Pink High Var") vs her "Venom"; PV179 adds "Banana"; PV79 "Nobilis Pink K"
   vs "Nobilis Pink Var"; PV23 "Black Velvet Gold" vs "Black Velvet Aurea".
-- The Hebrew detail view shows the description and Light / Humidity labels
-  in English.
+- ~~The Hebrew detail view shows the description and Light / Humidity labels
+  in English.~~ Fixed 26 Oct on Kat's go-ahead ("it needs to be repaired"):
+  care line, description and both labels now follow the language, and the
+  open panel re-renders when the language is switched. Also fixed: plants
+  outside the three family tabs read "a tissue-culture propagated Others";
+  they now name their genus (Rhaphidophora, etc.).
+- PV13 Tetrasperma carries the grade "Mint", not in Kat's label
+  ("Rhaphidophora Tetrasperma Var"). Coming soon, so nothing is sold under
+  it; hers to confirm.
 - Still waiting on her photos: the nine placeholder cards plus PV13 and
   PV154, and the six cards whose photo does not show the variegation (listed
   in the section above).

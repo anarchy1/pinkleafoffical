@@ -3974,18 +3974,26 @@ body.dark-mode .scoreboard-item.current {
         function pdEsc(s){ return String(s == null ? '' : s).replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
 
         function pdCareLine(genus){
-            if (genus === 'Alocasia') return 'Alocasia: loves warmth and high humidity, and can slow down or go dormant in winter.';
-            if (genus === 'Monstera') return 'Monstera: bright indirect light, an easy climber.';
-            if (genus === 'Philodendron') return 'Philodendron: bright indirect light, a natural climber.';
-            return 'Bright indirect light and steady humidity keep it thriving.';
+            const he = typeof lang === 'undefined' || lang !== 'en';
+            if (genus === 'Alocasia') return he ? 'אלוקסיה: אוהבת חום ולחות גבוהה, ובחורף עשויה להאט את הצמיחה או להיכנס לתרדמה.' : 'Alocasia: loves warmth and high humidity, and can slow down or go dormant in winter.';
+            if (genus === 'Monstera') return he ? 'מונסטרה: אור בהיר ועקיף, מטפסת קלה לגידול.' : 'Monstera: bright indirect light, an easy climber.';
+            if (genus === 'Philodendron') return he ? 'פילודנדרון: אור בהיר ועקיף, מטפס מטבעו.' : 'Philodendron: bright indirect light, a natural climber.';
+            return he ? 'אור בהיר ועקיף ולחות יציבה שומרים על הצמח במיטבו.' : 'Bright indirect light and steady humidity keep it thriving.';
         }
 
         function pdDesc(item, genus){
-            const base = `A tissue-culture propagated ${genus}, acclimated in-house here in Israel so it arrives stable and ready to settle into your collection.`;
+            // Plants outside the three tabs have the family "Others"; name the genus instead.
+            if (!genus || /^others?$/i.test(genus)) genus = String(item.name || '').split(' ')[0] || genus;
+            const he = typeof lang === 'undefined' || lang !== 'en';
+            const base = he
+                ? `צמח ${genus} מריבוי בתרבית רקמה, שהתאקלם אצלנו בישראל, כך שהוא מגיע יציב ומוכן להשתלב באוסף שלך.`
+                : `A tissue-culture propagated ${genus}, acclimated in-house here in Israel so it arrives stable and ready to settle into your collection.`;
             const opts = item.availability || [];
             const variant = opts.length === 1 ? opts[0] : '';
             if (variant && /albo|aurea|pink|mint|variegat|tri-?color|lava|camouflage|stardust|ghost|latte|blue|silver|gold/i.test(variant)) {
-                return `${base} This is the ${variant} selection, chosen for its coloring.`;
+                return he
+                    ? `${base} זהו הסוג ${variant}, שנבחר בזכות הצבע שלו.`
+                    : `${base} This is the ${variant} selection, chosen for its coloring.`;
             }
             return base;
         }
@@ -4053,6 +4061,8 @@ body.dark-mode .scoreboard-item.current {
 
             pdUpdatePrice();
 
+            document.getElementById('pd-light-label').textContent = ST('light');
+            document.getElementById('pd-humidity-label').textContent = ST('humidity');
             document.getElementById('pd-light').textContent = item.light || '-';
             document.getElementById('pd-humidity').textContent = item.humidity || '-';
             document.getElementById('pd-careline').textContent = pdCareLine(genus);
@@ -4404,6 +4414,7 @@ function checkLab(choiceIndex) {
             updateBagUI(); renderBagItems();
             if(!document.getElementById('page-checkout').classList.contains('hidden')) renderCheckout();
             { const t = document.getElementById('store-tabs'); if (t) t.innerHTML = ''; if (typeof renderStore === 'function') renderStore(); }
+            if (typeof pdCurrentItem !== 'undefined' && pdCurrentItem) openProduct(pdCurrentItem.id, true);
             if(!document.getElementById('page-encyclopedia').classList.contains('hidden')) {
                 const articleView = document.getElementById('encyc-article-view');
                 if (!articleView.classList.contains('hidden')) {
@@ -6019,8 +6030,8 @@ function checkLab(choiceIndex) {
                     <select id="pd-variant" class="availability-select" onchange="pdSelectVariant()"></select>
                 </div>
                 <div class="pd-care">
-                    <div class="stat-row"><span>&#9728;&#65039; Light</span><span id="pd-light"></span></div>
-                    <div class="stat-row"><span>&#128167; Humidity</span><span id="pd-humidity"></span></div>
+                    <div class="stat-row"><span>&#9728;&#65039; <span id="pd-light-label">Light</span></span><span id="pd-light"></span></div>
+                    <div class="stat-row"><span>&#128167; <span id="pd-humidity-label">Humidity</span></span><span id="pd-humidity"></span></div>
                     <p id="pd-careline" class="pd-careline"></p>
                 </div>
                 <p id="pd-desc" class="pd-desc"></p>
