@@ -211,11 +211,11 @@
   }
  },
  {
-  "id": "X_melo_aurea",
-  "name": "Alocasia Melo Aurea",
+  "id": "PV136",
+  "name": "Alocasia Melo Aurea Variegated",
   "status": "available",
-  "image": "plants/X_melo_aurea.jpg",
-  "md5": null,
+  "image": "plants/PV136.jpg",
+  "md5": "c9b39bb748",
   "prices": {
    "Aurea": 547
   }
@@ -531,11 +531,11 @@
   }
  },
  {
-  "id": "X_monstera_jungle_mint",
+  "id": "PV183",
   "name": "Monstera Jungle Mint",
   "status": "coming",
-  "image": "plants/X_monstera_jungle_mint.jpg",
-  "md5": null,
+  "image": "plants/PV183.jpg",
+  "md5": "a498ad6424",
   "prices": {
    "Variegated": 693
   }
@@ -723,11 +723,11 @@
   }
  },
  {
-  "id": "X_radiatum",
-  "name": "Philodendron Radiatum Var",
+  "id": "PV198",
+  "name": "Philodendron Radiatum Variegated",
   "status": "available",
-  "image": "plants/X_radiatum.jpg",
-  "md5": null,
+  "image": "plants/PV198.jpg",
+  "md5": "3b95137c5e",
   "prices": {
    "Variegated": 341
   }
