@@ -147,9 +147,16 @@ def main():
             counts["waitlist"] > 0 if coming else True,
             f"{counts['waitlist']} waitlist buttons, {coming} coming",
         )
+        # Compare each button count against the DATA, not against each other.
+        # This used to assert addToBag > waitlist, which is not what "swapped"
+        # means: it only held while most of the catalogue was in stock. On
+        # 26 Oct 2026, after 42 plants went to the waitlist and 38 stayed
+        # available, it failed on a perfectly correct page. The inversion it
+        # exists to catch (26 Sep: every available plant showing NOTIFY ME)
+        # still fails here, because then addToBag would be 0 against 38.
         check(
             "the two button types are not swapped",
-            counts["addToBag"] > counts["waitlist"],
+            counts["addToBag"] == available and counts["waitlist"] == coming,
             f"{counts['addToBag']} buy vs {counts['waitlist']} waitlist; "
             f"data says {available} available vs {coming} coming",
         )
