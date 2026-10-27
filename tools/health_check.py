@@ -193,6 +193,16 @@ def main():
                                  else "SMOKE TEST FAILED\n" + r.stdout)
         )
 
+    # 9. Catalogue lock: Kat's names, photos and prices, frozen.
+    # On 25/26 Oct 2026 invented card names and two swapped photos sat live for
+    # months because nothing compared the store to what Kat labelled. This does.
+    r = subprocess.run([sys.executable, "tools/catalogue_lock.py", "check"],
+                       capture_output=True, text=True)
+    (bad if r.returncode else ok)(
+        "9 catalogue lock: " + (r.stdout.strip() if not r.returncode
+                                else "FAILED, store drifted from Kat's labels\n" + r.stdout)
+    )
+
     print("\n  ".join(["PASS"] + passes))
     if problems:
         print("\n  ".join(["\nNEEDS ATTENTION"] + problems))

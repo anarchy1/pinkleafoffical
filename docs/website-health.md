@@ -633,3 +633,46 @@ of these.
 
 The Vault and quiz show MASTER_DB plants beyond the store (PV1 to PV210);
 their photo mappings outside the 80 store ids were not audited.
+
+## 26 October 2026 (second pass): the forwarded live check
+
+Kat forwarded an outside check of all 80 cards listing PV113, PV119, PV13 and
+nine placeholders. All three photo faults were already fixed in f58fa3c and
+published in deploy 6adf0c168116296f93f4b02a (08:15 UTC), so the check most
+likely ran against the earlier deploy. Re-verified in a browser at 390px in
+both languages: PV113 shows the arrow-shaped variegated Bambino, PV119 the
+rounded Cuprea Aurea Latte, PV13 the placeholder, no "Pink Lava" anywhere.
+
+### Fixed
+
+- **Quiz could ask about a placeholder.** It picks from all of MASTER_DB, and
+  PV13 and PV154 have no photo since their files were retired. When a quiz
+  photo fails it now picks another plant (up to five tries).
+- `tools/smoke_test.py` matched the waitlist label case-sensitively, so in
+  English ("Notify me") it would count zero. Now case-insensitive.
+
+### Checked, no change
+
+- The Vault and quiz build the same `plants/<id>.jpg` path as the store, so
+  the PV113 / PV119 / PV13 fixes reach them too. No separate mapping exists.
+- No duplicate photo files among plants. `basalt-chips.jpg` and `pumice.jpg`
+  are identical but nothing references either.
+
+### For Kat (not changed: names follow her labels, copy is hers)
+
+- Store names that differ from MASTER_DB by more than spelling: PV80 store
+  "Scalprum Mint" vs her "Scalprum white"; PV151 "Venom Variegated" (grade
+  "Pink High Var") vs her "Venom"; PV179 adds "Banana"; PV79 "Nobilis Pink K"
+  vs "Nobilis Pink Var"; PV23 "Black Velvet Gold" vs "Black Velvet Aurea".
+- ~~The Hebrew detail view shows the description and Light / Humidity labels
+  in English.~~ Fixed 26 Oct on Kat's go-ahead ("it needs to be repaired"):
+  care line, description and both labels now follow the language, and the
+  open panel re-renders when the language is switched. Also fixed: plants
+  outside the three family tabs read "a tissue-culture propagated Others";
+  they now name their genus (Rhaphidophora, etc.).
+- PV13 Tetrasperma carries the grade "Mint", not in Kat's label
+  ("Rhaphidophora Tetrasperma Var"). Coming soon, so nothing is sold under
+  it; hers to confirm.
+- Still waiting on her photos: the nine placeholder cards plus PV13 and
+  PV154, and the six cards whose photo does not show the variegation (listed
+  in the section above).
