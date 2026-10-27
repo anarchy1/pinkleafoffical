@@ -733,6 +733,16 @@
   }
  },
  {
+  "id": "PV59",
+  "name": "Philodendron Pink Princess Marble",
+  "status": "available",
+  "image": "plants/PV59.jpg",
+  "md5": "f0953aded2",
+  "prices": {
+   "Baby": 50
+  }
+ },
+ {
   "id": "PV198",
   "name": "Philodendron Radiatum Variegated",
   "status": "available",
@@ -750,6 +760,16 @@
   "md5": "20b47ae51c",
   "prices": {
    "Plant": 119
+  }
+ },
+ {
+  "id": "PV52",
+  "name": "Philodendron Strawberry Shake",
+  "status": "available",
+  "image": "plants/PV52.jpg",
+  "md5": "8ab58ad62b",
+  "prices": {
+   "Baby": 50
   }
  },
  {
