@@ -676,3 +676,67 @@ rounded Cuprea Aurea Latte, PV13 the placeholder, no "Pink Lava" anywhere.
 - Still waiting on her photos: the nine placeholder cards plus PV13 and
   PV154, and the six cards whose photo does not show the variegation (listed
   in the section above).
+
+---
+
+## 27 October 2026: branch merge, and the deploy is blocked by the sandbox
+
+Health check: **points 2 to 9 all green**, including the smoke test and the
+new catalogue lock (80 cards match Kat's names, photos and prices). Point 1
+(drift) was red at the start and is now clear. Point 6 is unchanged and still
+open: `STOCK_SHEET_CSV` is wired and empty.
+
+### The merge conflict, and why it mattered
+
+`claude/find-order-lists-chat-yxu11j` was 1 ahead of main and 4 behind. The
+two sides had both edited the same two store cards, which is the precise shape
+of the 26 September bug that left the buy button on the wrong branch of an if.
+
+- main (8273ba1, Kat's own session) renamed three placeholder cards to her PV
+  ids and gave them her photos: `X_radiatum` to `PV198`
+  "Philodendron Radiatum Variegated", `X_monstera_jungle_mint` to `PV183`,
+  `X_melo_aurea` to `PV136`.
+- this branch (c1319bb) had taken Radiatum off sale, because Kat said 341 is
+  far too low and pulled it from the menu until she sets a new price.
+
+Resolved so both survive. Her labels win on id, name and photo, which is the
+HARD rule and is what the catalogue lock enforces. Her price instruction wins
+on availability: PV198 keeps her name and photo and is "coming". The giveaway
+was main's own commit message, "Prices and availability unchanged", which
+means it never ruled on Radiatum at all. It carried "available" forward only
+because this branch had not merged yet.
+
+Schema regenerated with `tools/build_product_schema.py`, not hand-edited.
+Smoke test run after the merge, as CLAUDE.md requires without exception.
+
+main is now at 4f811d5 and the branch is level with it.
+
+### The deploy did not happen, and it is the sandbox, not Netlify
+
+`tools/deploy.sh` passed the health gate and then failed twice on
+`Failed to deploy site: TypeError: fetch failed`.
+
+Cause: **this session's egress policy blocks every netlify.com host.**
+`api.netlify.com`, `app.netlify.com` and `netlify-mcp.netlify.app` all answer
+403 to CONNECT. The Netlify connector tool still responds, because that goes
+through the MCP proxy rather than direct egress, so the failure presents as a
+Netlify or repo problem when it is neither.
+
+This contradicted CLAUDE.md, which said flatly that a cloud session can
+deploy, on the evidence of one success on 25 October. That note now says it
+depends on the session and gives the one curl that settles it before anything
+is promised:
+
+    curl -sS -o /dev/null -m 20 -w '%{http_code}\n' https://api.netlify.com/
+
+A code means egress is open. `000` means it is blocked and the deploy is
+waiting on the Mac.
+
+### Open
+
+- **The live site is still the 9 September upload.** Everything since,
+  including Kat's own October corrections, is on main and not live. One
+  `sh tools/deploy.sh` from her Mac ships it.
+- The lasting fix is still linking the repo in Netlify, which would retire
+  this entire class of problem.
+- `STOCK_SHEET_CSV` wired and empty (health check point 6).
