@@ -344,16 +344,31 @@ and is existing practice. It is not the same as raising a price after the fact.
 - `netlify.toml` publishes the repo root with no build, so **everything in the
   repo is served**, internal files included. See the private data rules below
   before adding anything to the repo.
-- **A cloud Claude session CAN deploy to Netlify (works since 25 Oct 2026).**
-  Call the Netlify connector's `deploy-site` with site id
+- **A cloud session can sometimes deploy, and it depends on that session's
+  network policy. Check before promising it.** The route: call the Netlify
+  connector's `deploy-site` with site id
   `ff87ce11-d61f-4812-9a2d-8b296653aad6`; it returns an `npx @netlify/mcp`
-  command with a one-time proxy path. Run that command from the repo root in
-  the sandbox and it uploads the repo, builds and publishes to production in
-  about a minute. Deploy 6ade1d71eb7118a2346e14e5 shipped this way. The old
-  note that it always returned 403 is out of date. The Mac route
-  (`npx netlify-cli deploy --prod --dir .`, or drag the folder onto the
-  Deploys tab) still works too. The lasting fix is still linking the repo in
-  Netlify so a push deploys by itself.
+  command with a one-time proxy path, which `tools/deploy.sh` takes as its
+  one argument. Deploy 6ade1d71eb7118a2346e14e5 shipped this way on 25 Oct
+  2026 in about a minute.
+  **It failed on 27 Oct 2026 in a different session**, twice, with
+  `Failed to deploy site: TypeError: fetch failed`. The cause was not
+  Netlify and not the repo: this session's egress policy blocked every
+  Netlify host, so the upload leg had nowhere to go. The connector tool
+  itself still answered, because that goes through the MCP proxy rather
+  than direct egress, which makes the failure look like a Netlify problem
+  when it is a sandbox one.
+  **One command tells you which kind of session you are in, so run it
+  before telling Kat a deploy is coming:**
+  `curl -sS -o /dev/null -m 20 -w '%{http_code}\n' https://api.netlify.com/`
+  A code means egress is open. `000` with a 403 CONNECT means it is
+  blocked, the deploy is impossible from here, and the honest answer is
+  that it is waiting on her Mac.
+  The Mac route (`sh tools/deploy.sh`, which wraps
+  `npx netlify-cli deploy --prod --dir .`, or dragging the folder onto the
+  Deploys tab) always works. The lasting fix is still linking the repo in
+  Netlify so a push deploys by itself, which would end this whole class of
+  problem.
 - **Always deploy from `main`, after merging.** On 25 Oct 2026 Kat found the
   live store wrong because 37 commits of her own corrections (prices, photos,
   plants taken off sale) sat on `claude/find-order-lists-chat-yxu11j` for two
