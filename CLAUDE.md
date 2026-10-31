@@ -8,6 +8,23 @@ money, open this page and read it:**
 > **Pink Leaf Operations Registry (START HERE)**
 > https://app.notion.com/p/3dcbce507fd3810aa211e95a6b16eb24
 
+**For anything about who ordered what, the answer is already written down:**
+
+> **📒 THE ORDER BOOK**
+> https://app.notion.com/p/40abce507fd381bba28df984061b4195
+
+Every customer order in Kat's own words: Ido Gilbard, Tom Sapir, Adi, Ella,
+Ella's brother, Toren, Tzach, Avi, Idan, Peleg. Created 31 Oct 2026 after the
+same reconstruction had been done from WhatsApp exports four or five times and
+never saved. Her words that day: "we already did this like 4 or 5 times and
+you never like saved it... every single time I have to upload the chats and
+you have to read them and start all over again."
+
+**So: never ask Kat to re-send an order list. Read that page.** When she gives
+a new order or changes one, write it there the same day, in her words, before
+doing anything else with it. Fulfilment, payments and receipts stay in Customer
+Files; the Order Book is what was ordered.
+
 It is the durable record of this business. It holds the active order records,
 the supplier list, the standing rules, and the documentation protocol. Kat
 should never have to re-explain something that is already written there.
