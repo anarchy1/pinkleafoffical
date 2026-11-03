@@ -314,6 +314,14 @@ quoting anything. The rule there says TC cost × 4 **for a plant with no price
 yet**: read that literally, because a plant Kat already priced is not a gap to
 fill.
 
+**4x is a figure to bring her, not a price to quote (Kat, 3 Nov 2026).** She
+rejected a 4x number on an expensive import as too high and set her own, well
+under 2x. Her words: "What do we use that for? We use that to change." So on a
+plant with no price, derive the 4x figure, show the arithmetic and the cost it
+came from, and let her name the number. Do not hand a 4x result to a customer
+as a quote, and never treat a price she set below 4x as an error to correct.
+The numbers themselves stay on the Notion Selling Prices page, not here.
+
 **Size tiers are the recovery when a quote went out too low.** Kat already
 prices by specimen (Polly Pink grown 350 / baby 250; Watsoniana corm 620 /
 TC 452). If a list price was set for a small plant and the customer picks the
