@@ -505,7 +505,7 @@
   "name": "Monstera Deliciosa Banana Super Golden",
   "status": "coming",
   "image": "plants/PV179.jpg",
-  "md5": "5312289ead",
+  "md5": null,
   "prices": {
    "Super Golden": 451
   }
@@ -787,7 +787,7 @@
   "name": "Philodendron Verrucosum Mint",
   "status": "available",
   "image": "plants/PV206.jpg",
-  "md5": "2e61c6c504",
+  "md5": null,
   "prices": {
    "Mint": 448
   }
